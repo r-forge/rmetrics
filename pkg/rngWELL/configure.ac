@@ -1,5 +1,5 @@
 #############################################################################
-#   Copyright (c) 2009 Christophe Dutang and Petr Savicky                   #
+#   Copyright (c) 2021 Christophe Dutang and Petr Savicky                   #
 #                                                                           #
 #   This code can be used freely for personal, academic, or                 #
 #   non-commercial purposes. For commercial purposes, please contact        #
@@ -13,8 +13,10 @@
 ### 
 
 ###
-### the 3 following macros are __NOT__ mine. see copyleft section to know the author.
-###
+### the 3 following macros are __NOT__ mine. see copyleft section to know the
+### author, we remove obsolete commands (AC_FD_MSG, AC_TRY_COMPILE, AC_CONFIG_HEADER).
+### Help at https://www.gnu.org/software/autoconf/manual/
+
 
 # ===========================================================================
 #        http://autoconf-archive.cryp.to/ax_check_compiler_flags.html
@@ -41,7 +43,7 @@
 #
 
 AC_DEFUN([AX_CHECK_COMPILER_FLAGS],
-[AC_PREREQ(2.59) dnl for _AC_LANG_PREFIX
+[AC_PREREQ([2.69]) dnl for _AC_LANG_PREFIX
 AC_MSG_CHECKING([whether _AC_LANG compiler accepts $1])
 dnl Some hackery here since AC_CACHE_VAL can't handle a non-literal varname:
 AS_LITERAL_IF([$1],
@@ -203,74 +205,84 @@ AC_DEFUN([AX_EXT],
 #	as well.
 #
 
-AC_DEFUN([AC_C_BIGENDIAN_CROSS],
-[AC_CACHE_CHECK(whether byte ordering is bigendian, ac_cv_c_bigendian,
-[ac_cv_c_bigendian=unknown
-# See if sys/param.h defines the BYTE_ORDER macro.
-AC_TRY_COMPILE([#include <sys/types.h>
-#include <sys/param.h>], [
-#if !BYTE_ORDER || !BIG_ENDIAN || !LITTLE_ENDIAN
- bogus endian macros
-#endif], [# It does; now see whether it defined to BIG_ENDIAN or not.
-AC_TRY_COMPILE([#include <sys/types.h>
-#include <sys/param.h>], [
-#if BYTE_ORDER != BIG_ENDIAN
- not big endian
-#endif], ac_cv_c_bigendian=yes, ac_cv_c_bigendian=no)])
-if test $ac_cv_c_bigendian = unknown; then
-AC_TRY_RUN([main () {
-  /* Are we little or big endian?  From Harbison&Steele.  */
-  union
-  {
-    long l;
-    char c[sizeof (long)];
-  } u;
-  u.l = 1;
-  exit (u.c[sizeof (long) - 1] == 1);
-}], ac_cv_c_bigendian=no, ac_cv_c_bigendian=yes,
-[ echo $ac_n "cross-compiling... " 2>&AC_FD_MSG ])
-fi])
-if test $ac_cv_c_bigendian = unknown; then
-AC_MSG_CHECKING(to probe for byte ordering)
-[
-cat >conftest.c <<EOF
-short ascii_mm[] = { 0x4249, 0x4765, 0x6E44, 0x6961, 0x6E53, 0x7953, 0 };
-short ascii_ii[] = { 0x694C, 0x5454, 0x656C, 0x6E45, 0x6944, 0x6E61, 0 };
-void _ascii() { char* s = (char*) ascii_mm; s = (char*) ascii_ii; }
-short ebcdic_ii[] = { 0x89D3, 0xE3E3, 0x8593, 0x95C5, 0x89C4, 0x9581, 0 };
-short ebcdic_mm[] = { 0xC2C9, 0xC785, 0x95C4, 0x8981, 0x95E2, 0xA8E2, 0 };
-void _ebcdic() { char* s = (char*) ebcdic_mm; s = (char*) ebcdic_ii; }
-int main() { _ascii (); _ebcdic (); return 0; }
-EOF
-] if test -f conftest.c ; then
+AC_DEFUN(
+  [AC_C_BIGENDIAN_CROSS],
+  [AC_CACHE_CHECK(whether byte ordering is bigendian, ac_cv_c_bigendian,
+    [ac_cv_c_bigendian=unknown
+    # See if sys/param.h defines the BYTE_ORDER macro.
+    AC_COMPILE_IFELSE(
+      [AC_LANG_PROGRAM(
+        [[#include <sys/types.h>
+        #include <sys/param.h>]], [[
+        #if !BYTE_ORDER || !BIG_ENDIAN || !LITTLE_ENDIAN
+        bogus endian macros
+        #endif]])],
+      [# It does; now see whether it defined to BIG_ENDIAN or not.
+        _au_m4_changequote([,]) AC_COMPILE_IFELSE(
+          [#include <sys/types.h>
+          #include <sys/param.h>], [
+          #if BYTE_ORDER != BIG_ENDIAN
+          not big endian
+          #endif], ac_cv_c_bigendian=yes, ac_cv_c_bigendian=no)],
+      [])
+    if test $ac_cv_c_bigendian = unknown; then
+    AC_RUN_IFELSE(
+      [AC_LANG_SOURCE([[main () {
+        /* Are we little or big endian?  From Harbison&Steele.  */
+        union
+        {
+          long l;
+          char c[sizeof (long)];
+        } u;
+        u.l = 1;
+        exit (u.c[sizeof (long) - 1] == 1);
+        }]])],
+      [ac_cv_c_bigendian=no],
+      [ac_cv_c_bigendian=yes],
+      [ echo $ac_n "cross-compiling... " 2>&_au_m4_changequote([,]) ])
+    fi])
+  if test $ac_cv_c_bigendian = unknown; then
+    AC_MSG_CHECKING(to probe for byte ordering)
+    [
+    cat >conftest.c <<EOF
+    short ascii_mm[] = { 0x4249, 0x4765, 0x6E44, 0x6961, 0x6E53, 0x7953, 0 };
+    short ascii_ii[] = { 0x694C, 0x5454, 0x656C, 0x6E45, 0x6944, 0x6E61, 0 };
+    void _ascii() { char* s = (char*) ascii_mm; s = (char*) ascii_ii; }
+    short ebcdic_ii[] = { 0x89D3, 0xE3E3, 0x8593, 0x95C5, 0x89C4, 0x9581, 0 };
+    short ebcdic_mm[] = { 0xC2C9, 0xC785, 0x95C4, 0x8981, 0x95E2, 0xA8E2, 0 };
+    void _ebcdic() { char* s = (char*) ebcdic_mm; s = (char*) ebcdic_ii; }
+    int main() { _ascii (); _ebcdic (); return 0; }
+    EOF
+    ] if test -f conftest.c ; then
      if ${CC-cc} -c conftest.c -o conftest.o && test -f conftest.o ; then
         if test `grep -l BIGenDianSyS conftest.o` ; then
-           echo $ac_n ' big endian probe OK, ' 1>&AC_FD_MSG
+           echo $ac_n ' big endian probe OK, ' 1>&AS_MESSAGE_FD
            ac_cv_c_bigendian=yes
         fi
         if test `grep -l LiTTleEnDian conftest.o` ; then
-           echo $ac_n ' little endian probe OK, ' 1>&AC_FD_MSG
+           echo $ac_n ' little endian probe OK, ' 1>&AS_MESSAGE_FD
            if test $ac_cv_c_bigendian = yes ; then
             ac_cv_c_bigendian=unknown;
            else
             ac_cv_c_bigendian=no
            fi
         fi
-        echo $ac_n 'guessing bigendian ...  ' >&AC_FD_MSG
+        echo $ac_n 'guessing bigendian ...  ' >&AS_MESSAGE_FD
      fi
+    fi
+    AC_MSG_RESULT($ac_cv_c_bigendian)
   fi
-AC_MSG_RESULT($ac_cv_c_bigendian)
-fi
-if test $ac_cv_c_bigendian = yes; then
-  AC_DEFINE(WORDS_BIGENDIAN, 1, [whether byteorder is bigendian])
-  BYTEORDER=4321
-else
-  BYTEORDER=1234
-fi
-AC_DEFINE_UNQUOTED(BYTEORDER, $BYTEORDER, [1234 = LIL_ENDIAN, 4321 = BIGENDIAN])
-if test $ac_cv_c_bigendian = unknown; then
-  AC_MSG_ERROR(unknown endianess - sorry, please pre-set ac_cv_c_bigendian)
-fi
+  if test $ac_cv_c_bigendian = yes; then
+    AC_DEFINE(WORDS_BIGENDIAN, 1, [whether byteorder is bigendian])
+    BYTEORDER=4321
+  else
+    BYTEORDER=1234
+  fi
+  AC_DEFINE_UNQUOTED(BYTEORDER, $BYTEORDER, 
+    [1234 = LIL_ENDIAN, 4321 = BIGENDIAN])
+  if test $ac_cv_c_bigendian = unknown; then
+    AC_MSG_ERROR(unknown endianess - sorry, please pre-set ac_cv_c_bigendian)
+  fi
 ])
 
 
@@ -281,7 +293,7 @@ fi
 
 
 ### initialize
-AC_INIT([rngWELL], 0.10-6, [christophe.dutang@ensimag.fr])
+AC_INIT([rngWELL],[0.10-7],[christophe.dutang@ensimag.fr])
 
 ### check header (1st arg), preprocessor @DEFS@ (2nd arg) if found, nothing if not found (3rd arg) 
 AC_CHECK_HEADER([sys/time.h], 
@@ -308,7 +320,7 @@ AC_CHECK_SIZEOF(unsigned long long, 8)
 ### http://softwarecommunity.intel.com/articles/eng/2978.htm
 #AX_EXT()
 
-AC_CONFIG_HEADER([src/config.h])
+AC_CONFIG_HEADERS([src/config.h])
 AC_OUTPUT
 
 ### many ideas taken from configure.ac file of package foreign
@@ -317,10 +329,8 @@ AC_OUTPUT
 ### http://www.gnu.org/software/autoconf/manual/html_node/Autoconf-Language.html
 ###
 ### to check the config file, use in this order the 3 following command in the top directory
+### >autoreconf --warnings=obsolete
 ### >autoheader
 ### >autoconf
 ### >./configure
 ### and open src/config.h
-
-
-
