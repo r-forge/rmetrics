@@ -2,7 +2,11 @@
 
 Version 0.10-7
 =============
-- new devel version
+- fix warnings of autoconf for configure files showed by 
+> autoreconf --warnings=obsolete (previous output)
+configure.ac:299: warning: The macro `AC_TRY_COMPILE' is obsolete.
+configure.ac:299: warning: The macro `AC_FD_MSG' is obsolete.
+configure.ac:310: warning: The macro `AC_CONFIG_HEADER' is obsolete.
 
 Version 0.10-6
 =============

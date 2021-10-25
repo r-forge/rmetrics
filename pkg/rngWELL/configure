@@ -3466,59 +3466,78 @@ then :
   printf %s "(cached) " >&6
 else $as_nop
   ac_cv_c_bigendian=unknown
-# See if sys/param.h defines the BYTE_ORDER macro.
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+    # See if sys/param.h defines the BYTE_ORDER macro.
+    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 #include <sys/types.h>
-#include <sys/param.h>
+        #include <sys/param.h>
 int
 main (void)
 {
 
-#if !BYTE_ORDER || !BIG_ENDIAN || !LITTLE_ENDIAN
- bogus endian macros
-#endif
+        #if !BYTE_ORDER || !BIG_ENDIAN || !LITTLE_ENDIAN
+        bogus endian macros
+        #endif
   ;
   return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_compile "$LINENO"
 then :
   # It does; now see whether it defined to BIG_ENDIAN or not.
-_au_m4_changequote(,)cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 #include <sys/types.h>
-#include <sys/param.h>
+            #include <sys/param.h>
+int
+main (void)
+{
+
+            #if BYTE_ORDER != BIG_ENDIAN
+            not big endian
+            #endif
+  ;
+  return 0;
+}
+
 _ACEOF
 if ac_fn_c_try_compile "$LINENO"
 then :
-
-#if BYTE_ORDER != BIG_ENDIAN
- not big endian
-#endif
-else $as_nop
   ac_cv_c_bigendian=yes
+else $as_nop
+  ac_cv_c_bigendian=no
 fi
 rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+
 fi
 rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-if test $ac_cv_c_bigendian = unknown; then
-if test "$cross_compiling" = yes
+    if test $ac_cv_c_bigendian = unknown; then
+      if test "$cross_compiling" = yes
 then :
-   echo $ac_n "cross-compiling... " 2>&_au_m4_changequote(,)
+   echo $ac_n "cross-compiling... " 2>&6
+
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-main () {
-  /* Are we little or big endian?  From Harbison&Steele.  */
-  union
-  {
-    long l;
-    char c[sizeof (long)];
-  } u;
-  u.l = 1;
-  exit (u.c[sizeof (long) - 1] == 1);
+
+int
+main (void)
+{
+{
+          /* Are we little or big endian?  From Harbison&Steele.  */
+          union
+          {
+            long l;
+            char c[sizeof (long)];
+          } u;
+          u.l = 1;
+          exit (u.c[sizeof (long) - 1] == 1);
+          }
+  ;
+  return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_run "$LINENO"
 then :
@@ -3530,57 +3549,65 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
   conftest.$ac_objext conftest.beam conftest.$ac_ext
 fi
 
-fi
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_bigendian" >&5
-printf "%s\n" "$ac_cv_c_bigendian" >&6; }
-if test $ac_cv_c_bigendian = unknown; then
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking to probe for byte ordering" >&5
-printf %s "checking to probe for byte ordering... " >&6; }
+    fi
 
-cat >conftest.c <<EOF
-short ascii_mm[] = { 0x4249, 0x4765, 0x6E44, 0x6961, 0x6E53, 0x7953, 0 };
-short ascii_ii[] = { 0x694C, 0x5454, 0x656C, 0x6E45, 0x6944, 0x6E61, 0 };
-void _ascii() { char* s = (char*) ascii_mm; s = (char*) ascii_ii; }
-short ebcdic_ii[] = { 0x89D3, 0xE3E3, 0x8593, 0x95C5, 0x89C4, 0x9581, 0 };
-short ebcdic_mm[] = { 0xC2C9, 0xC785, 0x95C4, 0x8981, 0x95E2, 0xA8E2, 0 };
-void _ebcdic() { char* s = (char*) ebcdic_mm; s = (char*) ebcdic_ii; }
-int main() { _ascii (); _ebcdic (); return 0; }
-EOF
- if test -f conftest.c ; then
-     if ${CC-cc} -c conftest.c -o conftest.o && test -f conftest.o ; then
-        if test `grep -l BIGenDianSyS conftest.o` ; then
-           echo $ac_n ' big endian probe OK, ' 1>&6
-           ac_cv_c_bigendian=yes
-        fi
-        if test `grep -l LiTTleEnDian conftest.o` ; then
-           echo $ac_n ' little endian probe OK, ' 1>&6
-           if test $ac_cv_c_bigendian = yes ; then
-            ac_cv_c_bigendian=unknown;
-           else
-            ac_cv_c_bigendian=no
-           fi
-        fi
-        echo $ac_n 'guessing bigendian ...  ' >&6
-     fi
-  fi
+
+fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_bigendian" >&5
 printf "%s\n" "$ac_cv_c_bigendian" >&6; }
-fi
-if test $ac_cv_c_bigendian = yes; then
+  if test $ac_cv_c_bigendian = unknown; then
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking to probe for byte ordering" >&5
+printf %s "checking to probe for byte ordering... " >&6; }
+    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+
+      cat >conftest.c <<EOF
+      short ascii_mm = { 0x4249, 0x4765, 0x6E44, 0x6961, 0x6E53, 0x7953, 0 };
+      short ascii_ii = { 0x694C, 0x5454, 0x656C, 0x6E45, 0x6944, 0x6E61, 0 };
+      void _ascii() { char* s = (char*) ascii_mm; s = (char*) ascii_ii; }
+      short ebcdic_ii = { 0x89D3, 0xE3E3, 0x8593, 0x95C5, 0x89C4, 0x9581, 0 };
+      short ebcdic_mm = { 0xC2C9, 0xC785, 0x95C4, 0x8981, 0x95E2, 0xA8E2, 0 };
+      void _ebcdic() { char* s = (char*) ebcdic_mm; s = (char*) ebcdic_ii; }
+      int main() { _ascii (); _ebcdic (); return 0; }
+      EOF
+
+
+_ACEOF
+    if test -f conftest.c ; then
+     if ${CC-cc} -c conftest.c -o conftest.o && test -f conftest.o ; then
+      if test `grep -l BIGenDianSyS conftest.o` ; then
+         echo $ac_n ' big endian probe OK, ' 1>&6
+         ac_cv_c_bigendian=yes
+      fi
+      if test `grep -l LiTTleEnDian conftest.o` ; then
+         echo $ac_n ' little endian probe OK, ' 1>&6
+         if test $ac_cv_c_bigendian = yes ; then
+          ac_cv_c_bigendian=unknown;
+         else
+          ac_cv_c_bigendian=no
+         fi
+      fi
+      echo $ac_n 'guessing bigendian ...  ' >&6
+     fi
+    fi
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_bigendian" >&5
+printf "%s\n" "$ac_cv_c_bigendian" >&6; }
+  fi
+  if test $ac_cv_c_bigendian = yes; then
 
 printf "%s\n" "#define WORDS_BIGENDIAN 1" >>confdefs.h
 
-  BYTEORDER=4321
-else
-  BYTEORDER=1234
-fi
+    BYTEORDER=4321
+  else
+    BYTEORDER=1234
+  fi
 
 printf "%s\n" "#define BYTEORDER $BYTEORDER" >>confdefs.h
 
-if test $ac_cv_c_bigendian = unknown; then
-  as_fn_error please pre-set ac_cv_c_bigendian "unknown endianess - sorry" "$LINENO" 5
-fi
+  if test $ac_cv_c_bigendian = unknown; then
+    as_fn_error please pre-set ac_cv_c_bigendian "unknown endianess - sorry" "$LINENO" 5
+  fi
 
 
 ### check sizeof of unsigned long long
@@ -3625,6 +3652,7 @@ printf "%s\n" "#define SIZEOF_UNSIGNED_LONG_LONG $ac_cv_sizeof_unsigned_long_lon
 #AX_EXT()
 
 ac_config_headers="$ac_config_headers src/config.h"
+
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -4644,10 +4672,12 @@ fi
 ### http://www.gnu.org/software/autoconf/manual/autoconf-2.57/html_node/autoconf.html
 ### http://www.gnu.org/software/autoconf/manual/html_node/Autoconf-Language.html
 ###
-### to check the config file, use in this order the 3 following command in the top directory
+### to check the config file, use
 ### >autoreconf --warnings=obsolete
+### to make the config file, use in this order the 3 following command in the top directory
 ### >autoheader
 ### >autoconf
 ### >./configure
 ### and open src/config.h
+
 
