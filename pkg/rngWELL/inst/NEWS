@@ -1,5 +1,9 @@
 === rngWELL: WELL random number generators ===
 
+Version 0.10-8
+=============
+- new devel version
+
 Version 0.10-7
 =============
 - fix warnings of autoconf for configure files showed by 
