@@ -1,8 +1,17 @@
 === randtoolbox: an R package for random number generation and testing ===
 
-Version 1.30.2
+Version 1.31.0
 =============
-- Starting QRNG from 0, see https://arxiv.org/abs/2008.08051 by Art Owen
+- increase argument checks in QRNG
+- allows to start QRNG from 0, see https://arxiv.org/abs/2008.08051 by Art Owen,
+a warning is raised when start != 0.
+- fix warnings of autoconf for configure files showed by 
+> autoreconf --warnings=obsolete (previous output)
+configure.ac:310: warning: The macro `AC_TRY_COMPILE' is obsolete.
+configure.ac:310: warning: The macro `AC_TRY_RUN' is obsolete.
+configure.ac:310: warning: The macro `AC_FD_MSG' is obsolete.
+configure.ac:321: warning: The macro `AC_CONFIG_HEADER' is obsolete.
+- fix invalid URLs (from http to https)
 
 Version 1.30.1
 =============
@@ -43,7 +52,7 @@ NOTE FIX
 NOTEs, better registration of native routines and reduced
 symbol visibility.
 
-Version 1.17 and 1.17.1
+Versions 1.17 and 1.17.1
 =============
 - change DESCRIPTION file.
 - update NAMESPACE for R 3.3.0.

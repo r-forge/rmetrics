@@ -12,18 +12,18 @@
 }
 \usage{
 halton(n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE, 
-                    mixed = FALSE, method="C", mexp = 19937)
+                    mixed = FALSE, method = "C", mexp = 19937, start = 0)
 sobol(n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal = FALSE,
-                   mixed = FALSE, method="Fortran", mexp = 19937)
+                   mixed = FALSE, method = "Fortran", mexp = 19937, start = 1)
 torus(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE, 
-                  normal=FALSE, mexp = 19937)
+                  normal = FALSE, mexp = 19937, start = 1)
 }
 \arguments{
   \item{n}{number of observations. If length(n) > 1, 
   	the length is taken to be the required number.}
   \item{dim}{dimension of observations default 1.}
-  \item{init}{a logical, if TRUE the sequence is initialized and 
-	restarts, otherwise not. By default \code{TRUE}.}
+  \item{init}{a logical, if \code{TRUE} the sequence is initialized and 
+	restarts to the \code{start} value, otherwise not. By default \code{TRUE}.}
   \item{normal}{a logical if normal deviates are needed, default \code{FALSE}.}
   \item{scrambling}{
 	    an integer value, if 1, 2 or 3 the sequence is scrambled
@@ -35,8 +35,7 @@ torus(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE,
         an integer value, the random seed for initialization
         of the scrambling process (only for \code{sobol}
         with \code{scrambling>0}). 
-        If \code{NULL}, set to \code{4711}. 
-        }
+        If \code{NULL}, set to \code{4711}. }
   \item{prime}{a single prime number or a vector of prime numbers to be used
   		 in the Torus sequence. (optional argument).}
   \item{mixed}{a logical to combine the QMC algorithm with the SFMT algorithm, default \code{FALSE}.}
@@ -47,14 +46,17 @@ torus(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE,
       Note that \code{mixed=TRUE} is only available when \code{method="C"}.}		 
   \item{mexp}{an integer for the Mersenne exponent of SFMT algorithm,
       only used when \code{mixed=TRUE}.}    
+  \item{start}{an integer to initiliaze the sequence, default to 1,
+      only used when \code{init=TRUE}.}    
 }
 \details{
 
 The currently available generator are given below.
 Whatever the sequence, when \code{normal=TRUE}, outputs are transformed with
-the standard normal quantile (\code{qnorm}).
+the quantile of the standard normal distribution \code{\link{qnorm}}.
 If \code{init=TRUE}, the default, unscrambled and unmixed-SFMT quasi-random 
-sequences start from (0,\dots,0) as recommended by Owen (2020).
+sequences start from \code{start}.
+If \code{start != 0}, we raise a warning as 0 is recommended by Owen (2020).
 
 \describe{
     \item{\bold{Torus algorithm:}}{

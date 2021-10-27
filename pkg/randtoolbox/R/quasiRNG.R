@@ -6,7 +6,7 @@
 # @author Diethelm Wuertz 
 #
 # Copyright (C) 2009, Diethelm Wuertz, ETH Zurich. 
-# Copyright (C) 2020, Christophe Dutang, 
+# Copyright (C) 2009-2021, Christophe Dutang, 
 # Christophe Dutang, see http://dutangc.free.fr
 # All rights reserved.
 #
@@ -52,24 +52,34 @@
 ### quasi random generation ###
 
 torus <- function(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE, 
-                  normal=FALSE, mexp = 19937)
+                  normal=FALSE, mexp = 19937, start = 1)
 {
   ## Check arguments
   if(is.array(n) || !is.numeric(n))
     stop("invalid argument 'n'")
-  if(length(dim) >1)
+  if(length(dim) >  1)
     stop("invalid argument 'dim'")
   if(dim < 1 || dim > 100000)
     stop("invalid argument 'dim'")
-  if(!is.logical(usetime))
-    stop("invalid argument 'usetime'")
+  if(!is.logical(init))
+    stop("invalid argument 'init'")
   if(!is.logical(mixed))
     stop("invalid argument 'mixed'")
+  if(!is.logical(usetime))
+    stop("invalid argument 'usetime'")
+  if(!is.logical(normal))
+    stop("invalid argument 'normal'")
+  if(!is.numeric(mexp))
+    stop("invalid argument 'mexp'")
+  if(!is.numeric(start))
+    stop("invalid argument 'start'")
   
   if(missing(prime)) 
     prime <- NULL
   else
   {
+    if(!is.numeric(prime))
+      stop("invalid argument 'prime'")
     if(any(prime < 0) || !is.vector(prime))
       stop("invalid argument 'prime'")
     
@@ -84,21 +94,24 @@ torus <- function(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE
   
   ## Restart Settings:
   if(init) 
-    .setrandtoolboxEnv(.torus.seed = list(offset = 0))
+    .setrandtoolboxEnv(.torus.seed = list(offset = as.integer(start)))
   if(!exists(".torus.seed", envir=.randtoolboxEnv, mode="list"))
     stop("Torus algorithm not initialized.")
   
   ## Compute        
   nb <- ifelse(length(n)>1, length(n), n)
-  if(nb < 0) stop("invalid argumet 'n'")
+  if(nb < 0) stop("invalid argument 'n'")
   if(nb == 0) return(numeric(0))
   startpt <- .getrandtoolboxEnv(".torus.seed")$offset
+  
+  if(init && start != 0) 
+    warning("You should start your sequence from 0 as recommended by Owen (2020).")
   
   #implemented in src/randtoolbox.c
   res <- .Call(CF_doTorus, nb, dim, prime, startpt, mixed, usetime, mexp)
   
   if(any(res > 1 | res < 0))
-    warning("A call to torus() generate numerics outside (0,1).")
+    warning("A call to torus() generate numerics outside [0,1).")
   
   ## Normal transformation
   if(normal)
@@ -122,21 +135,30 @@ get.primes <- function(n)
 
 #(n, dim = 1, prime, init = TRUE, usetime = FALSE, normal=FALSE)
 halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE, 
-                    mixed = FALSE, method="C", mexp = 19937)
+                    mixed = FALSE, method="C", mexp = 19937, start = 0)
 {   
   # A function based on Diethelm Wuertz's code
   
+  ## Check arguments
   if(is.array(n) || !is.numeric(n))
     stop("invalid argument 'n'")
-  if(length(dim) >1)
-    stop("invalid argument 'dim'")   
+  if(length(dim) >  1)
+    stop("invalid argument 'dim'")
   if(dim < 1 || dim > 100000)
     stop("invalid argument 'dim'")
-  method <- match.arg(method, c("C", "Fortran"))
-  if(!is.logical(usetime))
-    stop("invalid argument 'usetime'")
+  if(!is.logical(init))
+    stop("invalid argument 'init'")
   if(!is.logical(mixed))
     stop("invalid argument 'mixed'")
+  if(!is.logical(usetime))
+    stop("invalid argument 'usetime'")
+  if(!is.logical(normal))
+    stop("invalid argument 'normal'")
+  if(!is.numeric(start))
+    stop("invalid argument 'start'")
+  if(!is.numeric(mexp))
+    stop("invalid argument 'mexp'")
+  method <- match.arg(method, c("C", "Fortran"))
   
   # Description:
   #   Uniform Halton Low Discrepancy Sequence
@@ -150,7 +172,7 @@ halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE,
     start <- as.numeric(Sys.time())
   else
   {
-    start <- 0
+    start <- as.integer(start)
   }
   
   # Restart Settings:
@@ -160,12 +182,17 @@ halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE,
     stop("Halton algorithm not initialized.")
   
   nb <- ifelse(length(n)>1, length(n), n)
-  if(nb < 0) stop("invalid argumet 'n'")
+  if(nb < 0) stop("invalid argument 'n'")
   if(nb == 0) return(numeric(0))
   rngEnv <- .getrandtoolboxEnv(".halton.seed")
   
+  if(init && start != 0) 
+    warning("You should start your sequence from 0 as recommended by Owen (2020).")
+  
   if(method == "Fortran")
   {  
+    if(init && start != 0 && start != 1) 
+      warning("start argument is ignored.")
     # Generate:
     qn <- numeric(nb * dim)
     
@@ -186,14 +213,15 @@ halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE,
     # Deviates:
     result <- matrix(result_fortran[["qn"]], ncol = dim)
     
-    #add 0 for starting point, decrease offset (eventually used if init=FALSE)
-    if(!usetime && init) 
+    #add 0 for starting point, decrease offset
+    if(!usetime && init && start == 0) 
     {
       if(dim == 1)
         result <- c(0, result[-nb])
       else
         result <- rbind(0, result[-nb,])
-      lshift <- list(base = result_fortran[["base"]], offset=result_fortran[["offset"]]-1)
+      lshift <- list("base" = result_fortran[["base"]], 
+                     "offset" = result_fortran[["offset"]]-1)
       .setrandtoolboxEnv(.halton.seed = lshift)
     }
     
@@ -207,11 +235,13 @@ halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE,
     #implemented in src/randtoolbox.c
     result <- .Call(CF_doHalton, nb, dim, rngEnv$offset, mixed, usetime, mexp)
     # For the next numbers save (only used if init=FALSE in the next call)
-    .setrandtoolboxEnv(.halton.seed = list("base"=get.primes(dim), "offset"=rngEnv$offset+nb))
+    lshift <- list("base" = get.primes(dim), 
+                   "offset" = rngEnv$offset+nb)
+    .setrandtoolboxEnv(.halton.seed = lshift)
   }
   
   if(any(result > 1 | result < 0))
-    warning("A call to halton() generate numerics outside (0,1).")
+    warning("A call to halton() generate numerics outside [0,1).")
   
   ## Normal transformation
   if(normal)
@@ -229,23 +259,38 @@ runif.halton <- halton
 
 
 sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal = FALSE,
-                   mixed = FALSE, method="Fortran", mexp = 19937)
+                   mixed = FALSE, method="Fortran", mexp = 19937, start = 1)
 {   
-  # A function implemented by Diethelm Wuertz
+  ## Check arguments
   if(is.array(n) || !is.numeric(n))
     stop("invalid argument 'n'")
-  if(length(dim) >1)
-    stop("invalid argument 'dim'")    
+  if(length(dim) >  1)
+    stop("invalid argument 'dim'")
   if(dim < 1 || dim > 1111) #prepare the future release
     stop("invalid argument 'dim'")
+  if(!is.logical(init))
+    stop("invalid argument 'init'")
+  if(!is.logical(mixed))
+    stop("invalid argument 'mixed'")
+  if(!is.logical(normal))
+    stop("invalid argument 'normal'")
+  if(!is.numeric(start))
+    stop("invalid argument 'start'")
   if( !any(scrambling == 0:3) )
-    stop("invalid argument 'scrambling'")    
+    stop("invalid argument 'scrambling'")   
+  if(!is.numeric(mexp))
+    stop("invalid argument 'mexp'")
   method <- match.arg(method, c("C", "Fortran"))
-  maxit <- 100 #for scrambled sequences when sobol_fortran() generates numbers outside [0,1)
+  
+  #for scrambled sequences when sobol_fortran() generates numbers outside [0,1)
+  maxit <- 100 
   
   nb <- ifelse(length(n)>1, length(n), n)
-  if(nb < 0) stop("invalid argumet 'n'")
+  if(nb < 0) stop("invalid argument 'n'")
   if(nb == 0) return(numeric(0))
+  
+  if(init && start != 0) 
+    warning("You should start your sequence from 0 as recommended by Owen (2020).")
   
   scramblmixed <- scrambling > 0 || mixed
   
@@ -262,7 +307,7 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
     if(mixed)
       seed <- as.integer((2^32-1)*runif(1))
     else
-      seed <- 0 #default value for non-mixed SFMT
+      seed <- 0 #default value for pure QMC
   }
   
   if(method == "Fortran")
@@ -305,8 +350,9 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
       F_sobol <- TRUE
       # Deviates:
       sobolres <- matrix(result[[1]], ncol = dim)
-    }else # start from 0
+    }else if(init && start == 0) #init = TRUE, use starting point 0
     {
+      
       if(nb > 1)
       {
         # Generate nb-1 points
@@ -340,8 +386,33 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
         F_sobol <- FALSE
         sobolres <- matrix(0, ncol=dim)
       }
-     }
+    }else if(init && start == 1) #init = TRUE, use starting 1 
+    {
+      # Generate nb points
+      qn <- numeric(nb * dim)
+      
+      #  SUBROUTINE SOBOL_F(QN, N, DIMEN, QUASI, LL, COUNT, SV, IFLAG, iSEED, INIT, TRANSFORM)
+      #implemented in src/LowDiscrepancy.f
+      result <- .Fortran(CF_sobol_f,
+                         as.double( qn ),
+                         as.integer( nb ),
+                         as.integer( dim ),
+                         as.double ( .getrandtoolboxEnv(".sobol.seed")$quasi ),
+                         as.integer( .getrandtoolboxEnv(".sobol.seed")$ll ),
+                         as.integer( .getrandtoolboxEnv(".sobol.seed")$count ),
+                         as.integer( .getrandtoolboxEnv(".sobol.seed")$sv ),
+                         as.integer( scrambling ),
+                         as.integer( .getrandtoolboxEnv(".sobol.seed")$seed ),
+                         as.integer( init ),
+                         as.integer( 0 ),
+                         PACKAGE = "randtoolbox")
+      F_sobol <- TRUE
+      # Deviates:
+      sobolres <- matrix(result[[1]], ncol = dim)
+    }else 
+      stop("wrong start value.")
     
+    #check value inside [0,1)
     if(scramblmixed)
     {  
       if(any(sobolres >= 1 | sobolres < 0))
@@ -369,7 +440,7 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
           sobolres <- matrix(result[[1]], ncol = dim)
         }
         if(iter == maxit)
-          stop("100 calls to sobol() have all generated (some) numerics outside (0,1), so we resign.")
+          stop("100 calls to sobol() have all generated (some) numerics outside [0,1), so we resign.")
         #=> else appropriate seed found
         
       }
