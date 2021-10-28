@@ -11,12 +11,13 @@
 	the Torus algorithm, the Sobol and Halton sequences.
 }
 \usage{
-halton(n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE, 
-                    mixed = FALSE, method = "C", mexp = 19937, start = 0)
-sobol(n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal = FALSE,
-                   mixed = FALSE, method = "Fortran", mexp = 19937, start = 1)
 torus(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE, 
                   normal = FALSE, mexp = 19937, start = 1)
+sobol(n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal = FALSE,
+                   mixed = FALSE, method = "Fortran", mexp = 19937, start = 1,
+                   maxit = 10)
+halton(n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE, 
+                    mixed = FALSE, method = "C", mexp = 19937, start = 1)
 }
 \arguments{
   \item{n}{number of observations. If length(n) > 1, 
@@ -47,7 +48,10 @@ torus(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE,
   \item{mexp}{an integer for the Mersenne exponent of SFMT algorithm,
       only used when \code{mixed=TRUE}.}    
   \item{start}{an integer to initiliaze the sequence, default to 1,
-      only used when \code{init=TRUE}.}    
+      only used when \code{init=TRUE}.}
+  \item{maxit}{a positive integer used to control inner loops both
+      for generating randomized seed and for controlling
+      outputs (when needed).}    
 }
 \details{
 
@@ -56,7 +60,10 @@ Whatever the sequence, when \code{normal=TRUE}, outputs are transformed with
 the quantile of the standard normal distribution \code{\link{qnorm}}.
 If \code{init=TRUE}, the default, unscrambled and unmixed-SFMT quasi-random 
 sequences start from \code{start}.
-If \code{start != 0}, we raise a warning as 0 is recommended by Owen (2020).
+If \code{start != 0} and \code{normal=FALSE}, 
+we suggest to use 0 as recommended by Owen (2020). 
+One must handle the starting value (0) correctly if a quantile
+function of a not-lower-bounded distribution is used.
 
 \describe{
     \item{\bold{Torus algorithm:}}{

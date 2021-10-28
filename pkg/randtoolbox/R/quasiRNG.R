@@ -104,8 +104,9 @@ torus <- function(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE
   if(nb == 0) return(numeric(0))
   startpt <- .getrandtoolboxEnv(".torus.seed")$offset
   
-  if(init && start != 0) 
-    warning("You should start your sequence from 0 as recommended by Owen (2020).")
+  #not necessary
+  #if(init && start != 0 && !normal) 
+  #  warning("You should start your sequence from 0 as recommended by Owen (2020).")
   
   #implemented in src/randtoolbox.c
   res <- .Call(CF_doTorus, nb, dim, prime, startpt, mixed, usetime, mexp)
@@ -135,7 +136,7 @@ get.primes <- function(n)
 
 #(n, dim = 1, prime, init = TRUE, usetime = FALSE, normal=FALSE)
 halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE, 
-                    mixed = FALSE, method="C", mexp = 19937, start = 0)
+                    mixed = FALSE, method="C", mexp = 19937, start = 1)
 {   
   # A function based on Diethelm Wuertz's code
   
@@ -186,8 +187,9 @@ halton <- function (n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE,
   if(nb == 0) return(numeric(0))
   rngEnv <- .getrandtoolboxEnv(".halton.seed")
   
-  if(init && start != 0) 
-    warning("You should start your sequence from 0 as recommended by Owen (2020).")
+  #not necessary
+  #if(init && start != 0 && !normal) 
+  #  warning("You should start your sequence from 0 as recommended by Owen (2020).")
   
   if(method == "Fortran")
   {  
@@ -259,7 +261,8 @@ runif.halton <- halton
 
 
 sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal = FALSE,
-                   mixed = FALSE, method="Fortran", mexp = 19937, start = 1)
+                   mixed = FALSE, method="Fortran", mexp = 19937, start = 1,
+                   maxit = 10)
 {   
   ## Check arguments
   if(is.array(n) || !is.numeric(n))
@@ -280,17 +283,21 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
     stop("invalid argument 'scrambling'")   
   if(!is.numeric(mexp))
     stop("invalid argument 'mexp'")
+  if(!is.numeric(maxit))
+    stop("invalid argument 'maxit'")
   method <- match.arg(method, c("C", "Fortran"))
   
   #for scrambled sequences when sobol_fortran() generates numbers outside [0,1)
-  maxit <- 100 
+  if(maxit <= 0 || maxit > 1e3)
+    stop("maxit should be a positive integer below 1000.")
   
   nb <- ifelse(length(n)>1, length(n), n)
   if(nb < 0) stop("invalid argument 'n'")
   if(nb == 0) return(numeric(0))
   
-  if(init && start != 0) 
-    warning("You should start your sequence from 0 as recommended by Owen (2020).")
+  #not necessary
+  #if(init && start != 0 && !normal) 
+  #  warning("You should start your sequence from 0 as recommended by Owen (2020).")
   
   scramblmixed <- scrambling > 0 || mixed
   
@@ -305,9 +312,19 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
   }else if(scrambling == 0)
   {
     if(mixed)
-      seed <- as.integer((2^32-1)*runif(1))
-    else
+    {
+      seed <- as.integer(round(2^30*runif(1)))
+      iter <- 0
+      while(is.na(seed) && iter < maxit)
+      {
+        iter <- iter + 1
+        seed <- as.integer(round(2^30*runif(1)))
+      }
+      if(iter == maxit)
+        stop("100 calls to as.integer(round(2^30*runif(1))) have all generated NA, so we resign.") 
+    }else
       seed <- 0 #default value for pure QMC
+    
   }
   
   if(method == "Fortran")
