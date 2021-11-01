@@ -1,5 +1,9 @@
 === randtoolbox: an R package for random number generation and testing ===
 
+Version 1.31.2
+=============
+- start new devel version.
+
 Version 1.31.1
 =============
 - clean up test files because tests/test-sobol-scram.R failed 
