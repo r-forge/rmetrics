@@ -4,6 +4,10 @@
 	*	   HyperbolicDist News			 *
 	*						 *
 	**************************************************
+VERSION 0.6-4
+
+  o	Added imports from base R after notification from CRAN	
+
 VERSION 0.6-3
 
   o	Correction to logHist not passing breaks argument to call to 

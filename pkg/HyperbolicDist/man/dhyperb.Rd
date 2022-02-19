@@ -56,7 +56,7 @@ hyperbBreaks(Theta, small = 10^(-6), tiny = 10^(-10), deriv = 0.3, ...)
 \details{
   The hyperbolic distribution has density
 
-  \deqn{f(x)=\frac{1}{2\sqrt{1+\pi^2}K_1(\zeta)} %
+  \deqn{f(x)=\frac{1}{2\delta\sqrt{1+\pi^2}K_1(\zeta)} %
     e^{-\zeta[\sqrt{1+\pi^2}\sqrt{1+(\frac{x-\mu}{\delta})^2}-%
     \pi\frac{x-\mu}{\delta}]}}{ %
   f(x)=1/(2 sqrt(1+pi^2) K_1(zeta)) %
@@ -67,7 +67,7 @@ hyperbBreaks(Theta, small = 10^(-6), tiny = 10^(-10), deriv = 0.3, ...)
 
   A succinct description of the hyperbolic distribution is given in
   Barndorff-Nielsen and \enc{Blæsild}{Blaesild} (1983). Three different
-  possibleparameterisations are described in that paper. A fourth
+  possible parameterisations are described in that paper. A fourth
   parameterization is given in Prause (1999). All use location and scale
   parameters \eqn{\mu}{mu} and \eqn{\delta}{delta}. There are two other
   parameters in each case.
