@@ -11,7 +11,7 @@
   A vector of 202 observations.
 }
 \source{
-  \url{http://www.globalfindata.com}
+  \url{https://globalfinancialdata.com}
 }
 \references{
   Brown, Barry W., Spears, Floyd M. and Levy, Lawrence B. (2002)
