@@ -34,8 +34,8 @@ hyperbCvMTestPValue <- function(xi, chi, Wsq, digits = 3){
   exactChi <- FALSE
   exactXi <- FALSE
   warn <- c(FALSE, FALSE)
-  data(hyperbWSqTable)
-  wsqTable <- hyperbWSqTable
+  data(hyperbWSqTable, envir = environment())
+  wsqTable <- get("hyperbWSqTable", envir = environment())
   if(abs(chi) > xi ) stop ("Chi must be less than or equal to Xi")
   tol <- .Machine$double.eps
   if(chi > 0.8){

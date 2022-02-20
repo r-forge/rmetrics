@@ -12,7 +12,7 @@ Distribution}
   intended to be accessed by the user. It is loaded automatically when
   the package \code{HyperbolicDist} is invoked.
 }
-\usage{data(hyperbWSqTable)}
+
 \format{
   The \code{hyperbWSqTable} matrix has 55 rows and 5 columns, giving
   percentage points of \eqn{W^2}{W^2} for different values of

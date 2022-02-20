@@ -71,8 +71,7 @@ momIntegrated <- function(densFn, order, param = NULL, about = 0,
                          dgamma(x, shape = param[1], rate = param[2])
                  }
              }
-         } else  if (distname == "invgamma" ||
-                     distname == "inverse gamma"){
+         } else  if (distname == "invgamma" || distname == "inverse gamma"){
              if (is.null(param)) {
                  param <- c(-1,1)
              }
@@ -82,10 +81,10 @@ momIntegrated <- function(densFn, order, param = NULL, about = 0,
              low <- 0
              dinvgamma <- function(x, shape, rate = 1, scale = 1/rate){
                  dens <- ifelse(x <= 0, 0,
-                                (scale/x)^shape*exp(-scale/x)/(x*gamma(shape)))
+                 (scale/x)^shape*exp(-scale/x)/(x*gamma(shape)))
                  return(dens)
              }
-
+             
              if (absolute == FALSE) {
                  ddist <- function(x, order, param, about) {
                      (x - about)^order *
@@ -97,30 +96,14 @@ momIntegrated <- function(densFn, order, param = NULL, about = 0,
                          dinvgamma(x, shape = param[1], rate = param[2])
                  }
              }
-
-
-         } else if (distname == "vg" || distname == "variance gamma") {
-             if (!exists("dvg", mode = "function")){
-                 stop("package Variance Gamma needs to be loaded")
-             }
-             if (is.null(param)) {
-                 param <- c(0,1,0,1)
-             }
-             if (absolute == FALSE) {
-                 ddist <- function(x, order, param, about) {
-                     (x - about)^order * dvg(x, param = param)
-                 }
-             } else {
-                 ddist <- function(x, order, param, about) {
-                     abs(x - about)^order * dvg(x, param = param)
-                 }
-             }
          }
+         
      } else {
          if (is.function(densFn)) {
              stop("general density functions code not yet implemented")
          }
      }
+     
      mom <- integrate(ddist, low, high, param = param,
                       order = order, about = about,
                       subdivisions = 1000,

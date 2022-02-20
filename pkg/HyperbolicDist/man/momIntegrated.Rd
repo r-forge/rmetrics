@@ -63,10 +63,6 @@ momIntegrated(densFn, order, param = NULL, about = 0, absolute = FALSE)
   \code{rate}\eqn{=1/\theta}{=1/theta}. The default value for
   \code{param} is \code{c(-1,1)}.
 
-  When \code{densFn="vg"} or \code{"variance gamma"} the density used is
-  \code{dvg} from the package \pkg{VarianceGamma}. In this case, the package
-  \pkg{VarianceGamma} must be loaded or an error will result. The
-  default value for \code{param} is \code{c(0,1,0,1)}.
 
 }
 \value{
@@ -77,8 +73,7 @@ momIntegrated(densFn, order, param = NULL, about = 0, absolute = FALSE)
         Christine Yang Dong \email{c.dong@auckland.ac.nz}}
 
 \seealso{\code{\link{dghyp}}, \code{\link{dhyperb}},
-  \code{\link{dgamma}}, \code{\link{dgig}},
-  \code{\link[VarianceGamma]{VarianceGamma}}
+  \code{\link{dgamma}}, \code{\link{dgig}}
 }
 \examples{
 ### Calculate the mean of a generalized hyperbolic distribution
