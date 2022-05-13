@@ -478,7 +478,7 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
     authorizedParam <- c(607, 1279, 2281, 4253, 11213, 19937, 44497, 86243, 132049, 216091)
     if( !(mexp %in% authorizedParam) )
       stop("'mexp' must be in {607, 1279, 2281, 4253, 11213, 19937, 44497, 86243, 132049, 216091}. ")
-    stop("sobol in C not yet implemented")
+    #stop("sobol in C not yet implemented")
     
     sobolres <- .Call(CF_doSobol, nb, dim, 0, FALSE, FALSE, mexp)
     

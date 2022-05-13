@@ -322,11 +322,17 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
   int ll;
   //unsigned long state;
   
-  int *sv; //possibly scrambled direction numbers
-  int maxbit=30; //maximum number of bits for direction numbers
-  //allocate temporary variables
-  sv = (int *) R_alloc(maxbit*dim, sizeof(int));
+  int *V; //generator
+  //maximum number of bits for direction numbers
+  int maxbit = 1 + floor(log(nb)/log(2.0));
   
+  Rprintf("maxbit %u\n", maxbit);
+  Rprintf("nb %u\n", nb);
+  Rprintf("dim %u\n", dim);
+  Rprintf("offset %u\n", offset);
+  
+  //allocate temporary variables
+  V = (int *) R_alloc(maxbit*dim, sizeof(int));
   
   if (!R_FINITE(nb) || !R_FINITE(dim))
     error(_("non finite argument"));
@@ -339,14 +345,15 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
   if(!isInit)
     randSeed();
   
-  INITSOBOL(dim, u, &ll, nb, sv, 0, seed);
+  //compute generator for each dimension
+  initgeneratorV(dim, maxbit, V);
   
   for(j = 0; j < dim; j++)
   {
     Rprintf("Direction %u\n", j);
-    for(i = 0; i < maxbit; i++)
-      Rprintf("%u,", sv[i + j * maxbit]);
-    Rprintf("\n");
+    for(i = 0; i < maxbit-1; i++)
+      Rprintf("%u,", V[i + j * maxbit]);
+    Rprintf("%u\n", V[maxbit-1 + j * maxbit]);
   }
   
   //u_ij is the Sobol sequence term

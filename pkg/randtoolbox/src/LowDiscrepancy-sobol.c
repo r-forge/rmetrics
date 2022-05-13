@@ -1,72 +1,44 @@
 /*
-C ##############################################################################
-C PART II: SOBOL SEQUENCE:
-C ##############################################################################
-
-
-C-------------------------------------------------------------------------- 
-C @file  LowDiscrepancy.f
-C @brief Sobol sequence
-C
-C @author Diethelm Wuertz 
-C @author Christophe Dutang
-C
-C Copyright (C) Aug. 2016, Christophe Dutang, C translation of the Fortran code
-C
-C Copyright (C) Apr. 2011, Christophe Dutang, remove implicit declaration: the code now pass
-C > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f 
-C without error.
-C
-C Copyright (C) Oct. 2009, Christophe Dutang, slightly modified (better accuracy and speed).
-C
-C Copyright (C) Sept. 2002, Diethelm Wuertz.
-C
-C The new BSD License is applied to this software.
-C Copyright (c) Diethelm Wuertz, ETH Zurich. All rights reserved.
-C Christophe Dutang, see http://dutangc.free.fr  
-C
-C      Redistribution and use in source and binary forms, with or without
-C      modification, are permitted provided that the followingConditions are
-C      met:
-C      
-C          - Redistributions of sourceCode must retain the aboveCopyright
-C          notice, this list ofConditions and the following disclaimer.
-C          - Redistributions in binary form must reproduce the above
-C         Copyright notice, this list ofConditions and the following
-C          disclaimer in the documentation and/or other materials provided
-C          with the distribution.
-C          - Neither the name of the ETH Zurich nor the names of itsContributors 
-C          may be used to endorse or promote products derived from this software 
-C          without specific prior written permission.
-C     
-C      THIS SOFTWARE IS PROVIDED BY THECOPYRIGHT HOLDERS ANDCONTRIBUTORS
-C      "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-C      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-C      A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THECOPYRIGHT
-C      OWNER ORCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-C      SPECIAL, EXEMPLARY, ORCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-C      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-C      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVERCAUSED AND ON ANY
-C      THEORY OF LIABILITY, WHETHER INCONTRACT, STRICT LIABILITY, OR TORT
-C      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-C      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-C  
-C-------------------------------------------------------------------------- 
-
-
-C     FUNCTIONS:
-C       SOBOL (QN, N, DIMEN, QUASI, 
-C           LL, COUNT, SV, 
-C           IFLAG, iSEED, INIT, TRANSFORM)
-C         REAL*8 FUNCTION SQNORM (P)
-C       INITSOBOL (DIMEN, QUASI, LL, COUNT, SV, IFLAG, iSEED)
-C         SGENSCRML (MAX, LSM, SHIFT, S, MAXCOL, iSEED)
-C         SGENSCRMU (USM, USHIFT, S, MAXCOL, iSEED)
-C           REAL*8 FUNCTION UNIS (iSEED)
-C       NEXTSOBOL (DIMEN, QUASI, LL, COUNT, SV)
-
-C-------------------------------------------------------------------------------
-*/
+##############################################################################
+ PART II: SOBOL SEQUENCE:
+##############################################################################
+ 
+ -------------------------------------------------------------------------- 
+ @brief Sobol sequence
+ 
+ @author Christophe Dutang
+ 
+ C The new BSD License is applied to this software.
+ C Christophe Dutang, see http://dutangc.free.fr  
+ C
+ C      Redistribution and use in source and binary forms, with or without
+ C      modification, are permitted provided that the followingConditions are
+ C      met:
+ C      
+ C          - Redistributions of sourceCode must retain the aboveCopyright
+ C          notice, this list ofConditions and the following disclaimer.
+ C          - Redistributions in binary form must reproduce the above
+ C         Copyright notice, this list ofConditions and the following
+ C          disclaimer in the documentation and/or other materials provided
+ C          with the distribution.
+ C          - Neither the name of the ETH Zurich nor the names of itsContributors 
+ C          may be used to endorse or promote products derived from this software 
+ C          without specific prior written permission.
+ C     
+ C      THIS SOFTWARE IS PROVIDED BY THECOPYRIGHT HOLDERS ANDCONTRIBUTORS
+ C      "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ C      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ C      A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THECOPYRIGHT
+ C      OWNER ORCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ C      SPECIAL, EXEMPLARY, ORCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ C      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ C      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVERCAUSED AND ON ANY
+ C      THEORY OF LIABILITY, WHETHER INCONTRACT, STRICT LIABILITY, OR TORT
+ C      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ C      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ C  
+ C-------------------------------------------------------------------------- 
+ */
 
 #include "LowDiscrepancy-sobol.h"
 
@@ -75,9 +47,9 @@ const int MAXDEG=13;
 const int MAXBIT=30;
 
 
-//INTEGER POLY(2:MAXDIM)
-static int POLY[1111] = {
-    3,7,11,13,19,25,37,59,47,61,55,41,67,97,91,
+
+static int primitpoly[MAXDIM] = {
+    1,3,7,11,13,19,25,37,59,47,61,55,41,67,97,91,
     109,103,115,131,193,137,145,143,241,157,185,167,229,171,213,
     191,253,203,211,239,247,285,369,299,301,333,351,355,357,361,
     391,397,425,451,463,487,501,529,539,545,557,563,601,607,617,
@@ -184,8 +156,7 @@ static int POLY[1111] = {
     16309,16355,16375,16381};
 
 //1111 rows and 13 columns so 14443 terms
-//VINIT(2:MAXDIM,MAXDEG)
-static int VINIT[14443] = {
+static int initmj[MAXDEG*MAXDIM] = {
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, //1st block of size 30
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -224,7 +195,7 @@ static int VINIT[14443] = {
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, //37
     1, //first 1111 numbers
-    0,0,1,3,1,3,3,1,3,1,3,1,3,1,1,3,1,3,1,3, //first zeros unused
+    0,0,1,3,1,3,3,1,3,1,3,1,3,1,1,3,1,3,1,3, //first zeros to be updated
     1,3,3,1,1,1,3,1,3,1,3,3,1,3,1,1,1,3,1,3,1,1,1,3,3,1,3,3,1,1,
     3,3,1,3,3,3,1,3,1,3,1,1,3,3,1,1,1,1,3,1,1,3,1,1,1,3,3,1,3,3,
     1,3,3,3,1,3,3,3,1,3,3,1,3,3,3,1,3,1,3,1,1,3,3,1,3,3,1,1,1,3,
@@ -263,7 +234,7 @@ static int VINIT[14443] = {
     1,1,3,1,1,1,3,1,1,3,1,3,3,3,3,3,1,1,1,3,3,3,3,1,3,3,3,3,1,1,
     3,3,3,1,3,1,1,3,3,1,3,3,1,1,1,1,1,3,1,1,3,3,1,1,1,3,1,1,3,3,
     1,3,3,3,3,3,3,3,3,1,1,3,3,1,1,3,1,3,3,3,3,3,1, //second 1111 numbers
-    0,0,0,7,5,1,3,3,7,5,5,7,7,1,3,3,7,5,1,1,5,3,7, //first zeros unused
+    0,0,0,7,5,1,3,3,7,5,5,7,7,1,3,3,7,5,1,1,5,3,7, //first zeros to be updated
     1,7,5,1,3,7,7,1,1,1,5,7,7,5,1,3,3,7,5,5,5,3,3,3,1,1,5,1,1,5,
     3,3,3,3,1,3,7,5,7,3,7,1,3,3,5,1,3,5,5,7,7,7,1,1,3,3,1,1,5,1,
     5,7,5,1,7,5,3,3,1,5,7,1,7,5,1,7,3,1,7,1,7,3,3,5,7,3,3,5,1,3,
@@ -302,7 +273,7 @@ static int VINIT[14443] = {
     7,7,1,7,5,7,3,7,3,1,3,7,3,1,5,5,3,5,1,3,5,5,5,1,1,7,7,1,5,5,
     1,3,5,1,5,3,5,3,3,7,5,7,3,7,3,1,3,7,7,3,3,1,1,3,3,3,3,3,5,5,
     3,3,3,1,3,5,7,7,1,5,7,3,7,1,1,3,5,7,5,3,3,3, //third 1111 numbers
-    0,0,0,0,0,1,7,9,13,11,1,3,7,9,5,13,13,11,3,15,5,3, //first zeros unused
+    0,0,0,0,0,1,7,9,13,11,1,3,7,9,5,13,13,11,3,15,5,3, //first zeros to be updated
     15,7,9,13,9,1,11,7,5,15,1,15,11,5,11,1,7,9,7,7,1,15,15,15,13,
     3,3,15,5,9,7,13,3,7,5,11,9,1,9,1,5,7,13,9,9,1,7,3,5,1,11,11,
     13,7,7,9,9,1,1,3,9,15,1,5,13,1,9,9,9,9,9,13,11,3,5,11,11,13,
@@ -350,7 +321,7 @@ static int VINIT[14443] = {
     11,5,1,11,11,5,3,9,1,3,5,13,9,7,7,1,
     9,9,15,7,5,5,15,13,9,7,13,3,13,11,13,7,9,13,13,13,15,9,5,5,3,
     3,3,1,3,15, //fourth 1111 numbers
-    0,0,0,0,0,0,0,9,3,27,15,29,21,23,19,11,25,7,13,17,1, //first zeros unused
+    0,0,0,0,0,0,0,9,3,27,15,29,21,23,19,11,25,7,13,17,1, //first zeros to be updated
     25,29,3,31,11,5,23,27,19,21,5,1,17,13,7,15,9,31,25,3,5,23,7,
     3,17,23,3,3,21,25,25,23,11,19,3,11,31,7,9,5,17,23,17,17,25,
     13,11,31,27,19,17,23,7,5,11,19,19,7,13,21,21,7,9,11,1,5,21,
@@ -402,7 +373,7 @@ static int VINIT[14443] = {
     31,13,29,9,29,1,11,19,7,27,13,31,7,31,7,25,23,21,29,11,11,13,
     11,27,1,23,31,21,23,21,19,31,5,31,25,25,19,17,11,25,7,13,1,
     29,17,23,15,7,29,17,13,3,17, //fifth 1111 numbers
-    0,0,0,0,0,0,0,0,0,0,0,0,0, //unused zeros
+    0,0,0,0,0,0,0,0,0,0,0,0,0, // zeros to be updated
     37,33,7,5,11,39,63,59,17,15,23,29,3,21,
     13,31,25,9,49,33,19,29,11,19,27,15,25,63,55,17,63,49,19,41,
     59,3,57,33,49,53,57,57,39,21,7,53,9,55,15,59,19,49,31,3,39,5,
@@ -988,241 +959,47 @@ static int VINIT[14443] = {
     3587,7417,1579,1541,2107,5085,2873,
      6141,955,3537,2157,841,1999,1465,5171,5651,1535,7235,4349,
      1263,1453,1005,6893,2919,1947,1635,3963,397,969,4569,655,
-     6737,2995,7235,7713,973,4821,2377,1673,1,6541}; //thirtheenth 1111 nunmbers.
-
-const static int TAU[13] = {0,0,1,3,5,8,11,15,19,23,27,31,35};
+     6737,2995,7235,7713,973,4821,2377,1673,1,6541}; //thirtheenth 1111 numbers.
 
 
-/*
-SUBROUTINE INITSOBOL(DIMEN, QUASI, LL, COUNT, SV, 
-                     &   IFLAG, iSEED)
-  
-  C     INITIALIZATION OF THE SOBOL GENERATOR:
-  C       THE LEADING ELEMENTS OF EACH ROW OF SV ARE INITIALIZED USING "VINIT".
-  C         EACH ROW CORRESPONDS TO A PRIMITIVE POLYNOMIAL. IF THE POLYNOMIAL 
-  C         HAS DEGREE "M", ELEMENTS AFTER THE FIRST "M" ARE CALCULATED.
-  C       THE NUMBERS IN "SV" ARE ACTUALLY BINARY FRACTIONS. "RECIPD=1/LL"  
-  C         HOLDS 1/(THE COMMON DENOMINATOR OF ALL OF THEM).
-  C       INITSOBOL IMPLICITLY COMPUTES THE FIRST ALL-ZERO VECTOR.
-  C       THE TAUS" IS FOR DETERMINING "FAVORABLE" VALUES. AS DISCUSSED IN 
-  C         BRATLEY/FOX, HESE HAVE THE FORM "N=2**K" WHERE "K.GE.(TAUS+S-1)"
-  C         FOR INTEGRATION AND "K.GT.TAUS" FOR GLOBAL OPTIMIZATION.
-  C     ARGUMENTS:
-  C       DIMEN     - DIMENSION OF THE SEQUENCY
-  C       QUASI     - LAST POINT IN THE SEQUENCE
-  C       LL        - COMMON DENOMINATOR OF THE ELEMENTS IN SV
-  C       COUNT     - SEQUENCE NUMBER OF THE CALL
-  C       SV        - TABLE OF DIRECTION NUMBERS:
-            originally declared as INTEGER SV(DIMEN,MAXBIT)
-            SV stands for scrambling V
-  C       IFLAG     - INITIALIZATION FLAG
-  C                   0 - NO SCRAMBLING
-  C                   1 - OWEN TYPE SCRAMBLING
-  C                   2 - FAURE-TEZUKA TYPE SCRAMBLING
-  C                   3 - OWEN + FAURE-TEZUKA TYPE SCRAMBLING
-  C       iSEED     - SCRAMBLING iSEED
-  */
 
-void INITSOBOL(int DIMEN, double *QUASI, int *LL, int COUNT, int *SV, int IFLAG, int iSEED)
+/*init the generator for the dimension dim*/
+void initgeneratorV(int dim, int maxbit, int *V)
 {
-  int ATMOST,TAUS,MAXCOL,S;
-  int I,J,K,L,M,NEWV;
-  //int MAX, MAXX, TEMP01;
-  int INCLUD[MAXDEG]; //originally LOGICAL INCLUD(MAXDEG)
-  int SHIFT[MAXDIM]; //originally INTEGER SHIFT(1111)
+  if (!R_FINITE(dim))
+    error(_("non finite argument"));
+  if(dim <= 0)
+    error(_("incorrect non-positive dimension %d"), dim);
+  if(dim > MAXDIM)
+    error(_("incorrect dimension %d > 1111"), dim);
   
-  double RECIPD;
-  
-  //working direction numbers
-  int *V; //originally declared as INTEGER V(DIMEN,MAXBIT)
-  V = (int *) R_alloc(MAXBIT*DIMEN, sizeof(int));
+  //temporary working variables
+  int i, j;
   
   
-  /*C     CHECK PARAMETERS:*/
-  //MAX = 30;
-  ATMOST = R_pow_di(2, 30)-1;
-  S = DIMEN;
-  Rprintf("S:%u\n", S);
-  if(S <= MAXDEG) 
-    TAUS = TAU[S];
-  else
-    /*C        RETURN A DUMMY VALUE TO THE CALLING PROGRAM*/
-    TAUS = -1;
-  Rprintf("TAUS:%u\n", TAUS);
-  
-  //C     FIND NUMBER OF BITS IN ATMOST:
-  I = ATMOST;
-  MAXCOL = 0;
-  do
+  /*special case dim == 1 : mj=1 and polynom=1 
+    so that V is the identity matrix in bitwise representation*/
+  if(dim >= 1)
   {
-    MAXCOL = MAXCOL + 1;
-    I = I/2; 
-  } while (I > 0);
-  Rprintf("MAXCOL:%u\n", MAXCOL);
-  
-  //C     INITIALIZE ROW 1 OF V
-  for(I = 0; I < MAXCOL; I++)
-  {
-    V[I*MAXCOL] = 1;
-  }
-  
-  //C     INITIALIZE REMAINING ROWS OF V:
-  for(I = 1; I < S; I++)
-  {
-    //C        THE BIT PATTERN OF POLYNOMIAL I GIVES ITS FORM
-    //C        FIND DEGREE OF POLYNOMIAL I FROM BINARY ENCODING
-    J = POLY[I];
-    M = -1; //originally 0, but M was not incremented
-    do
-    {
-      J = J/2;
-      M = M + 1;
-    } while (J > 0);
+    j = 0; 
+    for(i = 0; i < maxbit; i++)
+      V[i + j * maxbit] = 1;
     
-    //C        WE EXPAND THIS BIT PATTERN TO SEPARATE COMPONENTS
-    //C        OF THE LOGICAL ARRAY INCLUD.
-    J = POLY[I];
-    for(K = M; K > 0; K--)
-    {
-      INCLUD[K-1] = (J % 2) == 1;
-      J = J/2;
-    }
-    //C        THE LEADING ELEMENTS OF ROW I COME FROM VINIT
-    for(J = 0; J < M; J++)
-    {
-      V[I+J*MAXCOL] = VINIT[I+J*MAXCOL];
-    }
-    //C        CALCULATE REMAINING ELEMENTS OF ROW I AS EXPLAINED
-    //C        IN BRATLEY AND FOX, SECTION 2
-    for(J = M; J < MAXCOL; J++)
-    {
-      NEWV = V[I+(J-M)*MAXCOL];
-      L = 1;
-      for(K = 0; K < M; K++)
-      {
-        if(INCLUD[K])
-          NEWV = NEWV^(L*V[I+(J-K)*MAXCOL]); //bitwise exclusive OR
-      }
-      V[I+J*MAXCOL] = NEWV;
-    }
   }
   
-  //C     MULTIPLY COLUMNS OF V BY APPROPRIATE POWER OF 2:
-  L = 1;
-  for(J = MAXCOL-1; J > 0; J--)
+  /*other dimension V=(vi_1,...,vi_2)*/
+  if(dim > 1)
   {
-    L = 2*L;
-    for(I = 0; I < S; I++)
-      V[I+J*MAXCOL] = V[I+J*MAXCOL]*L; 
-  }
-  
-  
-  //C>>> SCRAMBLING START
-  if(IFLAG == 0)
-  {
-    for(I = 0; I < S; I++)
+    for(j = 1; j < dim; j++)
     {
-      for(J = 0; J < MAXCOL; J++)
-        SV[I+J*MAXCOL] = V[I+J*MAXCOL];
-      SHIFT[I] = 0;
-    }
-    LL[0]= R_pow_di(2, MAXCOL);
-  }
-      /*
-      IF (IFLAG .EQ. 0) THEN
-         DO I = 1, S
-            DO J = 1,MAXCOL 
-               SV(I, J) = V(I, J)
-            ENDDO
-            SHIFT(I) = 0
-         ENDDO
-         LL= 2**MAXCOL
-      ELSE             
-         IF ((IFLAG .EQ. 1) .OR. (IFLAG .EQ. 3)) THEN
-         CALL SGENSCRML(MAX, LSM, SHIFT, S, MAXCOL, iSEED)
-         DO I = 1,S
-            DO J = 1,MAXCOL
-               L = 1
-               TEMP2 = 0
-               DO P = MAX,1,-1
-                  TEMP1 = 0
-                  DO K = 1,MAXCOL
-                     TEMP01 = IBITS(LSM(I,P),K-1,1)*IBITS(V(I,J),K-1,1)
-                     TEMP1 = TEMP1 + TEMP01
-                  ENDDO
-                  TEMP1 = MOD(TEMP1, 2)
-                  TEMP2 = TEMP2+TEMP1*L   
-                  L = 2 * L
-               ENDDO
-               SV(I, J) = TEMP2
-            ENDDO
-         ENDDO
-         LL= 2**MAX
-      ENDIF
-         IF ((IFLAG .EQ. 2) .OR. (IFLAG .EQ. 3)) THEN
-            CALL SGENSCRMU(USM, USHIFT, S, MAXCOL, iSEED) 
-            IF (IFLAG .EQ. 2) THEN
-               MAXX = MAXCOL
-            ELSE
-               MAXX = MAX
-            ENDIF    
-            DO I = 1, S
-               DO J = 1, MAXCOL
-                  P = MAXX
-                  DO K = 1, MAXX
-                     IF (IFLAG .EQ. 2) THEN
-                        TV(I,P,J) = IBITS(V(I,J),K-1,1)
-                     ELSE
-                        TV(I,P,J) = IBITS(SV(I,J),K-1,1) 
-                     ENDIF 
-                     P = P-1
-                  ENDDO
-               ENDDO     
-               DO PP = 1, MAXCOL 
-                  TEMP2 = 0 
-                  TEMP4 = 0
-                  L = 1
-                  DO J = MAXX, 1, -1
-                     TEMP1 = 0
-                     TEMP3 = 0
-                     DO P = 1, MAXCOL
-                        TEMP1 = TEMP1 + TV(I,J,P)*USM(P,PP)
-                        IF (PP .EQ. 1) THEN
-                           TEMP3 = TEMP3 + TV(I,J,P)*USHIFT(P)
-                        ENDIF 
-                     ENDDO
-                     TEMP1 = MOD(TEMP1,2)
-                     TEMP2 = TEMP2 + TEMP1*L
-                     IF (PP .EQ. 1) THEN 
-                        TEMP3 = MOD(TEMP3,2)
-                        TEMP4 = TEMP4 + TEMP3*L
-                     ENDIF  
-                     L = 2*L
-                  ENDDO
-                  SV(I, PP) = TEMP2
-                  IF (PP .EQ. 1) THEN
-                     IF (IFLAG .EQ. 3) THEN
-                        SHIFT(I) = IEOR(TEMP4, SHIFT(I))           
-                     ELSE
-                        SHIFT(I) = TEMP4
-                     ENDIF  
-                  ENDIF
-               ENDDO 
-            ENDDO
-            LL = 2**MAXX
-         ENDIF
-      ENDIF 
-        */
-//C <<< END OF SCRAMBLING
-
-//C     RECIPD IS 1/(COMMON DENOMINATOR OF THE ELEMENTS IN SV)
-      RECIPD = 1.00 / LL[0];
-
-//C     SET UP FIRST VECTOR AND VALUES FOR "GOSOBL"
-      COUNT = 0;
-      for(I = 0; I < S; I++)
+      for(i = 0; i < maxbit; i++)
       {
-        QUASI[I] = SHIFT[I]*RECIPD;
+        Rprintf("i=%u j=%u j+i*MAXDIM=%u\n", i, j, j + i * MAXDIM);
+        V[i + j * maxbit] = initmj[j + i * MAXDIM];
       }
+    }
+  }
+  /*divide by 2 every integer*/
+  
 }
 

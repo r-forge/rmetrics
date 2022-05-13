@@ -1,27 +1,14 @@
 /*
-C ##############################################################################
-C PART II: SOBOL SEQUENCE:
-C ##############################################################################
+ ##############################################################################
+ PART II: SOBOL SEQUENCE:
+ ##############################################################################
 
- C-------------------------------------------------------------------------- 
- C @file  LowDiscrepancy.f
-C @brief Sobol sequence
-C
-C @author Diethelm Wuertz 
-C @author Christophe Dutang
-C
-C Copyright (C) Aug. 2016, Christophe Dutang, C translation of the Fortran code
-C
-C Copyright (C) Apr. 2011, Christophe Dutang, remove implicit declaration: the code now pass
-C > gfortran -c -fsyntax-only -fimplicit-none LowDiscrepancy.f 
-C without error.
-C
-C Copyright (C) Oct. 2009, Christophe Dutang, slightly modified (better accuracy and speed).
-C
-C Copyright (C) Sept. 2002, Diethelm Wuertz.
-C
+-------------------------------------------------------------------------- 
+ @brief Sobol sequence
+
+ @author Christophe Dutang
+
 C The new BSD License is applied to this software.
-C Copyright (c) Diethelm Wuertz, ETH Zurich. All rights reserved.
 C Christophe Dutang, see http://dutangc.free.fr  
 C
 C      Redistribution and use in source and binary forms, with or without
@@ -58,9 +45,10 @@ C--------------------------------------------------------------------------
 #include <R.h>
 #include <Rinternals.h>
 #include <Rmath.h>
+#include <R_ext/Error.h>
+#include "locale.h"
 
 
 /* utility functions to be called in randtoolbox.c */
 
-void INITSOBOL(int DIMEN, double *QUASI, int *LL, int COUNT, int *SV, int IFLAG, int iSEED);
-
+void initgeneratorV(int dim, int maxbit, int *V);
