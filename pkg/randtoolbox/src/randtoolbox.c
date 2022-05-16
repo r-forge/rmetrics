@@ -314,25 +314,26 @@ SEXP doSobol(SEXP n, SEXP d, SEXP offset, SEXP ismixed, SEXP timedseed, SEXP mer
 
 
 
-//compute the vector sequence of the Sobol algorithm
+//compute the vector sequence of the Sobol algorithm : from 1 to nb
 void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, int mexp)
 {
   //temporary working variables
   int i, j;
-  int ll;
+  int temp;
   //unsigned long state;
   
-  int *V; //generator
-  //maximum number of bits for direction numbers
-  int maxbit = 1 + floor(log(nb)/log(2.0));
+  uint32_t *V; //generator
+  int *C; //index from the right of the first zero bit of i
   
-  Rprintf("maxbit %u\n", maxbit);
+  //maximum number of bits needed for direction numbers stored in V
+  int maxbit4V = 1 + floor(log((double) nb)/log(2.0));
+  //maximum number of bits needed for direction numbers stored in V
+  int maxbit4int=32;
+  
   Rprintf("nb %u\n", nb);
+  Rprintf("maxbit %u\n", maxbit4V);
   Rprintf("dim %u\n", dim);
   Rprintf("offset %u\n", offset);
-  
-  //allocate temporary variables
-  V = (int *) R_alloc(maxbit*dim, sizeof(int));
   
   if (!R_FINITE(nb) || !R_FINITE(dim))
     error(_("non finite argument"));
@@ -345,25 +346,60 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
   if(!isInit)
     randSeed();
   
-  //compute generator for each dimension
-  initgeneratorV(dim, maxbit, V);
+  //allocate temporary variables
+  V = (uint32_t *) R_alloc(maxbit4V*dim, sizeof(uint32_t));
+  C = (int *) R_alloc(nb, sizeof(int));
   
-  for(j = 0; j < dim; j++)
+  //compute generator for each dimension
+  initgeneratorV(dim, maxbit4V, maxbit4int, V);
+  //compute index for integers 1,2,...,nb
+  C[0] = 1;
+  for(i = 0; i < nb; i++)
   {
-    Rprintf("Direction %u\n", j);
-    for(i = 0; i < maxbit-1; i++)
-      Rprintf("%u,", V[i + j * maxbit]);
-    Rprintf("%u\n", V[maxbit-1 + j * maxbit]);
+    C[i] = 1;
+    temp = i+1;
+    Rprintf("temp %u\t", temp);
+    while (temp & 1)
+    {
+      temp >>= 1; 
+      C[i]++;
+      Rprintf("temp %u\t", temp);
+    }
+    Rprintf("\n");
   }
   
-  //u_ij is the Sobol sequence term
-  //with n = state + i, s = j + 1, p = primeNumber[j]
-  //u is stored column by column
-  
+  //debug
   for(j = 0; j < dim; j++)
-    for(i = 0; i < nb; i++)
-      u[i + j * nb] = 0.0;
+  {
+    Rprintf("Direction %u\n", j+1);
+    for(i = 0; i < maxbit4V-1; i++)
+      Rprintf("%u,", V[i + j * maxbit4V]);
+    Rprintf("%u\n", V[maxbit4V-1 + j * maxbit4V]);
+  }
+  Rprintf("C\n");
+  for(i = 0; i < nb; i++)
+    Rprintf("integer i=%u, C(i)=%u\n", i+1,  C[i]);
+    
   
+  //u_ij is the Sobol sequence term
+  //u is stored column by column
+  for(j = 0; j < dim; j++)
+  {
+    // integer array
+    uint32_t *state = (uint32_t *) R_alloc( nb, sizeof(uint32_t) );
+    //first value
+    state[0] = 0;
+    u[0 + j * nb] = (double) state[0] / R_pow_di(2.0, maxbit4int);
+    //next nb-1 values 
+    if(nb > 1)
+      for(i = 1; i < nb; i++)
+      {
+        //s_i = s_{i-1} ^ V_j[C[i-1]]
+        //Rprintf("i=%u, C[i-1]-1=%u\n", i, C[i-1]-1);
+        state[i] = state[i-1] ^ V[C[i-1]-1 + j * maxbit4V];
+        u[i + j * nb] = (double) state[i] / R_pow_di(2.0, maxbit4int);
+      }
+  }
   isInit = 0;
 }
 
