@@ -4,7 +4,8 @@ library(randtoolbox)
 mytrace <- TRUE
 mytrace <- FALSE
 
-
+if(FALSE)
+{
 #p318 Glasserman (2003)
 
 mymj <- list(
@@ -24,3 +25,4 @@ mypj <- c(1, 3, 7)
 
 sobol.V(mymj ,mypj, bitnb=5, echo=FALSE)
 
+}

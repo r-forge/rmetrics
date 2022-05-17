@@ -2,7 +2,7 @@
 
 Version 1.31.2
 =============
-- start new devel version.
+- start new devel version with both Fortran and C code (not on CRAN).
 
 Version 1.31.1
 =============

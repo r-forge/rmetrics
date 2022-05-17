@@ -4,6 +4,9 @@ library(randtoolbox)
 mytrace <- TRUE
 mytrace <- FALSE
 
+if(FALSE)
+{
+
 #degree 0
 mjrec(1, 1, echo=mytrace)
 
@@ -37,3 +40,5 @@ res <- mjrec(prevmj, p3, echo=mytrace)
 m4 <- bit2int(res)
 
 c(m1, m2, m3, m4)
+
+}
