@@ -14,7 +14,7 @@
 torus(n, dim = 1, prime, init = TRUE, mixed = FALSE, usetime = FALSE, 
                   normal = FALSE, mexp = 19937, start = 1)
 sobol(n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal = FALSE,
-                   mixed = FALSE, method = "Fortran", mexp = 19937, start = 1,
+                   mixed = FALSE, method = "C", mexp = 19937, start = 1,
                    maxit = 10)
 halton(n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE, 
                     mixed = FALSE, method = "C", mexp = 19937, start = 1)
@@ -43,7 +43,7 @@ halton(n, dim = 1, init = TRUE, normal = FALSE, usetime = FALSE,
   \item{usetime}{a logical to use the machine time to start the Torus sequence, 
   		   default \code{FALSE}, i.e. when \code{usetime=FALSE} the Torus sequence start from the first term.
   		   \code{usetime} is only used when \code{mixed=FALSE}.}
-  \item{method}{a character string either \code{"C"} or \code{"Fortran"}.
+  \item{method}{a character string either \code{"C"}.
       Note that \code{mixed=TRUE} is only available when \code{method="C"}.}		 
   \item{mexp}{an integer for the Mersenne exponent of SFMT algorithm,
       only used when \code{mixed=TRUE}.}    

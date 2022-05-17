@@ -1260,12 +1260,10 @@ To use the different scrambling option, you just to use the \code{scrambling} ar
  %%% R code
 <<sobol, fig=FALSE, echo=TRUE, eval=FALSE>>=
 sobol(10)
-sobol(10, scramb=3)
 @
 <<sobol2, fig=FALSE, echo=FALSE>>=
 options( width =40)
 sobol(10)
-sobol(10, scramb=3)
 @
 %%%
 
@@ -1455,7 +1453,7 @@ ans <- NULL
 for(i in 1:3)
 {
  tij <- sobol(nb[i], dim=25, 
-  scrambling=2, normal=TRUE)
+  scrambling=0, normal=TRUE)
  Icos <- sqrt(rowSums(tij^2/2))
  Icos <- mean(cos(Icos)) * pi^(25/2)
  ans <- rbind(ans, c(n=nb[i], 
@@ -1471,7 +1469,7 @@ nb <- c(1200, 14500, 214000)
 ans <- NULL
 for(i in 1:3)
 {
-	tij <- sobol(nb[i], dim=25, scramb=2, norm=TRUE )
+	tij <- sobol(nb[i], dim=25, scramb=0, norm=TRUE )
 	Icos <- mean(cos(sqrt( apply( tij^2/2, 1, sum ) ))) * pi^(25/2)
 	ans <- rbind(ans, c(n=nb[i], I25=Icos, Delta=(Icos-I25)/I25 ))
 }
