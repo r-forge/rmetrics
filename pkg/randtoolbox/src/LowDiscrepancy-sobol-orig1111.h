@@ -1,10 +1,6 @@
 /*
- ##############################################################################
- PART II: SOBOL SEQUENCE:
- ##############################################################################
-
 -------------------------------------------------------------------------- 
- @brief Sobol sequence
+ @brief Sobol sequence - original version based on 1111 dimension
 
  @author Christophe Dutang
 
@@ -51,4 +47,4 @@ C--------------------------------------------------------------------------
 
 /* utility functions to be called in randtoolbox.c */
 
-void initgeneratorV(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V);
+void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V);

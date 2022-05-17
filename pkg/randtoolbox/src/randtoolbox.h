@@ -63,7 +63,7 @@
 #include "LowDiscrepancy-halton.h"
 
 //Sobol
-#include "LowDiscrepancy-sobol.h"
+#include "LowDiscrepancy-sobol-orig1111.h"
 
 //congruRand
 #include "congruRand.h"

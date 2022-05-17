@@ -1,10 +1,6 @@
 /*
-##############################################################################
- PART II: SOBOL SEQUENCE:
-##############################################################################
- 
  -------------------------------------------------------------------------- 
- @brief Sobol sequence
+ @brief Sobol sequence - original version based on 1111 dimension
  
  @author Christophe Dutang
  
@@ -40,7 +36,7 @@
  C-------------------------------------------------------------------------- 
  */
 
-#include "LowDiscrepancy-sobol.h"
+#include "LowDiscrepancy-sobol-orig1111.h"
 
 const int MAXDIM=1111;
 const int MAXDEG=13;
@@ -1502,7 +1498,7 @@ static int alla[MAXDIM] = {
 
 
 /*init the generator up to dimension dim for integer < 2^maxbit*/
-void initgeneratorV(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V)
+void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V)
 {
   if (!R_FINITE(dim))
     error(_("non finite argument"));

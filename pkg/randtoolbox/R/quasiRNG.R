@@ -5,13 +5,9 @@
 # @author Christophe Dutang
 # @author Diethelm Wuertz 
 #
-# Copyright (C) 2009, Diethelm Wuertz, ETH Zurich. 
-# Copyright (C) 2009-2021, Christophe Dutang, 
-# Christophe Dutang, see http://dutangc.free.fr
-# All rights reserved.
 #
 # The new BSD License is applied to this software.
-# Copyright (c) 2019 Christophe Dutang, Diethelm Wuertz. 
+# Copyright (c) 2022 Christophe Dutang, Diethelm Wuertz. 
 # All rights reserved.
 #
 #      Redistribution and use in source and binary forms, with or without
@@ -295,6 +291,8 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
   if(nb < 0) stop("invalid argument 'n'")
   if(nb == 0) return(numeric(0))
   
+  if(init && start != 0 && start != 1) 
+    warning("start argument is ignored.")
   #not necessary
   #if(init && start != 0 && !normal) 
   #  warning("You should start your sequence from 0 as recommended by Owen (2020).")
@@ -474,14 +472,38 @@ sobol <- function (n, dim = 1, init = TRUE, scrambling = 0, seed = NULL, normal 
                                                 seed = result[[9]]))
   }else #method == "C"
   {
-    ## Mersenne exponent only used when mixed=TRUE
-    authorizedParam <- c(607, 1279, 2281, 4253, 11213, 19937, 44497, 86243, 132049, 216091)
-    if( !(mexp %in% authorizedParam) )
-      stop("'mexp' must be in {607, 1279, 2281, 4253, 11213, 19937, 44497, 86243, 132049, 216091}. ")
-    #stop("sobol in C not yet implemented")
+    # Description:
+    #   Uniform Sobol Low Discrepancy Sequence
+    # Details:
+    #   DIMENSION : dimension <= 1111
+    #           N : LD numbers to create
+    #  SCRAMBLING : One of the numbers 0,1,2,3
     
-    sobolres <- .Call(CF_doSobol, nb, dim, 0, FALSE, FALSE, mexp)
     
+    # Restart Settings:
+    if (init) 
+      .setrandtoolboxEnv(.sobol.seed = 
+                           list(quasi = rep(0, dim), ll = 0, count = 0, sv = rep(0, dim*30), seed = seed))
+    if(!exists(".sobol.seed", envir=.randtoolboxEnv, mode="list"))
+      stop("Sobol algorithm not initialized.")
+    C_sobol_init <- TRUE
+    
+    #Determine the number of points
+    if(init) 
+    {
+      nbfinal <- nb + start
+    }else
+    {
+      nbfinal <- nb + as.integer( .getrandtoolboxEnv(".sobol.seed")$seed )
+    }
+    
+    sobolres <- .Call(CF_doSobol, nbfinal, dim, 0, FALSE, FALSE, mexp)
+    #keep last nb points
+    sobolres <- tail(sobolres, nb)
+    
+    # For the next numbers save (only used if init=FALSE in the next call)
+    if(C_sobol_init) 
+      .setrandtoolboxEnv(.sobol.seed = list(seed = tail(nbfinal, 1)))
   }
   
   ## Normal transformation
