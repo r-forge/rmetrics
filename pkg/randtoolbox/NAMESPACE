@@ -8,7 +8,7 @@ importFrom("rngWELL", doinitMT2002, doputRngWELL, dogetRngWELL, setSeed4WELL, WE
 ### Other imports
 importFrom("graphics", hist)
 importFrom("stats", dpois, pchisq, qnorm, runif)
-importFrom("utils", packageDescription, head)
+importFrom("utils", packageDescription, head, tail)
 
 ### Exports
 export(torus, runif.halton, halton, runif.sobol, sobol)
