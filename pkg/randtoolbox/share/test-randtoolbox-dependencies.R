@@ -13,7 +13,7 @@ library(devtools)
 odir <- "~/Documents/recherche-enseignement/code/R/rmetrics/test-check-depend-pkg/"
 
 revdependlist <- c("iterLap", "npsf", "TruncatedNormal")
-revdependversion <- c("1.1-3", "0.5.1", "1.0")
+revdependversion <- c("1.1-3", "0.8.0", "2.2.2")
 
 install.packages(revdependlist, dependencies = TRUE)
 
@@ -44,14 +44,15 @@ capture.output(rescheck, file=paste0(odir, "/", "revdependlist.txt"))
 odir <- "~/Documents/recherche-enseignement/code/R/rmetrics/test-check-import-pkg/"
 
 revimportlist <- c("acebayes", "apollo", "BLPestimatoR", "calibrateBinary", "cepp", 
-                   "copBasic", "DiceOptim", "FDGcopulas", "GPareto", "GPM", "joineRML", 
-                   "KrigInv", "LSDsensitivity", "LVGP", "MBHdesign", "mcGlobaloptim", 
+                   "copBasic", "DiceOptim",  "GPareto", "GPM", "joineRML", 
+                   "KrigInv", "LSDsensitivity", "LVGP", "MBHdesign",  
                    "merlin", "minimaxdesign", "MRFA", "optim.functions", "pGPx", 
-                   "qualpalr", "sensobol", "support")
-revimportversion <- c("1.6.0", "0.0.6", "0.2.5", "0.1", "1.7", "2.1.2", "2.0",
-                      "1.0", "1.1.2", "3.0.1", "0.4.2", "1.4.1", "0.3.2", "2.1.5", 
-                      "1.0.79", "0.1", "0.0.1", "0.1.3", "0.4", "0.1", "0.1.1", 
-                      "0.4.3", "0.1.1", "0.1.2")
+                   "qualpalr", "sensobol")
+revimportversion <- c("1.10", "0.2.7", "0.3.2", "0.1", "1.7", 
+                      "2.1.7", "2.1.1", "1.1.6", "3.0.1", "0.4.5", 
+                      "1.4.1", "1.2.1", "2.1.5", "2.2.2", 
+                      "0.1.0", "0.1.5", "0.4", "0.1", "0.1.1", 
+                      "0.4.3", "1.1.1")
 
 install.packages(revimportlist, dependencies = TRUE)
 
@@ -79,7 +80,7 @@ capture.output(rescheck, file=paste0(odir, "/", "revimportlist.txt"))
 # package that reverse suggest randtoolbox
 
 revsuggestlist <- c("copula", "DiceDesign", "sensitivity")
-revsuggestversion <- c("0.999-19", "1.8", "1.15.2")
+revsuggestversion <- c("1.0-1", "1.9", "1.27.0")
 odir <- "~/Documents/recherche-enseignement/code/R/rmetrics/test-check-suggest-pkg/"
 
 install.packages(revsuggestlist, dependencies = TRUE)

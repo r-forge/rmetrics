@@ -1,5 +1,5 @@
 ## 
-# @file  sobol-basic.R
+# @file  binary-operator.R
 # @brief R file implementing binary operators
 #
 # @author Christophe Dutang
@@ -40,7 +40,7 @@
 #  
 #
 #############################################################################
-### Sobol
+### binary operators
 ###
 ###			R functions
 ### 

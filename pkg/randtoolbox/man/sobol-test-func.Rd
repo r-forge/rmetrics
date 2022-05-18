@@ -23,7 +23,7 @@ bit2unitreal(x)
 \details{
 
 \code{sobol.R} computes Sobol sequences but not using Gray code so points are
-not in the same order as \code{sobol}.
+not in the same order as in \code{sobol}.
 
 \code{sobol.basic} compute the Sobol sequence in one dimension according to a primitive
 polynomial and specified integers \eqn{m_j}.

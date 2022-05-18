@@ -1,40 +1,40 @@
-/*
--------------------------------------------------------------------------- 
- @brief Sobol sequence - original version based on 1111 dimension
-
- @author Christophe Dutang
-
-C The new BSD License is applied to this software.
-C Christophe Dutang, see http://dutangc.free.fr  
-C
-C      Redistribution and use in source and binary forms, with or without
-C      modification, are permitted provided that the followingConditions are
-C      met:
-C      
-C          - Redistributions of sourceCode must retain the aboveCopyright
-C          notice, this list ofConditions and the following disclaimer.
-C          - Redistributions in binary form must reproduce the above
-C         Copyright notice, this list ofConditions and the following
-C          disclaimer in the documentation and/or other materials provided
-C          with the distribution.
-C          - Neither the name of the ETH Zurich nor the names of itsContributors 
-C          may be used to endorse or promote products derived from this software 
-C          without specific prior written permission.
-C     
-C      THIS SOFTWARE IS PROVIDED BY THECOPYRIGHT HOLDERS ANDCONTRIBUTORS
-C      "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-C      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-C      A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THECOPYRIGHT
-C      OWNER ORCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-C      SPECIAL, EXEMPLARY, ORCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-C      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-C      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVERCAUSED AND ON ANY
-C      THEORY OF LIABILITY, WHETHER INCONTRACT, STRICT LIABILITY, OR TORT
-C      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-C      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-C  
-C-------------------------------------------------------------------------- 
-*/
+/**
+ * @file LowDiscrepancy-sobol-orig1111.h
+ * @brief Sobol sequence - original version based on 1111 dimension
+ *
+ * @author Christophe Dutang
+ *
+ * The new BSD License is applied to this software.
+ * Christophe Dutang, see http://dutangc.free.fr
+ *
+ *      Redistribution and use in source and binary forms, with or without
+ *      modification, are permitted provided that the followingConditions are
+ *      met:
+ *
+ *          - Redistributions of sourceCode must retain the aboveCopyright
+ *          notice, this list ofConditions and the following disclaimer.
+ *          - Redistributions in binary form must reproduce the above
+ *         Copyright notice, this list ofConditions and the following
+ *          disclaimer in the documentation and/or other materials provided
+ *          with the distribution.
+ *          - Neither the name of the ETH Zurich nor the names of itsContributors
+ *          may be used to endorse or promote products derived from this software
+ *          without specific prior written permission.
+ *
+ *      THIS SOFTWARE IS PROVIDED BY THECOPYRIGHT HOLDERS ANDCONTRIBUTORS
+ *      "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *      A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THECOPYRIGHT
+ *      OWNER ORCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *      SPECIAL, EXEMPLARY, ORCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ *      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVERCAUSED AND ON ANY
+ *      THEORY OF LIABILITY, WHETHER INCONTRACT, STRICT LIABILITY, OR TORT
+ *      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *--------------------------------------------------------------------------
+ */
 
 
 //R header files

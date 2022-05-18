@@ -6,11 +6,11 @@
 # @author Diethelm Wuertz 
 #
 #
-# Copyright (C) 2008, Yohann Chalabi, Diethelm Wuertz, ETH Zurich. 
+# Copyright (C) 2022, Yohann Chalabi, Diethelm Wuertz, ETH Zurich. 
 # All rights reserved.
 #
 # The new BSD License is applied to this software.
-# Copyright (c) 2008 Yohann Chalabi, Diethelm Wuertz. 
+# Copyright (c) 2022 Yohann Chalabi, Diethelm Wuertz. 
 # All rights reserved.
 #
 #      Redistribution and use in source and binary forms, with or without

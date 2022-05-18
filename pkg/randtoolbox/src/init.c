@@ -91,7 +91,7 @@ static const R_CallMethodDef CallEntries[] =
 };
 
 
-/* .Fortran calls defined LowDiscrepancy.f 
+/* .Fortran calls defined LowDiscrepancy.f <deprecated>
  * C version of these Fortran routines are halton_c() and sobol_c() in randtoolbox.c
  *
 extern void F77_NAME(halton_f)(void *, void *, void *, void *, void *, void *, void *);
