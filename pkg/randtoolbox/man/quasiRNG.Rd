@@ -139,7 +139,7 @@ Joe S., Kuo F.Y. (2003),
 Joe S., Kuo F.Y. (2008),
     \emph{Constructing Sobol sequences with better two-dimensional projections},
     SIAM J. Sci. Comput. 30, 2635--2654,
-\url{http://web.maths.unsw.edu.au/~fkuo/sobol}.    
+\url{https://web.maths.unsw.edu.au/~fkuo/sobol/index.html}.    
 
 Owen A.B. (2020), \emph{On dropping the first Sobol' point},
 \url{https://arxiv.org/abs/2008.08051}.

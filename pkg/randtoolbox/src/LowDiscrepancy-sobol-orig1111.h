@@ -40,11 +40,14 @@
 //R header files
 #include <R.h>
 #include <Rinternals.h>
+#include <Rdefines.h>
 #include <Rmath.h>
 #include <R_ext/Error.h>
+
+#include "config.h"
 #include "locale.h"
 
 
 /* utility functions to be called in randtoolbox.c */
 
-void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V);
+void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, int *V);

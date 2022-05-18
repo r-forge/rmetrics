@@ -38,12 +38,19 @@
 
 #include "LowDiscrepancy-sobol-orig1111.h"
 
+
+//maximum number of dimension
+#define MAXDIM 1111
+//maximum degree for primitive polynomial
+#define MAXDEG 13
+
+/*
 const int MAXDIM=1111;
 const int MAXDEG=13;
+*/
 
 
-
-
+/* not used at all
 static int primitpoly[MAXDIM] = {
     1,3,7,11,13,19,25,37,59,47,61,55,41,67,97,91,
     109,103,115,131,193,137,145,143,241,157,185,167,229,171,213,
@@ -150,6 +157,7 @@ static int primitpoly[MAXDIM] = {
     16153,16159,16165,16183,16189,16195,16197,16201,16209,16215,
     16225,16259,16265,16273,16299,
     16309,16355,16375,16381};
+ */
 
 //1 111 rows and 13 columns so 14 443 terms for initial mj
 static int initmj[MAXDEG*MAXDIM] = {
@@ -1498,7 +1506,7 @@ static int alla[MAXDIM] = {
 
 
 /*init the generator up to dimension dim for integer < 2^maxbit*/
-void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V)
+void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, int *V)
 {
   if (!R_FINITE(dim))
     error(_("non finite argument"));

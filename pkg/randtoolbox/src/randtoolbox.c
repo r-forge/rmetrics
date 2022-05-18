@@ -314,7 +314,7 @@ SEXP doSobol(SEXP n, SEXP d, SEXP offset, SEXP ismixed, SEXP timedseed, SEXP mer
 
 
 
-//compute the vector sequence of the Sobol algorithm : from 1 to nb
+//compute the vector sequence of the Sobol algorithm : from 0 to nb-1
 void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, int mexp)
 {
   //temporary working variables
@@ -322,20 +322,13 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
   int temp;
   //unsigned long state;
   
-  uint32_t *V; //generator
+  int *V; //generator
   int *C; //index from the right of the first zero bit of i
   
   //maximum number of bits needed for direction numbers stored in V
   int maxbit4V = 1 + floor(log((double) nb)/log(2.0));
   //maximum number of bits needed for direction numbers stored in V
-  int maxbit4int=32;
-  
-  /*
-  Rprintf("nb %u\n", nb);
-  Rprintf("maxbit %u\n", maxbit4V);
-  Rprintf("dim %u\n", dim);
-  Rprintf("offset %u\n", offset);
-   */
+  int maxbit4int = 32;
   
   if (!R_FINITE(nb) || !R_FINITE(dim))
     error(_("non finite argument"));
@@ -349,7 +342,7 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
     randSeed();
   
   //allocate temporary variables
-  V = (uint32_t *) R_alloc(maxbit4V*dim, sizeof(uint32_t));
+  V = (int *) R_alloc(maxbit4V*dim, sizeof(int));
   C = (int *) R_alloc(nb, sizeof(int));
   
   //compute generator for each dimension
@@ -360,14 +353,11 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
   {
     C[i] = 1;
     temp = i;
-    //Rprintf("temp %u\t", temp);
     while (temp & 1)
     {
       temp >>= 1; 
       C[i]++;
-      //Rprintf("temp %u\t", temp);
     }
-    //Rprintf("\n");
   }
   
   //debug
@@ -401,7 +391,6 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
       {
         //Rprintf("i=%u, C(i-1)=%u\t", i,  C[i-1]);
         //s_i = s_{i-1} ^ V_j[C[i-1]]
-        //Rprintf("i=%u, C[i-1]-1=%u\n", i, C[i-1]-1);
         state[i] = state[i-1] ^ V[C[i-1]-1 + j * maxbit4V];
         u[i + j * nb] = (double) state[i] / R_pow_di(2.0, maxbit4int);
       }
