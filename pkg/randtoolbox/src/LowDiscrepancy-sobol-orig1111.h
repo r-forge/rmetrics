@@ -50,4 +50,4 @@
 
 /* utility functions to be called in randtoolbox.c */
 
-void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, int *V);
+void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V);

@@ -322,7 +322,7 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
   int temp;
   //unsigned long state;
   
-  int *V; //generator
+  uint32_t *V; //generator
   int *C; //index from the right of the first zero bit of i
   
   //maximum number of bits needed for direction numbers stored in V
@@ -342,7 +342,7 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
     randSeed();
   
   //allocate temporary variables
-  V = (int *) R_alloc(maxbit4V*dim, sizeof(int));
+  V = (uint32_t *) R_alloc(maxbit4V*dim, sizeof(uint32_t));
   C = (int *) R_alloc(nb, sizeof(int));
   
   //compute generator for each dimension
@@ -389,12 +389,10 @@ void sobol_c(double *u, int nb, int dim, int offset, int ismixed, int usetime, i
       //Rprintf("j=%u,", j);
       for(i = 1; i < nb; i++)
       {
-        //Rprintf("i=%u, C(i-1)=%u\t", i,  C[i-1]);
         //s_i = s_{i-1} ^ V_j[C[i-1]]
         state[i] = state[i-1] ^ V[C[i-1]-1 + j * maxbit4V];
         u[i + j * nb] = (double) state[i] / R_pow_di(2.0, maxbit4int);
       }
-      //Rprintf("\n");
     }
   }
   isInit = 0;

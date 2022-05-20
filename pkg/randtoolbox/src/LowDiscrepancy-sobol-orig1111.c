@@ -1506,7 +1506,7 @@ static int alla[MAXDIM] = {
 
 
 /*init the generator up to dimension dim for integer < 2^maxbit*/
-void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, int *V)
+void initgeneratorV_orig1111(int dim, int maxbit4mj, int maxbit4inttype, uint32_t *V)
 {
   if (!R_FINITE(dim))
     error(_("non finite argument"));
