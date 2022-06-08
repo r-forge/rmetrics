@@ -4,6 +4,7 @@ Version 2.0.0
 =============
 - remove Fortran code for Halton and Sobol sequences 
 (the latter was under the ACM licence).
+- scrambling for Sobol sequences is temporarily disabled.
 
 Version 1.31.2
 =============
