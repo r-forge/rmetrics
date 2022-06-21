@@ -58,9 +58,8 @@ pt2d <-
     # ans  <- pmvt(X, dim = 2, mu = c(0, 0), Omega = sigma, 
     # alpha = c(0, 0), df = nu) 
     .pmvt <- function(x, delta, sigma, df)
-       mvtnorm::pmvt(
-         lower = -Inf, upper = x, delta = delta, sigma = sigma, df = df)        
-    ans <-  apply(X, 1, ".pmvt", delta = c(0,0), sigma = sigma, df = nu)
+       pmvt(lower = -Inf, upper = x, delta = delta, sigma = sigma, df = df)
+    ans <-  apply(X, 1, .pmvt, delta = c(0,0), sigma = sigma, df = nu)
     attr(ans, "control") <- c(rho = rho, nu = nu)
     
     # Return Value:

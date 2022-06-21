@@ -25,7 +25,7 @@ integrate2d(fun, error = 1.0e-5, \dots)
         the function to be integrated. The first argument requests
         the x values, the second the y values, and the remaining
         are reserved for additional parameters. The integration is 
-        over the unit square "[0,1]\^2".
+        over the unit square "[0,1]^2".
     }
         \item{error}{
         the error bound to be achieved by the integration formula.
@@ -42,7 +42,7 @@ integrate2d(fun, error = 1.0e-5, \dots)
 
     \code{integrate2d}
     returns a list with the \code{$value} of the integral over the
-    unit square [0,1]\^2, an \code{$error} estimate and the number 
+    unit square [0,1]^2, an \code{$error} estimate and the number 
     of grid \code{$points} used by the integration function. 
     
 }

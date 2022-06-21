@@ -33,8 +33,8 @@
 # FUNCTION:             ELLIPTICAL DISTRIBUTIONS:
 #  delliptical2d         Computes density for elliptical distributions
 # REQUIREMENTS:
-#  fBasics::.perspPlot
-#  fBasics::.contourPlot
+.perspPlot   <- fBasics::.perspPlot
+.contourPlot <- fBasics::.contourPlot
 ################################################################################
 
 

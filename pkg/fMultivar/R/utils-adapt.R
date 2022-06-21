@@ -24,11 +24,8 @@
 adapt <-
   function(ndim=NULL, lower, upper, functn, ...)
 {
-  ans <- cubature::adaptIntegrate(
-    f=functn, lowerLimit=lower, upperLimit=upper, ...)
-  
-  # Return Value
-  ans
+  cubature::adaptIntegrate(
+                f=functn, lowerLimit=lower, upperLimit=upper, ...)
 }
 
 

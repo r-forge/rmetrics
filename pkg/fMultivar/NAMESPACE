@@ -1,21 +1,28 @@
 ################################################################################
 ## Exports
 ################################################################################
-exportPattern("^[^\\.]")
+exportPattern("^[^\\.]") # <<< This is bad -- FIXME !!
 
 S3method("contour", "gridData")
-S3method("persp", "gridData")
+S3method("persp",   "gridData")
 S3method("plot", "hexBinning")
 S3method("plot", "squareBinning")
 
 ################################################################################
 ## Imports
 ################################################################################
-import("timeDate")
-import("timeSeries")
-import("fBasics")
+importFrom("mvtnorm", pmvt)
+importFrom("fBasics",
+           .contourPlot, .perspPlot, # <-> inst/unitTests/runit.BivariateDistributions.R
+           .sliderMenu)
+importFrom("sn",
+           ## R/zzz-mvstnorm.R :
+           dmsn, pmsn, rmsn,
+           dmst, pmst, rmst,
+           ## R.mvdist-msnFit.R :
+           mst.mple, msn.mle)
 
 importFrom("grDevices", heat.colors)
-importFrom("graphics", box, contour, image, par, persp, polygon, rug, title)
+importFrom("graphics", box, contour, image, par, persp, points, polygon, rug, title)
 importFrom("methods", new)
-importFrom("stats", cov, dnorm, mahalanobis, pnorm, rchisq, rnorm, var)
+importFrom("stats", cov, dnorm, mahalanobis, pnorm, quantile, rchisq, rnorm, var)

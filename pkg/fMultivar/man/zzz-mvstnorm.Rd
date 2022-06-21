@@ -1,5 +1,5 @@
 \name{zzz-mvstnorm}
-
+\title{Obsolete Functions}
 
 \alias{mvstnorm}
 
@@ -13,20 +13,14 @@
 
 \alias{mvFit}
 
-\title{Obsolete Functions}
-
-
 \description{
-    
     Obsolete Functions: Alternative multivariate distribution and 
     parameter estimation functions for the skew normal and skew
     Student-t distribution functions. 
-    
 }
 
 
 \details{
-
   The former implementations have been replaced by wrpper functions
   calling functions from the package \code{"sn"}.
 }
@@ -86,9 +80,6 @@
     \item{trace}{
         a logical, should the estimation be traced?
         }
-    \item{...}{
-        arguments passed to the underlying "sn" density functions.
-        }
         
 }
 
@@ -101,16 +92,11 @@
   
   \code{mvFit} returns an object of class \code{fDISTFEED}, see
   package \code{fBasics}.
-
 }
-
 
 %\references{}
 
-
-
 %\author{}
-
 
 \examples{
 \dontrun{
@@ -127,6 +113,4 @@
 }
 }
 
-
 \keyword{math}
-

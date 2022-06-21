@@ -123,19 +123,15 @@ hist2d <-
         y = x[, 2]
         x = x[, 1]
     }
-    if (length(n) == 1) {
-        nbins = c(n, n)
-    } else {
-        nbins = n
-    }
-    nas = is.na(x) | is.na(y)
+    nbins <- if(length(n) == 1) c(n, n) else n
+    ## nas = is.na(x) | is.na(y)
     x.cuts = seq(from = min(x, y), to = max(x,y), length = nbins[1]+1)
     y.cuts = seq(from = min(x, y), to = max(x,y), length = nbins[2]+1)
     index.x = cut(x, x.cuts, include.lowest = TRUE)
     index.y = cut(y, y.cuts, include.lowest = TRUE)
     m = matrix(0, nrow=nbins[1], ncol = nbins[2],
         dimnames = list( levels(index.x), levels(index.y) ) )
-    for ( i in 1:length(index.x) ) {
+    for ( i in seq_along(index.x) ) {
         m[index.x[i], index.y[i] ] = m[index.x[i], index.y[i] ] + 1
     }
     xvals = x.cuts[1:nbins[1]]

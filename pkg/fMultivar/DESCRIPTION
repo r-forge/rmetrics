@@ -1,17 +1,17 @@
 Package: fMultivar
-Title: Rmetrics - Analysing and Modeling Multivariate Financial Return Distributions
-Date: 2017-11-12
-Version: 3042.80
+Title: Rmetrics - Modeling of Multivariate Financial Return Distributions
+Date: 2022-06-21
+Version: 4001.1
 Author: Diethelm Wuertz [aut],
 	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Yohan Chalabi [ctb],
+	Martin Maechler [ctb],
+	CRAN team [ctb]
 Maintainer: Tobias Setz <tobias.setz@live.com>
-Description: Provides a  collection of functions 
-	to manage, to investigate and to analyze bivariate and multivariate 
-	data sets of financial returns.
-Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
-Imports: cubature, mvtnorm, sn, methods, grDevices, graphics, stats
-Suggests: spatial, RUnit, tcltk, akima
-LazyData: yes
+Description: A collection of functions to manage, investigate and analyze
+        bivariate and multivariate data sets of financial returns.
+Imports: fBasics, cubature, mvtnorm, sn, methods, grDevices, graphics, stats
+Suggests: RUnit, tcltk
 License: GPL (>= 2)
 URL: https://www.rmetrics.org
+NeedsCompilation: no
