@@ -49,6 +49,7 @@ armaTrueacf <-
     # FUNCTION:
     
     # Settings:
+    type <- match.arg(type)
     lag <- 0:lag.max
     result <- NA
     

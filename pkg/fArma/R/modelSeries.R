@@ -75,7 +75,7 @@
     x = model.frame(formula, data)
 
     # Convert:
-    if (class(data) == "timeSeries") x = timeSeries(x)
+    if (inherits(data,"timeSeries")) x = timeSeries(x)
     if (fake) attr(x, "control") <- method
 
     # Return value:
