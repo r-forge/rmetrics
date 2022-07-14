@@ -1,7 +1,7 @@
 Package: fBonds
 Title: Rmetrics - Pricing and Evaluating Bonds
 Date: 2017-11-12
-Version: 3042.78
+Version: 4021.78
 Author: Diethelm Wuertz [aut],
     Tobias Setz [cre]
 Maintainer: Tobias Setz <tobias.setz@live.com>
@@ -12,4 +12,4 @@ Imports: graphics, stats
 Suggests: RUnit
 LazyData: yes
 License: GPL (>= 2)
-URL: http://www.rmetrics.org
+URL: https://www.rmetrics.org
