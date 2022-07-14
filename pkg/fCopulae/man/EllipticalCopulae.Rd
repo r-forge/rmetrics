@@ -118,10 +118,6 @@ dellipticalSlider(type = c("persp", "contour"), B = 20)
         say \code{N}, than the values for all points on the 
         \code{[(0:N)/N]^2} grid spanning the unit square will be returned.
         }
-    \item{\dots}{
-        [ellipticalCopulaFit] - \cr
-        arguments passed to the optimization function \code{nlminb}.
-        }
     
 }
 

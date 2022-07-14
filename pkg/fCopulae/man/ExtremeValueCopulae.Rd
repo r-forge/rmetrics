@@ -109,10 +109,6 @@ devSlider(type = c("persp", "contour"), B = 10)
         first column will be used as \code{u} and the the second 
         as \code{v}.
        }
-    \item{\dots}{
-        [evCopulaFit] - \cr
-        arguments passed to the optimization function \code{nlminb}.
-        }
             
 }
 

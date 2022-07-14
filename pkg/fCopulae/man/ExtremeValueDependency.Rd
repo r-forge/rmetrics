@@ -77,10 +77,6 @@ evTailCoeffSlider(B = 10)
         perspective plot which is the default or a contour plot 
         with an underlying image plot will be created.
         }
-    \item{\dots}{
-        [evCopulaFit] - \cr
-        arguments passed to the optimization function \code{nlminb}.
-        }
             
 }
 

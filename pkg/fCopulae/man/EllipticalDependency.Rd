@@ -83,10 +83,6 @@ ellipticalTailPlot(param = NULL, type = c("norm", "cauchy", "t"),
         displayed, either a perspective plot if \code{type="persp"}, the
         default value, or a contour plot if \code{type="contour"}.
         }
-    \item{\dots}{
-        [ellipticalCopulaFit] - \cr
-        arguments passed to the optimization function \code{nlminb}.
-        }
     
 }
 

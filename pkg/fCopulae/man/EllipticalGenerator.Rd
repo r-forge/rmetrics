@@ -89,10 +89,6 @@ gfuncSlider(B = 10)
         a numeric value or vector out of the range \code{[0,Inf)} at
         which the generator will be computed.
         }
-    \item{\dots}{
-        [ellipticalCopulaFit] - \cr
-        arguments passed to the optimization function \code{nlminb}.
-        }
     
 }
 
