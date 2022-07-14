@@ -1,10 +1,10 @@
 Package: fExtremes
 Title: Rmetrics - Modelling Extreme Events in Finance
-Date: 2017-11-12
-Version: 3042.82
+Date: 2022-07-14
+Version: 4021.83
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Provides functions for analysing
   and modelling extreme events in financial time Series. The
@@ -17,4 +17,4 @@ Imports: methods, graphics, stats
 Suggests: RUnit, tcltk
 LazyData: yes
 License: GPL (>= 2)
-URL: http://www.rmetrics.org
+URL: https://www.rmetrics.org
