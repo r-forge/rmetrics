@@ -1,10 +1,10 @@
 Package: fArma
 Title: Rmetrics - Modelling ARMA Time Series Processes
-Date: 2017-11-12
-Version: 3042.81
+Date: 2022-07-14
+Version: 4021.82
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Modelling ARMA Time Series Processes.
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
