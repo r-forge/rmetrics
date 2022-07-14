@@ -1,10 +1,10 @@
 Package: fUnitRoots
 Title: Rmetrics - Modelling Trends and Unit Roots
-Date: 2017-11-12
-Version: 3042.79
+Date: 2022-07-14
+Version: 4021.80
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Provides four addons for analyzing trends and
     unit roots in financial time series: (i) functions for the density
@@ -18,4 +18,4 @@ Imports: urca, graphics, methods, stats, utils
 Suggests: RUnit
 LazyData: yes
 License: GPL (>= 2)
-URL: http://www.rmetrics.org
+URL: https://www.rmetrics.org
