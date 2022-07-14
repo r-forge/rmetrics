@@ -1,10 +1,10 @@
 Package: timeDate
 Title: Rmetrics - Chronological and Calendar Objects
-Date: 2018-11-29
-Version: 3043.103
+Date: 2022-07-14
+Version: 4021.104
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb],
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut],
 	Martin Maechler [ctb],
 	Joe W. Byers [ctb]
 Maintainer: Tobias Setz <tobias.setz@live.com>
