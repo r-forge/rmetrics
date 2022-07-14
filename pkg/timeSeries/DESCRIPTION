@@ -1,10 +1,10 @@
 Package: timeSeries
 Title: Financial Time Series Objects (Rmetrics)
-Date: 2020-01-24
-Version: 3062.101
+Date: 2022-07-14
+Version: 4021.102
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
-	   , person("Tobias", "Setz", role = "cre", email = "tobias.setz@live.com")
-	   , person("Yohan", "Chalabi", role = "ctb")
+	   , person("Tobias", "Setz", role = c("aut","cre"), email = "tobias.setz@live.com")
+	   , person("Yohan", "Chalabi", role = "aut")
 	   , person("Martin","Maechler", role="ctb", email="maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
 	   )
 Description: 'S4' classes and various tools for financial time series:
@@ -15,4 +15,4 @@ Imports: graphics, grDevices, stats, utils
 Suggests: RUnit, robustbase, xts, PerformanceAnalytics, fTrading
 LazyData: yes
 License: GPL (>= 2)
-URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics, http://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics, https://www.rmetrics.org

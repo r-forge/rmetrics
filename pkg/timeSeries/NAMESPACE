@@ -27,8 +27,7 @@ importFrom("timeDate"
            )
 
 importMethodsFrom("timeDate"
-         , "+", "-", "Ops"
-         , "[", "[<-"
+         , "+", "-", "Ops", "["
 )
 
 importFrom("grDevices"
@@ -105,7 +104,7 @@ exportMethods("$",
               "$<-",
               "+", "-",
               "Ops",
-              "[", "[<-",
+              "[",
               "aggregate",
               "align",
               "apply",
