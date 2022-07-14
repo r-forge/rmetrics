@@ -1,13 +1,13 @@
 Package: fMultivar
 Title: Rmetrics - Modeling of Multivariate Financial Return Distributions
-Date: 2022-06-21
-Version: 4001.1
-Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb],
-	Martin Maechler [ctb],
-	CRAN team [ctb]
-Maintainer: Tobias Setz <tobias.setz@live.com>
+Date: 2022-07-14
+Version: 4021.83
+Authors@R: c( person("Diethelm", "Wuertz", role = "aut"),
+              person("Tobias", "Setz", role = "aut"),
+              person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-Project.org"),
+	      person("Yohan", "Chalabi", role = "aut"),
+	      person("Martin", "Maechler", role = "ctb"),
+	      person("CRAN", "team", role = "ctb") )
 Description: A collection of functions to manage, investigate and analyze
         bivariate and multivariate data sets of financial returns.
 Imports: fBasics, cubature, mvtnorm, sn, methods, grDevices, graphics, stats
