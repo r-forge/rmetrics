@@ -1,7 +1,7 @@
 ################################################################################
 ## Libraries
 ################################################################################
-useDynLib("fBasics")
+useDynLib("fBasics", .registration = TRUE, .fixes = "C_")
 
 ################################################################################
 ## Imports
@@ -40,7 +40,10 @@ import("timeSeries")
 ################################################################################
 ## Exports
 ################################################################################
-exportPattern(".")
+#exportPattern(".")
+## Avoid ^C_, include those starting with . , be locale-independent
+## Ideally avoid S3 methods, but not e.g. runif.lcg
+exportPattern("^[ABDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.]")
 
 S3method("getModel", "default")
 S3method("print", "control")
@@ -67,4 +70,3 @@ S3method(".summary", "gmm")
 
 #fCouplae, fExtremes, fGarch, fMultivar and fRegression need a lot of exported
 #functions that start with a dot. This has to be fixed first...
-
