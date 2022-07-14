@@ -1,10 +1,10 @@
 Package: fImport
 Title: Rmetrics - Importing Economic and Financial Data
-Date: 2017-11-12
-Version: 3042.85
+Date: 2022-07-14
+Version: 4021.86
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Provides a collection of utility functions 
     to download and manage data sets from the Internet or from other 
