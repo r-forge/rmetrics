@@ -1,10 +1,10 @@
 Package: fAssets
 Title: Rmetrics - Analysing and Modelling Financial Assets
-Date: 2017-11-12
-Version: 4021.84
+Date: 2022-07-14
+Version: 4021.85
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Provides a  collection of functions 
   to manage, to investigate and to analyze data sets of financial 
