@@ -218,8 +218,17 @@ function(p, xi)
     # Compute:  
       g = 2  / (xi + 1/xi)
       sig = sign(p-1/2) 
-      Xi = xi^sig         
+      Xi = xi^sig
       p = (Heaviside(p-1/2)-sig*p) / (g*Xi)
+    ## GB:
+    ## TODO: BUG [#6061] fGarch::qsnorm() incorrect around p=0.5
+    ##
+    ## This has, in general,  discontinuity for p = 1/2, since then sig = 0.
+    ## Note that the original p = 1/2 is transformed above to 1/(2*g*Xi),
+    ## so qnorm() doesn't necessarilly give 1/2 when p = 1/2.
+    ##
+    ## Note also that p can be a vector.
+    ## 
       Quantile = (-sig*qnorm(p = p, sd = Xi) - mu ) / sigma
     # Return Value:
       Quantile 
