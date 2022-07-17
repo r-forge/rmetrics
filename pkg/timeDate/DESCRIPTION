@@ -22,7 +22,6 @@ Description: The 'timeDate' class fulfils the conventions of the ISO 8601
 Depends: R (>= 2.15.1)
 Imports: graphics, utils, stats, methods
 Suggests: date, RUnit
-LazyData: yes
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeDate/?root=rmetrics (devel), https://www.rmetrics.org
 BugReports: https://r-forge.r-project.org/projects/rmetrics
