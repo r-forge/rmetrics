@@ -1,13 +1,14 @@
 Package: timeDate
 Title: Rmetrics - Chronological and Calendar Objects
-Date: 2022-07-14
+Date: 2022-07-17
 Version: 4021.104
-Author: Diethelm Wuertz [aut],
-	Tobias Setz [aut,cre],
-	Yohan Chalabi [aut],
-	Martin Maechler [ctb],
-	Joe W. Byers [ctb]
-Maintainer: Tobias Setz <tobias.setz@live.com>
+Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
+	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
+	   , person("Yohan", "Chalabi", role = "aut")
+	   , person("Martin","Maechler", role = "ctb", email = "maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
+	   , person(given = c("Joe", "W."), family = "Byers", role = "ctb")
+	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
+                    role = c("cre"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: The 'timeDate' class fulfils the conventions of the ISO 8601 
 	standard as well as of the ANSI C and POSIX standards. Beyond
 	these standards it provides the "Financial Center" concept
@@ -18,8 +19,10 @@ Description: The 'timeDate' class fulfils the conventions of the ISO 8601
 	data records from the same time zone, even if the financial 
 	centers changed day light saving times at different calendar
 	dates.
-Depends: R (>= 2.15.1), graphics, utils, stats, methods
+Depends: R (>= 2.15.1)
+Imports: graphics, utils, stats, methods
 Suggests: date, RUnit
 LazyData: yes
 License: GPL (>= 2)
-URL: https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeDate/?root=rmetrics (devel), https://www.rmetrics.org
+BugReports: https://r-forge.r-project.org/projects/rmetrics
