@@ -1,3 +1,9 @@
+2022-07-18 smith
+
+	* DESCRIPTION changed maintainer and bumped package version
+	* src/init.c added to register C routines
+	* R/*.R changed testing of class types to use inherits(*,*)
+
 2013-06-23  chalabi
 
 	* DESCRIPTION, R/zzz.R, src/Makevars: updated Fortran flags,

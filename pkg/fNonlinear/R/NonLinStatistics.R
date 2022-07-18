@@ -81,7 +81,7 @@ function(x, partitions = 16, lag.max = 20, doplot = TRUE, ...)
     # FUNCTION:
 
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if ( inherits(x,"timeSeries") ) x = as.vector(x)
     x = as.ts(x)
     series = (x-min(x))/(diff(range(x)))
     corr = numeric(lag.max+1)
@@ -211,7 +211,7 @@ function(x, m, d, t, rt = 10, eps = NULL, doplot = TRUE, ...)
     # FUNCTION:
 
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if (inherits(x,"timeSeries") ) x = as.vector(x)
     series = as.ts(x)
     if (is.null(eps)) eps = sd(series)/10
     res = numeric(m)
@@ -276,7 +276,7 @@ function(x, m, d, end.time, eps, nt = 10, doplot = TRUE, ...)
     # FUNCTION:
 
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if ( inherits(x,"timeSeries") ) x = as.vector(x)
     series = as.ts(x)
     w = (0:(m-1))*d
     .dist = function(i, j) { sum((series[i+w]-series[j+w])^2) }
@@ -331,7 +331,7 @@ function(x, m, d, mdt, idt = 1, doplot = TRUE, ...)
     # FUNCTION:
 
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if ( inherits(x,"timeSeries") ) x = as.vector(x)
     series = as.ts(x)
     .checkEmbParms(series, m, d)
 
@@ -403,7 +403,7 @@ function(x, m, d, t, ref, s, eps, k = 1, doplot = TRUE, ...)
     # FUNCTION:
 
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if ( inherits(x,"timeSeries") ) x = as.vector(x)
     series = as.ts(x)
     .checkEmbParms(series, m, d, t, s, ref)
     n = length(series) - (m-1)*d - s
@@ -568,7 +568,7 @@ function(x, start, end)
 function(x, m, d, t, eps)
 {
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if ( inherits(x,"timeSeries") ) x = as.vector(x)
     series = as.ts(x)
     .checkEmbParms(series, m, d, t)
     if (eps <= 0) stop("eps must be positive")
@@ -597,7 +597,7 @@ function(x, m, d, t, eps)
 function(series, m, d, t, eps.min, neps = 100)
 {
     # Settings:
-    if (class(x) == "timeSeries") x = as.vector(x)
+    if ( inherits(x,"timeSeries") ) x = as.vector(x)
     series = as.ts(x)
     .checkEmbParms(series, m, d, t)
     if (eps.min <= 0) stop("eps.min must be positive")
@@ -610,8 +610,10 @@ function(series, m, d, t, eps.min, neps = 100)
     res = .C("d2",
         series = as.double(series),
         length = as.integer(length(series)),
-        m = as.integer(m), d = as.integer(d),
-        t = as.integer(t), neps = as.integer(neps),
+        m = as.integer(m),
+        d = as.integer(d),
+        t = as.integer(t),
+        neps = as.integer(neps),
         eps.max = as.double(eps.max),
         eps.min = as.double(eps.min),
         res = as.double(res),

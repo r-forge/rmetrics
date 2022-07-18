@@ -62,7 +62,7 @@ method = c("bds", "tnn", "wnn"), ...)
     # require(tseries)
 
     # Check Type:
-    if (class(x) == "timeSeries") {
+    if (inherits(x,"timeSeries")) {
         if (dim(x)[2] > 1) stop("x must be an univariate time series")
     }
     x = as.vector(x)
@@ -108,7 +108,7 @@ function(x, m = 3, eps = NULL, title = NULL, description = NULL)
     test$data.name = DNAME
 
     # Check Type:
-    if (class(x) == "timeSeries") {
+    if (inherits(x,"timeSeries")){
         if (dim(x)[2] > 1) stop("x must be an univariate time series")
     }
     x = as.vector(x)
@@ -198,7 +198,7 @@ title = NULL, description = NULL)
     test$data.name = DNAME
 
     # Check Type:
-    if (class(x) == "timeSeries") {
+    if (inherits(x,"timeSeries")){
         if (dim(x)[2] > 1) stop("x must be an univariate time series")
     }
     x = as.vector(x)
@@ -286,7 +286,7 @@ function(x, lag = 1, title = NULL, description = NULL)
     test$data.name = DNAME
 
     # Check Type:
-    if (class(x) == "timeSeries") {
+    if (inherits(x,"timeSeries")) {
         if (dim(x)[2] > 1) stop("x must be an univariate time series")
     }
     x = as.vector(x)
@@ -382,7 +382,7 @@ function(x)
     # FUNCTION:
 
     # Convert Type:
-    if (class(x) == "fREG") x = residuals(x)
+    if (inherits(x,"fREG")) x = residuals(x)
     x = as.vector(x)
 
     # runs.test() copied from A. Traplettis tseries package
