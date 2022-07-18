@@ -204,9 +204,11 @@ rellipticalSlider <-
 
     # FUNCTION:
 
-    # Use: X = .rnorm2d(n, rho) or alternatively:
-    X = fMultivar:::.rnorm2d(n = n, rho = rho)
-
+    ## Use: X = .rnorm2d(n, rho) or alternatively:
+    ## X = fMultivar:::.rnorm2d(n = n, rho = rho)
+    ## The above isn;t exported - use the exported function
+    X = fMultivar::rnorm2d(n = n, rho = rho)
+    
     # Generate
     Z <- NULL
     for(i in (1:n)) Z <- rbind(Z, pnorm(X [i,]))
