@@ -83,6 +83,7 @@
 \alias{USChristmasDay}
 \alias{USCPulaskisBirthday}
 \alias{USGoodFriday}
+\alias{USJuneteenthNationalIndependenceDay}
 \alias{CAVictoriaDay}
 \alias{CAFamilyDay}
 \alias{CACanadaDay}
@@ -212,6 +213,7 @@ USThanksgivingDay(year = getRmetricsOptions("currentYear"))
 USChristmasDay(year = getRmetricsOptions("currentYear"))
 USCPulaskisBirthday(year = getRmetricsOptions("currentYear"))
 USGoodFriday(year = getRmetricsOptions("currentYear"))
+USJuneteenthNationalIndependenceDay(year = getRmetricsOptions("currentYear"))
 CAVictoriaDay(year = getRmetricsOptions("currentYear"))
 CACanadaDay(year = getRmetricsOptions("currentYear"))
 CACivicProvincialHoliday(year = getRmetricsOptions("currentYear"))

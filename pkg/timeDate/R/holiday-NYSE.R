@@ -89,6 +89,8 @@ holidayNYSE <-
             holidays <- c(holidays, as.character(USDecorationMemorialDay(y)))
         if (y >= 1971)
             holidays <- c(holidays, as.character(USMemorialDay(y)))
+        if (y >= 2022) # GB, issue #6755
+            holidays <- c(holidays, as.character(USJuneteenthNationalIndependenceDay(y)))
     }
 
     # Sort and Convert to 'timeDate':

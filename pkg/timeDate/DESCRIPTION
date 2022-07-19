@@ -8,7 +8,7 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Martin","Maechler", role = "ctb", email = "maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
 	   , person(given = c("Joe", "W."), family = "Byers", role = "ctb")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "ctb"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: The 'timeDate' class fulfils the conventions of the ISO 8601 
 	standard as well as of the ANSI C and POSIX standards. Beyond
 	these standards it provides the "Financial Center" concept

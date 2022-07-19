@@ -748,6 +748,19 @@ function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0530
     timeDate(as.character(ans)) }
 
+# ---------------------------------------------------------------------------- #
+## Fixes issue #6755 by Ian E (ene100) 
+## Juneteenth introduced as NAtional US holiday in 2021;
+##    holiday on NYSE from 2022
+## https://www.sec.gov/rules/sro/nyse/2021/34-93183.pdf (see p. 2 for definition)
+##
+## Roxygen Tags
+#' @export
+# ---------------------------------------------------------------------------- #
+USJuneteenthNationalIndependenceDay =
+function(year = getRmetricsOptions("currentYear")) {
+    ans = year*10000 + 0619
+    timeDate(as.character(ans)) }
 
 # ------------------------------------------------------------------------------
 
