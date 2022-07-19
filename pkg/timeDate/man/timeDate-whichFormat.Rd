@@ -9,7 +9,7 @@
 
 \description{
     
-    Trys to recognize the date/time format.
+    Tries to recognize the date/time format.
        
 }
 

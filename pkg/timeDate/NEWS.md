@@ -12,7 +12,12 @@
 - `holidayTSX()` now includes the Labour Day. Fixes part (1) of issue #1288
   reported by Stefan Wilhelm.
 
+- created a first version of `_pkgdown.yml` for more organised view of the large
+  number of objects in the package. Unpack the tarball and run
+  `pkgdown::build_site()` to build the site locally. Don't know if this could
+  work directly off the R-forge repository.
+  
 
-# timeDate older versions
+# timeDate 3043.102 and older versions
 
   See file `ChangeLog` for changes before 4021.104.

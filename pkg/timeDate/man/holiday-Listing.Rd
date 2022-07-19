@@ -4,7 +4,7 @@
 \alias{listHolidays}
 
 
-\title{List of Holidayss}
+\title{List of Holidays}
 
 
 \description{

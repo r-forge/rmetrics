@@ -449,10 +449,10 @@
 
 \note{
 
-  There are currently two synonymes available "Pacific" for Los Angeles
+  There are currently two synonyms available "Pacific" for Los Angeles
   and "Eastern" for New York. 
 
-  specifi time zones (\code{AST}, \code{CET}, \code{CST}, \code{EET},
+  Specific time zones (\code{AST}, \code{CET}, \code{CST}, \code{EET},
   \code{EST}, \code{MST} and \code{PST}) are also available.
   
   Note we leave the space in all double named cities like New York 

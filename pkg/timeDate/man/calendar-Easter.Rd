@@ -61,6 +61,9 @@ Easter(year = getRmetricsOptions("currentYear"), shift = 0)
 
 }
 
+\note{
+  Doesn't have options to compute Eastern Orthodox Easter dates.
+}
 
 \examples{
 ## Easter -

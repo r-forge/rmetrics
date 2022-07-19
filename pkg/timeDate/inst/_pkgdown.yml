@@ -8,7 +8,6 @@ reference:
   - title: "Overview of package timeDate"
     contents:
       - "timeDate-package"
-      - RmetricsOptions
   - title: "timeDate objects"
     contents:
       - timeDate 
@@ -24,8 +23,6 @@ reference:
       - blockStart
   - title: "Other time functions"
     contents:
-      - currentYear
-      - myUnits
       - DaylightSavingTime
       - midnightStandard
       - whichFormat
@@ -40,7 +37,6 @@ reference:
       - finCenter
       - listFinCenter
       - rulesFinCenter
-      - myFinCenter
   - title: "Unclasssified"
     contents:
       - .endpoints
@@ -84,11 +80,20 @@ reference:
       - periods
       - periodicallyRolling
       - monthlyRolling
+  - title:  Rmetrics Options
+    desc: >
+       Values available from getRmetricsOptions().
+       Some of them can be set with setRmetricsOptions()
+    contents:
+      - RmetricsOptions
+      - currentYear
+      - myUnits
+      - myFinCenter
   - title: "Holiday lists"
     contents:
       - holiday       
-      - holidayLONDON
       - listHolidays
+      - holidayLONDON
       - holidayNERC
       - holidayNYSE
       - holidayTSX

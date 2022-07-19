@@ -8,7 +8,7 @@
 
 
 \description{
-Returns endpoint indexes from a 'timeDate' object
+Returns endpoint indexes from a 'timeDate' object.
 }
 
 
@@ -49,7 +49,7 @@ Returns endpoint indexes from a 'timeDate' object
 
 
 \author{
-    Jeff Ryan, modofied by Diethelm Wuertz for \code{timeDate} objects.
+    Jeff Ryan, modified by Diethelm Wuertz for \code{timeDate} objects.
 }
 
 

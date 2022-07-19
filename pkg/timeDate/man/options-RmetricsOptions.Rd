@@ -7,7 +7,7 @@
 
 \description{
   Allow the user to set and examine a variety of global options which
-  affect the way in which Rmetrics functions computes and displays its
+  affect the way in which Rmetrics functions compute and display their
   results.
 }
 
