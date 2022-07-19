@@ -80,6 +80,7 @@ holidayTSX <-
         CACanadaDay(year),
         CACivicProvincialHoliday(year),
         CAThanksgivingDay(year),
+        CALabourDay(year),
         ChristmasDay(year),
         BoxingDay(year))
     for (y in year)
