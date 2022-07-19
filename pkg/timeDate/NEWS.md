@@ -2,7 +2,7 @@
 
 - new maintainer: Georgi N. Boshnakov.
 
-- updated DESCRIPTION with links and moved all `Depends:` to imports.
+- updated DESCRIPTION with links and moved all `Depends:` to `Imports:`.
 
 - removed the line `LazyData: yes` from DESCRIPTION to fix the NOTE on CRAN.
 
@@ -11,6 +11,7 @@
 
 - `holidayTSX()` now includes the Labour Day. Fixes part (1) of issue #1288
   reported by Stefan Wilhelm.
+
 
 # timeDate older versions
 
