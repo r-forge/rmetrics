@@ -1,6 +1,6 @@
 Package: fBasics
 Title: Rmetrics - Markets and Basic Statistics
-Date: 2022-07-14
+Date: 2022-07-19
 Version: 4021.92
 Author: Diethelm Wuertz [aut],
 	Tobias Setz [aut,cre],
@@ -8,6 +8,13 @@ Author: Diethelm Wuertz [aut],
 	Martin Maechler [ctb],
 	CRAN Team [ctb]
 Maintainer: Tobias Setz <tobias.setz@live.com>
+Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
+	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
+	   , person("Yohan", "Chalabi", role = "aut")
+	   , person("Martin","Maechler", role="ctb", email="maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
+	   , person("CRAN Team", role = "ctb")
+	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
+                    role = c("cre"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Provides a collection of functions to 
     explore and to investigate basic properties of financial returns 
     and related quantities.
@@ -21,4 +28,5 @@ Suggests: interp, RUnit, tcltk
 LazyData: yes
 License: GPL (>= 2)
 Encoding: UTF-8
-URL: https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics )devel), https://www.rmetrics.org
+BugReports: https://r-forge.r-project.org/projects/rmetrics

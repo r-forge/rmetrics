@@ -20,7 +20,7 @@
 
 
 %--------------------------------------------------------------
-\title{fBsiscs Data Sets} 
+\title{fBasics Data Sets} 
 
 \description{
   The following data sets are part of this package:
