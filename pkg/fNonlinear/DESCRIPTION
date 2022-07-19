@@ -3,8 +3,9 @@ Title: Rmetrics - Nonlinear and Chaotic Time Series Modelling
 Date: 2022-07-14
 Version: 4021.80
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [aut,cre],
-	Yohan Chalabi [aut]
+	Tobias Setz [aut],
+	Yohan Chalabi [aut],
+	Paul Smith [cre]
 Maintainer: Paul Smith <paul@waternumbers.co.uk>
 Description: Provides a collection of functions for testing various aspects of
 	univariate time series including independence and neglected

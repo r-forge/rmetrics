@@ -3,8 +3,9 @@ Title: Rmetrics - Bivariate Dependence Structures with Copulae
 Date: 2022-07-14
 Version: 4021.84
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [aut,cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut],
+	Yohan Chalabi [ctb],
+	Paul Smith [cre]
 Maintainer: Paul Smith <paul@waternumbers.co.uk>
 Description: Provides a  collection of functions to 
 	manage, to investigate and to analyze bivariate financial returns by  
