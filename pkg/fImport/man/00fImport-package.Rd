@@ -8,7 +8,7 @@
 \docType{package}
 
 
-\title{Import Data Package}
+\title{Import data from the web}
 
 
 \description{
@@ -20,26 +20,26 @@
 }
 
 
-\details{
-
-    \tabular{ll}{
-        Package:    \tab fImport\cr
-        Type:       \tab Package\cr
-        Version:    \tab R 3.1.2\cr
-        Date:       \tab 2015\cr
-        License:    \tab GPL Version 2 or later\cr
-        Copyright:  \tab (c) 1999-2015 Rmetrics Assiciation\cr
-        URL:        \tab \url{https://www.rmetrics.org}
-    }
-    
-}
+% \details{
+% 
+%     \tabular{ll}{
+%         Package:    \tab fImport\cr
+%         Type:       \tab Package\cr
+%         Version:    \tab R 3.1.2\cr
+%         Date:       \tab 2015\cr
+%         License:    \tab GPL Version 2 or later\cr
+%         Copyright:  \tab (c) 1999-2015 Rmetrics Assiciation\cr
+%         URL:        \tab \url{https://www.rmetrics.org}
+%     }
+%     
+% }
 
 
 \section{1 Introduction}{
     
     The major content of this package is to provide download functions 
     for financial market data from the Internet. For this we have 
-    implemented the web text browsers "Lynx"", "Links"", and "W3M"" 
+    implemented the web text browsers "Lynx", "Links", and "W3M"
     for an easy and straightforward download of data from the Internet.   
     
     Furthermore helpful utility functions are included to split numerical 
@@ -81,13 +81,13 @@
 }
 
 
-\section{2 Readers and Web downloaders}{
+\section{3 Readers and Web downloaders}{
 
-    The package comes with the folowwing tailored readers and web 
+    The package comes with the following tailored readers and web 
     downloaders:
     
     \preformatted{
-    read.lines      a synonyme function call to readLines
+    read.lines      a synonym function call to readLines
     read.links      uses the links browser to read from a web page
     read.lynx       uses the lynx browser to read from a web page
     read.w3m        uses the w3m browser to read from a web page
@@ -96,7 +96,7 @@
 }
 
 
-\section{3 Split Function Utilities}{
+\section{4 Split Function Utilities}{
 
     This section provides functions to split numerical data matrices, 
     to split date character vectors, and to split strings 

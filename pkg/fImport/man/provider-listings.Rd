@@ -51,7 +51,13 @@
     www.rmetrics.org.
     
 }
- 
+
+\examples{
+data(package = "fImport")
+
+head(h15Listing)
+head(nyseListing)
+}
  
 \keyword{datasets}
 

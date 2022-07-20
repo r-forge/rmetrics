@@ -1,17 +1,14 @@
 \name{utils-split}
 
-
 \alias{charvecSplit}
 \alias{dataSplit}
 \alias{stringSplit}
 
-
-\title{Splitting Downloaded Data Sets}
-
+\title{Split downloaded data sets}
 
 \description{
 
-    Helpful data set and charvec splitting utilities. 
+    Helpful dataset and charvec splitting utilities. 
     
 }
 
@@ -22,7 +19,6 @@ charvecSplit(x, split=" ", col=1, format="\%F")
 stringSplit(x, split=" ", col=NULL) 
 }
 
-
 \arguments{
 
     \item{x}{
@@ -32,7 +28,7 @@ stringSplit(x, split=" ", col=NULL)
         the split character, by default a blank.
     }
     \item{col}{
-        an integer value or vector, the columns to be selected.
+        an integer value or vector, the column(s) to be selected.
     }
     \item{format}{
         the date format of the character vector, by default
@@ -50,6 +46,4 @@ Diethelm Wuertz, Yohan Chalabi, and Andrew Ellis, (2010);
     
 }
 
-
 \keyword{programming}
-

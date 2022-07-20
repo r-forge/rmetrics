@@ -5,7 +5,7 @@
 
 
 ################################################
-## import name space
+## import namespace
 ################################################
 import("timeDate")
 import("timeSeries")
@@ -15,9 +15,26 @@ importFrom("utils", download.file, write.table)
 
 
 ################################################
-## functions
+## exports
 ################################################
 
-exportPattern(".")
+## from v4021.86 export selectively
+## was: exportPattern(".")
 
+exportClasses(fWEBDATA)
+exportMethods(show)
+
+export(
+      charvecSplit
+    , composeURL
+    , dataSplit
+    , fredImport
+    , fredSeries
+    , indexGrep
+    , read.lines
+    , read.links
+    , read.lynx
+    , read.w3m
+    , stringSplit
+)
 

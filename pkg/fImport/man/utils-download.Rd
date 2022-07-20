@@ -1,45 +1,39 @@
 \name{utils-download}
 
-
 \alias{composeURL}
 \alias{indexGrep}
 
-
-\title{Download Utilities}
-
+\title{Utilities for composing URL's}
 
 \description{
-
-    Twp helpful utilities to read downloads.\ 
-    
+    Two helpful utilities for assembling URL's.
 }
-
 
 \usage{
 composeURL(\dots, prefix="http://")
 indexGrep(pattern, x, \dots)
 }
 
-
 \arguments{
 
-    \item{\dots}{
-        [composeURL]\cr
-        character strings from which the URL will be composed.\cr
-        [indexGrep]\cr
-        optional arguments to be passed to the function \code{grep}.  
-    }
-    \item{prefix}{
-        a character string specifying the prefix of the URL.
-    }
-    \item{pattern}{
-        a character string containing a regular expression to be 
-        matched in the given character vector. 
-    }
-    \item{x}{
-        a character vector where matches are sought.
-    }
-    
+  \item{\dots}{
+    for \code{composeURL}, character strings from which the URL will
+    be composed; for \code{indexGrep}, optional arguments to be
+    passed to the function \code{grep}.
+  }
+
+  \item{prefix}{
+    a character string specifying the prefix of the URL.
+  }
+
+  \item{pattern}{
+    a character string containing a regular expression to be matched in
+    the given character vector.
+  }
+
+  \item{x}{
+    a character vector where matches are sought.
+  }
 }
 
 
@@ -52,6 +46,4 @@ Diethelm Wuertz, Yohan Chalabi, and Andrew Ellis, (2010);
     
 }
 
-
 \keyword{programming}
-

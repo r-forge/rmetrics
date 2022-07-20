@@ -7,7 +7,7 @@
 \alias{fredSeries}
 
 
-\title{Import Market Data from the Fred}
+\title{Import Market Data from the Federal Reserve Database}
 
 
 \description{
@@ -152,11 +152,15 @@ Diethelm Wuertz, Yohan Chalabi, and Andrew Ellis, (2010);
 
 \examples{
 \donttest{
-fredImport("DEXSZUS")
-fredSeries("DEXSZUS")
+a = fredImport("DEXSZUS")
+head(a@data)  # a@data is a data frame
+
+b = fredSeries("DEXSZUS")
+head(b) # timeSeries object
 }
 }
 
 
 \keyword{data}
+\keyword{ts}
 
