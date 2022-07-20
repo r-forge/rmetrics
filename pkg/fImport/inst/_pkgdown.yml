@@ -1,0 +1,36 @@
+template:
+  bootstrap: 5
+  
+search:
+  exclude: ['news/index.html']
+
+reference:
+  - title: "Overview of package fImport"
+    contents:
+      - "fImport-package"
+  - title: "Import data from internet"
+    desc: >
+      Currently, only the FRED database is supported.
+      The listings from the stock markets should still be useful but have not been updated
+      for years.
+    contents:
+      - fredSeries
+      - fredImport
+      - provider-Listings
+  - title: "class fWEBDATA"
+    contents:
+      - "class-fWEBDATA"
+      - "show-methods"
+  - title: "Utilities"
+    contents:
+      - composeURL
+      - indexGrep
+      - dataSplit
+      - charvecSplit
+      - stringSplit
+  - title: "Read webpages using a browser"
+    contents:
+      - read.links
+      - read.lynx
+      - read.w3m
+      - read.lines
