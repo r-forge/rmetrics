@@ -69,3 +69,5 @@ rownames(HedgeFund) = c(
     "Russell2000",            
     "SP500")
 
+## GB: clean up
+rm(.HedgeFund1, .HedgeFund2)

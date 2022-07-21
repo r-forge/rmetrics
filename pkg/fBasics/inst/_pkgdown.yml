@@ -251,7 +251,9 @@ reference:
       - qualiPalette
       - focusPalette
       - monoPalette
+      - characterTable
       - colorTable
+      - symbolTable
       - decor
       - hgrid
       - vgrid

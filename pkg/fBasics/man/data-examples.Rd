@@ -14,11 +14,6 @@
 \alias{SWXLP}
 \alias{usdthb}
 
-%%% These should be removed
-\alias{.HedgeFund1}
-\alias{.HedgeFund2}
-
-
 %--------------------------------------------------------------
 \title{fBasics Data Sets} 
 
