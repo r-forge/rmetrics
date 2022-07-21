@@ -6,6 +6,8 @@
 
 - in NAMESPACE, now export selectively rather than with the pattern `"."`.
 
+- tydied up the documentation a bit but some obsolete stuff remains.
+
 
 # fImport 3042.85 and older versions
 
