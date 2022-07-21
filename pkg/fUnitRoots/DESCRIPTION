@@ -1,11 +1,12 @@
 Package: fUnitRoots
 Title: Rmetrics - Modelling Trends and Unit Roots
-Date: 2022-07-14
+Date: 2022-07-21
 Version: 4021.80
-Author: Diethelm Wuertz [aut],
-	Tobias Setz [aut,cre],
-	Yohan Chalabi [aut]
-Maintainer: Tobias Setz <tobias.setz@live.com>
+Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
+	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
+	   , person("Yohan", "Chalabi", role = "aut")
+	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
+                    role = c("cre"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Provides four addons for analyzing trends and
     unit roots in financial time series: (i) functions for the density
     and probability of the augmented Dickey-Fuller Test, (ii) functions 
@@ -16,6 +17,6 @@ Description: Provides four addons for analyzing trends and
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
 Imports: urca, graphics, methods, stats, utils
 Suggests: RUnit
-LazyData: yes
 License: GPL (>= 2)
-URL: https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fUnitRoots/?root=rmetrics )devel), https://www.rmetrics.org
+BugReports: https://r-forge.r-project.org/projects/rmetrics

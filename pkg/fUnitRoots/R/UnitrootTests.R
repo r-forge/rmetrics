@@ -72,7 +72,7 @@ adfTest <-
     test$data.name <- DNAME
 
     # Transform:
-    if (class(x) == "timeSeries") x = series(x)
+    if (is(x, "timeSeries")) x = series(x)
     x = as.vector(x)
 
     # Check Arguments:
@@ -237,7 +237,7 @@ unitrootTest =
     test$data.name <- DNAME
 
     # Transform:
-    if (class(x) == "timeSeries") x <- series(x)
+    if (is(x, "timeSeries")) x <- series(x)
     x = as.vector(x)
 
     # Check Arguments:
