@@ -1,7 +1,7 @@
 Package: timeSeries
 Title: Financial Time Series Objects (Rmetrics)
-Date: 2022-07-15
-Version: 4021.104
+Date: 2022-07-21
+Version: 4021.105
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")

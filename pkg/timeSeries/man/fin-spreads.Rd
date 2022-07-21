@@ -60,9 +60,9 @@ spreadSeries(\dots)
 
 \note{
 
-    The functions \code{returnSeries}, \code{getReturns}, 
-    \code{midquoteSeries}, \code{spreadSeries} are synonymes
-    for \code{returns}, \code{midquotes}, and \code{spreads}.
+    The functions 
+    \code{midquoteSeries} and \code{spreadSeries} are synonyms
+    for  \code{midquotes} and \code{spreads}, respectively
 
 }
    

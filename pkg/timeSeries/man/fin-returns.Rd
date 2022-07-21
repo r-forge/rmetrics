@@ -77,10 +77,10 @@ returnSeries(\dots)
 
 \note{
 
-    The functions \code{returnSeries}, \code{getReturns}, 
-    are synonymes for the function \code{returns}. We do
-    not recommend to use these functions.
-
+    The functions \code{returnSeries}, \code{getReturns} are no longer
+    exported and will be removed in the near future. They are synonyms
+    for the function \code{returns} and their use was discouraged for
+    many years. Just use \code{returns}.
 }
     
 
