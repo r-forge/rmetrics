@@ -1,6 +1,6 @@
 Package: fBasics
 Title: Rmetrics - Markets and Basic Statistics
-Date: 2022-07-19
+Date: 2022-07-21
 Version: 4021.92
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
@@ -16,8 +16,9 @@ Description: Provides a collection of functions to
     and the investigation of distributional properties, including
     parameter estimation and hypothesis testing. Even more there are
     several utility functions for data handling and management.
-Depends: R (>= 2.15.1), timeDate, timeSeries
-Imports: stats, grDevices, graphics, methods, utils, MASS, spatial, gss, stabledist
+Depends: R (>= 2.15.1)
+Imports: timeDate, timeSeries, stats, grDevices, graphics, methods, utils, MASS,
+         spatial, gss, stabledist
 Suggests: interp, RUnit, tcltk
 LazyData: yes
 License: GPL (>= 2)

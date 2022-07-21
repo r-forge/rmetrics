@@ -14,7 +14,7 @@ importFrom("graphics", axis, barplot, box, boxplot, contour,
              grid, hist, layout, locator, matplot, mtext,
              panel.smooth, par, persp, pie, plot.new,
              plot.window, polygon, rect, rug, symbols, text,
-             title)
+             title, abline, lines, points)
 importFrom("stats", acf, ansari.test, approx, ar, arima,
              complete.cases, constrOptim, cor, cor.test,
              density, dnorm, dt, integrate, ks.test, lsfit,
@@ -22,9 +22,10 @@ importFrom("stats", acf, ansari.test, approx, ar, arima,
              numericDeriv, optim, optimize, pacf, pchisq, pf,
              pnorm, ppoints, qchisq, qf, qnorm, qqline,
              qqnorm, qt, residuals, rexp, rnorm, runif, sd,
-             shapiro.test, spline, t.test, uniroot, var)
+             shapiro.test, spline, t.test, uniroot, var, na.omit, quantile)
 importFrom("utils", menu)
 
+#import(methods)
 importFrom("methods", getMethod, is, new, slot, show)
 
 importFrom("spatial", prmat, surf.gls)
@@ -32,10 +33,11 @@ importFrom("spatial", prmat, surf.gls)
 ## 'akima' is *not* here because of its non-GPL Licence
 ## importFrom("akima", interp, interpp)
 
+importFrom("timeDate", getRmetricsOptions, setRmetricsOptions,
+           kurtosis, skewness)
 
-## (MM:) FIXME: Only import what you need!
-import("timeDate")
-import("timeSeries")
+importFrom("timeSeries", timeSeries, is.timeSeries, as.timeSeries, isUnivariate,
+           returns, description, drawdowns, colCumsums)
 
 ################################################################################
 ## Exports
@@ -77,6 +79,9 @@ exportMethods("show")
 exportClasses("fDISTFIT", "fHTEST")
 
 export(
+    as.timeSeries, # reexport, needs to be documented here
+    timeSeries,    # reexport, S4 generic, doesn't need doc. here
+    returns,       # reexport, S4 generic, doesn't need doc. here
     ## datasets
     ##   .HedgeFund1,  removed, used only to create .HedgeFund
     ##   .HedgeFund2,  ditto
