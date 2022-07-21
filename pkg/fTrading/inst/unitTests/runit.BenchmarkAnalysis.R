@@ -45,16 +45,19 @@ function()
 {
     # getReturns - Computes return series given a price series
 
+    ## 2021-07-21 - getReturns() is scheduled for retirement,
+    ##    use returns() instead
+    
     # Data from fEcofin:
     X = MSFT
     print(head(X))
 
     # Get Returns:
-    R = getReturns(X)
+    R = returns(X)
     head(R)
 
     # Get Returns:
-    R = getReturns(X, percentage = TRUE)
+    R = returns(X, percentage = TRUE)
     head(R)
 
     # Return Value:
@@ -103,7 +106,7 @@ function()
     print(head(X))
 
     # Get Returns:
-    R = getReturns(X)
+    R = returns(X)
 
     # Sharpe Ratio:
     sharpeRatio(R[, "Close"])
@@ -126,7 +129,7 @@ function()
     print(head(X))
 
     # Get Returns:
-    R = getReturns(X)
+    R = returns(X)
 
     # Sterling Ratio:
     sterlingRatio(R[, "Close"])
