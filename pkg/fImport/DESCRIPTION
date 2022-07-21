@@ -6,7 +6,7 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "ctb"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Provides a collection of utility functions 
     to download and manage data sets from the Internet or from other 
     sources.
