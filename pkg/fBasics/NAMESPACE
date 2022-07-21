@@ -69,11 +69,7 @@ S3method(".summary", "gmm")
 #export(.blue2yellowPalette)
 #export(.cyan2magentaPalette)
 
-#fCopulae, fExtremes, fGarch, fMultivar and fRegression need a lot of exported
-#functions that start with a dot. This has to be fixed first...
-
-## explicitly name exports
-## start with
+## explicitly name exports, start with
 ##     cat(ls("package:fBasics", all.names = TRUE), sep =",\n")
 ## then clean up; for now just comment out, in case havoc ensues for dependencies.
 
