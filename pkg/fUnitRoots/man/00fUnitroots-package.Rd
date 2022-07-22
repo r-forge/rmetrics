@@ -19,20 +19,20 @@
 }
 
 
-\details{
-
-    \preformatted{
-        Package:    \tab fUnitRoots\cr
-        Type:       \tab Package\cr
-        Version:    \tab R 3.0.1\cr
-        Date:       \tab 2014\cr
-        License:    \tab GPL Version 2 or later\cr
-        Copyright:  \tab (c) 1999-2014 Rmetrics Association\cr
-        Repository: \tab R-FORGE\cr
-        URL:        \tab \url{https://www.rmetrics.org}
-    }
-    
-}
+% \details{
+% 
+%     \preformatted{
+%         Package:    \tab fUnitRoots\cr
+%         Type:       \tab Package\cr
+%         Version:    \tab R 3.0.1\cr
+%         Date:       \tab 2014\cr
+%         License:    \tab GPL Version 2 or later\cr
+%         Copyright:  \tab (c) 1999-2014 Rmetrics Association\cr
+%         Repository: \tab R-FORGE\cr
+%         URL:        \tab \url{https://www.rmetrics.org}
+%     }
+%     
+% }
 
 
 \section{1 Introduction}{
@@ -83,7 +83,7 @@
     unit root tests based on J.G. McKinnons' tables:
     
     \preformatted{
-    adfTest         augmented Dickey--Fuller test for unit roots
+    adfTest         augmented Dickey-Fuller test for unit roots
     unitrootTest    the same based on McKinnons's test statistics
     }
 
@@ -96,12 +96,12 @@
     Bernhard Pfaff available through the \R package "\pkg{urca}" 
     
     \preformatted{
-    urdfTest        Augmented Dickey--Fuller test for unit roots
-    urersTest       Elliott--Rothenberg--Stock test for unit roots
+    urdfTest        Augmented Dickey-Fuller test for unit roots
+    urersTest       Elliott--Rothenberg-Stock test for unit roots
     urkpssTest      KPSS unit root test for stationarity
-    urppTest        Phillips--Perron test for unit roots
-    urspTest        Schmidt--Phillips test for unit roots
-    urzaTest        Zivot--Andrews test for unit roots
+    urppTest        Phillips-Perron test for unit roots
+    urspTest        Schmidt-Phillips test for unit roots
+    urzaTest        Zivot-Andrews test for unit roots
     }
   
 }

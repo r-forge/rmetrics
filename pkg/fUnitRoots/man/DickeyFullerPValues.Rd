@@ -39,7 +39,7 @@ adfTable(trend = c("nc", "c", "ct"), statistic = c("t", "n"),
 \arguments{ 
 
     \item{includeInf}{
-        a logical flag. Should the asymptotic value included into
+        a logical flag. Should the asymptotic value be included into
         the table?
         }
     \item{N}{ 

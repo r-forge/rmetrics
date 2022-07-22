@@ -13,7 +13,7 @@
 \description{
     
     A collection and description of functions 
-    to compute the distribution and and quantile 
+    to compute the distribution and quantile 
     function for MacKinnon's unit root test statistics. 
     \cr
     
@@ -22,7 +22,7 @@
     \tabular{ll}{
     \code{punitroot} \tab the returns cumulative probability, \cr
     \code{qunitroot} \tab the returns quantiles of the unit root test statistics, \cr
-    \code{unitrootTable} \tab tables p values from MacKinnon's response surface.}
+    \code{unitrootTable} \tab tables of p values from MacKinnon's response surface.}
     
 }
  
@@ -45,7 +45,7 @@ unitrootTable(trend = c("c", "nc", "ct", "ctt"), statistic = c("t", "n"))
         }
     \item{na.rm}{
         a logical value. If set to \code{TRUE}, missing values will 
-        be removed otherwise not, the default is \code{FALSE}. 
+        be removed, otherwise not. The default is \code{FALSE}. 
         }
     \item{p}{ 
         a numeric vector of probabilities. Missing values are 

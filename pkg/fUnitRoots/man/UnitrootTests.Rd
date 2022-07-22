@@ -22,7 +22,7 @@
     The functions are:
     
     \tabular{ll}{
-    \code{adfTest} \tab Augmented Dickey--Fuller test for unit roots, \cr
+    \code{adfTest} \tab Augmented Dickey-Fuller test for unit roots, \cr
     \code{unitrootTest} \tab the same based on McKinnons's test statistics. }
     
 }
@@ -66,7 +66,7 @@ adfTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL,
 \details{
     
     The function \code{adfTest()} computes test statistics and p values 
-    along the implementation from Trapletti's augmented Dickey--Fuller 
+    along the implementation from Trapletti's augmented Dickey-Fuller 
     test for unit roots. In contrast to Trapletti's function three kind 
     of test types can be selected.
     

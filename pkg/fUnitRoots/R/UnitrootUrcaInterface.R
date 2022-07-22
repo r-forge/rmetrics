@@ -110,7 +110,7 @@ urersTest <-
         test = urca,
         output = output
     )
-
+#browser()
     # Plot:
     if (doplot & type[1] == "DF-GLS") plot(urca)
 

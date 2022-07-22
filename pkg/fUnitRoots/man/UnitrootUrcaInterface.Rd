@@ -14,18 +14,18 @@
   
   A collection and description of functions for unit root testing.  
   This is an interface to the unitroot tests implemented by B. Pfaff
-  available through the \R package "\pkg{urca}" which is required 
+  available through the \R package \pkg{urca} which is required 
   here.
 
   Added functions based on the \pkg{urca} package include:
 
   \tabular{ll}{
-    \code{urdfTest} \tab Augmented Dickey--Fuller test for unit roots, \cr
-    \code{urersTest} \tab Elliott--Rothenberg--Stock test for unit roots, \cr
+    \code{urdfTest} \tab Augmented Dickey-Fuller test for unit roots, \cr
+    \code{urersTest} \tab Elliott-Rothenberg-Stock test for unit roots, \cr
     \code{urkpssTest} \tab KPSS unit root test for stationarity, \cr
-    \code{urppTest} \tab Phillips--Perron test for unit roots, \cr
-    \code{urspTest} \tab Schmidt--Phillips test for unit roots, \cr
-    \code{urzaTest} \tab Zivot--Andrews test for unit roots.
+    \code{urppTest} \tab Phillips-Perron test for unit roots, \cr
+    \code{urspTest} \tab Schmidt-Phillips test for unit roots, \cr
+    \code{urzaTest} \tab Zivot-Andrews test for unit roots.
   }
   
 }
@@ -139,7 +139,7 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
     \bold{Unit Root Tests from Berhard Pfaff's "\pkg{urca}" Package:}
     \cr
 
-    \emph{Elliott--Rothenberg--Stock Test for Unit Roots:}
+    \emph{Elliott-Rothenberg-Stock Test for Unit Roots:}
     \cr
     To improve the power of the unit root test, Elliot, Rothenberg and
     Stock proposed a local to unity detrending of the time series. ERS
@@ -164,7 +164,7 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
     by setting use.lag accordingly. \cr
     \code{[urca:ur.kpss]} \cr
 
-    \emph{Phillips--Perron Test for Unit Roots:}
+    \emph{Phillips-Perron Test for Unit Roots:}
     \cr
     Performs the Phillips and Perron unit root test. Beside the
     Z statistics Z-alpha and Z-tau, the Z statistics for the
@@ -172,7 +172,7 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
     For correction of the error term a Bartlett window is used. \cr
     \code{[urca:ur.pp]} \cr
 
-    \emph{Schmidt--Phillips Test for Unit Roots:}
+    \emph{Schmidt-Phillips Test for Unit Roots:}
     \cr
     Performs the Schmidt and Phillips unit root test, where under
     the Null and Alternative Hypothesis the coefficients of the
@@ -181,7 +181,7 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
     extracted from the LM principle. \cr
     \code{[urca:ur.sp]} \cr
 
-    \emph{Zivot--Andrews Test for Unit Roots:}
+    \emph{Zivot-Andrews Test for Unit Roots:}
     \cr
     Performs the Zivot and Andrews unit root test, which allows a
     break at an unknown point in either the intercept, the linear
