@@ -329,7 +329,7 @@ unitrootTable =
             if (min(size) < 0.0001 || max(size) > 0.9999) {
                 ans = c(ans, NA) 
             } else {
-                result = .Fortran("fcrit", 
+                result = .Fortran(fcrit, 
                     as.double(probs), as.double(cnorm), as.double(beta), 
                     as.double(wght), as.double(cval), as.double(size), 
                     as.double(precrt), as.integer(nobs), as.integer(model), 
@@ -339,7 +339,7 @@ unitrootTable =
             } 
         }
         if (nc == 2) {
-            result = .Fortran("fpval", 
+            result = .Fortran(fpval, 
                 as.double(beta), as.double(cnorm), as.double(wght), 
                 as.double(probs), as.double(pval), as.double(stat), 
                 as.double(precrt), as.integer(nobs), as.integer(model), 
