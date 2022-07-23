@@ -3,7 +3,10 @@
 \docType{import}
 \name{fBasics_reexports}
 \alias{fBasics_reexports}
+
 \alias{as.timeSeries}
+\alias{kurtosis}
+\alias{skewness}
 
 \title{Objects exported from other packages}
 \description{
@@ -12,6 +15,8 @@
 
   \describe{
     \item{lagged}{\code{\link[timeSeries]{as.timeSeries}}}
+    \item{kurtosis}{\code{\link[timeDate]{kurtosis}}}
+    \item{skewness}{\code{\link[timeDate]{skewness}}}
   }
 }
 \keyword{internal}

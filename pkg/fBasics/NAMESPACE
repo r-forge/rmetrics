@@ -82,6 +82,9 @@ export(
     as.timeSeries, # reexport, needs to be documented here
     timeSeries,    # reexport, S4 generic, doesn't need doc. here
     returns,       # reexport, S4 generic, doesn't need doc. here
+
+    kurtosis,  # from timeDate, reexport
+    skewness,  # from timeDate, reexport
     ## datasets
     ##   .HedgeFund1,  removed, used only to create .HedgeFund
     ##   .HedgeFund2,  ditto
@@ -98,7 +101,7 @@ export(
 
     ## exports starting with '.'
     ##    all not documented, it seems (regex search for aliases starting with '.')
-    # .acfPlot,
+    .acfPlot,  # fRegression
     # .adGLD,
     # .ansari2Test,
     # .ansariTest,
@@ -117,7 +120,7 @@ export(
     # .checkGHRawMoments,
     # .circlesPlot,
     # .cnvrt.coords,
-    # .contourPlot,
+    .contourPlot,     # fAssets, fCopulae
     # .counts1Plot,
     # .counts2Plot,
     # .cvmGLD,
@@ -129,12 +132,12 @@ export(
     # .dhyp2,
     # .dhyp3,
     # .dhyp4,
-    # .distCheck,
+    .distCheck,    # imported by distrRmetrics and others
     # .distFitPlot,
     # .distStandardErrors,
     # .dnig,
     # .emptyPlot,
-    # .firePlot,
+    .firePlot, # fRegression
     # .fligner2Test,
     # .gel,
     # .get_dat,
@@ -180,16 +183,16 @@ export(
     # .maxddStats,
     # .mleStableFit,
     # .moodTest,
-    # .mrlPlot,
+    .mrlPlot,   # fRegression
     # .nigFit.gmm,
     # .nigFit.mle,
     # .nigFit.mps,
     # .nigFit.vmps,
     # .normFit,
     # .omnibus.test,
-    # .pacfPlot,
+    .pacfPlot,  # fRegression
     # .paramGH,
-    # .perspPlot,
+    .perspPlot,  # fAssets, fCopulae
     # .pgld,
     # .phiStable,
     # .PhiStable,
@@ -198,10 +201,10 @@ export(
     # .phyp3,
     # .phyp4,
     # .pjb,
-    # .plot,
+    .plot,  # fRegression
     # .plot.histogram,
     # .pnigC,
-    # .predict,
+    .predict,  # fRegression
     # .print,
     # .print.ssd,
     # .psnigC,
@@ -222,10 +225,10 @@ export(
     # .qnigC,
     # .qqgaussPlot,
     # .qsnigC,
-    # .qStableFit,
+    .qStableFit,   # StableEstim
     # .recessionLines,
-    # .residualsPlot,
-    # .responsesPlot,
+    .residualsPlot,  # fRegression
+    .responsesPlot,  # fRegression
     # .rghyp,
     # .rgigjd,
     # .rgigjd1,
@@ -238,7 +241,7 @@ export(
     # .rhyperb,
     # .skewness.test,
     # .slider.env,
-    # .sliderMenu,
+    .sliderMenu,
     # .smooth_g,
     # .stablePlot,
     # .stylizedFactsGUI,
@@ -250,7 +253,7 @@ export(
     # .tdSliderMenu,
     # .tslag1,
     # .tTest,
-    # .unirootNA,
+    .unirootNA,  # fCopulae
     # .varfTest,
     # .varpieDemo,
     # .varpiePlot,
