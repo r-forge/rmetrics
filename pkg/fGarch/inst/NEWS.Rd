@@ -2,6 +2,28 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
+\section{CHANGES in fGarch VERSION 4021.87 (2022-08-XX, svn rXXXX)}{
+  \subsection{Maintainer}{
+    \itemize{
+      \item Georgi N. Boshnakov
+    }
+  }
+  \subsection{Documentation}{
+    \itemize{
+      \item Documented the datasets. Previously the help page for them
+      was a placeholder, without the names of the available datasets.
+      There is no information about the time span of the data or how the
+      returns were calculated.
+
+      \item Edited the documentation of \code{"garchSpec"} and
+      \code{garchSim}. It was somewhat incomplete and contained
+      leftovers, apparently from old versions of the functions.
+
+    }
+  }
+
+}
+
 \section{CHANGES in fGarch VERSION 4001.1 (2022-06-23, svn r6184)}{
   \subsection{NEW FEATURES}{
     \itemize{
