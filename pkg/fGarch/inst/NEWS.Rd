@@ -10,14 +10,14 @@
   }
   \subsection{Documentation}{
     \itemize{
+      \item Edited the documentation of \code{"garchSpec"} and
+      \code{garchSim}. It was somewhat incomplete and contained
+      leftovers, apparently from old versions of the functions.
+
       \item Documented the datasets. Previously the help page for them
       was a placeholder, without the names of the available datasets.
       There is no information about the time span of the data or how the
       returns were calculated.
-
-      \item Edited the documentation of \code{"garchSpec"} and
-      \code{garchSim}. It was somewhat incomplete and contained
-      leftovers, apparently from old versions of the functions.
 
     }
   }
