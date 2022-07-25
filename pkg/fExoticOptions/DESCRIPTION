@@ -1,9 +1,10 @@
 Package: fExoticOptions
 Title: Rmetrics - Pricing and Evaluating Exotic Option
-Date: 2017-11-12
-Version: 3042.80
+Date: 2022-07-25
+Version: 4021.81
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Provides a collection of functions to evaluate
 	barrier options, Asian options, binary options, currency 
@@ -14,4 +15,4 @@ Imports: methods
 Suggests: RUnit
 LazyData: yes
 License: GPL (>= 2)
-URL: http://www.rmetrics.org
+URL: https://www.rmetrics.org
