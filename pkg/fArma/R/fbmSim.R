@@ -343,18 +343,14 @@ fbmSim <-
     # FUNCTION:
 
     # Convolution:
-    if (missing(x) | missing(y)) {
-        break
-    } else {
-        a = c(x, rep(0, (length(y) - 1)))
-        b = c(y, rep(0, (length(x) - 1)))
-        a = fft(a, inverse = FALSE)
-        b = fft(b, inverse = FALSE)
-        conv = a * b
-        conv = Re(fft(conv, inverse = TRUE))
-        conv = conv/length(conv)
-        drop(conv)
-    }
+    a = c(x, rep(0, (length(y) - 1)))
+    b = c(y, rep(0, (length(x) - 1)))
+    a = fft(a, inverse = FALSE)
+    b = fft(b, inverse = FALSE)
+    conv = a * b
+    conv = Re(fft(conv, inverse = TRUE))
+    conv = conv/length(conv)
+    drop(conv)
 }
 
 
@@ -577,9 +573,10 @@ fbmSim <-
         if ((all(Re(eigenvalC) > 0)) | (m > 2^17)) break
     }
     if (m > 2^17) {
-        cat("----> exact method, impossible!!", fill = TRUE)
-        cat("----> can't find m such that C is definite positive", fill = TRUE)
-        break
+        # cat("----> exact method, impossible!!", fill = TRUE)
+        # cat("----> can't find m such that C is definite positive", fill = TRUE)
+        stop(c("----> exact method, impossible!!\n",
+               "----> can't find m such that C is definite positive"))
     } else {
         # Simulation of W=(Q)^t Z, where Z leads N(0,I_m)
         # and   (Q)_{jk} = m^(-1/2) exp(-2i pi jk/m):
