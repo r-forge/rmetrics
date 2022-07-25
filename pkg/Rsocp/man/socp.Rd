@@ -144,7 +144,7 @@ socp(f, A, b, C, d, N, x, z, w, control = list())
     Beta Version April 1997,
     Miguel Sousa Lobo, Lieven Vandenberghe, Stephen Boyd.
 
-    \url{http://www.stanford.edu/~boyd/old_software/SOCP.html}
+    \url{https://web.stanford.edu/~boyd/old_software/SOCP.html}
 }
 
 
