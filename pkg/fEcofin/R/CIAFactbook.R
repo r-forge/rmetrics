@@ -457,9 +457,6 @@ function(code = "CH", from = FALSE, names = FALSE, details = FALSE)
     
     # FUNCTION:
     
-    # Load data if not already done ...
-    if (!exists("ciaFactbook")) data(ciaFactbook)
-    
     # Country List:
     .Countries = ciaCountries()
     country = .Countries[,4][.Countries[,3] == code]
@@ -468,7 +465,7 @@ function(code = "CH", from = FALSE, names = FALSE, details = FALSE)
         ": CIA Factbook 2005\n", sep = ""), "\n")
     
     # Factbook Data:
-    .Factbook = as.matrix(ciaFactbook)
+    .Factbook = as.matrix(get("ciaFactbook"))
     ### DW: Country = paste(" ", country, " ", sep = "")
     Country = country
     ### DW
@@ -519,9 +516,6 @@ function(code = 2001, from = FALSE, details = FALSE)
     
     # FUNCTION:
     
-    # Load data if not already done ...
-    if (!exists("ciaFactbook")) data(ciaFactbook)
-    
     # Indicator Name:
     Code = as.character(code)
     .Indicators = ciaIndicators()
@@ -530,7 +524,7 @@ function(code = 2001, from = FALSE, details = FALSE)
         cat(paste("\nCode ", Code, ": ", Indicator, sep = ""), "\n")
     
     # Factbook Data:
-    .Factbook = as.matrix(ciaFactbook)
+    .Factbook = as.matrix(get("ciaFactbook"))
     TEST = { .Factbook[, 1] == Code}
     Z = .Factbook[TEST, ]
     Z = data.frame(Z[, -(1:2)])

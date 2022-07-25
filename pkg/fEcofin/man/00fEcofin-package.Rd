@@ -28,7 +28,7 @@
         Date:       \tab 2008\cr
         License:    \tab GPL Version 2 or later\cr
         Copyright:  \tab (c) 1999-2008 Diethelm Wuertz and Rmetrics Foundation\cr
-        URL:        \tab \url{http://www.rmetrics.org}
+        URL:        \tab \url{https://www.rmetrics.org}
     }
 
 }

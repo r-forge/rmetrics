@@ -46,7 +46,7 @@
     derivative activities include many of the leading organisations 
     throughout Europe}. [Source: EDHEC website]
 
-    see \url{http://www.edhec-risk.com/about_us}
+    see \url{https://risk.edhec.edu/who-we-are}
 
     Data used in PerformanceAnalytics and related publications with the 
     kind permission of the EDHEC Risk and Asset Management Research Center.
@@ -81,12 +81,12 @@ Berndt E.R. (1991);
 EDHEC (2003);
     \emph{About EDHEC Alternative Indexes},
     EDHEC-Risk,\cr
-    \url{http://www.edhec-risk.com/indexes/pure_style/about}.
+    \url{https://risk.edhec.edu/about-edhec-risk-alternative-indexes}.
 
 Vaissie Mathieu (2003);
     \emph{A Detailed Analysis of the Construction Methods and Management 
         Principles of Hedge Fund Indices},\cr
-    \url{http://www.edhec-risk.com/site_edhecrisk/public/indexes/EDHEC_Publications/RISKReview1072705188065793513}.
+    \url{https://risk.edhec.edu/publications/detailed-analysis-construction-methods-and}.
 
 Carl P., Peterson B.G. (2007);
    \emph{PerformanceAnalytics: Econometric Tools for Performance and 

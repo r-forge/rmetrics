@@ -15,7 +15,7 @@
 \alias{usdthb}
 
 
-\title{Time Series Data Sets used in Rnmetrics Packages} 
+\title{Time Series Data Sets used in Rmetrics Packages} 
 
 
 \description{
