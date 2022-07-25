@@ -1,10 +1,10 @@
 Package: fOptions
 Title: Rmetrics - Pricing and Evaluating Basic Options
-Date: 2017-11-12
-Version: 3042.86
+Date: 2022-07-25
+Version: 4021.87
 Author: Diethelm Wuertz [aut],
-	Tobias Setz [cre],
-	Yohan Chalabi [ctb]
+	Tobias Setz [aut,cre],
+	Yohan Chalabi [aut]
 Maintainer: Tobias Setz <tobias.setz@live.com>
 Description: Provides a collection of functions to 
     valuate basic options. This includes the generalized
@@ -15,4 +15,4 @@ Imports: graphics, methods, stats
 Suggests: RUnit, tcltk
 LazyData: yes
 License: GPL (>= 2)
-URL: http://www.rmetrics.org
+URL: https://www.rmetrics.org
