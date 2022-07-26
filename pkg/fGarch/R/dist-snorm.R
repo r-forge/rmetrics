@@ -191,7 +191,8 @@ function(q, xi)
       z = q*sigma + mu
     # Compute:  
       Xi = xi^sign(z)
-      g = 2  / (xi + 1/xi)  
+      g = 2  / (xi + 1/xi)
+    ## (GB) TODO: (CHECK) shouldn't the second term be divided also by sigma?
       Probability = Heaviside(z) - sign(z) * g * Xi * pnorm(q = -abs(z)/Xi)
     # Return Value:
       Probability 
@@ -228,8 +229,16 @@ function(p, xi)
     ## so qnorm() doesn't necessarilly give 1/2 when p = 1/2.
     ##
     ## Note also that p can be a vector.
+    ##
+    ## Further note: the issue at p = 0.5 is a separate problem. Zooming in
+    ## shows that the quantile is not continuous at p = 0.5 and to the right of
+    ## 0.5 the values are smaller than just to the left of 0.5 up to around 0.51.
+    ##
+    ## SOLUTION(?): The error seems to be that sign() and Heaviside should compare to
+    ##    1/(1+1/xi^2), not 0.5 which is correct only for xi = 1. 
     ## 
-      Quantile = (-sig*qnorm(p = p, sd = Xi) - mu ) / sigma
+    Quantile = (-sig*qnorm(p = p, sd = Xi) - mu ) / sigma
+#browser()    
     # Return Value:
       Quantile 
 }
