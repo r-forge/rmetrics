@@ -1,11 +1,11 @@
 Package: fBonds
 Title: Rmetrics - Pricing and Evaluating Bonds
-Date: 2022-07-14
+Date: 2022-07-27
 Version: 4021.79
 Author: Diethelm Wuertz [aut],
     Tobias Setz [aut,cre],
 	Yohan Chalabi [aut]
-Maintainer: Tobias Setz <tobias.setz@live.com>
+Maintainer: Bernhard Pfaff <bernhard@pfaffikus.de>
 Description: It implements the Nelson-Siegel and the Nelson-Siegel-Svensson
 	term structures.
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
