@@ -1,11 +1,11 @@
 Package: fTrading
 Title: Rmetrics - Trading and Rebalancing Financial Instruments
-Date: 2022-07-14
-Version: 4021.80
+Date: 2022-07-27
+Version: 4021.81
 Author: Diethelm Wuertz [aut],
 	Tobias Setz [aut,cre],
 	Yohan Chalabi [aut]
-Maintainer: Tobias Setz <tobias.setz@live.com>
+Maintainer: Bernhard Pfaff <bernhard@pfaffikus.de>
 Description: A collection of functions for trading and rebalancing financial
 	instruments. It implements various technical indicators to analyse time series such
 	as moving averages or stochastic oscillators.
