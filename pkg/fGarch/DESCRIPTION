@@ -1,6 +1,6 @@
 Package: fGarch
 Title: Rmetrics - Autoregressive Conditional Heteroskedastic Modelling
-Date: 2022-07-24
+Date: 2022-07-27
 Version: 4021.87
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Yohan", "Chalabi", role = "aut")
@@ -10,7 +10,7 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Pierre", "Chausse", role = "ctb")
 	   , person("Michal", "Miklovac", role = "ctb")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "ctb"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Analyze and model heteroskedastic behavior in financial time series.
 Imports: fBasics, timeDate, timeSeries, fastICA, Matrix, graphics, methods, stats, utils
 Suggests: RUnit, tcltk
