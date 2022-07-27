@@ -54,8 +54,18 @@ test.colCum <-
     checkEquals(nrow(colCumprods(t)), 1)
     checkEquals(nrow(colCumreturns(t)), 1)
 
+    ## 2022-07-27 GB: check fix for #2121
+    x=dummySeries()
+    x[1,2]=NA
+    colCumsums(x, na.rm = TRUE)
+    colCummaxs(x, na.rm = TRUE)
+    colCummins(x, na.rm = TRUE)
+    colCumprods(x, na.rm = TRUE)
+    
 }
 
 
 ################################################################################
+
+
 

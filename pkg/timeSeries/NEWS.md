@@ -10,6 +10,10 @@
   will be removed in the near future. Just use their synonyms `spreads` and
   `midquotes`, respectively.
 
+- `colCumsums`, `colCummaxs`, `colCummins`, and `colCumprods` no longer throw
+  error for `timeSeries` objects when called with `na.rm = TRUE`. Fixes bug
+  #2121 reported by Shane Haas.
+
 
 ## timeSeries 4021.104
 
