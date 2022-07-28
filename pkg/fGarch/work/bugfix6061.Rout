@@ -1,0 +1,523 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd('~/repos/rmetrics/pkg/fGarch')
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> qsnorm(0.5)
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> (-sig*qnorm(p = p, sd = Xi) - mu ) / sigma
+[1] -0.5941504
+Browse[2]> sig
+[1] 0
+Browse[2]> (-qnorm(p = p, sd = Xi) - mu ) / sigma
+[1] -0.6876497
+Browse[2]> (qnorm(p = p, sd = Xi) - mu ) / sigma
+[1] -0.5006512
+Browse[2]> p
+[1] 0.5416667
+Browse[2]> (-qnorm(p = p, sd = xi) - mu ) / sigma
+[1] -0.7343993
+Browse[2]> (qnorm(p = p, sd = xi) - mu ) / sigma
+[1] -0.4539015
+Browse[2]> (qnorm(p = p, sd = 1/xi) - mu ) / sigma
+[1] -0.5318176
+Browse[2]> (-qnorm(p = 0.5/(g*Xi), sd = xi) - mu ) / sigma
+[1] -0.7343993
+Browse[2]> (-qnorm(p = 0.5/(g*xi), sd = xi) - mu ) / sigma
+[1] -0.1176572
+Browse[2]> (qnorm(p = 0.5/(g/xi), sd = 1/xi) - mu ) / sigma
+[1] -0.06565442
+Browse[2]> sig
+[1] 0
+Browse[2]> Xi
+[1] 1
+Browse[2]> xi
+[1] 1.5
+Browse[2]> g
+[1] 0.9230769
+Browse[2]> 
+[1] -0.5941504
+> qsnorm(c(0.49,0.5,0.51)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> Quantil
+Error: object 'Quantil' not found
+Browse[2]> Quantile
+[1] -0.10071017 -0.59415042 -0.09171829
+Browse[2]> sig
+[1] -1  0  1
+Browse[2]> 
+[1] -0.10071017 -0.59415042 -0.09171829
+> qsnorm(c(0.49999, 0.5, 0.50001)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> 
+[1] -0.06569038 -0.59415042 -0.11763132
+> qsnorm(c(0.4999, 0.5, 0.5001)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> 
+[1] -0.06601398 -0.59415042 -0.11739868
+> qsnorm(c(0.499, 0.5, 0.501)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> 
+[1] -0.06924143 -0.59415042 -0.11507146
+> qsnorm(c(0.49, 0.5, 0.51)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> 
+[1] -0.10071017 -0.59415042 -0.09171829
+> qsnorm(c(0.499, 0.5, 0.501)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> sig
+[1] -1  0  1
+Browse[2]> Xi
+[1] 0.6666667 1.0000000 1.5000000
+Browse[2]> p
+[1] 0.8108750 0.5416667 0.3603889
+Browse[2]> 
+[1] -0.06924143 -0.59415042 -0.11507146
+> qsnorm(c(0.4999, 0.5, 0.5001)) # should be increasing
+Called from: .qsnorm(p = p, xi = xi)
+Browse[1]> debug at /home/georgi/repos/rmetrics/pkg/fGarch/R/dist-snorm.R#235: Quantile
+Browse[2]> sig
+[1] -1  0  1
+Browse[2]> Xi
+[1] 0.6666667 1.0000000 1.5000000
+Browse[2]> p
+[1] 0.8123375 0.5416667 0.3610389
+Browse[2]> 
+[1] -0.06601398 -0.59415042 -0.11739868
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> plot(qsnorm, from = 0.49, to = 0.51)
+> plot(qsnorm, from = 0, to = 1)
+> plot(qsnorm, from = 0.49, to = 0.51)
+> ?Heavyside
+> ?Heaviside
+> 2/(1.5 + 1/1.5)
+[1] 0.9230769
+> 0.5/2(1 + 1/1.5^2)
+Error: attempt to apply non-function
+> 0.5/2*(1 + 1/1.5^2)
+[1] 0.3611111
+> 2/(1 + 1/1.5^2)
+[1] 1.384615
+> (1 + 1/1.5^2)/2
+[1] 0.7222222
+> ?gbutils::pdflot
+> library(gbutils)
+> ?plotpdf
+> ?cdf2quantile
+> cdf2quantile(0.5, psnorm)
+[1] -0.1176651
+> qsnorm(0.5)
+[1] -0.5941504
+> plot(qsnorm, from = 0.49, to = 0.51)
+> f <- function(x){ sapply(x, function(p) cdf2quantile(p, cdf = psnorm))}
+> curve(f, from = 0.49, to = 0.51, col = "red")
+> curve(f, from = 0.01, to = 0.99, col = "red")
+> plot(qsnorm, from = 0.49, to = 0.51)
+> curve(f, from = 0.49, to = 0.51, col = "red", add = TRUE)
+> plot(qsnorm, from = 0.01, to = 0.99)
+> curve(f, from = 0.01, to = 0.99, col = "red", add = TRUE)
+> f(0.5)
+[1] -0.1176651
+> psnorm(f(0.5))
+[1] 0.4999969
+> f(0.5, tol = 1e-12)
+Error in f(0.5, tol = 1e-12) : unused argument (tol = 1e-12)
+> f <- function(x, ...){ sapply(x, function(p) cdf2quantile(p, cdf = psnorm, ...))}
+> f(0.5, tol = 1e-12)
+[1] -0.1176572
+> psnorm(f(0.5, tol = 1e-12))
+[1] 0.5
+> qsnorm(0.5)
+[1] -0.5941504
+> qsnorm(0.51)
+[1] -0.09171829
+> f(0.51, tol = 1e-12)
+[1] -0.09171829
+> qsnorm(0.49)
+[1] -0.1007102
+> f(0.49, tol = 1e-12)
+[1] -0.1434188
+> plot(qsnorm, from = 0.49, to = 0.51)
+> plot(f, from = 0.49, to = 0.51, add = TRUE, col = "red")
+> psnorm(qsnorm(0.5))
+[1] 0.5
+> psnorm(qsnorm(0.51))
+[1] 0.51
+> psnorm(qsnorm(0.49))
+[1] 0.5065415
+> qsnorm(0.49)
+[1] -0.1007102
+> psnorm(qsnorm(0.499999))
+[1] 0.519974
+> psnorm(qsnorm(0.4999999999))
+[1] 0.5199754
+> psnorm(qsnorm(0.499999999999999))
+[1] 0.5199754
+> psnorm(qsnorm(0.4999999999999999999))
+[1] 0.5
+> psnorm(qsnorm(0.499999999999999))
+[1] 0.5199754
+> psnorm(qsnorm(0.4999999999999999))
+[1] 0.5199754
+> psnorm(qsnorm(0.49999999999999999))
+[1] 0.5
+> psnorm(qsnorm(0.50000000000000001))
+[1] 0.5
+> psnorm(qsnorm(0.5000000000000001))
+[1] 0.5
+> psnorm(qsnorm(0.500000000000001))
+[1] 0.5
+> psnorm(qsnorm(0.50000000000001))
+[1] 0.5
+> psnorm(qsnorm(0.5000000000001))
+[1] 0.5
+> psnorm(qsnorm(0.500000000001))
+[1] 0.5
+> psnorm(qsnorm(0.50000000001))
+[1] 0.5
+> psnorm(qsnorm(0.5000000001))
+[1] 0.5
+> psnorm(qsnorm(0.500000001))
+[1] 0.5
+> psnorm(qsnorm(0.50000001))
+[1] 0.5
+> psnorm(qsnorm(0.5000001))
+[1] 0.5000001
+> psnorm(qsnorm(0.500001))
+[1] 0.500001
+> psnorm(qsnorm(0.50001))
+[1] 0.50001
+> psnorm(qsnorm(0.5001))
+[1] 0.5001
+> psnorm(qsnorm(0.501))
+[1] 0.501
+> psnorm(qsnorm(0.51))
+[1] 0.51
+> qsnorm(0.50000000000000001)
+[1] -0.5941504
+> qsnorm(0.5000000000000001)
+[1] -0.1176572
+> qsnorm(0.500000000000001)
+[1] -0.1176572
+> qsnorm(0.50000000000001)
+[1] -0.1176572
+> qsnorm(0.5000000000001)
+[1] -0.1176572
+> qsnorm(0.500000000001)
+[1] -0.1176572
+> qsnorm(0.50000000001)
+[1] -0.1176572
+> qsnorm(0.5000000001)
+[1] -0.1176572
+> qsnorm(0.500000001)
+[1] -0.1176572
+> qsnorm(0.50000001)
+[1] -0.1176571
+> qsnorm(0.5000001)
+[1] -0.1176569
+> qsnorm(0.500001)
+[1] -0.1176546
+> qsnorm(0.50001)
+[1] -0.1176313
+> qsnorm(0.5001)
+[1] -0.1173987
+> qsnorm(0.501)
+[1] -0.1150715
+> qsnorm(0.51)
+[1] -0.09171829
+> qsnorm(0.5)
+[1] -0.5941504
+> qsnorm(0.4999999999999999)
+[1] -0.06565442
+> psnorm(qsnorm(0.4999999999999999))
+[1] 0.5199754
+> f(0.5, tol  = 1e-12
++ )
+> 
+[1] -0.1176572
+> psnorm(f(0.5, tol  = 1e-12))
+[1] 0.5
+> psnorm(qsnorm(0.5))
+[1] 0.5
+> qsnorm(0.5)
+[1] -0.5941504
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12))
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12), type = "p")
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12))
+> plot(psnorm, from = qsnorm(0.5) - 0.2, to = f(0.5, tol  = 1e-12))
+> plot(psnorm, from = qsnorm(0.5) - 0.2, to = f(0.5, tol  = 1e-12), type = "p")
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12))
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12), type = "p")
+> plot(psnorm, from = -2, to = f(0.5, tol  = 1e-12))
+> plot(psnorm, from = -2, to = 2)
+> psnorm(10)
+[1] 1
+> psnorm(10) == 1
+[1] FALSE
+> psnorm(100) == 1
+[1] TRUE
+> psnorm(200) == 1
+[1] TRUE
+> 
+> 
+> 
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12), type = "p")
+> plot(psnorm, from = -1, to = qsnorm(0.5), type = "p")
+> plot(psnorm, from = -1, to = 1)
+> plot(psnorm, from = -3, to = 3)
+> plot(psnorm, from = -1, to = qsnorm(0.5), type = "p")
+> plot(psnorm, from = -3, to = 3)
+> plot(psnorm, from = -1, to = qsnorm(0.5), type = "p", add = TRUE)
+> plot(psnorm, from = -1, to = qsnorm(0.5), type = "p", add = TRUE, col = "blue")
+> plot(psnorm, from = qsnorm(0.5), to = 3, type = "p", add = TRUE, col = "blue")
+> plot(psnorm, from = -1, to = qsnorm(0.5), type = "p", add = TRUE, col = "blue")
+> plot(psnorm, from = qsnorm(0.5), to = 3, type = "p", add = TRUE, col = "red")
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12), type = "p", add = TRUE, col = "red")
+> 
+> 
+> 
+> 
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> qsnorm(0.5)
+[1] -0.1176572
+> qsnorm(c(0.49, 0.5, 0.51))
+[1] -0.14341882 -0.11765717 -0.09171829
+> plot(qsnorm, from  = 0, to = 1)
+> plot(f, from = 0.01, to = 0.99, add = TRUE, col = "red")
+> plot(f, from = 0.49, to = 0.51, add = TRUE, col = "red")
+> plot(f, from = 0.49, to = 0.51, col = "red")
+> plot(qsnorm, from  = 0.49, to = 0.51)
+> plot(function(p) .qsnorm(p, xi = 1.5), from  = 0.49, to = 0.51, col = "blue")
+> plot(qsnorm, from  = 0.49, to = 0.51, add = TRUE)
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from  = 0.49, to = 0.51, col = "blue")
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from  = 0.49, to = 0.51, col = "blue")
+> plot(function(p) .qsnorm(p, xi = 1.5), from  = 0.49, to = 0.51, col = "black")
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from  = 0.49, to = 0.51, col = "blue", add = TRUE)
+> plot(function(p) .qsnorm(p, xi = 1.5), from  = 0, to = 1, col = "black")
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from  = 0, to = 1, col = "blue", add = TRUE)
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> plot(function(p) .qsnorm(p, xi = 1.5), from  = 0, to = 1, col = "black")
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from  = 0, to = 1, col = "blue", add = TRUE)
+> 
+> 
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> plot(function(p) .qsnorm(p, xi = 1.5), from  = 0, to = 1, col = "black")
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from  = 0, to = 1, col = "blue", add = TRUE)
+> > plot(qsnorm, from = 0.49, to = 0.51)
+> > plot(f, from = 0.49, to = 0.51, add = TRUE, col = "red")
+> > plot(function(p) .qsnorm(p, xi = 1.5), from = 0.49, to = 0.51)
+> > plot(f, from = 0.49, to = 0.51, add = TRUE, col = "red")
+> > plot(function(p) .qsnorm(p, xi = 1.5), from = 0.49, to = 0.51)
+> > plot(function(p) .qsnorm_orig(p, xi = 1.5), from = 0.49, to = 0.51)
+> > plot(function(p) .qsnorm(p, xi = 1.5), from = 0.49, to = 0.51)
+> > plot(f, from = 0.49, to = 0.51, add = TRUE, col = "red")
+> > plot(function(p) .qsnorm_orig(p, xi = 1.5), from = 0.49, to = 0.51)
+> > plot(function(p) .qsnorm(p, xi = 1.5), from = 0.49, to = 0.51)
+> > plot(f, from = 0.49, to = 0.51, add = TRUE, col = "red")
+> > plot(function(p) .qsnorm_orig(p, xi = 1.5), from = 0.49, to = 0.51, add = TRUE)
+> > plot(function(p) .qsnorm(p, xi = 1.5), from = 0, to = 1)
+> > plot(f, from = 0, to = 1, add = TRUE, col = "red")
+> > plot(function(p) .qsnorm_orig(p, xi = 1.5), from = 0, to = 1, add = TRUE)
+> psnorm(qsnorm(0.5)
++ )
+[1] 0.5
+> psnorm(qsnorm(c(0.49, 0.5, 0.51)
++ )
++ )
+[1] 0.49 0.50 0.51
+> 
+> 
+> 
+> 
+> ## turn to psnorm()
+> plot(psnorm, from = qsnorm(0.5), to = 3, type = "p", add = TRUE, col = "red")
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12), type = "p", add = TRUE, col = "red")
+> plot(psnorm, from = -3, to = 3)
+> plot(psnorm, from = qsnorm(0.5), to = f(0.5, tol  = 1e-12), type = "p", add = TRUE, col = "red")
+> plot(psnorm, from = qsnorm(0.5), to = 3, type = "p", add = TRUE, col = "red")
+> > plot(psnorm, from = .qsnorm(0.5, xi = 0.5), to = 3, type = "p", add = TRUE, col = "blue")
+Error: unexpected '>' in ">"
+> plot(psnorm, from = .qsnorm(0.5, xi = 0.5), to = 3, type = "p", add = TRUE, col = "blue")
+> plot(psnorm, from = .qsnorm_orig(0.5, xi = 0.5), to = 3, type = "p", add = TRUE, col = "blue")
+> plot(psnorm, from = .qsnorm_orig(0.5, xi = 1.5), to = 3, type = "p", add = TRUE, col = "blue")
+> plot(psnorm, from = .qsnorm_orig(0.5, xi = 0.5), to = 3, type = "p", col = "blue")
+> plot(psnorm, from = .qsnorm_orig(0.5, xi = 1.5), to = 3, type = "p", add = TRUE)
+> plot(psnorm, from = .qsnorm_orig(0.5, xi = 0.5), to = 3, type = "p", col = "blue")
+> plot(psnorm, from = .qsnorm_orig(0.5, xi = 1.5), to = 3, type = "p", add = TRUE, col = "red")
+> plot(psnorm, from = -3, to = 3, type = "p", col = "blue")
+> plot(psnorm, from = -3, to = 3, add = TRUE, col = "red")
+> plot(function(p) .qsnorm_orig(p, xi = 1.5), from = 0, to = 1
++ )
+> plot(function(p) .qsnorm_orig(p, xi = 0.5), from = 0, to = 1
++ )
+Warning message:
+In qnorm(p = p, sd = Xi) : NaNs produced
+> plot(function(p) .qsnorm(p, xi = 0.5), from = 0, to = 1)
+> plot(function(p) .qsnorm(p, xi = 1.5), from = 0, to = 1)
+> plot(function(p) .qsnorm(p, xi = 1.5), from = 0, to = 1, add = TRUE)
+> plot(function(p) .qsnorm(p, xi = 0.5), from = 0, to = 1)
+> plot(function(p) .qsnorm(p, xi = 1.5), from = 0, to = 1, add = TRUE)
+>  psnorm(.qsnorm_orig(c(0.49, 0.5, 0.51), xi = 1.5))
+[1] 0.5065415 0.5000000 0.5100000
+>  qssnorm0.5_orig <- .qsnorm_orig(c(0.49, 0.5, 0.51), xi = 1.5)
+> qssnorm0.5_orig
+[1] -0.10071017 -0.59415042 -0.09171829
+>  qssnorm0.5_orig <- .qsnorm_orig(c(0.5), xi = 1.5)
+> qssnorm0.5_orig
+[1] -0.5941504
+> psnorm(qssnorm0.5_orig)
+[1] 0.5
+> plot(psnorm, from = -3, to = 3)
+> points(qssnorm0.5_orig, psnorm(qssnorm0.5_orig), col = "red")
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> points(qssnorm0.5_orig, psnorm(qssnorm0.5_orig), col = "blue")
+> psnorm(qssnorm0.5_orig)
+[1] -0.1923077
+> points(qssnorm0.5_orig, psnorm(qssnorm0.5_orig) + 0.5, col = "blue")
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> points(qssnorm0.5_orig, psnorm(qssnorm0.5_orig) + 0.5, col = "green")
+> points(qssnorm0.5_orig, psnorm(qssnorm0.5_orig) + 0.5, col = "red")
+> points(qssnorm0.5_orig, psnorm(qssnorm0.5_orig), col = "green")
+> 
+> 
+> 
+> qsstd(0.5)
+[1] -0.5333546
+> qsstd(c(0.49, 0.5, 0.51))
+[1] -0.1269674 -0.5333546 -0.1317893
+> psstd(qsstd(c(0.49, 0.5, 0.51)))
+[1] 0.5122801 0.5000000 0.5100000
+> 
+> 
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> qsstd(c(0.49, 0.5, 0.51))
+[1] -0.1269674 -0.5333546 -0.1317893
+> psstd(qsstd(c(0.49, 0.5, 0.51)))
+[1] 0.5122801 0.3076923 0.5100000
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> qsstd(c(0.49, 0.5, 0.51))
+[1] -0.1736482 -0.1528138 -0.1317893
+> psstd(qsstd(c(0.49, 0.5, 0.51)))
+[1] 0.49 0.50 0.51
+> 
+> 
+> 
+> ## sged
+> qsged(c(0.49, 0.5, 0.51))
+[1] -0.10071017 -0.59415042 -0.09171829
+> psged(qsged(c(0.49, 0.5, 0.51)))
+[1] 0.5065415 0.5000000 0.5100000
+> 
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> qsged(c(0.49, 0.5, 0.51))
+[1] -0.10071017 -0.59415042 -0.09171829
+> psged(qsged(c(0.49, 0.5, 0.51)))
+[1] 0.5065415 0.3076923 0.5100000
+> devtools::load_all()
+ℹ Loading fGarch
+NOTE: Packages 'fBasics', 'timeDate', and 'timeSeries' are no longer
+attached to the search() path when 'fGarch' is attached.
+
+If needed attach them yourself in your R script by e.g.,
+        require("timeSeries")
+> qsged(c(0.49, 0.5, 0.51))
+[1] -0.14341882 -0.11765717 -0.09171829
+> psged(qsged(c(0.49, 0.5, 0.51)))
+[1] 0.49 0.50 0.51
+> pkgdown::build_site()
+*** output flushed ***
+> 
+> Save workspace image? [y/n/c]: n
+
+
+Process R finished at Wed Jul 27 14:48:34 2022
