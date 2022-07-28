@@ -49,6 +49,11 @@ function()
     # GB Holidays:
     listHolidays("GB")
 
+    # check that holiday() accepts also a function or a list of functions
+    checkIdentical(holiday(2022, "GoodFriday"), holiday(2022, GoodFriday))
+    checkIdentical(holiday(2022, c("GoodFriday", "Easter")),                  
+                   holiday(2022, c(GoodFriday, Easter)))
+    
     # Return Value:
     return()
 }

@@ -1,3 +1,14 @@
+# timeDate 4021.105
+
+- now `holiday()` accepts also a function or a list of functions for argument
+  'Holiday'.
+
+- removed `.holidayList()` which had been replaced by `listHolidays()` a long
+  time ago and was not exported in recent versions of `timeDate`.
+
+- updated documentation files.
+
+
 # timeDate 4021.104
 
 - new maintainer: Georgi N. Boshnakov.

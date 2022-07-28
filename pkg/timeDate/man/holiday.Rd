@@ -19,38 +19,41 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
 
 \arguments{
 
-    \item{Holiday}{
-        the unquoted function name of an ecclestial or public holiday 
-        in the G7 countries or Switzerland, see the list below.
-        }
-    \item{year}{
-        an integer value or vector of years, formatted as \code{YYYY}.
-        }
+  \item{Holiday}{
+    
+    the function name (a character string or unquoted) of an
+    ecclesiastical or public holiday in the G7 countries or Switzerland,
+    see the list below. Can also be a character vector to specify
+    several holidays.
+
+  }
+  \item{year}{
+    an integer value or vector of years, formatted as \code{YYYY}.
+  }
         
 }
 
 
 \value{
 
-    The function \code{holiday} returns an object of class
-    \code{timeDate}. 
+    an object of class \code{timeDate}.
 
 }
 
 
 \details{
 
-    Easter is the central ecclestial holiday. Many other holidays
+    Easter is the central ecclesiastical holiday. Many other holidays
     are related to this feast. The function \code{Easter} computes
-    the dates of Easter and related ecclestial holidays for the 
+    the dates of Easter and related ecclesiastical holidays for the 
     requested year vector. \code{holiday} calculates the dates of 
-    ecclestial or publich holidays in the G7 countries, e.g. 
+    ecclesiastical or publich holidays in the G7 countries, e.g. 
     \code{holiday(2003, "GoodFriday")}. Rmetrics contains holiday 
     functions automatically loaded at startup time. The user can 
     add easily additional holiday functions. The information for 
     the holidays is collected from several web pages about holiday 
     calendars.
-    The following ecclestial and public \code{[HOLIDAY]} functions 
+    The following ecclesiastical and public \code{[HOLIDAY]} functions 
     in the G7 countries and Switzerland are available: \cr
     
     
@@ -114,7 +117,8 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
     USLincolnsBirthday, USWashingtonsBirthday, USMemorialDay, 
     USIndependenceDay, USLaborDay,  USColumbusDay, USElectionDay, 
     USVeteransDay, USThanksgivingDay, USChristmasDay, 
-    USCPulaskisBirthday, USGoodFriday. \cr 
+    USCPulaskisBirthday, USGoodFriday,
+    USJuneteenthNationalIndependenceDay. \cr 
     
     
     \emph{CAToronto/CAMontreal - Public Holidays:} 
@@ -139,18 +143,22 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
     
 }
 
-
 \examples{
 ## holiday -
-   # Dates for GoodFriday from 2000 until 2010:                     
-   holiday(2000:2010, "GoodFriday")                  
+   # Dates for GoodFriday from 2000 until 2005:
+   holiday(2000:2005, "GoodFriday")                  
+   holiday(2000:2005, GoodFriday) # same (GoodFriday is a function)
+
+   # Good Friday and Easter
+   holiday(2000:2005, c("GoodFriday", "Easter"))                  
+   holiday(2000:2005, c(GoodFriday, Easter))                  
    
 ## Easter -   
-   Easter(2000:2010)
-   
+   Easter(2000:2005)
+
 ## GoodFriday -                           
-   GoodFriday(2000:2010)
-   Easter(2000:2010, -2) 
+   GoodFriday(2000:2005)
+   Easter(2000:2005, -2) 
 }
 
 

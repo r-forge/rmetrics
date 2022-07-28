@@ -17,7 +17,7 @@
 
 \value{
 
-    returns the the date/time units, a acharacter value.
+    returns the the date/time units, a character value.
     By default \code{"days"}.
 
 }

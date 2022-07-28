@@ -110,10 +110,15 @@ holiday <-
 
     # Determine Function:
     nHolidays = length(Holiday)
-    ans = NULL
-    for (i in 1:nHolidays) {
-        FUN = match.fun(Holiday[i])
-        ans = c(ans, as.character(FUN(year)))
+    if(nHolidays == 1) {
+        FUN = match.fun(Holiday)
+        ans = as.character(FUN(year))
+    } else {
+        ans = character(0)
+        for (i in seq_len(nHolidays)) {
+            FUN = match.fun(Holiday[[i]])
+            ans = c(ans, as.character(FUN(year)))
+        }
     }
 
     # Classify as simple integer ISO date format CCYYMMDD

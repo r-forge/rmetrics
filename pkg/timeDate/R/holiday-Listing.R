@@ -161,15 +161,8 @@ listHolidays <-
     sort(as.character(holidayList[grep(pattern = pattern, x = holidayList)]))
 }
 
-
-# ------------------------------------------------------------------------------
-
-
-# Keep for compatibility of older Rmetrics versions ...
-
-
-.holidayList <- listHolidays()
-
-
 ################################################################################
+
+
+
 

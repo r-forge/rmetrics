@@ -1,2 +1,4 @@
 docs/
 revdep/
+.emacs.desktop
+.emacs.desktop.lock
