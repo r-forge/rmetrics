@@ -142,7 +142,9 @@ test.holidayNYSE <- function() {
 
         publishedHolidays <- timeDate(publishedHolidays, zone="NewYork",
                                       FinCenter="NewYork")
-        checkTrue(all.equal(publishedHolidays, holidayNYSE(2007:2011)))
+        ## GNB: for v. 4021.105 use argument type for old behaviour
+        ##  [2007-01-02] - mourning for G.R. Ford, not included in holidayNYSE()
+        checkTrue(all.equal(publishedHolidays, holidayNYSE(2007:2011, type = "standard")))
     }
 
     # check if there is any problem with timezone and days

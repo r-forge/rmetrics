@@ -25,10 +25,11 @@
 #' @export
 # ---------------------------------------------------------------------------- #
 holidayNYSE <-
-    function(year = getRmetricsOptions("currentYear"))
+    function(year = getRmetricsOptions("currentYear"), type = c("", "standard", "special"))
 {
-    # A function implemented by Diethelm Wuertz
-    # improved speed and handling of time zone by Yohan Chalabi
+    # A function implemented by Diethelm Wuertz;
+    # improved speed and handling of time zone by Yohan Chalabi;
+    # special closings and argument 'type' incorporated by Georgi Boshnakov
 
     # Description:
     #   Returns 'timeDate' object for full-day NYSE holidays
@@ -54,70 +55,88 @@ holidayNYSE <-
 
     # FUNCTION:
 
-    #  Settings:
-    holidays <- NULL
-
-    # Iterate years:
-    for (y in year ) {
-        if (y >= 1885)
-            holidays <- c(holidays, as.character(USNewYearsDay(y)))
-        if (y >= 1885)
-            holidays <- c(holidays, as.character(USIndependenceDay(y)))
-        if (y >= 1885)
-            holidays <- c(holidays, as.character(USThanksgivingDay(y)))
-        if (y >= 1885)
-            holidays <- c(holidays, as.character(USChristmasDay(y)))
-        if (y >= 1887)
-            holidays <- c(holidays, as.character(USLaborDay(y)))
-        if (y != 1898 & y != 1906 & y != 1907)
-            holidays <- c(holidays, as.character(USGoodFriday(y)))
-        if (y >= 1909 & y <= 1953)
-            holidays <- c(holidays, as.character(USColumbusDay(y)))
-        if (y >= 1998)
-            holidays <- c(holidays, as.character(USMLKingsBirthday(y)))
-        if (y >= 1896 & y <= 1953)
-            holidays <- c(holidays, as.character(USLincolnsBirthday(y)))
-        if (y <= 1970)
-            holidays <- c(holidays, as.character(USWashingtonsBirthday(y)))
-        if (y > 1970)
-            holidays <- c(holidays, as.character(USPresidentsDay(y)))
-        if (y == 1918 | y == 1921 | (y >= 1934 & y <= 1953))
-            holidays <- c(holidays, as.character(USVeteransDay(y)))
-        if (y <= 1968 | y == 1972 | y == 1976 | y == 1980)
-            holidays <- c(holidays, as.character(USElectionDay(y)))
-        if (y <= 1970)
-            holidays <- c(holidays, as.character(USDecorationMemorialDay(y)))
-        if (y >= 1971)
-            holidays <- c(holidays, as.character(USMemorialDay(y)))
-        if (y >= 2022) # GB, issue #6755
-            holidays <- c(holidays, as.character(USJuneteenthNationalIndependenceDay(y)))
+    ##  Settings:
+    type <- match.arg(type)
+    ans <- NULL
+    
+    if(type == "" || type == "standard"){
+        ## standard holidays
+        ##
+        ## Note by GNB at time of introducing argument 'type':
+        ##     only change in this chunk is wrapping the old code in 'if'
+        
+        holidays <- character(0)
+        
+        ## Iterate years:
+        for (y in year ) {
+            if (y >= 1885)
+                holidays <- c(holidays, as.character(USNewYearsDay(y)))
+            if (y >= 1885)
+                holidays <- c(holidays, as.character(USIndependenceDay(y)))
+            if (y >= 1885)
+                holidays <- c(holidays, as.character(USThanksgivingDay(y)))
+            if (y >= 1885)
+                holidays <- c(holidays, as.character(USChristmasDay(y)))
+            if (y >= 1887)
+                holidays <- c(holidays, as.character(USLaborDay(y)))
+            if (y != 1898 & y != 1906 & y != 1907)
+                holidays <- c(holidays, as.character(USGoodFriday(y)))
+            if (y >= 1909 & y <= 1953)
+                holidays <- c(holidays, as.character(USColumbusDay(y)))
+            if (y >= 1998)
+                holidays <- c(holidays, as.character(USMLKingsBirthday(y)))
+            if (y >= 1896 & y <= 1953)
+                holidays <- c(holidays, as.character(USLincolnsBirthday(y)))
+            if (y <= 1970)
+                holidays <- c(holidays, as.character(USWashingtonsBirthday(y)))
+            if (y > 1970)
+                holidays <- c(holidays, as.character(USPresidentsDay(y)))
+            if (y == 1918 | y == 1921 | (y >= 1934 & y <= 1953))
+                holidays <- c(holidays, as.character(USVeteransDay(y)))
+            if (y <= 1968 | y == 1972 | y == 1976 | y == 1980)
+                holidays <- c(holidays, as.character(USElectionDay(y)))
+            if (y <= 1970)
+                holidays <- c(holidays, as.character(USDecorationMemorialDay(y)))
+            if (y >= 1971)
+                holidays <- c(holidays, as.character(USMemorialDay(y)))
+            if (y >= 2022) # GB, issue #6755
+                holidays <- c(holidays, as.character(USJuneteenthNationalIndependenceDay(y)))
+        }
+        
+        # Sort and Convert to 'timeDate':
+        holidays <- sort(holidays)
+        ans <- timeDate(format(holidays), zone = "NewYork", FinCenter = "NewYork")
+        
+        # Move Sunday Holidays to Monday:
+        posix1 <- as.POSIXlt(ans, tz = "GMT")
+        ans <- ans + as.integer(posix1$wday==0) * 24 * 3600
+        
+        # After July 3, 1959, move Saturday holidays to Friday
+        # ... except if at the end of monthly/yearly accounting period
+        # this is the last business day of a month.
+        posix2 <- as.POSIXlt(as.POSIXct(ans, tz = "GMT") - 24 * 3600)
+        y <- posix2$year + 1900
+        m <- posix2$mon + 1
+        calendar <- timeCalendar(y = y+(m+1)%/%13,
+                                 m = m+1-(m+1)%/%13*12, d = 1,
+                                 zone = "GMT", FinCenter = "GMT")
+        lastday <- as.POSIXlt(calendar - 24*3600, tz = "GMT")$mday
+        lon <- .last.of.nday(year = y, month = m, lastday = lastday, nday = 5)
+        ExceptOnLastFriday <- timeDate(format(lon), zone = "NewYork",
+                                       FinCenter = "NewYork")
+        
+        ans <- ans - as.integer(ans >= timeDate("1959-07-03",
+                                zone ="GMT", FinCenter = "GMT") &
+                                as.POSIXlt(ans, tz = "GMT")$wday == 6  &
+                                (ans - 24*3600) != ExceptOnLastFriday ) * 24 * 3600
     }
-
-    # Sort and Convert to 'timeDate':
-    holidays <- sort(holidays)
-    ans <- timeDate(format(holidays), zone = "NewYork", FinCenter = "NewYork")
-
-    # Move Sunday Holidays to Monday:
-    posix1 <- as.POSIXlt(ans, tz = "GMT")
-    ans <- ans + as.integer(posix1$wday==0) * 24 * 3600
-
-    # After July 3, 1959, move Saturday holidays to Friday
-    # ... except if at the end of monthly/yearly accounting period
-    # this is the last business day of a month.
-    posix2 <- as.POSIXlt(as.POSIXct(ans, tz = "GMT") - 24 * 3600)
-    y <- posix2$year + 1900
-    m <- posix2$mon + 1
-    calendar <- timeCalendar(y = y+(m+1)%/%13,
-                             m = m+1-(m+1)%/%13*12, d = 1,
-                             zone = "GMT", FinCenter = "GMT")
-    lastday <- as.POSIXlt(calendar - 24*3600, tz = "GMT")$mday
-    lon <- .last.of.nday(year = y, month = m, lastday = lastday, nday = 5)
-    ExceptOnLastFriday <- timeDate(format(lon), zone = "NewYork",
-                                   FinCenter = "NewYork")
-    ans <- ans - as.integer(ans >= timeDate("1959-07-03",
-                            zone ="GMT", FinCenter = "GMT") &
-                            as.POSIXlt(ans, tz = "GMT")$wday == 6  &
-                            (ans - 24*3600) != ExceptOnLastFriday ) * 24 * 3600
+    
+    if(type == "" || type == "special"){
+        ## special closings
+        sp <- nyse_special_closings[as.integer(format(nyse_special_closings, format = "%Y")) %in% year]
+        
+        ans <- unique(sort(if(is.null(ans)) sp else c(ans, sp)))
+    }
 
     # Remove Remaining Weekend Dates:
     posix3 <- as.POSIXlt(ans, tz = "GMT")

@@ -1,5 +1,28 @@
 # timeDate 4021.105
 
+- the list returned by `holidaysNYSE()` was missing the special closing days of
+  the New York stock exchange (NYSE). Now it should be complete (though there
+  may be ommissions after 2011). This fixes issue #1356 reported by Corwin
+  Joy. Thanks to him and Ian E for the insigthful discussion and useful links.
+
+  See also below. Contributions for the other exchanges and corrections are
+  welcome. 
+
+- `holidaysNYSE()` gets a new argument, `type`, to select what type of the
+  exchange's closing days to return. The default is to return all days in the
+  requested years when NYSE was closed for whatever reason. Use `type = "standard"`
+  and `type = `special` to get the standard holidays and the special closings,
+  respectively.
+
+  Returning any closing day by default might be considered a breaking
+  change. However, not returning all closing days was perceived as erroneous by
+  users (eg issue #1356). In fact, the package itself calculates business days
+  by dropping weekends and days returned by `holidayXXXX`. 
+
+  Note that `holiday()` returns the actual dates of the public holidays, while
+  the corresponding days returned by `holidayXXXX` are the resulting non-weekend
+  closing days, if any.
+
 - now `holiday()` accepts also a function or a list of functions for argument
   'Holiday'.
 
