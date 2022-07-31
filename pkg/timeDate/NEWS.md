@@ -33,6 +33,15 @@
 - now `holiday()` accepts also a function or a list of functions for argument
   'Holiday'.
 
+- `timeNthNdayInMonth` could return a value in the following month. Now
+  fixed. This is bug #1463 reported with a fix by Manny C. Note that the bug was
+  not present for dates in the first day of a month.
+
+- `timeLastNdayInMonth` could return a value in the following month,
+  e.g. '1996-06-04' for the last Tuesday in May 1996. Now fixed. The check of
+  this function was prompted by the bug report for #1463 (see above) for
+  `timeNthNdayInMonth` but the error was different.
+
 - removed `.holidayList()` which had been replaced by `listHolidays()` a long
   time ago and was not exported in recent versions of `timeDate`.
 

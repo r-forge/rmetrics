@@ -62,7 +62,13 @@ function(charvec, nday = 1, nth = 1, format = "%Y-%m-%d",
     ## On or after:
     lt1 <- lt
     lt1$mday <- 1
-    ct <- 24*3600*(as.integer(julian.POSIXt(lt)) + (nth-1)*7 + (nday-lt1$wday)%%7)
+    ## GNB: fix bug #1463 - the value returned may be in a different month, e.g.
+    ##    > timeNthNdayInMonth("1996-06-23", 5, 4)
+    ##    GMT
+    ##      [1] [1996-07-19]
+    ##
+    ##      fix by Manny C - replace lt in julian.POSIXt(lt) by lt1
+    ct <- 24*3600*(as.integer(julian.POSIXt(lt1)) + (nth-1)*7 + (nday-lt1$wday)%%7)
     timeDate(format(.POSIXct(ct), tz = "GMT"),
          format = format, zone = zone, FinCenter = FinCenter)
 }
@@ -113,7 +119,19 @@ function(charvec, nday = 1, format = "%Y-%m-%d", zone = "",
                 ## to make sure that lt$wday
                 ## represents the wday of the
                 ## last day of the month
-    ct <- 24*3600*(as.integer(julian.POSIXt(lt)) + (nday - lt$wday)%%7)
+
+    ## GNB: this could return a wrong value, including in the following month,
+    ##      before the change we had:
+    ##      > timeLastNdayInMonth("1996-05-01", 2)
+    ##      GMT
+    ##      [1] [1996-06-04]
+    ## the last Tue in May is apparantly in June! (from the doc. of the function!)
+    ##
+    ## cause:  (nday - lt$wday)%%7 gives unsitable values if (nday - lt$wday) != 0
+    ##     replace  '+ (nday - lt$wday)%%7' with  '- (lt$wday - nday)%%7'
+    ##
+    ## was: 24*3600*(as.integer(julian.POSIXt(lt)) + (nday - lt$wday)%%7)
+    ct <-   24*3600*(as.integer(julian.POSIXt(lt)) - (lt$wday - nday)%%7)
     timeDate(format(.POSIXct(ct), tz = "GMT"),
          format = format, zone = zone, FinCenter = FinCenter)
 }

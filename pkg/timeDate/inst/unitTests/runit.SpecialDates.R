@@ -136,6 +136,10 @@ test.timeNthNdayInMonth <- function()
     Sys.setenv("TZ" = "London/Europe")
     setRmetricsOptions("myFinCenter" = "Zurich")
     checkEQ(dates[isOpExFriday(dates)], true.OE)
+
+    ## GNB: test after the fix that a previously wrong argument now gives correct value.
+    ##      previously the following was giving 1996-07-19.
+    checkEQ(timeNthNdayInMonth("1996-06-23", 5, 4), as("1996-06-27", "timeDate"))
 }
 
 
@@ -146,8 +150,12 @@ test.timeLastNdayInMonth <- function()
 {
 
     ## What date has the last Tuesday in May, 1996 ?
-    checkEQ(timeLastNdayInMonth("1996-05-01", 2),
-            as("1996-06-04", "timeDate"))
+    lastTueInMay1996 <- timeLastNdayInMonth("1996-05-01", 2)
+    
+            # GNB - changing after fixing timeLastNdayInMonth(), the last Tuesday
+            #        in May is hardly in June
+            # was: as("1996-06-04", "timeDate"))
+    checkEQ(lastTueInMay1996, as("1996-05-28", "timeDate"))
 
 }
 
