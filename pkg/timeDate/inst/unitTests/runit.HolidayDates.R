@@ -49,10 +49,17 @@ function()
     # GB Holidays:
     listHolidays("GB")
 
-    # check that holiday() accepts also a function or a list of functions
+    ## GNB: check that holiday() accepts also a function or a list of functions
     checkIdentical(holiday(2022, "GoodFriday"), holiday(2022, GoodFriday))
     checkIdentical(holiday(2022, c("GoodFriday", "Easter")),                  
                    holiday(2022, c(GoodFriday, Easter)))
+
+    ## GNB: test fix for issue #1288
+    ex_stephan <- c("2011-01-03", "2011-02-21", "2011-04-22", "2011-05-23", "2011-07-01",
+                    "2011-08-01", "2011-09-05","2011-10-10", "2011-12-26", "2011-12-27")
+    tdStefan <-  timeDate(ex_stephan, zone = "Toronto", FinCenter = "Toronto")
+    
+    checkIdentical(holidayTSX(2011), tdStefan)
     
     # Return Value:
     return()

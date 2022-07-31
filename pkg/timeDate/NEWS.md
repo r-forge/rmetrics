@@ -23,6 +23,13 @@
   the corresponding days returned by `holidayXXXX` are the resulting non-weekend
   closing days, if any.
 
+- `holidayTSX()` now correctly calculate Christmas and Boxing day closures when
+   Christmas is on Monday.  Fixes the part (2) of issue #1288 reported by Stefan
+   Wilhelm (part (1) was fixed in a previous release). The fix is really a patch
+   for the specific issue, maybe the same should be done when Christmas is on
+   Sunday, for example. Information/contribution on Canadian holidays is
+   welcome.
+
 - now `holiday()` accepts also a function or a list of functions for argument
   'Holiday'.
 

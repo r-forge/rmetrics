@@ -86,11 +86,21 @@ holidayTSX <-
     for (y in year)
         if (y >= 2008) holidays = c(holidays, CAFamilyDay(year))
     holidays = sort(holidays)
-
+    
     # Holidays falling on Saturdays and Sundays:
     holidays =  holidays + (1-isWeekday(holidays))*24*3600
     holidays =  holidays + (1-isWeekday(holidays))*24*3600
 
+    ## GNB: fix issue 1288; holidayTSX(year=2011)
+    ##   was:  (BoxingDay, ChristmasDay) = (Sat, Sun) => (Mon, Mon)
+    ##   now:                                         => (Mon, Tue)
+    ## TODO: this is a quick fix, needs more general solution, maybe
+    ind <- which(dayOfWeek(ChristmasDay(year)) == "Sun")
+    if(length(ind) > 0) {
+        wrk <- ChristmasDay(year)[ind] + 2*24*3600
+        holidays <- unique(sort(c(holidays, wrk)))
+    }
+    
     # Add Financial Center:
     holidays <- timeDate(format(holidays),
                          zone = "Toronto", FinCenter = "Toronto")
