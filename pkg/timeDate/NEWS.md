@@ -47,6 +47,14 @@
 
 - updated documentation files.
 
+## Deprecation notes
+
+- the `timeDate` method for `cut` has been discouraged in the sources for a long
+  time with a recommendation to use \code{window} instead (just replace `cut(x,
+  from = xx , to = yy)` with `window(x, start = xx, end = yy)`. The `cut` method
+  will be deprecated in the next release and later removed or replaced by a
+  method that is consistent with the methods for `cut` in base R.
+  
 
 # timeDate 4021.104
 

@@ -41,7 +41,7 @@ strptimeDate(x, format = whichFormat(x), tz = "")
         the format specification of the input character vector.
         }
     \item{tz}{
-        a character with the the location of the financial center 
+        a character with the location of the financial center 
         named as \code{"continent/city"}, or short \code{"city"}.
         }
     \item{zone}{
@@ -51,7 +51,7 @@ strptimeDate(x, format = whichFormat(x), tz = "")
         a character string or vector of dates and times.
         }
     \item{FinCenter}{
-        a character with the the location of the
+        a character with the location of the
         financial center named as "continent/city".
         }
 

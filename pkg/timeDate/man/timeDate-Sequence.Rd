@@ -39,7 +39,7 @@ timeSequence(from, to = Sys.timeDate(), by, length.out = NULL,
   \item{format}{the format specification of the input character vector.}
   \item{zone}{the time zone or financial center where the data were recorded.}
   \item{FinCenter}{
-    a character with the the location of the
+    a character with the location of the
     financial center named as "continent/city".
   }
   \item{\dots}{arguments passed to other methods.}

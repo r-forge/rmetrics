@@ -27,11 +27,11 @@
 \arguments{
   
     \item{from, to}{
-        starting date, required, and end date, ptional. If supplied 
+        starting date, required, and end date, optional. If supplied 
         \code{to} must be after \code{from}.
         }
     \item{start, end}{
-        starting date, required, and end date, ptional. If supplied 
+        starting date, required, and end date, optional. If supplied 
         \code{to} must be after \code{from}.
         }
     \item{x}{
@@ -45,10 +45,21 @@
 
 \value{
    
-    returns an object of class \code{timeDate}.
+  an object of class \code{timeDate}.
 
 }
 
+\note{
+
+  % :TODO:
+  
+  The method for \code{cut} has been discouraged in the sources for a
+  long time (with a recommendation to use \code{window}). It will be
+  officially deprecated in the next release and later removed or
+  replaced by a method that is consistent with the methods for
+  \code{cut} in base R,
+
+}
 
 
 \examples{  

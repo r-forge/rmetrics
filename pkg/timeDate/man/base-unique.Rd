@@ -1,24 +1,18 @@
 \name{unique}
-
-
-\title{Making a 'timeDate' object unique}
-
-
 \alias{unique}
 \alias{unique.timeDate}
 
-
-\description{
-    
-    Makes a 'timeDate' object unique.
-       
+\title{
+  Remove duplicated dates from 'timeDate' objects
 }
 
+\description{
+  Remove duplicated dates from 'timeDate' objects.    
+}
 
 \usage{
 \method{unique}{timeDate}(x, \dots)
 }
-
 
 \arguments{
       

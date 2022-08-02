@@ -6,7 +6,7 @@
 \alias{timeLastNdayInMonth}
 
 \description{
-    Computes the date for the n-th or last ocurrance of a
+    Computes the date for the n-th or last occurrence of an
     n-day in year/month.
 }
 \usage{
@@ -24,14 +24,14 @@ timeLastNdayInMonth(charvec, nday = 1, format = "\%Y-\%m-\%d",
   \item{nth}{an integer vector numbering the n-th occurence.}
   \item{format}{the format specification of the input character vector.}
   \item{zone}{the time zone or financial center where the data were recorded.}
-  \item{FinCenter}{a character with the the location of the financial
+  \item{FinCenter}{a character with the location of the financial
     center named as "continent/city".}
 }
 
 \value{
   returns an object of class \code{timeDate}.
 
-  For function \code{timeNthNdayInMonth} the \code{nth} ocurrance
+  For function \code{timeNthNdayInMonth} the \code{nth} occurrence
   of a n-day (nth = 1,...,5) in \code{year}, \code{month}, and
   for \code{timeLastNdayInMonth} the last \code{nday} in \code{year},
   \code{month} will be returned.

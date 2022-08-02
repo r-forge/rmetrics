@@ -24,7 +24,7 @@
     a \code{timeSeries} object.
   }
   \item{value}{
-    a character with the the location of the  financial center named 
+    a character with the location of the  financial center named 
     as "continent/city".
   }
 }

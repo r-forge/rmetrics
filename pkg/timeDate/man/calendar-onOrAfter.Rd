@@ -44,7 +44,7 @@ timeNdayOnOrBefore(charvec, nday = 1, format = "\%Y-\%m-\%d",
         the time zone or financial center where the data were recorded.
         }      
     \item{FinCenter}{
-        a character with the the location of the  
+        a character with the location of the  
         financial center named as "continent/city". 
         }
            

@@ -22,7 +22,7 @@ Sys.timeDate(FinCenter = "")
 \arguments{
 
     \item{FinCenter}{
-        a character with the the location of the
+        a character with the location of the
         financial center named as "continent/city".
         }
 

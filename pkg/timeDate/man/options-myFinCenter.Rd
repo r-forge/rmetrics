@@ -18,9 +18,9 @@
 
 \note{
 
-    Can be modified by the user to his own or any
+    Can be modified by the user to his/her own or any
     other financial center. The default is "GMT".
-    To list all supported financial center use the
+    To list all supported financial centers use the
     function \code{listFinCenter}.
    
 }
@@ -37,10 +37,10 @@
 ## myFinCenter - the global setting currently used:
    getRmetricsOptions("myFinCenter")
    
-## Change to another Financiel Center:
+## Change to another Financial center:
    # setRmetricsOptions(myFinCenter = "Zurich")
    
-## Do not take care about DST ...
+## Do not care about DST ...
    # setRmetricsOptions(myFinCenter = "GMT") 
 }
 

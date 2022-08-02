@@ -1,7 +1,9 @@
 \name{align}
 
 
-\title{Making a 'timeDate' object unique}
+\title{
+  Align a 'timeDate' object to regular date/time stamps
+}
 
 
 \alias{align}
@@ -35,18 +37,18 @@ alignQuarterly(x, include.weekends=FALSE)
   }
   \item{by}{
     a character string formed from an integer length and
-    a period identifyer. Valid values are
+    a period identifier. Valid values are
     "w", "d", "h", "m", "s", for
     weeks, days, hours, minutes and seconds. For example
     a bi-weekly period is expressed as \code{"2w"}.
   }
   \item{offset}{
     a character string to set an offset formed from an integer
-    length and a period identifyer in the same way as for the
+    length and a period identifier in the same way as for
     argument \code{by}.
   }
   \item{include.weekends}{
-    logical value indicating whether 'weekends' should be
+    logical value indicating whether weekends should be
     included.
   }
 }

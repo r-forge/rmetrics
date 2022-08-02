@@ -12,16 +12,16 @@
 
 \description{ 
 
-  The class 'timeDate' represents date and time objects.
+  Class 'timeDate' represents date and time objects.
   
 }
 
 
 \section{Objects from the Class}{
 
-  Objects can be created for example by calls of the functions 
-  \code{timeDate}, \code{timeCalender} and \code{timeCalendar}
-  among others.
+  Objects can be created by calls of the functions
+  \code{\link{timeDate}}, \code{\link{timeSequence}} and
+  \code{\link{timeCalendar}}, among others.
   
 }
 
@@ -38,7 +38,7 @@
       the input Data character vector.
     }
     \item{\code{FinCenter}:}{Object of class \code{"character"}: 
-      a character string with the the location of the
+      a character string with the location of the
       financial center named as "continent/city", or just "city".
     }
     
