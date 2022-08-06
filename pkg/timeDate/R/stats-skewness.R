@@ -98,14 +98,18 @@ skewness.default <-
 #' @export
 # ---------------------------------------------------------------------------- #
 skewness.data.frame <-
-    function (x, ...)
+    function (x, na.rm = FALSE, method = c("moment", "fisher"), ...)
 {
     # A function implemented by Diethelm Wuertz
+    ## Amended by Georgi N. Boshnakov to set attribute 'method' as documented.
+    ## (changed the signature from (x, ...) to make this straightforward)
 
     # FUNCTION:
+    method <- match.arg(method)
 
     # Return Value:
-    sapply(x, skewness, ...)
+    structure(sapply(x, skewness, na.rm = na.rm, method = method, ...),
+              method = method)
 }
 
 

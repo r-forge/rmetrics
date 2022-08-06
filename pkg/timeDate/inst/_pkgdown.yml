@@ -11,24 +11,21 @@ reference:
   - title: "timeDate objects"
     contents:
       - timeDate 
+      - timeSequence
       - as.timeDate
       - timeCalendar
       - "timeDate-class"
       - timeDateMathOps
       - difftimeDate
       - Sys.timeDate
-      - timeSequence
       - sample
       - isRegular
       - blockStart
-  - title: "Other time functions"
+  - title: "Time/date utilities"
     contents:
-      - DaylightSavingTime
       - midnightStandard
       - whichFormat
   - title: "Statistical functions"
-    desc: >
-      Some of these functions probably should not be in this package.
     contents:
       - skewness
       - kurtosis
@@ -220,3 +217,7 @@ reference:
       - JPEmperorsBirthday
       - JPTennouTanjyouBi
       - JPBankHolidayDec31
+  - title: "Daylight Saving Time"
+    contents:
+      - DaylightSavingTime
+    

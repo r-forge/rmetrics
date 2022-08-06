@@ -22,8 +22,11 @@
 skewness(x, \dots)
 
 \method{skewness}{default}(x, na.rm = FALSE, method = c("moment", "fisher"), \dots)
-\method{skewness}{data.frame}(x, \dots)
+
+\method{skewness}{data.frame}(x, na.rm = FALSE, method = c("moment", "fisher"), \dots)
+
 \method{skewness}{POSIXct}(x, \dots)
+
 \method{skewness}{POSIXlt}(x, \dots)
 }
 
@@ -55,18 +58,15 @@ skewness(x, \dots)
 
 \value{
     
-    \code{skewness}\cr
-    \cr
-    
-    returns the value of the statistics, a numeric value. An 
-    attribute which reports the used method is added.
+    a numeric value or vector with attribute \code{"method"} indicating
+    the method. 
     
 }
 
 
 \seealso{
 
-    \code{link{kurtosis}}.
+    \code{\link{kurtosis}}.
     
 }
 

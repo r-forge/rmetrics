@@ -42,6 +42,9 @@
   this function was prompted by the bug report for #1463 (see above) for
   `timeNthNdayInMonth` but the error was different.
 
+- the `data.frame` methods for `kurtosis()` and `skewness()` now set attribute
+  `method` as for the other methods and as documented.
+
 - removed `.holidayList()` which had been replaced by `listHolidays()` a long
   time ago and was not exported in recent versions of `timeDate`.
 

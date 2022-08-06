@@ -1,6 +1,6 @@
 Package: timeDate
 Title: Rmetrics - Chronological and Calendar Objects
-Date: 2022-08-02
+Date: 2022-08-03
 Version: 4021.105
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")

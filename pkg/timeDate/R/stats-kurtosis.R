@@ -97,14 +97,19 @@ kurtosis.default <-
 #' @export
 # ---------------------------------------------------------------------------- #
 kurtosis.data.frame <-
-    function (x, ...)
+    function (x, na.rm = FALSE, method = c("excess", "moment", "fisher"), ...)
 {
     # A function implemented by Diethelm Wuertz
-
+    ## Amended by Georgi N. Boshnakov to set attribute 'method' as documented.
+    ## (changed the signature from (x, ...) to make this straightforward)
+    
     # FUNCTION:
-
+    method <- match.arg(method)
+    
     # Return Value:
-    sapply(x, kurtosis, ...)
+    structure(sapply(x, kurtosis, na.rm = na.rm, method = method, ...),
+              method = method)
+    
 }
 
 

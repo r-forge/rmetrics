@@ -29,10 +29,16 @@ timeSequence(from, to = Sys.timeDate(), by, length.out = NULL,
       \item character string "quarter" that is equivalent to "3 months".
       \item A number, taken to be in seconds.
       \item A object of class 'difftime'
+
+      \item character string \code{"DSTday"} gives a sequence taken at
+      the same clock time every day. Note that on the days when the DST
+      changes, the requested time may not exist ot be ambiguous, see the
+      examples.
+      
     }
   }
   \item{length.out}{
-    length.out integer, optional. Desired length
+    integer, optional. Desired length
     of the sequence, if specified "to" will be ignored.
   }
   \item{along.with}{Take the length from the length of this argument.}
@@ -52,7 +58,7 @@ timeSequence(from, to = Sys.timeDate(), by, length.out = NULL,
 }
 
 \value{
-  an object of \code{\link{class}} \code{"\linkS4class{timeDate}"}.
+  an object of class \code{"\linkS4class{timeDate}"}.
 }
 
 \examples{
@@ -68,9 +74,16 @@ stopifnot( ## different formats even:
                    format = "\%Y-\%m-\%d", FinCenter = "GMT")))
 
 ## observe "switch to summer time":
-timeSequence(from = "2004-03-12", to = "2004-04-11",
-             FinCenter = "Europe/Zurich")
+timeSequence(from = "2004-03-26 05:00:00", to = "2004-04-02 05:00:00",
+             zone = "Europe/Zurich", FinCenter = "Europe/Zurich")
+
+## ensure fixed clock time:
+timeSequence(from = "2004-03-26 05:00:00", to = "2004-04-01 05:00:00",
+             by = "DSTday", zone = "Europe/Zurich", FinCenter = "Europe/Zurich")
+
+## on the day of DST change the time may not exist (notice 2004-03-28 00:00:00):
+timeSequence(from = "2004-03-26 01:00:00", to = "2004-04-01 01:00:00",
+             by = "DSTday", zone = "Europe/Zurich", FinCenter = "Europe/Zurich")
 }
 
 \keyword{chron}
-

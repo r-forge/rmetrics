@@ -20,7 +20,8 @@
 
 \description{
 
-    Create a  'timeDate' object from scratch using a character vector.
+    Create a 'timeDate' object from scratch from a character vector or
+    other suitable objects.
 
 }
 
@@ -57,12 +58,78 @@ strptimeDate(x, format = whichFormat(x), tz = "")
 
 }
 
+\details{
+
+  \code{timeDate} creates objects from class \code{"timeDate"} from
+  character vectors, objects from several date/time classes, and other
+  suitable objects.. It is an S4 generic function and this page
+  describes the methods defined in package \pkg{timeDate}, see section
+  \sQuote{Methods}.
+
+  Note that \code{zone} is the time zone of the input, while
+  \code{FinCenter} is the \sQuote{current} time zone, typically but not
+  necessarilly where the code is run. To change one or both of these
+  time zones of an existing \code{"timeDate"} object, call
+  \code{timeDate()} on it, see the method for \code{charvec = "timeDate"}
+  in section \sQuote{Methods}.
+  
+
+  \code{strptimeDate} is a wrapper of \code{timeDate}, suitable when
+  \code{zone} and \code{FinCenter} are the same, It has the same
+  arguments as \code{\link{strptime}}. If \code{format} is missing it
+  tries to deduce it. If \code{tz} is missing it sets it to the value of
+  the Rmetrics option \code{"myFinCenter"}.
+ 
+}
 
 \value{
 
-    returns an object of class \code{timeDate}.
+  an object of class \code{timeDate}.
 
 }
+
+\section{Methods}{
+
+  The following methods for \code{timeDate} are defined in package
+  \pkg{timeDate}.
+
+  \describe{
+
+    \item{\code{signature(charvec = "ANY")}}{
+      Converts \code{charvec} to \code{character} and calls
+      \code{timeDate} on the result.
+    }
+
+    \item{\code{signature(charvec = "character")}}{
+      ...
+    }
+
+    \item{\code{signature(charvec = "Date")}}{
+      ...
+    }
+
+    \item{\code{signature(charvec = "missing")}}{
+      Returns the current time as \code{timeDate} object.
+    }
+
+    \item{\code{signature(charvec = "numeric")}}{
+      ...
+    }
+
+    \item{\code{signature(charvec = "POSIXt")}}{
+      ...
+    }
+
+    \item{\code{signature(charvec = "timeDate")}}{
+
+      Changes the time zone and/or financial center of \code{charvec} to
+      the requested ones. If \code{zone} is missing or equal to the
+      empty string, just changes the financial center. 
+   
+    }
+  }
+}
+
 
 
 \examples{
