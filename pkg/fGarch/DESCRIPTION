@@ -1,7 +1,7 @@
 Package: fGarch
 Title: Rmetrics - Autoregressive Conditional Heteroskedastic Modelling
-Date: 2022-07-27
-Version: 4021.87
+Date: 2022-08-06
+Version: 4021.88
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
