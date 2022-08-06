@@ -1,7 +1,7 @@
 Package: fUnitRoots
 Title: Rmetrics - Modelling Trends and Unit Roots
-Date: 2022-07-22
-Version: 4021.80
+Date: 2022-08-06
+Version: 4021.81
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
@@ -18,5 +18,5 @@ Depends: R (>= 2.15.1)
 Imports: timeSeries, fBasics, urca, graphics, methods, stats, utils
 Suggests: RUnit
 License: GPL (>= 2)
-URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fUnitRoots/?root=rmetrics )devel), https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fUnitRoots/?root=rmetrics (devel), https://www.rmetrics.org
 BugReports: https://r-forge.r-project.org/projects/rmetrics
