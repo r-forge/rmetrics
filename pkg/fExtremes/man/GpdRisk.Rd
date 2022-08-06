@@ -117,8 +117,8 @@ tailRisk(object, prob = c(0.99, 0.995, 0.999, 0.9995, 0.9999), \dots)
     the lowest and maximum number of exceedances to be considered.
   }
   \item{type}{
-    a character string selecting the desired estimation mehtod, either
-    \code{"mle"} for the maximum likelihood mehtod or \code{"pwm"} for 
+    a character string selecting the desired estimation method, either
+    \code{"mle"} for the maximum likelihood method or \code{"pwm"} for 
     the probability weighted moment method. By default, the first will 
     be selected. Note, the function \code{gpd} uses \code{"ml"}.    
   }
@@ -130,7 +130,7 @@ tailRisk(object, prob = c(0.99, 0.995, 0.999, 0.9995, 0.9999), \dots)
     the data vector. Note, there are two different names
     for the first argument \code{x} and \code{data} depending 
     which function name is used, either \code{gpdFit} or the 
-    EVIS synonyme \code{gpd}.
+    EVIS synonym \code{gpd}.
     \cr
     [print][plot] - \cr
     a fitted object of class \code{"gpdFit"}.
@@ -244,7 +244,7 @@ tailRisk(object, prob = c(0.99, 0.995, 0.999, 0.9995, 0.9999), \dots)
   representation to an existing plot is added. Expected shortfall is 
   the expected size of the loss, given that a particular quantile of the 
   loss distribution is exceeded. The GPD approximation in the tail is used 
-  to estimate expected shortfall. The likelihood is reparametrised  in 
+  to estimate expected shortfall. The likelihood is reparametrized  in 
   terms of the unknown expected shortfall and profile likelihood arguments 
   are used to construct a confidence interval. 
   \cr
@@ -286,6 +286,7 @@ tailRisk(object, prob = c(0.99, 0.995, 0.999, 0.9995, 0.9999), \dots)
 
 \examples{
 ## Load Data:
+   library(timeSeries)
    danish = as.timeSeries(data(danishClaims))
 
 ## Tail Plot:

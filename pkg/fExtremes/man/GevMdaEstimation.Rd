@@ -66,7 +66,7 @@ shaparmDEHaan(x, p = 0.05, xiRange = NULL,
         \cr
         [shaparmPlot] - \cr
         a vector of logicals of the same lengths as tails
-        defining for wich tail depths plots should be created,
+        defining for which tail depths plots should be created,
         by default plots will be generated for a tail depth of 5
         percent. By default \code{c(FALSE, FALSE, FALSE, FALSE, 
         TRUE, FALSE, FALSE, FALSE, FALSE, FALSE)}.
@@ -265,6 +265,7 @@ Embrechts, P., Klueppelberg, C., Mikosch, T. (1997);
   
 \examples{  
 ## Load Data:
+   library(timeSeries)
    x = as.timeSeries(data(danishClaims))
    colnames(x) <- "Danish"
    head(x)

@@ -13,7 +13,7 @@
 
 \description{
 
-    The Rmetrics "fExtemes" package is a collection of functions to 
+    The Rmetrics "fExtremes" package is a collection of functions to 
     analyze and model extreme events in Finance and Insurance.
     
 }
@@ -38,7 +38,7 @@
 
   The \code{fExtremes} package provides functions for analyzing
   and modeling extreme events in financial time Series. The
-  topics include: (i) data proeprocessing, (ii) explorative 
+  topics include: (i) data pre-processing, (ii) explorative 
   data analysis, (iii) peak over threshold modeling, (iv) block
   maxima modeling, (v) estimation of VaR and CVaR, and (vi) the
   computation of the extreme index.
@@ -73,7 +73,7 @@
     This section contains a collection of functions for explorative data 
     analysis of extreme values in financial time series. The tools include 
     plot functions for emprical distributions, quantile plots, graphs 
-    exploring the properties of exceedences over a threshold, plots for 
+    exploring the properties of exceedances over a threshold, plots for 
     mean/sum ratio and for the development of records. The functions are:
     
     \preformatted{
@@ -93,7 +93,7 @@
     }
     
     \preformatted{
-    xacfPlot        plots ACF of exceedences over a threshold
+    xacfPlot        plots ACF of exceedances over a threshold
     }
     
     
@@ -271,7 +271,7 @@
     blockTheta           computes theta from Block Method
     clusterTheta         computes theta from Reciprocal Cluster Method
     runTheta             computes theta from Run Method
-    ferrosegersTheta     computes theta according to Ferro and Seegers
+    ferrosegersTheta     computes theta according to Ferro and Segers
     }
     
     \preformatted{

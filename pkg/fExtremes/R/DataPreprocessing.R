@@ -51,7 +51,7 @@ blockMaxima <-
     # FUNCTION:
 
     # Check Type:
-    if (class(x) == "timeSeries") {
+    if (inherits(x, "timeSeries")) {  
         stopifnot(isUnivariate(x))
     } else {
         x = as.vector(x)
@@ -136,7 +136,7 @@ function(x, n = floor(0.05*length(as.vector(x))), doplot = FALSE)
     # FUNCTION:
 
     # Check Type:
-    if (class(x) == "timeSeries") {
+    if (inherits(x, "timeSeries")) {  
         stopifnot(isUnivariate(x))
     } else {
         x = as.vector(x)

@@ -15,7 +15,7 @@
     Value-at-Risk and conditional Value-at-Risk
     \cr
     
-    The functiona are:
+    The functions are:
     
     \tabular{ll}{
     \code{VaR} \tab Computes Value-at-Risk, \cr

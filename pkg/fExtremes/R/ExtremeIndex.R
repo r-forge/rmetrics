@@ -24,7 +24,7 @@
 #  blockTheta                Computes theta from Block Method
 #  clusterTheta              Computes theta from Reciprocal Cluster Method
 #  runTheta                  Computes theta from Run Method
-#  ferrosegersTheta          Computes Theta according to Ferro and Seegers
+#  ferrosegersTheta          Computes Theta according to Ferro and Segers
 # FUNCTION:                 DESCRIPTION:
 #  exindexesPlot             Computes and Plot Theta(1,2,3)
 #  exindexPlot               Computes Theta(1,2) and Plot Theta(1)
@@ -157,7 +157,7 @@ title = NULL, description = NULL)
     keepK = keepN = NULL
     for ( u in thresholds ) {
         run = run + 1
-        # N # of exceedences | K # of blocks with exceedences:
+        # N # of exceedances | K # of blocks with exceedances:
         N = length(X[X > u])
         K = floor(sum(sign(apply(X, 1, max) - u) + 1) / 2)
         if (K/k < 1) {
@@ -229,7 +229,7 @@ title = NULL, description = NULL)
     keepK = keepN = NULL
     for ( u in thresholds ) {
         run = run + 1
-        # N # of exceedences | K # of blocks with exceedences:
+        # N # of exceedances | K # of blocks with exceedances:
         N = length(X[X > u])
         K = floor(sum(sign(apply(X, 1, max) - u) + 1) / 2)
         theta2[run] = K/N
@@ -299,7 +299,7 @@ title = NULL, description = NULL)
     keepN = NULL
     for ( u in thresholds ) {
         run = run + 1
-        # N # of exceedences | K # of blocks with exceedences:
+        # N # of exceedances | K # of blocks with exceedances:
         N = length(X[X > u])
         Y = diff(Count[X > u])
         Y = Y[Y > block]
@@ -472,9 +472,9 @@ doplot = TRUE, labels = TRUE, ...)
     run = 0
     for ( z in z0 ) {
         run = run + 1
-        # N - number of exceedences:
+        # N - number of exceedances:
         N = length(resid1[resid1 > z])
-        # K - number of blocks with exceedences:
+        # K - number of blocks with exceedances:
         # DW: floor()
         K = floor(sum(sign(apply(resid1, 1, max)-z)+1) / 2)
         if (K/k < 1) {

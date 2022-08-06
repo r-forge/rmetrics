@@ -30,14 +30,14 @@
     Segers.
     \cr
     
-    The functiona are:
+    The functions are:
     
     \tabular{ll}{
     \code{thetaSim} \tab Simulates a time Series with known theta, \cr
     \code{blockTheta} \tab Computes theta from Block Method, \cr
     \code{clusterTheta} \tab Computes theta from Reciprocal Cluster Method, \cr
     \code{runTheta} \tab Computes theta from Run Method, \cr
-    \code{ferrosegersTheta} \tab Computes Theta according to Ferro and Seegers, \cr
+    \code{ferrosegersTheta} \tab Computes Theta according to Ferro and Segers, \cr
     \code{exindexPlot} \tab Calculate and Plot Theta(1,2,3), \cr
     \code{exindexesPlot} \tab Calculate Theta(1,2) and Plot Theta(1). }
     
@@ -77,7 +77,7 @@ exindexesPlot(x, block = 22, quantiles = seq(0.950, 0.995, length = 10),
         the block size. Either \code{"monthly"}, \code{"quarterly"} or
         an integer value. An integer value is interpreted as the number 
         of data values in each successive block. The default value is
-        \code{"monthly"} which correpsond for daily data to an approximately
+        \code{"monthly"} which corresponds for daily data to an approximately
         22-day periods.
         }
     \item{description}{
@@ -88,7 +88,7 @@ exindexesPlot(x, block = 22, quantiles = seq(0.950, 0.995, length = 10),
         }
     \item{labels}{
         whether or not axes should be labelled. If set to \code{FALSE}
-        then user specified lables can be passed through the \code{"..."}
+        then user specified labels can be passed through the \code{"..."}
         argument.
         }
     \item{model}{
@@ -193,6 +193,7 @@ Embrechts, P., Klueppelberg, C., Mikosch, T. (1997);
 ## of the BMW log returns:
    data(bmwRet)
    par(mfrow = c(2, 2), cex = 0.7)
+   library(timeSeries)
    exindexPlot( as.timeSeries(bmwRet), block = "quarterly")
    exindexPlot(-as.timeSeries(bmwRet), block = "quarterly")   
    

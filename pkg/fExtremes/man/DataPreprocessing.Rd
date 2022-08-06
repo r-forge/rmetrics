@@ -166,6 +166,7 @@ Embrechts, P., Klueppelberg, C., Mikosch, T. (1997);
 \examples{ 
 ## findThreshold -
 # Threshold giving (at least) fifty exceedances for Danish data:
+library(timeSeries)
 x <- as.timeSeries(data(danishClaims))
 findThreshold(x, n = c(10, 50, 100))    
 

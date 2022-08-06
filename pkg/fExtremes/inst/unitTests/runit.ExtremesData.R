@@ -39,7 +39,7 @@
 #  msratioPlot          Plots ratio of maximums and sums
 #  sllnPlot             Verifies Kolmogorov's Strong Law of large numbers
 #  lilPlot              Verifies Hartman-Wintner's Law of the iterated logarithm
-#  xacfPlot             Plots autocorrelations of exceedences
+#  xacfPlot             Plots autocorrelations of exceedances
 ################################################################################
 
 
@@ -261,7 +261,7 @@ function()
 test.xacf = 
 function()
 {
-    # xacfPlot - Plots autocorrelations of exceedences
+    # xacfPlot - Plots autocorrelations of exceedances
     
     # Create an Artificial Data Set: 
     RNGkind(kind = "Marsaglia-Multicarry", normal.kind = "Inversion")

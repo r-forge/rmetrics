@@ -56,7 +56,7 @@ gevSlider(method = c("dist", "rvs"))
         probabilities are \code{P[X <= x]}, otherwise, \code{P[X > x]}.
         }
     \item{method}{       
-        a character sgtring denoting what should be displayed. Either
+        a character string denoting what should be displayed. Either
         the density and \code{"dist"} or random variates \code{"rvs"}.
         } 
     \item{n}{      

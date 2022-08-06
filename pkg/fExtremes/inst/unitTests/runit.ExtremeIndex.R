@@ -36,7 +36,7 @@
 #  blockTheta                Computes theta from Block Method
 #  clusterTheta              Computes theta from Reciprocal Cluster Method
 #  runTheta                  Computes theta from Run Method
-#  ferrosegersTheta          Computes Theta according to Ferro and Seegers
+#  ferrosegersTheta          Computes Theta according to Ferro and Segers
 # FUNCTION:                 DESCRIPTION:
 #  exindexesPlot             Computes and Plot Theta(1,2,3)
 #  exindexPlot               Computes Theta(1,2) and Plot Theta(1)

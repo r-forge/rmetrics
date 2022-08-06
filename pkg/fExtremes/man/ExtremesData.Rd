@@ -34,7 +34,7 @@
     A collection and description of functions for 
     explorative data analysis. The tools include 
     plot functions for emprical distributions, quantile 
-    plots, graphs exploring the properties of exceedences 
+    plots, graphs exploring the properties of exceedances 
     over a threshold, plots for mean/sum ratio and for 
     the development of records.
     \cr
@@ -52,7 +52,7 @@
     \code{ssrecordsPlot} \tab another variant, investigates subsamples, \cr
     \code{sllnPlot} \tab verifies Kolmogorov's strong law of large numbers, \cr
     \code{lilPlot} \tab verifies Hartman-Wintner's law of the iterated logarithm, \cr
-    \code{xacfPlot} \tab ACF of exceedences over a threshold, \cr
+    \code{xacfPlot} \tab ACF of exceedances over a threshold, \cr
     \code{normMeanExcessFit} \tab fits mean excesses with a normal density, \cr
     \code{ghMeanExcessFit} \tab fits mean excesses with a GH density, \cr   
     \code{hypMeanExcessFit} \tab fits mean excesses with a HYP density, \cr   
@@ -146,7 +146,7 @@ ghtMeanExcessFit(x, doplot = TRUE, trace = TRUE, \dots)
     \item{threshold, trim}{
         [qPlot][xacfPlot] - \cr
         a numeric value at which data are to be left-truncated, value 
-        at which data are to be right-truncated or the thresold value, 
+        at which data are to be right-truncated or the threshold value, 
         by default 95\%.
         }
     \item{trace}{
@@ -242,17 +242,17 @@ ghtMeanExcessFit(x, doplot = TRUE, trace = TRUE, \dots)
     with the help of the function \code{ssrecordsPlot}.
     \cr
     
-    \bold{Plot of Kolmogorov's and Hartman-Wintern's Laws:}
+    \bold{Plot of Kolmogorov's and Hartman-Wintner's Laws:}
     \cr\cr
     The function \code{sllnPlot} verifies Kolmogorov's strong law of 
     large numbers, and the function \code{lilPlot} verifies 
     Hartman-Wintner's law of the iterated logarithm.
     \cr
     
-    \bold{ACF Plot of Exceedences over a Thresold:}
+    \bold{ACF Plot of Exceedances over a Threshold:}
     \cr\cr
     This function plots the autocorrelation functions of heights and 
-    distances of exceedences over a threshold.
+    distances of exceedances over a threshold.
     \cr
 }
 
@@ -302,6 +302,7 @@ Embrechts, P., Klueppelberg, C., Mikosch, T. (1997);
 \examples{ 
 ## Danish fire insurance data:
    data(danishClaims)
+   library(timeSeries)
    danishClaims = as.timeSeries(danishClaims)
    
 ## emdPlot -

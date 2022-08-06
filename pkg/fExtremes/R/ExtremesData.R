@@ -27,7 +27,7 @@
 #  msratioPlot          Plots ratio of maximums and sums
 #  sllnPlot             Verifies Kolmogorov's Strong Law of large numbers
 #  lilPlot              Verifies Hartman-Wintner's Law of the iterated logarithm
-#  xacfPlot             Plots autocorrelations of exceedences
+#  xacfPlot             Plots autocorrelations of exceedances
 ################################################################################
 
 
@@ -721,7 +721,7 @@ which = c("all", 1, 2, 3, 4), labels = TRUE, ...)
 {   # A function implemented by Diethelm Wuertz
 
     # Description:
-    #   Creates plots of exceedences, one for the
+    #   Creates plots of exceedances, one for the
     #   heights and one for the distances.
     
     # Arguments:

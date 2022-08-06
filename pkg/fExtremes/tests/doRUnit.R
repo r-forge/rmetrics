@@ -1,7 +1,7 @@
 #### doRUnit.R --- Run RUnit tests
 ####------------------------------------------------------------------------
 
-### Origianlly follows Gregor Gojanc's example in CRAN package  'gdata'
+### Originally follows Gregor Gojanc's example in CRAN package  'gdata'
 ### and the corresponding section in the R Wiki:
 ###  http://wiki.r-project.org/rwiki/doku.php?id=developers:runit
 
@@ -21,6 +21,11 @@ if(require("RUnit", quietly = TRUE)) {
   path <- system.file("unitTests", package = pkg)
 
   stopifnot(file.exists(path), file.info(path.expand(path))$isdir)
+
+  # Make sure that required packages are loaded
+  library(fBasics)
+  library(timeDate)
+  library(timeSeries)
 
   source(file.path(path, "runTests.R"), echo = TRUE)
 }

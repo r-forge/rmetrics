@@ -74,7 +74,7 @@ gumbelFit(x, block = 1, type = c("mle", "pwm"), title = NULL, description = NULL
         \cr
         [shaparmPlot] - \cr
         a vector of logicals of the same lengths as tails
-        defining for wich tail depths plots should be created,
+        defining for which tail depths plots should be created,
         by default plots will be generated for a tail depth of 5
         percent. By default \code{c(FALSE, FALSE, FALSE, FALSE, 
         TRUE, FALSE, FALSE, FALSE, FALSE, FALSE)}.
@@ -110,15 +110,15 @@ gumbelFit(x, block = 1, type = c("mle", "pwm"), title = NULL, description = NULL
     \item{type}{
         a character string denoting the type of parameter estimation,
         either by maximum likelihood estimation \code{"mle"}, the
-        default value, or by the probability weighted moment menthod
+        default value, or by the probability weighted moment method
         \code{"pwm"}.
         }
     \item{which}{
         [plot][summary] - \cr
         a vector of logicals, one for each plot, denoting which plot 
-        should be displayed. Alkternatively if \code{which="ask"} the
+        should be displayed. Alternatively if \code{which="ask"} the
         user will be interactively asked which of the plots should be
-        desplayed. By default \code{which="all"}.
+        displayed. By default \code{which="all"}.
         }
     \item{x}{
         [dgev][devd] - \cr
@@ -140,7 +140,7 @@ gumbelFit(x, block = 1, type = c("mle", "pwm"), title = NULL, description = NULL
     \item{xi, mu, beta}{
         [*gev] - \cr
         \code{xi} is the shape parameter, \code{mu} the location parameter,
-        and \code{sigma} is the scale parameter. The default values are 
+        and \code{beta} is the scale parameter. The default values are 
         \code{xi=1}, \code{mu=0}, and \code{beta=1}. Note, if \code{xi=0} 
         the distribution is of type Gumbel.
         }

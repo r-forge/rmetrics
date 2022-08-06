@@ -214,6 +214,7 @@ Embrechts, P., Klueppelberg, C., Mikosch, T. (1997);
 \examples{  
 ## Load Data:
    # BMW Stock Data - negative returns
+   library(timeSeries)
    x = -as.timeSeries(data(bmwRet))
    colnames(x)<-"BMW"
    head(x)
