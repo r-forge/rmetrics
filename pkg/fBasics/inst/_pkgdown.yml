@@ -19,6 +19,61 @@ reference:
       - nFit
       - tFit
       - stableFit
+  - title: "Tests"
+    contents:
+      - correlationTest
+      -   ksnormTest
+      -   jbTest
+      -   shapiroTest
+      -   normalTest
+      -   jarqueberaTest
+      -   dagoTest
+      -   adTest
+      -   cvmTest
+      -   lillieTest
+      -   pchiTest
+      -   sfTest
+      - pearsonTest
+      - kendallTest
+      - spearmanTest
+      -   ks2Test
+      - locationTest
+      - scaleTest
+      - varianceTest
+      - fHTEST
+  - title: "Stats utilities"
+    contents:
+      - pdl
+      - basicStats
+      - dmaxdd
+      - pmaxdd
+      - rmaxdd
+      - maxddStats
+      - rowStats
+      - rowSds
+      - rowVars
+      - rowSkewness
+      - rowKurtosis
+      - rowMaxs
+      - rowMins
+      - rowProds
+      - rowQuantiles
+      - rowStdevs
+      - rowAvgs
+      -   normMED
+      -   normIQR
+      -   normSKEW
+      -   normKURT
+      - sampleMED
+      - sampleIQR
+      - sampleSKEW
+      - sampleKURT
+      -   sampleLmoments
+      - set.lcgseed
+      - get.lcgseed
+      - runif.lcg
+      - rnorm.lcg
+      - rt.lcg
   - title: "Distributions"
     contents:
       - distCheck
@@ -105,13 +160,7 @@ reference:
       - nigKURT
       - nigShapeTriangle
       - nigSlider
-  - title: "Robust Moments for the Normal distribution"
-    contents:
-      - normMED
-      - normIQR
-      - normSKEW
-      - normKURT
-  - title: "Other distributions"
+  - title: "Standardized distributions"
     contents:
       - dsgh
       - psgh
@@ -127,6 +176,8 @@ reference:
       - qsnig
       - rsnig
       - snigFit
+  - title: "Spline smoothed distribution"
+    contents:
       -   dssd
       -   pssd
       -   qssd
@@ -151,30 +202,6 @@ reference:
       - tslag
       - vec
       - vech
-  - title: "Stats utilities"
-    contents:
-      - pdl
-      - basicStats
-      - dmaxdd
-      - pmaxdd
-      - rmaxdd
-      - maxddStats
-      - rowStats
-      - rowSds
-      - rowVars
-      - rowSkewness
-      - rowKurtosis
-      - rowMaxs
-      - rowMins
-      - rowProds
-      - rowQuantiles
-      - rowStdevs
-      - rowAvgs
-      - sampleMED
-      - sampleIQR
-      - sampleSKEW
-      - sampleKURT
-      - sampleLmoments
   - title: "Plotting"
     contents:
       - acfPlot
@@ -197,35 +224,14 @@ reference:
       - returnPlot
       - drawdownPlot
       - stableSlider
+      - interactivePlot
   - title: "Interpolation"
     contents:
-      - akimaInterp
-      - akimaInterpp
-      - krigeInterp
       - linearInterp
       - linearInterpp
-  - title: "Tests"
-    contents:
-      - correlationTest
-      - pearsonTest
-      - kendallTest
-      - spearmanTest
-      - ks2Test
-      - locationTest
-      - ksnormTest
-      - jbTest
-      - shapiroTest
-      - normalTest
-      - jarqueberaTest
-      - dagoTest
-      - adTest
-      - cvmTest
-      - lillieTest
-      - pchiTest
-      - sfTest
-      - scaleTest
-      - varianceTest
-      - fHTEST
+      -   krigeInterp
+      - akimaInterp
+      - akimaInterpp
   - title: "Special functions"
     contents:
       - Heaviside
@@ -260,7 +266,6 @@ reference:
       - boxL
       - box_
       - copyright
-      - interactivePlot
   - title: "S4 utilities"
     contents:
       - getModel
@@ -275,13 +280,6 @@ reference:
       - countFunctions
       - listIndex
       - print
-  - title: "Portable Random Innovations"
-    contents:
-      - set.lcgseed
-      - get.lcgseed
-      - runif.lcg
-      - rnorm.lcg
-      - rt.lcg
   - title: "S+ compatibility"
     contents:
       - colIds
