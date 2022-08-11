@@ -30,7 +30,7 @@
         an object of class 'fREG'.
         } 
     \item{which}{
-        a character string selectiong which plot should be displayed.
+        a character string selecting which plot should be displayed.
         By default \code{which="ask"} which allows to generate plots
         interactively.
         }
@@ -65,9 +65,9 @@
     robust linear regression models \code{use="rlm"}, 
     generalized linear regression models \code{use = "glm"}, 
     generalized additive regression models \code{use = "gam"}, 
-    prjection pursuit regression models \code{use = "ppr"}, 
+    projection pursuit regression models \code{use = "ppr"}, 
     neural network regression models \code{use = "nnet"}, and
-    polytochomous MARS models \code{use = "polymars"}.
+    polychotomous MARS models \code{use = "polymars"}.
     
     In addition one can also use the original plot functions of the
     original models, .e.g. \code{plot(slot(object, "fit")}.

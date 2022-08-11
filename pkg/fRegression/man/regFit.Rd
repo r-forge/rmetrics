@@ -17,7 +17,7 @@
 
 \usage{    
 regFit(formula, data, family = gaussian, 
-    use = c("lm", "rlm", "glm","gam", "ppr", "nnet", "polymars"), 
+    use = c("lm", "rlm", "glm", "gam", "ppr", "nnet", "polymars"), 
     title = NULL, description = NULL, \dots)
 }
 
@@ -31,7 +31,7 @@ regFit(formula, data, family = gaussian,
         which \code{lm} is called.
         }
     \item{description}{
-        a brief description of the porject of type character.
+        a brief description of the project of type character.
         }
     \item{family}{
         a description of the error distribution and link function to be 
@@ -56,12 +56,13 @@ regFit(formula, data, family = gaussian,
         denotes the regression method by a character string used to fit 
         the model.
         \code{method} must be one of the strings in the default argument.\cr
-        \code{"LM"}, for linear regression models, \cr
-        \code{"GLM"} for generalized linear modelling,\cr
-        \code{"GAM"} for generalized additive modelling,\cr
-        \code{"PPR"} for projection pursuit regression,\cr
-        \code{"POLYMARS"} for molytochomous MARS, and\cr
-        \code{"NNET"} for feedforward neural network modelling.
+        \code{"lm"}, for linear regression models, \cr
+        \code{"rlm"}, for robust linear regression models, \cr
+        \code{"glm"} for generalized linear modelling, \cr
+        \code{"gam"} for generalized additive modelling, \cr
+        \code{"ppr"} for projection pursuit regression, \cr
+        \code{"nnet"} for feedforward neural network modelling, and \cr
+        \code{"polymars"} for polychotomous MARS.
         }    
     \item{title}{
         a character string which allows for a project title.
@@ -91,7 +92,7 @@ regFit(formula, data, family = gaussian,
     objects and providing a common S4 object as the returned value. These
     models include linear modeling, robust linear modeling, generalized
     linear modeling, generalized additive modelling, projection pursuit
-    regression, neural networks, and polytochomous MARS models.\cr
+    regression, neural networks, and polychotomous MARS models.\cr
     
 
     % -----------------------------------------------
@@ -122,9 +123,9 @@ regFit(formula, data, family = gaussian,
     with named columns, e.g. an object of class \code{"timeSeries"}. 
     The function \code{regFit} returns an S4 object of class \code{"fREG"} 
     whose slot \code{@fit} is the object as returned by the function 
-    \code{"lm"}. In addtion we have S4 methods \code{fitted} and 
+    \code{"lm"}. In addition we have S4 methods \code{fitted} and 
     \code{residuals} which allow to retrieve the fitted values and the 
-    residuals as objects of same classe as defined by the argument 
+    residuals as objects of same class as defined by the argument 
     \code{data}.
     
     The function \code{plot.lm} provides four plots: a plot of residuals 
@@ -185,7 +186,7 @@ regFit(formula, data, family = gaussian,
     \cr\cr  
     An additive model generalizes a linear model by smoothing individually
     each predictor term. A generalized additive model extends the additive
-    model in the same spirit as the generalized liner amodel extends the 
+    model in the same spirit as the generalized linear model extends the 
     linear model, namely for allowing a link function and for allowing 
     non-normal distributions from the exponential family.\cr
     \code{[mgcv:gam]}
@@ -216,7 +217,7 @@ regFit(formula, data, family = gaussian,
     
     
     % -----------------------------------------------
-    \bold{POLYMARS -- Polytochomous MARS:}
+    \bold{POLYMARS -- Polychotomous MARS:}
     \cr\cr
     The algorithm employed by \code{polymars} is different from the 
     MARS(tm) algorithm of Friedman (1991), though it has many similarities. 
@@ -359,7 +360,6 @@ Wood (2001);
   
    # LM       
    regFit(Y ~ X1 + X2 + X3, data = x, use = "lm") 
-   
    # RLM      
    regFit(Y ~ X1 + X2 + X3, data = x, use = "rlm") 
    # AM       
@@ -368,7 +368,6 @@ Wood (2001);
    regFit(Y ~ X1 + X2 + X3, data = x, use = "ppr") 
    # NNET     
    regFit(Y ~ X1 + X2 + X3, data = x, use = "nnet") 
-   
    # POLYMARS
    regFit(Y ~ X1 + X2 + X3, data = x, use = "polymars")
 }

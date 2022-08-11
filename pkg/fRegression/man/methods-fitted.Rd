@@ -71,6 +71,7 @@
    
 ## regFit -
    # Convert to dummy timeSeries Object:
+   library(timeSeries)
    x.tS = as.timeSeries(x.df)
    fit = regFit(Y ~ X1 + X2 + X3, data = x.tS, use = "lm")
    

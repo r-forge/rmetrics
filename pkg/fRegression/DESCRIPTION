@@ -1,17 +1,19 @@
 Package: fRegression
 Title: Rmetrics - Regression Based Decision and Prediction
-Date: 2022-07-14
+Date: 2022-08-11
 Version: 4021.83
-Author: Diethelm Wuertz [aut],
-	Tobias Setz [aut,cre],
-	Yohan Chalabi [aut]
-Maintainer: Tobias Setz <tobias.setz@live.com>
-Description: A collection of functions for linear and non-linear regression modelling. 
-	It implements a wrapper for several regression models available in the base and
-	contributed packages of R. 
-Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
-Imports: lmtest, mgcv, nnet, polspline, methods, stats, utils
-Suggests: MASS, RUnit
-LazyData: yes
+Authors@R: c(person("Diethelm", "Wuertz", role = "aut")
+	   , person("Tobias", "Setz", role = "aut")
+	   , person("Yohan", "Chalabi", role = "aut")
+	   , person(given = c("Paul", "J."), family = "Northrop", 
+                    role = c("cre", "ctb"), email = "p.northrop@ucl.ac.uk") )
+Description: A collection of functions for linear and non-linear regression 
+  modelling. It implements a wrapper for several regression models available 
+  in the base and contributed packages of R. 
+Depends: R (>= 2.15.1)
+Imports: fBasics, lmtest, MASS, methods, mgcv, nnet, polspline, stats, 
+  timeDate, timeSeries, utils
+Suggests: RUnit
 License: GPL (>= 2)
 URL: https://www.rmetrics.org
+BugReports: https://r-forge.r-project.org/projects/rmetrics

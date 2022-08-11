@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.svn$
+^\.github$
+^cran-comments\.md$
+^appveyor\.yml$
+^README\.Rmd$
+^checks$
+^CRAN-SUBMISSION$

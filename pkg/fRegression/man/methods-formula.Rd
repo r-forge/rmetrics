@@ -9,7 +9,7 @@
 \alias{formula,fREG-method}
 
 
-\title{Extract Regressiom Model formula}
+\title{Extract Regression Model formula}
 
 
 \description{

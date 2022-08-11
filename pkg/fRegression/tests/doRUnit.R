@@ -22,5 +22,7 @@ if(require("RUnit", quietly = TRUE)) {
 
   stopifnot(file.exists(path), file.info(path.expand(path))$isdir)
 
+  library(timeSeries)
+  
   source(file.path(path, "runTests.R"), echo = TRUE)
 }

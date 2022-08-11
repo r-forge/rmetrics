@@ -24,7 +24,7 @@
 #  .plot.gam              Generalized Additive Model internal plot
 #  .plot.nnet             Feedforward Neural Network Model internal plot
 #  .plot.ppr              Projection Pursuit Regression Model internal plot
-#  .plot.polymars         Polytochomous MARS Model internal plot
+#  .plot.polymars         Polychotomous MARS Model internal plot
 # PLOTS:                DESCRIPTION:
 #  .interactiveRegPlot
 #  .multRegPlot

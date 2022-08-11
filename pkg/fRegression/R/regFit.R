@@ -24,7 +24,7 @@
 #  .gamFit                Generalized Additive Model
 #  .pprFit                Projection Pursuit Regression Model
 #  .nnetFit               Feedforward Neural Network Model
-#  .polymarsFit           Polytochomous MARS Model
+#  .polymarsFit           Polychotomous MARS Model
 ###############################################################################
 
 
@@ -52,14 +52,14 @@ regFit <-
     #   Common function call for several selected regression models.
 
     # Details:
-    #   This is a wrapper function for the following regrssion models:
+    #   This is a wrapper function for the following regression models:
     #     LM          Linear Regression Modelling
     #     RLM         Robust Linear Regression Modelling
     #     GLM         Generalized Linear Modelling
     #     GAM         Generalized Additive Modelling
     #     PPR         Projection Pursuit Regression
     #     NNET        Feedforward Neural Net
-    #     POLYMARS    Polytochomous MARS Modeling
+    #     POLYMARS    Polychotomous MARS Modeling
 
     # Notes:
     #   Available Methods are
