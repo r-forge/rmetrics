@@ -1,0 +1,25 @@
+{
+    "id": "4E87014B",
+    "path": "~/Documents/recherche-enseignement/code/R/rmetrics/rmetrics/pkg/randsobolfortran/R/quasiRNG.R",
+    "project_path": "R/quasiRNG.R",
+    "type": "r_source",
+    "hash": "642135230",
+    "contents": "",
+    "dirty": false,
+    "created": 1652705792969.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "183,23",
+        "scrollLine": "0",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1652780996,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1652780996012,
+    "read_only": false,
+    "read_only_alternatives": []
+}

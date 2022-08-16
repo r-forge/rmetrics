@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(randtoolbox)\nRNGkind()\n\n#see e.g. https://en.wikipedia.org/wiki/Linear_congruential_generator\n\n#Park Miller congruential generator\nset.generator(name=\"congruRand\", mod=2^31-1, mult=16807, incr=0, seed=12345)\nget.description()\nrunif(5)\nsetSeed(12345)\ncongruRand(5, dim=1, mod=2^31-1, mult=16807, incr=0)\nRNGkind()\n\n# the Knuth Lewis RNG\n4294967296 == 2^32\nset.generator(name=\"congruRand\", mod=\"4294967296\", mult=\"1664525\", incr=\"1013904223\", seed=1)\nrunif(5)\nsetSeed(1)\ncongruRand(5, dim=1, mod=4294967296, mult=1664525, incr=1013904223)\n\n\n# the POSIX rand48 \n281474976710656 == 2^48\nset.generator(name=\"congruRand\", mod=\"281474976710656\", mult=\"25214903917\", incr=\"11\", seed=1)\nrunif(5)\nsetSeed(1)\ncongruRand(5, dim=1, mod=281474976710656, mult=25214903917, incr=11)\n\n\n\n# the NMIX RNG by Donald Knuth\n18446744073709551616 == 2^64\nset.generator(name=\"congruRand\", mod=\"18446744073709551616\", mult=\"1442695040888963407\", incr=\"1013904223\", seed=1)\nrunif(5)\n#first value is\n(1442695040888963407 * 1 + 1013904223) / 2^64\n\nsetSeed(1)\ncongruRand(5, dim=1, mod=18446744073709551616, mult=1442695040888963407, incr=1013904223)\n\n\n#Haynes RNG\nset.generator(name=\"congruRand\", mod=\"18446744073709551616\", mult=\"636412233846793005\", incr=\"1\", seed=1)\nres <- get.description()\nrunif(1)\nsetSeed(1)\ncongruRand(2, dim=1, mod=18446744073709551616, mult=636412233846793005, incr=1, echo = TRUE)\n\n",
+    "created" : 1521534723479.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2567157942",
+    "id" : "E59256B6",
+    "lastKnownWriteTime" : 1521555723,
+    "last_content_update" : 1521555723026,
+    "path" : "~/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/tests/test-runifInterface.R",
+    "project_path" : "tests/test-runifInterface.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

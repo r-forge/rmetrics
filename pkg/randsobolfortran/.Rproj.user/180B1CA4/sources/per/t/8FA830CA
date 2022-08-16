@@ -1,0 +1,26 @@
+{
+    "id": "8FA830CA",
+    "path": "~/Documents/recherche-enseignement/code/R/rmetrics/rmetrics/pkg/randsobolfortran/R/randsobolfortranEnv.R",
+    "project_path": "R/randsobolfortranEnv.R",
+    "type": "r_source",
+    "hash": "2578559333",
+    "contents": "",
+    "dirty": false,
+    "created": 1652780260786.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "49,20",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1652779997,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1652779997,
+    "read_only": false,
+    "read_only_alternatives": []
+}

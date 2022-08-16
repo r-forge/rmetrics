@@ -1,0 +1,2012 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-halton.c",
+                "kind" : 6,
+                "line" : 67,
+                "name" : "INITHALTON(int, double *)",
+                "parent_name" : "",
+                "usr" : "c:@F@INITHALTON"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-halton.c",
+                "kind" : 6,
+                "line" : 95,
+                "name" : "HALTONREC(int, unsigned long long)",
+                "parent_name" : "",
+                "usr" : "c:@F@HALTONREC"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-halton.c",
+                "kind" : 6,
+                "line" : 119,
+                "name" : "reconstruct_prime",
+                "parent_name" : "",
+                "usr" : "c:@F@reconstruct_prime"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-halton.c",
+        "file_last_write" : 1493838473
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-halton.h",
+        "file_last_write" : 1493838458
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-sobol.c",
+                "kind" : 6,
+                "line" : 1025,
+                "name" : "INITSOBOL(int, double *, int *, int, int *, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@INITSOBOL"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-sobol.c",
+        "file_last_write" : 1500701809
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/LowDiscrepancy-sobol.h",
+        "file_last_write" : 1486138408
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-alti.h",
+                "kind" : 6,
+                "line" : 98,
+                "name" : "gen_rand_all",
+                "parent_name" : "",
+                "usr" : "c:SFMT-alti.h@F@gen_rand_all"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-alti.h",
+                "kind" : 6,
+                "line" : 125,
+                "name" : "gen_rand_array(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-alti.h@F@gen_rand_array"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-alti.h",
+                "kind" : 6,
+                "line" : 176,
+                "name" : "swap(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-alti.h@F@swap"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-alti.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-11213-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_11213_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-11213-1.h@F@gen_rand_all_11213_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-11213-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_11213_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-11213-1.h@F@gen_rand_array_11213_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-11213-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-1279-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_1279_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-1279-1.h@F@gen_rand_all_1279_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-1279-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_1279_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-1279-1.h@F@gen_rand_array_1279_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-1279-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-132049-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_132049_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-132049-1.h@F@gen_rand_all_132049_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-132049-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_132049_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-132049-1.h@F@gen_rand_array_132049_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-132049-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-19937-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_19937_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-19937-1.h@F@gen_rand_all_19937_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-19937-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_19937_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-19937-1.h@F@gen_rand_array_19937_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-19937-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-216091-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_216091_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-216091-1.h@F@gen_rand_all_216091_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-216091-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_216091_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-216091-1.h@F@gen_rand_array_216091_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-216091-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-2281-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_2281_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-2281-1.h@F@gen_rand_all_2281_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-2281-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_2281_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-2281-1.h@F@gen_rand_array_2281_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-2281-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-4253-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_4253_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-4253-1.h@F@gen_rand_all_4253_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-4253-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_4253_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-4253-1.h@F@gen_rand_array_4253_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-4253-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-44497-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_44497_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-44497-1.h@F@gen_rand_all_44497_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-44497-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_44497_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-44497-1.h@F@gen_rand_array_44497_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-44497-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-1.h",
+                "kind" : 6,
+                "line" : 103,
+                "name" : "gen_rand_all_607_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-1.h@F@gen_rand_all_607_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-1.h",
+                "kind" : 6,
+                "line" : 139,
+                "name" : "gen_rand_array_607_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-1.h@F@gen_rand_array_607_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-10.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_10",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-10.h@F@gen_rand_all_607_10"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-10.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_10(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-10.h@F@gen_rand_array_607_10"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-10.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-11.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_11",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-11.h@F@gen_rand_all_607_11"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-11.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_11(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-11.h@F@gen_rand_array_607_11"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-11.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-12.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_12",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-12.h@F@gen_rand_all_607_12"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-12.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_12(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-12.h@F@gen_rand_array_607_12"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-12.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-13.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_13",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-13.h@F@gen_rand_all_607_13"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-13.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_13(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-13.h@F@gen_rand_array_607_13"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-13.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-14.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_14",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-14.h@F@gen_rand_all_607_14"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-14.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_14(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-14.h@F@gen_rand_array_607_14"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-14.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-15.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_15",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-15.h@F@gen_rand_all_607_15"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-15.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_15(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-15.h@F@gen_rand_array_607_15"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-15.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-16.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_16",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-16.h@F@gen_rand_all_607_16"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-16.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_16(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-16.h@F@gen_rand_array_607_16"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-16.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-17.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_17",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-17.h@F@gen_rand_all_607_17"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-17.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_17(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-17.h@F@gen_rand_array_607_17"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-17.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-18.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_18",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-18.h@F@gen_rand_all_607_18"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-18.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_18(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-18.h@F@gen_rand_array_607_18"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-18.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-19.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_19",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-19.h@F@gen_rand_all_607_19"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-19.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_19(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-19.h@F@gen_rand_array_607_19"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-19.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-2.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_2",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-2.h@F@gen_rand_all_607_2"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-2.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_2(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-2.h@F@gen_rand_array_607_2"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-2.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-20.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_20",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-20.h@F@gen_rand_all_607_20"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-20.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_20(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-20.h@F@gen_rand_array_607_20"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-20.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-21.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_21",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-21.h@F@gen_rand_all_607_21"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-21.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_21(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-21.h@F@gen_rand_array_607_21"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-21.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-22.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_22",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-22.h@F@gen_rand_all_607_22"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-22.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_22(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-22.h@F@gen_rand_array_607_22"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-22.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-23.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_23",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-23.h@F@gen_rand_all_607_23"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-23.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_23(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-23.h@F@gen_rand_array_607_23"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-23.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-24.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_24",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-24.h@F@gen_rand_all_607_24"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-24.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_24(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-24.h@F@gen_rand_array_607_24"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-24.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-25.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_25",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-25.h@F@gen_rand_all_607_25"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-25.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_25(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-25.h@F@gen_rand_array_607_25"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-25.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-26.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_26",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-26.h@F@gen_rand_all_607_26"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-26.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_26(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-26.h@F@gen_rand_array_607_26"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-26.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-27.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_27",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-27.h@F@gen_rand_all_607_27"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-27.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_27(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-27.h@F@gen_rand_array_607_27"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-27.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-28.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_28",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-28.h@F@gen_rand_all_607_28"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-28.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_28(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-28.h@F@gen_rand_array_607_28"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-28.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-29.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_29",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-29.h@F@gen_rand_all_607_29"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-29.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_29(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-29.h@F@gen_rand_array_607_29"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-29.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-3.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_3",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-3.h@F@gen_rand_all_607_3"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-3.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_3(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-3.h@F@gen_rand_array_607_3"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-3.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-30.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_30",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-30.h@F@gen_rand_all_607_30"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-30.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_30(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-30.h@F@gen_rand_array_607_30"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-30.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-31.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_31",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-31.h@F@gen_rand_all_607_31"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-31.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_31(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-31.h@F@gen_rand_array_607_31"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-31.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-32.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_32",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-32.h@F@gen_rand_all_607_32"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-32.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_32(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-32.h@F@gen_rand_array_607_32"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-32.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-4.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_4",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-4.h@F@gen_rand_all_607_4"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-4.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_4(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-4.h@F@gen_rand_array_607_4"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-4.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-5.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_5",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-5.h@F@gen_rand_all_607_5"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-5.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_5(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-5.h@F@gen_rand_array_607_5"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-5.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-6.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_6",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-6.h@F@gen_rand_all_607_6"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-6.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_6(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-6.h@F@gen_rand_array_607_6"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-6.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-7.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_7",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-7.h@F@gen_rand_all_607_7"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-7.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_7(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-7.h@F@gen_rand_array_607_7"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-7.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-8.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_8",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-8.h@F@gen_rand_all_607_8"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-8.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_8(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-8.h@F@gen_rand_array_607_8"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-8.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-9.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_607_9",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-9.h@F@gen_rand_all_607_9"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-9.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_607_9(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-607-9.h@F@gen_rand_array_607_9"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-607-9.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-86243-1.h",
+                "kind" : 6,
+                "line" : 99,
+                "name" : "gen_rand_all_86243_1",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-86243-1.h@F@gen_rand_all_86243_1"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-86243-1.h",
+                "kind" : 6,
+                "line" : 127,
+                "name" : "gen_rand_array_86243_1(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT-sse2-86243-1.h@F@gen_rand_array_86243_1"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2-86243-1.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT-sse2.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 3,
+                "line" : 91,
+                "name" : "W128_T",
+                "parent_name" : "",
+                "usr" : "c:@S@W128_T"
+            },
+            {
+                "column" : 23,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 8,
+                "line" : 95,
+                "name" : "w128_t",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@T@w128_t"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 929,
+                "name" : "init_SFMT(int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@init_SFMT"
+            },
+            {
+                "column" : 19,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1248,
+                "name" : "idxof(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@idxof"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1276,
+                "name" : "rshift128(w128_t *, const w128_t *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@rshift128"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1315,
+                "name" : "lshift128(w128_t *, const w128_t *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@lshift128"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1358,
+                "name" : "do_recursion(w128_t *, w128_t *, w128_t *, w128_t *, w128_t *)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@do_recursion"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1382,
+                "name" : "gen_rand_all",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@gen_rand_all"
+            },
+            {
+                "column" : 20,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1407,
+                "name" : "gen_rand_array(w128_t *, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@gen_rand_array"
+            },
+            {
+                "column" : 17,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1461,
+                "name" : "func1(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@func1"
+            },
+            {
+                "column" : 17,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1471,
+                "name" : "func2(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@func2"
+            },
+            {
+                "column" : 13,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1478,
+                "name" : "period_certification",
+                "parent_name" : "",
+                "usr" : "c:SFMT.c@F@period_certification"
+            },
+            {
+                "column" : 13,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1513,
+                "name" : "get_idstring",
+                "parent_name" : "",
+                "usr" : "c:@F@get_idstring"
+            },
+            {
+                "column" : 5,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1522,
+                "name" : "get_min_array_size32",
+                "parent_name" : "",
+                "usr" : "c:@F@get_min_array_size32"
+            },
+            {
+                "column" : 5,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1531,
+                "name" : "get_min_array_size64",
+                "parent_name" : "",
+                "usr" : "c:@F@get_min_array_size64"
+            },
+            {
+                "column" : 10,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1541,
+                "name" : "SFMT_gen_rand32",
+                "parent_name" : "",
+                "usr" : "c:@F@SFMT_gen_rand32"
+            },
+            {
+                "column" : 10,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1677,
+                "name" : "gen_rand64",
+                "parent_name" : "",
+                "usr" : "c:@F@gen_rand64"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1846,
+                "name" : "fill_array32(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@fill_array32"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 1997,
+                "name" : "fill_array64(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@fill_array64"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 2132,
+                "name" : "SFMT_init_gen_rand(int)",
+                "parent_name" : "",
+                "usr" : "c:@F@SFMT_init_gen_rand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+                "kind" : 6,
+                "line" : 2152,
+                "name" : "SFMT_init_by_array(int *, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@SFMT_init_by_array"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.c",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 172,
+                "name" : "to_real1(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@to_real1"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 179,
+                "name" : "SFMT_genrand_real1",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@SFMT_genrand_real1"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 185,
+                "name" : "to_real2(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@to_real2"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 192,
+                "name" : "SFMT_genrand_real2",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@SFMT_genrand_real2"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 198,
+                "name" : "to_real3(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@to_real3"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 205,
+                "name" : "SFMT_genrand_real3",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@SFMT_genrand_real3"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 212,
+                "name" : "to_res53(int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@to_res53"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 219,
+                "name" : "to_res53_mix(int, int)",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@to_res53_mix"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 226,
+                "name" : "genrand_res53",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@genrand_res53"
+            },
+            {
+                "column" : 22,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+                "kind" : 6,
+                "line" : 234,
+                "name" : "genrand_res53_mix",
+                "parent_name" : "",
+                "usr" : "c:SFMT.h@F@genrand_res53_mix"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/SFMT.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/config.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 69,
+                "name" : "user_unif_rand_congru_0",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_rand_congru_0"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 81,
+                "name" : "user_unif_rand_congru_1",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_rand_congru_1"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 93,
+                "name" : "user_unif_rand_congru_2",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_rand_congru_2"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 105,
+                "name" : "user_unif_init_congru(int)",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_init_congru"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 111,
+                "name" : "get_congruRand",
+                "parent_name" : "",
+                "usr" : "c:@F@get_congruRand"
+            },
+            {
+                "column" : 5,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 123,
+                "name" : "check_congruRand(int, int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@check_congruRand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 144,
+                "name" : "set_congruRand(int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@set_congruRand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 154,
+                "name" : "get_seed_congruRand(int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@get_seed_congruRand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 160,
+                "name" : "get_state_congru(char **, char **)",
+                "parent_name" : "",
+                "usr" : "c:@F@get_state_congru"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+                "kind" : 6,
+                "line" : 173,
+                "name" : "put_state_congru(char **, char **, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@put_state_congru"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.c",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/congruRand.h",
+        "file_last_write" : 1500699740
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/init.c",
+                "kind" : 6,
+                "line" : 114,
+                "name" : "R_init_randtoolbox(DllInfo *)",
+                "parent_name" : "",
+                "usr" : "c:@F@R_init_randtoolbox"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/init.c",
+        "file_last_write" : 1494583838
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/knuthTAOCP2002.c",
+                "kind" : 6,
+                "line" : 27,
+                "name" : "ranf_array(double *, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@ranf_array"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/knuthTAOCP2002.c",
+                "kind" : 6,
+                "line" : 53,
+                "name" : "ranf_start(long)",
+                "parent_name" : "",
+                "usr" : "c:@F@ranf_start"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/knuthTAOCP2002.c",
+                "kind" : 6,
+                "line" : 90,
+                "name" : "ranf_arr_cycle",
+                "parent_name" : "",
+                "usr" : "c:@F@ranf_arr_cycle"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/knuthTAOCP2002.c",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/knuthTAOCP2002.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/locale.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 57,
+                "name" : "MT2002_init_genrand(unsigned int)",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_init_genrand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 76,
+                "name" : "MT2002_init_by_array(unsigned int *, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_init_by_array"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 101,
+                "name" : "MT2002_init_by_array_1(unsigned int)",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_init_by_array_1"
+            },
+            {
+                "column" : 15,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 107,
+                "name" : "genrand_int32",
+                "parent_name" : "",
+                "usr" : "c:@F@genrand_int32"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 145,
+                "name" : "genrand_int31",
+                "parent_name" : "",
+                "usr" : "c:@F@genrand_int31"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 151,
+                "name" : "MT2002_genrand_real1",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_genrand_real1"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 158,
+                "name" : "MT2002_genrand_real2",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_genrand_real2"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 165,
+                "name" : "MT2002_genrand_real3",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_genrand_real3"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 172,
+                "name" : "MT2002_genrand_res53",
+                "parent_name" : "",
+                "usr" : "c:@F@MT2002_genrand_res53"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 181,
+                "name" : "initMersenneTwister(int *, int *, unsigned int *, unsigned int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@initMersenneTwister"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 194,
+                "name" : "putMersenneTwister(int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@putMersenneTwister"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+                "kind" : 6,
+                "line" : 220,
+                "name" : "getMersenneTwister(int *, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@getMersenneTwister"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.c",
+        "file_last_write" : 1494308379
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/mt19937ar.h",
+        "file_last_write" : 1494308357
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/primes.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 24,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 80,
+                "name" : "fracPart(double)",
+                "parent_name" : "",
+                "usr" : "c:randtoolbox.c@F@fracPart"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 90,
+                "name" : "doTorus(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doTorus"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 140,
+                "name" : "torus(double *, int, int, int *, int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@torus"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 203,
+                "name" : "doHalton(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doHalton"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 237,
+                "name" : "halton_c(double *, int, int, int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@halton_c"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 292,
+                "name" : "doSobol(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doSobol"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 327,
+                "name" : "sobol_c(double *, int, int, int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@sobol_c"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 378,
+                "name" : "doCongruRand(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doCongruRand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 409,
+                "name" : "congruRand(double *, int, int, unsigned long long, unsigned long long, unsigned long long, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@congruRand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 460,
+                "name" : "doSFMersenneTwister(SEXP, SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doSFMersenneTwister"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 487,
+                "name" : "SFmersennetwister(double *, int, int, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@SFmersennetwister"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 569,
+                "name" : "doWELL(SEXP, SEXP, SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doWELL"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 600,
+                "name" : "doKnuthTAOCP(SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doKnuthTAOCP"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 626,
+                "name" : "knuthTAOCP(double *, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@knuthTAOCP"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 671,
+                "name" : "doSetSeed(SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doSetSeed"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 681,
+                "name" : "setSeed(long)",
+                "parent_name" : "",
+                "usr" : "c:@F@setSeed"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 693,
+                "name" : "randSeed",
+                "parent_name" : "",
+                "usr" : "c:@F@randSeed"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 772,
+                "name" : "randSeedByArray(int)",
+                "parent_name" : "",
+                "usr" : "c:@F@randSeedByArray"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 798,
+                "name" : "reconstruct_primes",
+                "parent_name" : "",
+                "usr" : "c:@F@reconstruct_primes"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+                "kind" : 6,
+                "line" : 806,
+                "name" : "get_primes(int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@get_primes"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.c",
+        "file_last_write" : 1494583788
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/randtoolbox.h",
+        "file_last_write" : 1494404327
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 61,
+                "name" : "user_unif_set_generator(int, void (*)(unsigned int), double (*))",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_set_generator"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 69,
+                "name" : "put_user_unif_set_generator",
+                "parent_name" : "",
+                "usr" : "c:@F@put_user_unif_set_generator"
+            },
+            {
+                "column" : 9,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 77,
+                "name" : "user_unif_rand",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_rand"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 84,
+                "name" : "user_unif_init(unsigned int)",
+                "parent_name" : "",
+                "usr" : "c:@F@user_unif_init"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 91,
+                "name" : "current_generator(int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@current_generator"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 97,
+                "name" : "no_operation(unsigned int)",
+                "parent_name" : "",
+                "usr" : "c:@F@no_operation"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+                "kind" : 6,
+                "line" : 103,
+                "name" : "set_noop",
+                "parent_name" : "",
+                "usr" : "c:@F@set_noop"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.c",
+        "file_last_write" : 1494316786
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/runifInterface.h",
+        "file_last_write" : 1494316769
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/testrng.c",
+                "kind" : 6,
+                "line" : 64,
+                "name" : "doPokerTest(SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doPokerTest"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/testrng.c",
+                "kind" : 6,
+                "line" : 120,
+                "name" : "pokerTest(int *, int, int, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@pokerTest"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/testrng.c",
+                "kind" : 6,
+                "line" : 173,
+                "name" : "doCollisionTest(SEXP, SEXP, SEXP)",
+                "parent_name" : "",
+                "usr" : "c:@F@doCollisionTest"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/testrng.c",
+                "kind" : 6,
+                "line" : 207,
+                "name" : "collisionTest(int *, int, int, int *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@collisionTest"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/testrng.c",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/testrng.h",
+        "file_last_write" : 1493283534
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/version.c",
+                "kind" : 6,
+                "line" : 52,
+                "name" : "version_randtoolbox(char **)",
+                "parent_name" : "",
+                "usr" : "c:@F@version_randtoolbox"
+            }
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/version.c",
+        "file_last_write" : 1494268808
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/version.h",
+        "file_last_write" : 1494309022
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/Users/dutangc/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/src/wellrng.h",
+        "file_last_write" : 1493283534
+    }
+]

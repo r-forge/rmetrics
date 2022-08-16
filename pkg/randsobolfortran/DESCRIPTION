@@ -1,0 +1,8 @@
+Package: randsobolfortran
+Type: Package
+Title: Sobol Sequence
+Version: 1.0.0
+Author: R port by Yohan Chalabi, Christophe Dutang and Diethelm Wuertz.
+Maintainer: Christophe Dutang <dutangc@gmail.com>
+Description: Provide the Sobol sequence based on Diethelm Wuertz's Fortran code.
+License: BSD_3_clause + file LICENSE + ACM copyright

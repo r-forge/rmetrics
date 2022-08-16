@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+crandb.rda
+.DS_Store
+autom4te.cache/
+revdep/
+revdep-manual/

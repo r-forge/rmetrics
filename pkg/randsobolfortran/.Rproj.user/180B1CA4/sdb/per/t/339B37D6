@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "### do not use dynamic library for C code\n## Refer to all C/Fortran routines by their name prefixed by CF_\nuseDynLib(randtoolbox, .registration = TRUE, .fixes = \"CF_\")\n\n### Import of rngWELL package for R code\nimportFrom(rngWELL, doinitMT2002, doputRngWELL, dogetRngWELL, setSeed4WELL, WELL2test)\n\n### Other imports\nimportFrom(\"graphics\", hist)\nimportFrom(\"stats\", dpois, pchisq, qnorm, runif)\nimportFrom(\"utils\", packageDescription, head)\n\n### Exports\nexport(torus, runif.halton, halton, runif.sobol, sobol)\nexport(sobol.directions, int2bit, bit2int, bit2unitreal, sobol.basic, sobol.R)\n\nexport(setSeed, congruRand, SFMT, WELL, knuthTAOCP)\n\n#export(trueRNG) future features\n\nexport(set.generator, put.description, get.description)\n\nexport(rngWELLScriptR, getWELLState)\n\nexport(gap.test, freq.test, serial.test, poker.test, order.test, coll.test, coll.test.sparse)\n\nexport(stirling, permut, get.primes)\n\n### Debugging\n# export(version.randtoolbox)\n\n\n",
+    "created" : 1519135282745.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2310564893",
+    "id" : "339B37D6",
+    "lastKnownWriteTime" : 1519071860,
+    "last_content_update" : 1519071860,
+    "path" : "~/Documents/recherche-enseignement/code/R/rmetrics/Rmetrics2/rmetrics/pkg/randtoolbox/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}
