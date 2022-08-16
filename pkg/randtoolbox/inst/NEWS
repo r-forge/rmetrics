@@ -2,10 +2,11 @@
 
 Version 2.0.2
 =============
-- start new devel version
 
 NOTE FIX 
-- remove an escaped LaTeX special in pseudoRNG.Rd
+- remove an escaped LaTeX special in pseudoRNG.Rd.
+- remove math rendering problems for Stirling numbers in 
+colltest.Rd and colltestsparse.Rd.
 
 Version 2.0.1
 =============
