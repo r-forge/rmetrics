@@ -19,7 +19,7 @@
 # FUNCTION:                 DESCRIPTION:
 #  whichFormat               Returns format string called by 'timeDate'
 # DEPRECATED:
-#  .which Format
+#  .whichFormat
 ################################################################################
 
 # ---------------------------------------------------------------------------- #
@@ -32,22 +32,28 @@ whichFormat <-
     # A function implemented by Diethelm Wuertz
 
     # Charvec String:
-    if (is.null(charvec)) # avoid problems in timeSeries() when rownames NULL
+    if (!length(charvec)) # need [1] later;  avoid problems in timeSeries() when rownames NULL
         return("unknown")
     if (all(is.na(charvec))) return(NA)
     charvec = as.character(charvec)
 
     # Specifications:
     # NCHAR = mean(nchar(charvec)) # YC : why NCHAR is calculated twice ?
-    NCHAR = nchar(charvec[1])
-    SUBSTR = (substring(charvec[1], 5, 5) == "-")
+
+    ## All this assume that charvec is very uniform so we only look at the entry [1]  !?????
+    ## rather, e.g.,   NCHAR <- max(nchar(ch <- head(charvec)))  and the continue looking at all ch[] ?
+    c1 <- charvec[1]
+    NCHAR <- nchar(c1)
+    SUBSTR <- substring(c1, 5, 5) == "-"
 
     # American Format:
-    if (regexpr("/....", charvec[1])[[1]] > 0) return("%m/%d/%Y")
-    if (regexpr("-...-....", charvec[1])[[1]] > 0) return("%d-%b-%Y")
+    if (regexpr("/....",     c1)[[1]] > 0) return("%m/%d/%Y")
+    if (regexpr("-...-....", c1)[[1]] > 0) return("%d-%b-%Y")
 
     # DW:
     #   There should be better checks on the format identification ...
+    # [MM] Yes!  there are: as.POSIXlt.character() tries quite a few in its default  'tryFormats'
+    #      and you could call it by using an even larger 'tryFormats'
 
     # Human readable ISO:
     if (NCHAR ==  4 & !SUBSTR) return("%Y")
@@ -56,6 +62,9 @@ whichFormat <-
     if (NCHAR == 13 &  SUBSTR) return("%Y-%m-%d %H")
     if (NCHAR == 16 &  SUBSTR) return("%Y-%m-%d %H:%M")
     if (NCHAR == 19 &  SUBSTR) return("%Y-%m-%d %H:%M:%S")
+    ## allow for fractional seconds:
+    if (NCHAR >= 20 &  SUBSTR & substr(c1, 20,20) == ".")
+        return("%Y-%m-%d %H:%M:%S") # ">=" allow for fractional seconds (which are *not* read)
 
     # Short ISO:
     if (NCHAR ==  6 & !SUBSTR) return("%Y%m")
@@ -78,6 +87,12 @@ whichFormat <-
 #' @export
 # ---------------------------------------------------------------------------- #
 .whichFormat <- whichFormat
+if(FALSE) ## [MM]: if you're serious about deprecation, then rather use
+.whichFormat <- function(charvec, silent = FALSE) {
+    .Deprecated()
+    whichFormat(charvec, silent)
+}
+
 
 
 ################################################################################

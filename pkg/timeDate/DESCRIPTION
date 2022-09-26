@@ -1,7 +1,7 @@
 Package: timeDate
 Title: Rmetrics - Chronological and Calendar Objects
-Date: 2022-08-03
-Version: 4021.105
+Date: 2022-09-26
+Version: 4021.106
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
@@ -19,7 +19,7 @@ Description: The 'timeDate' class fulfils the conventions of the ISO 8601
 	data records from the same time zone, even if the financial 
 	centers changed day light saving times at different calendar
 	dates.
-Depends: R (>= 2.15.1)
+Depends: R (>= 3.6.0)
 Imports: graphics, utils, stats, methods
 Suggests: date, RUnit
 License: GPL (>= 2)
