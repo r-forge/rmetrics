@@ -1,11 +1,7 @@
 \name{rulesFinCenter}
-
-
-\title{Financial Centers DST Rules}
-
-
 \alias{rulesFinCenter}
 
+\title{Financial Centers DST Rules}
 
 \description{
 
@@ -13,33 +9,30 @@
 
 }
 
-
 \usage{
 rulesFinCenter(FinCenter = "")
 }
 
-
 \arguments{
 
-    \item{FinCenter}{
-        a character with the location of the
-        financial center named as "continent/city".
-        }
+  \item{FinCenter}{
+    a character string with the location of the
+    financial center named as "continent/city".
+  }
         
 }
 
 
 \value{
 
-    returns a list of time zones and DST rules available in the database.
+    a list of time zones and DST rules available in the database.
 
 }
 
 
 \details{
 
-
-    The function \code{rulesFinCenter}, lists the daylight saving rules 
+    The function \code{rulesFinCenter} lists the daylight saving rules
     for a selected financial center.
     
     There is no dependency on the POSIX implementation of your operating
@@ -48,6 +41,10 @@ rulesFinCenter(FinCenter = "")
     
 }
 
+\seealso{
+  \code{\link{listFinCenter}} for a list of the available financial
+  centers
+}
 
 \examples{
 ## rulesFinCenter - 
@@ -56,4 +53,3 @@ rulesFinCenter(FinCenter = "")
 
 
 \keyword{chron}
-

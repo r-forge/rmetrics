@@ -1,3 +1,11 @@
+# timeDate 4021.106
+
+- fix `whichFormat()` to accommodate a change in R-devel after which
+  `as.character(Sys.time())` contains fractional seconds. (`format(Sys.time())`
+  doesn't; before this change in R-devel both were dropping the fractional
+  seconds). (see timeDate rev 6286)
+
+
 # timeDate 4021.105
 
 - the list returned by `holidaysNYSE()` was missing the special closing days of

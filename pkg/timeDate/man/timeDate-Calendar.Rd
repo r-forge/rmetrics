@@ -47,7 +47,7 @@ timeCalendar(y = getRmetricsOptions("currentYear"), m = 1:12, d = 1,
 
 \value{
 
-    returns a S4 object of \code{\link{class}} \code{"timeDate"}.
+    returns a S4 object of class \code{"timeDate"}.
 
 }
 

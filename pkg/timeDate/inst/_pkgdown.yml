@@ -10,11 +10,11 @@ reference:
       - "timeDate-package"
   - title: "timeDate objects"
     contents:
+      - "timeDate-class"
       - timeDate 
       - timeSequence
-      - as.timeDate
       - timeCalendar
-      - "timeDate-class"
+      - as.timeDate
       - timeDateMathOps
       - difftimeDate
       - Sys.timeDate

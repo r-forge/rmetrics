@@ -1,7 +1,6 @@
 \name{finCenter}
-
-
 \alias{finCenter}
+
 \alias{finCenter,timeDate-method}
 
 \alias{finCenter<-}
@@ -10,7 +9,7 @@
 \title{Financial Center of a timeDate object}
 
 \description{
-  Print or assign new financial center to a \code{timeDate} object.
+  Get or set the financial center of a \code{timeDate} object.
 }
 
 \usage{
@@ -29,15 +28,32 @@
   }
 }
 
-\seealso{listFinCenter}
+\details{
+
+  \code{"timeDate"} objects store the time in the GMT time zone. The
+  financial center specifies a location whose local time is to be used
+  to format the object, e.g., for printing.
+  
+  \code{finCenter} gives the financial center associated with a
+  \sQuote{timeDate} object. The assignment form changes it to the
+  specified value.  Both functions are S4 generics. This page describes
+  the methods defined in package \sQuote{timeDate}.
+
+}
+
+\seealso{
+  \code{\link{listFinCenter}}
+}
 
 \examples{
 date <- timeDate("2008-01-01")
 finCenter(date) <- "GMT"
 date
+format(date)
 
 finCenter(date) <- "Zurich"
 date
+format(date)
 }
 
 

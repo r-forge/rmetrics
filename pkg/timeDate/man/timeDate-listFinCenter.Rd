@@ -21,33 +21,28 @@ listFinCenter(pattern = ".*")
 
 \arguments{
 
-    \item{pattern}{
-        a pattern character string as required
-        by the \code{\link{grep}} function.
-        }
+  \item{pattern}{
+    
+    a pattern character string as required by the \code{\link{grep}}
+    function. The default, \code{".*"}, gives all supported financial
+    centers
+
+  }
 
 }
 
 
 \value{
 
-    returns a list of supported financial centers.
+  a character vector listing the financial centers whose names match
+  \code{pattern}.
 
 }
 
 
-\details{
-
-
-    The function \code{rulesFinCenter}, lists the daylight saving rules 
-    for a selected financial center.
-    
-    There is no dependency on the POSIX implementation of your operating
-    system because all time zone and day light saving time information 
-    is stored locally in ASCII files. 
-    
+\seealso{
+  \code{\link{rulesFinCenter}} for the daylight saving rules
 }
-
 
 \examples{
 ## myFinCenter - the global setting currently used:
@@ -64,6 +59,4 @@ listFinCenter(pattern = ".*")
             listFinCenter("^[^A]")))))
 }
 
-
 \keyword{chron}
-

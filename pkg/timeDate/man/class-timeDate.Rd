@@ -35,7 +35,7 @@
     } 
     \item{\code{format}:}{Object of class \code{"character"}: 
       a character string denoting the format specification of 
-      the input Data character vector.
+      the input data character vector.
     }
     \item{\code{FinCenter}:}{Object of class \code{"character"}: 
       a character string with the location of the
@@ -44,19 +44,6 @@
     
   }
 }   
-
-
-
-\section{Methods}{
-  \describe{
-    
-    \item{show}{\code{signature(object = "timeDate")}: 
-      prints an object of class 'timeDate'.
-    }  
-    
-  }
-}  
-
 
 \details{
 
@@ -172,7 +159,7 @@
 
   Originally, these functions were written for Rmetrics users using R and
   Rmetrics under Microsoft's Windows XP operating system where time zones,
-  daylight saving times and holiday calendars are not or insuffeciently
+  daylight saving times and holiday calendars are not or insufficiently
   supported. 
 
   The usage of the Ical Library and the introduction of the FinCenter
@@ -185,7 +172,7 @@
   update has been made adding many new generic functions and renaming
   a few already existing functions, please be aware of this.
 
-  Note, the date/time conversion from an arbitry time zone to GMT cannot
+  Note, the date/time conversion from an arbitrary time zone to GMT cannot
   be unique, since date/time objects appear twice during the hour
   when DST changes and the isdt flag was not recorded. A bookkeeping 
   which takes care if DST is effective or not is not yet included. 
@@ -197,11 +184,114 @@
   The ISO-8601 midnight standard has been implemented. Note, that for
   example "2005-01-01 24:00:00" is accepted as a valid date/time string.
   
-  Also available is an automated format recognition, so the user has
-  not longer specify the format string for the most common date/time
+  Also available is an automated format recognition, so the user does
+  not have to specify the format string for the most common date/time
   formats.
 
 }
+
+
+
+\section{Methods}{
+  
+  \describe{
+    \item{timeDate}{\code{signature(charvec = "timeDate")}:
+      create objects from class \code{"timeDate"}, see \code{\link{timeDate}};
+    }
+      
+    \item{show}{\code{signature(object = "timeDate")}: 
+      prints an object of class \code{"timeDate"};
+    }  
+  
+    \item{plot}{\code{signature(x = "timeDate")}:  }
+    \item{points}{\code{signature(x = "timeDate")}:  }
+    \item{lines}{\code{signature(x = "timeDate")}:  }
+    \item{abline}{\code{signature(a = "ANY", b = "ANY", h = "ANY", v ="timeDate")}: 
+      see \code{\link{plot-methods}}.
+    }
+
+    \item{[}{\code{signature(x = "timeDate", i = "ANY", j = "missing")}:  }
+    \item{[}{\code{signature(x = "timeDate", i = "character", j = "missing")}:  }
+    \item{[}{\code{signature(x = "timeDate", i = "logical", j = "missing")}:  }
+    \item{[}{\code{signature(x = "timeDate", i = "missing", j = "missing")}:  }
+    \item{[}{\code{signature(x = "timeDate", i = "numeric", j =	"missing")}:  
+      take parts of a \code{"timeDate"} object, see \code{\link{subset}}.
+    }
+
+    \item{finCenter}{\code{signature(x = "timeDate")}: }
+    \item{finCenter<-}{\code{signature(x = "timeDate")}:
+      see \code{\link{finCenter}}.
+    }
+    
+    \item{atoms}{\code{signature(x = "timeDate")}: }
+    \item{months}{\code{signature(x = "timeDate")}: }
+    \item{julian}{\code{signature(x = "timeDate")}:
+      see \code{\link{julian}}.
+    }
+
+    \item{align}{\code{signature(x = "timeDate")}:
+      see \code{\link{align}}.
+    }
+
+    \item{isDaily}{\code{signature(x = "timeDate")}:  }
+    \item{isMonthly}{\code{signature(x = "timeDate")}:  }
+    \item{isQuarterly}{\code{signature(x = "timeDate")}:  }
+    \item{isRegular}{\code{signature(x = "timeDate")}:
+      see see \code{\link{isRegular}}.
+    }
+    \item{frequency}{\code{signature(x = "timeDate")}:
+      see \code{\link{frequency}}.
+    }
+
+    \item{is.na}{\code{signature(x = "timeDate")}:
+      see \code{\link{is.na-methods}}.
+    }
+    
+    \item{sample}{\code{signature(x = "timeDate")}:
+      see \code{\link{sample}}.
+    }
+
+    \item{Ops}{\code{signature(e1 = "timeDate", e2 = "timeDate")}:  }
+    \item{+}{\code{signature(e1 = "numeric", e2 = "timeDate")}:  }
+    \item{+}{\code{signature(e1 = "timeDate", e2 = "numeric")}:  }
+    \item{+}{\code{signature(e1 = "timeDate", e2 = "timeDate")}:  }
+    \item{-}{\code{signature(e1 = "numeric", e2 = "timeDate")}:  }
+    \item{-}{\code{signature(e1 = "timeDate", e2 = "numeric")}:  }
+    \item{-}{\code{signature(e1 = "timeDate", e2 = "timeDate")}:
+      see \code{\link{timeDateMathOps}}.
+    }
+    
+    \item{coerce}{\code{signature(from = "ANY", to = "timeDate")}:  }
+    \item{coerce}{\code{signature(from = "Date", to = "timeDate")}:  }
+    \item{coerce}{\code{signature(from = "POSIXt", to = "timeDate")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "character")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "data.frame")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "Date")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "list")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "numeric")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "POSIXct")}:  }
+    \item{coerce}{\code{signature(from = "timeDate", to = "POSIXlt")}:
+      convert from/to \code{"timeDate"} objects. 
+      These are methods for \code{as}, to be used with the syntax
+      \code{as(from, to)}, where \code{from} is the object to be
+      converted and \code{to} is the desired target class. Most
+      conversions can also be done with specialised functions such as
+      \code{as.character} and \code{as.timeDate}, see
+      \code{\link{as.timeDate}}.
+    }
+
+
+    \item{names}{\code{signature(x = "timeDate")}: }
+    \item{names<-}{\code{signature(x = "timeDate")}:
+      see \code{\link{names-methods}}.
+    }
+    
+    \item{getDataPart}{\code{signature(object = "timeDate")}: ... }
+    \item{initialize}{\code{signature(.Object = "timeDate")}: ... }
+
+  }
+}  
+
 
 
 \examples{
@@ -257,7 +347,6 @@
 % would need  change in R :
 %    tms[3] <- dts[2] <- NA
 %    timeDate(paste(dts,tms), FinCenter = "Europe/Zurich") # but in GMT
-
 
 ## timeCalendar -
    

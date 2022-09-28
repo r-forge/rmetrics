@@ -1,7 +1,5 @@
 \name{as.timeDate}
 
-\title{Any to 'timeDate' Coercion}
-
 \alias{Any to 'timeDate' Coercion}
 \alias{as.character.timeDate}
 \alias{as.double.timeDate}
@@ -26,6 +24,8 @@
 \alias{coerce,timeDate,POSIXlt-method}
 \alias{coerce,timeDate,Date-method}
 
+\title{Coercion from/to 'timeDate'}
+
 \description{
   
   Coerce and transform objects of class 'timeDate'.
@@ -34,24 +34,27 @@
 
 
 \usage{
+## methods for base R functions
 \method{as.character}{timeDate}(x, \dots)
 
 \method{as.double}{timeDate}(x, 
     units = c("auto", "secs", "mins", "hours", "days", "weeks"), ...)
+
 \method{as.data.frame}{timeDate}(x, \dots)
 
 \method{as.POSIXct}{timeDate}(x, tz = "", \dots)
 
-% \S4method{as.POSIXlt}{timeDate}(x, tz = "", \dots)
 \method{as.POSIXlt}{timeDate}(x, tz = "", \dots)
 
 \method{as.Date}{timeDate}(x, method = c("trunc", "round", "next"), \dots)
 
+## methods for as.timeDate
 \method{as.timeDate}{default}(x, zone = "", FinCenter = "")  
 
 \method{as.timeDate}{POSIXt}(x, zone = "", FinCenter = "")
 
 \method{as.timeDate}{Date}(x, zone = "", FinCenter = "")
+
 \method{as.timeDate}{timeDate}(x, zone = x@FinCenter, FinCenter = "")  
 }
 

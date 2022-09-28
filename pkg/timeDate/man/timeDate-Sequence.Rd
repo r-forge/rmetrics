@@ -32,7 +32,7 @@ timeSequence(from, to = Sys.timeDate(), by, length.out = NULL,
 
       \item character string \code{"DSTday"} gives a sequence taken at
       the same clock time every day. Note that on the days when the DST
-      changes, the requested time may not exist ot be ambiguous, see the
+      changes, the requested time may not exist or be ambiguous, see the
       examples.
       
     }
