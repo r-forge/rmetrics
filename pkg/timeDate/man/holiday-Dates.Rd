@@ -45,8 +45,13 @@
 \alias{CHAscension}
 \alias{CHConfederationDay}
 \alias{CHKnabenschiessen}
-\alias{GBMayDay}
-\alias{GBBankHoliday}
+
+\alias{GBMayDay}  % deprecated
+\alias{GBEarlyMayBankHoliday}
+
+\alias{GBBankHoliday} % deprecated
+\alias{GBSpringBankHoliday}
+
 \alias{GBSummerBankHoliday}
 \alias{GBMilleniumDay}
 \alias{DEAscension}
@@ -175,8 +180,13 @@ CHSechselaeuten(year = getRmetricsOptions("currentYear"))
 CHAscension(year = getRmetricsOptions("currentYear"))
 CHConfederationDay(year = getRmetricsOptions("currentYear"))
 CHKnabenschiessen(year = getRmetricsOptions("currentYear"))
+
 GBMayDay(year = getRmetricsOptions("currentYear"))
+GBEarlyMayBankHoliday(year = getRmetricsOptions("currentYear"))
+
 GBBankHoliday(year = getRmetricsOptions("currentYear")) # see note in details section
+GBSpringBankHoliday(year = getRmetricsOptions("currentYear"))
+
 GBSummerBankHoliday(year = getRmetricsOptions("currentYear"))
 GBMilleniumDay(year = getRmetricsOptions("currentYear"))
 DEAscension(year = getRmetricsOptions("currentYear"))
@@ -279,6 +289,12 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"))
 \details{
   Note that \code{GBBankHoliday()} returns GB Spring bank holiday. For GB holiday
   calender see \code{holidayGB()}.
+
+  The deprecated \code{GBMayDay} and \code{GBBankHoliday} are still
+  available but strongly discouraged. Instead, use
+  \code{GBEarlyMayBankHoliday} and \code{GBSpringBankHoliday},
+  respectively.
+
 }
 
 \examples{

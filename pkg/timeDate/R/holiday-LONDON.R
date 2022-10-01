@@ -62,6 +62,17 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
                     dts <- c(paste0(y, "-06-04"),
                              paste0(y, "-06-05"))
                     holidays <- c(holidays, dts)
+                } else if (y == 2022) {
+                    ## Last Monday in May (i.e., Spring Bank Holiday) holiday moved to June 2,
+                    ## Unique Bank holidays:
+                    ##     Queen's Diamond Jubilee.
+                    ##     State Funeral of Queen Elizabeth II
+                    dts <- c(paste0(y, "-06-02"), # Thursday, Spring bank holiday
+                             paste0(y, "-06-03"), # Friday, Platinum Jubilee bank holiday
+                             paste0(y, "-09-19")  # Bank Holiday for the State Funeral of
+                                                  # Queen Elizabeth II
+                             )
+                    holidays <- c(holidays, dts)
                 } else {
                     lon <- timeDate(.last.of.nday(y, 5, 31, 1), zone = "London",
                                     FinCenter = "Europe/London")
@@ -126,8 +137,8 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
                     holidays <- c(holidays, dts)
                 }
                 # First Monday of May became a bank holiday
-                if (y == 1995) {
-                    # Was moved to May 8 to celebrate VE Day's 50th anniversary
+                if (y == 2020 || y == 1995) {
+                    ## Was moved to May 8 to celebrate VE Day's 75th/50th anniversary
                     dts <- paste0(y, "-05-08")
                     holidays <- c(holidays, dts)
                 } else {

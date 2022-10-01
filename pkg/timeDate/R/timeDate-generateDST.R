@@ -78,6 +78,27 @@
         # run zdump linux command
         zdump <- try(system(paste("zdump -v", finCenter[k], sep=" "), intern=TRUE))
         zdump <- strsplit(zdump, " +" )
+
+        ## 2022-10-01 GNB:
+        ## This seems to assume that all elements of zdump have the same length:
+        ##     zdump <- matrix(unlist(zdump), nrow = length(zdump), byrow = TRUE)
+        ## Also, the code below uses explicitly refers to columns up to 16.
+        ##
+        ## However now there are differently structured lines at the start and end.
+        ## For example
+        ##    zdump -v Africa/Abidjan
+        ##    Africa/Abidjan  -9223372036854775808 = NULL
+        ##    Africa/Abidjan  -9223372036854689408 = NULL
+        ##    Africa/Abidjan  Mon Jan  1 00:16:07 1912 UT = Sun Dec 31 23:59:59 1911 LMT isdst=0 gmtoff=-968
+        ##    Africa/Abidjan  Mon Jan  1 00:16:08 1912 UT = Mon Jan  1 00:16:08 1912 GMT isdst=0 gmtoff=0
+        ##    Africa/Abidjan  9223372036854689407 = NULL
+        ##    Africa/Abidjan  9223372036854775807 = NULL
+        ##
+        ## TODO: need to check if these lines change the intepratation.
+        ##
+        ## For now, try dropping non-standard lines:
+        idrop <- sapply(zdump, length)
+        zdump <- zdump[ idrop == 16 ]
         zdump <- matrix(unlist(zdump), nrow = length(zdump), byrow = TRUE)
 
         # extract data

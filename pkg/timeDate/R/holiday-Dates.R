@@ -397,20 +397,40 @@ function(year = getRmetricsOptions("currentYear")) {
 # Roxygen Tags
 #' @export
 # ---------------------------------------------------------------------------- #
-GBMayDay =
+## GNB: Early May bank holiday
+# GNB: renaming to the proper name; leaving for now 'GBMayDay' for compatibility
+GBEarlyMayBankHoliday <- 
 function(year = getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 5, 1, 1)
-    timeDate(as.character(ans)) }
+    if (year == 2020 || year == 1995) {
+        ## Was moved to May 8 to celebrate VE Day's 75th/50th anniversary
+        ans <- paste0(year, "-05-08")
+        timeDate(ans)
+    } else {
+        ans = .nth.of.nday(year, 5, 1, 1)
+        timeDate(as.character(ans))
+    }
+}
 
 # ---------------------------------------------------------------------------- #
 # Roxygen Tags
 #' @export
 # ---------------------------------------------------------------------------- #
 # YC: Note GBBankHoliday returns Spring Bank Holiday
-GBBankHoliday =
+# GNB: renaming to the proper name; leaving for now 'GBBankHoliday' for compatibility
+GBSpringBankHoliday <- 
 function(year = getRmetricsOptions("currentYear")) {
-    ans = .last.of.nday(year, 5, 31, 1)
-    timeDate(as.character(ans)) }
+    ## moved to be the day before XXX/Diamond/Platinum Jubilee bank holiday
+    if(year == 2002) {
+        timeDate("2002-06-03")
+    } else if(year == 2012) {
+        timeDate("2012-06-04")
+    } else if(year == 2022) {
+        timeDate("2022-06-02") # Thursday
+    } else {
+        ans = .last.of.nday(year, 5, 31, 1)
+        timeDate(as.character(ans))
+    }
+}
 
 # ---------------------------------------------------------------------------- #
 # Roxygen Tags
@@ -1166,4 +1186,8 @@ function(year = getRmetricsOptions("currentYear")) {
 
 
 ################################################################################
+## GNB: compatibility
+
+GBMayDay <- GBEarlyMayBankHoliday
+GBBankHoliday <- GBSpringBankHoliday
 

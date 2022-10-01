@@ -1,3 +1,15 @@
+
+- London financial centre holidays - fixed some non-standard holidays (e.g.,
+  Early May Bank holiday was moved in 2020 to VE day; Spring Bank holiday was
+  moved in Queen's Jubilee years; state funeral of the Queen). The London
+  holidays ahould be complete now up to the time of writing this (1 Oct 2022).
+  Corrections are welcome, in particular for the period 2013-2016.
+
+- renamed `GBMayDay` to `GBEarlyMayBankHoliday` and `GBBankHoliday` to
+  `GBSpringBankHoliday`. The old names are somewhat ambiguous and strongly
+  discouraged but still available. `listHolidays()` gives the new names.
+
+  
 # timeDate 4021.106
 
 - fix `whichFormat()` to accommodate a change in R-devel after which
@@ -14,18 +26,18 @@
   Joy. Thanks to him and Ian E for the insigthful discussion and useful links.
 
   See also below. Contributions for the other exchanges and corrections are
-  welcome. 
+  welcome.
 
 - `holidaysNYSE()` gets a new argument, `type`, to select what type of the
   exchange's closing days to return. The default is to return all days in the
-  requested years when NYSE was closed for whatever reason. Use `type = "standard"`
-  and `type = `special` to get the standard holidays and the special closings,
-  respectively.
+  requested years when NYSE was closed for whatever reason. Use `type =
+  "standard"` and `type = `special` to get the standard holidays and the special
+  closings, respectively.
 
   Returning any closing day by default might be considered a breaking
   change. However, not returning all closing days was perceived as erroneous by
   users (eg issue #1356). In fact, the package itself calculates business days
-  by dropping weekends and days returned by `holidayXXXX`. 
+  by dropping weekends and days returned by `holidayXXXX`.
 
   Note that `holiday()` returns the actual dates of the public holidays, while
   the corresponding days returned by `holidayXXXX` are the resulting non-weekend

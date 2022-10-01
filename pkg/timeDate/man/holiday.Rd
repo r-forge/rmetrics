@@ -88,8 +88,12 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
     
     \emph{GBLondon - Public Holidays:} 
 
-    GBMayDay, GBBankHoliday, GBSummerBankHoliday, 
-    GBNewYearsEve. \cr
+    GBEarlyMayBankHoliday, GBSpringBankHoliday
+    GBSummerBankHoliday, GBNewYearsEve.
+
+    (The deprecated GBMayDay and GBBankHoliday are still available but
+    strongly discouraged. Instead, use GBEarlyMayBankHoliday and
+    GBSpringBankHoliday, respectively)\cr
 
     
     \emph{DEFrankfurt - Public Holidays:} 

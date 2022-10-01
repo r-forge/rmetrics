@@ -253,8 +253,13 @@ export(Fortaleza)
 export(Frankfurt)
 export(Freetown)
 export(Funafuti)
-export(GBBankHoliday)
-export(GBMayDay)
+
+export(GBBankHoliday) # deprecated, superseded by GBSpringBankHoliday
+export(GBSpringBankHoliday)
+
+export(GBMayDay) # deprecated, superseded by EarlyMayBankHoliday
+export(GBEarlyMayBankHoliday)
+
 export(GBMilleniumDay)
 export(GBSummerBankHoliday)
 export(Gaborone)
