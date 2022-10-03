@@ -90,6 +90,17 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
             # Saturday/Sun. I'm assuming this was after the 1971
             # Banking and Financial Dealings Act which established the
             # new holiday schedule.
+            ##
+            ## GNB: In practice, this is so but see below.
+            ##
+            ##      The 1971 act declares 27th Dec to be bank holiday if 25th or
+            ##      26th Dec is Sat or Sun but doesn't make provisions for 28th
+            ##      Dec. But 28th Dec seems to have been been declared BH by
+            ##      Royal proclamations in all years ever since. ("seems"
+            ##      because I haven't seen the proclamations and am not sure if
+            ##      the calendars online for 40-50 years ago do not compute them
+            ##      assuming that this is by definition)
+            ##      
             if (y < 1970) {
                 # Christmas and Boxing Day
                 holidays <- c(holidays, as.character(ChristmasDay(y)),
@@ -126,18 +137,8 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
                 }
             }
             if (y >= 1978) {
-                if (y == 1981) {
-                    # Royal wedding was a public holiday
-                    dts <- paste0(y, "-07-29")
-                    holidays <- c(holidays, dts)
-                }
-                if (y == 2011) {
-                    # Royal wedding declared a public holiday
-                    dts <- paste0(y, "-04-29")
-                    holidays <- c(holidays, dts)
-                }
                 # First Monday of May became a bank holiday
-                if (y == 2020 || y == 1995) {
+                if (y == 1995 || y == 2020) {
                     ## Was moved to May 8 to celebrate VE Day's 75th/50th anniversary
                     dts <- paste0(y, "-05-08")
                     holidays <- c(holidays, dts)
@@ -146,6 +147,24 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
                                     FinCenter = "Europe/London")
                     holidays <- c(holidays, as.character(lon))
                 }
+
+                ## special one-off bank holidays
+                if (y == 1981) {
+                    # Royal wedding was a public holiday
+                    dts <- paste0(y, "-07-29")
+                    holidays <- c(holidays, dts)
+                }
+                if (y == 1999) {
+                    ## UK millenum day
+                    dts <- format(GBMilleniumDay(), format = "%Y-%m-%d")
+                    holidays <- c(holidays, dts)
+                }
+                if (y == 2011) {
+                    # Royal wedding declared a public holiday
+                    dts <- paste0(y, "-04-29")
+                    holidays <- c(holidays, dts)
+                }
+                
             }
         }
     }

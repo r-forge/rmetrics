@@ -1,9 +1,9 @@
 
-- London financial centre holidays - fixed some non-standard holidays (e.g.,
-  Early May Bank holiday was moved in 2020 to VE day; Spring Bank holiday was
-  moved in Queen's Jubilee years; state funeral of the Queen). The London
-  holidays ahould be complete now up to the time of writing this (1 Oct 2022).
-  Corrections are welcome, in particular for the period 2013-2016.
+- London financial centre holidays - fixed and/or included non-standard holidays
+  (e.g., Early May Bank holiday was moved in 2020 to VE day; Spring Bank holiday
+  was moved in Queen's Jubilee years; state funeral of the Queen).  Millenium
+  day now is included in the result of `holidayLONDON(1999)`.  The London
+  holidays should now be complete up to the time of writing this (1 Oct 2022).
 
 - renamed `GBMayDay` to `GBEarlyMayBankHoliday` and `GBBankHoliday` to
   `GBSpringBankHoliday`. The old names are somewhat ambiguous and strongly

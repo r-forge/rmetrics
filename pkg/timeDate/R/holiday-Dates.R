@@ -401,14 +401,15 @@ function(year = getRmetricsOptions("currentYear")) {
 # GNB: renaming to the proper name; leaving for now 'GBMayDay' for compatibility
 GBEarlyMayBankHoliday <- 
 function(year = getRmetricsOptions("currentYear")) {
-    if (year == 2020 || year == 1995) {
-        ## Was moved to May 8 to celebrate VE Day's 75th/50th anniversary
-        ans <- paste0(year, "-05-08")
-        timeDate(ans)
-    } else {
-        ans = .nth.of.nday(year, 5, 1, 1)
-        timeDate(as.character(ans))
-    }
+    ans = as.character(.nth.of.nday(year, 5, 1, 1))
+
+    ## special: moved to May 8 to celebrate VE Day's 50th/75th anniversary
+    ind <- year %in% c(1995, 2020)
+
+    if(any(ind))
+       ans[ind] <- paste0(year[ind], "0508") # not "-05-08" for consistency with 'ans'
+
+    timeDate(ans)
 }
 
 # ---------------------------------------------------------------------------- #
@@ -419,17 +420,17 @@ function(year = getRmetricsOptions("currentYear")) {
 # GNB: renaming to the proper name; leaving for now 'GBBankHoliday' for compatibility
 GBSpringBankHoliday <- 
 function(year = getRmetricsOptions("currentYear")) {
+    ans = as.character(.last.of.nday(year, 5, 31, 1))
+    
     ## moved to be the day before XXX/Diamond/Platinum Jubilee bank holiday
-    if(year == 2002) {
-        timeDate("2002-06-03")
-    } else if(year == 2012) {
-        timeDate("2012-06-04")
-    } else if(year == 2022) {
-        timeDate("2022-06-02") # Thursday
-    } else {
-        ans = .last.of.nday(year, 5, 31, 1)
-        timeDate(as.character(ans))
+    ind <- year %in% c(2002, 2012, 2022)
+    if(any(ind)) {
+        ans[year == 2002] <- "20020603"
+        ans[year == 2012] <- "20120604"
+        ans[year == 2022] <- "20220602" # Thursday
     }
+    
+    timeDate(ans)
 }
 
 # ---------------------------------------------------------------------------- #

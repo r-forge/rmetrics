@@ -297,6 +297,8 @@ test.holidayLONDON <- function() {
         checkTrue(format(GBBankHoliday(2012)) == "2012-06-04")
         checkTrue(format(GBBankHoliday(2022)) == "2022-06-02")
 
+        ## millenium day was not included before v4021.107
+        checkTrue(length(holidayLONDON(1999)) == 9)
     }
 
     test()
