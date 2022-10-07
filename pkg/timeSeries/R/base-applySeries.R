@@ -165,63 +165,63 @@ function(x, from, to, FUN, ...)
 ################################################################################
 # *** OLD ***
 # Check if it is still used somewhere ...
+# 2022-10-07 GNB : apparently not, commenting out
 
-
-.applySeries <-
-    function (x, from = NULL, to = NULL, by = c("monthly", "quarterly"),
-    FUN = colMeans, units = NULL, ...)
-{
-    # Old/Alternative Version
-
-    # Chreck for 'timeSeries' Object:
-    stopifnot(is.timeSeries(x),
-              is(from, "timeDate") || is.null(from),
-              is(to,   "timeDate") || is.null(to))
-
-    # Allow for colMeans:
-    if (substitute(FUN) == "colMeans") FUN = "colAvgs"
-
-    # Monthly and Quarterly from and to:
-    if (is.null(from) & is.null(to)) {
-        by = match.arg(by)
-        if (by == "monthly") {
-            from = unique(timeFirstDayInMonth(time(x)))
-            to = unique(timeLastDayInMonth(time(x)))
-        }
-        else if (by == "quarterly") {
-            from = unique(timeFirstDayInQuarter(time(x)))
-            to = unique(timeLastDayInQuarter(time(x)))
-        }
-        from@FinCenter = to@FinCenter = x@FinCenter
-    }
-
-    # Start Cutting Process:
-    fun = match.fun(FUN)
-    cutted = NULL
-    i = 1
-
-    # Find First Interval which is not empty:
-    while (is.null(cutted)) {
-        cutted = cut(x, from[i], to[i])
-        if (!is.null(cutted)) {
-            # Non empty Interval:
-            ans = fun(cutted, ...)
-        }
-        i = i + 1
-    }
-    # Continue up to the end:
-    for (j in seq_len(length(from))) {
-        cutted = cut(x, from[j], to[j])
-        if (!is.null(cutted)) {
-            # Non empty Interval:
-            newAns = fun(cutted, ...)
-            ans = rbind(ans, newAns)
-        }
-    }
-
-    # Return Value:
-    ans
-}
+# .applySeries <-
+#     function (x, from = NULL, to = NULL, by = c("monthly", "quarterly"),
+#     FUN = colMeans, units = NULL, ...)
+# {
+#     # Old/Alternative Version
+# 
+#     # Chreck for 'timeSeries' Object:
+#     stopifnot(is.timeSeries(x),
+#               is(from, "timeDate") || is.null(from),
+#               is(to,   "timeDate") || is.null(to))
+# 
+#     # Allow for colMeans:
+#     if (substitute(FUN) == "colMeans") FUN = "colAvgs"
+# 
+#     # Monthly and Quarterly from and to:
+#     if (is.null(from) & is.null(to)) {
+#         by = match.arg(by)
+#         if (by == "monthly") {
+#             from = unique(timeFirstDayInMonth(time(x)))
+#             to = unique(timeLastDayInMonth(time(x)))
+#         }
+#         else if (by == "quarterly") {
+#             from = unique(timeFirstDayInQuarter(time(x)))
+#             to = unique(timeLastDayInQuarter(time(x)))
+#         }
+#         from@FinCenter = to@FinCenter = x@FinCenter
+#     }
+# 
+#     # Start Cutting Process:
+#     fun = match.fun(FUN)
+#     cutted = NULL
+#     i = 1
+# 
+#     # Find First Interval which is not empty:
+#     while (is.null(cutted)) {
+#         cutted = cut(x, from[i], to[i])
+#         if (!is.null(cutted)) {
+#             # Non empty Interval:
+#             ans = fun(cutted, ...)
+#         }
+#         i = i + 1
+#     }
+#     # Continue up to the end:
+#     for (j in seq_len(length(from))) {
+#         cutted = cut(x, from[j], to[j])
+#         if (!is.null(cutted)) {
+#             # Non empty Interval:
+#             newAns = fun(cutted, ...)
+#             ans = rbind(ans, newAns)
+#         }
+#     }
+# 
+#     # Return Value:
+#     ans
+# }
 
 
 ################################################################################

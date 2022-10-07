@@ -13,8 +13,8 @@
 \alias{colProds} 
 \alias{colQuantiles} 
 
-\alias{colAvgs}           
-\alias{colStdevs}
+% \alias{colAvgs}           
+% \alias{colStdevs}
 
 % \alias{mean.timeSeries}           
 % \alias{var.timeSeries}
@@ -61,8 +61,8 @@ colMins(x, \dots)
 colProds(x, \dots)
 colQuantiles(x, prob = 0.05, \dots)
 
-colStdevs(x, \dots)
-colAvgs(x,  \dots)
+% colStdevs(x, \dots)
+% colAvgs(x,  \dots)
 
 % \method{mean}{timeSeries}(x, \dots)
 % \method{var}{timeSeries}(x, \dots)
@@ -115,4 +115,3 @@ colAvgs(x,  \dots)
 
 
 \keyword{univar}
-

@@ -14,6 +14,14 @@
   error for `timeSeries` objects when called with `na.rm = TRUE`. Fixes bug
   #2121 reported by Shane Haas.
 
+- deprecated function `colAvgs` is now defunct. Use `colMeans()` instead.
+
+- deprecated function `colStdevs` is now defunct. Use `colSds()` instead.
+
+- the function `.applySeries` is now defunct. It was obsoleted long time ago and
+  was exported for historical reasons only. Use `applySeries()` instead.
+
+
 
 ## timeSeries 4021.104
 

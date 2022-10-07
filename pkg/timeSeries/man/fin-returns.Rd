@@ -31,8 +31,8 @@ returns0(x, \dots)
     "compound", "simple"), percentage = FALSE, na.rm = TRUE, 
     trim = TRUE, \dots) 
 
-getReturns(\dots)
-returnSeries(\dots)
+% getReturns(\dots)
+% returnSeries(\dots)
 }
 
 
