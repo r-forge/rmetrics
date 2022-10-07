@@ -43,7 +43,7 @@ assetsSelect <-
     method <- method[1]   
      
     # Transform to matrix:
-    if (class(x) == "timeSeries") {
+    if (class(x)[1] == "timeSeries") {
         x <- as.matrix(x)
     }
     

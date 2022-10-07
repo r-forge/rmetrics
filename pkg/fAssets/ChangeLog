@@ -2,6 +2,19 @@
 ChangeLog
 Package fAssets
 
+2022-10-07  geobosh
+
+	* replaced a call of deprecated colStdevs() with colSds().
+
+	* replaced a number of calls like `if(class(x) == ...` with
+	suitable `inherits()` calls. This fixes several warnings from CRAN
+	check.
+
+	* removed LazyData from DESCRIPTION (fixes a warning from CRAN
+	check).
+
+
+
 2014-30-10  tsetz
 
 	* ecodist, mvnormtest and energy are import packages again

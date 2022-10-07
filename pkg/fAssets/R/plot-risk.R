@@ -47,7 +47,7 @@ assetsRiskReturnPlot <-
     y = as.matrix(x)
 
     # Sample:
-    Risk1 = index*sqrt(scale)* colStdevs(y)
+    Risk1 = index*sqrt(scale)* colSds(y)
     Return1 = index*scale*colMeans(y)
 
     # Huber(s):

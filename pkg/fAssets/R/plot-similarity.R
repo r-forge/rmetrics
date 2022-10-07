@@ -34,7 +34,7 @@ assetsDendrogramPlot <-
     # FUNCTION:
 
     # Compute Distance Matrix:
-    if (class(x) == "dist") {
+    if (inherits(x, "dist")) { # was: if (class(x) == "dist") ...
         DIST = x
     } else {
         X = t(series(x))

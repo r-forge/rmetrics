@@ -286,7 +286,7 @@ function(data, statistic, R)
     repeat {
         bx = sample(idx, replace = TRUE)
         val = try(statistic(data, bx))  
-        if(class(val) != "try-error") break
+        if(!inherits(val, "try-error")) break  # was: if(class(val) != "try-error") break
     }
     dim.statistic = length(val)
     output = matrix(nrow = R, ncol = dim.statistic)
@@ -298,7 +298,7 @@ function(data, statistic, R)
         bx = sample(idx, replace=TRUE)
         val = try(statistic(data, bx)) 
         # if we get a numerical error we simply repeat the draw ..
-        if(class(val) == "try-error") {
+        if(inherits(val, "try-error")) { # was: if(class(val) == "try-error") ...
             error.count = error.count+1   
             if(error.count > R) 
                 stop("Too many errors encountered during the bootstrap.")

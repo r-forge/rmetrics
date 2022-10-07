@@ -55,7 +55,7 @@ assetsTreePlot <-
 
     # Compute Distance Matrix:
     Order = NULL
-    if (class(x) == "dist") {
+    if (inherits(x, "dist")) { # was: if (class(x) == "dist") ...
         DIST = x
     } else {
         # Rank Seed:

@@ -84,7 +84,7 @@ function(X)
     # FUNCTION:
     
     # Minimum Spanning Tree:
-    if (class(X) == "dist") X = as.matrix(X)
+    if (inherits(X, "dist")) X = as.matrix(X)  # was: if(class(X) == "dist") ...
     n = dim(X)[1]
     N = matrix(0, n, n)
     tree = NULL
