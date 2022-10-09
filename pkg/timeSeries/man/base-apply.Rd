@@ -1,7 +1,7 @@
 \name{apply}
 
 
-\title{Apply Functions Over Time Series Periods}
+\title{Apply functions over time series periods}
 
 \alias{fapply}
 \alias{applySeries}

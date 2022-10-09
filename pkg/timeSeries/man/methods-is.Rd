@@ -1,7 +1,7 @@
 \name{is.timeSeries}
 
 
-\title{timeSeries Class, Coercion and Transformation}
+\title{Check if an object is from class timeSeries}
 
 
 \alias{is.timeSeries}
@@ -27,7 +27,7 @@ is.signalSeries(x)
 \arguments{
 
     \item{x}{  
-        an object of class 'timeSeries'.
+        an object.
     }
   
 }
@@ -35,14 +35,14 @@ is.signalSeries(x)
 
 \value{
 
-    Returns \code{TRUE} or \code{FALSE} depending on whether its
+    \code{TRUE} or \code{FALSE} depending on whether its
     argument is an object of class 'timeSeries' or not.
   
 }
 
 
 \examples{
-## Create an Artificial timeSeries Object - 
+## Create an artificial timeSeries object - 
    setRmetricsOptions(myFinCenter = "GMT")
    charvec <- timeCalendar()
    data <- matrix(rnorm(12))

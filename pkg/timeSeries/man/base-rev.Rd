@@ -1,6 +1,5 @@
 \name{rev}     
 
-
 \alias{rev,timeSeries-method}
 \alias{rev.timeSeries}
                                                  
@@ -10,7 +9,7 @@
 
 \description{
 
-    Reverses an uni- or multivariate 'timeSeries' object by 
+    Reverses an uni- or multivariate \code{"timeSeries"} object by 
     reversing the order of the time stamps.
     
 }
@@ -24,7 +23,7 @@
 \arguments{
 
     \item{x}{
-        an uni- or multivariate 'timeSeries' object.
+        an uni- or multivariate \code{"timeSeries"} object.
         } 
         
 }
@@ -32,7 +31,7 @@
 
 \value{
 
-    Returns a reversed 'timeSeries' object.
+  a  \code{"timeSeries"} object
     
 }
 
@@ -47,4 +46,3 @@
 
 
 \keyword{chron}
-

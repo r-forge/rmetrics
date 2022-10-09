@@ -7,12 +7,12 @@
 \alias{align,timeSeries-method}
 
 
-\title{timeSeries Class, Functions and Methods}
+\title{timeSeries class, functions and methods}
 
 
 \description{
 
-    Aligns a 'timeSeries' Object.
+    Aligns a \code{"timeSeries"} object.
 
 }
 
@@ -31,10 +31,10 @@
         an object of class \code{timeSeries}.
         }
     \item{by}{
-        a character string denoting the period
+        a character string denoting the period.
         }
     \item{offset}{
-        a character string denoting the offset
+        a character string denoting the offset.
         }
     \item{method}{
         a character string denoting the alignment approach.
@@ -50,7 +50,7 @@
 
 \value{
 
-    Returns an aligned S4 'timeSeries' object.
+  a \code{"timeSeries"} object.
 
 }
 

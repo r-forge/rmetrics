@@ -13,7 +13,7 @@
 
 \description{
 
-    Returns start and/or end time stamps of a 'timeSeries' object.
+  Returns start or end time stamp of a \code{"timeSeries"} object.
     
 }
 
@@ -39,7 +39,7 @@
 
 \value{
 
-    returns a \code{timeSeries} object.
+  a \code{timeSeries} object
            
 }
 

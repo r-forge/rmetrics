@@ -3,11 +3,11 @@
 \alias{comment,timeSeries-method}
 \alias{comment<-,timeSeries-method}
 
-\title{comment for timeSeries objects}
+\title{Get and set comments for timeSeries objects}
 
 
 \description{
-    Print or assign new comment to a \code{timeSeries} object.
+  Get or assign new comment to a \code{timeSeries} object.
 }
 
 

@@ -1,16 +1,14 @@
 \name{diff}                     
+\alias{diff}
+
+\alias{diff,timeSeries-method}
                                     
                                     
 \title{diff}
 
-
-\alias{diff}
-\alias{diff,timeSeries-method}
-
-
 \description{
 
-    Differences a 'timeSeries' 0bject.
+    Difference a \code{"timeSeries"} object.
     
 }
 
@@ -21,16 +19,15 @@ diff(x, \dots)
 
 % lag=1, diff=1, trim=FALSE, pad=NA,
 
-
 \arguments{
   
-    \item{x}{
-      an object of class 'timeSeries'.
-      }
+  \item{x}{
+    an object of class \code{"timeSeries"}.
+  }
    
-    \item{\dots}{
-      further arguments to be passed. These may include
-      }
+  \item{\dots}{
+    further arguments to be passed, see Section \sQuote{Details}.
+  }
       
 }
 
@@ -53,7 +50,7 @@ diff(x, \dots)
  
 \value{
 
-      Returns a differenced S4 'timeSeries' object.
+  the differenced \code{"timeSeries"} object
 
 }
 
@@ -75,6 +72,4 @@ diff(x, \dots)
 
 
 \keyword{chron}
-
-
- 
+\keyword{ts}

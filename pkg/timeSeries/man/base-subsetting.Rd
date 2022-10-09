@@ -1,6 +1,4 @@
 \name{TimeSeriesSubsettings}
-
-
 \alias{TimeSeriesSubsettings}
 
 \alias{[,timeSeries,ANY,index_timeSeries-method}
@@ -51,13 +49,9 @@
 \alias{$<-,timeSeries,ANY,factor-method}
 \alias{$<-,timeSeries,ANY,numeric-method}
 
-\alias{window,timeSeries-method}
-\alias{cut,timeSeries-method}
 \alias{head,timeSeries-method}
 \alias{tail,timeSeries-method}
 
-\alias{window.timeSeries}
-\alias{cut.timeSeries}
 \alias{head.timeSeries}
 \alias{tail.timeSeries}
 
@@ -65,7 +59,8 @@
 \alias{outlier,timeSeries-method}
 \alias{outlier,ANY-method}
 
-\title{Subsettig Time Series}
+
+\title{Subsetting Time Series}
 
 
 \description{
@@ -76,8 +71,6 @@
     \tabular{ll}{
     \code{[} \tab "[" method for a 'timeSeries' object, \cr
     \code{[<-} \tab "[<-" method to assign value for a subset of a 'timeSeries' object, \cr
-    \code{window} \tab Windows a piece from a 'timeSeries' object, \cr
-    \code{cut} \tab A no longer used synonyme for window, \cr
     \code{head} \tab Returns the head of a 'timeSeries' object, \cr
     \code{tail} \tab Returns the tail of a 'timeSeries' object, \cr
     \code{outliers} \tab Removes outliers from a 'timeSeries' object. }
@@ -90,14 +83,11 @@
 % \method{[}{timeSeries}(x, i, j, drop)
 % \method{[}{timeSeries}(x, i, j) <- value
 
-\S4method{window}{timeSeries}(x, start, end, \dots)
-
 \S4method{head}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
 \S4method{tail}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
 
 \S4method{outlier}{timeSeries}(x, sd = 3, complement = TRUE, \dots)
 
-\S4method{cut}{timeSeries}(x, from, to, \dots)
 }
 
 
@@ -109,12 +99,12 @@
         or its complement be returns, by default \code{TRUE}
         which returns the series free of outliers.
         }
-     \item{from, to}{
-        starting date and end date, \code{to} must be after \code{from}.
-        }
-     \item{start, end}{
-        starting date and end date, \code{end} must be after \code{start}.
-        }
+     % \item{from, to}{
+     %    starting date and end date, \code{to} must be after \code{from}.
+     %    }
+     % \item{start, end}{
+     %    starting date and end date, \code{end} must be after \code{start}.
+     %    }
 %      \item{i, j}{
 %         ["["] - \cr 
 %         index arguments used for subsettings.

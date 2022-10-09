@@ -1,8 +1,4 @@
 \name{merge}                     
-
-
-\title{Merges two 'timeSeries' objects}
-
 \alias{merge}
 
 \alias{merge,ANY,timeSeries-method}
@@ -17,20 +13,27 @@
 \alias{merge,numeric,timeSeries-method}
 
 
+\title{Merges two 'timeSeries' objects}
+
 \description{
 
-    Merges several object types with 'timeSeries' objects.
+    Merges several object types with \code{"timeSeries"} objects.
     The number of rows must match.
     
 }
 
-
-\value{
-
-    Returns a 'timeSeries' object of two merged time series.
-    
+\usage{
+merge(x, y, \dots)
 }
 
+
+
+\arguments{
+  \item{x,y}{
+    objects to merge, at least one of class \code{"timeSeries"}.
+  }
+  \item{...}{additional arguments for methods}
+}
 
 \details{
 
@@ -45,6 +48,12 @@
         
 }
 
+
+\value{
+
+  a \code{"timeSeries"} object
+    
+}
 
 \examples{
 ## Load Series -
@@ -71,4 +80,5 @@
 
 
 \keyword{chron}
+\keyword{ts}
  

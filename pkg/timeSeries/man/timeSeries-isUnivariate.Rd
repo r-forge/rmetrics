@@ -1,16 +1,14 @@
 \name{isUnivariate}
+\alias{isUnivariate}
+\alias{isMultivariate}
 
 
 \title{Checks if a Time Series is Univariate}
 
 
-\alias{isUnivariate}
-\alias{isMultivariate}
-
-
 \description{
     
-    Checks if a time series o bject or any other
+    Checks if a time series object or any other
     rectangular object is univariate or multivariate.       
 }
 
@@ -33,10 +31,7 @@ isMultivariate(x)
 
 \value{
 
-    \code{isUnivariate}\cr
-    \code{isMultivariate}\cr
-    \cr
-    return a logical depending if the test is true or not.
+  a logical value
         
 }
 

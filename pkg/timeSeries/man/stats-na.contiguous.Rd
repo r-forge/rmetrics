@@ -1,11 +1,9 @@
 \name{na.contiguous}
 
-
-\title{Find Longest Contiguous Stretch of non-NAs}
-
-
 \alias{na.contiguous,timeSeries-method}
 
+
+\title{Find Longest Contiguous Stretch of non-NAs}
 
 \description{
 
@@ -26,14 +24,14 @@
     a timeSeries object.
   }
   \item{\dots}{
-    further arguments passed to or from other methods.
+    further arguments passed to other methods.
   }  
 }
 
 
 \value{
 
-  A timeSeries object without missing values.
+  a \code{"timeSeries"} object without missing values
   
 }
 

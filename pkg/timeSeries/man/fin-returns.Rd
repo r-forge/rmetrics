@@ -1,10 +1,6 @@
 \name{returns}
-
-
-\title{Financial Returns}
-
-
 \alias{returns}
+
 \alias{returns,ANY-method}
 \alias{returns,timeSeries-method}
 
@@ -12,6 +8,11 @@
 
 \alias{returnSeries}
 \alias{getReturns}
+
+
+\title{Financial Returns}
+
+
 
 
 \description{
@@ -31,8 +32,6 @@ returns0(x, \dots)
     "compound", "simple"), percentage = FALSE, na.rm = TRUE, 
     trim = TRUE, \dots) 
 
-% getReturns(\dots)
-% returnSeries(\dots)
 }
 
 
@@ -48,7 +47,7 @@ returns0(x, \dots)
     \item{method}{
         a character string. Which method should be used to compute
         the returns, "continuous", "discrete", or "compound", "simple".
-        The second pair of methods is a synonyme for the first two
+        The second pair of methods is a synonym for the first two
         methods.
         }    
     \item{na.rm}{
@@ -69,7 +68,7 @@ returns0(x, \dots)
 
     all functions return an object of class \code{timeSeries}.
     
-    \code{returns0} returns am untrimmed series with the first
+    \code{returns0} returns an untrimmed series with the first
     row of returns set to zero(s).
         
 }

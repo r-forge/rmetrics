@@ -1,8 +1,6 @@
 \name{dimnames}
   
 
-\title{Time Series Columns and Rows}
-
 \alias{dim,timeSeries-method}
 \alias{dim<-,timeSeries-method}
 
@@ -19,6 +17,8 @@
 \alias{names,timeSeries-method}
 \alias{names<-,timeSeries-method}
 
+
+\title{Time Series Columns and Rows}
 
 \description{
     

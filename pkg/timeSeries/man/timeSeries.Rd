@@ -1,9 +1,4 @@
 \name{TimeSeriesClass}
-
-
-\title{timeSeries Class}
-
-
 \alias{TimeSeriesClass}
 
 \alias{timeSeries}
@@ -25,20 +20,11 @@
 \alias{time_timeSeries-class}
 \alias{initialize,timeSeries-method}
 
-\alias{seriesData}
 
+\title{Create objects from class timeSeries}
 
 \description{
-    
-    Functions to generate and modify 'timeSeries' objects:         
-
-    \tabular{ll}{   
-    \code{timeSeries} \tab Creates a 'timeSeries' object from scratch.}
-    
-    Data Slot and classification of 'timeSeries' objects: 
-    
-    \tabular{ll}{        
-    \code{seriesData} \tab Extracts data slot from a 'timeSeries'. }          
+  \code{timeSeries} creates a \code{timeSeries} object from scratch.
 }
 
 
@@ -46,8 +32,6 @@
 timeSeries(data, charvec, units = NULL, format = NULL, zone = "", 
     FinCenter = "", recordIDs = data.frame(), title = NULL, 
     documentation = NULL, \dots)
-
-seriesData(object)
 }
 
 
@@ -74,10 +58,6 @@ seriesData(object)
         a character string with the format in POSIX notation to be passed 
         to the time series object.
         }  
-    \item{object}{
-        [is][seriesData][seriesPositions][show][summary] -    
-        an object of class \code{timeSeries}.
-        }
     \item{recordIDs}{
         a data frame which can be used for record identification
         information. \cr
@@ -107,15 +87,8 @@ seriesData(object)
 
 \value{
 
-    \code{timeSeries}\cr
-    returns a S4 object of class \code{timeSeries}.
-    \cr
+  \code{timeSeries} returns an S4 object of class \code{timeSeries}.
     
-    
-    \code{seriesData}\cr
-    \cr
-    extracts the \code{@.Data} slot from a \code{timeSeries} object and
-    is equivalent to \code{as.amtrix}.
 }
 
 

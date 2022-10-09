@@ -14,6 +14,17 @@
   error for `timeSeries` objects when called with `na.rm = TRUE`. Fixes bug
   #2121 reported by Shane Haas.
 
+- rather significant editing of the documentation.
+
+- function `cut` is now formally deprecated. Use `window` instead.
+
+
+- deprecated function `seriesData` is now defunct. Use `as.matrix()` instead.
+
+- deprecated function `seriesPositions` is now defunct. Use `time()` instead.
+
+- deprecated function `newPositions<-` is now defunct. Use `time<-` instead.
+
 - deprecated function `colAvgs` is now defunct. Use `colMeans()` instead.
 
 - deprecated function `colStdevs` is now defunct. Use `colSds()` instead.
@@ -22,6 +33,12 @@
   was exported for historical reasons only. Use `applySeries()` instead.
 
 
+### Technical changes
+
+
+- the bodies of the methods of `series<-()` and `coredata<-` for signature
+  `"matrix"` of value were identical. Now the body is a separate, unexported
+  function and is used as the definition of both of these methods.
 
 ## timeSeries 4021.104
 

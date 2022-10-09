@@ -25,16 +25,18 @@ setUnits(x) <- value
 
 \arguments{
 
-    \item{x}{
-        a 'timeSeries' object.
-        }
-    \item{value}{
-        a \code{vector} of unit names.
-        }
+  \item{x}{
+    a 'timeSeries' object.
+  }
+  \item{value}{
+    a character vector of unit names.
+  }
 }
 
 
-\seealso{timeSeries()}
+\seealso{
+  \code{\link{timeSeries}}
+}
 
 
 \examples{

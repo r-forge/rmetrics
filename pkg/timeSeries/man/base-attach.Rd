@@ -1,7 +1,7 @@
 \name{attach}
   
 
-\title{Attach a timSeries to the search path}
+\title{Attach a timeSeries to the search path}
 
 
 \alias{attach}

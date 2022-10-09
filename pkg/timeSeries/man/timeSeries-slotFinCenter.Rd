@@ -1,7 +1,7 @@
 \name{finCenter}
 
 
-\title{Get and Set Financial Center of a 'timeSeries'}
+\title{Get and set Financial center of a 'timeSeries'}
 
 
 \alias{getFinCenter}  
@@ -13,17 +13,17 @@
 
 \description{
 
-    Print or assign new financial center to a 'timeSeries' object.
+    Get or assign a financial center to a 'timeSeries' object.
     
 }
 
 
 \usage{
-getFinCenter(x)         
-setFinCenter(x) <- value
-
 \S4method{finCenter}{timeSeries}(x)
 \S4method{finCenter}{timeSeries}(x) <- value
+
+getFinCenter(x)         
+setFinCenter(x) <- value
 }
 
 
@@ -34,12 +34,14 @@ setFinCenter(x) <- value
         }
     \item{value}{
         a character with the the location of the financial center named 
-        as "continent/city".
+        as \code{"continent/city"}.
         }
 }
 
 
-\seealso{listFinCenter}
+\seealso{
+  \code{\link{listFinCenter}}
+}
 
 
 \examples{

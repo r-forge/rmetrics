@@ -1,7 +1,4 @@
-\name{bind}
-
-
-\title{Bind two timeSeries objects}
+\name{cbind}
 
 %\alias{merge}
 \alias{cbind}
@@ -38,9 +35,11 @@
 \alias{rbind2,timeSeries,timeSeries-method}
 
 
+\title{Bind two timeSeries objects by column or by row}
+
 \description{
   
-    Binds two 'timeSeries' objects either by column or by row.        
+  Binds two \code{"timeSeries"} objects either by column or by row.
   
 }
 
@@ -75,7 +74,7 @@
 
 \value{
 
-  returns a S4 object of class \code{timeDate}. 
+  an object of class \code{"timeSeries"}
   
 }
 
