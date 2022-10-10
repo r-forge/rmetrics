@@ -36,7 +36,8 @@
 }
 
 
-\examples{   
+\examples{
+\dontshow{set.seed(1234)}
 ## Create Dummy timeSeries -    
    tS <- dummySeries()
    

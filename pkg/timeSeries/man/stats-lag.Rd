@@ -4,12 +4,13 @@
 \alias{lag,timeSeries-method}
 \alias{lag.timeSeries}
 
-\title{Lag a time series}
+
+\title{Lag a timeSeries object}
 
 
 \description{
     
-    Compute a lagged version of a 'timeSeries' object.        
+  Compute a lagged version of a \code{"timeSeries"} object.
    
 }
 
@@ -24,9 +25,13 @@
   \item{x}{
     an object of class \code{timeSeries}.
   } 
-  \item{k}{   
-    an integer value, the number of lags (in units of observations).
-    By default 1.
+  \item{k}{
+    
+    an integer number, the number of lags (in units of observations).
+    By default 1. Can also be a vector, in which case the result is a
+    multivariate \code{"timeSeries"} in which column \code{i} contains
+    the series lagged by \code{k[i]}, see the examples.
+
   }        
   \item{trim}{
     a logical value. By default \code{TRUE}, the first missing
@@ -44,11 +49,15 @@
   }
 }
 
-
 \value{
 
-  the lagged object of class 'timeSeries'.
+  the lagged object of class \code{"timeSeries"}.
         
+}
+
+\seealso{
+  \code{\link[stats]{lag}} for \verb{stats::lag},
+  \code{\link{diff}}
 }
 
 

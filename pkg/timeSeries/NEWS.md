@@ -14,7 +14,7 @@
   error for `timeSeries` objects when called with `na.rm = TRUE`. Fixes bug
   #2121 reported by Shane Haas.
 
-- rather significant editing of the documentation.
+- updated and significantly improved the documentation.
 
 - function `cut` is now formally deprecated. Use `window` instead.
 
@@ -39,6 +39,7 @@
 - the bodies of the methods of `series<-()` and `coredata<-` for signature
   `"matrix"` of value were identical. Now the body is a separate, unexported
   function and is used as the definition of both of these methods.
+
 
 ## timeSeries 4021.104
 

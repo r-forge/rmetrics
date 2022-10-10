@@ -3,12 +3,12 @@
 \alias{na.contiguous,timeSeries-method}
 
 
-\title{Find Longest Contiguous Stretch of non-NAs}
+\title{Find longest contiguous stretch of non-NAs}
 
 \description{
 
      Find the longest consecutive stretch of non-missing values in a
-     timeSeries object.  (In the event of a tie, the first such
+     \code{"timeSeries"} object.  (In the event of a tie, the first such
      stretch.)
       
 }
@@ -21,7 +21,7 @@
 
 \arguments{
   \item{object}{
-    a timeSeries object.
+    a \code{"timeSeries"} object.
   }
   \item{\dots}{
     further arguments passed to other methods.

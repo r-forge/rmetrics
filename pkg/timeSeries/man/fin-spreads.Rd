@@ -1,7 +1,7 @@
 \name{spreads}
 
 
-\title{Spreads and Mid Quotes}
+\title{Spreads and mid quotes}
 
 
 \alias{spreads}

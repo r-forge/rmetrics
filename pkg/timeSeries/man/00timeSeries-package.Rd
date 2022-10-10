@@ -7,30 +7,30 @@
 \docType{package}
 
 
-\title{Utilities and Tools Package}
+\title{Utilities and tools package}
 
 
 \description{
 
-    Package of time series tools and utilities.
-    
+  Package \pkg{timeSeries} is part of the Rmetrics suit of R packages.
+  It provides a class, \code{timeSeries}, particularly aimed at analysis
+  of financial data, along with many methods, functions, and utilities
+  for statistical and financial computations on time series.
+
 }
 
+\author{
+Diethelm Wuertz [aut] (original code),
+Tobias Setz [aut],
+Yohan Chalabi [aut],
+Martin Maechler [ctb] (<https://orcid.org/0000-0002-8685-9910>),
+Georgi N. Boshnakov [cre, ctb]
 
-\details{
-
-    \tabular{ll}{
-        Package:    \tab timeSeries\cr
-        Type:       \tab Package\cr
-        Version:    \tab see description file\cr
-        Date:       \tab 2011\cr
-        License:    \tab GPL Version 2 or later\cr
-        Copyright:  \tab (c) 1999-2014 Rmetrics Association\cr
-        URL:        \tab \url{https://www.rmetrics.org}
-    }
-    
+Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 }
-  
+
+%\details{
+%}
   
 
 \section{timeSeries - S4 timeSeries Class}{

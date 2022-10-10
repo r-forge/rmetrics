@@ -5,7 +5,7 @@
 \alias{smoothSupsmu}
 
                                     
-\title{Smoothes Time Series Objects}
+\title{Smoothes time series objects}
 
 \description{
     

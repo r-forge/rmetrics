@@ -3,7 +3,7 @@
 \alias{isMultivariate}
 
 
-\title{Checks if a Time Series is Univariate}
+\title{Checks if a time series is univariate}
 
 
 \description{
@@ -22,17 +22,10 @@ isMultivariate(x)
 \arguments{
    
     \item{x}{ 
-        an object of class \code{timeSeries} or any other rectangular 
+        an object of class \code{"timeSeries"} or any other rectangular 
         object.
         }
 
-}
-
-
-\value{
-
-  a logical value
-        
 }
 
 
@@ -42,6 +35,12 @@ isMultivariate(x)
     the function \code{NCOL(x)} returns one, and is considered to be
     multivariate if \code{NCOL(x)} returns a value bigger than one.
 
+}
+
+\value{
+
+  a logical value
+        
 }
 
 

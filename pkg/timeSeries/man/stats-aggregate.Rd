@@ -11,11 +11,11 @@
 \alias{daily2monthly}
 
 
-\title{timeSeries Class, Functions and Methods}
+\title{timeSeries class, functions and methods}
 
 \description{
     
-    Aggregates a 'timeSeries' Object.      
+    Aggregates a \code{"timeSeries"} Object.      
     
 }
 
@@ -27,7 +27,7 @@
     
     In addition there are two tailored function for simple
     usage: Function \code{daily2monthly} and \code{daily2weekly}
-    which allow to aggregate 'timeSeries' objects from daily
+    which allow to aggregate \code{"timeSeries"} objects from daily
     to monthly or weekly levels, respectively.
     
     In the case of the function \code{daily2weekly} one can 
@@ -47,7 +47,7 @@ daily2weekly(x, startOn="Tue", init=FALSE)
 \arguments{
   
     \item{x}{
-        an object of class 'timeSeries'.
+        an object of class \code{"timeSeries"}.
         } 
     \item{by}{
         a sequence of \code{timeDate} objects denoting the aggregation

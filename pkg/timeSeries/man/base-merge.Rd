@@ -62,6 +62,7 @@ merge(x, y, \dots)
 ## Merge 'timeSeries' with missing Object -
    merge(x)
 
+\dontshow{set.seed(1234)}
 ## Merge 'timeSeries' with numeric Object -
    y <- rnorm(12)
    class(y)

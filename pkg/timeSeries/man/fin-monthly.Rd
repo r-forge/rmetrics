@@ -6,7 +6,7 @@
 \alias{rollMonthlySeries}
 
 
-\title{Special Monthly Series}
+\title{Special monthly series}
 
 
 \description{

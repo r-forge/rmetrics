@@ -8,7 +8,7 @@
 \alias{end.timeSeries}                   
                                     
                                     
-\title{Start and End of a 'timeSeries'}
+\title{Start and end of a 'timeSeries'}
 
 
 \description{
@@ -29,7 +29,7 @@
 \arguments{
 
     \item{x}{
-        an uni- or multivariate \code{timeSeries} object.
+        an uni- or multivariate \code{"timeSeries"} object.
         }
     \item{\dots}{
         optional arguments passed to other methods.
@@ -39,12 +39,13 @@
 
 \value{
 
-  a \code{timeSeries} object
+  a \code{"timeSeries"} object
            
 }
 
 
 \examples{   
+\dontshow{set.seed(1234)}
 ## Create Dummy timeSeries -    
    tS <- dummySeries()[, 1]
    tS

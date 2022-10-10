@@ -1,10 +1,10 @@
 \name{t}
 
-
-\title{timeSeries Transpose}
-
-
 \alias{t,timeSeries-method}
+
+\title{Transpose timeSeries objects}
+
+
 
 
 \description{
@@ -28,7 +28,7 @@
 
 \value{
 
-    Returns a matrix object.
+  a matrix object
   
 }
 

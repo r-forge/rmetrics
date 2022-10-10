@@ -18,23 +18,12 @@
 \alias{names<-,timeSeries-method}
 
 
-\title{Time Series Columns and Rows}
+\title{Time series columns and rows}
 
 \description{
     
     Handling columns and rows of 'timeSeries' objects. 
     
-}
-
-
-\details{
-
-    \tabular{ll}{
-    \code{dim} \tab Returns the dimension of a 'timeSeries' object \cr
-    \code{dimnames} \tab Returns the dimension names of a 'timeSeries' object \cr
-    \code{colnames<-} \tab Assigns column names to a 'timeSeries' object \cr
-    \code{rownames<-} \tab Assigns row names to a 'timeSeries' object }
-
 }
 
 
@@ -60,6 +49,7 @@
 % }
 
 
+
 %\arguments{
 %   
 %    \item{value}{
@@ -74,6 +64,18 @@
 %        }
 %       
 %}
+
+\details{
+
+    \tabular{ll}{
+    \code{dim} \tab Returns the dimension of a 'timeSeries' object \cr
+    \code{dimnames} \tab Returns the dimension names of a 'timeSeries' object \cr
+    \code{colnames<-} \tab Assigns column names to a 'timeSeries' object \cr
+    \code{rownames<-} \tab Assigns row names to a 'timeSeries' object }
+
+}
+
+
 
 
 \value{

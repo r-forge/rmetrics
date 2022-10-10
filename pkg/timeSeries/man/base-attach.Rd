@@ -1,16 +1,15 @@
 \name{attach}
-  
-
-\title{Attach a timeSeries to the search path}
-
-
 \alias{attach}
 \alias{attach,timeSeries-method}
 
 
+\title{Attach a timeSeries to the search path}
+
+
+
 \description{
     
-    Attaches a 'timeSeries' object to the search path.
+  Attaches a \code{"timeSeries"} object to the search path.
     
 }
 
@@ -23,8 +22,9 @@
 
 \note{
 
-    Note, the function \code{detach} from the \code{base} package can be
-    used to detach the attached objects.
+  The function \code{detach} from the \code{base} package can be used to
+  detach the attached objects.
+
 }
 
 

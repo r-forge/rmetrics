@@ -6,12 +6,12 @@
 \alias{setUnits<-}
 
 
-\title{Get and Set Unit Names of a 'timeSeries'}
+\title{Get and set unit names of a 'timeSeries'}
 
 
 \description{
 
-    Gets and sets the column names of a 'timeSeries' object. The
+    Gets and sets the column names of a \code{"timeSeries"} object. The
     column names are also called units or unit names.
     
 }
@@ -26,7 +26,7 @@ setUnits(x) <- value
 \arguments{
 
   \item{x}{
-    a 'timeSeries' object.
+    a \code{"timeSeries"} object.
   }
   \item{value}{
     a character vector of unit names.

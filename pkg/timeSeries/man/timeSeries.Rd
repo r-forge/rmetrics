@@ -21,6 +21,7 @@
 \alias{initialize,timeSeries-method}
 
 
+
 \title{Create objects from class timeSeries}
 
 \description{
@@ -30,58 +31,51 @@
 
 \usage{
 timeSeries(data, charvec, units = NULL, format = NULL, zone = "", 
-    FinCenter = "", recordIDs = data.frame(), title = NULL, 
-    documentation = NULL, \dots)
+           FinCenter = "", recordIDs = data.frame(), title = NULL, 
+           documentation = NULL, \dots)
 }
 
 
 \arguments{
 
-    \item{charvec}{
-        a character vector of dates and times or any objects which can
-        be coerced to a \code{timeDate} object.
-        }
-    \item{data}{
-        a \code{matrix} object or any objects which can be coereced to a matrix.
-        }
-    \item{documentation}{
-        optional documentation string, or a vector of character strings.
-        }
-    \item{FinCenter}{
-        a character with the the location of the  financial center named 
-        as "continent/city". 
-        }
-    \item{format}{
-        the format specification of the input character vector,
-        \cr
-        [as.timeSeries] - \cr
-        a character string with the format in POSIX notation to be passed 
-        to the time series object.
-        }  
-    \item{recordIDs}{
-        a data frame which can be used for record identification
-        information. \cr
-        [print] - \cr
-        a logical value. Should the \code{recordIDs} printed together
-        with the data matrix and time series positions?
-        }
-    \item{title}{
-        an optional title string, if not specified the inputs data 
-        name is deparsed.
-        }
-    \item{units}{
-        an optional character string, which allows to overwrite the 
-        current column names of a \code{timeSeries} object. By default 
-        \code{NULL} which means that the column names are selected
-        automatically. 
-        }     
-    \item{zone}{
-        the time zone or financial center where the data were recorded.
-        }  
-    \item{\dots}{
-        arguments passed to other methods.
-        }
-
+  \item{data}{
+    a \code{matrix} object or any objects which can be coerced to a matrix.
+  }
+  \item{charvec}{
+    a character vector of dates and times or any objects which can
+    be coerced to a \code{timeDate} object.
+  }
+  \item{units}{
+    an optional character string, which allows to overwrite the 
+    current column names of a \code{timeSeries} object. By default 
+    \code{NULL} which means that the column names are selected
+    automatically. 
+  }     
+  \item{format}{
+    the format specification of the input character vector,
+    a character string with the format in POSIX notation.
+  }  
+  \item{zone}{
+    the time zone or financial center where the data were recorded.
+  }  
+  \item{FinCenter}{
+    a character with the the location of the  financial center named 
+    as "continent/city". 
+  }
+  \item{recordIDs}{
+    for \code{timeSeries}, a data frame which can be used for record
+    identification.
+  }
+  \item{title}{
+    an optional title string, if not specified the input's data 
+    name is deparsed.
+  }
+  \item{documentation}{
+    optional documentation string, or a vector of character strings.
+  }
+  \item{\dots}{
+    arguments passed to other methods.
+  }
 }
 
 
@@ -94,51 +88,52 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
 
 \details{
 
-    \bold{Generation of Time Series Objects:}
-    \cr
+  \bold{Generation of Time Series Objects:}
+  \cr
     
-    We have defined a \code{timeSeries} class which is in many aspects similar
-    to the S-Plus class with the same name, but has also some important
-    differences. The class has seven Slots, the 'Data' slot which holds 
-    the time series data in matrix form, the 'position' slot which holds
-    the time/date as a character vector, the 'format' and 'FinCenter'
-    slots which are the same as for the 'timeDate' object, the 'units'
-    slot which holds the column names of the data matrix, and a 'title'
-    and a 'documentation' slot which hold descriptive character strings.
-    Date and time is managed in the same way as for \code{timeDate} objects.
+  We have defined a \code{timeSeries} class which is in many aspects
+  similar to the S-Plus class with the same name, but has also some
+  important differences. The class has seven Slots, the 'Data' slot
+  which holds the time series data in matrix form, the 'position' slot
+  which holds the time/date as a character vector, the 'format' and
+  'FinCenter' slots which are the same as for the 'timeDate' object, the
+  'units' slot which holds the column names of the data matrix, and a
+  'title' and a 'documentation' slot which hold descriptive character
+  strings.  Date and time is managed in the same way as for
+  \code{timeDate} objects.
 
 }
 
 
-\note{
-
-    These functions were written for Rmetrics users using R and Rmetrics
-    under Microsoft's Windows operating system where timze zones, 
-    daylight saving times and holiday calendars are insuffeciently 
-    supported. 
-    
-}
+% \note{
+% 
+%     These functions were written for Rmetrics users using R and Rmetrics
+%     under Microsoft's Windows operating system where timze zones, 
+%     daylight saving times and holiday calendars are insuffeciently 
+%     supported. 
+%     
+% }
 
 
 \examples{
-## Load Microsoft Data -
+## Load Microsoft data -
    # Microsoft Data: 
    setRmetricsOptions(myFinCenter = "GMT")
    data(MSFT)
    head(MSFT)
 
-## Create a timeSeries Object, The Direct Way ...
+## Create a timeSeries object, the direct Way ...
    Close <- MSFT[, 5]
    head(Close)
    
-## Create a timeSeries Object from Scratch - 
+## Create a timeSeries object from scratch - 
    data <- as.matrix(MSFT[, 4])
    charvec <- rownames(MSFT)
    Close <- timeSeries(data, charvec, units = "Close")
    head(Close)
    c(start(Close), end(Close))
-    
-## Cut out April Data from 2001 - 
+
+## Cut out April data from 2001 - 
    tsApril01 <- window(Close, "2001-04-01", "2001-04-30") 
    tsApril01
 

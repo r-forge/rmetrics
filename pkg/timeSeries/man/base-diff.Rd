@@ -4,7 +4,7 @@
 \alias{diff,timeSeries-method}
                                     
                                     
-\title{diff}
+\title{Difference a timeSeries object}
 
 \description{
 
@@ -14,10 +14,8 @@
 
 
 \usage{
-diff(x, \dots)
+\S4method{diff}{timeSeries}(x, lag = 1, diff = 1, trim = FALSE, pad = NA, \dots)
 }
-
-% lag=1, diff=1, trim=FALSE, pad=NA,
 
 \arguments{
   
@@ -25,35 +23,41 @@ diff(x, \dots)
     an object of class \code{"timeSeries"}.
   }
    
-  \item{\dots}{
-    further arguments to be passed, see Section \sQuote{Details}.
+  \item{lag}{
+    an integer indicating which lag to use.
   }
-      
+  \item{diff}{
+    an integer indicating the order of the difference.
+  }
+  \item{trim}{
+
+    a logical flag. Should \code{NA}s at the beginning of the series be
+    removed?
+
+  }
+  \item{pad}{
+
+    a numeric value with which \code{NA}s should be replaced at the
+    beginning of the series.
+
+  }
+  
+  \item{\dots}{
+    currently not used.
+  }
 }
 
-
-\details{
-
-    Arguments to be passed may include:\cr
-    
-    \code{lag} - an integer indicating which lag to use. 
-        By default 1.\cr
-    \code{diff} - an integer indicating the order of the difference. 
-        By default 1.\cr
-    \code{trim} - a logical flag. Should NAs at the beginning of the 
-      series be removed? By default FALSE.\cr
-    \code{pad} - a umeric value with which NAs should be replaced at 
-      the beginning of the series. By default NA.
-
-}
-
+%\details{
+%}
  
 \value{
-
   the differenced \code{"timeSeries"} object
-
 }
 
+\seealso{
+  \code{\link[base]{diff}} for \verb{base::diff},
+  \code{\link{lag}}
+}
 
 \examples{
 ## Load Microsoft Data Set -
@@ -64,12 +68,11 @@ diff(x, \dots)
    diff(x)   
    
 ## Trimmed Differences -
-   diff(x, trim=TRUE) 
+   diff(x, trim = TRUE) 
 
 ## Padded Differences -
-   diff(x, trim=FALSE, pad=0) 
+   diff(x, trim = FALSE, pad = 0) 
 }
-
 
 \keyword{chron}
 \keyword{ts}

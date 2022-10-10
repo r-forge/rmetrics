@@ -60,20 +60,20 @@
 \alias{outlier,ANY-method}
 
 
-\title{Subsetting Time Series}
+\title{Subsetting time series}
 
 
 \description{
   
-    Subset a 'timeSeries' objects due to different aspects.         
+    Subset a \code{"timeSeries"} objects due to different aspects.         
     \cr
   
     \tabular{ll}{
-    \code{[} \tab "[" method for a 'timeSeries' object, \cr
-    \code{[<-} \tab "[<-" method to assign value for a subset of a 'timeSeries' object, \cr
-    \code{head} \tab Returns the head of a 'timeSeries' object, \cr
-    \code{tail} \tab Returns the tail of a 'timeSeries' object, \cr
-    \code{outliers} \tab Removes outliers from a 'timeSeries' object. }
+    \code{[} \tab "[" method for a \code{"timeSeries"} object, \cr
+    \code{[<-} \tab "[<-" method to assign value for a subset of a \code{"timeSeries"} object, \cr
+    \code{head} \tab Returns the head of a \code{"timeSeries"} object, \cr
+    \code{tail} \tab Returns the tail of a \code{"timeSeries"} object, \cr
+    \code{outliers} \tab Removes outliers from a \code{"timeSeries"} object. }
   
 }
 
@@ -142,7 +142,7 @@
         
 \value{
 
-    All functions return an object of class 'timeSeries'.
+    All functions return an object of class \code{"timeSeries"}.
   
 }
 

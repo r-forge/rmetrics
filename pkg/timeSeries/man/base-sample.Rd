@@ -63,6 +63,7 @@
 ## Monthly Calendar Series -    
    x <- daily2monthly(LPP2005REC[, 1:2])[3:14, ]
    
+\dontshow{set.seed(1234)}
 ## Resample the Series with respect to the time stamps -    
    resampled <- sample(x)
    resampled

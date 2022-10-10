@@ -10,10 +10,7 @@
 \alias{getReturns}
 
 
-\title{Financial Returns}
-
-
-
+\title{Financial returns}
 
 \description{
     

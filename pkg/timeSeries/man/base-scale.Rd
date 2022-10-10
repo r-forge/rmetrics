@@ -4,12 +4,12 @@
 \alias{scale,timeSeries-method}
 
 
-\title{scale}
+\title{Center and scale 'timeSeries' objects}
 
 
 \description{
 
-   Center and scale a \code{"timeSeries"} object.
+  Center and scale a \code{"timeSeries"} object.
     
 }
 

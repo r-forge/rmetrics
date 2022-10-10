@@ -1,10 +1,16 @@
 \name{filter}
-
-\alias{filter,timeSeries-method}
 \alias{filter}
 
+\alias{filter,timeSeries-method}
 
-\title{Linear Filtering on a Time Series}
+
+\title{Linear filtering on a time series}
+
+\description{
+
+  Applies linear filtering to a univariate \code{"timeSeries"}.
+      
+}
 
 \usage{
 filter(x, filter, method = c("convolution", "recursive"), sides = 2L, 
@@ -13,15 +19,6 @@ filter(x, filter, method = c("convolution", "recursive"), sides = 2L,
 \S4method{filter}{timeSeries}(x, filter, method = c("convolution", "recursive"), sides = 2, 
        circular = FALSE, init = NULL)
 }
-
-
-
-\description{
-
-  Applies linear filtering to a univariate 'timeSeries'.
-      
-}
-
 
 \arguments{
   \item{x}{

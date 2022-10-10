@@ -20,7 +20,7 @@
 % \alias{var.timeSeries}
 
 
-\title{Column Statistics}
+\title{Column statistics}
 
 
 \description{
@@ -91,7 +91,7 @@ colQuantiles(x, prob = 0.05, \dots)
 
 \value{
     
-    the functions return a numeric vector of the statistics.
+    each functions returns a numeric vector of the statistics
 }
 
 
