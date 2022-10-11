@@ -1,6 +1,30 @@
 
 ## timeSeries 4021.105
 
+- the additional arguments of the S3 `timeSeries` method for `diff()` are now in
+  its signature, which previously was `diff(x, ...)`.  An intermediate function,
+  `.diff.timeSeries`, was eliminated in the process.
+
+- eliminated `.merge.timeSeries` and other redundancy in the implementation of
+  the `c("timeSeries", "timeSeries")` method.
+
+- eliminated `.rev.timeSeries` in the definition of the `rev` method.
+
+- eliminated `.scale.timeSeries` in the definition of the `scale` timeSeries
+  method.
+
+- same as above for `.sort.timeSeries`.
+
+- eliminated `.start.timeSeries`and redundancy in the implementation of the
+  `timeSeries` method.
+
+- eliminated `.end.timeSeries`and redundancy in the implementation of the
+  `timeSeries` method.
+
+- stopped exporting (almost) all functions whose names start with a
+  '.'. Historically, the package was exporting all functions, including those
+  start with a '.'.
+
 - The functions `returnSeries` and `getReturns` are no longer exported and will
   be removed in the near future. They are synonyms for the function
   \code{returns} and their use was discouraged for many years. Just use
@@ -17,7 +41,6 @@
 - updated and significantly improved the documentation.
 
 - function `cut` is now formally deprecated. Use `window` instead.
-
 
 - deprecated function `seriesData` is now defunct. Use `as.matrix()` instead.
 

@@ -22,10 +22,10 @@
 setMethod("apply", "timeSeries",
   function(X, MARGIN, FUN, ...)
 {
-    # A function implemented by Siethelm Wuertz and Yohan Chalabi
+    # A function implemented by Diethelm Wuertz and Yohan Chalabi
     
     # Description:
-    #   Apply Functions Over 'Array'timeSeries' Margins
+    #   Apply Functions Over 'Array' timeSeries' Margins
     
     # Arguments:
     #   X  - an array, including a matrix.

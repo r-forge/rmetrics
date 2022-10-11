@@ -1,19 +1,35 @@
 \name{merge}                     
+\docType{methods}
+
+\alias{merge-methods}
 \alias{merge}
 
+% \alias{merge,ANY,timeSeries-method}
+% 
+% \alias{merge,timeSeries,ANY-method}
+% \alias{merge,timeSeries,missing-method}
+% \alias{merge,timeSeries,numeric-method}
+% \alias{merge,timeSeries,matrix-method}
+% \alias{merge,timeSeries,timeSeries-method}
+% 
+% \alias{merge,matrix,timeSeries-method}
+% \alias{merge,numeric,timeSeries-method}
+
+
+\alias{merge,ANY,ANY-method}
 \alias{merge,ANY,timeSeries-method}
-
-\alias{merge,timeSeries,ANY-method}
-\alias{merge,timeSeries,missing-method}
-\alias{merge,timeSeries,numeric-method}
-\alias{merge,timeSeries,matrix-method}
-\alias{merge,timeSeries,timeSeries-method}
-
 \alias{merge,matrix,timeSeries-method}
 \alias{merge,numeric,timeSeries-method}
 
+\alias{merge,timeSeries,ANY-method}
+\alias{merge,timeSeries,matrix-method}
+\alias{merge,timeSeries,missing-method}
+\alias{merge,timeSeries,numeric-method}
+\alias{merge,timeSeries,timeSeries-method}
 
-\title{Merges two 'timeSeries' objects}
+
+
+\title{Merge 'timeSeries' objects}
 
 \description{
 
@@ -27,32 +43,68 @@ merge(x, y, \dots)
 }
 
 
-
 \arguments{
   \item{x,y}{
     objects to merge, at least one of class \code{"timeSeries"}.
   }
-  \item{...}{additional arguments for methods}
+  \item{...}{further objects to merge.}
 }
 
-\details{
-
-    The following combinations are supported:
-    
-    \tabular{ll}{
-    \code{timeSeries} \tab ANY \cr
-    \code{timeSeries} \tab missing \cr
-    \code{timeSeries} \tab numeric \cr
-    \code{timeSeries} \tab matrix \cr
-    \code{timeSeries} \tab timeSeries }
-        
-}
+%\details{
+%}
 
 
 \value{
 
   a \code{"timeSeries"} object
     
+}
+
+\section{Methods}{
+  \describe{
+  
+    \item{\code{signature(x = "timeSeries", y = "missing")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "timeSeries", y = "ANY")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "timeSeries", y = "matrix")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "timeSeries", y = "numeric")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "timeSeries", y = "timeSeries")}}{
+      %%  ~~describe this method here~~
+    }
+
+
+    \item{\code{signature(x = "ANY", y = "ANY")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "ANY", y = "timeSeries")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "matrix", y = "timeSeries")}}{
+      %%  ~~describe this method here~~
+    }
+    
+    \item{\code{signature(x = "numeric", y = "timeSeries")}}{
+      %%  ~~describe this method here~~
+    }
+    
+  }
+}
+
+\seealso{
+  \code{\link{cbind}}
 }
 
 \examples{
@@ -79,7 +131,7 @@ merge(x, y, \dots)
    merge(x, y)
 }
 
-
+\keyword{methods}
 \keyword{chron}
 \keyword{ts}
  
