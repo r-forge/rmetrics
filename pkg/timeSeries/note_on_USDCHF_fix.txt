@@ -1,0 +1,42 @@
+## Below is the code use for fixing dataset USDCHF (time stamps were wrong), see NEwS.md.
+
+usdchf <- readSeries(fn2, zone = "Zurich", FinCenter = "Zurich")	
+all.equal(usdchf, USDCHF)
+## [1] "Attributes: < Component “documentation”: 1 string mismatch >"             
+## [2] "Attributes: < Component “FinCenter”: 1 string mismatch >"                 
+## [3] "Attributes: < Component “format”: 1 string mismatch >"                    
+## [4] "Attributes: < Component “positions”: Mean relative difference: 219.2773 >"
+
+USDCHFnew <- USDCHF
+time(USDCHFnew) <- time(usdchf)
+all.equal(USDCHFnew, usdchf)
+## [1] "Attributes: < Component “documentation”: 1 string mismatch >"
+
+
+all.equal(USDCHFnew, USDCHF)
+## [1] "Attributes: < Component “FinCenter”: 1 string mismatch >"                 
+## [2] "Attributes: < Component “format”: 1 string mismatch >"                    
+## [3] "Attributes: < Component “positions”: Mean relative difference: 219.2773 >"
+
+
+USDCHFnew@documentation
+usdchf@documentation
+
+## copy the date from usdchf
+USDCHFnew@documentation <- c(usdchf@documentation,
+        "fixed the time stamps in USDCHF",
+	"from v2100.84 to v4021.104 the year was wrong (8295)",
+	"changed also the FinCenter to Zurich"
+	)
+
+all.equal(USDCHFnew, usdchf)
+## [1] "Attributes: < Component “documentation”: Lengths (4, 1) differ (string compare on first 1) >"
+
+USDCHF <- USDCHFnew 
+
+save(USDCHF, file = "USDCHF.rda")
+save(USDCHF, file = "USDCHF.rda", version = 2)
+save(USDCHF, file = "USDCHF.rda", version = 2, compress = "bzip2")
+## the best compression:
+save(USDCHF, file = "USDCHF.rda", version = 2, compress = "xz")
+
