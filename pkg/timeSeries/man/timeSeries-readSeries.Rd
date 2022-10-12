@@ -76,13 +76,32 @@ readSeries(file, header = TRUE, sep = ";", zone = "",
   default for argument \code{"sep"}.
 
   The first column of the table must hold the timestamps. Format of the
-  stimestamps can be either specified in the header of the first column
+  timestamps can be either specified in the header of the first column
   or by the \code{format} argument.
     
 }
 
 \value{
+  an object of class \code{"timeSeries"}
+}
 
-  an object of class \code{"timeSeries"}.
-  
+\examples{
+## full path to an example file
+fn <- system.file("extdata/msft.csv", package = "timeSeries")
+## first few lines of the file
+readLines(fn, n = 5)
+
+## import the file
+msft <- readSeries(fn)
+head(msft)
+
+## is msft the same as the data object MSFT?
+all.equal(msft, MSFT) 
+## ... almost, except for slot 'documentation'
+c(msft@documentation, MSFT@documentation)
+## actually, all.equal() says 'attribute', not slot. this is ok too:
+c(attr(MSFT, "documentation"), attr(msft, "documentation"))
+## make 'documentation' equal, here "", and compare again:
+msft@documentation <- ""
+all.equal(msft, MSFT) # TRUE
 }

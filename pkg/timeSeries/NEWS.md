@@ -1,6 +1,18 @@
 
 ## timeSeries 4021.105
 
+- corrected USDCHF dataset. The year information was wrong (the data started
+  from year 8295). The bug had been introduced in version 2100.84 when the
+  dataset file was converted from a `usdchf.csv` to
+  `USDCHF.rda`. `USDCHF@documentation` contains a short note about this change.
+  Also changed the FinCenter to Zurich (neither the documentation nor the csv
+  file does't contain FinCenter information).
+
+- the original source file `msft.dat.csv` of the `MSFT` data is included now as
+  `inst/extdata/msft.csv` (note the different name). The file had been removed
+  in v2100.84. Note that there is a file ``msft.dat.csv` in `test/` but it is a
+  modified and abbreviated version of the original file.
+  
 - the additional arguments of the S3 `timeSeries` method for `diff()` are now in
   its signature, which previously was `diff(x, ...)`.  An intermediate function,
   `.diff.timeSeries`, was eliminated in the process.
