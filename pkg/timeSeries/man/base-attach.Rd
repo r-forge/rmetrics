@@ -3,7 +3,7 @@
 \alias{attach,timeSeries-method}
 
 
-\title{Attach a timeSeries to the search path}
+\title{Attach a 'timeSeries' to the search path}
 
 
 
@@ -49,7 +49,7 @@
         }
     \item{what}{
         [attach] - \cr
-        database to be attached. This may currently be a timeSeries object,
+        database to be attached. This may currently be a \code{"timeSeries"} object,
         a data.frame or a list or a R data file created with save or NULL 
         or an environment. 
         See for details \code{help(attach, package=base)}.
@@ -75,7 +75,7 @@
    range <- High - Low
    range
    
-## Convert Vector to a timeSeries Object -
+## Convert Vector to a \code{"timeSeries"} Object -
    timeSeries(data=range, charvec=time(x), units="Range")
    
 ## Detach the series from the search path -

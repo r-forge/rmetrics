@@ -148,7 +148,7 @@
 
 
 \examples{
-## Create an Artificial timeSeries Object - 
+## Create an Artificial 'timeSeries' Object - 
    setRmetricsOptions(myFinCenter = "GMT")
    charvec <- timeCalendar()
    set.seed(4711)

@@ -67,7 +67,7 @@ setTime(x) <- value
 
 
 \examples{   
-## Create Dummy timeSeries -      
+## Create Dummy 'timeSeries' -      
    X <- timeSeries(matrix(rnorm(24), 12), timeCalendar())
    
 ## Return Series Positions -

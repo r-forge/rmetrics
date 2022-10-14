@@ -4,7 +4,7 @@
 \alias{diff,timeSeries-method}
                                     
                                     
-\title{Difference a timeSeries object}
+\title{Difference a 'timeSeries' object}
 
 \description{
 

@@ -3,7 +3,7 @@
 \alias{sample,timeSeries-method}
                                     
                                     
-\title{Resample timeSeries objects}
+\title{Resample 'timeSeries' objects}
 
 
 \description{

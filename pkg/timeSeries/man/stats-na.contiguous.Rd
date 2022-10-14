@@ -37,7 +37,7 @@
 
 
 \examples{
-## Dummy timeSeries with NAs entries
+## Dummy 'timeSeries' with NAs entries
    data <- matrix(sample(c(1:20, rep(NA,4))), ncol = 2)
    s <- timeSeries(data, timeCalendar())
    

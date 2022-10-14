@@ -65,7 +65,7 @@ object.
 
 \examples{
 \dontshow{set.seed(1234)}
-## Create an artificial timeSeries Object - 
+## Create an artificial 'timeSeries' Object - 
    tS <- dummySeries()
    tS
 

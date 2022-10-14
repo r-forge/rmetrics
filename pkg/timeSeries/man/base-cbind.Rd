@@ -36,7 +36,7 @@
 \alias{rbind2,timeSeries,timeSeries-method}
 
 
-\title{Bind timeSeries objects by column or row}
+\title{Bind \code{"timeSeries"} objects by column or row}
 
 \description{
   

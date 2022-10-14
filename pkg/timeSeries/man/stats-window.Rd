@@ -8,7 +8,7 @@
 \alias{cut.timeSeries}
 
                                     
-\title{Methods for 'window' in package timeSeries}
+\title{Methods for 'window' in package 'timeSeries'}
 
 \description{
 
@@ -25,7 +25,7 @@
 \arguments{
   
   \item{x}{
-    an object of class \code{timeSeries}.
+    an object of class \code{"timeSeries"}.
   }
   \item{from, to}{
     starting date and end date, \code{to} must be after \code{from}.
@@ -41,7 +41,7 @@
 
 \details{
 
-  \code{window} Windows a piece from a 'timeSeries' object,
+  \code{window} Windows a piece from a \code{"timeSeries"} object,
 
   \code{cut} is deprecated and will be removed in the near future.
 }

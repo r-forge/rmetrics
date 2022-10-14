@@ -34,11 +34,11 @@
 
 
 
-\title{Coercion and transformation to/from class timeSeries}
+\title{Coercion and transformation to/from class 'timeSeries'}
 
 \description{
   
-  Functions and methods dealing with the coercion between 'timeSeries'
+  Functions and methods dealing with the coercion between \code{"timeSeries"}
   and other classes.
 
 }
@@ -108,11 +108,12 @@ as.timeSeries(x, \dots)
 }
 
 \seealso{
-  \code{\link{timeSeries}}
+  \code{\link{timeSeries}},
+  class \code{\linkS4class{timeSeries}}
 }
 
 \examples{
-## Create an Artificial timeSeries Object
+## Create an Artificial 'timeSeries' Object
 setRmetricsOptions(myFinCenter = "GMT")
 charvec <- timeCalendar()
 data <- matrix(rnorm(12))

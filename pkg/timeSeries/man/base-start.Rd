@@ -46,7 +46,7 @@
 
 \examples{   
 \dontshow{set.seed(1234)}
-## Create Dummy timeSeries -    
+## Create Dummy \code{"timeSeries"} -    
    tS <- dummySeries()[, 1]
    tS
    

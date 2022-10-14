@@ -172,7 +172,10 @@ exportMethods("$",
               "t",
               "tail",
               "time",
-              "window" )
+              "window"
+
+              # , summary # GNB
+              )
 
 ################################################
 ## S3 classes
@@ -213,6 +216,11 @@ S3method("tail", "timeSeries")
 S3method("time", "timeSeries")
 S3method("time<-", "timeSeries")
 S3method("window", "timeSeries")
+
+## new
+S3method("summary", timeSeries) 
+S3method("print", timeSeries_summary) 
+
 
 ################################################
 ## functions

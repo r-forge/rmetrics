@@ -40,7 +40,7 @@ setUnits(x) <- value
 
 
 \examples{
-## A Dummy timeSeries Object
+## A Dummy 'timeSeries' Object
    tS <- dummySeries()
    tS
 

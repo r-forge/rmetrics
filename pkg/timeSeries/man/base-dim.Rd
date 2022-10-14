@@ -80,7 +80,8 @@
 
 \value{
 
-    Returns the dimensions and related numbers of a 'timeSeries' object.
+    Returns the dimensions and related properties of a \code{"timeSeries"}
+    object.
     
 }
 

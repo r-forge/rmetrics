@@ -7,7 +7,8 @@
 
 \description{
 
-    Creates and returns a data and user string.
+  Creates and returns a string containing user the datetime and the user
+  name..
     
 }
 

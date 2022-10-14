@@ -149,6 +149,7 @@ reference:
       - endOfPeriodBenchmarks
   - title: "Other"
     contents:
+      - "timeSeries-class"
       - dimnames
       - DataPart
       - description

@@ -1,6 +1,9 @@
 
 ## timeSeries 4021.105
 
+- class `timeSeries` now has a dedicated summary method. Previously it was
+  flling back to the method for matrices.
+
 - corrected USDCHF dataset. The year information was wrong (the data started
   from year 8295). The bug had been introduced in version 2100.84 when the
   dataset file was converted from a `usdchf.csv` to

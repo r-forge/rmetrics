@@ -6,7 +6,7 @@
 
 
 
-\title{Deprecated functions in timeSeries package}
+\title{Deprecated functions in 'timeSeries' package}
 
 %\alias{seriesPositions}
 %\alias{newPositions<-}

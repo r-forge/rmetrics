@@ -45,8 +45,11 @@
   No further information about the \code{LPP2005REC} is available. The
   meaning of the columns?
 
-  In \code{USDCHF} the year is wrong.
+}
 
+\seealso{
+  \code{\link{readSeries}},
+  \code{\link{timeSeries}}
 }
 
 \examples{

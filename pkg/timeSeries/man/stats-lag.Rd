@@ -5,7 +5,7 @@
 \alias{lag.timeSeries}
 
 
-\title{Lag a timeSeries object}
+\title{Lag a 'timeSeries' object}
 
 
 \description{
@@ -65,7 +65,7 @@
 ## Load Micsrosoft Data Set -
    x = MSFT[1:20, "Open"]
    
-## Lag the timeSeries Object:
+## Lag the 'timeSeries' Object:
    lag(x, k = -1:1)
 }
 

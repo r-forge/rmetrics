@@ -50,11 +50,11 @@ isMultivariate(x)
    data(MSFT)
    Open = MSFT[, "Open"]
   
-## Is the timeSeries Univariate - 
+## Is the 'timeSeries' Univariate - 
    isUnivariate(MSFT)
    isUnivariate(Open)
 
-## Is the timeSeries Multivariate -   
+## Is the 'timeSeries' Multivariate -   
    isMultivariate(MSFT)
    isMultivariate(Open)
 }

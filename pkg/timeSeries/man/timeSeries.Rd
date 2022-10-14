@@ -2,6 +2,7 @@
 \alias{TimeSeriesClass}
 
 \alias{timeSeries}
+
 \alias{timeSeries,ANY,ANY-method}
 \alias{timeSeries,ANY,missing-method}
 \alias{timeSeries,ANY,timeDate-method}
@@ -15,17 +16,16 @@
 
 \alias{index_timeSeries}
 \alias{time_timeSeries}
-\alias{timeSeries-class}
 \alias{index_timeSeries-class}
 \alias{time_timeSeries-class}
-\alias{initialize,timeSeries-method}
+
+\alias{summary.timeseries}
 
 
-
-\title{Create objects from class timeSeries}
+\title{Create objects from class 'timeSeries'}
 
 \description{
-  \code{timeSeries} creates a \code{timeSeries} object from scratch.
+  \code{timeSeries} creates a \code{"timeSeries"} object from scratch.
 }
 
 
@@ -43,11 +43,11 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
   }
   \item{charvec}{
     a character vector of dates and times or any objects which can
-    be coerced to a \code{timeDate} object.
+    be coerced to a \code{"timeDate"} object.
   }
   \item{units}{
     an optional character string, which allows to overwrite the 
-    current column names of a \code{timeSeries} object. By default 
+    current column names of a \code{"timeSeries"} object. By default 
     \code{NULL} which means that the column names are selected
     automatically. 
   }     
@@ -81,7 +81,7 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
 
 \value{
 
-  \code{timeSeries} returns an S4 object of class \code{timeSeries}.
+  \code{timeSeries} returns an S4 object of class \code{"timeSeries"}.
     
 }
 
@@ -91,7 +91,7 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
   \bold{Generation of Time Series Objects:}
   \cr
     
-  We have defined a \code{timeSeries} class which is in many aspects
+  We have defined a \code{"timeSeries"} class which is in many aspects
   similar to the S-Plus class with the same name, but has also some
   important differences. The class has seven Slots, the 'Data' slot
   which holds the time series data in matrix form, the 'position' slot
@@ -101,6 +101,20 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
   'title' and a 'documentation' slot which hold descriptive character
   strings.  Date and time is managed in the same way as for
   \code{timeDate} objects.
+
+  \code{\link{as.timeSeries}} also creates \code{"timeSeries"} objects.
+  \code{as.timeSeries(x)} is mostly equivalent to \code{timeSeries(x)}
+  but the two functions have different methods. Beside that, the main
+  difference between the two functions is that \code{as.timeSeries}
+  doesn't accept additional arguments. The one argument call is
+  naturally interpreted as \sQuote{convert to}, so
+  \code{\link{as.timeSeries}} is more expressive and is recommended in
+  that case.
+
+  \code{"timeSeries"} methods are provided for many base R functions,
+  including arithmetic operations, mathematical functions, \code{print},
+  \code{summary}, and time series functions. Not all are explicitly
+  documented, since they can just be used. 
 
 }
 
@@ -114,6 +128,11 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
 %     
 % }
 
+\seealso{
+  \code{\link{as.timeSeries}},
+  class \code{\linkS4class{timeSeries}},
+  
+}
 
 \examples{
 ## Load Microsoft data -
@@ -122,11 +141,11 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
    data(MSFT)
    head(MSFT)
 
-## Create a timeSeries object, the direct Way ...
+## Create a 'timeSeries' object, the direct Way ...
    Close <- MSFT[, 5]
    head(Close)
    
-## Create a timeSeries object from scratch - 
+## Create a 'timeSeries' object from scratch - 
    data <- as.matrix(MSFT[, 4])
    charvec <- rownames(MSFT)
    Close <- timeSeries(data, charvec, units = "Close")
@@ -158,7 +177,7 @@ timeSeries(data, charvec, units = NULL, format = NULL, zone = "",
    to
    applySeries(tsRet, from, to, FUN = sum)
 
-## Create large timeSeries objects with different 'charvec' object classes - 
+## Create large 'timeSeries' objects with different 'charvec' object classes - 
    # charvec is a 'timeDate' object
    head(timeSeries(1:1e6L, timeSequence(length.out = 1e6L, by = "sec")))
    head(timeSeries(1:1e6L, seq(Sys.timeDate(), length.out = 1e6L, by = "sec")))
