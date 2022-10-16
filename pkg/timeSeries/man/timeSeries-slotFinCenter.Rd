@@ -48,7 +48,7 @@ setFinCenter(x) <- value
 
 \examples{
 ## An artificial 'timeSeries' Object - 
-   tS <- dummySeries()
+   tS <- dummyMonthlySeries()
    tS
 
 ## Print Financial Center -

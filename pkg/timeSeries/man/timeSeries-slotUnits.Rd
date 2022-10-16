@@ -41,7 +41,7 @@ setUnits(x) <- value
 
 \examples{
 ## A Dummy 'timeSeries' Object
-   tS <- dummySeries()
+   tS <- dummyMonthlySeries()
    tS
 
 ## Get the Units - 

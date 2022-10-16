@@ -28,7 +28,8 @@ setMethod("apply", "timeSeries",
     #   Apply Functions Over 'Array' timeSeries' Margins
     
     # Arguments:
-    #   X  - an array, including a matrix.
+    #   X  - an array, including a matrix. => GNB: actually the code throws error if X
+    #                                              is not 'timeSeries'.
     #   MARGIN - a vector giving the subscripts which the function 
     #     will be applied over. E.g., for a matrix 1 indicates rows, 
     #     2 indicates columns, c(1, 2) indicates rows and columns. 

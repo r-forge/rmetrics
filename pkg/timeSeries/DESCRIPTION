@@ -1,6 +1,6 @@
 Package: timeSeries
 Title: Financial Time Series Objects (Rmetrics)
-Date: 2022-10-12
+Date: 2022-10-14
 Version: 4021.105
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
@@ -16,5 +16,5 @@ Imports: graphics, grDevices, stats, utils, methods
 Suggests: RUnit, robustbase, xts, PerformanceAnalytics, fTrading
 LazyData: yes
 License: GPL (>= 2)
-URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics, https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics (devel), https://www.rmetrics.org, https://geobosh.github.io/timeSeriesDoc/ (doc)
 BugReports: https://r-forge.r-project.org/projects/rmetrics

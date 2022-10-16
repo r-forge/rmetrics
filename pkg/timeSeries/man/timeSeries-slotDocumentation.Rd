@@ -66,7 +66,7 @@ object.
 \examples{
 \dontshow{set.seed(1234)}
 ## Create an artificial 'timeSeries' Object - 
-   tS <- dummySeries()
+   tS <- dummyMonthlySeries()
    tS
 
 ## Get Optional Attributes -

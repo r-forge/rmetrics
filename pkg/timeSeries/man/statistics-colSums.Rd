@@ -1,7 +1,6 @@
 \name{colStats}
-
-
 \alias{colStats} 
+
 \alias{colSums,timeSeries-method}
 \alias{colMeans,timeSeries-method}
 \alias{colSds}
@@ -14,7 +13,7 @@
 \alias{colQuantiles} 
 
 % \alias{colAvgs}           
-% \alias{colStdevs}
+\alias{colStdevs}  % TODO: comment out when the function is removed.
 
 % \alias{mean.timeSeries}           
 % \alias{var.timeSeries}
@@ -60,6 +59,7 @@ colMaxs(x, \dots)
 colMins(x, \dots)
 colProds(x, \dots)
 colQuantiles(x, prob = 0.05, \dots)
+}
 
 % colStdevs(x, \dots)
 % colAvgs(x,  \dots)
@@ -67,38 +67,34 @@ colQuantiles(x, prob = 0.05, \dots)
 % \method{mean}{timeSeries}(x, \dots)
 % \method{var}{timeSeries}(x, \dots)
 
-}
 
 
 \arguments{
   
-    \item{FUN}{
-        a function name. The statistical function to be applied.
-        }
-    \item{prob}{
-        a numeric value, the probability with value in [0,1].
-        }
-    \item{x}{
-        a rectangular object which can be transformed into a matrix
-        by the function \code{as.matrix}.  
-        }
-    \item{\dots}{
-        arguments to be passed.
-        }
+  \item{x}{
+    a rectangular object which can be transformed into a matrix
+    by the function \code{as.matrix}.  
+  }
+  \item{FUN}{
+    a function name, the statistical function to be applied.
+  }
+  \item{prob}{
+    a numeric value in [0,1], the probability.
+  }
+  \item{\dots}{
+    arguments to be passed.
+  }
         
 }
 
 
 \value{
-    
-    each functions returns a numeric vector of the statistics
+  each function returns a numeric vector of the statistics
 }
 
 
 \seealso{
-
-    \code{link{rowStats}}.
-    
+  \code{\link{rollStats}}
 }
 
 

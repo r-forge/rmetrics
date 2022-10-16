@@ -48,7 +48,7 @@ returns0(x, \dots)
         methods.
         }    
     \item{na.rm}{
-        a logical value. Should NAs be removed? By Default \code{TRUE}.
+        a logical value. Should NAs be removed? By default \code{TRUE}.
         }    
     \item{trim}{
         a logical value. Should the time series be trimmed? By Default 

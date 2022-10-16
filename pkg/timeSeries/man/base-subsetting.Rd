@@ -62,10 +62,9 @@
 
 \title{Subsetting time series}
 
-
 \description{
   
-    Subset a \code{"timeSeries"} objects due to different aspects.         
+    Subset a \code{"timeSeries"} objects in different ways.
     \cr
   
     \tabular{ll}{
@@ -73,70 +72,62 @@
     \code{[<-} \tab "[<-" method to assign value for a subset of a \code{"timeSeries"} object, \cr
     \code{head} \tab Returns the head of a \code{"timeSeries"} object, \cr
     \code{tail} \tab Returns the tail of a \code{"timeSeries"} object, \cr
-    \code{outliers} \tab Removes outliers from a \code{"timeSeries"} object. }
+    \code{outlier} \tab Removes outliers from a \code{"timeSeries"} object. }
   
 }
 
 
-\usage{
-
 % \method{[}{timeSeries}(x, i, j, drop)
 % \method{[}{timeSeries}(x, i, j) <- value
-
+\usage{
 \S4method{head}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
 \S4method{tail}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
 
 \S4method{outlier}{timeSeries}(x, sd = 3, complement = TRUE, \dots)
-
 }
 
 
 \arguments{
   
-    \item{complement}{
-        [outlierSeries] - \cr
-        a logical flag, should the outler series
-        or its complement be returns, by default \code{TRUE}
-        which returns the series free of outliers.
-        }
-     % \item{from, to}{
-     %    starting date and end date, \code{to} must be after \code{from}.
-     %    }
-     % \item{start, end}{
-     %    starting date and end date, \code{end} must be after \code{start}.
-     %    }
-%      \item{i, j}{
-%         ["["] - \cr 
-%         index arguments used for subsettings.
-%         }       
-     \item{n}{
-        [head][tail] - \cr
-        an integer specifying the number of lines to be returned. 
-        By default \code{n=6}.
-        }
-     \item{recordIDs}{
-        [head][tail] - \cr
-        a logical value. Should the \code{recordIDs} returned together
-        with the data matrix and time series positions?
-        }
-     \item{sd}{
-        [outlierSeries] - \cr
-        a numeric value of standard deviations, e.g. 10
-        means that values larger or smaller tahn ten 
-        times the standard deviation will be removed from
-        the series.
-        }
-%       \item{value}{
-%         a numeric value to use as a replacement. It will be repeated a
-%         whole number of times if necessary. 
-%      }
-     \item{x}{
-        an object of class \code{timeSeries}.
-        }
-     \item{\dots}{
-        arguments passed to other methods.
-        }
-        
+  \item{x}{
+    an object of class \code{timeSeries}.
+  }
+  % \item{from, to}{
+  %    starting date and end date, \code{to} must be after \code{from}.
+  %    }
+  % \item{start, end}{
+  %    starting date and end date, \code{end} must be after \code{start}.
+  %    }
+  % \item{i, j}{
+  %    ["["] - \cr 
+  %    index arguments used for subsettings.
+  % }       
+  \item{n}{
+    an integer specifying the number of lines to be returned. 
+    By default \code{n=6}.
+  }
+  \item{recordIDs}{
+    a logical value. Should the \code{recordIDs} returned together
+    with the data matrix and time series positions?
+  }
+  \item{sd}{
+    a numeric value of standard deviations, e.g. 10
+    means that values larger or smaller tahn ten 
+    times the standard deviation will be removed from
+    the series.
+  }
+  \item{complement}{
+    a logical flag, should the outler series
+    or its complement be returns, by default \code{TRUE}
+    which returns the series free of outliers.
+  }
+  % \item{value}{
+  %   a numeric value to use as a replacement. It will be repeated a
+  %   whole number of times if necessary. 
+  % }
+  \item{\dots}{
+    arguments passed to other methods.
+  }
 }
 
         

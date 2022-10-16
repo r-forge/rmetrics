@@ -2,7 +2,9 @@
 \alias{dummyTimeSeries}
 
 \alias{dummyDailySeries}
-\alias{dummySeries}
+\alias{dummyMonthlySeries}
+
+\alias{dummySeries} % deprecated
 
 
 \title{Dummy time series}
@@ -15,8 +17,10 @@
 }
 
 \usage{
-dummyDailySeries(x = rnorm(365), units = NULL, zone = "",
-    FinCenter = "")
+dummyDailySeries(x = rnorm(365), units = NULL, zone = "", 
+                 FinCenter = "")
+
+dummyMonthlySeries(\dots)
 }
 
 
@@ -42,6 +46,9 @@ dummyDailySeries(x = rnorm(365), units = NULL, zone = "",
   \item{zone}{
     the time zone or financial center where the data were recorded.
   }
+  \item{...}{
+    optional arguments passed to \code{timeSeries}.
+  }
 }
 
 \details{
@@ -50,7 +57,7 @@ dummyDailySeries(x = rnorm(365), units = NULL, zone = "",
   dummy daily dates from a numeric matrix with daily records of
   unknown dates.
   
-  \code{dummySeries} creates a dummy monthly \code{"timeSeries"} object.
+  \code{dummyMonthlySeries} creates a dummy monthly \code{"timeSeries"} object.
       
 }
 
@@ -61,6 +68,9 @@ dummyDailySeries(x = rnorm(365), units = NULL, zone = "",
 
 }
 
-
+\examples{
+dummyDailySeries()
+dummyMonthlySeries()
+}
 \keyword{chron}
 \keyword{ts}

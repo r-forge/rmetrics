@@ -155,13 +155,13 @@ colQuantiles <-
 # # ------------------------------------------------------------------------------
 # 
 # 
-# colStdevs <- 
-#   function(x, ...) 
-# { 
-#     # FUNCTION:
-#     
-#     colStats(x, "sd", ...) 
-# }
+colStdevs <-             # TODO: comment out when the function is removed.
+  function(x, ...) 
+{ 
+    # FUNCTION:
+    
+    colStats(x, "sd", ...) 
+}
 
 
 # ------------------------------------------------------------------------------

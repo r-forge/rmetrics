@@ -259,9 +259,11 @@ export(
 export(
     ".DollarNames.timeSeries", # the 'timeSeries' method for utils::.DollarNames
 
-    ##".align.timeSeries", # fPortfolio/R/backtest-Plots.R, line 517, rev. 6295
+    ".align.timeSeries", # fPortfolio/R/backtest-Plots.R, line 517, rev. 6295
     ##                     #  changed to align(Data) in rev. 6296
-    ##                     # TODO: check before submitting
+    ##                     # nevertheless, keeping it for now as it is not clear 
+    ##                     # when a new version will be pulished.
+    ##                     # TODO: remove it eventually!
     ### ".aggregate.timeSeries",
     ### ".as.data.frame.timeSeries",
     ### ".as.list.timeSeries",
@@ -324,8 +326,11 @@ export(
     "colSds",
     "colSkewness",
     "colStats",
-    ## "colStdevs",   # still in fAssets::assetsRiskReturnPlot  TODO: check before submission
+    "colStdevs",   # still in fAssets::assetsRiskReturnPlot
     ##                  I corrected the devel version.
+    ##                     # nevertheless, keeping it for now as it is not clear 
+    ##                     # when a new version will be pulished.
+    ##                     # TODO: remove it eventually!
     "colVars",
     "countMonthlyRecords",
     "cumulated",
@@ -333,13 +338,17 @@ export(
     "drawdowns",
     "drawdownsStats",
     "dummyDailySeries",
-    "dummySeries",
+    "dummyMonthlySeries",  # replacement for "dummySeries"
+    "dummySeries", # deprecated, TDO: remove after some time
     "durationSeries",
     "durations",
     "fapply",
     "getFinCenter",
-    ## "getReturns", several uses in the tests in 'fTrading' TODO: check before submission
+    "getReturns", # several uses in the tests in 'fTrading' TODO: check before submission
     ##               I corrected the devel version.
+    ##                     # nevertheless, keeping it for now as it is not clear 
+    ##                     # when a new version will be pulished.
+    ##                     # TODO: remove it eventually!
     "getTime",
     "getUnits",
 	"getUnits.default",

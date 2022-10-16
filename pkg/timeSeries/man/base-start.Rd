@@ -47,7 +47,7 @@
 \examples{   
 \dontshow{set.seed(1234)}
 ## Create Dummy \code{"timeSeries"} -    
-   tS <- dummySeries()[, 1]
+   tS <- dummyMonthlySeries()[, 1]
    tS
    
 ## Return Start and end Time Stamp -

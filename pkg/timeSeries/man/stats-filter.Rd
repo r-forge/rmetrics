@@ -13,9 +13,6 @@
 }
 
 \usage{
-filter(x, filter, method = c("convolution", "recursive"), sides = 2L, 
-       circular = FALSE, init = NULL)
-
 \S4method{filter}{timeSeries}(x, filter, method = c("convolution", "recursive"), sides = 2, 
        circular = FALSE, init = NULL)
 }

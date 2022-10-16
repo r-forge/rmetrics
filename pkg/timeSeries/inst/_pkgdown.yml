@@ -1,3 +1,5 @@
+url: https://geobosh.github.io/timeSeriesDoc/
+
 template:
   bootstrap: 5
   
@@ -17,7 +19,7 @@ reference:
       - as.ts
       - as.data.frame
       - readSeries
-      - dummySeries
+      - dummyMonthlySeries
       - dummyDailySeries
       - alignDailySeries
       - rollDailySeries
