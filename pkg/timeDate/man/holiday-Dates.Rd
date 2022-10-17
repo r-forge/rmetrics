@@ -287,8 +287,6 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"))
 }
 
 \details{
-  Note that \code{GBBankHoliday()} returns GB Spring bank holiday. For GB holiday
-  calender see \code{holidayGB()}.
 
   The deprecated \code{GBMayDay} and \code{GBBankHoliday} are still
   available but strongly discouraged. Instead, use

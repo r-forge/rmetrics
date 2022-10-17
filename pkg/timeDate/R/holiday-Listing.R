@@ -116,6 +116,7 @@ listHolidays <-
         "USChristmasDay",
         "USCPulaskisBirthday",
         "USGoodFriday",
+        "USJuneteenthNationalIndependenceDay",
         "CAVictoriaDay",
         "CACanadaDay",
         "CACivicProvincialHoliday",

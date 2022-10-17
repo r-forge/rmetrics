@@ -23,5 +23,5 @@ Depends: R (>= 3.6.0)
 Imports: graphics, utils, stats, methods
 Suggests: date, RUnit
 License: GPL (>= 2)
-URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeDate/?root=rmetrics (devel), https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeDate/?root=rmetrics (devel), https://www.rmetrics.org https://geobosh.github.io/timeDateDoc/ (doc)
 BugReports: https://r-forge.r-project.org/projects/rmetrics
