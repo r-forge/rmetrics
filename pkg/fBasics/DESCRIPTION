@@ -1,7 +1,7 @@
 Package: fBasics
 Title: Rmetrics - Markets and Basic Statistics
-Date: 2022-09-08
-Version: 4021.92
+Date: 2022-10-17
+Version: 4021.93
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
@@ -23,5 +23,5 @@ Suggests: interp, RUnit, tcltk
 LazyData: yes
 License: GPL (>= 2)
 Encoding: UTF-8
-URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics )devel), https://www.rmetrics.org
+URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics (devel), https://www.rmetrics.org https://geobosh.github.io/fBasicsDoc/ (doc)
 BugReports: https://r-forge.r-project.org/projects/rmetrics
