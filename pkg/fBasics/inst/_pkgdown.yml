@@ -14,16 +14,12 @@ reference:
     contents:
       - "fBasics-package"
       - fBasicsData
-  - title: "Unclassified"
-    contents:
-      - stdev
-      - termPlot
-      - volatility
   - title: "Fit distributions by MLE or moments"
     contents:
       - nFit
       - tFit
       - stableFit
+      - "fDISTFIT-class"
   - title: "Tests"
     contents:
       - correlationTest
@@ -281,14 +277,10 @@ reference:
   - title: "Package utilities"
     contents:
       - listDescription
+      - listIndex
       - listFunctions
       - countFunctions
-      - listIndex
-      - print
-  - title: "S+ compatibility"
-    contents:
-      - colIds
-      - rowIds
+      - print.control
   - title: "Deprecated functions"
     contents:
       - "fBasics-deprecated"
@@ -299,3 +291,17 @@ reference:
       from those packages, run 'library()' in your session.
     contents:
       - fBasics_reexports
+  - title: "Unclassified"
+    desc: >
+      TODO: these are generic functions for the corresponding base R ones
+      (which serve as default methods). Seem abandoned.
+      Remove? (except for volatility which is new and should be described
+      elsewhere.
+    contents:
+      - stdev
+      - termPlot
+      - volatility
+  - title: "S+ compatibility"
+    contents:
+      - colIds
+      - rowIds

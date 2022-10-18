@@ -10,7 +10,7 @@
 %% \alias{qstable}
 %% \alias{rstable}
 %% \alias{stableMode}
-\title{Deprecated Functions in Package fBasics}
+\title{Deprecated functions in package fBasics}
 \description{
   These functions are provided for compatibility with older versions of
   the package only, and may be defunct as soon as of the next release.

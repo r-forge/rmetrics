@@ -15,7 +15,7 @@
 \alias{usdthb}
 
 %--------------------------------------------------------------
-\title{fBasics Data Sets} 
+\title{fBasics data sets} 
 
 \description{
   The following data sets are part of this package:
@@ -60,7 +60,9 @@
  \bold{msft.dat:}\cr
  \code{msft.dat}
  contains daily prices (open, high, low and close) and
- volumes for the Microsoft stocks.
+ volumes for the Microsoft stocks. (Note: there is a 'timeSeries'
+ object, MSFT' in package 'timeSeries' which seems to contain the same
+ data. TODO: consolidate?
  
  \bold{nyse:}\cr
  \code{nyse}
