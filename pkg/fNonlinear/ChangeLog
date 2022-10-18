@@ -1,3 +1,7 @@
+2022-10-18 smith
+	* DESCRIPTION bumped version number
+	* src/BDSTest.c changed from K&R style declarations
+	
 2022-07-18 smith
 
 	* DESCRIPTION changed maintainer and bumped package version

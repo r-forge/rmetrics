@@ -1,7 +1,7 @@
 Package: fNonlinear
 Title: Rmetrics - Nonlinear and Chaotic Time Series Modelling
-Date: 2022-07-14
-Version: 4021.80
+Date: 2022-10-18
+Version: 4021.81
 Author: Diethelm Wuertz [aut],
 	Tobias Setz [aut],
 	Yohan Chalabi [aut],
