@@ -8,7 +8,7 @@ fn <- system.file("extdata", "msft.csv", package = "timeSeries")
 ## but we do avoid mangling the name of the first column.
 msft.dat <- utils::read.csv2(fn, colClasses = c("factor", rep("numeric", 5)),
                              dec = ".", check.names = FALSE)
-
+rm(fn)
 ## a comparison of the old 'msft.dat' and the new one gave:
 ##
 ##     > all.equal(msft.dat, new_msft_dat)

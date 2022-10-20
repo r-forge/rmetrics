@@ -17,7 +17,7 @@ Description: Provides a collection of functions to
     parameter estimation and hypothesis testing. Even more there are
     several utility functions for data handling and management.
 Depends: R (>= 2.15.1)
-Imports: timeDate, timeSeries, stats, grDevices, graphics, methods, utils, MASS,
+Imports: timeDate, timeSeries (>= 4021.105), stats, grDevices, graphics, methods, utils, MASS,
          spatial, gss, stabledist
 Suggests: interp, RUnit, tcltk
 LazyData: yes
