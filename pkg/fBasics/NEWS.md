@@ -1,3 +1,11 @@
+# fBasics 4021.94
+
+- the name of the first column of dataset `msft.dat` is not mangled any more (it
+  was "X.Y..m..d" and now is "%Y-%m-%d", as in the input file). the rest of the
+  dataset is as before. The file from which the dataset is created is now taken
+  from an identical file in package `timeSeries`.
+
+
 # fBasics 4021.93
 
 - fixed CRAN warnings about a function declaration without a prototype, which is
