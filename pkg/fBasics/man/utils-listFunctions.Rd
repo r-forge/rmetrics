@@ -2,7 +2,6 @@
 \alias{listFunctions}
 
 \alias{countFunctions}
-\alias{listDescription}
 \alias{listIndex}
 
 
@@ -22,7 +21,6 @@
 listFunctions(package, character.only = FALSE)
 countFunctions(package, character.only = FALSE)
 
-listDescription(package, character.only = FALSE)
 listIndex(package, character.only = FALSE)
 }
 
@@ -51,9 +49,8 @@ listIndex(package, character.only = FALSE)
   for \code{countFunctions}, a named numeric value giving the number of
   the exported functions in a package.
 
-  \code{listDescription} and \code{listIndex} do not return a useful
-  value. They are used for the side effect of printing the description
-  or index.
+  \code{listIndex} doesn't return a useful value. It is used for the
+  side effect of printing the description or index.
 
 }
 
@@ -76,8 +73,6 @@ listIndex(package, character.only = FALSE)
 ## countFunctions -
    countFunctions("fBasics")
 
-## listDescription -
-   listDescription("fBasics")
 }
 
 

@@ -14,12 +14,6 @@ reference:
     contents:
       - "fBasics-package"
       - fBasicsData
-  - title: "Fit distributions by MLE or moments"
-    contents:
-      - nFit
-      - tFit
-      - stableFit
-      - "fDISTFIT-class"
   - title: "Tests"
     contents:
       - correlationTest
@@ -75,8 +69,12 @@ reference:
       - runif.lcg
       - rnorm.lcg
       - rt.lcg
-  - title: "Distributions"
+  - title: "Distributions and dstribution fitting"
     contents:
+      - nFit
+      - tFit
+      - stableFit
+      - "fDISTFIT-class"
       - distCheck
   - title: "Hyperbolic Distribution"
     contents:
