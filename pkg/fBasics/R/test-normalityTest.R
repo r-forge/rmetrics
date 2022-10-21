@@ -76,7 +76,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = test$method
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -123,7 +123,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Shapiro - Wilk Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -197,7 +197,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Jarque - Bera Normalality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -421,7 +421,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "D'Agostino Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -567,7 +567,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Anderson - Darling Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     ans = new("fHTEST",
@@ -653,7 +653,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Cramer - von Mises Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -750,7 +750,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Lilliefors (KS) Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -843,7 +843,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Pearson Chi-Square Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -920,7 +920,7 @@ function(x, title = NULL, description = NULL)
 
     # Add:
     if (is.null(title)) title = "Shapiro - Francia Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
@@ -1051,7 +1051,7 @@ function(x, title = NULL, description = NULL)
 
     # Add Title:
     if (is.null(title)) title = "Jarque - Bera Normality Test"
-    if (is.null(description)) description = description()
+    if (is.null(description)) description = ""
 
     # Return Value:
     new("fHTEST",
