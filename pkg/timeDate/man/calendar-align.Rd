@@ -1,12 +1,6 @@
 \name{align}
-
-
-\title{
-  Align a 'timeDate' object to regular date/time stamps
-}
-
-
 \alias{align}
+
 \alias{align,timeDate-method}
 \alias{align,ANY-method}
 
@@ -15,9 +9,15 @@
 \alias{alignQuarterly}
 
 
+
+\title{
+  Align a 'timeDate' object to regular date/time stamps
+}
+
+
 \description{
 
-  Aligns a 'timeDate' object to regular date/time stamps.
+  Aligns a \code{"timeDate"} object to regular date/time stamps.
 
 }
 
@@ -33,7 +33,7 @@ alignQuarterly(x, include.weekends=FALSE)
 
 \arguments{
   \item{x}{
-    an object of class \code{timeDate}.
+    an object of class \code{"timeDate"}.
   }
   \item{by}{
     a character string formed from an integer length and
@@ -59,16 +59,14 @@ alignQuarterly(x, include.weekends=FALSE)
   The functions \code{alignDaily}, \code{alignMonthly},
   \code{alignMonthly} are simple to use functions which
   generate end-of-day, end-of-month, and end-of quarter
-  \code{timeDate} objects. Weekends are excluded by
+  \code{"timeDate"} objects. Weekends are excluded by
   default. Optionally they can be added setting the
-  argument \code{include.weekends=TRUE}.
+  argument \code{include.weekends = TRUE}.
 
 }
 
 \value{
-
-  returns an object of class \code{timeDate}.
-
+  an object of class \code{"timeDate"}
 }
 
 
@@ -90,6 +88,4 @@ alignMonthly(tC)
 
 }
 
-
 \keyword{chron}
-

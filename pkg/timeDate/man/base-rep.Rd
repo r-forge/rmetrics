@@ -2,11 +2,11 @@
 \alias{rep}
 \alias{rep.timeDate}
 
-\title{Replicating 'timeDate' Objects}
+\title{Replicating 'timeDate' objects}
 
 \description{
     
-  Replicate 'timeDate' objects.
+  Replicates \code{"timeDate"} objects.
        
 }
 
@@ -17,7 +17,7 @@
 \arguments{
       
   \item{x}{
-    an object of class \code{timeDate}.
+    an object of class \code{"timeDate"}.
   }  
   \item{\dots}{
     arguments passed to the method for \code{'POSIXct'},
@@ -42,4 +42,3 @@
 }
 
 \keyword{chron}
-

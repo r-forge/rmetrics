@@ -1,16 +1,11 @@
 \name{holidayZURICH}
-
-
-\title{Zurich Holiday Calendar}
-
-
 \alias{holidayZURICH}
 
 
+\title{Zurich holiday calendar}
+
 \description{
-    
-    Returns a holiday calendar for Zurich.     
-                
+  Returns a holiday calendar for Zurich.     
 }
 
 
@@ -20,18 +15,11 @@ holidayZURICH(year = getRmetricsOptions("currentYear"))
 
 
 \arguments{
-
-    \item{year}{
-        an integer value or vector of years, formatted as \code{YYYY}.
-        }
+  
+  \item{year}{
+    an integer value or vector of years, formatted as \code{YYYY}.
+  }
         
-}
-
-
-\value{
-
-    returns an object of class \code{timeDate}. 
-
 }
 
 
@@ -46,12 +34,15 @@ holidayZURICH(year = getRmetricsOptions("currentYear"))
 }
 
 
+\value{
+  an object of class \code{"timeDate"}
+}
+
+
 \examples{
 ## holidayZURICH -
    holidayZURICH()
    holidayZURICH(2008:2010)
 }
 
-
 \keyword{chron}
-

@@ -1,14 +1,19 @@
 \name{RmetricsOptions}
+
 \alias{setRmetricsOptions}
+
 \alias{getRmetricsOptions}
 \alias{getRmetricsOption}
 
-\title{Rmetrics Option Settings}
+
+\title{Rmetrics option settings}
 
 \description{
+
   Allow the user to set and examine a variety of global options which
   affect the way in which Rmetrics functions compute and display their
   results.
+
 }
 
 \usage{

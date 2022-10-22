@@ -1,4 +1,5 @@
 \name{julian}
+
 \alias{julian,timeDate-method}
 
 \alias{atoms}
@@ -8,12 +9,14 @@
 \alias{months}
 \alias{months,timeDate-method}
 
-\title{Julian Counts and Calendar Atoms}
+
+
+\title{Julian counts and calendar atoms}
 
 \description{
     
-  Returns Julian day counts, date/time atoms from a 'timeDate' object,
-  and extracts month atoms from a 'timeDate' object.
+  Returns Julian day counts, date/time atoms from a \code{"timeDate"} object,
+  and extracts month atoms from a \code{"timeDate"} object.
        
 }
 
@@ -31,43 +34,42 @@
 
 \arguments{
   
-    \item{x}{
-        an object of class \code{timeDate}.
-      }
-    \item{origin}{
-        a length-one object inheriting from class \code{"timeDate"}
-        setting the origin for the julian counter.
-      }
-    \item{units}{
-        a character string denoting the date/time units in which the 
-        results are desired.
-      }
-    \item{zone}{
-        the time zone or financial center where the data were recorded.
-        }
-    \item{FinCenter}{
-        a character string with the location of the  
-        financial center named as "continent/city". 
-        }   
-    \item{abbreviate}{
-        currently not used.
-        }   
-    \item{\dots}{
-        arguments passed to other methods.
-        }
-       
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }
+  \item{origin}{
+    a length-one object inheriting from class \code{"timeDate"}
+    setting the origin for the julian counter.
+  }
+  \item{units}{
+    a character string denoting the date/time units in which the 
+    results are desired.
+  }
+  \item{zone}{
+    the time zone or financial center where the data were recorded.
+  }
+  \item{FinCenter}{
+    a character string with the location of the  
+    financial center named as "continent/city". 
+  }   
+  \item{abbreviate}{
+    currently not used.
+  }   
+  \item{\dots}{
+    arguments passed to other methods.
+  }
 }
 
 \details{
 
-  Generic functions to extract properties of \code{timeDate}
+  Generic functions to extract properties of \code{"timeDate"}
   objects. \code{julian} and \code{months} are generics from base R,
   while \code{atoms} is a generic defined in this package.
 
   \code{julian} extracts the number of days since \code{origin} (can be
   fractional), see also \code{\link[base]{julian}}.
   
-  \code{atoms} extracts the calendar atoms from a \code{timeDate}
+  \code{atoms} extracts the calendar atoms from a \code{"timeDate"}
   object, i.e., the year, month, day, and optionally, hour, minute and
   second.  The result is a data frame with the financial center in
   atrribute \code{"control"}.
@@ -121,4 +123,3 @@
 }
 
 \keyword{chron}
-

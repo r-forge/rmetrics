@@ -1,16 +1,14 @@
 \name{diff}
-
-
-\title{Lagged 'timeDate' Differences}
-
-
 \alias{diff}
+
 \alias{diff.timeDate}
 
 
+\title{Lagged 'timeDate' differences}
+
 \description{
     
-    Returns suitably lagged and iterated differences.
+  Returns suitably lagged and iterated differences.
        
 }
 
@@ -23,7 +21,7 @@
 \arguments{
   
     \item{x}{
-        an object of class \code{timeDate}.
+        an object of class \code{"timeDate"}.
         }  
     \item{lag}{
         an integer indicating which lag to use.  

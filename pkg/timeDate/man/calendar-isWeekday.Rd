@@ -1,16 +1,14 @@
 \name{isWeekday}
-
-
 \alias{isWeekday}
+
 \alias{isWeekend}
 
 
-\title{Weekdays and Weekends}
-
+\title{Weekdays and weekends}
 
 \description{
 
-    Tests if a date is a weekday or not.
+  Tests if a date is a weekday or not.
 
 }
 
@@ -20,11 +18,10 @@ isWeekday(x, wday = 1:5)
 isWeekend(x, wday = 1:5)
 }
 
-
 \arguments{
 
   \item{x}{
-    an object of class \code{timeDate}.
+    an object of class \code{"timeDate"}.
   }
   \item{wday}{
     Specify which days should be considered as weekdays. By default
@@ -34,10 +31,7 @@ isWeekend(x, wday = 1:5)
 
 
 \value{
-
-    the functions return logical vectors indicating if a date is a
-    weekday, or a weekend day.
-
+  a logical vector indicating if a date is a weekday or a weekend day
 }
 
 
@@ -54,6 +48,4 @@ isWeekend(x, wday = 1:5)
    tS[isWeekend(tS)]
 }
 
-
 \keyword{chron}
-

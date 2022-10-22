@@ -1,13 +1,17 @@
 \name{nDay}
-\title{n-th n-day Dates}
-
 \alias{nDay}
+
 \alias{timeNthNdayInMonth}
 \alias{timeLastNdayInMonth}
 
+
+\title{n-th n-day dates}
+
 \description{
-    Computes the date for the n-th or last occurrence of an
-    n-day in year/month.
+
+  Computes the date for the n-th or last occurrence of an n-day in
+  year/month.
+
 }
 \usage{
 timeNthNdayInMonth(charvec, nday = 1, nth = 1, format = "\%Y-\%m-\%d",
@@ -28,13 +32,18 @@ timeLastNdayInMonth(charvec, nday = 1, format = "\%Y-\%m-\%d",
     center named as "continent/city".}
 }
 
-\value{
-  returns an object of class \code{timeDate}.
+\details{
 
-  For function \code{timeNthNdayInMonth} the \code{nth} occurrence
-  of a n-day (nth = 1,...,5) in \code{year}, \code{month}, and
-  for \code{timeLastNdayInMonth} the last \code{nday} in \code{year},
-  \code{month} will be returned.
+  \code{timeNthNdayInMonth} returns the \code{nth} occurrence of a n-day
+  (nth = 1,...,5) in \code{year}, \code{month}.
+
+  \code{timeLastNdayInMonth} returns the last \code{nday} in
+  \code{year}, \code{month}.
+
+}
+
+\value{
+  an object of class \code{"timeDate"}
 }
 
 \examples{
@@ -47,6 +56,4 @@ timeLastNdayInMonth(charvec, nday = 1, format = "\%Y-\%m-\%d",
    timeLastNdayInMonth("1996-05-01", 2)
 }
 
-
 \keyword{chron}
-

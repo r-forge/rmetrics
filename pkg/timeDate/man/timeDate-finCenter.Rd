@@ -9,7 +9,7 @@
 \title{Financial Center of a timeDate object}
 
 \description{
-  Get or set the financial center of a \code{timeDate} object.
+  Get or set the financial center of a \code{"timeDate"} object.
 }
 
 \usage{
@@ -55,5 +55,3 @@ finCenter(date) <- "Zurich"
 date
 format(date)
 }
-
-

@@ -1,9 +1,4 @@
 \name{holidayDate}
-
-
-\title{Public and Ecclesiastical Holidays}
-
-
 \alias{holidayDate}
 
 \alias{Septuagesima}
@@ -130,12 +125,13 @@
 \alias{JPBankHolidayDec31}
 
 
+
+\title{Public and ecclesiastical holidays}
+
 \description{
 
-    A collection and description of functions and methods
-    dealing with holiday dates in the G7 countries and
-    Switzerland.
-    \cr
+  A collection of functions giving holiday dates in the G7 countries and
+  Switzerland.
 
 }
 
@@ -267,23 +263,19 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"))
 
 \arguments{
 
-    \item{year}{
-        an integer value or vector of year numbers including the
-        century. These are integers of the form \code{CCYY}, e.g.
-        \code{2000}.
-        }
+  \item{year}{
+
+    an integer value or vector of year numbers including the
+    century. These are integers of the form \code{CCYY}, e.g.
+    \code{2000}.
+
+  }
 
 }
 
 
 \value{
-
-    The function \code{listHolidays} returns a character vector
-    with the names of the supported holidays.
-
-    The holiday functions return an ISO-8601 formatted 'timeDate'
-    of the requested holiday.
-
+  the date of the requested holiday as a \code{"timeDate"} object
 }
 
 \details{
@@ -296,9 +288,6 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"))
 }
 
 \examples{
-## listHolidays -
-   listHolidays()
-
 ## CHSechselaeuten -
    # Sechselaeuten a half Day Bank Holiday in Switzerland
    CHSechselaeuten(2000:2010)
@@ -308,6 +297,4 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"))
    DEGermanUnity(getRmetricsOptions("currentYear"))
 }
 
-
 \keyword{chron}
-

@@ -1,15 +1,12 @@
 \name{listHolidays}
-
-
 \alias{listHolidays}
 
 
-\title{List of Holidays}
-
+\title{List of holidays}
 
 \description{
     
-    Returns the list of holidays.     
+  Returns a list of holidays.     
                 
 }
 
@@ -20,19 +17,23 @@ listHolidays(pattern = ".*")
 
 
 \arguments{
-
-    \item{pattern}{
-        a pattern character string as required
-        by the \code{\link{grep}} function.
-        }
+  
+  \item{pattern}{
+    a pattern character string as required by the \code{\link{grep}}
+    function.
+  }
 
 }
 
+\details{
+
+  Returns a character vector containing the names of supported holidays
+  matching \code{pattern}. The default is to return all holidays.
+
+}
 
 \value{
-
-    returns a list of holidays as a character vector.
-
+  a character vector
 }
 
 
@@ -47,4 +48,3 @@ listHolidays(pattern = ".*")
 }
 
 \keyword{chron}
-

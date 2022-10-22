@@ -1,12 +1,13 @@
 \name{isBizday}
-
 \alias{isBizday}
+
 \alias{isHoliday}
 
-\title{Business and Holidays}
+
+\title{Check if dates are business or holidays}
 
 \description{
-    Tests if a date is a business day or not.
+  Tests if a date is a business day or not.
 }
 
 \usage{
@@ -15,19 +16,28 @@ isHoliday(x, holidays = holidayNYSE(), wday = 1:5)
 }
 
 \arguments{
-  \item{x}{an object of class \code{timeDate}.}
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }
   \item{holidays}{
     holiday dates from a holiday calendar.  An object of class
-    \code{timeDate}.}
+    \code{"timeDate"}.
+  }
   \item{wday}{
     Specify which days should be considered as weekdays. By default
     from Mondays to Fridays.
   }
 }
 
+\details{
+
+  Returns a logical vector of the same length as \code{x} indicating if
+  a date is a business day, or a holiday, respectively.
+
+}
+
 \value{
-  a logical vector of the same length as \code{x} indicating if a date
-  is a business day, or a holiday, respectively.
+  a logical vector of the same length as \code{x}
 }
 
 \examples{## Dates in April, currentYear:

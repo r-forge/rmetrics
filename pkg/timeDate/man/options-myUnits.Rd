@@ -1,27 +1,18 @@
 \name{myUnits}
-
-
-\title{Frequency of date/time Units}
-
-
 \alias{myUnits}
 
 
+\title{Frequency of date/time units}
+
 \description{
 
-    A variable with the frequency of date/units.
+  A variable with the frequency of date/units.
 
 }
-
-
 
 \value{
-
-    returns the date/time units, a character value.
-    By default \code{"days"}.
-
+  the date/time units, a character value, yy default \code{"days"}
 }
-
 
 
 \examples{
@@ -29,6 +20,4 @@
    getRmetricsOptions("myUnits")
 }
 
-
 \keyword{chron}
-

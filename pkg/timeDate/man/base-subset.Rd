@@ -1,7 +1,6 @@
 \name{subset}
-
-
 \alias{subset}
+
 \alias{[,timeDate,missing,missing-method}
 \alias{[,timeDate,numeric,missing-method}
 \alias{[,timeDate,logical,missing-method}
@@ -10,12 +9,11 @@
 \alias{[<-.timeDate}
 
 
-\title{Subsetting a 'timeDate' Object}
-
+\title{Subsetting a 'timeDate' object}
 
 \description{
     
-    Extracts or replaces subsets from 'timeDate' objects.
+  Extracts or replaces subsets from \code{"timeDate"} objects.
        
 }
 
@@ -28,7 +26,7 @@
 % \arguments{
   
 %     \item{x}{
-%         an object of class \code{timeDate}.
+%         an object of class \code{"timeDate"}.
 %         }
 %     \item{\dots}{
 %         arguments passed to other methods.
@@ -40,9 +38,7 @@
 
 
 \value{
-   
-    returns an object of class \code{timeDate}.
-
+  an object of class \code{"timeDate"}.
 }
 
 
@@ -58,6 +54,4 @@
    # Replacing:  
 }
 
-
 \keyword{chron}
-

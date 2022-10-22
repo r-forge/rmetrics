@@ -1,14 +1,10 @@
 \name{timeDate-package}
-
-
 \alias{timeDate-package}
-
 
 \docType{package}
 
 
-\title{Utilities and Tools Package}
-
+\title{Utilities and tools package}
 
 \description{
 
@@ -37,11 +33,11 @@
 \section{Overview of Topics}{
 
   This help file describes the concepts and methods behind the S4
-  'timeDate' class used in Rmetrics for financial data and time 
+  \code{"timeDate"} class used in Rmetrics for financial data and time 
   management together with the management of public and ecclesiastical
   holidays.
   
-  The 'timeDate' class fulfils the conventions of the ISO 8601 
+  The \code{"timeDate"} class fulfils the conventions of the ISO 8601 
   standard as well as of the ANSI C and POSIX standards. Beyond
   these standards it provides the "Financial Center" concept
   which allows to handle data records collected in different time 
@@ -52,29 +48,29 @@
   centers changed day light saving times at different calendar
   dates.
   
-  Moreover 'timeDate' is almost compatible with the 'timeDate'
-  class in Insightful's SPlus 'timeDate' class. If you move between 
+  Moreover \code{"timeDate"} is almost compatible with the \code{"timeDate"}
+  class in Insightful's SPlus \code{"timeDate"} class. If you move between 
   the two worlds of R and SPlus, you will not have to rewrite your
   code. This is important for business applications.
   
-  The 'timeDate' class offers not only date and time functionality but
+  The \code{"timeDate"} class offers not only date and time functionality but
   it also offers sophisticated calendar manipulations for
   business days, weekends, public and ecclesiastical holidays. 
   
   This help page is presented in four sections:
   
-  1. S4 'timeDate' Class and Functions \cr
-  2. Operations on 'timeDate' Objects \cr
+  1. S4 \code{"timeDate"} Class and Functions \cr
+  2. Operations on \code{"timeDate"} Objects \cr
   3. Daylight Saving Time and Financial Centers \cr
   4. Holidays and Holiday Calendars
   
 }  
 
 
-\section{1. S4 'timeDate' Class and Generator Functions}{
+\section{1. S4 \code{"timeDate"} Class and Generator Functions}{
   
   
-  Date and time stamps are represented by an S4 object of class 'timeDate'. 
+  Date and time stamps are represented by an S4 object of class \code{"timeDate"}. 
   
   \preformatted{
     setClass("timeDate",
@@ -91,18 +87,18 @@
   financial center expressed through the slot \code{@FinCenter}.
   
   
-  There are several possibilities to generate a 'timeDate' object. The
+  There are several possibilities to generate a \code{"timeDate"} object. The
   most forward procedure is to use one of the following functions:\cr
   
-  \code{timeDate} -- Creates a 'timeDate' object from scratch, \cr
-  \code{timeSequence} -- creates a sequence of 'timeDate' objects, \cr
-  \code{timeCalendar} -- creates a 'timeDate' object from calendar
+  \code{timeDate} -- Creates a \code{"timeDate"} object from scratch, \cr
+  \code{timeSequence} -- creates a sequence of \code{"timeDate"} objects, \cr
+  \code{timeCalendar} -- creates a \code{"timeDate"} object from calendar
   atoms, \cr
   \code{Sys.timeDate} -- returns the current date and time as a
-  'timeDate' object. \cr  
+  \code{"timeDate"} object. \cr  
   
   
-  With the function \code{timeDate} you can create 'timeDate' objects 
+  With the function \code{timeDate} you can create \code{"timeDate"} objects 
   from scratch by specifying a character vector of time stamps and a
   financial center which the character vector belongs to. "GMT" is used
   by default as the  reference for all date/time operations.
@@ -149,7 +145,7 @@
   \code{.midnightStandard("2008-01-31 24:00:00")} \cr
   
   
-  Alternatively we can create a sequence of 'timeDate' objects with the
+  Alternatively we can create a sequence of \code{"timeDate"} objects with the
   help of the function \code{timeSequence}. This can be done in several
   ways, either by specifying the range of the data through the arguments
   \code{from} and \code{to}, or when \code{from} is missing, by setting
@@ -180,7 +176,7 @@
   }
   
   
-  A third possibility is to create 'timeDate' objects from calendar  
+  A third possibility is to create \code{"timeDate"} objects from calendar  
   atoms. You can specify values or vectors of equal length of integers 
   denoting year, month, day, hour, minute and seconds. If every day has 
   the same time stamp, you can just add an offset. \cr 
@@ -202,16 +198,16 @@
 }
 
 
-\section{2. Operations on 'timeDate' Objects}{
+\section{2. Operations on \code{"timeDate"} Objects}{
 
-  Many operations can be performed on 'timeDate' objects. You can add
+  Many operations can be performed on \code{"timeDate"} objects. You can add
   and subtract, round and truncate, subset, coerce or transform them to
   other objects. These are only few options among many others. \cr 
   
   \bold{Math Operations}
   
   Math operations can add and subtract dates and times,
-  and perform logical operations on 'timeDate' objects.\cr
+  and perform logical operations on \code{"timeDate"} objects.\cr
   
   Examples:
   \preformatted{
@@ -250,8 +246,8 @@
   Dates and times can be rounded or truncated. This is useful lower
   frequencies than seconds, for example hourly. \cr 
   
-  \code{round} -- rounds objects of class 'timeDate', \cr
-  \code{trunc} -- truncates objects of class 'timeDate'. \cr
+  \code{round} -- rounds objects of class \code{"timeDate"}, \cr
+  \code{trunc} -- truncates objects of class \code{"timeDate"}. \cr
   
   Examples:
   \preformatted{
@@ -270,21 +266,21 @@
   
   \bold{Subsetting}
   
-  Subsetting a 'timeDate' is a very important issue in the management of 
+  Subsetting a \code{"timeDate"} is a very important issue in the management of 
   dates and times. Rmetrics offers several functions which are useful in 
   this context: \cr
   
-  \code{"["} -- Extracts or replaces subsets from 'timeDate' objects,
+  \code{"["} -- Extracts or replaces subsets from \code{"timeDate"} objects,
   \cr 
-  \code{window, cut} -- extract a piece from a 'timeDate' object, \cr
+  \code{window, cut} -- extract a piece from a \code{"timeDate"} object, \cr
   
   In this context it is also important to know the \code{start}
   and the \code{end} time stamp together with the total number of
   time stamps. \cr
   
-  \code{start} -- extracts the first entry of a 'timeDate' object, \cr
-  \code{end} -- extracts the last entry of a 'timeDate' object, \cr
-  \code{length} -- returns the length of a 'timeDate' object. \cr 
+  \code{start} -- extracts the first entry of a \code{"timeDate"} object, \cr
+  \code{end} -- extracts the last entry of a \code{"timeDate"} object, \cr
+  \code{length} -- returns the length of a \code{"timeDate"} object. \cr 
 
   Examples:
   \preformatted{
@@ -362,32 +358,32 @@
   
   \bold{Coercions and Transformations}
   
-  'timeDate' objects are not living in an isolated world. Coercions and  
-  transformations allow 'timeDate' objects to communicate with other 
+  \code{"timeDate"} objects are not living in an isolated world. Coercions and  
+  transformations allow \code{"timeDate"} objects to communicate with other 
   formatted time stamps. Be aware that in most cases information can be 
   lost if the other date.time classes do not support this functionality.
-  There exist several methods to coerce and transform \code{timeDate}
+  There exist several methods to coerce and transform \code{"timeDate"}
   objects into other objects. \cr
   
 
   \code{as.timeDate} -- Implements Use Method, \cr
   \code{as.timeDate.default} -- default Method, \cr
-  \code{as.timeDate.POSIXt} -- returns a 'POSIX' object as 'timeDate'
+  \code{as.timeDate.POSIXt} -- returns a 'POSIX' object as \code{"timeDate"}
   object, \cr 
-  \code{as.timeDate.Date} -- returns a 'POSIX' object as 'timeDate'
+  \code{as.timeDate.Date} -- returns a 'POSIX' object as \code{"timeDate"}
   object. \cr  
   
-  \code{as.character.timeDate} -- Returns a 'timeDate' object as
+  \code{as.character.timeDate} -- Returns a \code{"timeDate"} object as
   'character' string, \cr 
-  \code{as.double.timeDate} -- returns a 'timeDate' object as 'numeric'
+  \code{as.double.timeDate} -- returns a \code{"timeDate"} object as 'numeric'
   object, \cr 
-  \code{as.data.frame.timeDate} -- returns a 'timeDate' object as
+  \code{as.data.frame.timeDate} -- returns a \code{"timeDate"} object as
   'data.frame' object, \cr 
-  \code{as.POSIXct.timeDate} -- returns a 'timeDate' object as 'POSIXct'
+  \code{as.POSIXct.timeDate} -- returns a \code{"timeDate"} object as 'POSIXct'
   object, \cr 
-  \code{as.POSIXlt.timeDate} -- returns a 'timeDate' object as 'POSIXlt'
+  \code{as.POSIXlt.timeDate} -- returns a \code{"timeDate"} object as 'POSIXlt'
   object, \cr 
-  \code{as.Date.timeDate} -- returns a 'timeDate' object as 'Date'
+  \code{as.Date.timeDate} -- returns a \code{"timeDate"} object as 'Date'
   object. \cr  
   
   Users or maintainers of other date/time classes can add their own 
@@ -397,19 +393,19 @@
   
   \bold{Concatenations and Reorderings}
   
-  It might be sometimes useful to concatenate or reorder 'timeDate'
+  It might be sometimes useful to concatenate or reorder \code{"timeDate"}
   objects. The generic functions to concatenate, replicate, sort,
-  re-sample, unify and revert a 'timeDate' objects are : \cr 
+  re-sample, unify and revert a \code{"timeDate"} objects are : \cr 
 
 
-  \code{c} -- Concatenates 'timeDate' objects, \cr
-  \code{rep} -- replicates a 'timeDate' object, \cr
-  \code{sort} -- sorts a 'timeDate' object, \cr
-  \code{sample} -- resamples a 'timeDate' object,\cr
-  \code{unique} -- makes a 'timeDate' object unique, \cr
-  \code{rev} -- reverts a 'timeDate' object. \cr
+  \code{c} -- Concatenates \code{"timeDate"} objects, \cr
+  \code{rep} -- replicates a \code{"timeDate"} object, \cr
+  \code{sort} -- sorts a \code{"timeDate"} object, \cr
+  \code{sample} -- resamples a \code{"timeDate"} object,\cr
+  \code{unique} -- makes a \code{"timeDate"} object unique, \cr
+  \code{rev} -- reverts a \code{"timeDate"} object. \cr
   
-  NOTE: The function \code{c} of a 'timeDate' objects takes care of
+  NOTE: The function \code{c} of a \code{"timeDate"} objects takes care of
   possible different financial centers specific to each object to be
   concatenated. In such cases, all time stamps will be transformed to
   the financial center of the first time stamp used in the
@@ -610,7 +606,6 @@
 
 }
 
-
 \references{
 
   Bateman R., (2000);
@@ -640,6 +635,5 @@
   
 }
 
-
 \keyword{package}
-
+\keyword{chron}

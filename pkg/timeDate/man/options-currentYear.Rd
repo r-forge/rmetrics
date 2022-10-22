@@ -1,24 +1,17 @@
 \name{currentYear}
-
-
-\title{Current Year}
-
-
 \alias{currentYear}
 
 
+\title{Current year}
+
 \description{
 
-    A variable with the current year.
+  A variable containing the current year.
 
 }
 
-
-
 \note{
-
-    It is not allowed to change this variable.
-    
+  It is not allowed to change this variable.
 }
 
 
@@ -26,7 +19,6 @@
 ## currentYear -
    getRmetricsOptions("currentYear")
 }
-
 
 \keyword{chron}
 

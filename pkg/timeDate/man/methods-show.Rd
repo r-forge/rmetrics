@@ -1,36 +1,30 @@
 \name{show-methods}
-
+\alias{show-methods}
 
 \docType{methods}
 
-
-\alias{show-methods}
 \alias{show,ANY-method}
 \alias{show,timeDate-method}
 \alias{show.timeDate}
 
 
-\title{Show Methods}
-
+\title{Show methods}
 
 \description{
-
-    Show methods for 'timeDate' objects. 
-
+  Show methods for \code{"timeDate"} objects. 
 }
 
 
 \section{Methods}{
-    \describe{
+  \describe{
 
     \item{object = "ANY"}{
-        Generic function.
-        }
-    \item{object = "timeDate"}{
-        Print function for objects of class \code{"timeDate"}.
-        } 
-        
+      Generic function.
     }
+    \item{object = "timeDate"}{
+      Print function for objects of class \code{"timeDate"}.
+    } 
+  }
 }
 
 
@@ -39,6 +33,4 @@
    print(timeCalendar())
 }
 
-
 \keyword{chron}
-

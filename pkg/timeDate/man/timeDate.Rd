@@ -1,10 +1,6 @@
 \name{timeDate}
-
-
-\title{'timeDate' Objects from Scratch}
-
-
 \alias{timeDate}
+
 \alias{timeDate,ANY-method}
 \alias{timeDate,character-method}
 \alias{timeDate,Date-method}
@@ -18,10 +14,14 @@
 
 \alias{getDataPart,timeDate-method}
 
+
+
+\title{Create 'timeDate' objects from scratch}
+
 \description{
 
-    Create a 'timeDate' object from scratch from a character vector or
-    other suitable objects.
+    Create a \code{"timeDate"} object from scratch from a character
+    vector or other suitable objects.
 
 }
 
@@ -35,27 +35,28 @@ strptimeDate(x, format = whichFormat(x), tz = "")
 
 \arguments{
 
-    \item{charvec}{
-        a character string or vector of dates and times.
-        }
-    \item{format}{
-        the format specification of the input character vector.
-        }
-    \item{tz}{
-        a character with the location of the financial center 
-        named as \code{"continent/city"}, or short \code{"city"}.
-        }
-    \item{zone}{
-        the time zone or financial center where the data were recorded.
-        }
-    \item{x}{
-        a character string or vector of dates and times.
-        }
-    \item{FinCenter}{
-        a character with the location of the
-        financial center named as "continent/city".
-        }
+  \item{charvec}{
+    a character string or vector of dates and times.
+  }
+  \item{format}{
+    the format specification of the input character vector.
+  }
+  \item{tz}{
+    a character with the location of the financial center 
+    named as \code{"continent/city"}, or short \code{"city"}.
+  }
+  \item{zone}{
+    the time zone or financial center where the data were recorded.
+  }
+  \item{x}{
+    a character string or vector of dates and times.
+  }
+  \item{FinCenter}{
 
+    a character with the location of the financial center named as
+    "continent/city".
+
+  }
 }
 
 \details{
@@ -83,9 +84,7 @@ strptimeDate(x, format = whichFormat(x), tz = "")
 }
 
 \value{
-
-  an object of class \code{timeDate}.
-
+  an object of class \code{"timeDate"}
 }
 
 \section{Methods}{
@@ -109,7 +108,7 @@ strptimeDate(x, format = whichFormat(x), tz = "")
     }
 
     \item{\code{signature(charvec = "missing")}}{
-      Returns the current time as \code{timeDate} object.
+      Returns the current time as \code{"timeDate"} object.
     }
 
     \item{\code{signature(charvec = "numeric")}}{
@@ -179,6 +178,4 @@ strptimeDate(x, format = whichFormat(x), tz = "")
 
 }
 
-
 \keyword{chron}
-

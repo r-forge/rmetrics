@@ -1,4 +1,5 @@
 \name{as.timeDate}
+\alias{as.timeDate}
 
 \alias{Any to 'timeDate' Coercion}
 \alias{as.character.timeDate}
@@ -8,7 +9,7 @@
 \alias{as.POSIXct.timeDate}
 \alias{as.POSIXlt.timeDate}
 \alias{as.Date.timeDate}
-\alias{as.timeDate}
+
 \alias{as.timeDate.default}
 \alias{as.timeDate.POSIXt}
 \alias{as.timeDate.Date}
@@ -28,7 +29,7 @@
 
 \description{
   
-  Coerce and transform objects of class 'timeDate'.
+  Coerce and transform objects of class \code{"timeDate"}.
   
 }
 
@@ -73,7 +74,7 @@
   \item{tz}{
     inputs the time zone to POSIX objects, i.e. the time zone, 
     \code{zone}, or financial center string, \code{FinCenter}, 
-    as used by \code{timeDate} objects.
+    as used by \code{"timeDate"} objects.
   }
 
   \item{units}{
@@ -82,7 +83,7 @@
   }
 
   \item{x}{
-    an object of class \code{timeDate}.
+    an object of class \code{"timeDate"}.
   }
 
   \item{zone}{
@@ -98,9 +99,9 @@
 
 \value{
   
-  \code{as.timeDate.POSIXt} returns an object of class \code{timeDate}.
+  for \code{as.timeDate.POSIXt}, an object of class \code{"timeDate"},
   
-  \code{as.timeDate.Date} returns an object of class \code{timeDate}.
+  for \code{as.timeDate.Date}, an object of class \code{"timeDate"}
   
 }
 
@@ -116,6 +117,4 @@
    as.timeDate(Sys.Date())
 }
 
-
 \keyword{chron}
-

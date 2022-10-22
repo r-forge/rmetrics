@@ -1,8 +1,5 @@
 \name{timeDateMathOps}
-
-
 \alias{timeDateMathOps}
-
 
 \alias{Ops,timeDate,timeDate-method}
 \alias{+,timeDate,timeDate-method}
@@ -12,62 +9,60 @@
 \alias{-,numeric,timeDate-method}
 \alias{+,numeric,timeDate-method}
 
-\title{timeDate Mathematical Operations}
 
+\title{Mathematical operations with 'timeDate' objects}
 
 \description{
     
-    Functions for mathematical and logical operations on 'timeDate'
-    objects.
-    \cr
-     
-    The functions are:
-    
-    \tabular{ll}{
-    \code{Ops,timeDate} \tab Group 'Ops' generic functions for 'timeDate' objects, \cr
-    \code{+,timeDate} \tab Performs arithmetic + operation on 'timeDate' objects, \cr
-    \code{-,timeDate} \tab Performs arithmetic - operation on 'timeDate' objects. }
+  Functions for mathematical and logical operations on \code{"timeDate"}
+  objects.
+  \cr
+   
+  The functions are:
+  
+  \tabular{ll}{
+  \code{Ops,timeDate} \tab Group 'Ops' generic functions for \code{"timeDate"} objects, \cr
+  \code{+,timeDate} \tab Performs arithmetic + operation on \code{"timeDate"} objects, \cr
+  \code{-,timeDate} \tab Performs arithmetic - operation on \code{"timeDate"} objects. }
        
 }
 
-
-\usage{
-\S4method{Ops}{timeDate,timeDate}(e1, e2)
 
 % \S4method{+}{timeDate,timeDate}(e1, e2)
 % \S4method{+}{timeDate,numeric}(e1, e2)
 % \S4method{-}{timeDate,timeDate}(e1, e2)
 % \S4method{-}{timeDate,numeric}(e1, e2)    
 
+\usage{
+\S4method{Ops}{timeDate,timeDate}(e1, e2)
 }
-
 
 \arguments{
  
-   \item{e1, e2}{
-       usually objects of class \code{timeDate}, in the case of
-       addition and subtraction \code{e2} may be of class
-       \code{numeric}.
-       }    
+  \item{e1, e2}{
+    usually objects of class \code{"timeDate"}, in the case of
+    addition and subtraction \code{e2} may be of class
+    \code{numeric}.
+  }    
       
 }
 
 
 \value{
     
-    \code{Ops.timeDate}
-    \cr
-    these are functions for mathematical operations. Group \code{Ops} are 
-    generic functions which manage mathematical operations. 
-    
-    \code{+.timeDate}\cr
-    \code{-.timeDate}
-    \cr
-    The plus operator \code{"+"} performs arithmetic "+" operation on 
-    \code{timeDate} objects, and the minus operator \code{"-"} returns a 
-    \code{difftime} object if both arguments \code{e1} and \code{e2} 
-    are \code{"timeDate"} objects, or returns a \code{"timeDate"} object 
-    \code{e2} seconds earlier than \code{e1}.
+  \code{Ops.timeDate}
+  \cr
+  these are functions for mathematical operations. Group \code{Ops} are 
+  generic functions which manage mathematical operations. 
+  
+  \code{+.timeDate}\cr
+  \code{-.timeDate}
+  \cr
+  The plus operator \code{"+"} performs arithmetic "+" operation on 
+  \code{"timeDate"} objects, and the minus operator \code{"-"} returns a 
+  \code{difftime} object if both arguments \code{e1} and \code{e2} 
+  are \code{"timeDate"} objects, or returns a \code{"timeDate"} object 
+  \code{e2} seconds earlier than \code{e1}.
 
 }
 
@@ -89,6 +84,4 @@
    ZUR[2] - ZUR[1] 
 }
 
-
 \keyword{chron}
-

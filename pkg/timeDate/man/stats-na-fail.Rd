@@ -1,18 +1,16 @@
 \name{is.na-methods}
-
+\alias{is.na-methods}
 
 \docType{methods}
 
-
-\alias{is.na-methods}
 \alias{is.na,timeDate-method}
 
-\title{is.na Methods}
 
+\title{Methods for 'is.na'}
 
 \description{
 
-    is.na methods for 'timeDate' objects. 
+  \code{is.na} methods for \code{"timeDate"} objects.
 
 }
 
@@ -30,6 +28,4 @@ td
 is.na(td)
 }
 
-
 \keyword{chron}
-

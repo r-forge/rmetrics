@@ -1,41 +1,33 @@
 \name{length}
-
-
 \alias{length}
+
 \alias{length.timeDate}
 
 
-\title{Length of a 'timeDate' Object}
-
+\title{Length of a 'timeDate' object}
 
 \description{
     
-    Returns the length of a 'timeDate' object. 
+  Returns the length of a \code{"timeDate"} object.
        
 }
-
 
 \usage{
 \method{length}{timeDate}(x)
 }
 
-
 \arguments{
-  
     
-    \item{x}{
-        an object of class \code{timeDate}.
-        }
-                
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }
 }
-
 
 \value{
    
-    returns an integer of length 1.
+  an integer of length 1
 
 }
-
 
 \examples{  
 ## timCalendar -
@@ -45,6 +37,4 @@
    length(tC)
 }
 
-
 \keyword{chron}
-

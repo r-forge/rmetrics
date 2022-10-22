@@ -1,11 +1,12 @@
 \name{rulesFinCenter}
 \alias{rulesFinCenter}
 
-\title{Financial Centers DST Rules}
+
+\title{Financial centers DST rules}
 
 \description{
 
-    Returns DST rules for a financial center.
+  Returns DST rules for a financial center.
 
 }
 
@@ -16,28 +17,27 @@ rulesFinCenter(FinCenter = "")
 \arguments{
 
   \item{FinCenter}{
-    a character string with the location of the
-    financial center named as "continent/city".
+
+    a character string with the location of the financial center named
+    as "continent/city".
+
   }
-        
 }
 
 
 \value{
-
-    a list of time zones and DST rules available in the database.
-
+  a list of time zones and DST rules available in the database
 }
 
 
 \details{
 
-    The function \code{rulesFinCenter} lists the daylight saving rules
-    for a selected financial center.
+  The function \code{rulesFinCenter} lists the daylight saving rules for
+  a selected financial center.
     
-    There is no dependency on the POSIX implementation of your operating
-    system because all time zone and day light saving time information 
-    is stored locally in ASCII files. 
+  There is no dependency on the POSIX implementation of your operating
+  system because all time zone and day light saving time information is
+  stored locally in ASCII files.
     
 }
 
@@ -50,6 +50,5 @@ rulesFinCenter(FinCenter = "")
 ## rulesFinCenter - 
    rulesFinCenter("Zurich")
 }
-
 
 \keyword{chron}

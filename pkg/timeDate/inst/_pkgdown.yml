@@ -1,5 +1,8 @@
 url: https://geobosh.github.io/timeDateDoc/
 
+deploy:
+  install_metadata: true
+
 template:
   bootstrap: 5
   

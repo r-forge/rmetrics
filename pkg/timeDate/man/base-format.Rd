@@ -1,16 +1,13 @@
 \name{format-methods}
-
-
-\title{Format Methods}
-
-
 \alias{format}
+
 \alias{format.timeDate}
 
 
-\description{
+\title{Format methods}
 
-    Formats 'timeDate' objects as ISO conform character strings.
+\description{
+    Formats \code{"timeDate"} objects as ISO conform character strings.
 }
 
 
@@ -31,7 +28,7 @@
         a logical.
         }   
     \item{x}{
-        an object of class \code{timeDate}.
+        an object of class \code{"timeDate"}.
         }
     \item{\dots}{
         arguments passed to other methods.
@@ -39,31 +36,17 @@
 
 }
 
-
 \value{
-
-    returns an ISO conform formatted character string.
-   
+  an ISO conforming formatted character string
 }
-
-
-\note{
-
-    This S3 method will become in the future a S4 method
-    
-}
-
 
 \seealso{
-
-    \code{as.character}.
-
+  \code{as.character}
 }
-    
 
 \examples{
 ## timeCalendar -
-   # Time Calebdar 16:00
+   # Time Calendar 16:00
    tC = timeCalendar() + 16*3600
    tC
    
@@ -71,6 +54,4 @@
    format(tC)
 }
 
-
 \keyword{chron}
-

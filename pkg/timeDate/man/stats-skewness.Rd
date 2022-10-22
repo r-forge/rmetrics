@@ -1,7 +1,6 @@
 \name{skewness}
-
-
 \alias{skewness}
+
 \alias{skewness.default}
 \alias{skewness.data.frame}
 \alias{skewness.POSIXct}
@@ -10,10 +9,9 @@
 
 \title{Skewness}
 
-
 \description{
 
-    Functions to compute skewness.
+  Functions to compute skewness.
 
 }
 
@@ -33,43 +31,45 @@ skewness(x, \dots)
 
 \arguments{
   
-    \item{na.rm}{
-        a logical. Should missing values be removed?
-        }
-    \item{method}{
-        a character string which specifies the method of computation. 
-        These are either \code{"moment"} or \code{"fisher"}
-        The \code{"moment"} method is based on the definitions of 
-        skewnessfor distributions; these forms should 
-        be used when resampling (bootstrap or jackknife). The 
-        \code{"fisher"} method correspond to the usual "unbiased" 
-        definition of sample variance, although in the case of skewness 
-        exact unbiasedness is not possible. 
-        }
-    \item{x}{
-        a numeric vector or object.      
-        }
-    \item{\dots}{
-        arguments to be passed.
-        }
-        
+  \item{x}{
+    a numeric vector or object.      
+  }
+  \item{na.rm}{
+    a logical. Should missing values be removed?
+  }
+  \item{method}{
+    
+    a character string, the method of computation, see section
+    \sQuote{Detaials}.
+    
+  }
+  \item{\dots}{
+    arguments to be passed.
+  }
 }
 
+\details{
+
+  Argument \code{method} can be one of \code{"moment"} or
+  \code{"fisher"}.  The \code{"moment"} method is based on the
+  definitions of skewness for distributions and this should be used when
+  resampling (bootstrap or jackknife). The \code{"fisher"} method
+  correspond to the usual "unbiased" definition of sample variance,
+  although in the case of skewness exact unbiasedness is not possible.
+
+}
 
 \value{
     
-    a numeric value or vector with attribute \code{"method"} indicating
-    the method. 
+  a numeric value or vector with attribute \code{"method"} indicating
+  the method. 
     
 }
 
 
 \seealso{
-
-    \code{\link{kurtosis}}.
-    
+  \code{\link{kurtosis}}
 }
-
 
 \examples{   
 ## mean -
@@ -83,6 +83,4 @@ skewness(x, \dots)
    skewness(r)  
 }
 
-
 \keyword{univar}
-

@@ -1,14 +1,19 @@
 \name{names-methods}
+\alias{names-methods}
 
 \docType{methods}
 
-\alias{names-methods}
 \alias{names,timeDate-method}
 \alias{names<-,timeDate-method}
 
-\title{The Names of a timeDate Object}
 
-\description{Functions to get or set the names of a timeDate object.}
+\title{
+  The names of a 'timeDate' object
+}
+
+\description{
+  Functions to get or set the names of a \code{"timeDate"} object.
+}
 
 \usage{
 \S4method{names}{timeDate}(x)
@@ -17,7 +22,7 @@
 
 \arguments{
   \item{x}{
-    an object of class \code{timeDate}.
+    an object of class \code{"timeDate"}.
   }
   \item{value}{
     a character vector of up to the same length as 'x', or 'NULL'.

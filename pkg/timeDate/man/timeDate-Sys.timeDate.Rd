@@ -1,55 +1,48 @@
 \name{Sys.timeDate}
-
-
-\title{System Time as 'timeDate' Object}
-
-
 \alias{Sys.timeDate}
 
 
-\description{
+\title{System time as 'timeDate' object}
 
-    Returns system time as an object of class 'timeDate'.
+\description{
+  
+  Returns the system time as an object of class \code{"timeDate"}.
 
 }
-
 
 \usage{
 Sys.timeDate(FinCenter = "")
 }
 
-
 \arguments{
 
-    \item{FinCenter}{
-        a character with the location of the
-        financial center named as "continent/city".
-        }
+  \item{FinCenter}{
 
+    a character string with the location of the financial center named
+    as "continent/city".
+
+  }
 }
-
 
 \value{
-
-    returns the system time as class \code{"timeDate"} object.
-
+  a \code{"timeDate"} object
 }
-
 
 
 \examples{
-## Sys.time -
+\dontrun{
+## direct
+   Sys.timeDate()
 
-   # direct
-   Sys.timeDate()  
-   
-   # transformed from "POSIX(c)t"         
+   # Local Time in Zurich
+   Sys.timeDate(FinCenter = "Zurich")  
+
+## transformed from "POSIX(c)t" with timeDate()
    timeDate(Sys.time()) 
  
    # Local Time in Zurich
    timeDate(Sys.time(), FinCenter = "Zurich")  
+}   
 }
 
-
 \keyword{chron}
-

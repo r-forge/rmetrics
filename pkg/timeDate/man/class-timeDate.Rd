@@ -1,18 +1,13 @@
 \name{timeDate-class}
-
+\alias{timeDate-class}
 
 \docType{class}
 
-
-\alias{timeDate-class}
-
-
 \title{Class "timeDate"}
-
 
 \description{ 
 
-  Class 'timeDate' represents date and time objects.
+  Class \code{"timeDate"} represents date and time objects.
   
 }
 
@@ -58,12 +53,12 @@
   operating system dependent and especially under MS Windows several 
   problems appeared over the time in the management of time zones and 
   day light saving times. Rmetrics overcomes these difficulties with 
-  POSIX objects and introduce a new S4 class of 'timeDate' objects 
+  POSIX objects and introduce a new S4 class of \code{"timeDate"} objects 
   which allow for powerful methods to represent dates and times in 
   different financial centers around the world. 
   
   Many of the basic functionalities of these objects are in common 
-  with S-Plus' \code{timeDate} objects and thus many of your privately 
+  with S-Plus' \code{"timeDate"} objects and thus many of your privately 
   written functions for SPlus/FinMetrics may also be used within the
   R/Rmetrics environment.
 
@@ -89,9 +84,9 @@
   the fact that we don't rely on American or European ways to write dates.
   We use consequently the ISO-8601 standard for date and time notations. \cr
   
-  \bold{Generation of 'timeDate' Objects}
+  \bold{Generation of \code{"timeDate"} Objects}
 
-  We have defined a \code{timeDate} class which is in many aspects similar
+  We have defined a \code{"timeDate"} class which is in many aspects similar
   to the S-Plus class with the same name, but has also some important
   advantageous differeneces. The S4 class has four Slots, the \code{Data}
   slot which holds date and time as 'POSIXct' objects in the standard
@@ -100,27 +95,27 @@
   slot and the \code{FinCenter} slot which holds the name of the financial 
   center. By default this is the value 
 
-  Three functions allow to cgenerate date/time objects: \code{timeDate}
+  Three functions allow to cgenerate date/time objects: \code{"timeDate"}
   from character vectors, \code{timeCalendar} from date and time atoms,
   and \code{timeSequence} from a "from/to" or from a "from/length" sequence
   specification. Note, time zone transformations are easily handled by
-  by the \code{timeDate} functions which can also take \code{timeDate}
+  by the \code{"timeDate"} functions which can also take \code{"timeDate"}
   and \code{POSIXt} objects as inputs, while transforming them between
   financial centers and/or time zones specified by the arguments \code{zone}
   and \code{FinCenter}. Finally the function \code{Sys.timeDate} returns
-  current system time in form of a \code{timeDate} object.\cr
+  current system time in form of a \code{"timeDate"} object.\cr
   
   
   \bold{Tests and Representation of timeDate Objects:}
 
   Rmetrics has implemented several methods to represent
-  \code{timeDate} objects. For example, the 
+  \code{"timeDate"} objects. For example, the 
   print method returns the date/time in square \code{"[]"} brackets 
   to distinguish the output from other date and time objects. 
   On top of the date and
   time output the name of the \code{FinCenter} is printed. The summary
   method returns a printed report with information about the
-  \code{timeDate} object. Finally, the format methods allows to
+  \code{"timeDate"} object. Finally, the format methods allows to
   transform objects into a ISO conform formatted character strings. \cr
 
 
@@ -129,27 +124,27 @@
   Rmetrics supports methods
   to perform many mathematical operations. Included are methods 
   to extract or 
-  to replace subsets from \code{timeDate} objects, 
+  to replace subsets from \code{"timeDate"} objects, 
   to perform arithmetic \code{"+"} and \code{"-"} operations, 
   to group \code{\link{Ops}} generic functions,
   to return suitably lagged and iterated differences \code{\link{diff}}, 
-  to return differences \code{\link{difftimeDate}} of two \code{timeDate} 
+  to return differences \code{\link{difftimeDate}} of two \code{"timeDate"} 
   objects, to concatenate objects, to replicate objects, 
   to \code{\link{round}} objects, 
   to truncate objects using \code{\link{trunc}}, 
   to extract the first or last entry of a vector, 
   to \code{\link{sort}} the objects of the elements of a date/time vector, and 
-  to revert 'timeDate' vector objects, among other functions. \cr
+  to revert \code{"timeDate"} vector objects, among other functions. \cr
 
 
   \bold{Transformation of Objects:}
 
   Rmetrics has also functions to transform dat/time objects between 
   different representations. Included are methods to transform 
-  \code{timeDate} objects to character strings, to data frames, 
+  \code{"timeDate"} objects to character strings, to data frames, 
   to POSIXct or POSIXlt objects, to \code{\link{julian}}
   counts. One can extract date/time \code{atoms} from calendar 
-  dates, and the \code{\link{months}} atoms from a \code{timeDate} 
+  dates, and the \code{\link{months}} atoms from a \code{"timeDate"} 
   object.
   
 }
@@ -164,7 +159,7 @@
 
   The usage of the Ical Library and the introduction of the FinCenter
   concept was originally develloped for R Version 1.5. The
-  \code{timeDate} and \code{timeSeries} objects were added for
+  \code{"timeDate"} and \code{timeSeries} objects were added for
   R Version 1.8.1. Minor changes were made to adapt the functions
   for R Version 1.9.1. As a consequence, newer concepts like the
   \code{Date} objects were not yet considered and included in this
@@ -189,8 +184,6 @@
   formats.
 
 }
-
-
 
 \section{Methods}{
   
@@ -299,50 +292,50 @@
 
 ## timeDate -
 
-   Sys.timeDate()           # direct
-   timeDate(Sys.time())     # transformed from "POSIX(c)t"
+   # Sys.timeDate()           # direct
+   # timeDate(Sys.time())     # transformed from "POSIX(c)t"
    
-   # Local Time in Zurich
-   timeDate(Sys.time(), FinCenter = "Zurich")  
+   # # Local Time in Zurich
+   # timeDate(Sys.time(), FinCenter = "Zurich")  
 
-   # Character Vector Strings:
-   dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
-   dts
-   tms = c(  "23:12:55",   "10:34:02",   "08:30:00",   "11:18:23")
-   tms
+# Character Vector Strings:
+dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
+dts
+tms = c(  "23:12:55",   "10:34:02",   "08:30:00",   "11:18:23")
+tms
 
-   t1 <- timeDate(dts, format = "\%Y-\%m-\%d", FinCenter = "GMT" )
-   t1
-   
-   stopifnot(identical(t1, timeDate(dts, FinC = "GMT"))) # auto-format
-   
-   timeDate(dts, format = "\%Y-\%m-\%d", FinCenter = "Europe/Zurich")
-   
-   timeDate(paste(dts, tms), format = "\%Y-\%m-\%d \%H:\%M:\%S",
-     zone = "GMT", FinCenter = "GMT")
-   
-   timeDate(paste(dts, tms), 
-     zone = "Europe/Zurich", FinCenter = "Europe/Zurich")
-   
-   timeDate(paste(dts, tms), format = "\%Y-\%m-\%d \%H:\%M:\%S",
-     zone = "GMT", FinCenter = "Europe/Zurich")
+t1 <- timeDate(dts, format = "\%Y-\%m-\%d", FinCenter = "GMT" )
+t1
 
-   ## Non Standard Format:
-   timeDate(paste(20:31, "03.2005", sep="."), format = "\%d.\%m.\%Y")
+stopifnot(identical(t1, timeDate(dts, FinC = "GMT"))) # auto-format
 
-   # Note, ISO and American Formats are Auto-Detected:
-   timeDate("2004-12-31", FinCenter = "GMT")
-   timeDate("12/11/2004", FinCenter = "GMT")
-   timeDate("1/31/2004") # auto-detect American format
+timeDate(dts, format = "\%Y-\%m-\%d", FinCenter = "Europe/Zurich")
 
-   ## ... from POSIX?t, and Using NAs:
-   ## lsec <- as.POSIXlt(.leap.seconds) 
-   ## lsec[c(2,4:6)] <- NA
-   ## timeDate(lsec)
+timeDate(paste(dts, tms), format = "\%Y-\%m-\%d \%H:\%M:\%S",
+  zone = "GMT", FinCenter = "GMT")
 
-   ## dtms <- paste(dts,tms)
-   ## dtms[2:3] <- NA
-   ## timeDate(dtms, FinCenter = "Europe/Zurich") # but in GMT
+timeDate(paste(dts, tms), 
+  zone = "Europe/Zurich", FinCenter = "Europe/Zurich")
+
+timeDate(paste(dts, tms), format = "\%Y-\%m-\%d \%H:\%M:\%S",
+  zone = "GMT", FinCenter = "Europe/Zurich")
+
+## Non Standard Format:
+timeDate(paste(20:31, "03.2005", sep="."), format = "\%d.\%m.\%Y")
+
+# Note, ISO and American Formats are Auto-Detected:
+timeDate("2004-12-31", FinCenter = "GMT")
+timeDate("12/11/2004", FinCenter = "GMT")
+timeDate("1/31/2004") # auto-detect American format
+
+## ... from POSIX?t, and Using NAs:
+## lsec <- as.POSIXlt(.leap.seconds) 
+## lsec[c(2,4:6)] <- NA
+## timeDate(lsec)
+
+## dtms <- paste(dts,tms)
+## dtms[2:3] <- NA
+## timeDate(dtms, FinCenter = "Europe/Zurich") # but in GMT
 
 % would need  change in R :
 %    tms[3] <- dts[2] <- NA
@@ -350,30 +343,31 @@
 
 ## timeCalendar -
    
-   getRmetricsOptions("currentYear")
-   timeCalendar() # 12 months of current year
-   timeCalendar(m = c(9, 1, 8, 2), d = c(28, 15, 30, 9),
-     y = c(1989, 2001, 2004, 1990), FinCenter = "GMT")
-   timeCalendar(m = c(9, 1, 8, 2), d = c(28, 15, 30, 9),
-     y = c(1989, 2001, 2004, 1990), FinCenter = "Europe/Zurich")
-   timeCalendar(h = c(9, 14), min = c(15, 23))
+## getRmetricsOptions("currentYear")
+## timeCalendar()  # 12 months of current year
+
+timeCalendar(2022) # 12 months of 2022
+timeCalendar(y = c(1989, 2001, 2004, 1990), 
+    m = c(9, 1, 8, 2), d = c(28, 15, 30, 9), FinCenter = "GMT")
+timeCalendar(y = c(1989, 2001, 2004, 1990),
+    m = c(9, 1, 8, 2), d = c(28, 15, 30, 9), FinCenter = "Europe/Zurich")
+
+## timeCalendar(h = c(9, 14), min = c(15, 23))
+timeCalendar(2022, h = c(9, 14), min = c(15, 23))
 
 ## timeSequence -
    
-   timeSequence(from = "2004-03-12", to = "2004-04-11",
-     format = "\%Y-\%m-\%d", FinCenter = "GMT")
-   timeSequence(from = "2004-03-12", to = "2004-04-11",
-     format = "\%Y-\%m-\%d", FinCenter = "Europe/Zurich")
+timeSequence(from = "2004-03-12", to = "2004-04-11",
+  format = "\%Y-\%m-\%d", FinCenter = "GMT")
+timeSequence(from = "2004-03-12", to = "2004-04-11",
+  format = "\%Y-\%m-\%d", FinCenter = "Europe/Zurich")
 
 ## print | summary | format -
 
-   tC = timeCalendar()
+   tC = timeCalendar(2022)
    print(tC)
    summary(tC)
    format(tC)
 }
 
-
-
 \keyword{chron}
-

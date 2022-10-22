@@ -1,7 +1,6 @@
 \name{firstDay}
-
-
 \alias{firstDay}
+
 \alias{lastDay}
 
 \alias{timeFirstDayInMonth}
@@ -11,15 +10,13 @@
 \alias{timeLastDayInQuarter}
 
 
-\title{First and Last Days}
-
+\title{First and last days}
 
 \description{
     
-    Computes the first/last day in a given month/quarter.
+  Computes the first/last day in a given month/quarter.
     
 }
-
 
 \usage{
 timeFirstDayInMonth(charvec, format = "\%Y-\%m-\%d", zone = "", 
@@ -36,35 +33,35 @@ timeLastDayInQuarter(charvec, format = "\%Y-\%m-\%d", zone = "",
 
 \arguments{
   
-    \item{charvec}{
-        a character vector of dates and times.
-        }
-    \item{format}{
-        the format specification of the input character vector.
-        }
-    \item{zone}{
-        the time zone or financial center where the data were recorded.
-        }
-    \item{FinCenter}{
-        a character with the location of the  
-        financial center named as "continent/city". 
-        }
+  \item{charvec}{
+    a character vector of dates and times.
+  }
+  \item{format}{
+    the format specification of the input character vector.
+  }
+  \item{zone}{
+    the time zone or financial center where the data were recorded.
+  }
+  \item{FinCenter}{
+    a character with the location of the financial center named as
+    "continent/city".
+  }
    
 }
 
+\details{
 
-\value{
+  The functions \code{timeLastDayInMonth} and \code{timeLastDayInMonth}
+  return the last or first day, respectively, in a given month and year.
+    
+  The same functionality for quarterly time horizons is returned by the
+  functions \code{timeLastDayInQuarter} and \code{timeLastDayInQuarter}.
 
-    returns an object of class \code{timeDate}.
-    
-    For the functions \code{timeLastDayInMonth} and \code{timeLastDayInMonth}
-    return the last or first day respectively in a given month and year.
-    
-    The same functionality for quarterly time horizons is returned by the
-    functions \code{timeLastDayInQuarter} and \code{timeLastDayInQuarter}.
-     
 }
 
+\value{
+  an object of class \code{"timeDate"}
+}
 
 \examples{
 ## Date as character String:
@@ -107,6 +104,4 @@ timeLastDayInQuarter(charvec, format = "\%Y-\%m-\%d", zone = "",
    timeLastNdayInMonth("1996-05-01", 2)
 }
 
-
 \keyword{chron}
-

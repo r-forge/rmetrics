@@ -1,15 +1,12 @@
 \name{dayOfWeek}
-
-
-\title{Day of the Week}
-
-
 \alias{dayOfWeek}
 
 
+\title{Day of the week}
+
 \description{
     
-    returns the day of the year from a 'timeDate' object.
+  Returns the day of the year from a \code{"timeDate"} object.
       
 }
 
@@ -21,27 +18,23 @@ dayOfWeek(x)
 
 \arguments{
   
-    \item{x}{
-        an object of class \code{timeDate}.
-        }  
-       
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }  
 }
 
 
 \value{
 
-
-    returns a three letter character string with the names in English
-    of the day of the week,
+  a three letter character string with the names in English
+  of the day of the week,
 
 }
 
 
 \seealso{
-
-    \code{\link{dayOfYear}}
+  \code{\link{dayOfYear}}
 }
-
 
 
 \examples{  
@@ -52,6 +45,4 @@ dayOfWeek(x)
    dayOfWeek(tC)
 }
 
-
 \keyword{chron}
-

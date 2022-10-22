@@ -1,16 +1,12 @@
 \name{holiday}
-
 \alias{holiday}
 
-\title{Holiday Dates}
 
+\title{Holiday dates}
 
 \description{
-    
-    Returns the date of a holiday. 
-               
+  Returns the date of a holiday. 
 }
-
 
 \usage{
 holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
@@ -35,9 +31,7 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
 
 
 \value{
-
-    an object of class \code{timeDate}.
-
+  an object of class \code{"timeDate"}
 }
 
 
@@ -165,6 +159,4 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
    Easter(2000:2005, -2) 
 }
 
-
 \keyword{chron}
-

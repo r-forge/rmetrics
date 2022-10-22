@@ -1,11 +1,17 @@
 \name{timeSequence}
-
 \alias{timeSequence}
+
 \alias{seq.timeDate}
 
-\title{Regularly spaced 'timeDate' objects}
+
+\title{
+  Regularly spaced 'timeDate' objects
+}
+
 \description{
-    Create a regularly spaced object of class \code{timeDate}.
+
+  Create a regularly spaced object of class \code{"timeDate"}.
+
 }
 
 \usage{
@@ -58,7 +64,7 @@ timeSequence(from, to = Sys.timeDate(), by, length.out = NULL,
 }
 
 \value{
-  an object of class \code{"\linkS4class{timeDate}"}.
+  an object of class \code{"\linkS4class{timeDate}"}
 }
 
 \examples{

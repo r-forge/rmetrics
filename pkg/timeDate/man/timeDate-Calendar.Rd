@@ -1,18 +1,14 @@
 \name{timeCalendar}
-
-
-\title{'timeDate' from Calendar Atoms}
-
-
 \alias{timeCalendar}
 
 
+\title{'timeDate' from calendar atoms}
+
 \description{
 
-    Create a 'timeDate' object from calendar atoms.
+  Create a \code{"timeDate"} object from calendar atoms.
 
 }
-
 
 \usage{
 timeCalendar(y = getRmetricsOptions("currentYear"), m = 1:12, d = 1,
@@ -20,35 +16,30 @@ timeCalendar(y = getRmetricsOptions("currentYear"), m = 1:12, d = 1,
     zone = "", FinCenter = "")
 }
 
-
 \arguments{
 
-    \item{y, m, d}{
-        calendar years (e.g. 1997), defaults are 1960,
-        calendar months (1-12), defaults are 1, and
-        calendar days (1-31), defaults are 1, \cr
-        }
-    \item{h, min, s}{
-        hours of the days (0-23), defaults are 0,
-        minutes of the days (0-59), defaults are 0, and
-        seconds of the days (0-59), defaults are 0.
-        }    
-    \item{zone}{
-        a character string, denoting the time zone or financial 
-        center where the data were recorded.
-        }
-    \item{FinCenter}{
-        a character with the location of the
-        financial center named as "continent/city".
-        }
-
+  \item{y, m, d}{
+    calendar years (e.g. 1997), defaults are 1960,
+    calendar months (1-12), defaults are 1, and
+    calendar days (1-31), defaults are 1, \cr
+  }
+  \item{h, min, s}{
+    hours of the days (0-23), defaults are 0,
+    minutes of the days (0-59), defaults are 0, and
+    seconds of the days (0-59), defaults are 0.
+  }    
+  \item{zone}{
+    a character string, denoting the time zone or financial 
+    center where the data were recorded.
+  }
+  \item{FinCenter}{
+    a character with the location of the
+    financial center named as "continent/city".
+  }
 }
 
-
 \value{
-
-    returns a S4 object of class \code{"timeDate"}.
-
+  an object of class \code{"timeDate"}
 }
 
 
@@ -70,6 +61,4 @@ timeCalendar(y = getRmetricsOptions("currentYear"), m = 1:12, d = 1,
    timeCalendar(h = c(9, 14), min = c(15, 23))
 }
 
-
 \keyword{chron}
-

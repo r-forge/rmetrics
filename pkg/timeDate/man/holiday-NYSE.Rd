@@ -1,8 +1,8 @@
 \name{holidayNYSE}
-
-\title{NYSE Holiday Calendar}
-
 \alias{holidayNYSE}
+
+
+\title{NYSE holiday calendar}
 
 \description{
     
@@ -72,9 +72,7 @@ holidayNYSE(year = getRmetricsOptions("currentYear"),
 }
 
 \value{
-
-    an object of class \code{timeDate}. 
-
+    an object of class \code{"timeDate"}
 }
 
 
@@ -91,4 +89,3 @@ holidayNYSE(2007, type = "special")
 }
 
 \keyword{chron}
-

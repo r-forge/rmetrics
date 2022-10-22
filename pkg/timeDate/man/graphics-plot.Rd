@@ -1,8 +1,5 @@
 \name{plot-methods}
 
-\title{Plot Methods}
-
-
 \alias{plot,timeDate-method}
 \alias{points,timeDate-method}
 \alias{lines,timeDate-method}
@@ -11,8 +8,10 @@
 \alias{pretty.timeDate}
 
 
+\title{Plot methods}
+
 \description{
-    Plot methods for \code{timeDate} objects.
+  Plot methods for \code{"timeDate"} objects.
 }
 
 
@@ -30,62 +29,57 @@ axis.timeDate(side, x, at, format = NULL, labels = TRUE, \dots)
 
 
 \arguments{
-    \item{x, y, at}{
-        an object of class \code{timeDate}.
-    }
-    \item{side}{
-        an integer specifying which side of the plot the axis
-        is to be drawn on. The axis is placed as follows:
-        1=below, 2=left, 3=above and 4=right.
-    }
-    \item{format}{
-        a POSIX format string, e.g. "\%Y-\%m-\%d".
-    }
-    \item{labels}{
-        either a logical value specifying whether annotations
-        are to be made at the tickmarks, or a vector of character
-        strings to be placed at the tickpoints.
-    }
-    \item{n}{
-        an integer giving the desired number of intervals.
-    }
-    \item{min.n}{
-        a nonnegative integer giving the minimal
-        number of intervals.
-    }
-    \item{shrink.sml}{
-        a positive numeric by a which a default
-        scale is shrunk in the case when range(x) is
-        very small.
-    }
-    \item{high.u.bias}{
-        a non-negative numeric, typically > 1.
-        Larger high.u.bias values favor larger units.
-    }
-    \item{u5.bias}{
-        a non-negative numeric multiplier favoring
-        factor 5 over 2.
-    }
-    \item{eps.correct}{
-       an integer code, one of {0,1,2}. If
-       non-0, a correction is made at the boundaries.
-    }
-    \item{\dots}{
-        arguments passed to other methods.
-    }
+  \item{x, y, at}{
+    an object of class \code{timeDate}.
+  }
+  \item{side}{
+    an integer specifying which side of the plot the axis
+    is to be drawn on. The axis is placed as follows:
+    1=below, 2=left, 3=above and 4=right.
+  }
+  \item{format}{
+    a POSIX format string, e.g. "\%Y-\%m-\%d".
+  }
+  \item{labels}{
+    either a logical value specifying whether annotations
+    are to be made at the tickmarks, or a vector of character
+    strings to be placed at the tickpoints.
+  }
+  \item{n}{
+    an integer giving the desired number of intervals.
+  }
+  \item{min.n}{
+    a nonnegative integer giving the minimal
+    number of intervals.
+  }
+  \item{shrink.sml}{
+    a positive numeric by a which a default
+    scale is shrunk in the case when range(x) is
+    very small.
+  }
+  \item{high.u.bias}{
+    a non-negative numeric, typically > 1.
+    Larger high.u.bias values favor larger units.
+  }
+  \item{u5.bias}{
+    a non-negative numeric multiplier favoring
+    factor 5 over 2.
+  }
+  \item{eps.correct}{
+    an integer code, one of {0,1,2}. If
+    non-0, a correction is made at the boundaries.
+  }
+  \item{\dots}{
+    arguments passed to other methods.
+  }
 }
 
 
 \value{
-    returns a summary report of the details of a \code{timeDate}
-    object. This includes the starting and end date, the number of
-    dates the format and the financial center in use.
-}
-
-
-\note{
-    These S3 methods will become S4 methods in the future.
-}
+  
+  returns a summary report of the details of a \code{"timeDate"}
+  object. This includes the starting and end date, the number of dates
+  the format and the financial center in use.  }
 
 
 \examples{
@@ -104,7 +98,5 @@ axis.timeDate(side, x, at, format = NULL, labels = TRUE, \dots)
    axis.timeDate(1, at = x[12], format = "\%Y")
 }
 
-
 \keyword{hplot}
 \keyword{chron}
-

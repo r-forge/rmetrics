@@ -1,16 +1,16 @@
 \name{sample}
-
-
-\title{Resampling 'timeDate' Objects}
-
-
 \alias{sample}
+
 \alias{sample,timeDate-method}
+
+
+\title{Resampling 'timeDate' objects}
 
 
 \description{
     
-    Resamples a 'timeDate' object.
+  Resamples a \code{"timeDate"} object.
+
 }
 
 
@@ -29,9 +29,7 @@
 
 
 \value{
-    
-    returns an object of class \code{"timeDate"}.
-
+  an object of class \code{"timeDate"}
 }
 
 
@@ -60,6 +58,4 @@
    rep(ZUR[2:3], times = 2)  
 }
 
-
 \keyword{chron}
-

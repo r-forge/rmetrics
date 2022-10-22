@@ -1,18 +1,16 @@
 \name{window}
-
-
-\title{Time Windows}
-
-
 \alias{window}
+
 \alias{window.timeDate}
 \alias{cut.timeDate}
 
 
+\title{Time windows}
+
 \description{
     
-    Extract the subset of a 'timeDate' object observed between 
-    two time stamps.
+  Extract the subset of a \code{"timeDate"} object observed between two
+  time stamps.
        
 }
 
@@ -26,27 +24,25 @@
 
 \arguments{
   
-    \item{from, to}{
-        starting date, required, and end date, optional. If supplied 
-        \code{to} must be after \code{from}.
-        }
-    \item{start, end}{
-        starting date, required, and end date, optional. If supplied 
-        \code{to} must be after \code{from}.
-        }
-    \item{x}{
-        an object of class \code{timeDate}.
-        }
-    \item{\dots}{
-        arguments passed to other methods.
-        }         
+  \item{from, to}{
+    starting date, required, and end date, optional. If supplied 
+    \code{to} must be after \code{from}.
+  }
+  \item{start, end}{
+    starting date, required, and end date, optional. If supplied 
+    \code{to} must be after \code{from}.
+  }
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }
+  \item{\dots}{
+    arguments passed to other methods.
+  }         
 }
 
 
 \value{
-   
-  an object of class \code{timeDate}.
-
+  an object of class \code{"timeDate"}
 }
 
 \note{
@@ -61,7 +57,6 @@
 
 }
 
-
 \examples{  
 ## timeCalendar - 
    # Monthly Dates in Current Year:
@@ -74,6 +69,4 @@
    window(tS, tS[4], tS[6])
 }
 
-
 \keyword{chron}
-

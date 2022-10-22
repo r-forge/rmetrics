@@ -1,17 +1,13 @@
 \name{c}
-
-
-\title{Concatenating 'timeDate' Objects}
-
-
 \alias{c}
+
 \alias{c.timeDate}
 
 
+\title{Concatenating 'timeDate' objects}
+
 \description{
-    
-    Concatenates 'timeDate' objects.
-       
+    Concatenates \code{"timeDate"} objects.
 }
 
 
@@ -35,9 +31,7 @@
 
 
 \value{
-    
-    returns an object of class \code{"timeDate"}.
-
+    an object of class \code{"timeDate"}
 }
 
 
@@ -55,4 +49,3 @@
 
 
 \keyword{chron}
-

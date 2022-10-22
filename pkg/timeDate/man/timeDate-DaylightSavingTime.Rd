@@ -1,5 +1,4 @@
 \name{DaylightSavingTime}
-
 \alias{DaylightSavingTime}
 
 \alias{Abidjan}
@@ -417,6 +416,7 @@
 \alias{MST}
 \alias{PST}
 
+
 \title{Daylight Saving Time Rules}
 
 \description{
@@ -472,7 +472,6 @@
 ## list all available centers
 listFinCenter()
 }
-
 
 \keyword{data}
 

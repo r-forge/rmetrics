@@ -1,17 +1,14 @@
 \name{sort}
-
-
-\title{Sorting 'timeDate' Objects}
-
-
 \alias{sort}
+
 \alias{sort.timeDate}
 
 
+\title{Sorting 'timeDate' objects}
+
+
 \description{
-    
-    Sorts a 'timeDate' object.
-       
+  Sorts a \code{"timeDate"} object.
 }
 
 
@@ -19,11 +16,10 @@
 \method{sort}{timeDate}(x, \dots)
 }
 
-
 \arguments{
      
     \item{x}{
-        an object of class \code{timeDate}.
+        an object of class \code{"timeDate"}.
         }  
     \item{\dots}{
         arguments passed to other methods.
@@ -33,9 +29,7 @@
 
 
 \value{
-    
-    returns an object of class \code{"timeDate"}.
-
+  an object of class \code{"timeDate"}
 }
 
 
@@ -65,6 +59,4 @@
    rep(ZUR[2:3], times = 2)  
 }
 
-
 \keyword{chron}
-

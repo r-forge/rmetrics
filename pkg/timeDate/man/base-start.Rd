@@ -1,7 +1,6 @@
 \name{start}
-
-
 \alias{start}
+
 \alias{end}
 
 \alias{start.timeDate}
@@ -13,14 +12,13 @@
 \alias{range.timeDate}
 
 
-\title{Terminal Times and Range}
+\title{Terminal times and range}
 
 
 \description{
     
-    Extracts the time the first or last 
-    observation was taken, or computes the
-    range.
+  Extracts the time when the first or last observation was taken, or
+  computes the range of the dates in a \code{"timeDate"} object.
     
 }
 
@@ -40,42 +38,44 @@
 
 \arguments{
   
-    \item{x}{
-        an object of class \code{timeDate}.
-        }
-    \item{\dots}{
-        [start][end] - \cr
-        not used, \cr
-        [min][max] -
-        'timeDates' objects.
-        } 
-    \item{na.rm}{
-        not used.
-        }
-                
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }
+  \item{\dots}{
+    ignored by \code{start} and \code{end}; 
+    a 'timeDate' object for \code{min}, \code{max}, and \code{range}.
+  } 
+  \item{na.rm}{
+    not used.
+  }
 }
 
 
 \details{
 
-    Note, the series will be time ordered before the start or
-    end time stamps are extracted. Sorting is done in the
-    way that the first observation appears in time before the 
-    last observation.
+  Conceptually, the \code{"timeDate"} object is sorted before the
+  computations. In particular, \code{start} is not necessarilly the
+  first element of the object and similarly for the other functions.
+
+  \code{min} and \code{max} are equivalent to \code{start} end
+  \code{end}, respectively.
+
+  \code{range} returns the earlies and the latest times in a
+  \code{"timeDate"} object. The remaining functions return only one of
+  them, as suggested by their names.
     
 }
 
 
 \value{
-   
-    returns an object of class \code{timeDate}.
-
+  an object of class \code{"timeDate"}
 }
 
 
 \examples{  
 ## timeCalendar - 
    # Random Calendar Dates:
+\dontshow{set.seed(1234)}
    tR = sample(timeCalendar())
    sort(tR)
    tR
@@ -94,6 +94,4 @@
    range(tR)
 }
 
-
 \keyword{chron}
-

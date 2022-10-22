@@ -1,23 +1,18 @@
 \name{listFinCenter}
-
-
-\title{List of Financial Centers}
-
-
 \alias{listFinCenter}
 
 
+\title{List of financial centers}
+
 \description{
 
-     Lists supported financial centers. 
+  Lists supported financial centers. 
 
 }
-
 
 \usage{
 listFinCenter(pattern = ".*")
 }
-
 
 \arguments{
 
@@ -28,7 +23,6 @@ listFinCenter(pattern = ".*")
     centers
 
   }
-
 }
 
 

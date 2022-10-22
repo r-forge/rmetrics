@@ -1,37 +1,27 @@
 \name{myFinCenter}
-
-
-\title{myFinCenter Variable}
-
-
 \alias{myFinCenter}
 
 
+\title{myFinCenter variable}
+
 \description{
 
-    A character string with the name of my 
-    financial center. 
+  A character string with the name of my financial center.
     
 }
 
-
-
 \note{
 
-    Can be modified by the user to his/her own or any
-    other financial center. The default is "GMT".
-    To list all supported financial centers use the
-    function \code{listFinCenter}.
+    Can be modified by the user to his/her own or any other financial
+    center. The default is \code{"GMT"}.  To list all supported
+    financial centers use the function \code{listFinCenter}.
    
 }
 
 
 \seealso{
-
     \code{\link{listFinCenter}}
-    
 }
-
 
 \examples{
 ## myFinCenter - the global setting currently used:
@@ -44,6 +34,4 @@
    # setRmetricsOptions(myFinCenter = "GMT") 
 }
 
-
 \keyword{chron}
-

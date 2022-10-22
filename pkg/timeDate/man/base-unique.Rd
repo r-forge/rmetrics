@@ -1,5 +1,6 @@
 \name{unique}
 \alias{unique}
+
 \alias{unique.timeDate}
 
 \title{
@@ -7,7 +8,7 @@
 }
 
 \description{
-  Remove duplicated dates from 'timeDate' objects.    
+  Remove duplicated dates from \code{"timeDate"} objects.    
 }
 
 \usage{
@@ -17,7 +18,7 @@
 \arguments{
       
     \item{x}{
-        an object of class \code{timeDate}.
+        an object of class \code{"timeDate"}.
         }  
     \item{\dots}{
         arguments passed to other methods.
@@ -27,9 +28,7 @@
 
 
 \value{
-    
-    returns an object of class \code{"timeDate"}.
-
+  an object of class \code{"timeDate"}
 }
 
 
@@ -58,6 +57,4 @@
    rep(ZUR[2:3], times = 2)  
 }
 
-
 \keyword{chron}
-

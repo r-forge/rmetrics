@@ -1,15 +1,13 @@
 \name{difftimeDate}
-
-
-\title{Difference of two 'timeDate' Objects}
-
-
 \alias{difftimeDate}
+
+
+\title{Difference of two 'timeDate' objects}
 
 
 \description{
     
-    Returns a difference of two 'timeDate' objects.
+  Returns the difference of two 'timeDate' objects.
        
 }
 
@@ -23,7 +21,7 @@ difftimeDate(time1, time2,
 \arguments{
   
     \item{time1, time2}{
-        two objects objects of class \code{timeDate}.
+        two objects objects of class \code{"timeDate"}.
         }
     \item{units}{
         a character string denoting the date/time units in which the 
@@ -34,15 +32,12 @@ difftimeDate(time1, time2,
 
 
 \value{
-    
 
-    The function, \code{difftimeDate}, takes a difference of two 
-    \code{timeDate} objects and returns an object of class \code{"difftime"} 
-    with an attribute indicating the units.
+    The function, \code{difftimeDate}, takes a difference of two
+    \code{"timeDate"} objects and returns an object of class
+    \code{"difftime"} with an attribute indicating the units.
 
 }
-
-
 
 \examples{
 ## Create Character Vectors:
@@ -58,6 +53,4 @@ difftimeDate(time1, time2,
    difftimeDate(GMT[1:2], GMT[-(1:2)])  
 }
 
-
 \keyword{chron}
-
