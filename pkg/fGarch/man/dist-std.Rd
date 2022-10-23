@@ -8,7 +8,7 @@
 \alias{rstd}
 
 
-\title{Student-t Distribution}
+\title{Student-t distribution}
 
 
 \description{

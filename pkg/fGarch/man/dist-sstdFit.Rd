@@ -3,7 +3,7 @@
 \alias{sstdFit}
 
 
-\title{Skew Student-t Distribution Parameter Estimation}
+\title{Skew Student-t distribution parameter estimation}
 
 
 \description{

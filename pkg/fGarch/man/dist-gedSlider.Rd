@@ -4,7 +4,7 @@
 \alias{gedSlider}
 
 
-\title{Generalized Error Distribution Slider}
+\title{Generalized error distribution slider}
 
 
 \description{

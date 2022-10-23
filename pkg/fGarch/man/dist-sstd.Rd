@@ -8,7 +8,7 @@
 \alias{rsstd}
 
 
-\title{Skew Student-t Distribution and Parameter Estimation}
+\title{Skew Student-t distribution and parameter estimation}
 
 
 \description{

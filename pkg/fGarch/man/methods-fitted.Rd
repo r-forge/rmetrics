@@ -9,7 +9,7 @@
 \alias{fitted,fGARCH-method}
 
 
-\title{Extract GARCH Model Fitted Values}
+\title{Extract GARCH model fitted values}
 
 
 \description{

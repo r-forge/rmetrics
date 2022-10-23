@@ -3,7 +3,7 @@
 \alias{snormFit}
 
 
-\title{Skew Normal Distribution Parameter Estimation}
+\title{Skew normal distribution parameter estimation}
 
 
 \description{

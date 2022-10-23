@@ -1,6 +1,6 @@
 \name{residuals-methods}
 
-\title{Extract GARCH Model Residuals}
+\title{Extract GARCH model residuals}
 
 \docType{methods}
 \alias{residuals-methods}

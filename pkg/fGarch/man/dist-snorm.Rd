@@ -1,6 +1,6 @@
 \name{snorm}
 
-\title{Skew Normal Distribution}
+\title{Skew normal distribution}
 
 \alias{snorm}
 \alias{dsnorm}

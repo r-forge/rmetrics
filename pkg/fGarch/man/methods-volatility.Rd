@@ -1,6 +1,6 @@
 \name{volatility-methods}
 
-\title{Extract GARCH Model Volatility}
+\title{Extract GARCH model volatility}
 
 \alias{volatility.fGARCH}% S3 method now
 \alias{volatility}% S3 method now

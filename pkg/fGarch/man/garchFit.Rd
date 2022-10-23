@@ -1,5 +1,5 @@
 \name{garchFit}
-\title{Univariate or Multivariate GARCH Time Series Fitting}
+\title{Univariate or multivariate GARCH time series fitting}
 \alias{garchFit}
 \alias{garchKappa}
 \alias{.gogarchFit}

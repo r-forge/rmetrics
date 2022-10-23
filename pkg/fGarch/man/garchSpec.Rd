@@ -4,7 +4,7 @@
 \alias{garchSpec}
 
 
-\title{Univariate GARCH Time Series Specification}
+\title{Univariate GARCH time series specification}
 
 
 \description{

@@ -5,7 +5,7 @@
 \alias{dem2gbp}
 \alias{sp500dge}
 
-\title{Time Series Data Sets} 
+\title{Time series data sets} 
 
 \description{
   

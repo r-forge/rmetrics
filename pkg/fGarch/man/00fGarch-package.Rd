@@ -8,7 +8,7 @@
 \docType{package}
 
 
-\title{Modelling Heterskedasticity in Financial Time Series}
+\title{Modelling heterskedasticity in financial time series}
 
 
 \description{

@@ -4,7 +4,7 @@
 \alias{sstdSlider}
 
 
-\title{Skew Student-t Distribution Slider}
+\title{Skew Student-t distribution slider}
 
 
 \description{

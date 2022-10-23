@@ -4,7 +4,7 @@
 \alias{gedFit}
 
 
-\title{Generalized Error Distribution Parameter Estimation}
+\title{Generalized error distribution parameter estimation}
 
 
 \description{

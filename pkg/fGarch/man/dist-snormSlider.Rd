@@ -4,7 +4,7 @@
 \alias{snormSlider}
 
 
-\title{Skew Normal Distribution Slider}
+\title{Skew normal distribution slider}
 
 
 \description{

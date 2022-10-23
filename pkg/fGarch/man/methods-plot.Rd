@@ -9,7 +9,7 @@
 \alias{plot,fGARCH,missing-method}
 
 
-\title{GARCH Plot Methods}
+\title{GARCH plot methods}
 
 
 \description{

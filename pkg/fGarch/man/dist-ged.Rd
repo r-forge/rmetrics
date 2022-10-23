@@ -8,7 +8,7 @@
 \alias{rged}
 
 
-\title{Generalized Error Distribution}
+\title{Generalized error distribution}
 
 
 \description{

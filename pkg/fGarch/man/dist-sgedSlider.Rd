@@ -4,7 +4,7 @@
 \alias{sgedSlider}
 
 
-\title{Skew GED Distribution Slider}
+\title{Skew GED distribution slider}
 
 
 \description{

@@ -4,7 +4,7 @@
 \alias{stdSlider}
 
 
-\title{Student-t Distribution Slider}
+\title{Student-t distribution slider}
 
 
 \description{

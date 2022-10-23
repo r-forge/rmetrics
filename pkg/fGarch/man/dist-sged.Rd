@@ -8,7 +8,7 @@
 \alias{rsged}
 
 
-\title{Skew Generalized Error Distribution}
+\title{Skew generalized error distribution}
 
 
 \description{

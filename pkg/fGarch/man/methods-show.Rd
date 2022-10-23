@@ -1,6 +1,6 @@
 \name{show-methods}
 
-\title{GARCH Modelling Show Methods}
+\title{GARCH modelling show methods}
 
 \docType{methods}
 

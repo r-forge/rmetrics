@@ -4,7 +4,7 @@
 \alias{sgedFit}
 
 
-\title{Skew Generalized Error Distribution Parameter Estimation}
+\title{Skew generalized error distribution parameter estimation}
 
 
 \description{

@@ -9,7 +9,7 @@
 \alias{formula,fGARCH-method}
 
 
-\title{Extract GARCH Model formula}
+\title{Extract GARCH model formula}
 
 
 \description{

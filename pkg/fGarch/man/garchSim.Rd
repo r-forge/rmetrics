@@ -2,7 +2,7 @@
 
 \alias{garchSim}
 
-\title{Univariate GARCH/APARCH Time Series Simulation}
+\title{Univariate GARCH/APARCH time series simulation}
 
 
 \description{

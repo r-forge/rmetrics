@@ -3,7 +3,7 @@
 \alias{stdFit}
 
 
-\title{Student-t Distribution Parameter Estimation}
+\title{Student-t distribution parameter estimation}
 
 
 \description{

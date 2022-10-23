@@ -1,6 +1,6 @@
 \name{summary-methods}
 
-\title{GARCH Summary Methods}
+\title{GARCH summary methods}
 
 \docType{methods}
 \alias{summary-methods}
@@ -8,7 +8,7 @@
 \alias{summary,fGARCH-method}
 
 \description{
-    Summary methods for GARCH Modelling. 
+    Summary methods for GARCH modelling. 
 }
 
 

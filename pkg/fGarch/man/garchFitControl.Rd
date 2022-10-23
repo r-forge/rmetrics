@@ -4,7 +4,7 @@
 \alias{garchFitControl}
 
 
-\title{GARCH Fitting Algorithms and Control}
+\title{GARCH fitting algorithms and control}
 
 
 \description{

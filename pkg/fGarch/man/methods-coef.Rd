@@ -1,6 +1,6 @@
 \name{coef-methods}
 
-\title{GARCH Coefficients Methods}
+\title{GARCH coefficients methods}
 
 \docType{methods}
 

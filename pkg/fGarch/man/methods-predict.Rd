@@ -9,7 +9,7 @@
 \alias{predict,fGARCH-method}
 
 
-\title{GARCH Prediction Function}
+\title{GARCH prediction function}
 
 
 \description{
