@@ -31,18 +31,6 @@
   }
 }
 
-\section{Methods}{
-  \describe{
-    \item{object = "ANY"}{
-      Generic function
-    }
-    \item{object = "fGARCH"}{
-      Extractor function for residual from an object of class \code{"fGARCH"}.
-    }
-  }
-}
-
-
 \details{
 
     The function extracts the \code{@residuals} slot from an
@@ -71,10 +59,19 @@
    from objects returned by modeling functions.
 }
 
-
 \author{
   Diethelm Wuertz for the Rmetrics \R-port
 }
+
+\section{Methods}{
+  Methods for \code{residuals} defined in package \pkg{fGarch}:
+  \describe{
+    \item{object = "fGARCH"}{
+      Extractor function for residual from an object of class \code{"fGARCH"}.
+    }
+  }
+}
+
 
 \examples{
 ## Swiss Pension fund Index -

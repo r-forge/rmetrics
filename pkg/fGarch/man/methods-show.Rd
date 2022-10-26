@@ -18,25 +18,21 @@
 
 }
 
-\section{Methods}{
-  \describe{
-    \item{object = "ANY"}{
-        Generic function.
-        }
-    \item{object = "fGARCH"}{
-        Print function for objects of class \code{"fGARCH"}.
-        }
-    \item{object = "fGARCHSPEC"}{
-        Print function for objects of class \code{"fGARCH"}.
-        }
-
-    }
-}
-
 \author{
   Diethelm Wuertz for the Rmetrics \R-port
 }
 
+\section{Methods}{
+  Methods for \code{show} defined in package \pkg{fGarch}:
+  \describe{
+    \item{object = "fGARCH"}{
+      Print function for objects of class \code{"fGARCH"}.
+    }
+    \item{object = "fGARCHSPEC"}{
+      Print function for objects of class \code{"fGARCH"}.
+    }
+  }
+}
 
 \examples{
 ## garchSpec -

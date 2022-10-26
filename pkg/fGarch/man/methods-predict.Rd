@@ -26,7 +26,7 @@
   \item{n.ahead}{ an integer value, denoting the number of steps to be
     forecasted, by default 10.}
   
-  \item{object}{ an object of class \code{fGARCH} as returned by the
+  \item{object}{ an object of class \code{"fGARCH"} as returned by the
     function \code{garchFit}.}
   
   \item{trace}{ a logical flag. Should the prediction process be traced?
@@ -65,28 +65,33 @@
 
 }
 
+\details{
+
+  The predictions are returned as a data frame with a data frame with
+  columns \code{"meanForecast"}, \code{"meanError"}, and
+  \code{"standardDeviation"}. Row \code{h} contains the predictions for
+  horizon \code{h}. 
+    
+  The number of records equals the number of forecasting steps \code{n.ahead}.
+        
+  
+}
 
 \section{Methods}{
-    \describe{
+  Methods for \code{predict} defined in package \pkg{fGarch}:
+  \describe{
 
-    \item{object = "ANY"}{
-        Generic function.
-        }
     \item{object = "fGARCH"}{
-        Predict function for objects of class \code{"fGARCH"}.
-        }
-        
+      Predict function for objects of class \code{"fGARCH"}.
     }
+        
+  }
 }
 
 
 \value{
 
-  a data frame with the following columns:
-  \code{"meanForecast"}, \code{meanError}, and \code{"standardDeviation"}.
-    
-  The number of records equals the number of forecasting steps
-  \code{n.ahead}.
+  a data frame containing 3 columns and \code{n.ahead} rows, see section \sQuote{Details}
         
 }
 
@@ -127,4 +132,3 @@
 }
 
 \keyword{models}
-

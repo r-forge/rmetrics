@@ -15,25 +15,25 @@
 }
 
 \section{Methods}{
+  Methods for \code{coef} defined in package \pkg{fGarch}:
   \describe{
-    \item{object = "ANY"}{
-        Generic function.
-        }
     \item{object = "fGARCH"}{
-        Extractor function for coefficients from a fitted
-        GARCH model.
-        }
-    \item{object = "fGARCHSPEC"}{
-        Extractor function for coefficients from a GARCH
-        specification structure.
-        }
+      Extractor function for coefficients from a fitted
+      GARCH model.
     }
+    \item{object = "fGARCHSPEC"}{
+      Extractor function for coefficients from a GARCH
+      specification structure.
+    }
+  }
 }
 
 
 \note{
-    \code{\link{coef}} is a generic function which extracts coefficients
-    from objects returned by modeling functions.
+  
+  \code{\link{coef}} is a generic function which extracts coefficients
+  from objects returned by modeling functions.
+
 }
 
 

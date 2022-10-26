@@ -6,14 +6,15 @@
 \alias{volatility}% S3 method now
 
 
-
 \title{Extract GARCH model volatility}
 
 \description{
-    Extracts volatility, here from a fitted GARCH object.  This is a
-    method (see \code{\link{methods}}) for the S3 generic function
-    \code{\link[fBasics]{volatility}} (we import and re-export) from
-    package \CRANpkg{fBasics}.
+
+  Extracts volatility, here from a fitted GARCH object.  This is a
+  method (see \code{\link{methods}}) for the S3 generic function
+  \code{\link[fBasics]{volatility}} (we import and re-export) from
+  package \CRANpkg{fBasics}.
+
 }
 
 \usage{
@@ -22,26 +23,19 @@ volatility(object, \dots)
 }
 
 \arguments{
-    \item{object}{an object of class \code{fGARCH} as returned by \code{\link{garchFit}()}.}
-    \item{type}{
-        a character string denoting if the conditional standard
-        deviations \code{"sigma"} or the variances \code{"h"} should
-        be returned.
-        }
-    \item{\dots}{additional arguments to be passed.}
-}
+  \item{object}{
 
-\section{Methods}{
-  \describe{
-    \item{object = "ANY"}{
-        Generic function.
-        }
-    \item{object = "fGARCH"}{
-        Extractor function for volatility or standard deviation from
-        an object of class \code{"fGARCH"}.
-        }
+    an object of class \code{"fGARCH"} as returned by
+    \code{\link{garchFit}()}.
 
-    }
+  }
+  \item{type}{
+
+    a character string denoting if the conditional standard deviations
+    \code{"sigma"} or the variances \code{"h"} should be returned.
+
+  }
+  \item{\dots}{additional arguments to be passed.}
 }
 
 \details{
@@ -63,12 +57,23 @@ volatility(object, \dots)
 
     In contrast, the slot itself returns independent of the class
     of the data input always a numeric vector, i.e. the function
-    call r\code{slot(object, "fitted")} will return a numeric vector.
+    call \code{slot(object, "fitted")} will return a numeric vector.
 
 }
 
 \author{
   Diethelm Wuertz for the Rmetrics \R-port
+}
+
+\section{Methods}{
+  Methods for \code{volatility} defined in package \pkg{fGarch}:
+  \describe{
+    \item{object = "fGARCH"}{
+      Extractor function for volatility or standard deviation from
+      an object of class \code{"fGARCH"}.
+    }
+
+  }
 }
 
 

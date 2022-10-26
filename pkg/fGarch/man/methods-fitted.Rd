@@ -17,16 +17,14 @@
 
 
 \section{Methods}{
-    \describe{
+  Methods for \code{fitted} defined in package \pkg{fGarch}:
+  \describe{
 
-    \item{object = "ANY"}{
-        Generic function.
-        }
     \item{object = "fGARCH"}{
-        Extractor function for fitted values.
-        }
-
+      Extractor function for fitted values.
     }
+
+  }
 }
 
 
@@ -86,7 +84,6 @@ stopifnot(require("timeSeries"))
    head(fitted)
    class(fitted)
 }
-
 
 \keyword{models}
 

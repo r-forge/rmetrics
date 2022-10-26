@@ -22,32 +22,17 @@
 
 \arguments{
 
-    \item{x}{
-        an object of class \code{"fREG"}
-        } 
-    \item{which}{
-        a character string denoting which plot should be displayed.
-        }
-    \item{\dots}{
-        optional arguments to be passed.
-        }
+  \item{x}{
+    an object of class \code{"fGARCH"}.
+  } 
+  \item{which}{
+    a character string denoting which plot should be displayed.
+  }
+  \item{\dots}{
+    optional arguments to be passed.
+  }
  
 }
-
-
-\section{Methods}{
-    \describe{
-
-    \item{x = "ANY", y = "ANY"}{
-        Generic function.
-        }
-    \item{x = "fGARCH", y = "missing"}{
-        Plot function for objects of class \code{"fGARCH"}.
-        }
-        
-    }
-}
-
 
 \details{
 
@@ -68,6 +53,17 @@
             Cross Correlation Plot between $r^2$ and r\cr
             Quantile-Quantile Plot of Standardized Residuals\cr
             
+}
+
+\section{Methods}{
+  Methods for \code{plot} defined in package \pkg{fGarch}:
+  \describe{
+
+    \item{x = "fGARCH", y = "missing"}{
+      Plot function for objects of class \code{"fGARCH"}.
+    }
+        
+  }
 }
 
 

@@ -8,7 +8,6 @@
 
 \title{Modelling heterskedasticity in financial time series}
 
-
 \description{
 
   The Rmetrics "fGarch" package is a collection of functions to analyze
@@ -23,17 +22,15 @@ Tobias Setz [aut],
 Martin Maechler [ctb] (<https://orcid.org/0000-0002-8685-9910>),
 Chris Boudt [ctb]
 Pierre Chausse [ctb],
-Michal Miklovac [ctb]
+Michal Miklovac [ctb],
 Georgi N. Boshnakov [cre, ctb]
 
 Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 }
 
-
 % \details{
 %   
 % }
-
 
 \section{1 Introduction}{
 
@@ -42,15 +39,16 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
   in financial applications when the goal is to analyze and forecast 
   volatility. 
   
-  For this purpose, the family of GARCH functions offers functions for 
-  simulating, estimating and forecasting various univariate GARCH-type 
-  time series models in the conditional variance and an ARMA specification 
-  in the conditional mean. The function \code{garchFit} is a numerical
-  implementation of the maximum log-likelihood approach under different 
-  assumptions, Normal, Student-t, GED errors or their skewed versions. 
-  The parameter estimates are checked by several diagnostic analysis tools 
-  including graphical features and hypothesis tests. Functions to compute 
-  n-step ahead forecasts of both the conditional mean and variance are also
+  For this purpose, the family of GARCH functions offers functions for
+  simulating, estimating and forecasting various univariate GARCH-type
+  time series models in the conditional variance and an ARMA
+  specification in the conditional mean. The function
+  \code{\link{garchFit}} is a numerical implementation of the maximum
+  log-likelihood approach under different assumptions, Normal,
+  Student-t, GED errors or their skewed versions.  The parameter
+  estimates are checked by several diagnostic analysis tools including
+  graphical features and hypothesis tests. Functions to compute n-step
+  ahead forecasts of both the conditional mean and variance are also
   available.
 
   The number of GARCH models is immense, but the most influential models 
@@ -68,15 +66,15 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
   Kroner [1992], Bera and Higgins [1993], Bollerslev, Engle and
   Nelson [1994], Engle [2001], Engle and Patton [2001], and Li, Ling 
   and McAleer [2002] which give a good overview of the scope of the 
-  research.\cr
+  research.
 
 }
 
 
 \section{2 Time Series Simulation}{
 
-    contains functions to simulate artificial GARCH and APARCH
-    time series processes.
+  Contains functions to simulate artificial GARCH and APARCH
+  time series processes.
     
     \preformatted{
     garchSpec       specifies an univariate GARCH time series model 
@@ -88,15 +86,15 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 
 \section{3 Parameter Estimation}{
 
-    contains functions to fit the parameters of GARCH and APARCH 
-    time series processes.
+  Contains functions to fit the parameters of GARCH and APARCH 
+  time series processes.
     
     \preformatted{
     garchFit        fits the parameters of a GARCH process
     }
     
     
-    \emph{Extractor Functions:}
+  \emph{Extractor Functions:}
     
     \preformatted{
     residuals       extracts residuals from a fitted 'fGARCH' object
@@ -111,8 +109,8 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 
 \section{4 Forecasting}{
 
-    contains functions to forcecast mean and variance of GARCH and
-    APARCH processes.
+  contains functions to forcecast mean and variance of GARCH and
+  APARCH processes.
   
     \preformatted{
     predict         forecasts from an object of class 'fGARCH'
@@ -123,11 +121,11 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 
 \section{5 Standardized Distribution Functions}{
 
-    This section contains functions to model standardized distribution 
-    functions.
+  This section contains functions to model standardized distribution
+  functions.
     
     
-    \emph{Skew Normal Distribution:}
+  \emph{Skew Normal Distribution:}
     
     \preformatted{
     [dpqr]norm      Normal distribution function
@@ -136,7 +134,7 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
     }
     
     
-    \emph{Skew Generalized Error Distribution:}
+  \emph{Skew Generalized Error Distribution:}
     
     \preformatted{
     [dpqr]ged       Generalized Error distribution function
@@ -145,7 +143,7 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
     }
     
     
-    \emph{Skew Standardized Student-t Distribution:}
+  \emph{Skew Standardized Student-t Distribution:}
     
     \preformatted{
     [dpqr]std       Standardized Student-t distribution function
@@ -153,9 +151,9 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
     [s]stdFit       fits parameters of [skew] Student-t distribution
     }
     
-    \emph{Abdolute Moments:}
+  \emph{Absolute Moments:}
     \preformatted{
-    absMoments      computes absolute Moments of these distribution
+    absMoments      computes absolute moments of these distribution
     } 
   
 }

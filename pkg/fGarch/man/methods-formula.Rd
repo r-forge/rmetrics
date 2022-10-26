@@ -17,16 +17,14 @@
 
 
 \section{Methods}{
-    \describe{
+  Methods for \code{formula} defined in package \pkg{fGarch}:
+  \describe{
 
-    \item{object = "ANY"}{
-        Generic function.
-        }
     \item{object = "fGARCH"}{
-        Extractor function for formula expression.
-        }
-        
+      Extractor function for formula expression.
     }
+    
+  }
 }
 
 
@@ -76,7 +74,6 @@
   Diethelm Wuertz for the Rmetrics \R-port
     
 }
-
 
 \examples{
 ## garchFit -

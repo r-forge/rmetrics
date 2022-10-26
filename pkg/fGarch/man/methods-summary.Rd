@@ -3,7 +3,8 @@
 
 \docType{methods}
 
-\alias{summary,ANY-method}
+\alias{summary}
+%\alias{summary,ANY-method}
 \alias{summary,fGARCH-method}
 
 
@@ -15,16 +16,13 @@
 
 
 \section{Methods}{
+  Methods for \code{summary} defined in package \pkg{fGarch}:
   \describe{
-    \item{object = "ANY"}{
-        Generic function
-        }
     \item{object = "fGARCH"}{
-        Summary function for objects of class \code{"fGARCH"}.
-        }
+      Summary function for objects of class \code{"fGARCH"}.
+    }
   }
 }
-
 
 \section{How to read a diagnostic summary report?}{
 

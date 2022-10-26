@@ -90,5 +90,4 @@ reference:
       - "show,fGARCH-method"
       - "show,fGARCHSPEC-method"
       - "summary-methods"
-      - "summary,ANY-method"
       - "summary,fGARCH-method"

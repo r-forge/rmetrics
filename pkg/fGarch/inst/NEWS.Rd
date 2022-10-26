@@ -2,19 +2,19 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4021.89 (2022-??-??, svn rXXXX)}{
+\section{CHANGES in fGarch VERSION 4021.89 (2022-??-??, from svn r6316--rXXXX)}{
   \itemize{
     
     \item in \code{absMoments}, the absolute moments for the
     standardized Student-t distribution were wrong.
 
-    \item revised the documentation and filled gaps in it.
+    \item substantially revised the documentation and filled gaps in it.
 
   }
 }
 
 
-\section{CHANGES in fGarch VERSION 4021.88 (2022-09-28, svn rXXXX)}{
+\section{CHANGES in fGarch VERSION 4021.88 (2022-09-28, svn r6276)}{
   \itemize{
     
     \item require Matrix (>= 1.5-0) to avoid problems for users who have
@@ -26,7 +26,7 @@
 }
 
 
-\section{CHANGES in fGarch VERSION 4021.87 (2022-08-XX, svn rXXXX)}{
+\section{CHANGES in fGarch VERSION 4021.87 (2022-08-06, svn r6215--r6265)}{
   \subsection{NEW MAINTAINER}{
     \itemize{
       \item Georgi N. Boshnakov
@@ -79,7 +79,23 @@
 
 }
 
-\section{CHANGES in fGarch VERSION 4001.1 (2022-06-23, svn r6184)}{
+\section{CHANGES in fGarch VERSION 4021.86 (2022-06-23, svn r6188)}{
+  \subsection{NEW MAINTAINER}{
+    \itemize{
+      \item Tobias Setz
+    }
+  }
+  \subsection{Notes}{
+    \itemize{
+      \item This is a CRAN release of version 4001.1, with trivial
+      changes in \file{DESCRIPTION}.
+    }
+  }
+}
+
+
+
+\section{CHANGES in fGarch VERSION 4001.1 (2022-06-23, svn r6184--r6185)}{
   \subsection{NEW MAINTAINER}{
     \itemize{
       \item ad interim: Martin Maechler
@@ -132,7 +148,14 @@
 \section{CHANGES in fGarch, VERSION 3042.83.2 (2020-03-07, CRAN team)}{
   \subsection{Misc}{
     \itemize{
-      \item . % add by comparing the directory trees (after "untar")
+
+      % MM: add by comparing the directory trees (after "untar")
+      % GNB: added by looking at the commit at https://github.com/cran/fGarch/
+      %
+      \item in \file{dist-norm.Rd}, removed the description of argument
+      \code{...}, which is not in the argument list of any function
+      described there.
+
     }
   }
 }
@@ -151,8 +174,19 @@
 
 \section{CHANGES in fGarch, VERSION 3042.83.1 (2019-01-31, CRAN team)}{
   \subsection{Misc}{
+    % MM: add by comparing the directory trees (after "untar")
+    % GNB: added by looking at the commit at https://github.com/cran/fGarch/
+    %
     \itemize{
-      \item . % add by comparing the directory trees (after "untar")
+
+      \item in \file{NAMESPACE} and \file{R/methods-plot.R} renamed
+      functions \code{.plot.garch.1}, \ldots, \code{.plot.garch.13} to
+      \code{.plot.garch_1}, \ldots, \code{.plot.garch_13}.
+
+      \item compressed datasets \file{data/dem2gbp.csv} and
+      \file{data/sp500dge.csv} to \file{data/dem2gbp.csv.bz2}
+      \file{data/sp500dge.csv.bz2}, respectively.
+      
     }
   }
 }
@@ -170,7 +204,20 @@
 \section{CHANGES in fGarch, VERSION 3010.82.1 (2016-08-14, CRAN team.)}{
   \subsection{Misc}{
     \itemize{
-      \item . % add by comparing the directory trees (after "untar")
+
+      \item in \file{NAMESPACE}, import (selectively) from \pkg{utils}.
+
+      \item changed a couple of calls to \code{Matrix()} from package
+      \pkg{Matrix} and \code{fastICA()} from \pkg{fastICA} to the fully
+      qualified forms \code{Matrix::Matrix()} and
+      \code{fastICA::fastICA}.
+
+      \item removed some flag settings in \file{Makevars}.
+
+      \item in \file{math.f}, move a \code{DATA} command out of the body
+      of an \code{"if"} block putting it towards the beginning of the
+      file.
+      
     }
   }
 }
