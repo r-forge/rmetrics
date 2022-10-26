@@ -224,8 +224,8 @@ cstat(double c,double cm, double k,int m,int n)
 
     double sigma,
         stat,
-        std,
-        sqrt();
+      std;
+    //        sqrt();
     int j;
 
     sigma = 0;
