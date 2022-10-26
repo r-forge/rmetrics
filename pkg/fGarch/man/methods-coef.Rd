@@ -1,13 +1,14 @@
 \name{coef-methods}
-
-\title{GARCH coefficients methods}
+\alias{coef-methods}
 
 \docType{methods}
 
-\alias{coef-methods}
 \alias{coef,ANY-method}
 \alias{coef,fGARCH-method}
 \alias{coef,fGARCHSPEC-method}
+
+
+\title{GARCH coefficients methods}
 
 \description{
     Coefficients methods \code{coef()} for GARCH Models.
@@ -37,7 +38,7 @@
 
 
 \author{
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
 
@@ -60,6 +61,4 @@
    coef(fit)
 }
 
-
 \keyword{models}
-

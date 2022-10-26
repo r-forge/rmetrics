@@ -8,6 +8,8 @@
     \item in \code{absMoments}, the absolute moments for the
     standardized Student-t distribution were wrong.
 
+    \item revised the documentation and filled gaps in it.
+
   }
 }
 

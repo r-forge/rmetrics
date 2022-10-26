@@ -18,19 +18,18 @@ reference:
       - garchSim
       - dem2gbp
       - sp500dge
-      - volatility
   - title: "Fit models"
     contents:
       - garchFit
       - .gogarchFit
       - garchKappa
+      - garchSpec
       - garchFitControl
   - title: "Classes"
     contents:
       - "fGARCH-class"
       - "fUGARCHSPEC-class"
       - "fGARCHSPEC-class"
-      - garchSpec
   - title: "Standardized distributions"
     contents:
       - absMoments
@@ -72,6 +71,7 @@ reference:
       - sgedSlider
   - title: "Methods for class 'fGARCH'"
     contents:
+      - volatility
       - "coef-methods"
       - "coef,ANY-method"
       - "coef,fGARCH-method"
@@ -92,4 +92,3 @@ reference:
       - "summary-methods"
       - "summary,ANY-method"
       - "summary,fGARCH-method"
-

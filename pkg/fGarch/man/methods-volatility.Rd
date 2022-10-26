@@ -1,11 +1,14 @@
 \name{volatility-methods}
 
-\title{Extract GARCH model volatility}
+\docType{methods}
 
 \alias{volatility.fGARCH}% S3 method now
 \alias{volatility}% S3 method now
 
-\docType{methods}
+
+
+\title{Extract GARCH model volatility}
+
 \description{
     Extracts volatility, here from a fitted GARCH object.  This is a
     method (see \code{\link{methods}}) for the S3 generic function
@@ -65,7 +68,7 @@ volatility(object, \dots)
 }
 
 \author{
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
 
@@ -97,6 +100,4 @@ volatility(object, \dots)
    class(vola)
 }
 
-
 \keyword{models}
-

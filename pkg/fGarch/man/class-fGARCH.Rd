@@ -1,29 +1,25 @@
 \name{fGARCH-class}
-
+\alias{fGARCH-class}
 
 \docType{class}
 
-
-\alias{fGARCH-class}
 \alias{fUGARCHSPEC-class}
-
 \alias{update,fGARCH-method}
 
 
 \title{Class "fGARCH"}
 
-
 \description{ 
 
-    The class fGARCH represents a model of an heteroskedastic
-    time series process.
-}
+  The class fGARCH represents a model of an heteroskedastic time series
+  process.
 
+}
 
 \section{Objects from the Class}{
 
-    Objects can be created by calls of the function \code{garchFit}.
-    This object is a parameter estimate of an empirical GARCH process.
+  Objects can be created by calls of the function \code{garchFit}.
+  This object is a parameter estimate of an empirical GARCH process.
     
 }
 
@@ -109,11 +105,8 @@
 
 
 \author{
-
-    Diethelm Wuertz and Rmetrics Core Team.
-    
+  Diethelm Wuertz and Rmetrics Core Team
 }
 
-
 \keyword{programming}
-
+\keyword{ts}

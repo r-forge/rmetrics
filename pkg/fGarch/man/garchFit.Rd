@@ -1,14 +1,21 @@
 \name{garchFit}
-\title{Univariate or multivariate GARCH time series fitting}
 \alias{garchFit}
+
 \alias{garchKappa}
 \alias{.gogarchFit}
+
+
+\title{Univariate or multivariate GARCH time series fitting}
+
 \description{
+  
   Estimates the parameters of a univariate ARMA-GARCH/APARCH process, or
   --- experimentally --- of a multivariate GO-GARCH process model.  The
   latter uses an algorithm based on \code{fastICA()}, inspired from
   Bernhard Pfaff's package \CRANpkg{gogarch}.
+
 }
+
 \usage{
 garchFit(formula = ~ garch(1, 1), data,
 	init.rec = c("mci", "uev"),
@@ -150,8 +157,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 }
 
 \value{
-    \code{garchFit} \cr
-    \cr
+    \code{garchFit}
     returns a S4 object of class \code{"fGARCH"} with the following slots:
     \item{@call}{
         the call of the \code{garch} function.
@@ -196,12 +202,12 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
     The entries of the @fit slot show the results from the
     optimization.
 
-    \code{.gogarchFit()} : \cr
-    \cr
+    \code{.gogarchFit()} :
     Similar definition for GO-GARCH modeling.  Here, \code{data} must be
     \emph{multivariate}.
     Still \dQuote{preliminary}, mostly undocumented, and untested(!).
     At least mentioned here...
+
 }
 
 \details{
@@ -287,8 +293,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
     Ladislav Luksan for the underlying Fortran SQP Routine, \cr
     Zhu, Byrd, Lu-Chen and Nocedal for the underlying L-BFGS-B Routine.
 
-    Martin Maechler for adding docu, cleaning up; \emph{mentioning}
+    Martin Maechler for cleaning up; \emph{mentioning}
     \code{.gogarchFit()}.
+}
+
+\seealso{
+  \code{\link{garchSpec}},
+  \code{\link{garchFitControl}}
 }
 
 \examples{
@@ -366,4 +377,3 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 }
 
 \keyword{models}
-

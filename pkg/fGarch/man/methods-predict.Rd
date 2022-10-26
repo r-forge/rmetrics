@@ -1,10 +1,8 @@
 \name{predict-methods}
-
+\alias{predict-methods}
 
 \docType{methods}
 
-
-\alias{predict-methods}
 \alias{predict,ANY-method}
 \alias{predict,fGARCH-method}
 
@@ -14,16 +12,14 @@
 
 \description{
 
-    Predicts a time series from a fitted GARCH object.
+  Predicts a time series from a fitted GARCH object.
 
 }
-
 
 \usage{
 \S4method{predict}{fGARCH}(object, n.ahead = 10, trace = FALSE, mse = c("cond","uncond"),
         plot=FALSE, nx=NULL, crit_val=NULL, conf=NULL, \dots)
 }
-
 
 \arguments{
   
@@ -86,16 +82,17 @@
 
 \value{
 
-    returns a data frame with the following columns:
-    \code{"meanForecast"}, \code{meanError}, and \code{"standardDeviation"}.
+  a data frame with the following columns:
+  \code{"meanForecast"}, \code{meanError}, and \code{"standardDeviation"}.
     
-    The number of records equals the number of forecasting steps
-    \code{n.ahead}.
+  The number of records equals the number of forecasting steps
+  \code{n.ahead}.
         
 }
 
-
-\author{ Diethelm Wuertz for the Rmetrics \R-port. }
+\author{
+  Diethelm Wuertz for the Rmetrics \R-port
+}
 
 \examples{
 ## garchFit - 
@@ -128,7 +125,6 @@
  predict(fit3, n.ahead=20, plot=TRUE, conf=.9, nx=100) 
 
 }
-
 
 \keyword{models}
 

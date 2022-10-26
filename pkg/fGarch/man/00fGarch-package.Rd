@@ -1,11 +1,9 @@
 \name{fGarch-package}
-
-
 \alias{fGarch-package}
-\alias{fGarch}
-
 
 \docType{package}
+
+\alias{fGarch}
 
 
 \title{Modelling heterskedasticity in financial time series}
@@ -13,26 +11,28 @@
 
 \description{
 
-  The Rmetrics "fGarch" package is a collection of functions to 
-  analyze and model heteroskedastic behavior in financial time
-  series models.
-  .
+  The Rmetrics "fGarch" package is a collection of functions to analyze
+  and model heteroskedastic behavior in financial time series models.
+
+}
+
+\author{
+Diethelm Wuertz [aut] (original code),
+Yohan Chalabi [aut],
+Tobias Setz [aut],
+Martin Maechler [ctb] (<https://orcid.org/0000-0002-8685-9910>),
+Chris Boudt [ctb]
+Pierre Chausse [ctb],
+Michal Miklovac [ctb]
+Georgi N. Boshnakov [cre, ctb]
+
+Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 }
 
 
-\details{
-
-    \tabular{ll}{
-        Package:    \tab fGarch \cr
-        Type:       \tab Package\cr
-        Version:    \tab R 3.0.1\cr
-        Date:       \tab 2014\cr
-        License:    \tab GPL Version 2 or later\cr
-        Copyright:  \tab (c) 1999-2014 Rmetrics Assiciation\cr
-        URL:        \tab \url{https://www.rmetrics.org}
-  }
-  
-}
+% \details{
+%   
+% }
 
 
 \section{1 Introduction}{
@@ -169,11 +169,7 @@
     
 }
 
-
 %  Diethelm Wuertz and Yohan Chalabi, with contributions from 
 %  Michal Miklovac, Pierre Chausse, and Chris Boudt.
 
-
 \keyword{package}
-
-

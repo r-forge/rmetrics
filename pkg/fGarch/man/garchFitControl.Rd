@@ -1,15 +1,12 @@
 \name{garchFitControl}
-
-
 \alias{garchFitControl}
 
 
-\title{GARCH fitting algorithms and control}
-
+\title{Control GARCH fitting algorithms}
 
 \description{
 
-    Estimates the parameters of an univariate GARCH process.
+  Control parameters for the GARCH fitting algorithms.
 
 }
 
@@ -55,7 +52,6 @@ garchFitControl(
     nm.fnscale = FALSE,
     nm.parscale = FALSE)
 }
-
 
 \arguments{
     % In general:
@@ -245,9 +241,7 @@ garchFitControl(
 
 
 \value{
-
-    returns a list.
-
+  a list
 }
 
 
@@ -262,11 +256,12 @@ garchFitControl(
 
 }
 
+\seealso{
+  \code{\link{garchFit}}
+}
 
 \examples{
 ##
 }
 
-
 \keyword{models}
-

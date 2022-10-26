@@ -63,7 +63,7 @@ function(n, density = c("dnorm", "dged", "dstd"), ...)
     if (density == "dstd" | density == "std") {
         
         parm = function(n, nu) {
-            ## GNB: this is definitely wrong, gives NaN's when it shouldn't:
+            ## GNB: this is  wrong, gives NaN's when it shouldn't:
             ##    beta(1/2 + 2*n, nu/2 - 2*n) / beta(1/2, nu/2) * sqrt(nu-2)
             ##
             ## This is from the paper Wuertz at all (draft for JSS), eq. (14):
@@ -71,10 +71,10 @@ function(n, density = c("dnorm", "dged", "dstd"), ...)
             ##     r <- n / 2
             ##     beta(1/2 + r/2, nu/2 - r/2) / beta(1/2, nu/2) * (nu-2)^(r/2)
             ##
-            ## but the results do not seem right. It looks like atypo/error in the formula
-            ## and changing r/2 to n/2 gives plausible results.
+            ## but the results are not right. It looks like a typo/error in the
+            ## formula and changing r/2 to n/2 gives a consistent result with
+            ## the usual t-distribution
             ##
-            ## TODO: this needs further checking!
             beta(1/2 + n/2, nu/2 - n/2) / beta(1/2, nu/2) * (nu-2)^(n/2)
         }
         return(parm(n, ...)) 

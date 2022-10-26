@@ -1,20 +1,17 @@
 \name{plot-methods}
-
+\alias{plot-methods}
 
 \docType{methods}
 
-
-\alias{plot-methods}
 \alias{plot,ANY,ANY-method}
 \alias{plot,fGARCH,missing-method}
 
 
 \title{GARCH plot methods}
 
-
 \description{
 
-    Plot methods for GARCH Modelling. 
+  Plot methods for GARCH Modelling. 
 
 }
 
@@ -22,7 +19,6 @@
 \usage{
 \S4method{plot}{fGARCH,missing}(x, which = "ask", \dots)
 }
-
 
 \arguments{
 
@@ -76,9 +72,7 @@
 
 
 \author{
-
-    Diethelm Wuertz for the Rmetrics \R-port.
-    
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
 
@@ -101,6 +95,4 @@
 }
 }
 
-
 \keyword{models}
-

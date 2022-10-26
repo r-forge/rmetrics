@@ -1,14 +1,16 @@
 \name{summary-methods}
-
-\title{GARCH summary methods}
+\alias{summary-methods}
 
 \docType{methods}
-\alias{summary-methods}
+
 \alias{summary,ANY-method}
 \alias{summary,fGARCH-method}
 
+
+\title{GARCH summary methods}
+
 \description{
-    Summary methods for GARCH modelling. 
+  Summary methods for GARCH modelling. 
 }
 
 
@@ -95,7 +97,7 @@
 }
 
 \author{
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
 \examples{
@@ -106,5 +108,3 @@
    fit = garchFit(formula = x ~ garch(1, 1), data = x, trace = FALSE)
    summary(fit)
 }
-
-

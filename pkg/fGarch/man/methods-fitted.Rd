@@ -1,20 +1,17 @@
 \name{fitted-methods}
-
+\alias{fitted-methods}
 
 \docType{methods}
 
-
-\alias{fitted-methods}
 \alias{fitted,ANY-method}
 \alias{fitted,fGARCH-method}
 
 
 \title{Extract GARCH model fitted values}
 
-
 \description{
 
-    Extracts fitted values from a fitted GARCH object.
+  Extracts fitted values from a fitted GARCH object.
 
 }
 
@@ -63,7 +60,7 @@
 }
 
 \author{
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
 

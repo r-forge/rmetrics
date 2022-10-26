@@ -1,15 +1,12 @@
 \name{garchSpec}
-
-
 \alias{garchSpec}
 
 
 \title{Univariate GARCH time series specification}
 
-
 \description{
 
-    Specifies an univariate GARCH time series model.
+  Specifies an univariate GARCH time series model.
 
 }
 
@@ -150,18 +147,16 @@ garchSpec(model = list(), presample = NULL,
 
 
 \value{
-
-    an object of class \code{"fGARCHSPEC"}.
-    
+  an object of class \code{"fGARCHSPEC"}
 }
-
-
 
 \author{
-
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
+\seealso{
+  \code{\link{garchFit}}
+}
 
 \examples{
 ## garchSpec -
@@ -222,6 +217,4 @@ garchSpec(model = list(), presample = NULL,
        shape = 4, skew = 0.85), cond.dist = "sstd")
 }
 
-
 \keyword{models}
-

@@ -1,22 +1,34 @@
 \name{residuals-methods}
-
-\title{Extract GARCH model residuals}
+\alias{residuals-methods}
 
 \docType{methods}
-\alias{residuals-methods}
+
 \alias{residuals,ANY-method}
 \alias{residuals,fGARCH-method}
 
+
+\title{Extract GARCH model residuals}
+
 \description{
-    Extracts residuals from a fitted GARCH object.
+  Extracts residuals from a fitted GARCH object.
 }
+
 \usage{
 \S4method{residuals}{fGARCH}(object, standardize = FALSE)
 }
 
 \arguments{
-  \item{object}{an object of class \code{"fGARCH"} as returned from \code{\link{garchFit}()}.}
-    \item{standardize}{a logical, indicating if the residuals should be standardized.}
+  \item{object}{
+
+    an object of class \code{"fGARCH"} as returned from
+    \code{\link{garchFit}}.
+
+  }
+  \item{standardize}{
+
+    a logical, indicating if the residuals should be standardized.
+
+  }
 }
 
 \section{Methods}{
@@ -60,7 +72,9 @@
 }
 
 
-\author{ Diethelm Wuertz for the Rmetrics \R-port. }
+\author{
+  Diethelm Wuertz for the Rmetrics \R-port
+}
 
 \examples{
 ## Swiss Pension fund Index -
@@ -80,6 +94,4 @@
    identical(res, slot(fit, "residuals"))
 }
 
-
 \keyword{models}
-

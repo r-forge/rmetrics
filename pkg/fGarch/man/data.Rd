@@ -1,9 +1,9 @@
 \name{TimeSeriesData}
-
 \alias{TimeSeriesData}
 
 \alias{dem2gbp}
 \alias{sp500dge}
+
 
 \title{Time series data sets} 
 

@@ -1,20 +1,17 @@
 \name{formula-methods}
-
+\alias{formula-methods}
 
 \docType{methods}
 
-
-\alias{formula-methods}
 \alias{formula,ANY-method}
 \alias{formula,fGARCH-method}
 
 
 \title{Extract GARCH model formula}
 
-
 \description{
 
-    Extracts formula from a formula GARCH object. 
+  Extracts formula from a formula GARCH object. 
     
 }
 
@@ -76,7 +73,7 @@
 
 \author{
 
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
     
 }
 
@@ -122,6 +119,5 @@
    # Error in .garchArgsParser(formula = formula, data = data, trace = FALSE) : 
    #   Formula and data units do not match
 }
-
 
 \keyword{models}

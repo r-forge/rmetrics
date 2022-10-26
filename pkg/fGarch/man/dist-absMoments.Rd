@@ -61,12 +61,13 @@ Fernandez C., Steel M.F.J. (2000);
 
 
 \author{
-
-    Diethelm Wuertz for the Rmetrics \R-port.
-    
+  Diethelm Wuertz for the Rmetrics \R-port
 }
 
-
+\seealso{
+  \code{\link{ged}},
+  \code{\link{std}}
+}
 \examples{
 ## absMoment -
 

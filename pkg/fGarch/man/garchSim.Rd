@@ -111,7 +111,7 @@ garchSim(spec = garchSpec(), n = 100, n.start = 100, extended = FALSE)
 
 \author{
 
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port
     
 }
 
