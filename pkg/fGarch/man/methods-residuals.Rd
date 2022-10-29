@@ -3,7 +3,7 @@
 
 \docType{methods}
 
-\alias{residuals,ANY-method}
+\alias{residuals}
 \alias{residuals,fGARCH-method}
 
 
@@ -33,9 +33,13 @@
 
 \details{
 
-    The function extracts the \code{@residuals} slot from an
-    object of class \code{"fGARCH"} as returned by the function
-    \code{garchFit}.
+  \code{\link{residuals}} is a generic function which extracts residual
+  values from objects returned by modeling functions.
+
+  The \code{"fGARCH"} method extracts the \code{@residuals} slot from an
+  object of class \code{"fGARCH"} as returned by the function
+  \code{garchFit} and optionally standardizes the residuals, using
+  conditional standard deviations.
 
     The class of the returned value depends on the input to the
     function \code{garchFit} who created the object. The returned
@@ -55,23 +59,26 @@
 }
 
 \note{
-   \code{\link{residuals}} is a generic function which extracts residual values
-   from objects returned by modeling functions.
+  
+  (GNB) Contrary to the description of the returned value of the
+  \code{"fGARCH"} method, it is always \code{"numeric"}.
+
+  TODO: either implement the documented behaviour or fix the
+  documentation.
+
 }
 
 \author{
   Diethelm Wuertz for the Rmetrics \R-port
 }
 
-\section{Methods}{
-  Methods for \code{residuals} defined in package \pkg{fGarch}:
-  \describe{
-    \item{object = "fGARCH"}{
-      Extractor function for residual from an object of class \code{"fGARCH"}.
-    }
-  }
+\seealso{
+  
+  \code{\link{fitted}},
+  \code{\link{predict}},
+  \code{\link{garchFit}},
+  class \code{\linkS4class{fGARCH}},
 }
-
 
 \examples{
 ## Swiss Pension fund Index -

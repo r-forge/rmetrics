@@ -3,7 +3,13 @@
 
 \docType{class}
 
+\alias{show,fGARCHSPEC-method}
 \alias{update,fGARCHSPEC-method}
+
+\concept{GARCH model}
+\concept{APARCH model}
+\concept{ARMA-GARCH model}
+\concept{ARMA-APARCH model}
 
 
 \title{Class "fGARCHSPEC"}
@@ -71,6 +77,12 @@
 
 \author{
   Diethelm Wuertz for the Rmetrics \R-port
+}
+
+\examples{
+## garchSpec -
+   spec = garchSpec()
+   spec # print() or show() it
 }
 
 \keyword{programming}

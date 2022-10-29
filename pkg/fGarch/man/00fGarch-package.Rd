@@ -5,13 +5,22 @@
 
 \alias{fGarch}
 
+\concept{GARCH model}
+\concept{APARCH model}
+
+\concept{skew distribution}
+\concept{fit skew distribution}
+
+\concept{volatility}
+
+
 
 \title{Modelling heterskedasticity in financial time series}
 
 \description{
 
-  The Rmetrics "fGarch" package is a collection of functions to analyze
-  and model heteroskedastic behavior in financial time series models.
+  The Rmetrics \pkg{fGarch} package is a collection of functions to
+  analyze and model heteroskedastic behavior in financial time series.
 
 }
 
@@ -71,93 +80,92 @@ Maintainer: Georgi N. Boshnakov <georgi.boshnakov@manchester.ac.uk>
 }
 
 
-\section{2 Time Series Simulation}{
+\section{2 Time series simulation}{
 
-  Contains functions to simulate artificial GARCH and APARCH
-  time series processes.
+  Functions to simulate artificial GARCH and APARCH time series
+  processes.
     
-    \preformatted{
-    garchSpec       specifies an univariate GARCH time series model 
-    garchSim        simulates a GARCH/APARCH process
-    }
-  
+  \tabular{ll}{ 
+    \code{\link{garchSpec}} \tab specifies an univariate GARCH time series model\cr
+    \code{\link{garchSim}}  \tab simulates a GARCH/APARCH process
+  }
 }
 
 
-\section{3 Parameter Estimation}{
+\section{3 Parameter estimation}{
 
-  Contains functions to fit the parameters of GARCH and APARCH 
-  time series processes.
+  Functions to fit the parameters of GARCH and APARCH time series
+  processes.
     
-    \preformatted{
-    garchFit        fits the parameters of a GARCH process
+  \tabular{ll}{
+    \code{\link{garchFit}} \tab fits the parameters of a GARCH process
+  }
+    
+    
+  \subsection{Extractor Functions:}{
+    
+    \tabular{ll}{
+      \code{\link{residuals}}  \tab extracts residuals from a fitted \code{"fGARCH"} object\cr
+      \code{\link{fitted}}     \tab extracts fitted values from a fitted \code{"fGARCH"} object\cr
+      \code{\link{volatility}} \tab extracts conditional volatility from a fitted \code{"fGARCH"} object\cr
+      \code{\link{coef}}       \tab extracts coefficients from a fitted \code{"fGARCH"} object\cr
+      \code{\link{formula}}    \tab extracts formula expression from a fitted \code{"fGARCH"} object
     }
-    
-    
-  \emph{Extractor Functions:}
-    
-    \preformatted{
-    residuals       extracts residuals from a fitted 'fGARCH' object
-    fitted          extracts fitted values from a fitted 'fGARCH' object
-    volatility      extracts conditional volatility from a fitted 'fGARCH' object
-    coef            extracts coefficients from a fitted 'fGARCH' object
-    formula         extracts formula expression from a fitted 'fGARCH' object
-    }
-    
+  }
 }
 
 
 \section{4 Forecasting}{
 
-  contains functions to forcecast mean and variance of GARCH and
-  APARCH processes.
+  Functions to forcecast mean and variance of GARCH and APARCH
+  processes.
   
-    \preformatted{
-    predict         forecasts from an object of class 'fGARCH'
-    }
-  
-}
-
-
-\section{5 Standardized Distribution Functions}{
-
-  This section contains functions to model standardized distribution
-  functions.
-    
-    
-  \emph{Skew Normal Distribution:}
-    
-    \preformatted{
-    [dpqr]norm      Normal distribution function
-    [dpqr]snorm     Skew Normal distribution function
-    [s]normFit      fits parameters of [skew] Normal distribution
-    }
-    
-    
-  \emph{Skew Generalized Error Distribution:}
-    
-    \preformatted{
-    [dpqr]ged       Generalized Error distribution function
-    [dpqr]sged      Skew Generalized Error  distribution function
-    [s]gedFit       fits parameters of [skew] Generalized Error distribution
-    }
-    
-    
-  \emph{Skew Standardized Student-t Distribution:}
-    
-    \preformatted{
-    [dpqr]std       Standardized Student-t distribution function
-    [dpqr]sstd      Skew standardized Student-t distribution function
-    [s]stdFit       fits parameters of [skew] Student-t distribution
-    }
-    
-  \emph{Absolute Moments:}
-    \preformatted{
-    absMoments      computes absolute moments of these distribution
-    } 
+  \tabular{ll}{
+    \code{\link{predict}} \tab forecasts from an object of class \code{"fGARCH"}
+  }
   
 }
 
+
+\section{5 Standardized distributions}{
+
+  This section contains functions to model standardized distributions.
+    
+  \subsection{Skew normal distribution:}{
+    
+    \tabular{ll}{
+      \code{\link[=dnorm]{[dpqr]norm}}   \tab Normal distribution (base R)\cr
+      \code{\link[=dsnorm]{[dpqr]snorm}} \tab Skew normal distribution\cr
+      \code{\link[=snormFit]{snormFit}}  \tab fits parameters of Skew normal distribution
+    }
+  }
+    
+  \subsection{Skew generalized error distribution:}{
+    
+    \tabular{ll}{
+      \code{\link[=dged]{[dpqr]ged}}   \tab Generalized error distribution\cr
+      \code{\link[=psged]{[dpqr]sged}}  \tab Skew Generalized error  distribution\cr
+      \code{\link[=gedFit]{gedFit}}     \tab fits parameters of Generalized error distribution\cr
+      \code{\link[=sgedFit]{sgedFit}} \tab fits parameters of Skew generalized error distribution  }
+  } 
+    
+  \subsection{Skew standardized Student-t distribution:}{
+    
+    \tabular{ll}{
+      \code{\link[=dstd]{[dpqr]std}}  \tab Standardized Student-t distribution\cr
+      \code{\link[=dsstd]{[dpqr]sstd}} \tab Skew standardized Student-t distribution\cr
+      \code{\link[=stdFit]{stdFit}}  \tab fits parameters of Standardized Student-t distribution\cr
+      \code{\link[=sstdFit]{sstdFit}}  \tab fits parameters of Skew standardized Student-t distribution
+    }
+  }
+    
+  \subsection{Absolute moments:}{
+    \tabular{ll}{
+      \code{\link{absMoments}}  \tab computes absolute moments of these distribution
+    }
+  }
+  
+}
 
 \section{About Rmetrics}{
 

@@ -3,7 +3,7 @@
 
 \docType{methods}
 
-\alias{formula,ANY-method}
+\alias{formula}
 \alias{formula,fGARCH-method}
 
 
@@ -30,18 +30,19 @@
 
 \details{
 
-    The function extracts the \code{@formula} expression slot from 
-    an object of class \code{"fGARCH"} as returned by the function
-    \code{garchFit}. 
+  \code{formula} is a generic function which extracts the formula
+  expression from objects returned by modeling functions.
+  
+  The \code{"fGARCH"} method extracts the \code{@formula} expression
+  slot from an object of class \code{"fGARCH"} as returned by the
+  function \code{garchFit}.
     
-    Note, the returned formula has always a left hand 
-    side. If the argument \code{data} was an univariate time series
-    and no name was specified to the series, then the left hand side 
-    has assigned the name of the data.set. In the multivariate case
-    the rectangular \code{data} object must always have column names,
-    otherwise the fitting will be stopped and you get the error 
-    message  
-    
+  The returned formula has always a left hand side. If the argument
+  \code{data} was an univariate time series and no name was specified to
+  the series, then the left hand side is assigned the name of the
+  data.set. In the multivariate case the rectangular \code{data} object
+  must always have column names, otherwise the fitting will be stopped
+  with an error message
     
     The class of the returned value depends on the input to the
     function \code{garchFit} who created the object. The returned
@@ -63,21 +64,26 @@
 
 \note{
 
-    \code{formula} is a generic function which extracts the formula
-    expression from objects returned by modeling functions. 
+  (GNB) Contrary to the description of the returned value of the
+  \code{"fGARCH"} method, it is always \code{"numeric"}.
+
+  TODO: either implement the documented behaviour or fix the
+  documentation.
     
 }
 
-
 \author{
-
   Diethelm Wuertz for the Rmetrics \R-port
-    
+}
+
+\seealso{
+  \code{\link{garchFit}},
+  class \code{\linkS4class{fGARCH}}
 }
 
 \examples{
 ## garchFit -
-   fit = garchFit(~garch(1, 1), data = garchSim())
+   fit = garchFit(~garch(1, 1), data = garchSim(), trace = FALSE)
    
 ## formula - 
    formula(fit)

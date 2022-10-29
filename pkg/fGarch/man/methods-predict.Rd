@@ -3,7 +3,7 @@
 
 \docType{methods}
 
-\alias{predict,ANY-method}
+\alias{predict}
 \alias{predict,fGARCH-method}
 
 
@@ -67,27 +67,15 @@
 
 \details{
 
-  The predictions are returned as a data frame with a data frame with
-  columns \code{"meanForecast"}, \code{"meanError"}, and
+  The predictions are returned as a data frame with with columns
+  \code{"meanForecast"}, \code{"meanError"}, and
   \code{"standardDeviation"}. Row \code{h} contains the predictions for
-  horizon \code{h}. 
+  horizon \code{h}.
     
   The number of records equals the number of forecasting steps \code{n.ahead}.
         
   
 }
-
-\section{Methods}{
-  Methods for \code{predict} defined in package \pkg{fGarch}:
-  \describe{
-
-    \item{object = "fGARCH"}{
-      Predict function for objects of class \code{"fGARCH"}.
-    }
-        
-  }
-}
-
 
 \value{
 
@@ -99,6 +87,16 @@
   Diethelm Wuertz for the Rmetrics \R-port
 }
 
+\seealso{
+  \code{\link[stats]{predict}} in base R
+
+  \code{\link{fitted}},
+  \code{\link{residuals}},
+
+  \code{\link{plot}},
+  \code{\link{garchFit}},
+  class \code{\linkS4class{fGARCH}},
+}
 \examples{
 ## garchFit - 
    # Parameter Estimation of Default GARCH(1,1) Model:
@@ -132,3 +130,4 @@
 }
 
 \keyword{models}
+\keyword{ts}

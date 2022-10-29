@@ -9,7 +9,7 @@ Analyze and model heteroskedastic behavior in financial time series with GARCH, 
 related models.
 
 Package `fGarch` is part of the Rmetrics suite of R packages and is developed on R-forge at
-[fGarch](https://r-forge.r-project.org/scm/viewvc.php/pkg/fGarch/?root=rmetrics).
+[fGarch devel](https://r-forge.r-project.org/scm/viewvc.php/pkg/fGarch/?root=rmetrics).
 The root of Rmetrics is at [R-forge](https://r-forge.r-project.org/projects/rmetrics).
 
 
@@ -37,3 +37,14 @@ You can view the documentation of `fGarch` at
 or download the
 [reference manual](https://cran.r-project.org/package=fGarch/fGarch.pdf)
 of the latest release from CRAN.
+
+A comprehensive overview of the models and conditional distributions employed in package
+`fGarch`, along with worked examples, is available in the following paper by the original
+authors of the package:
+
+[WurtzEtAlGarch.pdf](https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf).
+
+(*This is an unpublished manuscript. Some online sources, confusingly, attribute it to JSS,
+vol 55, issue 2, but this seems to have taken the placeholders `VV` and `II` in the heading
+on the first page as being the Roman numbers 55 and 2.*)
+

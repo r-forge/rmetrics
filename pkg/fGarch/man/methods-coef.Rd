@@ -3,7 +3,7 @@
 
 \docType{methods}
 
-\alias{coef,ANY-method}
+\alias{coef}
 \alias{coef,fGARCH-method}
 \alias{coef,fGARCHSPEC-method}
 
@@ -55,7 +55,7 @@
    x = x[,1]
 
 ## garchFit --
-   fit = garchFit( ~ garch(1, 1), data = x)
+   fit = garchFit( ~ garch(1, 1), data = x, trace = FALSE)
 
 ## coef -
    coef(fit)

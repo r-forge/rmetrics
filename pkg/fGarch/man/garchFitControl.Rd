@@ -57,17 +57,17 @@ garchFitControl(
 
   \item{llh}{
     \code{llh = c("filter", "internal", "testing")[1]},
-    defaults to "filter".
+    defaults to \code{"filter"}.
   }
 
   % nlminb:
 
   \item{nlminb.eval.max}{
-    Maximum number of evaluations of the objective function
-    allowed, defaults to 200.
+    maximum number of evaluations of the objective function,
+    defaults to 200.
   }
   \item{nlminb.iter.max}{
-    Maximum number of iterations allowed, defaults to 150.
+    maximum number of iterations, defaults to 150.
   }
   %\item{nlminb.trace}{
   %    The value of the objective function and the parameters is
@@ -75,10 +75,10 @@ garchFitControl(
   %    indicates no trace information is to be printed.
   %    }
   \item{nlminb.abs.tol}{
-    Absolute tolerance, defaults to 1e-20.
+    absolute tolerance, defaults to 1e-20.
   }
   \item{nlminb.rel.tol}{
-    Relative tolerance, defaults to 1e-10.
+    relative tolerance, defaults to 1e-10.
   }
   \item{nlminb.x.tol}{
     X tolerance, defaults to 1.5e-8.
@@ -90,7 +90,7 @@ garchFitControl(
     defaulkts to FALSE.
   }
   \item{nlminb.step.min}{
-    Minimum step size, defaults to 2.2e-14.
+    minimum step size, defaults to 2.2e-14.
   }
   \item{nlminb.scale}{
     defaults to 1.
@@ -164,8 +164,8 @@ garchFitControl(
 
   \item{lbfgsb.REPORT}{
     
-    The frequency of reports for the \code{"BFGS"} and \code{"L-BFGS-B"}
-    methods if control$trace is positive. Defaults to every 10
+    the frequency of reports for the \code{"BFGS"} and \code{"L-BFGS-B"}
+    methods if \code{control$trace} is positive. Defaults to every 10
     iterations.
 
   }
@@ -205,12 +205,12 @@ garchFitControl(
   %   do see the source code: higher levels give more detail.)
   %   }
   \item{nm.ndeps}{
-    A vector of step sizes for the finite-difference approximation
+    a vector of step sizes for the finite-difference approximation
     to the gradient, on par/parscale scale. Defaults to 1e-3.
   }
   \item{nm.maxit}{
     
-    The maximum number of iterations. Defaults to 100 for the
+    the maximum number of iterations. Defaults to 100 for the
     derivative-based methods, and 500 for \code{"Nelder-Mead"}. For
     \code{"SANN"} maxit gives the total number of function
     evaluations. There is no other stopping criterion. Defaults to
@@ -218,29 +218,29 @@ garchFitControl(
 
   }
   \item{nm.abstol}{
-    The absolute convergence tolerance. Only useful for non-negative
+    the absolute convergence tolerance. Only useful for non-negative
     functions, as a tolerance for reaching zero.
   }
   \item{nm.reltol}{
-    Relative convergence tolerance. The algorithm stops if it is
+    relative convergence tolerance. The algorithm stops if it is
     unable to reduce the value by a factor of
     \code{reltol * (abs(val) + reltol)} at a step. Defaults to
     \code{sqrt(.Machine$double.eps)}, typically about 1e-8.
   }
   \item{nm.alpha, nm.beta, nm.gamma}{
-    Scaling parameters for the "Nelder-Mead" method.
+    scaling parameters for the "Nelder-Mead" method.
     alpha is the reflection factor (default 1.0),
     beta the contraction factor (0.5), and
     gamma the expansion factor (2.0).
   }
   \item{nm.fnscale}{
-    An overall scaling to be applied to the value of fn and gr
+    an overall scaling to be applied to the value of fn and gr
     during optimization. If negative, turns the problem into a
     maximization problem.  Optimization is performed on
     \code{fn(par) / nm.fnscale}.
   }
   \item{nm.parscale}{
-    A vector of scaling values for the parameters. Optimization is
+    a vector of scaling values for the parameters. Optimization is
     performed on par/parscale and these should be comparable in the
     sense that a unit change in any element produces about a unit
     change in the scaled value.

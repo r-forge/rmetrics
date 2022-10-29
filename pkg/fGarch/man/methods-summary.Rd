@@ -14,7 +14,6 @@
   Summary methods for GARCH modelling. 
 }
 
-
 \section{Methods}{
   Methods for \code{summary} defined in package \pkg{fGarch}:
   \describe{
@@ -48,7 +47,7 @@
         }
     
     
-    The next three sections return the estimated coefficients, and
+    The next three sections return the estimated coefficients and
     an error analysis including standard errors, t values, and
     probabilities, as well as the log Likelihood values from 
     optimization:

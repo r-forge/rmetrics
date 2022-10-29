@@ -14,7 +14,7 @@ reference:
     contents:
       - "fGarch-package"
       - fGarch
-      - TimeSeriesData
+      - fGarchData
       - garchSim
       - dem2gbp
       - sp500dge
@@ -28,8 +28,24 @@ reference:
   - title: "Classes"
     contents:
       - "fGARCH-class"
-      - "fUGARCHSPEC-class"
+      - "show,fGARCH-method"
       - "fGARCHSPEC-class"
+      - "show,fGARCHSPEC-method"
+  - title: "Exploring and computing on 'fGARCH' objects"
+    contents:
+      - "plot,fGARCH,missing-method"
+      - "summary-methods"
+      - "summary,fGARCH-method"
+      - "coef-methods"
+      - "coef,fGARCH-method"
+      - "coef,fGARCHSPEC-method"
+      - "fitted-methods"
+      - "fitted,fGARCH-method"
+      - "formula-methods"
+      - "formula,fGARCH-method"
+      - "predict,fGARCH-method"
+      - "residuals,fGARCH-method"
+      - volatility
   - title: "Standardized distributions"
     contents:
       - absMoments
@@ -69,25 +85,6 @@ reference:
       - snormSlider
       - sstdSlider
       - sgedSlider
-  - title: "Methods for class 'fGARCH'"
+  - title: "Internal functions and classes"
     contents:
-      - volatility
-      - "coef-methods"
-      - "coef,ANY-method"
-      - "coef,fGARCH-method"
-      - "coef,fGARCHSPEC-method"
-      - "fitted-methods"
-      - "fitted,ANY-method"
-      - "fitted,fGARCH-method"
-      - "formula-methods"
-      - "formula,ANY-method"
-      - "formula,fGARCH-method"
-      - "plot,fGARCH,missing-method"
-      - "predict,fGARCH-method"
-      - "residuals,fGARCH-method"
-      - "show-methods"
-      - "show,ANY-method"
-      - "show,fGARCH-method"
-      - "show,fGARCHSPEC-method"
-      - "summary-methods"
-      - "summary,fGARCH-method"
+      - "fUGARCHSPEC-class"

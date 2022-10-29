@@ -1,12 +1,19 @@
 \name{garchSim}
 \alias{garchSim}
 
+\concept{GARCH model}
+\concept{APARCH model}
 
-\title{Univariate GARCH/APARCH time series simulation}
+\concept{simulate GARCH}
+\concept{simulate APARCH}
+
+
+
+\title{Simulate univariate GARCH/APARCH time series}
 
 \description{
 
-  Simulates a univariate GARCH/APARCH time series.
+  Simulates univariate GARCH/APARCH time series.
 
 }
 
