@@ -2,8 +2,14 @@
  * @file  runifInterface.c
  * @brief C file for 'runif' interface
  *
- * @author Petr Savicky 
+ * @author Petr Savicky, Christophe Dutang 
  *
+ * Copyright (C) 2022, Christophe Dutang
+ * # remove a warning: this old-style function definition is not preceded by a prototype
+ * # raised by 
+ * > clang -DNDEBUG   -isystem /usr/local/clang15/include \
+ * -I"/Library/Frameworks/R.framework/Headers"  -fpic  -O3 -Wall -pedantic -Wstrict-prototypes \
+ * -c runifInterface.c -o runifInterface.o
  *
  * Copyright (C) 2009, Petr Savicky, Academy of Sciences of the Czech Republic. 
  * All rights reserved.
@@ -50,7 +56,7 @@
 #include "runifInterface.h"
 
 
-typedef void(*UserUnifSetGeneratorType)(int gener, void (*selected_init)(unsigned int), double (*selected_rand)());
+typedef void(*UserUnifSetGeneratorType)(int gener, void (*selected_init)(unsigned int), double (*selected_rand)(void));
 
 #define LENSEEDARRAY 1391
 static unsigned int seedArray[LENSEEDARRAY];
@@ -192,87 +198,87 @@ void seedWELLRNG44497b(unsigned int seed)
 	InitWELLRNG44497b( seedArray );
 }
 
-double generateWELLRNG512a()
+double generateWELLRNG512a(void)
 {
 	return WELLRNG512a();
 }
 
-double generateWELLRNG521a()
+double generateWELLRNG521a(void)
 {
 	return WELLRNG521a();
 }
 
-double generateWELLRNG521b()
+double generateWELLRNG521b(void)
 {
 	return WELLRNG521b();
 }
 
-double generateWELLRNG607a()
+double generateWELLRNG607a(void)
 {
 	return WELLRNG607a();
 }
 
-double generateWELLRNG607b()
+double generateWELLRNG607b(void)
 {
 	return WELLRNG607b();
 }
 
-double generateWELLRNG800a()
+double generateWELLRNG800a(void)
 {
 	return WELLRNG800a();
 }
 
-double generateWELLRNG800b()
+double generateWELLRNG800b(void)
 {
 	return WELLRNG800b();
 }
 
-double generateWELLRNG1024a()
+double generateWELLRNG1024a(void)
 {
 	return WELLRNG1024a();
 }
 
-double generateWELLRNG1024b()
+double generateWELLRNG1024b(void)
 {
 	return WELLRNG1024b();
 }
 
-double generateWELLRNG19937a()
+double generateWELLRNG19937a(void)
 {
 	return WELLRNG19937a();
 }
 
-double generateWELLRNG19937c()
+double generateWELLRNG19937c(void)
 {
 	return WELLRNG19937c();
 }
 
-double generateWELLRNG19937b()
+double generateWELLRNG19937b(void)
 {
 	return WELLRNG19937b();
 }
 
-double generateWELLRNG21701a()
+double generateWELLRNG21701a(void)
 {
 	return WELLRNG21701a();
 }
 
-double generateWELLRNG23209a()
+double generateWELLRNG23209a(void)
 {
 	return WELLRNG23209a();
 }
 
-double generateWELLRNG23209b()
+double generateWELLRNG23209b(void)
 {
 	return WELLRNG23209b();
 }
 
-double generateWELLRNG44497a()
+double generateWELLRNG44497a(void)
 {
 	return WELLRNG44497a();
 }
 
-double generateWELLRNG44497b()
+double generateWELLRNG44497b(void)
 {
 	return WELLRNG44497b();
 }

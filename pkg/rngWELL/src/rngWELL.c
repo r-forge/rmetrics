@@ -5,6 +5,12 @@
  * @author Christophe Dutang
  * @author Petr Savicky 
  *
+ * Copyright (C) 2022, Christophe Dutang
+ * # remove a warning: this old-style function definition is not preceded by a prototype
+ * # raised by 
+ * > clang -DNDEBUG   -isystem /usr/local/clang15/include                            \
+ * -I"/Library/Frameworks/R.framework/Headers"  -fpic  -O3 -Wall -pedantic -Wstrict-prototypes \
+ * -c rngWELL.c -o rngWELL.o
  *
  * Copyright (C) 2009, Christophe Dutang, 
  * Petr Savicky, Academy of Sciences of the Czech Republic. 
@@ -390,7 +396,7 @@ void setSeed4WELL(long s)
 
 //randomize and set the seed when not initialized
 //idea taken from the R internal C function Randomize()
-void randSeed()
+void randSeed(void)
 {
         
 #if HAVE_SYS_TIME_H
