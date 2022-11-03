@@ -2,7 +2,9 @@
 
 Version 2.0.3
 =============
-start new devel version
+
+WARNING FIX
+- remove the following warning in some C functions: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
 
 Version 2.0.2
 =============
