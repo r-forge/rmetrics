@@ -2,7 +2,7 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4021.89 (2022-??-??, from svn r6316--rXXXX)}{
+\section{CHANGES in fGarch VERSION 4022.89 (2022-11-05, from svn r6316--r6326)}{
   \itemize{
     
     \item in \code{absMoments}, the absolute moments for the
