@@ -245,15 +245,15 @@ sobol(5, init=FALSE)
 #previous call
 sobol(10)
 
-# (4) computation times on my 2017 macbook (on my 2007 macbook), mean of 1000 runs
+# (4) computation times on a 2022 macbook (2017 macbook / 2007 macbook), mean of 1000 runs
 #
 
 \dontrun{
 # algorithm			time in seconds for n=10^6
-# Torus algo					  0.012 (0.058)
-# mixed Torus algo 	    0.018 (0.087)
-# Halton sequence				0.180 (0.878)
-# Sobol sequence				0.027 (0.214)
+# Torus algo					  0.00689 (0.012 / 0.058)
+# mixed Torus algo 	    0.009354 (0.018 / 0.087)
+# Halton sequence				0.023575 (0.180 / 0.878)
+# Sobol sequence				0.010444 (0.027 / 0.214)
 n <- 1e+06
 mean( replicate( 1000, system.time( torus(n), gcFirst=TRUE)[3]) )
 mean( replicate( 1000, system.time( torus(n, mixed=TRUE), gcFirst=TRUE)[3]) )
