@@ -178,26 +178,28 @@ void get_seed_congruRand(uint64_t *out_seed)
 }
 
 // .C entry point used by get.description
+/* revision 5168, Sun Nov 20 22:32:38 2011 UTC introduces 
+  a bug by replacing sprintf() by Rprintf()   */
 void get_state_congru(char **params, char **seed)
 {
 	if (mod != 0LL) {
-		Rprintf(params[0], "%" PRIu64 "\n", mod);
+		sprintf(params[0], "%" PRIu64, mod); /* defined in <stdio.h> */
 	} else {
-		strcpy(params[0], two_64_s);
+		strcpy(params[0], two_64_s); /* defined in <string.h> */
 	}
-	Rprintf(params[1], "%" PRIu64 "\n", mult);
-	Rprintf(params[2], "%" PRIu64 "\n", incr);
-	Rprintf(seed[0], "%" PRIu64 "\n", congru_seed);
+	sprintf(params[1], "%" PRIu64, mult);
+	sprintf(params[2], "%" PRIu64, incr);
+	sprintf(seed[0], "%" PRIu64, congru_seed);
 }
 
 // .C entry point used by put.description
 void put_state_congru(char **params, char **seed, int *err)
 {
-  error(_("temporarily disabled function"));
+  /*error(_("temporarily disabled function"));*/
   
-  /*
+  /* */
 	uint64_t inp_mod, inp_mask, inp_mult, inp_incr, inp_seed;
-  if (strcmp(params[0], two_64_s) == 0) {
+  if (strcmp(params[0], two_64_s) == 0) { /* defined in <string.h> */
 		inp_mod = 0;
 		inp_mask = two_64m1_h;
 	} else {
@@ -208,7 +210,7 @@ void put_state_congru(char **params, char **seed, int *err)
 			inp_mask = 0;
 		}
 	}
-	sscanf(params[1], "%" SCNu64 "\n", &inp_mult);
+	sscanf(params[1], "%" SCNu64 "\n", &inp_mult); /* defined in <stdio.h> */
 	sscanf(params[2], "%" SCNu64 "\n", &inp_incr);
 	sscanf(seed[0], "%" SCNu64 "\n", &inp_seed);
 	
@@ -231,6 +233,6 @@ void put_state_congru(char **params, char **seed, int *err)
 		user_unif_set_generator(1, user_unif_init_congru, user_unif_rand_congru_2);
 	}
 	*err = 0;
-	*/
+	/* */
 }
 

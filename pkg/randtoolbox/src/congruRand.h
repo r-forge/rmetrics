@@ -109,6 +109,9 @@
  #endif
 #endif
 
+/* prototype defined in runifInterface.c */
+void user_unif_set_generator(int gener, void (*selected_init)(unsigned int), double (*selected_rand)(void));
+/* prototype defined in congruRand.c */
 double user_unif_rand_congru(void);
 void user_unif_init_congru(uint32_t seed);
 
