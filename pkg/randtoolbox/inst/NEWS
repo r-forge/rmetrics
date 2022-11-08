@@ -3,6 +3,7 @@
 Version 2.0.3
 =============
 - re-enable the use of set.generator(name="congruRand",...).
+- remove almost all URL and/or replace by DOI or text.
 
 WARNING FIX
 - remove the following warning in some C functions: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
