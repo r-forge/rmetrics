@@ -31,7 +31,6 @@ Package: \tab randtoolbox\cr
 License: \tab BSD_3_clause + file LICENSE\cr
 Warning 1: in this version, scrambling is disabled for Sobol sequences
 in \code{sobol}.
-Warning 2: in this version, setting LCG via \code{set.generator} is disabled.
 }
 }
 \author{

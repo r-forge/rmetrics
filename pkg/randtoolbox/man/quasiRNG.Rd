@@ -125,28 +125,27 @@ See the pdf vignette for details.
   otherwise a vector of length \code{n}.
 }
 \references{
-
 Bratley P., Fox B.L. (1988),
-    \emph{Algorithm 659: Implementing Sobol's Quasirandom
-    Sequence Generator},
-    ACM Transactions on Mathematical Software 14, 88--100.
+\emph{Algorithm 659: Implementing Sobol's Quasirandom Sequence Generator},
+ACM Transactions on Mathematical Software 14, 88--100.
+\doi{10.1145/42288.214372}
 
 Joe S., Kuo F.Y. (2003),
-    \emph{Remark on Algorithm 659: Implementing Sobol's Quaisrandom
-    Seqence Generator},
-    ACM Transactions on Mathematical Software 29, 49--57.
+\emph{Remark on Algorithm 659: Implementing Sobol's Quaisrandom Seqence Generator},
+ACM Transactions on Mathematical Software 29, 49--57.
+\doi{10.1145/641876.641879}
 
 Joe S., Kuo F.Y. (2008),
-    \emph{Constructing Sobol sequences with better two-dimensional projections},
-    SIAM J. Sci. Comput. 30, 2635--2654,
-\url{https://web.maths.unsw.edu.au/~fkuo/sobol/index.html}.    
+\emph{Constructing Sobol sequences with better two-dimensional projections},
+SIAM J. Sci. Comput. 30, 2635--2654,
+\doi{10.1137/070709359}.    
 
 Owen A.B. (2020), \emph{On dropping the first Sobol' point},
-\url{https://arxiv.org/abs/2008.08051}.
+\doi{10.1007/978-3-030-98319-2_4}.
 
 Planchet F., Jacquemin J. (2003), 
-  \emph{L'utilisation de methodes de simulation en assurance}. 
-  Bulletin Francais d'Actuariat, vol. 6, 11, 3-69. (available online)
+\emph{L'utilisation de methodes de simulation en assurance}. 
+Bulletin Francais d'Actuariat, vol. 6, 11, 3-69. (available online)
 
 }
 \seealso{
