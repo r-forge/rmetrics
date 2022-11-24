@@ -192,9 +192,11 @@ seq.timeDate <-
             ## defeat test in seq.default
             res <- seq.int(0, to0 - from, by) + from
         }
-        ## return(.POSIXct(res, tz)) ##
+        ## res is integer here, not POSIXct
     } else {  # months or years or DSTdays
+        ## build the object as POSIXlt, then convert to  POSIXct
         r1 <- as.POSIXlt(from)
+        
         if(valid == 7L) { # years
             if(missing(to)) { # years
                 yr <- seq.int(r1$year, by = by, length.out = length.out)
@@ -219,6 +221,7 @@ seq.timeDate <-
             }
             r1$mday <- seq.int(r1$mday, by = by, length.out = length.out)
         }
+
 	r1$isdst <- -1L
 	res <- as.POSIXct(r1)
 	## now shorten if necessary.
@@ -227,9 +230,9 @@ seq.timeDate <-
 	    res <- if(by > 0) res[res <= to] else res[res >= to]
 	}
     }
+
     timeDate(res, zone = zone, FinCenter = FinCenter) ##
 }
 
 
 ################################################################################
-

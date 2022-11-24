@@ -105,7 +105,7 @@ setMethod("timeDate", "character",
 
     # Midnight Standard & conversion to isoFormat:
     ct <- midnightStandard2(charvec, format)
-
+    
     ## Do conversion
     ## YC: .formatFinCenterNum faster than .formatFinCenter
     ## TS: using zone is correct (charvec is converted to GMT)
@@ -304,9 +304,69 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"))
         stop(gettextf("'%s' is not a valid FinCenter.", FinCenter))
 
     offSetIdx <- findInterval(num, dst.list$numeric)
-    # consider first DST rule if event occured before
-    offSetIdx[offSetIdx < 1] <- 1
-    num + signum * dst.list$offSet[offSetIdx]
+    offSetIdx[offSetIdx < 1] <- 1 # consider first DST rule if event occured before
+
+    ## GNB: add check for non-existent times at FinCenter
+    ##      assuming DST skips some time interval.
+    ##      TODO: Is the offset always positive?
+
+    ## this is a working variant; but take care for cases like BDST in UK during WW2
+    ## TODO: consider the change from DST to non DST!
+    # shifted_offset <- findInterval(num - dst.list$offSet[offSetIdx], dst.list$numeric)
+    # shifted_offset[shifted_offset < 1] <- 1
+    # changed <- shifted_offset != offSetIdx
+    # 
+    # num[changed] <- num + dst.list$offSet[offSetIdx][changed]
+    # offSetIdx <- shifted_offset
+
+    if(signum == -1) {
+        ## Compared to above, work only on those with isdst = 1
+        ##    This still doesn't resolve cases like BDST in UK during WW2
+        shifted_offset <- offSetIdx
+        indx <- which(dst.list$isdst[offSetIdx] == 1)
+        if(length(indx) > 0) {
+            wrk <- num[indx] - (dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx])
+            shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
+            shifted_offset[shifted_offset < 1] <- 1
+            changed <- which(shifted_offset != offSetIdx)
+
+        ## TODO: handle the case when changed contains 1
+            num[changed] <- num[changed] +
+                dst.list$offSet[offSetIdx][changed] - dst.list$offSet[offSetIdx - 1][changed]
+#if(length(num) > 1)    
+#    browser()    
+            # offSetIdx <- shifted_offset
+        }
+        
+        num + signum * dst.list$offSet[offSetIdx]
+    } else { ## gmt2any - can't have non-existent times in GMT
+        ## but TODO: can this create them ???
+# print("kiki!")
+#if(length(num) > 1)    
+#browser()
+        num <- num + dst.list$offSet[offSetIdx]
+        ## TODO: now move non-existent times!
+        offSetIdx <- findInterval(num, dst.list$numeric)
+        offSetIdx[offSetIdx < 1] <- 1 # consider first DST rule if event occured before
+
+        shifted_offset <- offSetIdx
+        indx <- which(dst.list$isdst[offSetIdx] == 1)
+        if(length(indx) > 0) {
+            wrk <- num[indx] - (dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx])
+            shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
+            shifted_offset[shifted_offset < 1] <- 1
+            changed <- which(shifted_offset != offSetIdx)
+
+            ## TODO: handle the case when changed contains 1
+            num[changed] <- num[changed] +
+                dst.list$offSet[offSetIdx][changed] - dst.list$offSet[offSetIdx - 1][changed]
+#if(length(num) > 1)    
+#    browser()    
+            # offSetIdx <- shifted_offset
+        }
+        
+        num
+    }
 }
 
 
