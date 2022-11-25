@@ -6,7 +6,8 @@
 
 \description{
     
-  Returns the day of the year from a \code{"timeDate"} object.
+  Returns the days of the week of the data in a \code{"timeDate"}
+  object.
       
 }
 
@@ -26,8 +27,9 @@ dayOfWeek(x)
 
 \value{
 
-  a three letter character string with the names in English
-  of the day of the week,
+  a character vector giving the days of the week corresponding to the
+  elements of \code{x}. The names are in English, abbreviated to 
+  three letters.
 
 }
 
@@ -39,7 +41,7 @@ dayOfWeek(x)
 
 \examples{  
 ## timeCalendar -  
-   tC = timeCalendar()
+   tC = timeCalendar(2022)
        
 ## The days of the Year:
    dayOfWeek(tC)

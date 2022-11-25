@@ -6,7 +6,8 @@
 
 \description{
     
-  Returns the day of the year from a \code{"timeDate"} object.
+  Returns the days of the year of the data in a \code{"timeDate"}
+  object.
       
 }
 
@@ -26,7 +27,8 @@ dayOfYear(x)
 
 \value{
 
-  the day count as integer value starting January, 1st
+  vector of integers representing the number of days since the beginning
+  of the year. For January, 1st it is one.
 
 }
 
@@ -38,7 +40,7 @@ dayOfYear(x)
 
 \examples{  
 ## timeCalendar -  
-   tC = timeCalendar()
+   tC = timeCalendar(2022)
        
 ## The days of the Year:
    dayOfYear(tC)
