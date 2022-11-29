@@ -319,49 +319,73 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"))
     # num[changed] <- num + dst.list$offSet[offSetIdx][changed]
     # offSetIdx <- shifted_offset
 
-    if(signum == -1) {
+    ## TODO: !!! FIX !!!
+    ## the current fix is valid only internally for timeDate() but the stored 'GMT'
+    ## times are actually shifted (so, accessing @Data gives the expected times shifted by
+    ## one our. timeDate() formats the datetimes correctly because the branches "any2gmt" and
+    ## "gmt2any" compensate each other.
+    ##
+    ## TODO: I suppose that the fix introduced this. Nevertheless check that this was not the
+    ##       case before.
+    
+    if(signum == -1) { # any2gmt
         ## Compared to above, work only on those with isdst = 1
         ##    This still doesn't resolve cases like BDST in UK during WW2
         shifted_offset <- offSetIdx
         indx <- which(dst.list$isdst[offSetIdx] == 1)
+        ## if(length(indx) > 0) {
+        ##     wrk <- num[indx] - (dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx])
+        ##     shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
+        ##     shifted_offset[shifted_offset < 1] <- 1
+        ##     changed <- which(shifted_offset != offSetIdx)
+        ## 
+        ##     ## TODO: handle the case when changed contains 1
+        ##     num[changed] <- num[changed] +
+        ##         dst.list$offSet[offSetIdx][changed] - dst.list$offSet[offSetIdx - 1][changed]
+        ##     # offSetIdx <- shifted_offset
+        ## }
+
         if(length(indx) > 0) {
             wrk <- num[indx] - (dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx])
             shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
             shifted_offset[shifted_offset < 1] <- 1
-            changed <- which(shifted_offset != offSetIdx)
-
-        ## TODO: handle the case when changed contains 1
-            num[changed] <- num[changed] +
-                dst.list$offSet[offSetIdx][changed] - dst.list$offSet[offSetIdx - 1][changed]
-#if(length(num) > 1)    
-#    browser()    
-            # offSetIdx <- shifted_offset
-        }
-        
-        num + signum * dst.list$offSet[offSetIdx]
-    } else { ## gmt2any - can't have non-existent times in GMT
-        ## but TODO: can this create them ???
-# print("kiki!")
-#if(length(num) > 1)    
+            changed <- shifted_offset != offSetIdx
 #browser()
+            ## TODO: handle the case when changed contains 1
+
+            ## num[changed] <- num[changed] +
+            ##     dst.list$offSet[offSetIdx][changed] - dst.list$offSet[offSetIdx - 1][changed]
+            ## num[!changed] <- num[!changed] + signum * dst.list$offSet[offSetIdx][!changed]
+
+            # offSetIdx <- shifted_offset
+
+            offSetIdx[changed] <- shifted_offset[changed]
+        }
+#browser()
+        num + signum * dst.list$offSet[offSetIdx]
+        
+    } else { ## gmt2any - can't have non-existent times in GMT
+        ## Compared to above, work only on those with isdst = 1
+        ##    TODO: check this works also for cases like BDST in UK during WW2
+        shifted_offset <- offSetIdx
+        indx <- which(dst.list$isdst[offSetIdx] == 1)
+        
         num <- num + dst.list$offSet[offSetIdx]
-        ## TODO: now move non-existent times!
+        ## now move non-existent times
         offSetIdx <- findInterval(num, dst.list$numeric)
         offSetIdx[offSetIdx < 1] <- 1 # consider first DST rule if event occured before
-
+        
         shifted_offset <- offSetIdx
         indx <- which(dst.list$isdst[offSetIdx] == 1)
         if(length(indx) > 0) {
-            wrk <- num[indx] - (dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx])
+            wrk <- num[indx] -
+                (dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx])
             shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
             shifted_offset[shifted_offset < 1] <- 1
             changed <- which(shifted_offset != offSetIdx)
-
             ## TODO: handle the case when changed contains 1
             num[changed] <- num[changed] +
                 dst.list$offSet[offSetIdx][changed] - dst.list$offSet[offSetIdx - 1][changed]
-#if(length(num) > 1)    
-#    browser()    
             # offSetIdx <- shifted_offset
         }
         
