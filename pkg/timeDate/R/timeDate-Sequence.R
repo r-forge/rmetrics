@@ -27,7 +27,7 @@
 # ---------------------------------------------------------------------------- #
 timeSequence <-
     function(from, to = Sys.timeDate(), by, length.out = NULL, format = NULL,
-    zone = "", FinCenter = "")
+             zone = "", FinCenter = "")
 {
     # A function implemented by Diethelm Wuertz
 
@@ -85,7 +85,18 @@ timeSequence <-
     } else {
         format.from <- format.to <- format
     }
-    from <- timeDate(from, format = format.from, zone = zone, FinCenter = FinCenter)
+    ## GNB: throw error if 'from' is in a DST gap
+
+    ## Not sure how to deal with this w/o branching into different cases for 'by', for
+    ## example. For example, for 'DSTday' all days will be shifted by one hour.
+    ## Could subtract it at the end but even then the length of the result may be wrong.
+    ##
+    ## Let the user decide on an alternative.
+    from <- timeDate(from, format = format.from, zone = zone, FinCenter = FinCenter,
+                     dst_gap = "NA")
+    if(is.na(from)) {# in DST gap
+        stop("argument 'from' specifies a non-existent time in time zone '", FinCenter, "'")
+    }
     to   <- timeDate(to,   format = format.to,   zone = zone, FinCenter = FinCenter)
 
     if (length(length.out))

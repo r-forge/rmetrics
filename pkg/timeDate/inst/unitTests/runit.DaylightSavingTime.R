@@ -145,8 +145,7 @@ test.dst1.print <-
     ##       Zurich. See also the remarks for 'tseq2Test'
     ## TODO: temporarilly, don't compare the first elements
     ##
-    ##     was: checkIdentical(tseq2Test, format(tseq2))
-    checkIdentical(tseq2Test[-1], format(tseq2)[-1])
+    checkIdentical(tseq2Test, format(tseq2))
     
     ## @Data slot should be the same for both object
     checkIdentical(tseq1@Data, tseq2@Data)
@@ -173,11 +172,98 @@ test.dst1.print <-
                    "2008-03-30 21:00:00", "2008-03-30 22:00:00",
                    "2008-03-30 23:00:00", "2008-03-31 00:00:00")
 
-    ## GNB:
-    ## TODO: temporarilly, don't compare the first elements, see the above remarks
-    ##    was:  checkIdentical(tseq3Test, format(tseq3))
-    checkIdentical(tseq3Test[-2], format(tseq3)[-2])
+    checkIdentical(tseq3Test, format(tseq3))
 
+
+    ## more by GNB
+
+    ## Sofia GMT+2
+    around_midnight_char <- c("1983-03-26 23:00:00",
+                           "1983-03-27 00:00:00", # change to DST; doesn't exist in Sofia DST
+                           "1983-03-27 01:00:00",
+                           "1983-03-27 02:00:00",
+                           "1983-03-27 03:00:00")
+
+    Sofia_to_DST_test <- around_midnight_char
+    Sofia_to_DST_test[2] <- "1983-03-27 01:00:00" # gap to gap + 1 hour
+    
+    Sofia_to_DST <- timeDate(around_midnight_char, zone = "Sofia", FinCenter = "Sofia")
+
+    checkIdentical(format(Sofia_to_DST), Sofia_to_DST_test)
+
+    ## London
+    London_to_DST_test <- around_midnight_char
+    London_to_DST_test[3] <- "1983-03-27 02:00:00" # gap to gap + 1 hour
+    
+    London_to_DST <- timeDate(around_midnight_char, zone = "London", FinCenter = "London")
+
+    checkIdentical(format(London_to_DST), London_to_DST_test)
+
+    ## Zurich
+    Zurich_to_DST_test <- around_midnight_char
+    Zurich_to_DST_test[3] <- "1983-03-27 02:00:00" # gap to gap + 1 hour
+    
+    Zurich_to_DST <- timeDate(around_midnight_char, zone = "Zurich", FinCenter = "Zurich")
+
+    checkIdentical(format(Zurich_to_DST), Zurich_to_DST_test)
+
+
+    
+
+    
+    ## more by GNB -  TODO: consolidate and turn into proper tests
+
+    ## London
+    timeSequence(from = "2004-03-26 01:00:00", to = "2004-04-01 01:00:00",
+                 by = "DSTday", zone = "London", FinCenter = "London")
+
+    timeSequence(from = "2004-03-26 01:00:00", to = "2004-04-01 01:00:00",
+                 by = "DSTday", zone = "London", FinCenter = "London")@Data
+
+    timeDate("2004-03-26 01:00:00", zone = "London", FinCenter = "London")
+    timeDate("2004-03-26 01:00:00", zone = "London", FinCenter = "London")@Data
+
+    timeDate("2004-04-01 01:00:00", zone = "London", FinCenter = "London")
+    timeDate("2004-04-01 01:00:00", zone = "London", FinCenter = "London")@Data
+
+    
+    timeDate(c("2004-03-28 00:00:00", "2004-03-28 01:00:00", "2004-03-28 02:00:00",
+               "2004-03-28 03:00:00", "2004-03-28 04:00:00"),
+             zone = "London", FinCenter = "London")
+    
+    timeDate(c("2004-03-28 00:00:00", "2004-03-28 01:00:00", "2004-03-28 02:00:00",
+               "2004-03-28 03:00:00", "2004-03-28 04:00:00"),
+             zone = "London", FinCenter = "London")@Data
+
+
+    timeDate(c("2004-03-26 00:00:00", "2004-03-28 01:00:00", "2004-03-28 02:00:00",
+               "2004-03-28 03:00:00", "2004-03-28 04:00:00"),
+             zone = "London", FinCenter = "London")
+
+    ## Zurich
+    timeSequence(from = "2004-03-26 02:00:00", to = "2004-04-01 02:00:00",
+                 by = "DSTday", zone = "Zurich", FinCenter = "Zurich")
+    
+    timeSequence(from = "2004-03-26 02:00:00", to = "2004-04-01 02:00:00",
+                 by = "DSTday", zone = "Zurich", FinCenter = "Zurich")@Data
+
+    timeDate(c("2004-03-26 00:00:00", "2004-03-28 01:00:00", "2004-03-28 02:00:00",
+               "2004-03-28 03:00:00", "2004-03-28 04:00:00"),
+             zone = "Zurich", FinCenter = "Zurich")
+
+    
+    ## London BDST during war    
+    timeDate(c("1941-05-04 00:00:00", "1941-05-04 01:00:00", "1941-05-04 02:00:00",
+               "1941-05-04 03:00:00", "1941-05-04 04:00:00"),
+             zone = "London", FinCenter = "London")@Data
+    
+    timeDate(c("1941-05-04 00:00:00", "1941-05-04 01:00:00", "1941-05-04 02:00:00",
+               "1941-05-04 03:00:00", "1941-05-04 04:00:00"),
+             zone = "London", FinCenter = "London")
+
+    timeSequence(from = "1941-05-02 02:00:00", to = "1941-05-06 02:00:00",
+                 by = "DSTday", zone = "London", FinCenter = "London")
+    
 }
 
 # ------------------------------------------------------------------------------

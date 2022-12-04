@@ -35,7 +35,7 @@
 #' @export
 # ---------------------------------------------------------------------------- #
 setGeneric("timeDate",
-    function(charvec, format = NULL, zone = "", FinCenter = "")
+    function(charvec, format = NULL, zone = "", FinCenter = "", ...)
 {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
 
@@ -85,7 +85,7 @@ setGeneric("timeDate",
 #' @export
 # ---------------------------------------------------------------------------- #
 setMethod("timeDate", "character",
-    function(charvec, format = NULL, zone = "", FinCenter = "")
+    function(charvec, format = NULL, zone = "", FinCenter = "", dst_gap = "+")
 {
     # Settings and Checks:
     if (zone == "")
@@ -109,7 +109,7 @@ setMethod("timeDate", "character",
     ## Do conversion
     ## YC: .formatFinCenterNum faster than .formatFinCenter
     ## TS: using zone is correct (charvec is converted to GMT)
-    num <- .formatFinCenterNum(unclass(ct), zone, type = "any2gmt")
+    num <- .formatFinCenterNum(unclass(ct), zone, type = "any2gmt", dst_gap = dst_gap)
 
     ## Manually create the POSIXct object:
     ## it is important to set manually the tzone flag,
@@ -133,7 +133,7 @@ setMethod("timeDate", "character",
 #' @export
 # ---------------------------------------------------------------------------- #
 setMethod("timeDate", "timeDate",
-    function(charvec, format = NULL, zone = "", FinCenter = "")
+    function(charvec, format = NULL, zone = "", FinCenter = "", dst_gap = "+")
 {
     # Description:
     #   timeDate
@@ -144,7 +144,7 @@ setMethod("timeDate", "timeDate",
             finCenter(charvec) <- FinCenter
         charvec
     } else {
-        callGeneric(format(charvec), zone = zone, FinCenter = FinCenter)
+        callGeneric(format(charvec), zone = zone, FinCenter = FinCenter, dst_gap = dst_gap)
     }
 }
 )
@@ -187,13 +187,13 @@ setMethod("timeDate", "POSIXt",
 #' @export
 # ---------------------------------------------------------------------------- #
 setMethod("timeDate", "Date",
-    function(charvec, format = NULL, zone = "", FinCenter = "")
+    function(charvec, format = NULL, zone = "", FinCenter = "", dst_gap = "+")
 {
     # Description:
     #   Date
 
     if (!(zone %in% c("", "GMT", "UTC"))) {
-        callGeneric(format(charvec), zone = zone, FinCenter = FinCenter)
+        callGeneric(format(charvec), zone = zone, FinCenter = FinCenter, dst_gap = dst_gap)
     } else {
 
         # Since zone is not provided consider that charvec is in GMT
@@ -227,7 +227,7 @@ setMethod("timeDate", "numeric",
     #   decimal like inputs (exactly that what "yearmon" does)
 
     if (!is.null(format) & (format == "%Y" || format == "yearmon" )) {
-        # DW: Handels what is known as yearmon format
+        # DW: Handles what is known as yearmon format
         # Example:     timeDate(2008+seq(0, 23, by = 1)/12, "yearmon")
         #   Quarterly: timeDate(2008+seq(2, 23, by = 3)/12, format = "%Y")
         # The next 4 lines are borrowed from Zeileis' yearmon()
@@ -266,12 +266,12 @@ setMethod("timeDate", "missing",
 #' @export
 # ---------------------------------------------------------------------------- #
 setMethod("timeDate", "ANY",
-    function(charvec, format = NULL, zone = "", FinCenter = "")
+    function(charvec, format = NULL, zone = "", FinCenter = "", dst_gap = "+")
 {
     # Description:
     #   ANY
 
-    callGeneric(as.character(charvec), format, zone, FinCenter)
+    callGeneric(as.character(charvec), format, zone, FinCenter, dst_gap = dst_gap)
 }
 )
 
@@ -282,13 +282,88 @@ setMethod("timeDate", "ANY",
 # Roxygen Tags
 # ---------------------------------------------------------------------------- #
 .formatFinCenterNum <-
-function(num, FinCenter, type = c("gmt2any", "any2gmt"))
+function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "NA", ""))
 {
-    # A function implemented by Diethelm Wuertz and Yohan Chalabi
-
-    # Description:
-    #   Internal function used by function timeDate()
-
+    ## A function implemented by Diethelm Wuertz and Yohan Chalabi.
+    ##
+    ## Modified by GNB to work correctly around DST changes and documented below
+    ## to easy further maintenance. Also added options to treat non-existent DST
+    ## times (gaps) at the time of switching to DST.
+    ##
+    ## Description:
+    ##   Internal function used by function timeDate()
+    ##
+    ## When the clocks are moved forward (usually in spring) in a particular
+    ## zone an hour is skipped. What to do if such a time is
+    ## specified. Technically, it is NA. But using that as default is likely to
+    ## cause more harm than good. A number of alternatives may be sensible in
+    ## particular cases. The new argument 'dst_gap' offers the possibility to
+    ## move it up or down by one hour, or to set it to NA.
+    ##
+    ## Let y be the time at time zone Z and t the corresponding UTC/GMT time.
+    ## timeDate objects store t. We have
+    ##     t = y - DST - GMToffset = y - offset
+    ## and
+    ##     y = t + DST + GMToffset = t + offset
+    ## before the modification the function was essentially using
+    ##     t = y - offset
+    ##     y = t + offset
+    ## but this lead to misterious shifts around DST changes, except for the
+    ## meridians of London and Central Europe.
+    ##
+    ## For example, Bulgaria/Sofia is GMT+2 non-DST and GMT+3 during DST.  The
+    ## switch to DST in 1983 was at "1983-03-27 01:00:00". so this time doesn't
+    ## actually exist in that time zone.
+    ## With timeDate v4021.106 (and earlier) we get
+    ##
+    ##     Sofia_to_DST_char <- c("1983-03-26 23:00:00",
+    ##                            "1983-03-27 00:00:00", # change to DST; doesn't exist in Sofia DST
+    ##                            "1983-03-27 01:00:00",
+    ##                            "1983-03-27 02:00:00",
+    ##                            "1983-03-27 03:00:00")
+    ## 
+    ##     Sofia_to_DST_test <- Sofia_to_DST_char
+    ##     Sofia_to_DST_test[2] <- "1983-03-27 01:00:00" # gap to gap + 1 hour
+    ##     
+    ##     Sofia_to_DST <- timeDate(Sofia_to_DST_char, zone = "Sofia", FinCenter = "Sofia")
+    ##     
+    ##     > Sofia_to_DST
+    ##     Sofia
+    ##     [1] [1983-03-26 23:00:00] [1983-03-26 23:00:00] [1983-03-27 00:00:00]
+    ##     [4] [1983-03-27 01:00:00] [1983-03-27 03:00:00]
+    ##
+    ## We see that 1am and 2am are wrong. 0am on this date doesn't exist, so it
+    ## being moved back by an hour may be suitable in some circumstances. 23pm
+    ## and 3am are ok.
+    ##
+    ## The underlying GMT times:
+    ##
+    ##     > Sofia_to_DST@Data
+    ##     [1] "1983-03-26 21:00:00 GMT" "1983-03-26 21:00:00 GMT"
+    ##     [3] "1983-03-26 22:00:00 GMT" "1983-03-26 23:00:00 GMT"
+    ##     [5] "1983-03-27 00:00:00 GMT"
+    ##
+    ## Note that here 2am GMT is the time of switch to DST. We see that the
+    ## GMT's are correct (with the caviat for 0am Sofia) but the conversion for
+    ## 22pm and 23pm GMT adds the non-DST GMToffset (+2), instead of GMT+3.
+    ##    
+    ## The source of the errors is revealed by writing the formulas so that they
+    ## show what is a function of what.
+    ##
+    ## Let y be the time at time zone Z and t the corresponding UTC/GMT time
+    ## (both in seconds since some origin, typically "1970-01-01").
+    ## "timeDate" objects store t. We have
+    ##
+    ##     t = y - DST(y) - GMToffset(y) = y - offset(y)
+    ## and
+    ##     y = t + DST(y) + GMToffset(y) = t + offset(y)
+    ##
+    ## Time zone tables normally contain y paired with offset(y), so computing t
+    ## from y is straightforward. But for computing y from t we need offset(y),
+    ## not offset(t). GMToffset(y) typically is fixed at a given place (although
+    ## changes do happen) but even so, DST(y) may not be the same as DST(t) at
+    ## and just after the switch of DST (on or off).
+    
     if (FinCenter == "GMT" || FinCenter == "UTC")
         return(num)
 
@@ -298,6 +373,8 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"))
                      "any2gmt" = -1)
     ##  otherwise give error
 
+    dst_gap <- match.arg(dst_gap)
+
     # Get the DST list from the database:
     try <- try(dst.list <- rulesFinCenter(FinCenter), silent = TRUE)
     if (inherits(try, "try-error"))
@@ -306,48 +383,62 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"))
     offSetIdx <- findInterval(num, dst.list$numeric)
     offSetIdx[offSetIdx < 1] <- 1 # consider first DST rule if event occured before
 
-    ## GNB: add check for non-existent times at FinCenter
+    ## GNB: add check for non-existent times;
     ##      assuming DST skips some time interval.
-    ##      TODO: Is the offset always positive?
 
-    ## this is a working variant; but take care for cases like BDST in UK during WW2
-    ## TODO: consider the change from DST to non DST!
-    # shifted_offset <- findInterval(num - dst.list$offSet[offSetIdx], dst.list$numeric)
-    # shifted_offset[shifted_offset < 1] <- 1
-    # changed <- shifted_offset != offSetIdx
-    # 
-    # num[changed] <- num + dst.list$offSet[offSetIdx][changed]
-    # offSetIdx <- shifted_offset
-
-    ## TODO: !!! FIX !!!
-    ## the current fix is valid only internally for timeDate() but the stored 'GMT'
-    ## times are actually shifted (so, accessing @Data gives the expected times shifted by
-    ## one our. timeDate() formats the datetimes correctly because the branches "any2gmt" and
-    ## "gmt2any" compensate each other.
-    ##
-    ## TODO: I suppose that the fix introduced this. Nevertheless check that this was not the
-    ##       case before.
-    
     if(signum == -1) { # any2gmt
         ## TODO: Check if this resolves cases like BDST in UK during WW2
         shifted_offset <- offSetIdx
 
         indx <- which(dst.list$isdst[offSetIdx] == 1)
-        if(length(indx) > 0) {
+        if(length(indx) > 0  &&  (dst_gap == "+" || dst_gap == "NA")) {
+            ## GNB: check for non-existent DST times at FinCenter
+            ##
             ## TODO: handle the case when offSetIdx contains 1
-            #adjust <- dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx]
-            adjust <- dst.list$offSet[offSetIdx][indx]
+
+            #dst_skip <- dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx]
+            #adjust <- dst.list$offSet[offSetIdx][indx]
+            adjust <- dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx]
+            #adjust <- 3600
+
             wrk <- num[indx] - adjust
             shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
             shifted_offset[shifted_offset < 1] <- 1
             changed <- shifted_offset != offSetIdx
 
-            offSetIdx[changed] <- shifted_offset[changed]
+            if(dst_gap == "+") {
+                #offSetIdx[changed] <- shifted_offset[changed]
+                ## TODO: 3600? better to choose suitable elements of adjust
+                #num[changed] <- num[changed] + dst.list$offSet[offSetIdx - 1][indx]
+                #num[indx] <- num[indx] + 3600 # adjust[indx][changed] #dst_skip
+                num[changed] <- num[changed] + 3600 # adjust[indx][changed] #dst_skip
+            } else # dst_gap == "NA"
+                num[changed] <- NA
         }
-        num + signum * dst.list$offSet[offSetIdx]
+        num - dst.list$offSet[offSetIdx]
+    } else { ## gmt2any
+        ## GNB: this was just
+        ##          num + dst.list$offSet[offSetIdx]
+        ##      but this is incorrect around DST changes, since the offset offSetIdx
+        ##      may need correction, particularly evifdent for time zones further from GMT,
+        ## 
+        ##
+        res <- num + dst.list$offSet[offSetIdx]
+
+        offset_after <- findInterval(res, dst.list$numeric)
+        offset_after[offset_after < 1] <- 1
+
+        offset_diff <- dst.list$offSet[offset_after] - dst.list$offSet[offSetIdx]
+
+        res[offset_diff > 0] <- res[offset_diff > 0] + 3600 
+
+        flag_dst_special <- num + 3600 <= dst.list$numeric[offset_after]
         
-    } else { ## gmt2any - can't have non-existent times in GMT
-        num + dst.list$offSet[offSetIdx]
+        ## ambiguous t change from DST to non-DST; consider DST
+        res[offset_diff < 0 & flag_dst_special] + 3600
+        res[offset_diff < 0 & !flag_dst_special] <- res[offset_diff < 0] - 3600
+        
+        res
     }
 }
 

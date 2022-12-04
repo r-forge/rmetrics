@@ -13,6 +13,7 @@
 \alias{strptimeDate}
 
 \alias{getDataPart,timeDate-method}
+\alias{timeDate,timeDate,ANY-method}
 
 
 
@@ -27,8 +28,11 @@
 
 
 \usage{
-timeDate(charvec, format = NULL, zone = "", FinCenter = "")
-    
+timeDate(charvec, format = NULL, zone = "", FinCenter = "", \dots)
+
+\S4method{timeDate}{character}(charvec, format = NULL, zone = "", FinCenter = "", 
+         dst_gap = "+")
+
 strptimeDate(x, format = whichFormat(x), tz = "")
 }
 
@@ -57,6 +61,19 @@ strptimeDate(x, format = whichFormat(x), tz = "")
     "continent/city".
 
   }
+  \item{dst_gap}{
+    
+    a character string specifying what to do with non-existent times
+    falling in a DST gap: add an hour (\code{"+"}), subtract an hour
+    (\code{"-"}), set to \code{NA} (\code{"NA"}), or ignore
+    (\code{""}). When the \sQuote{ignore} option is used the code to
+    check for this kind of faulty times is skipped and the result will
+    be equivalent to \code{"+"} or \code{"-"} but which one is not
+    defined. This could be useful when you are certain that there are no
+    times in DST gaps or don't care how they are dealt with.
+
+  }
+  \item{...}{further arguments for methods.}
 }
 
 \details{
