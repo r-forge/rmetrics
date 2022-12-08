@@ -34,6 +34,17 @@
   `GBSpringBankHoliday`. The old names are somewhat ambiguous and strongly
   discouraged but still available. `listHolidays()` gives the new names.
 
+- updated the DST rules.
+
+- internally, refactored the way the DST rules are generated (not visible to
+  users).
+
+- `rulesFinCenter()` now looks for a financial center starting from the
+  namespace of `timeDate`. Previously it was starting from the environment of
+  the caller which could result in using an unrelated object or, if `timeDate`
+  was loaded but not attached, not finding it.
+
+
   
 # timeDate 4021.106
 

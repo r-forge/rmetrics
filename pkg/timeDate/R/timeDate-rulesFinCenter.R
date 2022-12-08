@@ -117,12 +117,18 @@ rulesFinCenter <-
     # Match City:
     fccity <- strsplit(FinCenter, "/")[[1]]
     City <- fccity[length(fccity)]
-    fun <- match.fun(City)
+
+    ## GNB: 'match.fun' looks for the argument in the caller's environment.  In particular,
+    ##      if called from the user's workspace, it will find any function of the same name
+    ##      lying there or exported by a package on the search path before timeDate.  Also,
+    ##      if timeDate is not attached the function in 'timeDate' will not be found in any
+    ##      case.
+    ##
+    ##      was: fun <- match.fun(City)
+    fun <- get(City, mode = "function")
 
     # Return Value:
     fun()
 }
 
-
 ################################################################################
-
