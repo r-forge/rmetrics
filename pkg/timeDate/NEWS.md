@@ -1,3 +1,14 @@
+# timeDate 4021.107
+
+- London financial centre holidays - fixed and/or included non-standard holidays
+  (e.g., Early May Bank holiday was moved in 2020 to VE day; Spring Bank holiday
+  was moved in Queen's Jubilee years; state funeral of the Queen).  Millenium
+  day now is included in the result of `holidayLONDON(1999)`.  The London
+  holidays should now be complete up to the time of writing this (1 Oct 2022).
+
+- renamed `GBMayDay` to `GBEarlyMayBankHoliday` and `GBBankHoliday` to
+  `GBSpringBankHoliday`. The old names are somewhat ambiguous and strongly
+  discouraged but still available. `listHolidays()` gives the new names.
 
 - the generic `timeDate()` gets argument '...' to allow methods for it to have
   additional arguments (e.g., for DST gaps).
@@ -24,16 +35,6 @@
   an hour in the case of 'DSTday' may be suitable in most cases but for other
   values of `by` it might be totally wrong. 
 
-- London financial centre holidays - fixed and/or included non-standard holidays
-  (e.g., Early May Bank holiday was moved in 2020 to VE day; Spring Bank holiday
-  was moved in Queen's Jubilee years; state funeral of the Queen).  Millenium
-  day now is included in the result of `holidayLONDON(1999)`.  The London
-  holidays should now be complete up to the time of writing this (1 Oct 2022).
-
-- renamed `GBMayDay` to `GBEarlyMayBankHoliday` and `GBBankHoliday` to
-  `GBSpringBankHoliday`. The old names are somewhat ambiguous and strongly
-  discouraged but still available. `listHolidays()` gives the new names.
-
 - updated the DST rules.
 
 - internally, refactored the way the DST rules are generated (not visible to
@@ -43,7 +44,6 @@
   namespace of `timeDate`. Previously it was starting from the environment of
   the caller which could result in using an unrelated object or, if `timeDate`
   was loaded but not attached, not finding it.
-
 
   
 # timeDate 4021.106
@@ -66,9 +66,9 @@
 
 - `holidaysNYSE()` gets a new argument, `type`, to select what type of the
   exchange's closing days to return. The default is to return all days in the
-  requested years when NYSE was closed for whatever reason. Use `type =
-  "standard"` and `type = `special` to get the standard holidays and the special
-  closings, respectively.
+  requested years when NYSE was closed for whatever reason. Use `type = "standard"`
+  and `type = special` to get the standard holidays and the special closings,
+  respectively.
 
   Returning any closing day by default might be considered a breaking
   change. However, not returning all closing days was perceived as erroneous by
@@ -109,7 +109,7 @@
 ## Deprecation notes
 
 - the `timeDate` method for `cut` has been discouraged in the sources for a long
-  time with a recommendation to use \code{window} instead (just replace `cut(x,
+  time with a recommendation to use `window` instead (just replace `cut(x,
   from = xx , to = yy)` with `window(x, start = xx, end = yy)`. The `cut` method
   will be deprecated in the next release and later removed or replaced by a
   method that is consistent with the methods for `cut` in base R.
