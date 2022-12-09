@@ -40,8 +40,25 @@ setMethod(f = "fitted", signature(object = "fGARCH"), definition =
 
     # Get original time series class:
     ans = slot(object, "data")
-    Name = as.character(object@formula[2])
-    attr(ans, "Name") <- Name
+    
+    ## GNB: temporary fix for #6789 (the data part of ans was not being replaced with
+    ##    'fitted', hence the data was returned, rather than fitted)
+    ##
+    ## TODO: fix properly the code and the documentation.
+    ##    Note: check also if f@data is set with the original object.
+    ##          It seems that it is numeric
+    if(is(object, "timeSeries")){
+        Name = as.character(object@formula[2])
+        attr(ans, "Name") <- Name
+        ans@.Data <- if(is.matrix(fitted)) fitted else matrix(fitted, ncol = 1)
+    } else if(inherits(ans, "ts") || is.numeric(ans)) {
+        ans[] <- fitted
+    } else {
+        message(paste0("conversion to class '", class(ans), "' not supported yet,\n",
+                       "returning slot fitted asis."))
+        ans <- fitted
+    }
+    
     # Return Value:
     ans
 })

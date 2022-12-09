@@ -2,6 +2,20 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
+\section{CHANGES in fGarch VERSION 4022.90 (2022-12-??, svn ????)}{
+  \itemize{
+
+
+    \item the \code{"fGARCH"} method for \code{fitted} was returning the
+    data, not the fitted values. Fixes issue 6789, reported by Kouhei
+    Hashinokuchi (hakoshie).
+    TODO: this needs more work, the doc. for the method also needs
+    fixing. DON'T SUBMIT BEFORE FIXING THESE!.
+
+  }
+}
+
+
 \section{CHANGES in fGarch VERSION 4022.89 (2022-11-05, from svn r6316--r6326)}{
   \itemize{
     

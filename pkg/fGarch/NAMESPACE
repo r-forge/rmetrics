@@ -31,7 +31,7 @@ importFrom(Matrix, Matrix)# only in  R/garch-Hessian.R
 importFrom("graphics", abline, grid, hist, legend, lines,
            par, polygon, title)
 
-importFrom("methods", new, show, slot, slotNames)
+importFrom("methods", new, show, slot, slotNames, is)
 
 importFrom("stats", Box.test, acf, arima, as.formula, ccf,
            density, dnorm, dt, filter, integrate, lm,
