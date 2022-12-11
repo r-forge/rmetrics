@@ -2,6 +2,15 @@
 ChangeLog
 Package fCopulae
 
+2022-12-11 smith
+
+	* DESCRIPTION: Updated version number
+	* R/ArchimedieanGenerator.R fixed bounds on uniroot in .invK
+	  function to avoid intermitent warnings on CRAN
+	* inst/unitTest/runTests.R alter options to recommended
+	  warn=1. Set random number generators to match R4.2.2 defaults-
+	  avoids warnings in the test output
+
 2021-07-18  smith
 
 	* DESCRIPTION: Updated version number and maintainer
