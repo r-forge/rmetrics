@@ -1,5 +1,8 @@
 pkg <- "fCopulae"
 
+initial_opt <- options(warn = 1)
+on.exit(initial_opt)
+
 if(require("RUnit", quietly = TRUE))
 {
 

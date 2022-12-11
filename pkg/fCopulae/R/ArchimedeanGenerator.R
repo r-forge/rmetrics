@@ -1426,8 +1426,8 @@ KfuncSlider <-
         } else if (P < .Kfunc(0, alpha, type) + lower/2 ) {
             res = 0
         } else {
-            res = uniroot(.fKC, c(lower, 1),
-                p = P, alpha = alpha, type = type)$root
+            res = uniroot(.fKC, c(0, 1),
+                          p = P, alpha = alpha, type = type)$root
         }
         z = c(z, res)
     }
