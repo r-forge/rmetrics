@@ -1,3 +1,17 @@
+# timeDate 4022.108
+
+- `CAFamilyDay` (Canada Family Day) was missing from the list returned by
+  `listHolidays()`. It was missing only from that list, `holidayTSX()` was
+  including it when applicable.
+
+- `JPVernalEquinox` was missing from the list returned by `listHolidays()`.
+
+- refactored file NAMESPACE to facilitate maintenance (that revealed the
+  omissions listed above).
+
+- import selectively from 'stats' and 'utils'.
+
+
 # timeDate 4021.107
 
 - London financial centre holidays - fixed and/or included non-standard holidays
