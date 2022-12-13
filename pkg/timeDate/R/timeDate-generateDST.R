@@ -29,13 +29,19 @@
 # The following DST Rules were extracted from tzdata (version tzdata2008e)
 # and integrated into R functions.
 .genDaylightSavingTime <-
-    function(filename = "DaylightSavingTime.R")
+    function(filename = "DaylightSavingTime.R", finCenter = listFinCenter(),
+             aliases = NULL)
 {
+    ## GNB: turned 'finCenter' into an argument of the function
+
+    finCenter
+    
     cat(
         "\t this function generates DST rules from the output
 \t of the command line \"zdump\" on a _linux_ box.\n")
 
-    finCenter <- listFinCenter()
+    ## GNB: now finCenter is an argument, see above
+    ##    finCenter <- listFinCenter()
 
     # create source file
     cat("
@@ -73,6 +79,9 @@
 
 ",file = filename)
 
+    ## GNB: track unsuccessful zones
+    failed <- character(0)
+    
     for (k in seq(length(finCenter))) {
 
         # run zdump linux command
@@ -99,6 +108,17 @@
         ## For now, try dropping non-standard lines:
         idrop <- sapply(zdump, length)
         zdump <- zdump[ idrop == 16 ]
+
+        ## GNB: guard against empty data (after removing pre and post-amble
+        ##   TODO: need to process it as well. But how?
+        if(length(zdump) == 0) {
+            cat("finCenter ", finCenter[k], " has no rules; skipping it", "\n")
+            cat("\n\n ## TODO: finCenter ", finCenter[k], " has no rules; skipping it", "\n\n",
+                file = filename, append = TRUE)
+            failed <- c(failed, finCenter[k])
+            next
+        }
+            
         zdump <- matrix(unlist(zdump), nrow = length(zdump), byrow = TRUE)
 
         # extract data
@@ -186,17 +206,24 @@
         }
     }
 
+    if(!is.null(aliases))
+        cat("\n", aliases, sep = "\n", file = filename, append = TRUE)
+
     cat("
-## this is for compatibility purpose with previous version
-BuenosAires <- Buenos_Aires
-LosAngeles <- Los_Angeles
-MexicoCity <- Mexico_City
-NewYork <- New_York
-Eastern <- New_York
-HongKong <- Hong_Kong
+## this is for compatibility purpose with very old versions of timeDate;
+## but 'Frankfurt' is sensible anyway.
+BuenosAires <- Buenos_Aires  # now wordds are separated by underscore
+LosAngeles  <- Los_Angeles
+MexicoCity  <- Mexico_City
+NewYork     <- New_York
+Eastern     <- New_York
+HongKong    <- Hong_Kong
 KualaLumpur <- Kuala_Lumpur
-Frankfurt <- Berlin
-Pacific <- LosAngeles
+
+Frankfurt   <- Berlin
+Pacific     <- Los_Angeles
 ",
         file = filename, append = TRUE)
+
+    list(file = filename, failed = failed)
 }
