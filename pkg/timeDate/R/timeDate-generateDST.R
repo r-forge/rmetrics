@@ -30,7 +30,7 @@
 # and integrated into R functions.
 .genDaylightSavingTime <-
     function(filename = "DaylightSavingTime.R", finCenter = listFinCenter(),
-             aliases = NULL)
+             aliases = NULL, end_year = 2100)
 {
     ## GNB: turned 'finCenter' into an argument of the function
 
@@ -84,8 +84,10 @@
     
     for (k in seq(length(finCenter))) {
 
+        ## GNB: added  -c end_year. The default of zdump is 2500, which seems
+        ##                          excessive for our purposes.
         # run zdump linux command
-        zdump <- try(system(paste("zdump -v", finCenter[k], sep=" "), intern=TRUE))
+        zdump <- try(system(paste("zdump -v -c", end_year, finCenter[k], sep=" "), intern=TRUE))
         zdump <- strsplit(zdump, " +" )
 
         ## 2022-10-01 GNB:

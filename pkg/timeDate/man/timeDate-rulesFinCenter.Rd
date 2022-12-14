@@ -36,8 +36,8 @@ rulesFinCenter(FinCenter = "")
   a selected financial center.
     
   There is no dependency on the POSIX implementation of your operating
-  system because all time zone and day light saving time information is
-  stored locally in ASCII files.
+  system because \pkg{timeDate} comes with a database containing the
+  necessary time zone and day light saving time information.
     
 }
 

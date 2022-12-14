@@ -25,6 +25,16 @@ listFinCenter(pattern = ".*")
   }
 }
 
+\details{
+
+  The list returned by \code{listFinCenter} doesn't contain all
+  financial centers supported by \pkg{timeDate}. Rather it contains
+  currently supported \sQuote{standard names} of time zones defined in
+  the tz (a.k.a. Zoneinfo) database.  Names supported by previous
+  versions of by \pkg{timeDate} are recognised, even though they are not
+  in the list.
+  
+}
 
 \value{
 

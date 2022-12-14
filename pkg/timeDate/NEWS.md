@@ -11,6 +11,11 @@
 
 - import selectively from 'stats' and 'utils'.
 
+- the financial centers were updated to reflect changes in time zones in recent
+  years. The list returned by `listFinCenter()` is synchronised with current
+  time zone names. Previous names supported by timeDate are available as
+  aliases.
+  
 
 # timeDate 4021.107
 
