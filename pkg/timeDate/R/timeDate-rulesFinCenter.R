@@ -117,6 +117,10 @@ rulesFinCenter <-
     # Match City:
     fccity <- strsplit(FinCenter, "/")[[1]]
     City <- fccity[length(fccity)]
+    ## GNB: guard against accidentally calling Easter()
+    if(City == "Easter")
+        stop("Easter stands for the religious holiday\n",
+             "Use \"Easter_Island\" for the Easter time zone.")
 
     ## GNB: 'match.fun' looks for the argument in the caller's environment.  In particular,
     ##      if called from the user's workspace, it will find any function of the same name
@@ -125,6 +129,9 @@ rulesFinCenter <-
     ##      case.
     ##
     ##      was: fun <- match.fun(City)
+    ##
+    ##   TODO: use argument 'inherit = FALSE' to prevent look up outside
+    ##         'timeDate' namespace?
     fun <- get(City, mode = "function")
 
     # Return Value:
