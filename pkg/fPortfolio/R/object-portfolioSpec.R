@@ -218,7 +218,7 @@ function(spec, constraints)
     # FUNCTOION:
     
     # Check:
-    if(class(constraints) == "fPFOLIOCON")
+    if(inherits(constraints,"fPFOLIOCON"))
         constraints = constraints@stringConstraints
     if(any(constraints == "Short")) {
         stopifnot(getSolver(spec) == "solveRshortExact")
