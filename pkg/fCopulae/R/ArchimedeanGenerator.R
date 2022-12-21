@@ -1419,16 +1419,25 @@ KfuncSlider <-
     # Compute Inverse:
     .fKC = function(x, p, alpha, type) { .Kfunc (x, alpha, type) - p }
     p = x
+    
     z = NULL
     for (P in p) {
-        if (P > 1 - lower/2) {
-            res = 1
-        } else if (P < .Kfunc(0, alpha, type) + lower/2 ) {
+        ## alter use to lower to set tolerence else return zero when not exected
+        if (P <= .Kfunc(0, alpha, type)) {
             res = 0
-        } else {
+        }else{
             res = uniroot(.fKC, c(0, 1),
-                          p = P, alpha = alpha, type = type)$root
+                          p = P, alpha = alpha, type = type,tol=lower)$root
         }
+        
+        ## if (P > 1 - lower/2) {
+        ##     res = P #1
+        ## } else if (P < .Kfunc(0, alpha, type) + lower/2 ) {
+        ##     res = 0
+        ## } else {
+        ##     res = uniroot(.fKC, c(0, 1),
+        ##                   p = P, alpha = alpha, type = type,tol=lower)$root
+        ## }
         z = c(z, res)
     }
 

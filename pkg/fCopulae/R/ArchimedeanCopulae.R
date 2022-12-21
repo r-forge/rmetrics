@@ -67,6 +67,7 @@
         U = .invPhi(X*.Phi(t, alpha, type), alpha, type)
         V = .invPhi((1-X)*.Phi(t, alpha, type), alpha, type)
         ans = cbind(U, V)
+
         # Add Control Attribute:
         colnames(ans) = NULL
     }
@@ -603,7 +604,7 @@ darchmCopula <-
         v = u[, 1]
         u = u[, 2]
     }
-        
+
     # Density:
     c.uv = .invPhiSecondDer( 
         .Phi(u, alpha, type) + .Phi(v, alpha, type), alpha, type ) / ( 
