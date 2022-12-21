@@ -1,13 +1,11 @@
 Package: fAssets
 Title: Rmetrics - Analysing and Modelling Financial Assets
-Date: 2022-10-07
-Version: 4021.85
-Author: Diethelm Wuertz [aut],
-	Tobias Setz [aut,cre],
-	Yohan Chalabi [aut]
-Maintainer: Tobias Setz <tobias.setz@live.com>
-Description: Provides a  collection of functions 
-  to manage, to investigate and to analyze data sets of financial 
+Date: 2022-12-21
+Version: 4022.86
+Authors@R: c( person("Diethelm", "Wuertz", role = "aut"), person("Tobias", "Setz", role = "aut"),
+              person("Yohan", "Chalabi", role = "aut"),
+	      person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-project.org") )
+Description: A  collection of functions to manage, to investigate and to analyze data sets of financial 
   assets from different points of view.
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
 Imports: fMultivar, robustbase, MASS, sn, ecodist, mvnormtest, energy,
