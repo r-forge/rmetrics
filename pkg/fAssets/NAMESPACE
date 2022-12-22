@@ -2,9 +2,19 @@
 ## Exports
 ################################################################################
 exportPattern("^[^\\.]")
+## hidden functions needed by fPortfolio
+export(".baggedMeanCov")
+export(".bayesSteinMeanCov")
+export(".cov.arw")
+export(".cov.nnve")
+export(".cov.shrink")
+export(".donostahMeanCov")
+export(".ledoitWolfMeanCov")
+export(".rmtMeanCov")
+export(".studentMeanCov")
 
 ################################################################################
-## Imports
+## imports
 ################################################################################
 import(timeDate)
 import(timeSeries)

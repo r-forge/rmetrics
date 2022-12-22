@@ -5,11 +5,11 @@ Version: 4022.86
 Authors@R: c( person("Diethelm", "Wuertz", role = "aut"), person("Tobias", "Setz", role = "aut"),
               person("Yohan", "Chalabi", role = "aut"),
 	      person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-project.org") )
-Description: A  collection of functions to manage, to investigate and to analyze data sets of financial 
+Description: A collection of functions to manage, to investigate and to analyze data sets of financial 
   assets from different points of view.
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics
 Imports: fMultivar, robustbase, MASS, sn, ecodist, mvnormtest, energy,
 	grDevices, graphics, stats
 Suggests: methods, mnormt, RUnit
 License: GPL (>= 2)
-URL: https://www.rmetrics.org
+URL: https://r-forge.r-project.org/projects/rmetrics/
