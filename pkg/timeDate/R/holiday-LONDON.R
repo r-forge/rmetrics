@@ -107,11 +107,12 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
                               as.character(BoxingDay(y)))
             } else {
                 posix1 <- as.POSIXlt(ChristmasDay(y))
-                # If Christmas on Saturday or Sunday, then the following Monday and Tuesday are holidays
+                ## If Christmas on Saturday or Sunday, then the following Monday
+                ## and Tuesday are holidays
                 if (posix1$wday == 0) { # Christmas Sunday
                     holidays <- c(holidays,
                                   as.character(ChristmasDay(y) + (1 : 2) * 86400))
-                } else if (posix1$wday == 6) { #Christmas Saturday
+                } else if (posix1$wday == 6) { # Christmas Saturday
                     holidays <- c(holidays,
                                   as.character(ChristmasDay(y) + (2 : 3) * 86400))
                 } else if (posix1$wday == 5) {# Christmas Friday
@@ -150,18 +151,20 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
 
                 ## special one-off bank holidays
                 if (y == 1981) {
-                    # Royal wedding was a public holiday
+                    ## Royal wedding was a public holiday
                     dts <- paste0(y, "-07-29")
                     holidays <- c(holidays, dts)
-                }
-                if (y == 1999) {
+                } else if (y == 1999) {
                     ## UK millenum day
                     dts <- format(GBMilleniumDay(), format = "%Y-%m-%d")
                     holidays <- c(holidays, dts)
-                }
-                if (y == 2011) {
-                    # Royal wedding declared a public holiday
+                } else if (y == 2011) {
+                    ## Royal wedding declared a public holiday
                     dts <- paste0(y, "-04-29")
+                    holidays <- c(holidays, dts)
+                } else if (y == 2023) {
+                    ## Bank holiday for the coronation of King Charles III
+                    dts <- paste0(y, "-05-08")
                     holidays <- c(holidays, dts)
                 }
                 

@@ -1,19 +1,21 @@
 # timeDate 4022.108
 
+- added the 2023 UK Bank holiday for the coronation of King Charles III.
+
+- refactored file NAMESPACE to facilitate maintenance (that revealed the
+  two omissions listed below).
+
 - `CAFamilyDay` (Canada Family Day) was missing from the list returned by
   `listHolidays()`. It was missing only from that list, `holidayTSX()` was
   including it when applicable.
 
 - `JPVernalEquinox` was missing from the list returned by `listHolidays()`.
 
-- refactored file NAMESPACE to facilitate maintenance (that revealed the
-  omissions listed above).
-
 - import selectively from 'stats' and 'utils'.
 
-- the financial centers were updated to reflect changes in time zones in recent
-  years. The list returned by `listFinCenter()` is synchronised with current
-  time zone names. Previous names supported by timeDate are available as
+- the financial centers are now updated to reflect changes in time zones in
+  recent years. The list returned by `listFinCenter()` is synchronised with
+  current time zone names. Previous names supported by timeDate are available as
   aliases.
   
 
