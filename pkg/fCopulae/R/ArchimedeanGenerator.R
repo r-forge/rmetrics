@@ -157,6 +157,7 @@ archmCheck <-
     # Check:
     ans = TRUE
     range = as.vector(archmRange(type))
+    
     if (alpha < range[1] | alpha > range[2]) {
         print(c(alpha = alpha))
         print(c(range = range))
@@ -1422,22 +1423,31 @@ KfuncSlider <-
     
     z = NULL
     for (P in p) {
-        ## alter use to lower to set tolerence else return zero when not exected
-        if (P <= .Kfunc(0, alpha, type)) {
+       if (P >= 1){ ## - lower/2) {
+            res = 1
+        } else if (P <= .Kfunc(0, alpha, type)){ ## + lower/2 ) {
             res = 0
-        }else{
-            res = uniroot(.fKC, c(0, 1),
-                          p = P, alpha = alpha, type = type,tol=lower)$root
+        } else {
+            ## for small values of P (e.g. 1e-5) uniroot can return
+            ## values of 0 despite then above catch due to the numerical precision
+            ## try a cascading increase in precsion to catch this
+            for(pwr in c(0.25,0.5,1)){
+                res = uniroot(.fKC, c(0,1),
+                              p = P, alpha = alpha, type = type,tol=.Machine$double.eps^pwr)
+                
+                if( (res$root - 2*res$estim.prec) > 0 &
+                    (res$root + 2*res$estim.prec) < 1 ){ break }
+            }
+            if( (res$root - 2*res$estim.prec < 0) & res$root==0 ){
+                warning(paste("Inversion close to 0, using default lower value",lower))
+                res <- lower
+            }else if ( (res$root + 2*res$estim.prec > 1) & res$root==1 ){
+                warning(paste("Inversion close to 1, using default upper value",1-lower))
+                res <- 1-lower
+            }else{
+                res <- res$root
+            }
         }
-        
-        ## if (P > 1 - lower/2) {
-        ##     res = P #1
-        ## } else if (P < .Kfunc(0, alpha, type) + lower/2 ) {
-        ##     res = 0
-        ## } else {
-        ##     res = uniroot(.fKC, c(0, 1),
-        ##                   p = P, alpha = alpha, type = type,tol=lower)$root
-        ## }
         z = c(z, res)
     }
 

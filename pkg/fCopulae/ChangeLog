@@ -2,6 +2,12 @@
 ChangeLog
 Package fCopulae
 
+2023-01-03 smith
+
+	* R/ArchimedieanGenerator.R further work on uniroot to refine
+	  handling of cases where .invK was limited by numerical tolerance
+	  of uniroot
+
 2022-12-11 smith
 
 	* DESCRIPTION: Updated version number

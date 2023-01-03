@@ -95,7 +95,7 @@ archmCopulaFit <-
         -mean( log(darchmCopula(u = U, v = V, alpha = x, type = type)) )
     }
     range = archmRange(type)
-
+    
     fit = nlminb(start = alpha, objective = fun, 
         lower = range[1], upper = range[2],  type = type, U = U, V = V, ...)
       
