@@ -2,6 +2,10 @@
 
 - added the 2023 UK Bank holiday for the coronation of King Charles III.
 
+- `axis.timeDate` was not handling properly the case when `x` was missing,
+  leading to errors from R-devel check (2023-01-07 r83578). Fix suggested by Uwe
+  Lieges.
+
 - refactored file NAMESPACE to facilitate maintenance (that revealed the
   two omissions listed below).
 
@@ -11,13 +15,13 @@
 
 - `JPVernalEquinox` was missing from the list returned by `listHolidays()`.
 
-- import selectively from 'stats' and 'utils'.
-
 - the financial centers are now updated to reflect changes in time zones in
   recent years. The list returned by `listFinCenter()` is synchronised with
   current time zone names. Previous names supported by timeDate are available as
   aliases.
   
+- import selectively from 'stats' and 'utils'.
+
 
 # timeDate 4021.107
 
@@ -34,11 +38,11 @@
 - the generic `timeDate()` gets argument '...' to allow methods for it to have
   additional arguments (e.g., for DST gaps).
 
-- the 'character' method for `dateTime()` gets a new argument `dst_gap` to
+- the 'character' method for `timeDate()` gets a new argument `dst_gap` to
   control what to do with non-existent DST times at the requested `FinCenter`
   with options to add/subtract ("+", "-") the DST shift or set them to `NA`.
 
-- `DateTime()` was not handling correctly some times just after the switch
+- `timeDate()` was not handling correctly some times just after the switch
   to/from DST. This was visible mostly for time zones away from GMT and GMT+1.
 
 - In `timeSequence()`, if any of the generated times would fall in DST gaps,
@@ -72,7 +76,7 @@
 - fix `whichFormat()` to accommodate a change in R-devel after which
   `as.character(Sys.time())` contains fractional seconds. (`format(Sys.time())`
   doesn't; before this change in R-devel both were dropping the fractional
-  seconds). (see timeDate rev 6286)
+  seconds). (fixed by Martin Maechler, see timeDate rev 6286)
 
 
 # timeDate 4021.105
@@ -100,8 +104,8 @@
   the corresponding days returned by `holidayXXXX` are the resulting non-weekend
   closing days, if any.
 
-- `holidayTSX()` now correctly calculate Christmas and Boxing day closures when
-   Christmas is on Monday.  Fixes the part (2) of issue #1288 reported by Stefan
+- `holidayTSX()` now correctly calculates Christmas and Boxing day closures when
+   Christmas is on Monday.  Fixes part (2) of issue #1288 reported by Stefan
    Wilhelm (part (1) was fixed in a previous release). The fix is really a patch
    for the specific issue, maybe the same should be done when Christmas is on
    Sunday, for example. Information/contribution on Canadian holidays is

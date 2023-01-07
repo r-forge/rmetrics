@@ -123,11 +123,15 @@ axis.timeDate <-
     # Format:
     if (is.null(format)) format = whichFormat(x)
 
-    # Add Axis:
-    axis.POSIXct(side=side, x=as.POSIXct(x), at=as.POSIXct(at),
-        format=format, labels=labels, ...)
-
-    # Return Value:
+    ## Add Axis:
+    ## GNB: arg. x was: x=as.POSIXct(x)
+    ##   'x=as.POSIXct(x)' might fail if 'x' is missing. It wasn't faling
+    ##   only because axis.POSIXct() was ignoring argument 'x' when 'at' was
+    ##   non-missing.  But this is no longer the case after R-devel 2023-01-07
+    ##   r83578, which throws error. Fix suggested by Uwe Liege.
+    axis.POSIXct(side = side, x = if(!missing(x)) as.POSIXct(x),
+                 at = as.POSIXct(at), format = format, labels = labels, ...)
+    
     invisible()
 }
 
