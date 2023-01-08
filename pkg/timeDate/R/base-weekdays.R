@@ -1,4 +1,3 @@
-
 # This R package is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
 # License as published by the Free Software Foundation; either
@@ -17,10 +16,10 @@
 
 ################################################################################
 # FUNCTION:                 DATE FUNCTIONS:
-#  .fjulian                  Transforms formatted dates to julian day numbers
+#  #.fjulian                  Transforms formatted dates to julian day numbers
 #  .julian                   Implements SPlus like 'julian'
-#  .isPOSIX                  Checks for an object of class POSIX
-#  .by2seconds               Converts 'by' string into numeric value of seconds
+#  #.isPOSIX                  Checks for an object of class POSIX
+#  #.by2seconds               Converts 'by' string into numeric value of seconds
 ################################################################################
 
 
@@ -89,13 +88,7 @@
 ##     .julian(cd$month, cd$day, year, origin = c(mm0, dd0, cc0*100+yy0))
 ## }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.julian <- function(m, d, y, origin = c(month = 1, day = 1, year = 1960))
-{
+.julian <- function(m, d, y, origin = c(month = 1, day = 1, year = 1960)) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -133,55 +126,47 @@
     out
 }
 
+## 2023-01-08 GNB: removed .isPOSIX() since it is not used anywhere in the package.
+## 
+## .isPOSIX <-
+##     function(x)
+## {
+##     # A function implemented by Diethelm Wuertz
+## 
+##     # Description:
+##     #   Checks for an object of class POSIX
+## 
+##     # FUNCTION:
+## 
+##     # Check:
+##     ans = inherits(x, "POSIXt")
+## 
+##     # Return Value:
+##     ans
+## }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.isPOSIX <-
-    function(x)
-{
-    # A function implemented by Diethelm Wuertz
-
-    # Description:
-    #   Checks for an object of class POSIX
-
-    # FUNCTION:
-
-    # Check:
-    ans = inherits(x, "POSIXt")
-
-    # Return Value:
-    ans
-}
-
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.by2seconds <-
-    function(by = "1 h")
-{
-    # A function implemented by Diethelm Wuertz
-
-    # Description:
-    #   Convert 'by' string into numeric value of seconds
-
-    # FUNCTION:
-
-    # Convert:
-    by = strsplit(by, " ")[[1]]
-    byTime = as.integer(by[1])
-    byUnits = substr(by[2], 1, 1)
-    timeUnits = c(1, 60, 3600)
-    names(timeUnits) = c("s", "m", "h")
-    bySeconds = byTime * timeUnits[byUnits]
-    names(bySeconds) = "secs"
-
-    # Return Value:
-    bySeconds
-}
-
+## TODO: rename, document and export this function? not used anywhere in the package
+## .by2seconds <-
+##     function(by = "1 h")
+## {
+##     # A function implemented by Diethelm Wuertz
+## 
+##     # Description:
+##     #   Convert 'by' string into numeric value of seconds
+## 
+##     # FUNCTION:
+## 
+##     # Convert:
+##     by = strsplit(by, " ")[[1]]
+##     byTime = as.integer(by[1])
+##     byUnits = substr(by[2], 1, 1)
+##     timeUnits = c(1, 60, 3600)
+##     names(timeUnits) = c("s", "m", "h")
+##     bySeconds = byTime * timeUnits[byUnits]
+##     names(bySeconds) = "secs"
+## 
+##     # Return Value:
+##     bySeconds
+## }
 
 ################################################################################

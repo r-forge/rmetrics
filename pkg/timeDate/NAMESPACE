@@ -88,33 +88,8 @@ exportMethods(
     timeDate
 )
 
-## TODO: rename or not export functions starting with '.'
 export(
-    .julian,
-    .JULIAN,
-    .sjulian,
-    
-    .by2seconds,
-    .day.of.week,
-    .easter,
-    .easterSunday,
-    .endpoints,
-    .formatFinCenter,
-    .genDaylightSavingTime,
-    .isPOSIX,
-    .last.of.nday,
-    .midnightStandard,
-    .month.day.year,
-    .nth.of.nday,
-    .on.or.after,
-    .on.or.before,
-    .sdate,
-    .sday.of.week,
-    .sleap.year,
-    .subsetByPython,
-    .subsetBySpan,
-    .subsetCode,
-    .whichFormat
+    .endpoints ## , this is documented
 )
 
 export(
@@ -123,7 +98,7 @@ export(
     alignDaily,
     alignMonthly,
     alignQuarterly,
-    as.Date.timeDate,
+    as.Date.timeDate, # To avoid that zoo package masks as.Date.timeDate?
     as.timeDate,
     atoms,
     axis.timeDate,

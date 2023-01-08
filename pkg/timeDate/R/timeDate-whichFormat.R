@@ -1,4 +1,3 @@
-
 # This R package is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
 # License as published by the Free Software Foundation; either
@@ -18,17 +17,9 @@
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
 #  whichFormat               Returns format string called by 'timeDate'
-# DEPRECATED:
-#  .whichFormat
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-whichFormat <-
-    function(charvec, silent = FALSE)
-{
+whichFormat <- function(charvec, silent = FALSE) {
     # A function implemented by Diethelm Wuertz
 
     # Charvec String:
@@ -81,19 +72,4 @@ whichFormat <-
     "unknown"
 }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.whichFormat <- whichFormat
-if(FALSE) ## [MM]: if you're serious about deprecation, then rather use
-.whichFormat <- function(charvec, silent = FALSE) {
-    .Deprecated()
-    whichFormat(charvec, silent)
-}
-
-
-
 ################################################################################
-

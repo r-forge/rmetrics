@@ -1,3 +1,20 @@
+# timeDate 4022.109
+
+- stopped exporting all but one (`.endpoints`) functions starting with a
+  '.'. They all seem for internal purposes and/or have similarly named functions
+  with normal names.
+
+- removed `.whichFormat` and `.midnightStandard`, not officially deprecated but
+  had been renamed to `whichFormat()` and `midnightStandard()`, respectively, a
+  long time ago.
+
+- removed several internal functions that are no longer used anywhere in the
+  package.
+
+- removed file 'namespace-tags.R' as it had not been updated recently, see
+  r83578 or earlier if you need it.
+
+
 # timeDate 4022.108
 
 - added the 2023 UK Bank holiday for the coronation of King Charles III.

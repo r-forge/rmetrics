@@ -25,10 +25,6 @@
 #  abline,timeDate         Adds an abline to a 'timeDate' plot
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("plot", "timeDate",
     function(x, y, ...)
 {
@@ -47,10 +43,6 @@ setMethod("plot", "timeDate",
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("points", "timeDate",
     function(x, y, ...)
 {
@@ -66,10 +58,6 @@ setMethod("points", "timeDate",
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("lines", "timeDate",
     function(x, y, ...)
 {
@@ -88,13 +76,7 @@ setMethod("lines", "timeDate",
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-axis.timeDate <-
-    function(side, x, at, format = NULL, labels = TRUE, ...)
-{
+axis.timeDate <- function(side, x, at, format = NULL, labels = TRUE, ...) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -136,15 +118,9 @@ axis.timeDate <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-pretty.timeDate <- 
-    function(x, n = 5, min.n = n%/%3, shrink.sml = 0.75, 
+pretty.timeDate <- function(x, n = 5, min.n = n%/%3, shrink.sml = 0.75, 
         high.u.bias = 1.5, u5.bias = 0.5 + 1.5 * high.u.bias, 
-        eps.correct = 0, ...) 
-{
+        eps.correct = 0, ...) {
     # A function implemented by Diethelm Wuertz
     
     # Description:
@@ -185,10 +161,6 @@ pretty.timeDate <-
 }
     
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("abline", signature(v = "timeDate"),
     function(a = NULL, b = NULL, h = NULL, v = NULL, reg = NULL,
         coef = NULL, untf = FALSE, ...)
@@ -198,6 +170,5 @@ setMethod("abline", signature(v = "timeDate"),
             coef = coef, untf = untf, ...)
     }
 )
-
 
 ################################################################################

@@ -75,9 +75,6 @@ function()
     # Easter:
     Easter()
 
-    # Old Function stoll available for compatibility
-    timeDate:::.easter()
-
     # Return Value:
     return()
 }

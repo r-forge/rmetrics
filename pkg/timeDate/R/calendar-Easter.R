@@ -1,4 +1,3 @@
-
 # This R package is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
 # License as published by the Free Software Foundation; either
@@ -19,17 +18,11 @@
 # FUNCTION:                 DESCRIPTION:
 #  Easter                    Returns date of easter or related feasts
 # DEPRECATED:               DESCRIPTION:
-#  .easterSunday             Easter Algorithm
-#  .easter                   Returns date of easter or related feasts
+#  #.easterSunday             Easter Algorithm
+#  #.easter                   Returns date of easter or related feasts
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-Easter <-
-    function(year = getRmetricsOptions("currentYear"), shift = 0)
-{
+Easter <- function(year = getRmetricsOptions("currentYear"), shift = 0) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -102,57 +95,55 @@ Easter <-
     ans
 }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.easterSunday <-
-    function(year)
-{
-    # A function implemented by Diethelm Wuertz
-
-    # Description:
-    #   Computes the 'timeDate' of Easter Sunday
-
-    # FUNCTION:
-
-    # This algorithm holds for any year in the Gregorian Calendar,
-    # which (of course) means years including and after 1583
-    a = year%%19
-    b = year%/%100
-    c = year%%100
-    d = b%/%4
-    e = b%%4
-    f = (b+8)%/%25
-    g = (b-f+1)%/%3
-    h = (19*a+b-d-g+15)%%30
-    i = c%/%4
-    k = c%%4
-    l = (32+2*e+2*i-h-k)%%7
-    m = (a+11*h+22*l)%/%451
-    easter.month = (h+l-7*m+114)%/%31
-    p = (h+l-7*m+114)%%31
-    easter.day = p+1
-
-    # Return Value:
-    year*10000 + easter.month*100 + easter.day
-}
-
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.easter <-
-function (year = getRmetricsOptions("currentYear"), shift = 0)
-{
-    mdy = .month.day.year(.sjulian(.easterSunday(year)) + shift)
-    ans = as.integer(mdy$year * 10000 + mdy$month * 100 + mdy$day)
-    ans = timeDate(as.character(ans))
-    ans
-}
-
+## 2023-01-08 GNB:  TODO: think about the following remark.
+##
+##     Easter() is an amalgamation of .easterSunday() and .easter(). The latter two functions
+##     have been marked as deprecated for a very long time. There may be some value in
+##     keeping at least .easterSunday() (and even exporting it) but for that it needs to be
+##     documented properly. If it is kept, the common code in Easter() and .easterSunday()
+##     should be factored out. But then this is exactly what the two functions below
+##     do. There is probably a reason to amalgamate them.
+## For now just commenting them out.
+##
+## .easterSunday <-
+##     function(year)
+## {
+##     # A function implemented by Diethelm Wuertz
+## 
+##     # Description:
+##     #   Computes the 'timeDate' of Easter Sunday
+## 
+##     # FUNCTION:
+## 
+##     # This algorithm holds for any year in the Gregorian Calendar,
+##     # which (of course) means years including and after 1583
+##     a = year%%19
+##     b = year%/%100
+##     c = year%%100
+##     d = b%/%4
+##     e = b%%4
+##     f = (b+8)%/%25
+##     g = (b-f+1)%/%3
+##     h = (19*a+b-d-g+15)%%30
+##     i = c%/%4
+##     k = c%%4
+##     l = (32+2*e+2*i-h-k)%%7
+##     m = (a+11*h+22*l)%/%451
+##     easter.month = (h+l-7*m+114)%/%31
+##     p = (h+l-7*m+114)%%31
+##     easter.day = p+1
+## 
+##     # Return Value:
+##     year*10000 + easter.month*100 + easter.day
+## }
+## 
+## .easter <-
+## function (year = getRmetricsOptions("currentYear"), shift = 0)
+## {
+##     mdy = .month.day.year(.sjulian(.easterSunday(year)) + shift)
+##     ans = as.integer(mdy$year * 10000 + mdy$month * 100 + mdy$day)
+##     ans = timeDate(as.character(ans))
+##     ans
+## }
 
 ################################################################################
-

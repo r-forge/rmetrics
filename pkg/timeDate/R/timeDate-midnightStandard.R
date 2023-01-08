@@ -1,4 +1,3 @@
-
 # This R package is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
 # License as published by the Free Software Foundation; either
@@ -30,27 +29,16 @@
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
 #  midnightStandard          Corrects midnight standard called by 'timeDate'
-# DEPRECATED:
-#  .midnightStandard
 ################################################################################
 
 ## # YC :midnigStandard2 returns object in POSIXct and avoid
 ## # wasting time in strptime
 
 if(getRversion() < "2.15") {
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-paste0 <- function(...) paste(..., sep = '')
+    paste0 <- function(...) paste(..., sep = '')
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-midnightStandard2 <- function(charvec, format)
-{
+midnightStandard2 <- function(charvec, format) {
     # A function written by Diethelm Wuertz
     # and entirely rewritten by Martin Maechler
     # modifications for speed improvement by Yohan Chalabi
@@ -162,12 +150,7 @@ midnightStandard2 <- function(charvec, format)
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-midnightStandard <- function(charvec, format)
-{
+midnightStandard <- function(charvec, format) {
     # YC: uses now the faster midngithStandard2() function
     # but still return a character
 
@@ -185,13 +168,4 @@ midnightStandard <- function(charvec, format)
     ans
 }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.midnightStandard <- midnightStandard
-
-
 ################################################################################
-

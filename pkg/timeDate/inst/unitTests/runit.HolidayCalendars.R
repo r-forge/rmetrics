@@ -41,12 +41,12 @@ function()
     # easter -
     # easter(year = currentYear, shift = 0)
     # Dates for Easter and Good Friday from 2000 until 2010:
-    timeDate:::.easter()
-    Easter = timeDate:::.easter(2000:2010)
+    Easter()                   # GNB was: timeDate:::.easter()
+    Easter = Easter(2000:2010) # GNB was: timeDate:::.easter(2000:2010)
     Easter
     checkTrue(inherits(Easter, "timeDate"))
 
-    GoodFriday = timeDate:::.easter(2000:2010, -2)
+    GoodFriday = Easter(2000:2010, -2) # GNB was: timeDate:::.easter(2000:2010, -2)
     GoodFriday
     checkIdentical(
         target = Easter,
