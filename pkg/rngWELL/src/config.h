@@ -22,20 +22,19 @@
 /* Define to 1 if you have the <sys/stat.h> header file. */
 #define HAVE_SYS_STAT_H 1
 
-/* manual check for sys/time.h header. define to 1 if you know you have it. */
+/* Define to 1 if you have the <sys/time.h> header file. */
 #define HAVE_SYS_TIME_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
 #define HAVE_SYS_TYPES_H 1
 
-/* manual check for time.h header. define to 1 if you know you have it. */
+/* Define to 1 if you have the <time.h> header file. */
 #define HAVE_TIME_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
 
-/* manual check for windows.h header. define to 1 if you know you have it. NB:
-   you may not have both sys/time.h and windows.h headers. */
+/* Define to 1 if you have the <windows.h> header file. */
 /* #undef HAVE_WINDOWS_H */
 
 /* Define to the address where bug reports for this package should be sent. */
