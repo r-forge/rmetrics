@@ -1,10 +1,7 @@
 /* src/config.h.  Generated from config.h.in by configure.  */
 /* src/config.h.in.  Generated from configure.ac by autoheader.  */
 
-/* 1234 = LIL_ENDIAN, 4321 = BIGENDIAN */
-#define BYTEORDER 1234
-
-/* manual check for inttypes.h header. define to 1 if you know you have it. */
+/* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
@@ -63,6 +60,3 @@
    required in a freestanding environment). This macro is provided for
    backward compatibility; new code need not use it. */
 #define STDC_HEADERS 1
-
-/* whether byteorder is bigendian */
-/* #undef WORDS_BIGENDIAN */
