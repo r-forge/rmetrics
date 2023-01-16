@@ -29,6 +29,17 @@
 # see https://www.gnu.org/software/autoconf/manual/autoconf-2.67/html_node/Initializing-configure.html
 AC_INIT([rngWELL],[0.10-8],[christophe.dutang@ensimag.fr])
 
+### set the CC variable with clang to avoid searching for gcc
+: ${R_HOME=`R RHOME`}
+if test -z "${R_HOME}"; then
+  echo "could not determine R_HOME"
+  exit 1
+fi
+CC=`"${R_HOME}/bin/R" CMD config CC`
+CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS`
+CPPFLAGS=`"${R_HOME}/bin/R" CMD config CPPFLAGS`
+AC_PROG_CC([cc cl gcc])
+
 AC_CHECK_HEADERS([sys/time.h])
 
 ### check header (1st arg), preprocessor @DEFS@ (2nd arg) if found, nothing if not found (3rd arg) 
