@@ -61,8 +61,8 @@
 
 
 #define two_64_d 18446744073709551616.0
-#define two_64m1 18446744073709551615ULL
 #define two_64_s "18446744073709551616"
+#define two_64m1 18446744073709551615ULL
 #define two_64m1_h 0xffffffffffffffff
 
 
@@ -180,6 +180,10 @@ void get_seed_congruRand(uint64_t *out_seed)
 // .C entry point used by get.description
 /* revision 5168, Sun Nov 20 22:32:38 2011 UTC introduces 
   a bug by replacing sprintf() by Rprintf()   */
+/* to avoid the use of sprintf() which might terminate R, we 
+ * 
+  use R_ReadConsole
+see https://cran.r-project.org/doc/manuals/r-devel/R-exts.html#Setting-R-callbacks*/
 void get_state_congru(char **params, char **seed)
 {
 	if (mod != 0LL) {
