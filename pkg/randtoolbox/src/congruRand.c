@@ -201,26 +201,87 @@ void put_state_congru(char **params, char **seed, int *err)
 {
   /*error(_("temporarily disabled function"));*/
   
-  /* */
+  /* see e.g. https://linux.die.net/man/3/strtoll 
+  * temporary outputs of string-to-unsigned-long-long() */
 	uint64_t inp_mod, inp_mask, inp_mult, inp_incr, inp_seed;
+  /* value is set by the function to the next character after the numerical value */
+  char * endptrarg;
   if (strcmp(params[0], two_64_s) == 0) { /* defined in <string.h> */
 		inp_mod = 0;
 		inp_mask = two_64m1_h;
 	} else {
-		sscanf(params[0], "%" SCNu64 "\n", &inp_mod);
+	  /* former call was sscanf(params[0], "%" SCNu64 "\n", &inp_mod); defined in <stdio.h> */
+#if HAVE_STRTOULL
+{
+	  inp_mod = strtoull(params[0], &endptrarg, 10);
+}
+#elif HAVE_STRTOUL
+{
+  inp_mod = strtoul(params[0], &endptrarg, 10);
+}		
+#else
+{
+  inp_mod = atoi(params[0]);  
+}
+#endif
+
 		if ((inp_mod & (inp_mod - 1)) == 0) {
 			inp_mask = inp_mod - 1;
 		} else {
 			inp_mask = 0;
 		}
 	}
-	sscanf(params[1], "%" SCNu64 "\n", &inp_mult); /* defined in <stdio.h> */
-	sscanf(params[2], "%" SCNu64 "\n", &inp_incr);
-	sscanf(seed[0], "%" SCNu64 "\n", &inp_seed);
 	
+	/* former call was sscanf(params[1], "%" SCNu64 "\n", &inp_mult) */
+#if HAVE_STRTOULL
+{
+  inp_mult = strtoull(params[1], &endptrarg, 10);
+}
+#elif HAVE_STRTOUL
+{
+  inp_mult = strtoul(params[1], &endptrarg, 10);
+}		
+#else
+{
+  inp_mult = atoi(params[1]);
+}
+#endif
+
+	/* former call was sscanf(params[2], "%" SCNu64 "\n", &inp_incr); */
+#if HAVE_STRTOULL
+{
+  inp_incr = strtoull(params[2], &endptrarg, 10);
+}
+#elif HAVE_STRTOUL
+{
+  inp_incr = strtoul(params[2], &endptrarg, 10);
+}		
+#else
+{
+  inp_incr = atoi(params[2]);
+}
+#endif
+
+	
+	/* former call was sscanf(seed[0], "%" SCNu64 "\n", &inp_seed); */
+#if HAVE_STRTOULL
+{
+  inp_seed = strtoull(seed[0], &endptrarg, 10);
+}
+#elif HAVE_STRTOUL
+{
+  inp_seed = strtoul(seed[0], &endptrarg, 10);
+}		
+#else
+{
+  inp_seed = atoi(seed[0]);
+}
+#endif
+
 	*err = check_congruRand(inp_mod, inp_mask, inp_mult, inp_incr, inp_seed);
 	
 	if (*err < 0) return;
+	/* if no error, set the new value */
 	mod = inp_mod;
 	mask = inp_mask;
 	mult = inp_mult;

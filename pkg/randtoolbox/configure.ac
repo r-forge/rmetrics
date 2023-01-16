@@ -49,6 +49,7 @@
 
 # ===========================================================================
 #                 http://autoconf-archive.cryp.to/ac_c_bigendian_cross.html
+#                 https://ac-archive.sourceforge.net/guidod/ac_c_bigendian_cross.html
 # ===========================================================================
 #
 #
@@ -183,26 +184,35 @@ AC_DEFUN(
 
 
 ### initialize
-AC_INIT([randtoolbox], 2.0.0, [christophe.dutang@ensimag.fr])
+AC_INIT([randtoolbox], 2.0.4, [christophe.dutang@ensimag.fr])
 
-### check header (1st arg), preprocessor @DEFS@ (2nd arg) if found, nothing if not found (3rd arg) 
-AC_CHECK_HEADER([sys/time.h], 
-		[AC_DEFINE(HAVE_SYS_TIME_H,1,[manual check for sys/time.h header. define to 1 if you know you have it.])])
-AC_CHECK_HEADER([time.h], 
-		[AC_DEFINE(HAVE_TIME_H,1,[manual check for time.h header. define to 1 if you know you have it.])])
-AC_CHECK_HEADER([windows.h],  
-		[AC_DEFINE(HAVE_WINDOWS_H,1,
-[manual check for windows.h header. define to 1 if you know you have it. NB: you may not have both sys/time.h and windows.h headers.])])
+### set the CC variable to avoid searching for gcc
+: ${R_HOME=`R RHOME`}
+if test -z "${R_HOME}"; then
+  echo "could not determine R_HOME"
+  exit 1
+fi
+CC=`"${R_HOME}/bin/R" CMD config CC`
+CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS`
+CPPFLAGS=`"${R_HOME}/bin/R" CMD config CPPFLAGS`
+AC_PROG_CC([cc cl gcc])
 
-AC_CHECK_HEADER([inttypes.h], 
-		[AC_DEFINE(HAVE_INTTYPES_H,1,[manual check for inttypes.h header. define to 1 if you know you have it.])])
+### check header (1st arg) => no longer use AC_CHECK_HEADER()
+AC_CHECK_HEADERS([sys/time.h])
 
+AC_CHECK_HEADERS([time.h])
+
+AC_CHECK_HEADERS([windows.h])
 
 ### check endianness
 AC_C_BIGENDIAN_CROSS
 
 ### check sizeof of unsigned long long
 AC_CHECK_SIZEOF(unsigned long long, 8)
+
+### check for <stdlib>/strtoul(l) 
+AC_CHECK_HEADERS([stdlib.h])
+AC_CHECK_FUNCS([strtoul strtoull])
 
 
 AC_CONFIG_HEADERS([src/config.h])
@@ -214,7 +224,7 @@ AC_OUTPUT
 ### http://www.gnu.org/software/autoconf/manual/html_node/Autoconf-Language.html
 ###
 ### to check the config file, use 
-### >autoreconf --warnings=obsolete
+### >autoreconf --warnings=all
 ### to make the config file, use in this order the 3 following command in the top directory
 ### >autoheader
 ### >autoconf

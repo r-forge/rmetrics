@@ -60,6 +60,7 @@
 #include <R.h>
 #include <Rmath.h>
 
+#include "config.h"
 #include "locale.h"
 
 
