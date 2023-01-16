@@ -27,9 +27,9 @@
 
 ### initialize
 # see https://www.gnu.org/software/autoconf/manual/autoconf-2.67/html_node/Initializing-configure.html
-AC_INIT([rngWELL],[0.10-8],[christophe.dutang@ensimag.fr])
+AC_INIT([rngWELL],[0.10-9],[christophe.dutang@ensimag.fr])
 
-### set the CC variable with clang to avoid searching for gcc
+### set the CC variable to avoid searching for gcc
 : ${R_HOME=`R RHOME`}
 if test -z "${R_HOME}"; then
   echo "could not determine R_HOME"
@@ -40,23 +40,12 @@ CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS`
 CPPFLAGS=`"${R_HOME}/bin/R" CMD config CPPFLAGS`
 AC_PROG_CC([cc cl gcc])
 
+### check header (1st arg) => no longer use AC_CHECK_HEADER()
 AC_CHECK_HEADERS([sys/time.h])
-
-### check header (1st arg), preprocessor @DEFS@ (2nd arg) if found, nothing if not found (3rd arg) 
-# see https://www.gnu.org/software/autoconf/manual/autoconf-2.61/html_node/Generic-Headers.html
-# AC_CHECK_HEADER([sys/time.h], 
-#		[AC_DEFINE(HAVE_SYS_TIME_H,1,[manual check for sys/time.h header. define to 1 if you know you have it.])])
 
 AC_CHECK_HEADERS([time.h])
 
-#AC_CHECK_HEADER([time.h], 
-#		[AC_DEFINE(HAVE_TIME_H,1,[manual check for time.h header. define to 1 if you know you have it.])])
-
 AC_CHECK_HEADERS([windows.h])
-
-#AC_CHECK_HEADER([windows.h],  
-#		[AC_DEFINE(HAVE_WINDOWS_H,1,
-#[manual check for windows.h header. define to 1 if you know you have it. NB: you may not have both sys/time.h and windows.h headers.])])
 
 
 ### output config header file
@@ -69,7 +58,7 @@ AC_OUTPUT
 ### http://www.gnu.org/software/autoconf/manual/html_node/Autoconf-Language.html
 ###
 ### to check the config file, use 
-### >autoreconf --warnings=obsolete
+### >autoreconf --warnings=all
 ### to make the config file, use in this order the 3 following commands in the top directory
 ### >autoheader
 ### >autoconf

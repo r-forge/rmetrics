@@ -2,7 +2,9 @@
 
 Version 0.10-9
 =============
-- start new devel version
+- remove gcc check in configure.ac file generating config files
+(follow guideline of r-exts)
+- remove useless autoconf macro and simplifies configure.ac 
 
 Version 0.10-8
 =============
