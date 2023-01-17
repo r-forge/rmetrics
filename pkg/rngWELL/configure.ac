@@ -27,7 +27,7 @@
 
 ### initialize
 # see https://www.gnu.org/software/autoconf/manual/autoconf-2.67/html_node/Initializing-configure.html
-AC_INIT([rngWELL],[0.10-9],[christophe.dutang@ensimag.fr])
+AC_INIT([rngWELL],[0.10-10],[christophe.dutang@ensimag.fr])
 
 ### set the CC variable to avoid searching for gcc
 : ${R_HOME=`R RHOME`}
