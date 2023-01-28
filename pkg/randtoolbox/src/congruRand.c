@@ -189,7 +189,8 @@ void get_state_congru(char **params, char **seed)
    * revision 5168, Sun Nov 20 22:32:38 2011 UTC introduces 
    * a bug by replacing sprintf() by Rprintf()
    * 
-   * revision , Fri Jan 27 uses now ulltostr()
+   * revision 6372, Fri Jan 28 13:05:16 2023 UTC now uses 
+   * ulltostr()
    */
   
 	if (mod != 0LL) {

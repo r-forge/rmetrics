@@ -28,8 +28,8 @@ library(randtoolbox)
   print(cbind(x1, x2))
   print(sum(abs(x1 - x2)))
   
-#if(.Platform$OS.type != "windows")
-#{
+if(.Platform$OS.type != "windows")
+{
   # the POSIX rand48 : 281474976710656 == 2^48
   LCG.par <- c("281474976710656", "25214903917", "11")
   set.generator(name="congruRand", mod=LCG.par[1], mult=LCG.par[2], incr=LCG.par[3], seed=1)
@@ -40,7 +40,7 @@ library(randtoolbox)
   x2 <- congruRand(5, dim=1, mod=281474976710656, mult=25214903917, incr=11)
   print(cbind(x1, x2))
   print(sum(abs(x1 - x2)))
-#}
+}
   
 if(FALSE) #congruRand() does not handle 2^64 correctly but set.generator() does 
 {
