@@ -1,7 +1,7 @@
 Package: randtoolbox
 Type: Package
 Title: Toolbox for Pseudo and Quasi Random Number Generation and Random Generator Tests
-Version: 2.0.4
+Version: 2.0.5
 Author: R code by Yohan Chalabi [ctb], Christophe Dutang [aut, cre], Petr Savicky [aut], 
     Diethelm Wuertz [aut]; C code of Knuth-TAOCP RNG by Donald Knuth [aut];
     C code of Torus, Halton and Sobol sequences by Christophe Dutang [aut, cre];
