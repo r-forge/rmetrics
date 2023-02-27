@@ -294,7 +294,13 @@ function(x)
     B = (6*(n*n-5*n+2)/((n+7)*(n+9)))*sqrt((6*(n+3)*(n+5))/(n*(n-2)*(n-3)))
     A = 6+(8/B)*((2/B)+sqrt(1+4/(B**2)))
     jm = sqrt(2/(9*A))
-    pos = ((1-2/A)/(1+U4*sqrt(2/(A-4))))**(1/3)
+    ## (2023-02-27) Georgi: 'pos' becomes NaN for a power of negative number, reported by
+    ##         Cameron Wilden. Implementing his suggestion for fix but really should also
+    ##         check the original papers to see if negative values are really ok.
+    ## was: pos = ((1-2/A)/(1+U4*sqrt(2/(A-4))))**(1/3)
+    pos0 = ((1-2/A)/(1+U4*sqrt(2/(A-4))))
+    pos <- sign(pos0) * abs(pos0) ^ (1/3)
+    
     Z4 = (1-2/(9*A)-pos)/jm
     pZ4 = 2*(1-pnorm(abs(Z4),0,1))
     names(Z4) = "Z4"
@@ -347,7 +353,11 @@ function(x)
     B = (6*(n*n-5*n+2)/((n+7)*(n+9)))*sqrt((6*(n+3)*(n+5))/(n*(n-2)*(n-3)))
     A = 6+(8/B)*((2/B)+sqrt(1+4/(B**2)))
     jm = sqrt(2/(9*A))
-    pos = ((1-2/A)/(1+U4*sqrt(2/(A-4))))**(1/3)
+    ## Georgi: see similar change in .kurtosis.test()
+    ## was: pos = ((1-2/A)/(1+U4*sqrt(2/(A-4))))**(1/3)
+    pos0 = ((1-2/A)/(1+U4*sqrt(2/(A-4))))
+    pos <- sign(pos0) * abs(pos0) ^ (1/3)
+    
     Z4 = (1-2/(9*A)-pos)/jm
     omni = Z3**2+Z4**2
     pomni = 1-pchisq(omni,2)

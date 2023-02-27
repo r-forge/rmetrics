@@ -1,6 +1,5 @@
 Package: fBasics
 Title: Rmetrics - Markets and Basic Statistics
-Date: 2022-10-20
 Version: 4021.94
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")

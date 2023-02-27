@@ -2,3 +2,5 @@
 .emacs.desktop.lock
 docs/
 revdep/
+Bug_in_fBasics_.kurtosis.test.txt
+dagoBugTestData.csv

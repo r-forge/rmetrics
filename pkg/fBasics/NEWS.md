@@ -1,5 +1,10 @@
 # fBasics 4021.94
 
+- `dagotest()` was returning NaN for the value of the test statistic based on
+  kurtosis when the argument of a cube root was negative. Reported by Cameron
+  Willden who suggested the fix. TODO: need to check with original papers if
+  negative argument to the cube root is ok).
+
 - the name of the first column of dataset `msft.dat` is not mangled any more (it
   was "X.Y..m..d" and now is "%Y-%m-%d", as in the input file). the rest of the
   dataset is as before. The file from which the dataset is created is now taken
