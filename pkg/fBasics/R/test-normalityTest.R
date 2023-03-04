@@ -295,8 +295,7 @@ function(x)
     A = 6+(8/B)*((2/B)+sqrt(1+4/(B**2)))
     jm = sqrt(2/(9*A))
     ## (2023-02-27) Georgi: 'pos' becomes NaN for a power of negative number, reported by
-    ##         Cameron Wilden. Implementing his suggestion for fix but really should also
-    ##         check the original papers to see if negative values are really ok.
+    ##         Cameron Wilden. Implementing his suggestion for fix.
     ## was: pos = ((1-2/A)/(1+U4*sqrt(2/(A-4))))**(1/3)
     pos0 = ((1-2/A)/(1+U4*sqrt(2/(A-4))))
     pos <- sign(pos0) * abs(pos0) ^ (1/3)
