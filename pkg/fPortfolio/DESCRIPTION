@@ -1,7 +1,7 @@
 Package: fPortfolio
 Title: Rmetrics - Portfolio Selection and Optimization
 Date: 2023-04-22
-Version: 4023.86
+Version: 4023.84
 Authors@R: c( person("Diethelm", "Wuertz", role = "aut"), person("Tobias", "Setz", role = "aut"),
               person("Yohan", "Chalabi", role = "aut"), person("William", "Chen", role = "ctb"),
 	      person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-project.org") )
