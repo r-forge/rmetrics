@@ -35,11 +35,11 @@ function(
         ## Should not be prined if NA
         status = NA),
     optim = list(
-        solver = "solveRquadprog",  # Alt: "solveRdonlp2" 
-                                    #      "solveRsolnp"
+        solver = "solveRquadprog",  # Alt: "solveRsolnp"
                                     #      "solveRglpk", 
                                     #      "solveRsymphony"
                                     #      "solveRsocp" ...
+       
         objective = c(
              "portfolioObjective", 
              "portfolioReturn", 
@@ -73,7 +73,7 @@ function(
     # model.type = c("MV", "CVaR")
     # model.estimator.mean = "mean"
     # model.estimator.cov = c("cov", "mcd", "Mcd", "shrink")
-    # optim.solver = c("solveRquadprog", "solveRdonlp2", "solveRglpk")
+    # optim.solver = c("solveRquadprog", "solveRglpk")
     # optim.trace = FALSE
 
     # Check Arguments:

@@ -1,7 +1,7 @@
 Package: fPortfolio
 Title: Rmetrics - Portfolio Selection and Optimization
-Date: 2022-12-21
-Version: 4022.86
+Date: 2023-04-22
+Version: 4023.86
 Authors@R: c( person("Diethelm", "Wuertz", role = "aut"), person("Tobias", "Setz", role = "aut"),
               person("Yohan", "Chalabi", role = "aut"), person("William", "Chen", role = "ctb"),
 	      person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-project.org") )
@@ -9,7 +9,7 @@ Description: A collection of functions to optimize portfolios and to analyze the
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics, fAssets
 Imports: fCopulae, robustbase, MASS, Rglpk, slam, Rsolnp, quadprog,
         kernlab, rneos, methods, grDevices, graphics, stats, utils
-Suggests: Rsocp, Rnlminb2, Rdonlp2, Rsymphony, dplR, bcp, fGarch,
+Suggests: Rsocp, Rnlminb2, Rsymphony, dplR, bcp, fGarch,
         mvoutlier
 Additional_repositories: https://r-forge.r-project.org/
 LazyData: yes
