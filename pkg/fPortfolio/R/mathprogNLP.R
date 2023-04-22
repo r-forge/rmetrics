@@ -62,7 +62,6 @@
     ans
     
     # nlminb2 Solver:
-    # require(Rnlminb2)
     ans <- rnlminb2NLP(start, objective, lower, upper, linCons)
     ans
   }

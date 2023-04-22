@@ -18,7 +18,7 @@
 ################################################################################
 # FUNCTION:
 #  require(Rsolnp)
-#  require(Rnlminb2)
+#  ### REMOVED ### require(Rnlminb2)
 #  ### REMOVED ### require(Rdonlp2)
 # FUNCTION:  
 #  .powellTestNLP
@@ -372,7 +372,7 @@
     ans.solnp <- solnpNLP(start, fun,  
                           par.lower = par.lower, par.upper = par.upper,
                           eqFun = eqFun, eqFun.bound = eqFun.bound)      
-    ans.nlminb <- Rnlminb2::nlminb2NLP(start, fun,  
+    ans.nlminb <- fPortfolio::nlminb2NLP(start, fun,  
                                        par.lower = par.lower, par.upper = par.upper,
                                        eqFun = eqFun, eqFun.bound = eqFun.bound)  
     
