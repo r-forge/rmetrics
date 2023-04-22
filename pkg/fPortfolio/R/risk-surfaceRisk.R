@@ -19,6 +19,8 @@
 # FUNCTION:                DESCRIPTION:
 #  markowitzHull            Hull for a long-only Markowitz portfolio
 #  feasibleGrid             Square grid on top of the feasible set
+# FUNCTION:                DESCRIPTION:
+#  .scaledColors            Quantile color scaling 
 ################################################################################
 
 
@@ -147,6 +149,37 @@ feasibleGrid <-
     class(ans) <- c("feasibleGrid", "list")
     invisible(ans)
 }
+
+
+# ------------------------------------------------------------------------------
+
+
+.scaledColors <- 
+    function(surface, palette=topo.colors, nlevels=11)
+{
+    # Description:
+    #   scales a color palette
+    
+    # Arguments:
+    #    surface - a list with x,y positions and z values
+    #    palette - color palette function
+    #    bin - quantile bin width of contour levels
+    
+    # FUNCTION:
+    
+    # Extract Surface Risk Values:
+    Z <- as.vector(surface$z)
+  
+    # Scale by Equidistant Quantiles:
+    levels <- quantile(Z, probs=seq(from=0, to=1, length=nlevels), na.rm=TRUE)
+    
+    # Compose Color Palette:
+    palette <- palette(nlevels-1)
+  
+    # Return Value:
+    list(palette=palette, levels=levels)
+}
+
 
 ###############################################################################
 

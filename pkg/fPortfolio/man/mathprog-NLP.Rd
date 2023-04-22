@@ -128,29 +128,30 @@ amplNLPControl(
     %\item{project}{...}
     %\item{inf}{...}
     %\item{trace}{...}
-    
-    \item{iterma}{4000}
-    \item{nstep}{20}
-    \item{fnscale}{1}
-    \item{report}{FALSE}
-    \item{rep.freq}{1}
-    \item{tau0}{1}
-    \item{tau}{0.1}
-    \item{del0}{1}
-    \item{epsx}{1e-5}
-    \item{delmin}{0.1 * del0}
-    \item{epsdif}{1e-8}
-    \item{nreset.multiplier}{1}
-    \item{difftype}{3}
-    \item{epsfcn}{1e-16}
-    \item{taubnd}{1}
-    \item{hessian}{FALSE}
-    \item{te0}{TRUE}
-    \item{te1}{FALSE}
-    \item{te2}{FALSE}
-    \item{te3}{FALSE}
-    \item{silent}{TRUE}
-    \item{intakt}{TRUE}
+
+    %% donlp2 items:
+    %% \item{iterma}{4000}
+    %% \item{nstep}{20}
+    %% \item{fnscale}{1}
+    %% \item{report}{FALSE}
+    %% \item{rep.freq}{1}
+    %% \item{tau0}{1}
+    %% \item{tau}{0.1}
+    %% \item{del0}{1}
+    %% \item{epsx}{1e-5}
+    %% \item{delmin}{0.1 * del0}
+    %% \item{epsdif}{1e-8}
+    %% \item{nreset.multiplier}{1}
+    %% \item{difftype}{3}
+    %% \item{epsfcn}{1e-16}
+    %% \item{taubnd}{1}
+    %% \item{hessian}{FALSE}
+    %% \item{te0}{TRUE}
+    %% \item{te1}{FALSE}
+    %% \item{te2}{FALSE}
+    %% \item{te3}{FALSE}
+    %% \item{silent}{TRUE}
+    %% \item{intakt}{TRUE}
     
     \item{rho}{1}
     \item{outer.iter}{400}
