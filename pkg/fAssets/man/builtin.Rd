@@ -26,7 +26,8 @@
 .baggedMeanCov(x, baggedR = 100, ...)
 .bayesSteinMeanCov(x, ...)
 .cov.arw(x, center, cov, alpha = 0.025, pcrit = NULL)
-.cov.nnve(datamat, k = 12, pnoise = 0.05, emconv = 0.001, bound = 1.5, extension = TRUE, devsm = 0.01)
+.cov.nnve(datamat, k = 12, pnoise = 0.05, emconv = 0.001, bound = 1.5,
+extension = TRUE, devsm = 0.01)
 .cov.shrink(x, lambda, verbose = FALSE)
 .donostahMeanCov(x, ...)
 .ledoitWolfMeanCov(x, ...)
