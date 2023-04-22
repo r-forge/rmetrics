@@ -111,10 +111,10 @@ nlminb2(start, objective, eqFun = NULL, leqFun = NULL,
 Paul A. Jensen & Jonathan F. Bard, 
 Operations Research Models and Methods, 2001
 Appendix A, Algorithms for Constrained Optimization,
-\url{http://www.me.utexas.edu/~jensen/ORMM/supplements/index.html}.
+\url{https://www.me.utexas.edu/~jensen/ORMM/supplements/index.html}.
 
 PORT Library,
-\url{http://netlib.bell-labs.com/netlib/port/}.
+\url{https://netlib.org/port/}.
 
 }
 
