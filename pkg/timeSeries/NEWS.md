@@ -1,3 +1,7 @@
+## timeSeries 4030.106
+
+- removed UTF8 characters from NAMESPACE (fixes CRAN warning to that effect).
+
 
 ## timeSeries 4021.105
 

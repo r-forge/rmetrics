@@ -5,3 +5,4 @@ revdep/
 inst/extdata/usdchf.csv
 inst/extdata/LPP2005REC.csv
 note_on_USDCHF_fix.txt
+warning.txt
