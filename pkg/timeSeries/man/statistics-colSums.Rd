@@ -13,7 +13,7 @@
 \alias{colQuantiles} 
 
 % \alias{colAvgs}           
-\alias{colStdevs}  % TODO: comment out when the function is removed.
+\alias{colStdevs}  % removed, but leave the alias for now
 
 % \alias{mean.timeSeries}           
 % \alias{var.timeSeries}
@@ -61,7 +61,6 @@ colProds(x, \dots)
 colQuantiles(x, prob = 0.05, \dots)
 }
 
-% colStdevs(x, \dots)
 % colAvgs(x,  \dots)
 
 % \method{mean}{timeSeries}(x, \dots)

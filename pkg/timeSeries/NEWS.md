@@ -1,3 +1,8 @@
+## timeSeries 4030.106.9000
+
+- removed deprecated function `colStdevs` is now defunct. Use `colSds()` instead.
+
+
 ## timeSeries 4030.106
 
 - removed UTF8 characters from NAMESPACE (fixes CRAN warning to that effect).

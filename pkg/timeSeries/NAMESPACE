@@ -326,7 +326,7 @@ export(
     "colSds",
     "colSkewness",
     "colStats",
-    "colStdevs",   # still in fAssets::assetsRiskReturnPlot
+    # "colStdevs",   # (removed on 2023-05-25) in fAssets::assetsRiskReturnPlot
     ##                  I corrected the devel version.
     ##                     # nevertheless, keeping it for now as it is not clear 
     ##                     # when a new version will be pulished.
@@ -339,7 +339,7 @@ export(
     "drawdownsStats",
     "dummyDailySeries",
     "dummyMonthlySeries",  # replacement for "dummySeries"
-    "dummySeries", # deprecated, TDO: remove after some time
+    "dummySeries", # deprecated, TODO: remove after some time
     "durationSeries",
     "durations",
     "fapply",
