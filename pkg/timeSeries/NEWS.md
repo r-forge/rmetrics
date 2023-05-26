@@ -2,6 +2,10 @@
 
 - removed deprecated function `colStdevs` is now defunct. Use `colSds()` instead.
 
+- removed deprecated 'timeSeries' method for function `cut()`, use `window()`
+  instead. The method was not compatible with the generic function `cut()`. Now
+  applying `cut(x)` on a 'timeSeries' object `x` will work on the underlying
+  time series data.
 
 ## timeSeries 4030.106
 

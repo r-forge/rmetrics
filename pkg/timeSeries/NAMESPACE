@@ -125,7 +125,7 @@ exportMethods("$",
               "cummin",
               "cumprod",
               "cumsum",
-              "cut",
+              # "cut",  timeSeries method was removed on 2023-05-26
               "diff",
               "dim",
               "dim<-",
@@ -194,7 +194,7 @@ S3method("as.timeSeries", "zoo")
 S3method("as.ts", "timeSeries")
 S3method("cbind", "timeSeries")
 S3method("cumulated", "default")
-S3method("cut", "timeSeries")
+# S3method("cut", "timeSeries") # timeSeries method was removed on 2023-05-26
 S3method("diff", "timeSeries")
 S3method("end", "timeSeries")
 S3method("getUnits", "default")
