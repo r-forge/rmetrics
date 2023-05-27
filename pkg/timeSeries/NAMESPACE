@@ -213,9 +213,23 @@ S3method("sort", "timeSeries")
 S3method("start", "timeSeries")
 S3method("str", "timeSeries")
 S3method("tail", "timeSeries")
-S3method("time", "timeSeries")
-S3method("time<-", "timeSeries")
 S3method("window", "timeSeries")
+S3method("time", "timeSeries")
+
+S3method("time<-", "timeSeries")
+if(getRversion() >= "3.6.0") {
+    ## ensure that when zoo is loaded zoo::`time<-` gets the method.
+    ## This works nicely, if 'zoo' is attached after 'timeSeries' (or if
+    ## 'timeSeries' is loaded but not attached).  However, if 'timeSeries' is
+    ## attached after 'zoo', zoo::`time<-` will be masked, so 'time(x) <- value'
+    ## will see only the methods for the timeSeries version of 'time<-'
+    S3method(zoo::`time<-`, "timeSeries")
+
+    S3method(zoo::coredata, "timeSeries")
+    S3method(zoo::'coredata<-', "timeSeries")
+}
+
+
 
 ## new
 S3method("summary", timeSeries) 
@@ -330,8 +344,9 @@ export(
     ##                  I corrected the devel version.
     ##                     # nevertheless, keeping it for now as it is not clear 
     ##                     # when a new version will be pulished.
-    ##                     # TODO: remove it eventually!
     "colVars",
+    "coredata.timeSeries",
+    "coredata<-.timeSeries",
     "countMonthlyRecords",
     "cumulated",
     "description",

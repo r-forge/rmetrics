@@ -53,7 +53,7 @@ setTime(x) <- value
   object. 
 
   \code{getTime} and \code{setTime} are non-generic alternatives are
-  non-generic wrappers of \code{time} and \code{time<-}, respectively. 
+  non-generic wrappers of \code{time} and \code{time<-}, respectively.
 
 }
 
@@ -65,6 +65,21 @@ setTime(x) <- value
            
 }
 
+\note{
+
+  There is a generic function \code{time<-} defined in package
+  \pkg{zoo}, as well. When that package is loaded its \code{time<-} also
+  gets the \code{"timeSeries"} method. 
+
+  This works transparantly, if \pkg{zoo} is attached after
+  \pkg{timeSeries} or if \pkg{timeSeries} is loaded but not attached.
+  However, if \pkg{timeSeries} is attached after \pkg{zoo},
+  \code{zoo::`time<-`} will be masked, so \code{time(x) <- value} will
+  see only the methods for the \pkg{timeSeries} version of \code{time<-}.
+
+  There is no such problem for \code{time} since it is defined in base \R.
+
+}
 
 \examples{   
 ## Create Dummy 'timeSeries' -      

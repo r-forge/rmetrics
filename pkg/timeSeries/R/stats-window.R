@@ -16,8 +16,6 @@
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
 #  window,timeSeries         Extracts a piece from a 'timeSeries' object
-# DEPRECATED:               DESCRIPTION:
-#  cut,timeSeries            Extracsts a piece from a 'timeSeries' object
 ################################################################################
 
 
@@ -134,6 +132,4 @@ window.timeSeries <- function(x, ...) .window.timeSeries(x, ...)
 ## # until UseMethod dispatches S4 methods in 'base' functions
 ## cut.timeSeries <- function(x, ...) .cut.timeSeries(x, ...)
 
-
 ################################################################################
-

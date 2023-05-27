@@ -1,11 +1,22 @@
 ## timeSeries 4030.106.9000
 
-- removed deprecated function `colStdevs` is now defunct. Use `colSds()` instead.
+- removed deprecated function `colStdevs`, use `colSds()` instead.
 
 - removed deprecated 'timeSeries' method for function `cut()`, use `window()`
   instead. The method was not compatible with the generic function `cut()`. Now
   applying `cut(x)` on a 'timeSeries' object `x` will work on the underlying
   time series data.
+
+- replaced the S4 methods for `zoo::coredata` and `zoo::'coredata<-'`. The ones
+  for `zoo::'coredata<-'` were not working at all, since `zoo::'coredata<-'` is
+  an S3 generic and the methods dispatch on two arguments. It is also a mistery
+  why the methods for the unexported S4 generics in 'timeSeries' were associated
+  with the corresponding 'zoo' generics.
+
+  If `zoo` is not attached, the calls need to be prefixed with `zoo::` or,
+  alternatively, since the new methods are exported, they can be called directly
+  as `coredata.timeSeries()` and ``coredata.'timeSeries<-'() <- value`.
+
 
 ## timeSeries 4030.106
 

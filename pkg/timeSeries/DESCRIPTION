@@ -6,7 +6,7 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person("Martin","Maechler", role="ctb", email="maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre", "ctb"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "aut"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: 'S4' classes and various tools for financial time series:
   Basic functions such as scaling and sorting, subsetting,
   mathematical operations and statistical functions.
