@@ -217,6 +217,7 @@ S3method("window", "timeSeries")
 S3method("time", "timeSeries")
 
 S3method("time<-", "timeSeries")
+S3method("time<-", "default")
 if(getRversion() >= "3.6.0") {
     ## ensure that when zoo is loaded zoo::`time<-` gets the method.
     ## This works nicely, if 'zoo' is attached after 'timeSeries' (or if

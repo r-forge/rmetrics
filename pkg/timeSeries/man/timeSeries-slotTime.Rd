@@ -11,6 +11,7 @@
 \alias{time.timeSeries}
 
 \alias{time<-.timeSeries}
+\alias{time<-.default}
 
 \alias{getTime}  
 \alias{setTime<-}
@@ -55,30 +56,20 @@ setTime(x) <- value
   \code{getTime} and \code{setTime} are non-generic alternatives are
   non-generic wrappers of \code{time} and \code{time<-}, respectively.
 
+  There is another generic function \code{time<-} defined in package
+  \pkg{zoo}. When that package is loaded its \code{time<-} gets the
+  \code{"timeSeries"} method. Also, if \code{"time<-"} is called with an
+  object from class other than \code{"timeSeries"}, the call is
+  dispatched to \code{"zoo:time<-"} to apply a suitable method.
+  
 }
 
 \value{
+  for \code{time} and \code{getTime}, a \code{"timeDate"} object,
 
-  for \code{time} and \code{getTime}, a 'timeDate' object,
-
-  for \code{time<-} and and \code{setTime}, the modified 'timeSeries' object.
+  for \code{time<-} and and \code{setTime}, the modified
+  \code{"timeSeries"} object.
            
-}
-
-\note{
-
-  There is a generic function \code{time<-} defined in package
-  \pkg{zoo}, as well. When that package is loaded its \code{time<-} also
-  gets the \code{"timeSeries"} method. 
-
-  This works transparantly, if \pkg{zoo} is attached after
-  \pkg{timeSeries} or if \pkg{timeSeries} is loaded but not attached.
-  However, if \pkg{timeSeries} is attached after \pkg{zoo},
-  \code{zoo::`time<-`} will be masked, so \code{time(x) <- value} will
-  see only the methods for the \pkg{timeSeries} version of \code{time<-}.
-
-  There is no such problem for \code{time} since it is defined in base \R.
-
 }
 
 \examples{   
@@ -96,6 +87,4 @@ setTime(x) <- value
    X
 }
 
-
 \keyword{chron}
-

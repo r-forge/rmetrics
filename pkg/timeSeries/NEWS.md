@@ -17,6 +17,10 @@
   alternatively, since the new methods are exported, they can be called directly
   as `coredata.timeSeries()` and ``coredata.'timeSeries<-'() <- value`.
 
+- added a default method for `time<-` to improve its interaction with 'zoo'.
+
+- added 'zoo' to 'Suggests:'.
+
 
 ## timeSeries 4030.106
 

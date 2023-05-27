@@ -12,7 +12,7 @@ Description: 'S4' classes and various tools for financial time series:
   mathematical operations and statistical functions.
 Depends: R (>= 2.10), timeDate (>= 2150.95)
 Imports: graphics, grDevices, stats, utils, methods
-Suggests: RUnit, robustbase, xts, PerformanceAnalytics, fTrading
+Suggests: RUnit, robustbase, xts, zoo, PerformanceAnalytics, fTrading
 LazyData: yes
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics (devel), https://www.rmetrics.org, https://geobosh.github.io/timeSeriesDoc/ (doc)
