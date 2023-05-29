@@ -1,25 +1,23 @@
 \name{model.frame}
+\alias{model.frame}
+
+%% GNB: this method was removed a long time ago by YC. The default
+%%      model.frame works ok as long as as.data.frame.timeSeries works
+%%      in 'base' function model.frame.default
+\alias{model.frame.default,ANY,timeSeries-method}
 
 
 \title{Model frames for time series objects}
 
-
-\alias{model.frame}
-\alias{model.frame.default,ANY,timeSeries-method}
-
 \description{
-    
-    Allow to work with model frames for \code{"timeSeries"} objects.               
+  Allow to work with model frames for \code{"timeSeries"} objects.               
 }
-
 
 % \usage{
 % model.frame(formula, data, ...) 
 % }
 
-
 % \arguments{
-
 %     \item{formula}{ 
 %         a model formula object. 
 %         }
@@ -29,16 +27,11 @@
 %     \item{\dots}{
 %         arguments passed to the function \code{stats::model.frame}.
 %         }
-        
 % }
 
-
 \value{
-
-    Returns an object of class 'timeSeries.
-        
+  an object of class \code{"timeSeries"}
 }
-
 
 \details{
 
@@ -51,21 +44,9 @@
     
 }
 
-
-
 \note{
-
-    This function is preliminary and untested.
-
+  This function is preliminary and untested.
 }
-
-
-\seealso{
-
-    \code{\link{model.frame}}.
-    
-}
-    
 
 \examples{
 ## Load Microsoft Data -
@@ -85,6 +66,4 @@
    as.timeSeries(Open)
 }
 
-
 \keyword{chron}
-
