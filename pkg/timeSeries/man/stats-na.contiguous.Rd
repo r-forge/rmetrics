@@ -8,8 +8,8 @@
 \description{
 
      Find the longest consecutive stretch of non-missing values in a
-     \code{"timeSeries"} object.  (In the event of a tie, the first such
-     stretch.)
+     \code{"timeSeries"} object. In the event of a tie, the first such
+     stretch.
       
 }
 

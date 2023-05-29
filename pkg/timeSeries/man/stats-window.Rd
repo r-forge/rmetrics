@@ -38,6 +38,11 @@
 
 }
 
+\seealso{
+  \code{\link[=head,timeSeries-method]{head}},
+  \code{\link{outlier}}
+}
+
 \examples{
 ## Load LPP Benchmark Returns -
    x <- LPP2005REC[, 7:9]

@@ -355,7 +355,7 @@ export(
     "drawdownsStats",
     "dummyDailySeries",
     "dummyMonthlySeries",  # replacement for "dummySeries"
-    "dummySeries", # deprecated, TODO: remove after some time
+    ## "dummySeries", ## removed # deprecated, TODO: remove after some time
     "durationSeries",
     "durations",
     "fapply",

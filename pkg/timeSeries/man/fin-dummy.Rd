@@ -4,7 +4,7 @@
 \alias{dummyDailySeries}
 \alias{dummyMonthlySeries}
 
-\alias{dummySeries} % deprecated
+\alias{dummySeries} % deprecated; now removed
 
 
 \title{Dummy time series}

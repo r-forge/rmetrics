@@ -26,6 +26,10 @@ reference:
       - dummyDailySeries
       - alignDailySeries
       - rollDailySeries
+  - title: "Subset 'timeSeries' objects"
+    contents:
+      - TimeSeriesSubsettings
+      - window
   - title: "Manipulate 'timeSeries' objects"
     contents:
       - series
@@ -65,10 +69,6 @@ reference:
       - isMonthly.timeSeries
       - isQuarterly.timeSeries
       - isRegular
-  - title: "Subsetting 'timeSeries'"
-    contents:
-      - TimeSeriesSubsettings
-      - window
   - title: "Transform 'timeSeries' objects"
     contents:
       - scale

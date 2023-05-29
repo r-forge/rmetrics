@@ -21,6 +21,17 @@
 
 - added 'zoo' to 'Suggests:'.
 
+- removed the deprecated `dummySeries`, use `dummyMonthlySeries` instead.
+
+- Numerous improvements to the documentation and further changes in the code.
+
+- added argument `fun` to the `timeSeries` method for `na.omit` to allow it to
+  compute replacement values using functions, such as `mean`, `median`, or user
+  defined.
+
+- formally deprecated `removeNA`, `interpNA`, and `substituteNA`. These had been
+  informally deprecated in the documentation for a long time.
+
 
 ## timeSeries 4030.106
 
