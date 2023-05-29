@@ -65,6 +65,10 @@
 %  covariance or correlation matrix
 %}
 
+\seealso{
+  \code{\link{colStats}},
+  \code{\link{colVars}}, and other \code{colXXX} functions
+}
 \examples{
 ## Load Microsoft Data Set - 
    data(MSFT)

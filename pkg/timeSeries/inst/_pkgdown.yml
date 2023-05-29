@@ -165,4 +165,3 @@ reference:
       - "DataPart,timeSeries-method"
       - description
       - attach
-      - model.frame

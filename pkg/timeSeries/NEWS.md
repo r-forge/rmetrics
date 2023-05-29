@@ -32,6 +32,10 @@
 - formally deprecated `removeNA`, `interpNA`, and `substituteNA`. These had been
   informally deprecated in the documentation for a long time.
 
+- the help page for `orderStatistics` erroneously claimed that the input should
+  be an univariate `timeSeries` object, while it is explicitly written to covefr
+  the multivariate case.
+
 
 ## timeSeries 4030.106
 

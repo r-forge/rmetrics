@@ -1,18 +1,14 @@
 \name{print-methods}
 
-
-\title{Print 'timeSeries' objects}
-
-
 \alias{show,timeSeries-method}
 \alias{print,timeSeries-method}
 
-\description{
-    
-  Print 'timeSeries' objects.
-    
-}
 
+\title{Print 'timeSeries' objects}
+
+\description{
+  Print \code{"timeSeries"} objects.
+}
 
 \usage{
 \S4method{show}{timeSeries}(object)
@@ -20,7 +16,6 @@
 \S4method{print}{timeSeries}(x, FinCenter = NULL, format = NULL,
           style = c("tS", "h", "ts"), by = c("month", "quarter"), ...)
 }
-
 
 \arguments{
 
@@ -60,19 +55,15 @@
 
   The default for \code{style} is \code{tS}. For univariate time series
   the \code{style = "h"} causes the object to be printed as a vector
-  with the time stamps as labels. Finally, \code{style = "ts"} like
-  objects from base R class \code{"ts"}. The last value is suitable for
-  quarterly and monthly time series.
+  with the time stamps as labels. Finally, \code{style = "ts"} prints
+  like objects from base R class \code{"ts"}. The last value is suitable
+  for quarterly and monthly time series.
 
 }
-
 
 \value{
-
-    Prints an object of class \code{timeSeries}.
-        
+  Prints an object of class \code{timeSeries}.
 }
-
 
 \examples{
 ## Load Micsrosoft Data - 
@@ -95,6 +86,4 @@
    print(hC, style = "h")
 }
 
-
 \keyword{chron}
-
