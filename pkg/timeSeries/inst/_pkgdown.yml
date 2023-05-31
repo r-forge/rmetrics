@@ -24,12 +24,46 @@ reference:
       - readSeries
       - dummyMonthlySeries
       - dummyDailySeries
-      - alignDailySeries
-      - rollDailySeries
-  - title: "Subset 'timeSeries' objects"
+  - title: "Explore 'timeSeries' objects"
     contents:
-      - TimeSeriesSubsettings
+      - plot
+      - "lines,timeSeries-method"
+      - "points,timeSeries-method"
+      - pretty.timeSeries
+      - "print-methods"
+      - str
+      - is.timeSeries
+      - is.signalSeries
+      - isUnivariate
+      - isMultivariate
+      - isDaily.timeSeries
+      - isMonthly.timeSeries
+      - isQuarterly.timeSeries
+      - isRegular
+  - title: "Subset 'timeSeries' objects"
+    desc: >
+      There are 'timeSeries' methods for subsetting operators, like '[' and
+      '[<-', as well as functions and methods which broadly perform some kind of
+      subsetting.
+    contents:
       - window
+      - TimeSeriesSubsettings
+      - na.contiguous
+      - na.omit
+  - title: "Aggregate and smooth 'timeSeries' objects"
+    contents:
+      - filter
+      - smoothLowess
+      - smoothSpline
+      - smoothSupsmu
+      - aggregate
+      - align
+      - alignDailySeries
+      - daily2monthly
+      - daily2weekly
+      - fapply
+      - applySeries
+      - rollDailySeries
   - title: "Manipulate 'timeSeries' objects"
     contents:
       - series
@@ -48,8 +82,6 @@ reference:
       - "setAttributes<-"
       - comment
       - "`comment<-`"
-      - na.contiguous
-      - na.omit
       - removeNA
       - substituteNA
       - interpNA
@@ -59,16 +91,6 @@ reference:
       - statsColnames
       - pcaColnames
       - hclustColnames
-  - title: "Predicates for 'timeSeries' objects"
-    contents:
-      - is.timeSeries
-      - is.signalSeries
-      - isUnivariate
-      - isMultivariate
-      - isDaily.timeSeries
-      - isMonthly.timeSeries
-      - isQuarterly.timeSeries
-      - isRegular
   - title: "Transform 'timeSeries' objects"
     contents:
       - scale
@@ -87,15 +109,6 @@ reference:
       - rank
       - sample
       - math
-  - title: "Transform and smooth 'timeSeries' objects"
-    contents:
-      - filter
-      - smoothLowess
-      - smoothSpline
-      - smoothSupsmu
-      - aggregate
-      - daily2monthly
-      - daily2weekly
   - title: "Financial computations on 'timeSeries' objects"
     contents:
       - returns
@@ -111,8 +124,6 @@ reference:
       - index2wealth
   - title: "Compute statistics on timeSeries objects"
     contents:
-      - fapply
-      - applySeries
       - "cov-methods"
       - "cor-methods"
       - colStats
@@ -140,16 +151,9 @@ reference:
       - cbind2
       - rbind2
       - merge
-      - align
   - title: "Further 'timeSeries methods for base R Functions"
     contents:
       - t
-      - plot
-      - "lines,timeSeries-method"
-      - "points,timeSeries-method"
-      - pretty.timeSeries
-      - "print-methods"
-      - str
   - title: "Base Time Series Functions"
     contents:
       - countMonthlyRecords

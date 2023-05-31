@@ -2,8 +2,6 @@
 
 \alias{daily}
 
-\alias{alignDailySeries}
-\alias{rollDailySeries}
 
 %alias{ohlcDailyPlot}
 
@@ -18,12 +16,6 @@
 }
 
 \usage{
-alignDailySeries(x, method = c("before", "after", "interp", "fillNA",
-    "fmm", "periodic", "natural", "monoH.FC"),
-    include.weekends = FALSE, units = NULL, zone = "",
-    FinCenter = "", ...)
-
-rollDailySeries(x, period = "7d", FUN, \dots)
 }
 
 
@@ -32,36 +24,7 @@ rollDailySeries(x, period = "7d", FUN, \dots)
   \item{x}{
     an object of class \code{timeSeries}.
   }
-  \item{method}{
 
-    the method to be used for the alignment. A character string, one of
-    \code{"before"}, use the data from the row whose position is just
-    before the unmatched position, or \code{"after"}, use the data from
-    the row whose position is just after the unmatched position, or
-    \code{"linear"}, interpolate linearly between \code{"before"} and
-    \code{"after"}.
-
-  }
-  \item{include.weekends}{
-
-    a logical value. Should weekend dates be included or removed from
-    the series?
-
-  }
-  \item{units}{
-    
-    an optional character string, which allows to overwrite the current
-    column names of a \code{timeSeries} object. By default \code{NULL}
-    which means that the column names are selected automatically.
-    
-  }
-  \item{zone}{
-    the time zone or financial center where the data were recorded.
-  }
-  \item{FinCenter}{
-    a character with the the location of the  financial center named
-    as \code{"continent/city"}.
-  }
   \item{period}{
 
     a character string specifying the rollling period composed by the
@@ -79,20 +42,12 @@ rollDailySeries(x, period = "7d", FUN, \dots)
 
 \details{
 
-  \code{alignDailySeries} aligns a daily 'timeSeries' to new positions,
   
-  \code{rollDailySeries} rolls daily a 'timeSeries' on a given period.
 }
 
 
 \value{
 
-    for \code{alignDailySeries}, a weekly aligned daily
-    \code{timeSeries} object from a daily time series with missing
-    holidays. \cr
-
-    for \code{rollDailySeries}, an object of class \code{timeSeries}
-    with rolling values, computed from the function \code{FUN}.
 
 }
 
