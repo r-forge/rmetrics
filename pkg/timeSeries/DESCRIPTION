@@ -10,8 +10,8 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 Description: 'S4' classes and various tools for financial time series:
   Basic functions such as scaling and sorting, subsetting,
   mathematical operations and statistical functions.
-Depends: R (>= 2.10), timeDate (>= 2150.95)
-Imports: graphics, grDevices, stats, utils, methods
+Depends: R (>= 2.10), timeDate (>= 2150.95), methods
+Imports: graphics, grDevices, stats, utils
 Suggests: RUnit, robustbase, xts, zoo, PerformanceAnalytics, fTrading
 LazyData: yes
 License: GPL (>= 2)

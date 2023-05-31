@@ -36,6 +36,20 @@
   be an univariate `timeSeries` object, while it is explicitly written to covefr
   the multivariate case.
 
+- moved package 'methods' back to 'Depends', to avoid subtle problems when
+  'methods' is loaded but not attached. For example, it seems that 'Math'
+  methods for 'structure' are not seen for `cummin` and other `cumXXX`
+  functions, when called on time series objects (the other math functions work
+  ok).
+
+- `cumsum`, `cumprod`, `cummin`, and `cummax` now work on the columns of the
+  'timeSeries' object and keep its class and other attributes. This is a
+  breaking change since previously the return value was numeric vector, the
+  result of applying the base R functions to the data part of the object. This
+  was not particularly useful, especilly for multivariate time series.
+
+  With this change all functions from the S4 `Math` group return 'timeSeries'.
+  
 
 ## timeSeries 4030.106
 

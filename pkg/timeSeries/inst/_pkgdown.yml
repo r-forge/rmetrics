@@ -151,8 +151,9 @@ reference:
       - cbind2
       - rbind2
       - merge
-  - title: "Further 'timeSeries methods for base R Functions"
+  - title: "Mathematical operations on 'timeSeries'"
     contents:
+      - math
       - t
   - title: "Base Time Series Functions"
     contents:
