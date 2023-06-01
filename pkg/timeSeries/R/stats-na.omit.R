@@ -37,10 +37,10 @@
 
 ################################################################################
 
-## 2023-05-28 GNB: added argument 'fun'
+## 2023-05-28 GNB: added argument 'FUN'
 .na.omit.timeSeries <- 
     function(object, method = c("r", "s", "z", "ir", "iz", "ie"),
-        interp = c("before", "linear", "after"), fun, ...)
+        interp = c("before", "linear", "after"), FUN, ...)
 {
     # Description
     #   Handles NAs in timeSeries objects
@@ -70,12 +70,12 @@
 
     # Skip ?
     if (method == "s") return(object)
-    if(!missing(fun)) { # GNB
-        fun <- match.fun(fun)
+    if(!missing(FUN)) { # GNB
+        FUN <- match.fun(FUN)
         data <- object@.Data
         data <- apply(data, 2,
                       function(z) {
-                          z[is.na(z)] = fun(z, na.rm = TRUE)
+                          z[is.na(z)] = FUN(z, na.rm = TRUE)
                           z
                       })
         object@.Data <- data
@@ -156,8 +156,8 @@
 
 setMethod("na.omit", "timeSeries", function(object, 
     method = c("r", "s", "z", "ir", "iz", "ie"),
-    interp = c("before", "linear", "after"), fun, ...)
-.na.omit.timeSeries(object, method, interp, fun, ...))
+    interp = c("before", "linear", "after"), FUN, ...)
+.na.omit.timeSeries(object, method, interp, FUN, ...))
 
           
 # until UseMethod dispatches S4 methods in 'base' functions

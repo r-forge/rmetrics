@@ -40,6 +40,8 @@ reference:
       - isMonthly.timeSeries
       - isQuarterly.timeSeries
       - isRegular
+      - "is.na,timeSeries-method"
+      - "is.unsorted,timeSeries-method"
   - title: "Subset 'timeSeries' objects"
     desc: >
       There are 'timeSeries' methods for subsetting operators, like '[' and

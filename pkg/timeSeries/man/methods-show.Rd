@@ -20,7 +20,7 @@
 \arguments{
 
   \item{object,x}{  
-    an object of class \code{timeSeries}.
+    an object of class \code{"timeSeries"}.
   }
   \item{FinCenter}{
     a character with the the location of the  financial center named 
@@ -37,7 +37,9 @@
     a character string, one of \code{"month"}, \code{"quarter"}.
   }
   \item{\dots}{
-    arguments passed to other methods.
+    arguments passed to the print method for the data part, which is a
+    \code{"matrix"} or, in the case of \code{style = "ts"} the print
+    method for class \code{"ts"}.
   }
 }
 
@@ -56,8 +58,8 @@
   The default for \code{style} is \code{tS}. For univariate time series
   the \code{style = "h"} causes the object to be printed as a vector
   with the time stamps as labels. Finally, \code{style = "ts"} prints
-  like objects from base R class \code{"ts"}. The last value is suitable
-  for quarterly and monthly time series.
+  like objects from base R class \code{"ts"}, which is suitable for
+  quarterly and monthly time series.
 
 }
 

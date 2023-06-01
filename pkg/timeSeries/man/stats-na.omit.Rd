@@ -18,17 +18,15 @@
     
 }
 
-
 \usage{
 \S4method{na.omit}{timeSeries}(object, method = c("r", "s", "z", "ir", "iz", "ie"), 
-    interp = c("before", "linear", "after"), fun, \dots)
+    interp = c("before", "linear", "after"), FUN, \dots)
 
 ## Deprecated:
 removeNA(x, \dots)
 substituteNA(x, type = c("zeros", "mean", "median"), \dots)
 interpNA(x, method = c("linear", "before", "after"), \dots)
 }
-
 
 \arguments{
 
@@ -49,13 +47,13 @@ interpNA(x, method = c("linear", "before", "after"), \dots)
     \code{type="median"} replaces the missing values with the column
     median.
   }
-  \item{fun}{
+  \item{FUN}{
     a function or a name of a function, such as \code{"mean"} or
-    \code{median}. \code{fun} is applied to the non-NA values in each
+    \code{median}. \code{FUN} is applied to the non-NA values in each
     column to determine the replacement value. The call looks like
-    \code{fun(coli, na.rm = TRUE)}, so \code{fun} should have argument
+    \code{FUN(coli, na.rm = TRUE)}, so \code{FUN} should have argument
     \code{na.rm}. All arguments except \code{object} are ignored if
-    \code{fun} is specified.
+    \code{FUN} is specified.
     
   }
   
@@ -72,11 +70,10 @@ interpNA(x, method = c("linear", "before", "after"), \dots)
   }
 }
 
-
 \details{
 
-    Functions for handling missing values in \code{"timeSeries"} objects 
-    and in objects which can be transformed into a vector or a two 
+  Functions for handling missing values in \code{"timeSeries"} objects 
+  and in objects which can be transformed into a vector or a two 
     dimensional matrix.
 
 
@@ -158,7 +155,7 @@ interpNA(x, method = c("linear", "before", "after"), \dots)
 
     \code{substituteNA(x, type = "zeros")} is equivalent to
     \code{na.omit(x, method = "z")}. For other values of \code{type} one
-    can use argument \code{fun}, as in \code{na.omit(x, fun = "mean")}.
+    can use argument \code{FUN}, as in \code{na.omit(x, FUN = "mean")}.
 
     A final remark: the three deprecated functions are non-generic.
     \code{removeNA(x)} is completely redundant as it simply calls
@@ -197,11 +194,11 @@ na.omit(Xts)
 
 ## Subsitute NA's with zeros or column means (formerly substituteNA())
 na.omit(Xts, method = "z")
-na.omit(Xts, fun = "mean")
-na.omit(Xts, fun = "median")
+na.omit(Xts, FUN = "mean")
+na.omit(Xts, FUN = "median")
 
 ## Subsitute NA's with a trimmed mean
-na.omit(Xts, fun = function(x, na.rm) mean(x, trim = 0.10, na.rm = na.rm))
+na.omit(Xts, FUN = function(x, na.rm) mean(x, trim = 0.10, na.rm = na.rm))
 
 ## Interpolate NA's Linearily (formerly interpNA())
 na.omit(X, method = "ir", interp = "linear")

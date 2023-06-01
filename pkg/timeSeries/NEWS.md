@@ -23,9 +23,7 @@
 
 - removed the deprecated `dummySeries`, use `dummyMonthlySeries` instead.
 
-- Numerous improvements to the documentation and further changes in the code.
-
-- added argument `fun` to the `timeSeries` method for `na.omit` to allow it to
+- added argument `FUN` to the `timeSeries` method for `na.omit` to allow it to
   compute replacement values using functions, such as `mean`, `median`, or user
   defined.
 
@@ -33,10 +31,10 @@
   informally deprecated in the documentation for a long time.
 
 - the help page for `orderStatistics` erroneously claimed that the input should
-  be an univariate `timeSeries` object, while it is explicitly written to covefr
+  be an univariate `timeSeries` object, while it is explicitly written to cover
   the multivariate case.
 
-- moved package 'methods' back to 'Depends', to avoid subtle problems when
+- moved package 'methods' back to 'Depends' to avoid subtle problems when
   'methods' is loaded but not attached. For example, it seems that 'Math'
   methods for 'structure' are not seen for `cummin` and other `cumXXX`
   functions, when called on time series objects (the other math functions work
@@ -46,10 +44,12 @@
   'timeSeries' object and keep its class and other attributes. This is a
   breaking change since previously the return value was numeric vector, the
   result of applying the base R functions to the data part of the object. This
-  was not particularly useful, especilly for multivariate time series.
-
-  With this change all functions from the S4 `Math` group return 'timeSeries'.
+  was not particularly useful, especilly for multivariate time series.  With
+  this change all functions from the S4 `Math` group return 'timeSeries' when
+  their argument is \ \code{"timeSeries"} object.
   
+- Numerous improvements to the documentation and further changes in the code.
+
 
 ## timeSeries 4030.106
 
