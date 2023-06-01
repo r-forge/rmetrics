@@ -10,11 +10,11 @@
 \alias{interpNA}
 
 
-\title{Handling missing time series values}
+\title{Handle missing values in 'timeSeries' objects}
 
 \description{
     
-  Functions for handling missing values in 'timeSeries' objects.
+  Functions for handling missing values in \code{"timeSeries"} objects.
     
 }
 

@@ -28,8 +28,8 @@ orderStatistics(x)
 
 \value{
 
-  a named list, in which each component is an univariate
-  \code{"timeSeries"} containing the order statistics of the
+  a named list, in which each component is an
+  univariate \code{"timeSeries"} containing the order statistics of the
   corresponding column of the input time series.
 
 }

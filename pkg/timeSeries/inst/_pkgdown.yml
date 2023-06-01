@@ -17,13 +17,13 @@ reference:
   - title: "Create 'timeSeries' objects"
     contents:
       - timeSeries
+      - readSeries
+      - dummyMonthlySeries
+      - dummyDailySeries
       - as.timeSeries
       - as.matrix.timeSeries
       - as.ts.timeSeries
       - as.data.frame.timeSeries
-      - readSeries
-      - dummyMonthlySeries
-      - dummyDailySeries
   - title: "Explore 'timeSeries' objects"
     contents:
       - plot
@@ -50,6 +50,12 @@ reference:
       - TimeSeriesSubsettings
       - na.contiguous
       - na.omit
+      - removeNA
+      - substituteNA
+      - interpNA
+      - endOfPeriodSeries
+      - endOfPeriodStats
+      - endOfPeriodBenchmarks
   - title: "Aggregate and smooth 'timeSeries' objects"
     contents:
       - filter
@@ -64,6 +70,9 @@ reference:
       - fapply
       - applySeries
       - rollDailySeries
+      - rollMonthlySeries
+      - countMonthlyRecords
+      - rollMonthlyWindows
   - title: "Manipulate 'timeSeries' objects"
     contents:
       - series
@@ -82,9 +91,6 @@ reference:
       - "setAttributes<-"
       - comment
       - "`comment<-`"
-      - removeNA
-      - substituteNA
-      - interpNA
       - orderColnames
       - sortColnames
       - sampleColnames
@@ -101,6 +107,7 @@ reference:
       - colCumprods
       - colCumreturns
       - colCumsums
+      - rowCumsums
       - lag
       - sort
       - rev
@@ -143,7 +150,6 @@ reference:
       - rollMin
       - rollMax
       - rollMedian
-      - rowCumsums
   - title: "Combine time series"
     contents:
       - cbind
@@ -155,14 +161,6 @@ reference:
     contents:
       - math
       - t
-  - title: "Base Time Series Functions"
-    contents:
-      - countMonthlyRecords
-      - rollMonthlyWindows
-      - rollMonthlySeries
-      - endOfPeriodSeries
-      - endOfPeriodStats
-      - endOfPeriodBenchmarks
   - title: "Other"
     contents:
       - "timeSeries-class"

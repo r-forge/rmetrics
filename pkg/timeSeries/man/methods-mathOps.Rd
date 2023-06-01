@@ -39,8 +39,7 @@
 
 \description{
   
-  Functions and methods dealing with mathematical operations on
-  \code{"timeSeries"}.
+  Functions and methods for mathematical operations on \code{"timeSeries"}.
   
 }
 
@@ -48,6 +47,7 @@
 \S4method{Ops}{timeSeries,timeSeries}(e1, e2)
 \S4method{Math}{timeSeries}(x)
 \S4method{Math2}{timeSeries}(x, digits)
+
 \S4method{quantile}{timeSeries}(x, \dots)
 \S4method{median}{timeSeries}(x, na.rm = FALSE, \dots)
 }
@@ -71,8 +71,10 @@
   }
     
   \item{e1, e2}{
-    [Ops] - \cr   
-    two objects of class \code{timeSeries}.
+
+    at least one of the two objects is from class \code{"timeSeries"}
+    (for the methods described on this page).
+    
   }
     
   %  \item{lag}{   
@@ -104,7 +106,7 @@
   mathematical functions return 'timeSeries' objects. Most of them work
   element-wise on the data part of the time series with the exception of
   \code{cummin}, \code{cummax}, \code{cumsum}, and \code{cumprod} which
-  (intuitively) work column-wise.
+  work columnwise.
   
   The \code{Ops} group includes mathematical operators. For the binary
   operators methods are defined for pairs of at least one 'timeSeries'
@@ -117,15 +119,17 @@
   
 }
 
-
 \value{
 
-    Returns the value from a mathematical or logical operation 
-    operating on objects of class 'timeSeries[], or the value 
-    computed by a mathematical function.
+  the value from a mathematical or logical operation operating on
+  objects of class \code{"timeSeries"} or the value computed by a
+  mathematical function.
   
 }
 
+\seealso{
+  \code{\link[=colCum]{colCumXXX}}
+}
 
 \examples{
 ## Create an Artificial 'timeSeries' Object - 
@@ -144,7 +148,5 @@
    OR > 0
 }
 
-
 \keyword{chron}
 \keyword{methods}
-
