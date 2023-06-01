@@ -4,11 +4,41 @@
 \alias{sort,timeSeries-method}
 \alias{sort.timeSeries}                 
                                     
-                                    
+\alias{is.unsorted}
+\alias{is.unsorted,timeSeries-method}
+
+
 \title{Sort a 'timeSeries' by time stamps}
 
 \description{
   Sort a \code{"timeSeries"} object with respect to its time stamps.
+}
+
+\usage{
+\S4method{sort}{timeSeries}(x, decreasing = FALSE, \dots)
+
+\S4method{is.unsorted}{timeSeries}(x, na.rm = FALSE, strictly = FALSE)
+}
+
+\arguments{
+
+  \item{x}{
+    a \code{"timeSeries"} object.
+  }
+  \item{decreasing}{
+    a logical flag. Should we sort in increasing or decreasing order?
+    By default \code{FALSE}.
+  }
+  \item{na.rm}{
+    a logical value, should missing values be removed?
+  }
+  \item{strictly}{
+    logical indicating if the check should be for strictly increasing
+    values.
+  }
+  \item{\dots}{
+    optional arguments passed to other methods.
+  }
 }
 
 \details{
@@ -22,31 +52,15 @@
 
 }
 
-\usage{
-\S4method{sort}{timeSeries}(x, decreasing = FALSE, \dots)
-}
-
-\arguments{
-
-  \item{x}{
-    a \code{"timeSeries"} object.
-  }
-  \item{decreasing}{
-    a logical flag. Should we sort in increasing or decreasing order?
-    By default \code{FALSE}.
-  }
-  \item{\dots}{
-    optional arguments passed to other methods.
-  }
-}
-
 \value{
-  a \code{"timeSeries"} object
+  for \code{sort}, a \code{"timeSeries"} object,
+
+  for the \code{is.unsorted} method, \code{TRUE} or \code{FALSE}
 }
 
-\seealso{
-  \code{\link{is.unsorted}}
-}
+%\seealso{
+%  \code{\link{}}
+%}
 \examples{   
 ## Monthly Calendar Series -    
    x <- daily2monthly(LPP2005REC[, 1:2])[3:14, ]
