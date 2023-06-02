@@ -19,7 +19,7 @@
 \alias{colCumsums,timeSeries-method}
 
 
-\title{Cumulated Column Statistics}
+\title{Cumulated column statistics}
 
 \description{
   Functions to compute cumulative column statistics.

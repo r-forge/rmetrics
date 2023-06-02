@@ -1,0 +1,29 @@
+\name{is.na}
+
+
+
+\title{Method for 'is.na' for 'timeSeries' objects}
+
+\description{
+
+  
+}
+
+\value{
+
+
+}
+
+\examples{
+## Create an artificial 'timeSeries' object - 
+   setRmetricsOptions(myFinCenter = "GMT")
+   charvec <- timeCalendar()
+   data <- matrix(rnorm(12))
+   TS <- timeSeries(data, charvec, units = "RAND")
+   TS
+
+## Test for 'timeSeries' - 
+   is.timeSeries(TS)
+}
+
+\keyword{chron}

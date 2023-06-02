@@ -1,42 +1,33 @@
 \name{runlengths}
+\alias{runlengths}
 
 
 \title{Runlengths of a time series}
 
-
-\alias{runlengths}
-
-
 \description{
     
-    Computes runlengths of an univariate \code{"timeSeries"} object.
+  Computes runlengths of an univariate \code{"timeSeries"} object.
        
 }
-
 
 \usage{
 runlengths(x, \dots)
 }
 
-
 \arguments{
 
-    \item{x}{
-        an univariate time series of class \code{"timeSeries"}.
-        }
-    \item{\dots}{
-        arguments to be passed.
-        }
+  \item{x}{
+    an univariate time series of class \code{"timeSeries"}.
+  }
+  \item{\dots}{
+    arguments to be passed.
+  }
         
 }
-
 
 \value{
-
-  an object of class \code{timeSeries}.
-        
+  an object of class \code{timeSeries}
 }
-    
 
 \examples{
 ## random time series - 
@@ -49,6 +40,4 @@ runlengths(x, \dots)
    runlengths(tS)
 }
 
-
 \keyword{chron}
-
