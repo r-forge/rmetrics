@@ -8,8 +8,7 @@
 
 \description{
 
-  Reverses an uni- or multivariate \code{"timeSeries"} object by
-  reversing the order of the time stamps.
+  Reverses an uni- or multivariate \code{"timeSeries"} object.
     
 }
 

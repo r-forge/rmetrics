@@ -243,8 +243,6 @@ S3method("print", timeSeries_summary)
 
 export(
     # MODIFY - DELETE/ADD:
-      # "plotOHLC",
-      ".plotOHLC",
       # .endOfPeriod*,
       "endOfPeriodBenchmarks",
       "endOfPeriodSeries",
@@ -258,23 +256,27 @@ export(
     # DELETE
       # ".plotTimeSeries",
     # ADD
-      ".xtplot.timeSeries",
-      ".xtsPlot",
-      ".axTicksByTime2",
-      ".endpoints2",
-      ".periodicity2",
-      ".colorwheelPalette",
+      #".xtplot.timeSeries",
+      #".xtsPlot",
+      #".axTicksByTime2",
+      #".endpoints2",
+      #".periodicity2",
+      ".colorwheelPalette", # used in vignette
+      #".ohlcDailyPlot",
+      # "plotOHLC",
+      #".plotOHLC",
     # ADD:
     "getAttributes",
-    "setAttributes<-",
-    ".appendList"
+    "setAttributes<-"
+    #".appendList"
 )
 
 
 export(
-    ".DollarNames.timeSeries", # the 'timeSeries' method for utils::.DollarNames
+    # ".DollarNames.timeSeries", # the 'timeSeries' method for utils::.DollarNames
 
-    ".align.timeSeries", # fPortfolio/R/backtest-Plots.R, line 517, rev. 6295
+    ## ".align.timeSeries", # removed on 2023-06-02 as fPortfolio updated on CRAN
+    ##                     # fPortfolio/R/backtest-Plots.R, line 517, rev. 6295
     ##                     #  changed to align(Data) in rev. 6296
     ##                     # nevertheless, keeping it for now as it is not clear 
     ##                     # when a new version will be pulished.
@@ -377,7 +379,6 @@ export(
     ## "midquoteSeries",
     "midquotes",
     ## "newPositions<-",
-        ".ohlcDailyPlot",
     "orderColnames",
     "orderStatistics",
     "pcaColnames",

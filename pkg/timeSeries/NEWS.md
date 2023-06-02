@@ -47,7 +47,10 @@
   was not particularly useful, especilly for multivariate time series.  With
   this change all functions from the S4 `Math` group return 'timeSeries' when
   their argument is \ \code{"timeSeries"} object.
-  
+
+- stopped exporting some internal functions that were accidentally used by other
+  packages (after those packages were updated on CRAN).
+
 - Numerous improvements to the documentation and further changes in the code.
 
 

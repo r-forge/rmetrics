@@ -170,3 +170,4 @@ reference:
       - "DataPart,timeSeries-method"
       - description
       - attach
+      - internals
