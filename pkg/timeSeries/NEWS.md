@@ -1,6 +1,11 @@
 ## timeSeries 4030.106.9000
 
+- removed deprecated functions `spreadSeries`, `midquoteSeries`, and
+  `durationSeries`.  Use `spreads`, `midquotes`, and `durations`, respectively.
+
 - removed deprecated function `colStdevs`, use `colSds()` instead.
+
+- removed deprecated function `.description`, use `description()` instead.
 
 - removed deprecated 'timeSeries' method for function `cut()`, use `window()`
   instead. The method was not compatible with the generic function `cut()`. Now
@@ -88,10 +93,6 @@
 - The functions `returnSeries` and `getReturns` are no longer exported and will
   be removed in the near future. They are synonyms for the function `returns`
   and their use was discouraged for many years. Just use `returns`.
-
-- The functions `spreadSeries` and `midquoteSeries` are no longer exported and
-  will be removed in the near future. Just use their synonyms `spreads` and
-  `midquotes`, respectively.
 
 - function `cut` is now formally deprecated. Use `window` instead.
 

@@ -2,8 +2,8 @@
 \alias{spreads}
 \alias{midquotes}
 
-\alias{spreadSeries}
-\alias{midquoteSeries}
+\alias{spreadSeries}   % removed
+\alias{midquoteSeries} % removed
 
 
 \title{Spreads and mid quotes}
@@ -17,9 +17,6 @@
 \usage{  
 spreads(x, which = c("Bid", "Ask"), tickSize = NULL)    
 midquotes(x, which = c("Bid", "Ask"))
-
-midquoteSeries(\dots)
-spreadSeries(\dots)
 }
 
 \arguments{
@@ -43,21 +40,10 @@ spreadSeries(\dots)
     compute price changes in ticks.
 
   }         
-  \item{\dots}{
-    arguments to be passed.
-  }
 }
 
 \value{
   all functions return an object of class \code{timeSeries}
-}
-
-\note{
-
-  The functions \code{midquoteSeries} and \code{spreadSeries} may be
-  deprecated and removed. They are synonyms for \code{midquotes} and
-  \code{spreads}, respectively. Please use the shorter names.
-
 }
 
 \seealso{

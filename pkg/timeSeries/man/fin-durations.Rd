@@ -1,7 +1,7 @@
 \name{durations}
 \alias{durations}
 
-\alias{durationSeries}
+\alias{durationSeries} % removed
 
 
 \title{Durations from a 'timeSeries'}
