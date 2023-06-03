@@ -220,7 +220,7 @@ export(
     "getFinCenter",
     "getReturns", # several uses in the tests in 'fTrading'
                   # I corrected the devel version of 'fTrading'.
-                  # TODO: remove when fTarding is updated on CRAN.
+                  # TODO: remove when fTrading is updated on CRAN.
     "getTime",
     "getUnits", "getUnits.default",
     "hclustColnames",

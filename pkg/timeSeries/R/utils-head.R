@@ -71,7 +71,7 @@ setMethod("head", "timeSeries", head.timeSeries)
 ## Martin Maechler:  if("keepnums" %in% names(formals(tail.matrix))) ## R-devel (2020-01)
 ##  refactored somewhat by GNB;  *TODO:* is a similar thing needed for head.timeSeries?
 tail.timeSeries <-
-    if(getRversion() >= "4.0.0") 
+    if(getRversion() >= "4.0.0") {
         function(x, n = 6, recordIDs = FALSE, ...) { 
             if (recordIDs && nrow(x) == nrow(x@recordIDs))
                 cbind(tail.matrix(x, n = n, keepnums = FALSE, ...),
@@ -79,7 +79,7 @@ tail.timeSeries <-
             else
                 tail.matrix(x, n = n, keepnums = FALSE, ...)
         }
-    else
+    } else {
         function(x, n = 6, recordIDs = FALSE, ...) {
             if (recordIDs & dim(x)[1] == dim(x@recordIDs)[1])
                 cbind(tail.matrix(x, n = n, addrownums = FALSE, ...),
@@ -87,6 +87,7 @@ tail.timeSeries <-
             else
                 tail.matrix(x, n = n, addrownums = FALSE, ...)
         }
+    }
 
 setMethod("tail", "timeSeries", tail.timeSeries)
 
