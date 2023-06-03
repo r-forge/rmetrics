@@ -48,4 +48,10 @@
    is.na(s)  
 ## Find the longest consecutive non-missing values
    na.contiguous(s)
+
+## tied longest stretches: 1:3, 6:9 and 10:12
+x <- c(1:3, NA, NA, 6:8, NA, 10:12)
+## should return the 1st one
+na.contiguous(x)             # correct for R > 4.3.0
+na.contiguous(timeSeries(x)) # correct for timeSeries version > 4030.106 
 }

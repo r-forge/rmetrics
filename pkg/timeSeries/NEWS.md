@@ -1,5 +1,12 @@
 ## timeSeries 4030.106.9000
 
+- fixed a bug in the 'timeSeries' method for `stats::na.contiguous`, which
+  caused the wrong stretch to be returned in the case of tied longest stretches
+  one of whom starts at the beginning of the series. Similar bug was present in
+  `stats::na.contiguous.default`, see my bug report to R-devel from 2023-06-02
+  and the discussion there
+  (https://stat.ethz.ch/pipermail/r-devel/2023-June/082642.html)
+
 - removed deprecated functions `spreadSeries`, `midquoteSeries`, and
   `durationSeries`.  Use `spreads`, `midquotes`, and `durations`, respectively.
 

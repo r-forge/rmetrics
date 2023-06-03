@@ -20,23 +20,22 @@
 #  spreadSeries
 ################################################################################
 
-
-.description <- 
-function()
-{  
-    # Deprecated:
-    .Deprecated(new = "description", package = "timeSeries")
-    
-    # Return Value:
-    description()
-}
-    
-
-# ------------------------------------------------------------------------------
-
-
 ## removed on 2023-06-03
 ##
+## .description <- 
+## function()
+## {  
+##     # Deprecated:
+##     .Deprecated(new = "description", package = "timeSeries")
+##     
+##     # Return Value:
+##     description()
+## }
+##     
+## 
+## # ------------------------------------------------------------------------------
+## 
+## 
 ## durationSeries <- 
 ## function(...) 
 ## {

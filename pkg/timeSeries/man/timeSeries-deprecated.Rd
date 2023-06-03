@@ -1,6 +1,6 @@
 \name{timeSeries-deprecated}
 
-\alias{seriesData}
+\alias{seriesData} % removed
 
 %\alias{.time.timeSeries}
 

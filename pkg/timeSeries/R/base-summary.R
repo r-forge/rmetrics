@@ -15,9 +15,9 @@
 
 ## Author: Georgi N. Boshnakov
 
-## TODO: the method for timeDate in timeDate package needs fixing
+## TODO: the 'summary' method for timeDate in timeDate package needs fixing
 ##       since it currently prints directly and returns the object
-##       (rather then rturning an object which has suitable print method,
+##       (rather then returning an object which has suitable print method,
 ##        although there is a case for this as well)
 
 ## setMethod("summary", c(object = "timeSeries"),
@@ -91,5 +91,3 @@ print.timeSeries_summary <- function(x, quote = FALSE, ...){
 
     invisible(x)
 }
-
-

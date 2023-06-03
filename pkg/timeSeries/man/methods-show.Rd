@@ -38,7 +38,7 @@
   }
   \item{\dots}{
     arguments passed to the print method for the data part, which is a
-    \code{"matrix"} or, in the case of \code{style = "ts"} the print
+    \code{"matrix"} or, in the case of \code{style = "ts"}, to the print
     method for class \code{"ts"}.
   }
 }
