@@ -1,5 +1,7 @@
 ## timeSeries 4030.106.9000
 
+- refactored the 'timeSeries' methods for `head` and `tail`.
+
 - fixed a bug in the 'timeSeries' method for `stats::na.contiguous`, which
   caused the wrong stretch to be returned in the case of tied longest stretches
   one of whom starts at the beginning of the series. Similar bug was present in
