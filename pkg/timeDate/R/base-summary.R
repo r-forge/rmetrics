@@ -27,8 +27,10 @@
 summary.timeDate <-
     function(object, ...)
 {
-    # A function implemented by Diethelm Wuertz
-
+    ## A function implemented by Diethelm Wuertz
+    ##   GNB : Modified to return a summary object and added a print method
+    ##         for that.
+    
     # Description:
     #   Summarizes details of a 'timeDate' object
 
@@ -40,19 +42,38 @@ summary.timeDate <-
     #   object.
 
     # Print:
-    x = object
-    cat(  "Object:       ", as.character(match.call())[2])
-    cat("\nStart Record: ", as.character(start(x)))
-    cat("\nEnd Record:   ", as.character(end(x)))
-    cat("\nObservations: ", length(as.character(x)))
-    cat("\nFormat:       ", x@format)
-    cat("\nFinCenter:    ", x@FinCenter)
-    cat("\n")
+    ## x = object
+    ## cat(  "Object:       ", as.character(match.call())[2])
+    ## cat("\nStart Record: ", as.character(start(x)))
+    ## cat("\nEnd Record:   ", as.character(end(x)))
+    ## cat("\nObservations: ", length(as.character(x)))
+    ## cat("\nFormat:       ", x@format)
+    ## cat("\nFinCenter:    ", x@FinCenter)
+    ## cat("\n")
+    ## 
+    ## # Return Value:
+    ## invisible(object)
 
-    # Return Value:
-    invisible(object)
+    res <- list(
+        start     = as.character(start(object)),
+        end       = as.character(end(object)),
+        nobs      = length(object),
+        format    = object@format,
+        finCenter = object@FinCenter )
+    class(res) <- "timeDate_summary"    
+    
+    res
 }
 
+print.timeDate_summary <- function(x, quote = FALSE, ...){
+    cat("Start Record:", x$start    , "\n")
+    cat("End Record:  ", x$end      , "\n")
+    cat("Observations:", x$nobs     , "\n")
+    cat("Format:      ", x$format   , "\n")
+    cat("FinCenter:   ", x$finCenter, "\n")
+    cat("\n")
+
+    invisible(x)
+}
 
 ################################################################################
-

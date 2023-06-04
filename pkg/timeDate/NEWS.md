@@ -1,5 +1,13 @@
 # timeDate 4022.109
 
+- modified the 'timeDate' method for `summary` to return an object from class
+  "timeDate_summary" and created a print method for the latter. This is so that
+  summary methods for other classes contining 'timeDate's, can reuse this method
+  to print the datetime information.
+
+- deprecated the `timeDate` method for `cut`, see deprecation note for v4021.105
+  below.
+
 - stopped exporting all but one (`.endpoints`) functions starting with a
   '.'. They all seem for internal purposes and/or have similarly named functions
   with normal names.

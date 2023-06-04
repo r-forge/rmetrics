@@ -83,6 +83,8 @@ cut.timeDate <-
 
     # FUNCTION:
 
+    .Deprecated("window", "timeDate")
+    
     # Extract Subset:
     X = timeDate(x, zone = x@FinCenter, FinCenter = "GMT")
     FROM = timeDate(from, zone = x@FinCenter, FinCenter = "GMT")
