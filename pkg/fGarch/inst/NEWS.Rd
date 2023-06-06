@@ -4,8 +4,10 @@
 %
 %  2. NEWS.html to NEWS.md (https://www.r-bloggers.com/2018/12/rstudio-pandoc-html-to-markdown/)
 %     rmarkdown::pandoc_convert("NEWS.html", to = "markdown_strict", output = "NEWS.md")
+%
 %  3. Manually remove everything up to the first line containing:
 %              ## CHANGES in fGarch VERSION ...
+%
 %  4. Bring the markdown sections one level up, i.e. remove one 'h' from
 %     each section level. For example using regex ^#\(#+\) with replacement value \1
 
