@@ -1,3 +1,14 @@
+% Convert this to NEWS.md:
+%  1. inst/NEWS.Rd to NEWS.html:
+%     tools:::Rd2HTML("inst/NEWS.Rd", "NEWS.html")
+%
+%  2. NEWS.html to NEWS.md (https://www.r-bloggers.com/2018/12/rstudio-pandoc-html-to-markdown/)
+%     rmarkdown::pandoc_convert("NEWS.html", to = "markdown_strict", output = "NEWS.md")
+%  3. Manually remove everything up to the first line containing:
+%              ## CHANGES in fGarch VERSION ...
+%  4. Bring the markdown sections one level up, i.e. remove one 'h' from
+%     each section level. For example using regex ^#\(#+\) with replacement value \1
+
 \name{NEWS}
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
@@ -5,12 +16,17 @@
 \section{CHANGES in fGarch VERSION 4022.90 (2022-12-??, svn ????)}{
   \itemize{
 
-
     \item the \code{"fGARCH"} method for \code{fitted} was returning the
     data, not the fitted values. Fixes issue 6789, reported by Kouhei
     Hashinokuchi (hakoshie).
-    TODO: this needs more work, the doc. for the method also needs
-    fixing. DON'T SUBMIT BEFORE FIXING THESE!.
+
+    \item the help pages for the \code{"fGARCH"} methods for
+    \code{fitted()} and \code{residuals()} were stating that the
+    returned results have the same class as the input time
+    series. Actually, they return numeric vectors. (todo?: to make the
+    returned values as previously documented, \code{garchFit()} would
+    need to put the original data or the necessary information in the
+    fitted object, e.g., \code{object@fit$data}.
 
   }
 }
