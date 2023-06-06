@@ -13,7 +13,7 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4022.90 (2022-12-??, svn ????)}{
+\section{CHANGES in fGarch VERSION 4022.90 (20232-??-??, svn r6333--r????)}{
   \itemize{
 
     \item the \code{"fGARCH"} method for \code{fitted} was returning the
