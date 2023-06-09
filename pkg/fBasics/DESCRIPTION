@@ -22,5 +22,5 @@ Suggests: interp, RUnit, tcltk
 LazyData: yes
 License: GPL (>= 2)
 Encoding: UTF-8
-URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics (devel), https://www.rmetrics.org https://geobosh.github.io/fBasicsDoc/ (doc)
+URL: https://geobosh.github.io/fBasicsDoc/ (doc), https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics (devel), https://www.rmetrics.org 
 BugReports: https://r-forge.r-project.org/projects/rmetrics
