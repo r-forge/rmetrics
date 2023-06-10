@@ -40,6 +40,8 @@ importFrom("utils", capture.output, menu)
 
 ## Exports
 
+S3method(print, summary_fGARCH)
+
 S3method("volatility", "fGARCH")
 export(volatility) # we import it from fBasics
 

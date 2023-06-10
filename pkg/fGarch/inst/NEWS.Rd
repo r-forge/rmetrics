@@ -44,6 +44,10 @@
 
     \item substantially revised the documentation and filled gaps in it.
 
+    \item removed the functions with suffix `_orig` which were kept
+    temporarilly after the bug fix in v4021.87 since there were no
+    reported problems with the fix.
+
   }
 }
 
