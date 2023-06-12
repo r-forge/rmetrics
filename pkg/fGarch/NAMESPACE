@@ -27,7 +27,7 @@ importFrom("graphics", abline, grid, hist, legend, lines,
 
 importFrom("methods", new, show, slot, slotNames, is)
 
-importFrom("stats", Box.test, acf, arima, as.formula, ccf,
+importFrom("stats", Box.test, acf, arima, as.formula, ccf, tsdiag,
            density, dnorm, dt, filter, integrate, lm,
            model.frame, na.omit, nlminb, optim, optimHess,
            pchisq, pgamma, pnorm, ppoints, printCoefmat,
@@ -41,6 +41,8 @@ importFrom("utils", capture.output, menu)
 ## Exports
 
 S3method(print, summary_fGARCH)
+S3method(print, tsdiag_fGARCH)
+S3method(tsdiag, fGARCH)
 
 S3method("volatility", "fGARCH")
 export(volatility) # we import it from fBasics

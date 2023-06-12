@@ -18,6 +18,20 @@
 \section{CHANGES in fGarch VERSION 4022.90 (20232-??-??, svn r6333--r????)}{
   \itemize{
 
+    \item added \code{"fGARCH"} method for `stats::tsdiag`. The method
+    produces diagnostic plot for fitted GARCH/APARCH models and computes
+    some diagnostic tests. The plots can be chosen iteractively and/or
+    via arguments. The test results are in the returned value. The
+    method is in development in that more plots may be made available
+    and additional tests included in the returned value.
+
+    \item refactored the \code{"fGARCH"} method for 'summary' to return
+    an object from S3 class 'summary_fGARCH' equipped with a 'print'
+    method. The printout is the same as before, except that now the
+    numbers in the statistics column for the residual diagnostics are
+    aligned on the decimal point (previously they were left-aligned due
+    to a buglet).
+
     \item the \code{"fGARCH"} method for \code{fitted} was returning the
     data, not the fitted values. Fixes issue 6789, reported by Kouhei
     Hashinokuchi (hakoshie).

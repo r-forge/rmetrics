@@ -13,7 +13,7 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 Description: Analyze and model heteroskedastic behavior in financial time series.
 Imports: fBasics, timeDate, timeSeries, fastICA, Matrix (>= 1.5-0), cvar (>= 0.5),
          graphics, methods, stats, utils
-Suggests: RUnit, tcltk
+Suggests: RUnit, tcltk, goftest
 LazyData: yes
 License: GPL (>= 2)
 URL: https://www.rmetrics.org
