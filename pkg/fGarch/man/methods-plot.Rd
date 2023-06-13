@@ -14,7 +14,7 @@
 
 \description{
 
-  Plot methods for GARCH Modelling. 
+  Plot methods for GARCH modelling. 
 
 }
 

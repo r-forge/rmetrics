@@ -118,6 +118,9 @@ x <- garchSim(n = 200)
 fit <- garchFit(formula = ~ garch(1, 1), data = x, trace = FALSE)
 fit_test <- tsdiag(fit)
 fit_test
+
+## 2x2 matrix with acf of r, r^2 on diag, cor(r,r^2) below it, and qq-plot
+tsdiag(fit, plot = c(4, 6, 7, 5), layout = list(matrix(1:4, nrow = 2)))
 }
 
 \keyword{ts}

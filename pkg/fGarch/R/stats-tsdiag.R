@@ -76,6 +76,11 @@ tsdiag.fGARCH <- function(object, gof.lag = NULL, ask = FALSE, ..., plot = c(4L,
                           layout = NULL)
 {
     ## Georgi Boshnakov
+    n_per_page <- if(is.null(layout))
+                      3
+                  else
+                      ## length(layout[[1]])
+                      do.call("layout", layout)
     
     if(is.null(gof.lag))
         gof.lag <- 20  # :TODO: NOTE: arbitrary value
@@ -108,17 +113,16 @@ tsdiag.fGARCH <- function(object, gof.lag = NULL, ask = FALSE, ..., plot = c(4L,
 	old.par <- par(no.readonly = TRUE)
 	on.exit(par(old.par))     # restore graphics parameters before exiting.
 
-        n_per_page <- 3
         ask_user <- interactive() && (ask || length(choices) > n_per_page)
 
-        n_per_page <- if(is.null(layout)) {
-                          if(ask_user)
-                              layout(matrix(1:3, nrow = 3))
+        ## adjust n_per_page if 'layout' is missing
+        if(is.null(layout)) {
+            n_per_page <- if(ask_user)
+                              ## was: layout(matrix(1:3, ncol = 1))
+                              layout(matrix(1:min(3, length(choices)), ncol = 1))
                           else
                               layout(matrix(1:min(3, length(choices)), ncol = 1))
-                      } else
-                          ## TODO: this needs further thought!
-                          do.call("layout", layout) # for the time being
+        }
             
         choice_title <- "Select a plot number or 0 to exit"
         ch_index <- if(length(choices) == 1)
@@ -160,10 +164,10 @@ tsdiag.fGARCH <- function(object, gof.lag = NULL, ask = FALSE, ..., plot = c(4L,
                    
             if(length(chnum) == 1)  # length(choices) == 1
                 break
-            if(interactive() && (ask || length(choices) > n_per_page)){
+            if(ask_user) { # was: interactive() && (ask || length(choices) > n_per_page)
                 ch_index <- menu(choices, title = choice_title)
                 choice <- chnum[ch_index]
-            }else{
+            } else{
                 ## just plot the next one
                 ##  Note: this doesn't update ch_index
                 chnum <- chnum[-1]
