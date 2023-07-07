@@ -1,5 +1,8 @@
 \name{zzz-mvt}
 
+\alias{dmvt}
+\alias{pmvt}
+\alias{rmvt}
 
 \title{Multivariate Student-t Distribution}
 

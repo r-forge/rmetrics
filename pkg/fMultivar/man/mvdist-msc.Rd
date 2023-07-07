@@ -1,5 +1,8 @@
 \name{mvdist-msc}
 
+\alias{dmsc}
+\alias{pmsc}
+\alias{rmsc}
 
 \title{Multivariate Skew Cauchy Distribution}
 

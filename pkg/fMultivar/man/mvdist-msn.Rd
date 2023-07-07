@@ -1,5 +1,8 @@
 \name{mvdist-msn}
 
+\alias{dmsn}
+\alias{pmsn}
+\alias{rmsn}
 
 \title{Multivariate Skew-Normal Distribution}
 
@@ -14,8 +17,8 @@
 
 \details{
     
-    The functions to compute densities \code{dmsc}, probabilities 
-    \code{pmsc}, and to generate random numbers \code{rmsc} for the
+    The functions to compute densities \code{dmsn}, probabilities 
+    \code{pmsn}, and to generate random numbers \code{rmsn} for the
     multivariate skew Normal distribution are available in the contributed 
     R package \code{sn} (note, they are no longer builtin in fMultivar). 
     The reason is that the performance for these functions in package

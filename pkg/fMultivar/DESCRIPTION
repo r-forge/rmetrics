@@ -1,7 +1,7 @@
 Package: fMultivar
 Title: Rmetrics - Modeling of Multivariate Financial Return Distributions
-Date: 2022-07-14
-Version: 4021.83
+Date: 2023-07-07
+Version: 4031.84
 Authors@R: c( person("Diethelm", "Wuertz", role = "aut"),
               person("Tobias", "Setz", role = "aut"),
               person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-Project.org"),

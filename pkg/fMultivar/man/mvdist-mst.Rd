@@ -3,6 +3,9 @@
 
 \title{Multivariate Skew Student-t Distribution}
 
+\alias{dmst}
+\alias{pmst}
+\alias{rmst}
 
 \description{
     

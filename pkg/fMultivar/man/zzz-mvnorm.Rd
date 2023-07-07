@@ -3,6 +3,10 @@
 
 \title{Multivariate Normal Distribution}
 
+\alias{dmvnorm}
+\alias{pmvnorm}
+\alias{qmvnorm}
+\alias{rmvnorm}
 
 \description{
     
