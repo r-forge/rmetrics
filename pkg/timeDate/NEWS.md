@@ -1,9 +1,8 @@
 # timeDate 4022.109
 
 - modified the 'timeDate' method for `summary` to return an object from class
-  "timeDate_summary" and created a print method for the latter. This is so that
-  summary methods for other classes contining 'timeDate's, can reuse this method
-  to print the datetime information.
+  "timeDate_summary" (rather than print directly) and created a print method for
+  the latter.
 
 - deprecated the `timeDate` method for `cut`, see deprecation note for v4021.105
   below.

@@ -1,15 +1,14 @@
 \name{summary-methods}
-\alias{summary.timeDate}
 
+\alias{summary.timeDate}
+\alias{timeDate_summary}
+\alias{print.timeDate_summary}
 
 \title{Summary method}
 
 \description{
-
   Summarizes details of a \code{"timeDate"} object.
-
 }
-
 
 \usage{
 \method{summary}{timeDate}(object, \dots)
@@ -17,41 +16,30 @@
 
 \arguments{
 
-    \item{object}{
-        an object of class \code{"timeDate"}.
-        }
-    \item{\dots}{
-        arguments passed to other methods.
-        }
-
+  \item{object}{
+    an object of class \code{"timeDate"}.
+  }
+  \item{\dots}{
+    arguments passed to other methods.
+  }
 }
-
 
 \details{
 
-    Creates a summary report of the details of a \code{"timeDate"}
-    object. This includes the starting and end date, the number of dates
-    the format and the financial center in use.
+  Creates a summary report of the details of a \code{"timeDate"}
+  object. This includes the starting and end date, the number of dates
+  the format and the financial center in use.
    
 }
 
 \value{
-
-  Currently the function just prints the report and returns invisibly
-  the object.
-  \cr
-  
-  \bold{TODO:} The return value return value should not be relied upon
-  since it is inconsistent with the way other methods for \code{summary}
-  work. They create an object with a print method and returned the
-  object, which is typically printed but can also be assigned.
-
+  an object from S3 class \code{"timeDate_summary"}, which has a print
+  method
 }
 
 \examples{
-## summary -
-   tC = timeCalendar()
-   summary(tC)
+tC = timeCalendar()
+summary(tC)
 }
 
 \keyword{chron}
