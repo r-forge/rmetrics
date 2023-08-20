@@ -7,28 +7,8 @@
 \title{Utilities and tools package}
 
 \description{
-
-  Package of calendar, date, time tools and utilities for 
-  Rmetrics.
-  
+  Package of calendar, date, time tools and utilities for Rmetrics.
 }
-
-
-% \details{
-
-%   \tabular{ll}{
-%     Package:    \tab fCalendar \cr
-%     Type:       \tab Package \cr
-%     Version:    \tab 270.73 \cr
-%     Date:       \tab 2008 \cr
-%     License:    \tab GPL (>= 2) \cr
-%     Copyright:  \tab (c) 1999-2008 Diethelm Wuertz, Rmetrics Foundation,
-%     GPL \cr
-%     URL:        \tab \url{http://www.rmetrics.org}
-%   }
-
-% }
-
 
 \section{Overview of Topics}{
 
@@ -131,7 +111,6 @@
     # You can also convert a recorded 'timeDate' from your financial
     # center "Zurich" to another one, for example "NewYork".
     timeDate(charvec, FinCenter = "NewYork")
-    
   }
 
   NOTE: Rmetrics has implemented an automated date/time format identifier
@@ -172,7 +151,6 @@
     # Do you want the last Day or the last Friday in Month Data ?
     timeLastDayInMonth(tS)
     timeLastNdayInMonth(tS, nday = 5)
-    
   }
   
   
@@ -192,7 +170,6 @@
     
     # Or add16 hours in seconds ...
     timeCalendar(2008, m=1, d=1:31, zone="Tokyo", FinCenter="Zurich") + 16*3600
-    
   }
 
 }
@@ -221,7 +198,6 @@
     tC = timeCalendar() 
     tR = tC + round(3600*rnorm(12))
     tR > tC
-    
   }
   
   \bold{Lagging}
@@ -238,7 +214,6 @@
     # Number of days in months and total 2008:
     diff(tC)
     sum(as.integer(diff(tC)))
-    
   }
   
   \bold{Rounding and Truncating}
@@ -260,7 +235,6 @@
     # Truncate by Hour or to the Next Full Hour::
     trunc(tR, "h")
     trunc(tR + 3600, "h")
-    
   }
 
   
@@ -308,7 +282,6 @@
     % tC[tC[4]]
     % tC[format(tC[4])]
     % tC[format("2001-01-01"])     ... needs check ?
-    
   }
     
   Weekdays, weekends, business days, and holidays can be easily
@@ -332,7 +305,6 @@
     dayOfWeek(tW)
     tB <- tS[isBizday(tS, holidayZURICH())]; tB
     dayOfWeek(tB)
-    
   }
   
   The functions \code{blockStart} and \code{blockEnd} gives 
@@ -353,7 +325,6 @@
     blockStart(tS, 30)
     blockEnd(tS, 30)
     Sys.timeDate()
-    
   }
   
   \bold{Coercions and Transformations}
@@ -425,7 +396,6 @@
     tO = sort(tS); tO
     tV = rev(tO); tV
     tU = unique(c(tS, tS)); tU
-    
   }
 
 }
@@ -468,7 +438,6 @@
     # Change to Zurich:
     setRmetricsOptions(myFinCenter = "Zurich")
     getRmetricsOptions("myFinCenter")
-    
   }
   
   From now on, all dates and times are handled within the middle European 
@@ -489,7 +458,6 @@
     
     # List European Financial Centers:
     listFinCenter("Europe/*")
-    
   }
   
   \bold{DST Rules}
@@ -589,7 +557,6 @@
     # The date of Easter for the next 5 years:
     currentYear <- getRmetricsOptions("currentYear")
     Easter(currentYear:(currentYear+5))
-    
   }
   
   
