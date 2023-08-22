@@ -15,14 +15,6 @@
   implementation of the incomplete Bessel K function.  
 }
 \details{
-\tabular{ll}{
-Package: \tab DistributionUtils\cr
-Type: \tab Package\cr
-Version: \tab 0.5-1\cr
-Date: \tab 2012-01-05\cr
-License: \tab GPL (>=2)\cr
-LazyLoad: \tab yes\cr
-}
 Contains functions which are useful for packages implementing
 distributions. Designed to work with my packages \pkg{GeneralizedHyperbolic},
 \pkg{VarianceGamma}, \pkg{SkewHyperbolic} and \pkg{NormalLaplace}.

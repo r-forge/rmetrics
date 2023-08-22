@@ -92,8 +92,7 @@ GNUM(n, x, y, nu, Am, An, nmax, Cnp, GM, GN)
   Slevinsky, Richard M., and Safouhi, Hassan (2010)
   A recursive algorithm for the G transformation and accurate
   computation of incomplete Bessel functions.
-  \emph{Applied Numerical Mathematics} \bold{60}(12), 1411--1417,
-  \url{https://doi.org/10.1016/j.apnum.2010.04.005}.
+  \emph{Applied Numerical Mathematics} \bold{60}(12), 1411--1417.
 }
 \author{
   David Scott \email{d.scott@auckland.ac.nz}, Thomas Tran, Richard

@@ -1,3 +1,10 @@
+2023-08-22    <d.scott@auckland.ac.nz >
+
+	* DistributionUtile-package.Rd altered to delete table giving
+	package details, following a request from Kurt Hornik, since there
+	was a mismatch between the specified package version and the
+	actual package version.
+
 2018-11-27    <d.scott@auckland.ac.nz>
 
 	* momIntegrated checks at start changed to eliminate is.function
