@@ -1,4 +1,4 @@
-## timeSeries 4030.106.9000
+## timeSeries 4031.107
 
 - refactored the 'timeSeries' methods for `head` and `tail`.
 
@@ -60,7 +60,7 @@
   result of applying the base R functions to the data part of the object. This
   was not particularly useful, especilly for multivariate time series.  With
   this change all functions from the S4 `Math` group return 'timeSeries' when
-  their argument is \ \code{"timeSeries"} object.
+  their argument is 'timeSeries' object.
 
 - stopped exporting some internal functions that were accidentally used by other
   packages (after those packages were updated on CRAN).
