@@ -3,6 +3,10 @@
 - `characterTable` doesn't try to print/plot invalid non-ASCII UTF8 characters
   (fixes CRAN issue from around 2023-10-06).
 
+- `symbolTable` now plots more characters and issues warnings only for
+  characters in `26:31` which are ignored according to `?points` but are
+  actually plotted.
+
 
 # fBasics 4022.94
 

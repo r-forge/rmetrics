@@ -22,8 +22,5 @@ if(require("RUnit", quietly=TRUE)) {
 
   stopifnot(file.exists(path), file.info(path.expand(path))$isdir)
 
-    ## 2023-10-07 GNB:
-    options(warn = 1)
-    
   source(file.path(path, "runTests.R"), echo = TRUE)
 }
