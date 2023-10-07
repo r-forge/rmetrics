@@ -7,6 +7,11 @@
   characters in `26:31` which are ignored according to `?points` but are
   actually plotted.
 
+- now use default R Random generators in tests, since the old ones were causing
+  numerous warnings from tests.
+
+- removed deprecated function `listDescription`, `utils::packageDescription` instead.
+
 
 # fBasics 4022.94
 
