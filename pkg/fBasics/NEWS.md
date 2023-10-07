@@ -1,3 +1,9 @@
+# fBasics 4022.94.9000
+
+- `characterTable` doesn't try to print/plot invalid non-ASCII UTF8 characters
+  (fixes CRAN issue from around 2023-10-06).
+
+
 # fBasics 4022.94
 
 - `dagotest()` was returning NaN for the value of the test statistic based on
