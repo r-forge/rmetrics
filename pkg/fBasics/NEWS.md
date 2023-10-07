@@ -10,7 +10,10 @@
 - now use default R Random generators in tests, since the old ones were causing
   numerous warnings from tests.
 
-- removed deprecated function `listDescription`, `utils::packageDescription` instead.
+- removed deprecated function `listDescription`, `utils::packageDescription`
+  instead.
+
+- fixed a bug in `histPlot`, causing a puzzling error when argument 'fit = FALSE'.
 
 
 # fBasics 4022.94
