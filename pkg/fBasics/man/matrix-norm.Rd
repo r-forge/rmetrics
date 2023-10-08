@@ -1,5 +1,4 @@
 \name{norm}
-
 \alias{norm2}
 
 
@@ -65,7 +64,7 @@ norm2(x, p = 2)
 }
 
 \value{
-  the value of the norm of the matrix.
+  the requested norm of the matrix, a non-negative number
 }
 
 \references{

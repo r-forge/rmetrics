@@ -1,19 +1,20 @@
-# fBasics 4022.94.9000
+# fBasics 4031.95
 
-- `characterTable` doesn't try to print/plot invalid non-ASCII UTF8 characters
-  (fixes CRAN issue from around 2023-10-06).
+- now `characterTable` doesn't try to print/plot invalid non-ASCII UTF8
+  characters (fixes CRAN issue from around 2023-10-06).
 
 - `symbolTable` now plots more characters and issues warnings only for
   characters in `26:31` which are ignored according to `?points` but are
   actually plotted.
 
-- now use default R Random generators in tests, since the old ones were causing
-  numerous warnings from tests.
+- now using default R Random generators in tests, since the old ones were
+  causing numerous warnings from tests.
 
-- removed deprecated function `listDescription`, `utils::packageDescription`
+- removed deprecated function `listDescription`, use `utils::packageDescription`
   instead.
 
-- fixed a bug in `histPlot`, causing a puzzling error when argument 'fit = FALSE'.
+- fixed a bug in `histPlot`, causing a puzzling error when argument
+  `fit = FALSE`.
 
 
 # fBasics 4022.94

@@ -8,7 +8,7 @@
 
 \description{
     
-  Extracs the upper or lower tridiagonal part from a matrix.    
+  Extracs the upper or lower triangular part from a matrix.    
 
 }
 
@@ -27,7 +27,8 @@ Triang(x)
 \details{
     
   \code{triang} and \code{Triang} transform a square matrix to a lower
-  or upper triangular form.
+  or upper triangular form. The functions just replace the remaining
+  values with zeroes and work with non-square matrices, as well.
   
   A triangular matrix is either an upper triangular matrix or lower
   triangular matrix. For the first case all matrix elements
@@ -48,6 +49,11 @@ Triang(x)
   triangular matrix is the product of the diagonal elements, the
   eigenvalues of a triangular matrix are the diagonal elements.
     
+}
+
+\value{
+  a matrix of the same dimensions as \code{x} with the elements above or
+  below the main diagonal set to zeroes
 }
 
 \references{

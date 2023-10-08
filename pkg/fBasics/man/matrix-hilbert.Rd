@@ -22,7 +22,7 @@ hilbert(n)
 \details{
 
   An \eqn{n,n} matrix with \eqn{(i,j)}th element equal to
-  \eqn{1/(i+j-1)} is said to be a Hilbert matrix of order \eqn{n}.  The
+  \eqn{1/(i+j-1)} is said to be a Hilbert matrix of order \eqn{n}.
   Hilbert matrices are symmetric and positive definite.
 
   They are canonical examples of ill-conditioned matrices, making them
