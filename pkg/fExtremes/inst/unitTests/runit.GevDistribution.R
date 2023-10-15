@@ -44,12 +44,12 @@ function()
     # Check Distribution:
     RNGkind(kind = "Marsaglia-Multicarry", normal.kind = "Inversion")
     set.seed(4711, kind = "Marsaglia-Multicarry")
-    .distCheck(fun = "gev", n = 2000, xi = 0.0, mu = 0, beta = 1)
+    distCheck(fun = "gev", n = 2000, xi = 0.0, mu = 0, beta = 1)
 
     # Check Distribution:
     RNGkind(kind = "Marsaglia-Multicarry", normal.kind = "Inversion")
     set.seed(4711, kind = "Marsaglia-Multicarry")
-    .distCheck(fun = "gev", n = 5000, xi = 0.3, mu = 0, beta = 2)
+    distCheck(fun = "gev", n = 5000, xi = 0.3, mu = 0, beta = 2)
 
     # Return Value:
     return()

@@ -43,7 +43,7 @@ function()
 {
     # Check Distribution:
     set.seed(1985)
-    .distCheck(fun = "gpd", n = 500, xi = 1, mu = 0, beta = 1)
+    distCheck(fun = "gpd", n = 500, xi = 1, mu = 0, beta = 1)
     
     # Return Value:
     return()    
