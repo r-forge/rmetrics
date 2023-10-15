@@ -14,7 +14,7 @@ importFrom("fBasics",
        ##, teffectPlot  # used in test
          , dsnig, qsnig
          , volatility # we will re-export, as we define an S3 method
-         , .distCheck, .sliderMenu)
+         , distCheck, .sliderMenu)
 
 ## importFrom("fastICA", fastICA)# only used in  R/mgarch-FitFromFormula.R  .gogarchFit()
 

@@ -8,7 +8,7 @@
 %  3. Manually remove everything up to the first line containing:
 %              ## CHANGES in fGarch VERSION ...
 %
-%  4. Bring the markdown sections one level up, i.e. remove one 'h' from
+%  4. Bring the markdown sections one level up, i.e. remove one '#' from
 %     each section level. For example using regex ^#\(#+\) with replacement value \1
 
 \name{NEWS}
@@ -43,6 +43,10 @@
     returned values as previously documented, \code{garchFit()} would
     need to put the original data or the necessary information in the
     fitted object, e.g., \code{object@fit$data}.
+
+    \item some tests were using deprecated \code{fBasics::.distCheck()}
+    (notice the leading dot). Replaced such calls with the equivalent
+    \code{fBasics::distCheck()}.
 
   }
 }
