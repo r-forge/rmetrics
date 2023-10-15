@@ -15,7 +15,7 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4022.90 (20232-??-??, svn r6333--r????)}{
+\section{CHANGES in fGarch VERSION 4022.90 (2023-10-15, svn r6333--r6435)}{
   \itemize{
 
     \item added \code{"fGARCH"} method for `stats::tsdiag`. The method
