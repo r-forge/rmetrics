@@ -1,3 +1,10 @@
+# fBasics 4031.95.9000
+
+- function `.distCheck` is defunct, use `distCheck` instead. To allow
+  compatibility with older versions of packages that import fBasics (fGarch,
+  fExtremes), `.distCheck` is exported but new code should not use it.
+
+
 # fBasics 4031.95
 
 - now `characterTable` doesn't try to print/plot invalid non-ASCII UTF8
@@ -24,7 +31,7 @@
   Willden who suggested the fix.
 
 - the name of the first column of dataset `msft.dat` is not mangled any more (it
-  was "X.Y..m..d" and now is "%Y-%m-%d", as in the input file). the rest of the
+  was "X.Y..m..d" and now is "%Y-%m-%d", as in the input file), the rest of the
   dataset is as before. The file from which the dataset is created is now taken
   from an identical file in package `timeSeries`.
 
@@ -32,8 +39,9 @@
   'Description:' when slot `description = ""`.
 
 - many fitting functions, e.g., `nFit`, were inadvertently ignoring argument
-  `description` by using `description = description()` instead of `description =
-  description` in the call to \code{new} when creating the return value.
+  `description` by using `description = description()` instead of
+  `description = description` in the call to \code{new} when creating the return
+  value.
 
 - `correlationTest`, `pearsonTest`, `spearmanTest`, `kendallTest`, `ks2Test`,
   `scaleTest`, `varianceTest`, and `locationTest` now set slot `description` of
