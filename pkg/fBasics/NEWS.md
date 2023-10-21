@@ -1,5 +1,10 @@
 # fBasics 4031.95.9000
 
+- modified `interactivePlot` to allow also functions in argument
+  `plotFun`. Previously `plotFun` had to be a character vector containing the
+  names of the functions. Adjusted the documentation and added an example to
+  this effect.
+
 - function `.distCheck` is defunct, use `distCheck` instead. To allow
   compatibility with older versions of packages that import fBasics (fGarch,
   fExtremes), `.distCheck` is exported but new code should not use it.
