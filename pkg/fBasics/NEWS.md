@@ -6,7 +6,13 @@
 
 - removed generic `.print`, its 'ssd' method, and the S3 registration for the
   latter, all unused.
-   
+
+- clarified in the documentation for `histPlot`, `densityPlot` and
+  `logDensityPlot` that argument `x` must be from class "timeSeries" (each of
+  them starts with `stopifnot(is.timeSeries(x))`). Previously it was stated that
+  argument `x` can be of any class that can be converted to "timeSeries" with
+  `as.timeSeries`.
+
 
 # fBasics 4031.95
 

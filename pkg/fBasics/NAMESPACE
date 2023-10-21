@@ -25,13 +25,9 @@ importFrom("stats", acf, ansari.test, approx, ar, arima,
              shapiro.test, spline, t.test, uniroot, var, na.omit, quantile)
 importFrom("utils", menu, packageVersion)
 
-#import(methods)
 importFrom("methods", getMethod, is, new, slot, show)
 
 importFrom("spatial", prmat, surf.gls)
-
-## 'akima' is *not* here because of its non-GPL Licence
-## importFrom("akima", interp, interpp)
 
 importFrom("timeDate", getRmetricsOptions, setRmetricsOptions,
            kurtosis, skewness)
@@ -65,7 +61,7 @@ S3method(".summary", "gmm")
 
 ## explicitly name exports, start with
 ##     cat(ls("package:fBasics", all.names = TRUE), sep =",\n")
-## then clean up; for now just comment out, in case havoc ensues for dependencies.
+## then clean up;
 
 exportMethods("show")
 exportClasses("fDISTFIT", "fHTEST")

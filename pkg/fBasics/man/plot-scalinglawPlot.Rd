@@ -6,17 +6,15 @@
 
 \description{
 
-    Evaluates the scaling exponent of a financial 
-    return series and plots the scaling law.
+  Evaluates the scaling exponent of a financial return series and plots
+  the scaling law.
     
 }
-
 
 \usage{
 scalinglawPlot(x, span = ceiling(log(length(x)/252)/log(2)), doplot = TRUE, 
     labels = TRUE, trace = TRUE, \dots)
 }
-
 
 \arguments{
 
@@ -48,7 +46,6 @@ scalinglawPlot(x, span = ceiling(log(length(x)/252)/log(2)), doplot = TRUE,
   }
 }
 
-
 \value{
     
   a list with the following components:
@@ -60,19 +57,19 @@ scalinglawPlot(x, span = ceiling(log(length(x)/252)/log(2)), doplot = TRUE,
 
 \details{
     
-    \bold{Scaling Behavior:}
-    \cr\cr
-    The function \code{scalingPlot} plots the scaling law of financial 
-    time series under aggregation and returns an estimate for the scaling 
-    exponent. The scaling behavior is a very striking effect of the 
-    foreign exchange market and also other markets expressing a regular
-    structure for the volatility. Considering the average absolute
-    return over individual data periods one finds a scaling power law
-    which relates the mean volatility over given time intervals
-    to the size of these intervals. The power law is in many cases 
-    valid over several orders of magnitude in time. Its exponent  
-    usually deviates significantly from a Gaussian random walk model 
-    which implies 1/2. 
+  \bold{Scaling Behavior:}
+  \cr\cr
+  The function \code{scalingPlot} plots the scaling law of financial 
+  time series under aggregation and returns an estimate for the scaling 
+  exponent. The scaling behavior is a very striking effect of the 
+  foreign exchange market and also other markets expressing a regular
+  structure for the volatility. Considering the average absolute
+  return over individual data periods one finds a scaling power law
+  which relates the mean volatility over given time intervals
+  to the size of these intervals. The power law is in many cases 
+  valid over several orders of magnitude in time. Its exponent  
+  usually deviates significantly from a Gaussian random walk model 
+  which implies 1/2. 
   
 }
 
@@ -85,7 +82,7 @@ Taylor S.J. (1986);
 }
 
 \author{
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port.
 }
 
 \examples{   
