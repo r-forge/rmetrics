@@ -1,8 +1,8 @@
 Package: stabledist
 Version: 0.7-2
-Date: 2017-xx-yy
+Date: 2023-xx-yy
 Title: Stable Distribution Functions
-Author: Diethelm Wuertz [aut], Martin Maechler [cre, aut] and Yohan Chalabi [ctb].
+Author: Diethelm Wuertz [aut] (original code), Martin Maechler [aut, cre], Yohan Chalabi [ctb] (namespace; admin)
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
  ,person("Martin","Maechler", role=c("aut","cre"), email="maechler@stat.math.ethz.ch")
  ,person("Yohan", "Chalabi", role="ctb", comment= "namespace; admin")
@@ -14,6 +14,5 @@ Suggests: Matrix, fBasics, FMStable, RUnit, Rmpfr, sfsmisc
 Description: Density, Probability and Quantile functions, and random number
   generation for (skew) stable distributions, using the parametrizations of
   Nolan.
-LazyData: yes
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/stabledist/?root=rmetrics

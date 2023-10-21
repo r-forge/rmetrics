@@ -1,3 +1,19 @@
+2023-10-21  Georgi Boshnakov
+
+	* runit.StableDistribution.R: changed fBasics::.distCheck to
+	fBasics::distCheck since .distCheck is deprecated.
+
+	* DESCRIPTION (Author): edited 'Author' and 'Author@R' fields to
+	match completely, since R check was giving a Note that the former
+	differs from the one generated from Author@R (e.g., 'Diethelm
+	Wuertz [aut]' vs 'Diethelm Wuertz [aut] (original code)').
+	I would have removed 'Author' completely (it is redundant) but was
+	not sure if it is kept there for compatibility with older R
+	versions.
+
+	* DESCRIPTION (LazyData): removed field LazyData, as it is
+	redundant.
+
 2016-02-20  Martin Mächler  <maechler@stat.math.ethz.ch>
 
 	* DESCRIPTION (Version): 0.7-1, released to CRAN on 2016-09-12
