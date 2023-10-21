@@ -4,6 +4,9 @@
   compatibility with older versions of packages that import fBasics (fGarch,
   fExtremes), `.distCheck` is exported but new code should not use it.
 
+- removed generic `.print`, its 'ssd' method, and the S3 registration for the
+  latter, all unused.
+   
 
 # fBasics 4031.95
 

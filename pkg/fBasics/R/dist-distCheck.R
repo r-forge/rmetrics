@@ -130,11 +130,10 @@ distCheck <- function(fun = "norm", n = 1000, robust = TRUE, subdivisions = 100,
 ##
 ## So, keep it for now.
 .distCheck <- function(...) {
-    if(("fGarch" %in% loadedNamespaces() &&
-            packageVersion("fGarch") < "4031.90") ||
-       ("fExtremes" %in% loadedNamespaces() &&
-            packageVersion("fExtremes") <= "4021.83") ) {
-        ## let it work with old versions of fGarch
+    if(("fGarch" %in% loadedNamespaces() && packageVersion("fGarch") < "4031.90") ||
+       ("fExtremes" %in% loadedNamespaces() && packageVersion("fExtremes") <= "4021.83") ||
+       ("stabledist" %in% loadedNamespaces() && packageVersion("stabledist") <= "0.7-1") ) {
+        ## let it work with old versions of fGarch, fExtremes, stabledist
         distCheck(...)
     } else
         stop("'.distCheck' is defunct. Use 'distCheck' instead.")
