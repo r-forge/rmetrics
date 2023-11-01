@@ -1,6 +1,4 @@
 \name{ssd}
-
-
 \alias{ssd}
 
 \alias{dssd}
@@ -11,14 +9,12 @@
 
 \title{Spline Smoothed Distribution}
 
-
 \description{
     
     Density, distribution function, quantile function 
     and random generation from smoothing spline estimates.
     
 }
-
 
 \usage{
 dssd(x, param, log = FALSE)
@@ -27,28 +23,25 @@ qssd(p, param)
 rssd(n, param)
 }
 
-
 \arguments{
  
-    \item{param}{
-        an object as returned by the function \code{ssdFit}..
-        }
-    \item{log}{
-        a logical flag by default \code{FALSE}. 
-        Should labels and a main title drawn to the plot?
-        }
-    \item{n}{
-        number of observations.
-        } 
-    \item{p}{
-        a numeric vector of probabilities.
-        }
-    \item{x, q}{
-        a numeric vector of quantiles.
-        }
-    
+  \item{x, q}{
+    a numeric vector of quantiles.
+  }
+  \item{p}{
+    a numeric vector of probabilities.
+  }
+  \item{n}{
+    number of observations.
+  } 
+  \item{param}{
+    an object as returned by the function \code{ssdFit}.
+  }
+  \item{log}{
+    a logical flag by default \code{FALSE}. 
+    Should labels and a main title drawn to the plot?
+  }
 }
-
 
 \value{
 
@@ -63,13 +56,9 @@ rssd(n, param)
     
 }
 
-
 \author{
-
-    Diethelm Wuertz, Chong Gu for the underlying \code{gss} package.
-    
+  Diethelm Wuertz, Chong Gu for the underlying \code{gss} package.
 }
-
 
 \references{
 
@@ -83,7 +72,6 @@ Gu, C. and Wang, J. (2003),
     Statistica Sinica, 13, 811--826. 
     
 }
-
 
 \examples{   
 ## ssdFit -
@@ -101,6 +89,4 @@ Gu, C. and Wang, J. (2003),
    lines(u, v, col = "orange", lwd = 2)
 }
 
-
 \keyword{distribution}
-

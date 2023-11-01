@@ -7,17 +7,14 @@
 \alias{rhyp}
 
 
-
 \title{Hyperbolic distribution}
-
 
 \description{
     
-    Density, distribution function, quantile function 
-    and random generation for the hyperbolic distribution.
+  Density, distribution function, quantile function 
+  and random generation for the hyperbolic distribution.
     
 }
-
 
 \usage{
 dhyp(x, alpha = 1, beta = 0, delta = 1, mu = 0, 
@@ -30,83 +27,76 @@ rhyp(n, alpha = 1, beta = 0, delta = 1, mu = 0,
     pm = c("1", "2", "3", "4"))
 }
 
-
 \arguments{
  
-    \item{alpha, beta, delta, mu}{
-        shape parameter \code{alpha};
-        skewness parameter \code{beta}, \code{abs(beta)} is in the 
-        range (0, alpha);
-        scale parameter \code{delta}, \code{delta} must be zero or 
-        positive; 
-        location parameter \code{mu}, by default 0.
-        These is the meaning of the parameters in the first 
-        parameterization \code{pm=1} which is the default 
-        parameterization selection.
-        In the second parameterization, \code{pm=2} \code{alpha}
-        and \code{beta} take the meaning of the shape parameters
-        (usually named) \code{zeta} and \code{rho}.
-        In the third parameterization, \code{pm=3} \code{alpha}
-        and \code{beta} take the meaning of the shape parameters
-        (usually named) \code{xi} and \code{chi}.
-        In the fourth parameterization, \code{pm=4} \code{alpha}
-        and \code{beta} take the meaning of the shape parameters
-        (usually named) \code{a.bar} and \code{b.bar}.
-        }
-    \item{n}{
-        number of observations.
-        } 
-    \item{p}{
-        a numeric vector of probabilities.
-        }
-    \item{pm}{
-        an integer value between \code{1} and \code{4} for the 
-        selection of the parameterization. The default takes the
-        first parameterization.       
-        }
-    \item{x, q}{
-        a numeric vector of quantiles.
-        }
-    \item{log}{
-        a logical, if TRUE, probabilities \code{p} are given as 
-        \code{log(p)}.
-        }
-    \item{\dots}{
-        arguments to be passed to the function \code{integrate}.
-        }
+  \item{alpha, beta, delta, mu}{
+      shape parameter \code{alpha};
+      skewness parameter \code{beta}, \code{abs(beta)} is in the 
+      range (0, alpha);
+      scale parameter \code{delta}, \code{delta} must be zero or 
+      positive; 
+      location parameter \code{mu}, by default 0.
+      These is the meaning of the parameters in the first 
+      parameterization \code{pm=1} which is the default 
+      parameterization selection.
+      In the second parameterization, \code{pm=2} \code{alpha}
+      and \code{beta} take the meaning of the shape parameters
+      (usually named) \code{zeta} and \code{rho}.
+      In the third parameterization, \code{pm=3} \code{alpha}
+      and \code{beta} take the meaning of the shape parameters
+      (usually named) \code{xi} and \code{chi}.
+      In the fourth parameterization, \code{pm=4} \code{alpha}
+      and \code{beta} take the meaning of the shape parameters
+      (usually named) \code{a.bar} and \code{b.bar}.
+      }
+  \item{n}{
+      number of observations.
+      } 
+  \item{p}{
+      a numeric vector of probabilities.
+      }
+  \item{pm}{
+      an integer value between \code{1} and \code{4} for the 
+      selection of the parameterization. The default takes the
+      first parameterization.       
+      }
+  \item{x, q}{
+      a numeric vector of quantiles.
+      }
+  \item{log}{
+      a logical, if TRUE, probabilities \code{p} are given as 
+      \code{log(p)}.
+      }
+  \item{\dots}{
+      arguments to be passed to the function \code{integrate}.
+      }
     
 }
-
 
 \value{
 
-    All values for the \code{*hyp} functions are numeric vectors: 
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-    
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
+  All values for the \code{*hyp} functions are numeric vectors: 
+  \code{d*} returns the density,
+  \code{p*} returns the distribution function,
+  \code{q*} returns the quantile function, and
+  \code{r*} generates random deviates.
+  
+  All values have attributes named \code{"param"} listing
+  the values of the distributional parameters.
     
 }
-
 
 \details{
    
-    The generator \code{rhyp} is based on the HYP algorithm given 
-    by Atkinson (1982).
+  The generator \code{rhyp} is based on the HYP algorithm given 
+  by Atkinson (1982).
     
 }
-
 
 \author{
-
-    David Scott for code implemented from \R's 
-    contributed package \code{HyperbolicDist}.
-    
+  David Scott for code implemented from \R's contributed package
+  \pkg{HyperbolicDist}.
 }
-
 
 \references{
 
@@ -132,7 +122,6 @@ Raible S. (2000);
     
 }
 
-
 \examples{   
 ## hyp -
    set.seed(1953)
@@ -157,6 +146,4 @@ Raible S. (2000);
      alpha = 1, beta = 0.3, delta = 1) 
 }
 
-
 \keyword{distribution}
-

@@ -1,5 +1,4 @@
 \name{ghtRobMoments}
-
 \alias{ghtRobMoments}
 
 \alias{ghtMED}
@@ -10,14 +9,12 @@
 
 \title{Robust Moments for the GHT}
 
-
 \description{
 
   Computes the first four robust moments for the
   generalized hyperbolic Student-t.
 
 }
-
 
 \usage{
 ghtMED(beta = 0.1, delta = 1, mu = 0, nu = 10)
@@ -26,15 +23,10 @@ ghtSKEW(beta = 0.1, delta = 1, mu = 0, nu = 10)
 ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
 }
 
-
 \arguments{
-    \item{beta, delta, mu}{
-        numeric values.
-        \code{beta} is the skewness parameter in the range \code{(0, alpha)};
-        \code{delta} is the scale parameter, must be zero or positive;
-        \code{mu} is the location parameter, by default 0.
-        These are the parameters in the first parameterization.
-        }
+    \item{beta}{skewness parameter in the range \code{(0, alpha)}.}
+    \item{delta}{scale parameter, must be zero or positive.}
+    \item{mu}{location parameter, by default 0.}
     \item{nu}{
         a numeric value, the number of degrees of freedom.
         Note, \code{alpha} takes the limit of \code{abs(beta)},
@@ -42,6 +34,11 @@ ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
         }
 }
 
+\details{
+
+  The parameters are those of the first parameterization.
+
+}
 
 \value{
 
@@ -56,18 +53,9 @@ ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
 
 }
 
-
-%\references{
-%    go here ...
-%}
-
-
 \author{
-
-    Diethelm Wuertz.
-
+  Diethelm Wuertz.
 }
-
 
 \examples{
 ## ghtMED -
@@ -87,6 +75,5 @@ ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
    ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
 
 }
-
 
 \keyword{distribution}

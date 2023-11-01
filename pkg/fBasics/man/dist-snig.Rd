@@ -21,7 +21,6 @@
     
 }
 
-
 \usage{
 dsnig(x, zeta = 1, rho = 0, log = FALSE)
 psnig(q, zeta = 1, rho = 0)
@@ -29,29 +28,32 @@ qsnig(p, zeta = 1, rho = 0)
 rsnig(n, zeta = 1, rho = 0)
 }
 
-
 \arguments{
- 
-    \item{zeta, rho}{
-        shape parameter \code{zeta} is positive,
-        skewness parameter \code{rho} is in the range (-1, 1).
-        }
-    \item{log}{
-        a logical flag by default \code{FALSE}. 
-        If TRUE, log values are returned.
-        }
-    \item{n}{
-        number of observations.
-        } 
-    \item{p}{
-        a numeric vector of probabilities.
-        }
-    \item{x, q}{
-        a numeric vector of quantiles.
-        }
-    
+  \item{zeta, rho}{
+    shape parameter \code{zeta} is positive,
+    skewness parameter \code{rho} is in the range (-1, 1).
+  }
+  \item{log}{
+    a logical flag by default \code{FALSE}. 
+    If TRUE, log values are returned.
+  }
+  \item{n}{
+    number of observations.
+  } 
+  \item{p}{
+    a numeric vector of probabilities.
+  }
+  \item{x, q}{
+    a numeric vector of quantiles.
+  }
 }
 
+\details{
+  
+  The random deviates are calculated with the method described by 
+  Raible (2000).
+    
+}
 
 \value{
 
@@ -66,21 +68,11 @@ rsnig(n, zeta = 1, rho = 0)
     
 }
 
-
-\details{
-  
-    The random deviates are calculated with the method described by 
-    Raible (2000).
-    
-}
-
-
 \author{
 
     Diethelm Wuertz.
     
 }
-
 
 \examples{   
 ## snig -
@@ -105,6 +97,4 @@ rsnig(n, zeta = 1, rho = 0)
    qsnig(psnig(seq(-5, 5, 1), zeta = 1, rho = 0.5), zeta = 1, rho = 0.5) 
 }
 
-
 \keyword{distribution}
-

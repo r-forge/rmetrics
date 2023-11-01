@@ -9,7 +9,6 @@
 
 \title{Robust moments for the HYP}
 
-
 \description{
 
   Computes the first four robust moments for the
@@ -17,14 +16,12 @@
 
 }
 
-
 \usage{
 hypMED(alpha = 1, beta = 0, delta = 1, mu = 0)
 hypIQR(alpha = 1, beta = 0, delta = 1, mu = 0)
 hypSKEW(alpha = 1, beta = 0, delta = 1, mu = 0)
 hypKURT(alpha = 1, beta = 0, delta = 1, mu = 0)
 }
-
 
 \arguments{
 
@@ -48,9 +45,7 @@ hypKURT(alpha = 1, beta = 0, delta = 1, mu = 0)
     and \code{beta} take the meaning of the shape parameters
     (usually named) \code{a.bar} and \code{b.bar}.
   }
-
 }
-
 
 \value{
 
@@ -65,18 +60,9 @@ hypKURT(alpha = 1, beta = 0, delta = 1, mu = 0)
 
 }
 
-
-%\references{
-%    go here ...
-%}
-
-
 \author{
-
   Diethelm Wuertz
-
 }
-
 
 \examples{
 ## hypMED -
@@ -96,6 +82,5 @@ hypKURT(alpha = 1, beta = 0, delta = 1, mu = 0)
    hypKURT(alpha = 1, beta = 0, delta = 1, mu = 0)
 
 }
-
 
 \keyword{distribution}

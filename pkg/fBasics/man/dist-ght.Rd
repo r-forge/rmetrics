@@ -1,6 +1,5 @@
 \name{ght}
 
-
 \alias{dght}
 \alias{pght}
 \alias{qght}
@@ -9,14 +8,12 @@
 
 \title{Generalized Hyperbolic Student-t}
 
-
 \description{
     
     Density, distribution function, quantile function 
     and random generation for the hyperbolic distribution.
     
 }
-
 
 \usage{
 dght(x, beta = 0.1, delta = 1, mu = 0, nu = 10, log = FALSE)
@@ -25,16 +22,13 @@ qght(p, beta = 0.1, delta = 1, mu = 0, nu = 10)
 rght(n, beta = 0.1, delta = 1, mu = 0, nu = 10)
 }
 
-
 \arguments{
-
 
     \item{beta, delta, mu}{
         numeric values.
         \code{beta} is the skewness parameter in the range \code{(0, alpha)};
         \code{delta} is the scale parameter, must be zero or positive; 
         \code{mu} is the location parameter, by default 0.
-        These are the parameters in the first parameterization.
         }
     \item{nu}{
         a numeric value, the number of degrees of freedom.
@@ -57,6 +51,11 @@ rght(n, beta = 0.1, delta = 1, mu = 0, nu = 10)
     
 }
 
+\details{
+
+  The parameter are as in the first parameterization.
+
+}
 
 \value{
 
@@ -70,7 +69,6 @@ rght(n, beta = 0.1, delta = 1, mu = 0, nu = 10)
     the values of the distributional parameters.
     
 }
-
 
 \references{
 
@@ -96,12 +94,9 @@ Raible S. (2000);
     
 }
 
-
 \examples{   
 ## ght -
    #
 }
 
-
 \keyword{distribution}
-

@@ -11,15 +11,13 @@
 
 \title{Standardized Generalized Hyperbolic Distribution}
 
-
 \description{
     
-    Density, distribution function, quantile function 
-    and random generation for the standardized generalized
-    hyperbolic distribution.
+  Density, distribution function, quantile function 
+  and random generation for the standardized generalized
+  hyperbolic distribution.
     
 }
-
 
 \usage{
 dsgh(x, zeta = 1, rho = 0, lambda = 1, log = FALSE)
@@ -28,29 +26,25 @@ qsgh(p, zeta = 1, rho = 0, lambda = 1)
 rsgh(n, zeta = 1, rho = 0, lambda = 1)
 }
 
-
 \arguments{
-
-    \item{zeta, rho, lambda}{
-        shape parameter \code{zeta} is positive,
-        skewness parameter \code{rho} is in the range (-1, 1).
-        }
-    \item{log}{
-        a logical flag by default \code{FALSE}. 
-        If TRUE, log values are returned.
-        }
-    \item{n}{
-        number of observations.
-        } 
-    \item{p}{
-        a numeric vector of probabilities.
-        }
-    \item{x, q}{
-        a numeric vector of quantiles.
-        }
-    
+  \item{zeta, rho, lambda}{
+    shape parameter \code{zeta} is positive,
+    skewness parameter \code{rho} is in the range (-1, 1).
+  }
+  \item{log}{
+    a logical flag by default \code{FALSE}. 
+    If TRUE, log values are returned.
+  }
+  \item{n}{
+    number of observations.
+  } 
+  \item{p}{
+    a numeric vector of probabilities.
+  }
+  \item{x, q}{
+    a numeric vector of quantiles.
+  }
 }
-
 
 \value{
 
@@ -65,21 +59,16 @@ rsgh(n, zeta = 1, rho = 0, lambda = 1)
     
 }
 
-
 \details{
   
-    The generator \code{rsgh} is based on the GH algorithm given 
-    by Scott (2004).
+  The generator \code{rsgh} is based on the GH algorithm given 
+  by Scott (2004).
  
 }
 
-
 \author{
-
-    Diethelm Wuertz.
-    
+  Diethelm Wuertz
 }
-
 
 \examples{   
 ## rsgh -
@@ -104,7 +93,6 @@ rsgh(n, zeta = 1, rho = 0, lambda = 1)
    # Compute Quantiles:
    round(qsgh(psgh(seq(-5, 5, 1), zeta = 1, rho = 0.5), zeta = 1, rho = 0.5), 4)
 }
-
 
 \keyword{distribution}
 

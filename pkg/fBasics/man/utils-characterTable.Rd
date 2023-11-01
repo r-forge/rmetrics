@@ -37,13 +37,23 @@ characterTable(font = 1, cex = 0.7)
     
 }
 
+\note{
+  
+  What happens with non-ASCII characters in plots is system dependent
+  and depends on the graphics device, as well. Use of such characters is
+  not recommended for portable code.
+  
+}
+
 \seealso{
   \code{\link{colorTable}},
   \code{\link{symbolTable}}
+
+  \code{\link[graphics]{points}} for use of characters in plotting
 }
 
 \examples{
-## Character Table for Font 2:
+## Character Table for Font 1:
 # characterTable(font = 1)
 }
 

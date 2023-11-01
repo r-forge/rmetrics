@@ -1,5 +1,4 @@
 \name{gldRobMoments}
-
 \alias{gldRobMoments}
 
 \alias{gldMED}
@@ -10,14 +9,12 @@
 
 \title{Robust Moments for the GLD}
 
-
 \description{
     
     Computes the first four robust moments for the
     Generalized Lambda Distribution. 
     
 }
-
 
 \usage{
 gldMED(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
@@ -26,19 +23,12 @@ gldSKEW(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
 gldKURT(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
 }
 
-
 \arguments{
-
-    \item{lambda1, lambda2, lambda3, lambda4}{
-        are numeric values where
-        \code{lambda1} is the location parameter,
-        \code{lambda2} is the location parameter,
-        \code{lambda3} is the first shape parameter, and
-        \code{lambda4} is the second shape parameter.
-        }
-    
+  \item{lambda1}{location parameter}
+  \item{lambda2}{scale parameter}
+  \item{lambda3}{first shape parameter}
+  \item{lambda4}{second shape parameter}
 }
-
 
 \value{
 
@@ -53,18 +43,9 @@ gldKURT(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
     
 }
 
-
-%\references{
-%    go here ...
-%}
-
-
 \author{
-
-    Diethelm Wuertz.
-    
+  Diethelm Wuertz.
 }
-
 
 \examples{   
 ## gldMED -
@@ -84,6 +65,4 @@ gldKURT(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
    gldKURT(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
 }
 
-
 \keyword{distribution}
-

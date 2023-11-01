@@ -11,7 +11,6 @@
 
 \title{Standardized generalized hyperbolic Student-t Distribution}
 
-
 \description{
 
   Density, distribution function, quantile function
@@ -20,7 +19,6 @@
 
 }
 
-
 \usage{
 dsght(x, beta = 0.1, delta = 1, mu = 0, nu = 10, log = FALSE)
 psght(q, beta = 0.1, delta = 1, mu = 0, nu = 10)
@@ -28,9 +26,7 @@ qsght(p, beta = 0.1, delta = 1, mu = 0, nu = 10)
 rsght(n, beta = 0.1, delta = 1, mu = 0, nu = 10)
 }
 
-
 \arguments{
-
 
   \item{beta, delta, mu}{
     numeric values.
@@ -72,14 +68,9 @@ rsght(n, beta = 0.1, delta = 1, mu = 0, nu = 10)
 
 }
 
-
-
 \author{
-
-  Diethelm Wuertz.
-
+  Diethelm Wuertz
 }
-
 
 \examples{
 ## rsght -
@@ -103,9 +94,6 @@ rsght(n, beta = 0.1, delta = 1, mu = 0, nu = 10)
    # Compute Quantiles:
    round(qsght(psght(seq(-5, 5, 1), beta = 0.1, delta = 1, mu = 0, nu =10),
                beta = 0.1, delta = 1, mu = 0, nu = 10), 4)
-
 }
 
-
 \keyword{distribution}
-

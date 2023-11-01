@@ -1,5 +1,4 @@
 \name{gld}
-
 \alias{gld}
 
 \alias{dgld}
@@ -10,7 +9,6 @@
 
 \title{Generalized Lambda Distribution}
 
-
 \description{
     
     Density, distribution function, quantile function 
@@ -19,7 +17,6 @@
     
 }
 
-
 \usage{
 dgld(x, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8, log = FALSE)
 pgld(q, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
@@ -27,32 +24,35 @@ qgld(p, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
 rgld(n, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
 }
 
-
 \arguments{
+  \item{lambda1}{
+    location parameter.
+  }
+  \item{lambda2}{
+    scale parameter.
+  }
+  \item{lambda3}{
+    first shape parameter.
+  }
+  \item{lambda4}{
+    second shape parameter.
+  }
+  \item{n}{
+    number of observations.
+  } 
+  \item{p}{
+    a numeric vector of probabilities.
+  }
+  \item{x, q}{
+    a numeric vector of quantiles.
+  }
+  \item{log}{
 
-    \item{lambda1, lambda2, lambda3, lambda4}{
-        are numeric values where
-        \code{lambda1} is the location parameter,
-        \code{lambda2} is the location parameter,
-        \code{lambda3} is the first shape parameter, and
-        \code{lambda4} is the second shape parameter.
-        }
-    \item{n}{
-        number of observations.
-        } 
-    \item{p}{
-        a numeric vector of probabilities.
-        }
-    \item{x, q}{
-        a numeric vector of quantiles.
-        }
-    \item{log}{
-        a logical, if TRUE, probabilities \code{p} are given as 
-        \code{log(p)}.
-        }
+    a logical, if TRUE, probabilities \code{p} are given as
+    \code{log(p)}.
     
+  }
 }
-
 
 \value{
 
@@ -67,19 +67,12 @@ rgld(n, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
     
 }
 
-
-%\references{
-%    go here ...
-%}
-
-
 \author{
 
     Chong Gu for code implemented from \R's 
     contributed package \code{gld}.
     
 }
-
 
 \examples{   
 ## rgld -
@@ -111,6 +104,4 @@ rgld(n, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
      lambda1=0, lambda2=-1, lambda3=-1/8, lambda4=-1/8) 
 }
 
-
 \keyword{distribution}
-
