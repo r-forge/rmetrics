@@ -1,0 +1,74 @@
+Gmail	*Georgi Boshnakov <georgi.boshnakov@gmail.com>*
+
+------------------------------------------------------------------------
+*Fwd: CRAN packages using Unicode Greek letters and symbols in plots*
+1 message
+
+------------------------------------------------------------------------
+*Georgi Boshnakov *<georgi.boshnakov@manchester.ac.uk>	23 October 2023
+at 21:39
+To: Georgi Boshnakov <georgi.boshnakov@gmail.com>
+
+
+Sent from Outlook for Android <https://aka.ms/AAb9ysg>
+------------------------------------------------------------------------
+*From:* Prof Brian Ripley <ripley@stats.ox.ac.uk
+<mailto:ripley@stats.ox.ac.uk>>
+*Sent:* Monday, October 23, 2023 9:21:41 PM
+*To:* Georgi Boshnakov <georgi.boshnakov@manchester.ac.uk
+<mailto:georgi.boshnakov@manchester.ac.uk>>
+*Subject:* Fwd: CRAN packages using Unicode Greek letters and symbols in
+plots
+ 
+Also fBasics: _R_CHECK_MBCS_CONVERSION_FAILURE_ is now part of check
+--as-cran.
+
+
+-------- Forwarded Message --------
+Subject: CRAN packages using Unicode Greek letters and symbols in plots
+Date: Tue, 17 Oct 2023 11:19:33 +0100
+From: Prof Brian Ripley <ripley@stats.ox.ac.uk
+<mailto:ripley@stats.ox.ac.uk>>
+Reply-To: CRAN <CRAN@r-project.org <mailto:CRAN@r-project.org>>
+To: CRAN <CRAN@r-project.org <mailto:CRAN@r-project.org>>
+
+These are not portable: the pdf() and postscript() devices only support
+characters in an 8-bit locale, usually Latin-1, and R CMD check uses
+pdf(), on CRAN in a Western European UTF-8 locale where pdf() uses
+Latin-1.  In most cases you should be using plotmath ....
+
+Checking with environment varianble _R_CHECK_MBCS_CONVERSION_FAILURE_
+set to a non-empty value will throw an error in current R-devel,
+although you can also grep the .Rcheck directory for 'conversion
+failure.*mbcsToSbcs'
+
+Attempts to plot Greek letters on a pdf() device are seen in the checks
+of packages
+
+DPQ DanielBiostatistics10th DoE.base EPGMr IOHanalyzer LMMstar SIRmcmc
+VisualizeSimon2Stage WRTDStidal biogeom gMCPLite gamma gen3sis ggspectra
+negligible oHMMed plotRCS simEd visualize
+
+Plotmath can also be used for ∞ (utilities) ≤ (autoReg, brr, ggstats,
+visualize) and ≥ (simulariatools, visualize). Some versions of R will
+transliterate to e.g. <= or >= rather than substitute '.' but the use of
+plotmath will look better.
+
+NB: the issues will not be seen on a platform whose libiconv does
+transliteration -- known are macOS 14 and Alpine Linux.  But for example
+on macOS 14, the missing Greek symbols are silently substituted by ?,
+which is not useful.
+
+[The cairo_pdf() and cairo_ps() devices handle fonts differently and can
+plot a wider (but platform-dependent) range of Unicode chars. It looks
+like using plotmath will suffice, but if not you could arrange for your
+examples/tests to use cairo_pdf() if dev.cur() shows the current device
+is pdf().]
+
+Please correct before 2023-11-14 to safely retain your package on CRAN.
+
+-- 
+Brian D. Ripley,                  ripley@stats.ox.ac.uk
+<mailto:ripley@stats.ox.ac.uk>
+Emeritus Professor of Applied Statistics, University of Oxford
+
