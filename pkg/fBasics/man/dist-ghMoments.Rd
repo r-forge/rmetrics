@@ -11,10 +11,7 @@
 \title{Generalized Hyperbolic Distribution Moments}
 
 \description{
-    
-  Calculates moments of the generalized hyperbolic distribution
-  function.
-    
+  Calculates moments of the generalized hyperbolic distribution.
 }
 
 \usage{
@@ -29,27 +26,39 @@ ghMoments(order, type = c("raw", "central", "mu"),
 
 \arguments{
 
-  \item{alpha, beta, delta, mu, lambda}{
-      numeric values.
-      \code{alpha} is the first shape parameter;
-      \code{beta} is the second shape parameter in the range \code{(0, alpha)};
-      \code{delta} is the scale parameter, must be zero or positive; 
-      \code{mu} is the location parameter, by default 0; and
-      \code{lambda} defines the sublclass, by default -1/2.
-      }
+  \item{alpha}{
+    numeric value, the first shape parameter.
+  }
+  \item{beta}{
+    numeric value, the second shape parameter in the range \code{(0, alpha)}.
+  }
+  \item{delta}{
+    numeric value, the scale parameter, must be zero or positive.
+  }
+  \item{mu}{
+    numeric value, the location parameter, by default 0.
+  }
+  \item{lambda}{
+    numeric value, defines the sublclass, by default \eqn{-1/2}.
+  }
   \item{order}{
-      an integer value, the order of the moment.
-      }
+    an integer value, the order of the moment.
+  }
   \item{type}{
-      a character value, 
-      \code{"raw"} returns the moments about zero,
-      \code{"central"} returns the central moments about the mean, and
-      \code{"mu"} returns the moments about the location parameter \code{mu}.
-      }    
+    a character value, 
+    \code{"raw"} gives the moments about zero,
+    \code{"central"} gives the central moments about the mean, and
+    \code{"mu"} gives the moments about the location parameter \code{mu}.
+  }
 }
 
 \value{
-  a numerical value
+  a named numerical value.  The name is one
+  of \code{mean}, \code{var}, \code{skew}, or \code{kurt}, obtained by
+  dropping the \code{nig} prefix from the name of the corresponding
+  function and lowercasing it.
+
+  for \code{ghMoments}, the name is obtained by \code{paste0("m", order, type)}.
 }
 
 \references{

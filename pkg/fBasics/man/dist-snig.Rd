@@ -7,17 +7,15 @@
 \alias{rsnig}
 
 
-\concept{Standardized normal inverse Gaussian distribution}
-
+\concept{standardized normal inverse Gaussian distribution}
 
 
 \title{Standardized Normal Inverse Gaussian Distribution}
 
 \description{
     
-    Density, distribution function, quantile function 
-    and random generation for the standardized normal 
-    inverse Gaussian distribution.
+  Density, distribution function, quantile function and random
+  generation for the standardized normal inverse Gaussian distribution.
     
 }
 
@@ -29,49 +27,42 @@ rsnig(n, zeta = 1, rho = 0)
 }
 
 \arguments{
-  \item{zeta, rho}{
-    shape parameter \code{zeta} is positive,
-    skewness parameter \code{rho} is in the range (-1, 1).
+  \item{x, q}{
+    a numeric vector of quantiles.
+  }
+  \item{p}{
+    a numeric vector of probabilities.
+  }
+  \item{n}{
+    number of observations.
+  } 
+  \item{zeta}{
+    shape parameter \code{zeta} is positive.
+  }
+  \item{rho}{
+    skewness parameter, a number in the range \eqn{(-1, 1)}.
   }
   \item{log}{
     a logical flag by default \code{FALSE}. 
     If TRUE, log values are returned.
   }
-  \item{n}{
-    number of observations.
-  } 
-  \item{p}{
-    a numeric vector of probabilities.
-  }
-  \item{x, q}{
-    a numeric vector of quantiles.
-  }
 }
 
 \details{
-  
-  The random deviates are calculated with the method described by 
-  Raible (2000).
+  \code{dsnig} gives the density,
+  \code{psnig} gives the distribution function,
+  \code{qsnig} gives the quantile function, and
+  \code{rsnig} generates random deviates.
     
+  The random deviates are calculated with the method described by Raible (2000).
 }
 
 \value{
-
-    All values for the \code{*snig} functions are numeric vectors: 
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-    
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
-    
+  numeric vector
 }
 
 \author{
-
-    Diethelm Wuertz.
-    
+  Diethelm Wuertz
 }
 
 \examples{   

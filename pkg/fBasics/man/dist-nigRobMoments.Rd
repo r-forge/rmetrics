@@ -41,9 +41,10 @@ nigKURT(alpha = 1, beta = 0, delta = 1, mu = 0)
 
 \value{
 
-  a named numerical value.  The name is one of \code{MED}, \code{IQR},
-  \code{SKEW}, or \code{KURT}, obtained by dropping the \code{gh} prefix
-  from the name of the corresponding function.
+  a named numerical value.  The name is
+  one of \code{MED}, \code{IQR}, \code{SKEW}, or \code{KURT}, obtained
+  by dropping the \code{nig} prefix from the name of the corresponding
+  function.
 
 }
 

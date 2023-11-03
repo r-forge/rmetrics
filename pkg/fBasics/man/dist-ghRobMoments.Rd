@@ -11,8 +11,8 @@
 
 \description{
 
-  Computes the first four robust moments for the
-  generalized hyperbolic distribution..
+  Computes the first four robust moments for the generalized hyperbolic
+  distribution.
 
 }
 
@@ -50,9 +50,10 @@ ghKURT(alpha = 1, beta = 0, delta = 1, mu = 0, lambda = -1/2)
 
 \value{
 
-  a named numerical value.  The name is one of \code{MED}, \code{IQR},
-  \code{SKEW}, or \code{KURT}, obtained by dropping the \code{gh} prefix
-  from the name of the corresponding function.
+  a named numerical value.  The name is
+  one of \code{MED}, \code{IQR}, \code{SKEW}, or \code{KURT}, obtained
+  by dropping the \code{gh} prefix from the name of the corresponding
+  function.
 
 }
 

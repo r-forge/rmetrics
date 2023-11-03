@@ -28,10 +28,12 @@ ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
     \item{delta}{scale parameter, must be zero or positive.}
     \item{mu}{location parameter, by default 0.}
     \item{nu}{
-        a numeric value, the number of degrees of freedom.
-        Note, \code{alpha} takes the limit of \code{abs(beta)},
-        and \code{lambda=-nu/2}.
-        }
+
+      a numeric value, the number of degrees of freedom.
+      Note, \code{alpha} takes the limit of \code{abs(beta)},
+      and \code{lambda=-nu/2}.
+
+    }
 }
 
 \details{
@@ -42,14 +44,10 @@ ghtKURT(beta = 0.1, delta = 1, mu = 0, nu = 10)
 
 \value{
 
-    All values for the \code{*ght} functions are numeric vectors:
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
+  a named numerical value.  The name is
+  one of \code{MED}, \code{IQR}, \code{SKEW}, or \code{KURT}, obtained
+  by dropping the \code{ght} prefix from the name of the corresponding
+  function.
 
 }
 

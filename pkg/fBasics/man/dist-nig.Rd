@@ -7,10 +7,13 @@
 \alias{rnig}
 
 
+\concept{normal inverse Gaussian distribution}
+
+
 \title{Normal Inverse Gaussian Distribution}
 
 \description{
-    
+
   Density, distribution function, quantile function and random
   generation for the normal inverse Gaussian distribution.
     
@@ -53,7 +56,11 @@ rnig(n, alpha = 1, beta = 0, delta = 1, mu = 0)
 }
 
 \details{
-
+  \code{dnig} gives the density.
+  \code{pnig} gives the distribution function.
+  \code{qnig} gives the quantile function, and
+  \code{rnig} generates random deviates.
+    
   The parameters \code{alpha, beta, delta, mu} are in the first
   parameterization of the distribution.
   
@@ -63,19 +70,7 @@ rnig(n, alpha = 1, beta = 0, delta = 1, mu = 0)
 }
 
 \value{
-
-  \code{dnig} gives the density,
-  \code{pnig} gives the distribution function,
-  \code{qnig} gives the quantile function, and
-  \code{rnig} generates random deviates.
-    
-  Each function returns a numeric vector with attribute \code{"param"}
-  containing the parameters of the distribution.
-
-  \strong{GNB TODO:} It seems that only \code{rnig} has an attribute and
-  that is called \code{"control"} (but it indeed contains the
-  parameters).
-    
+  numeric vector
 }
 
 \author{

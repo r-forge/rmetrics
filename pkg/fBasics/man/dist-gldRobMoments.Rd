@@ -32,15 +32,11 @@ gldKURT(lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
 
 \value{
 
-    All values for the \code{*gld} functions are numeric vectors: 
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-    
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
-    
+  a named numerical value.  The name is
+  one of \code{MED}, \code{IQR}, \code{SKEW}, or \code{KURT}, obtained
+  by dropping the \code{gld} prefix from the name of the corresponding
+  function.
+
 }
 
 \author{

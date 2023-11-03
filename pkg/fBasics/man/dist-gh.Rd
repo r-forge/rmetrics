@@ -7,12 +7,15 @@
 \alias{rgh}
 
 
+\concept{generalized hyperbolic distribution}
+
+
 \title{Generalized Hyperbolic Distribution}
 
 \description{
     
-  Calculates density, distribution function and quantile function of the
-  generalized hyperbolic distribution. Aslso, simulates from that distribution.
+   Density, distribution function, quantile function and random
+   generation for the generalized hyperbolic distribution.
     
 }
 
@@ -58,7 +61,12 @@ rgh(n, alpha = 1, beta = 0, delta = 1, mu = 0, lambda = -1/2)
 }
 
 \details{
-  
+
+  \code{dgh} gives the density,
+  \code{pgh} gives the distribution function,
+  \code{qgh} gives the quantile function, and
+  \code{rgh} generates random deviates.
+
   The meanings of the parameters correspond to the first
   parameterization, \code{pm=1}, which is the default parameterization
   for this distribution.
@@ -81,16 +89,7 @@ rgh(n, alpha = 1, beta = 0, delta = 1, mu = 0, lambda = -1/2)
 }
 
 \value{
-
-    All values for the \code{*gh} functions are numeric vectors: 
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-    
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
-    
+  numeric vector
 }
 
 \references{

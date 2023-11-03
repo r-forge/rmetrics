@@ -1,4 +1,4 @@
-# fBasics 4032.95.9000
+# fBasics 4032.96
 
 - modified `interactivePlot` to allow also functions in argument
   `plotFun`. Previously `plotFun` had to be a character vector containing the
@@ -18,7 +18,27 @@
   argument `x` can be of any class that can be converted to "timeSeries" with
   `as.timeSeries`.
 
+- contrary to the documentation, the return values from the \code{p/d/q/r*}
+  functions (such as `dhyp`, `phyp`, `qhyp`) for the generalised distributions
+  do not contain attribute \code{"param"}. This is now documented correctly.
 
+- removed attribute 'control' from the return value of `rhyp` and similar
+  functions. It was undocumented (or rather, the documentation stated that it is
+  called "param"; in any case, wouldn't be usable in code).
+
+- argument 'alpha' of `dhyp`, `phyp`, `qhyp` and `rhyp` can now be also a
+  vector of length 4 containing the four parameters.
+
+- `hypMode` now throws error if argument 'pm' doesn't have one of the allowed
+  values.
+
+- the return values of`*Mean()`, `*Var()`, `*Skew()`, `*Kurt()`, `*Moments()`,
+  where '*' is a distribution prefix (such as 'gh' or 'ght'), are now all named.
+  Previously, only some of them were.
+
+- removed a number of inconsistencies in the documentation.
+
+ 
 # fBasics 4031.95
 
 - now `characterTable` doesn't try to print/plot invalid non-ASCII UTF8

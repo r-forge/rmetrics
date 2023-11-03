@@ -7,13 +7,15 @@
 \alias{rgld}
 
 
+\concept{generalized lambda distribution}
+
+
 \title{Generalized Lambda Distribution}
 
 \description{
     
-    Density, distribution function, quantile function 
-    and random generation for the generalized lambda
-    distribution.
+  Density, distribution function, quantile function and random
+  generation for the generalized lambda distribution.
     
 }
 
@@ -54,24 +56,19 @@ rgld(n, lambda1 = 0, lambda2 = -1, lambda3 = -1/8, lambda4 = -1/8)
   }
 }
 
-\value{
+\details{
+  \code{dgld} gives the density,
+  \code{pgld} gives the distribution function,
+  \code{qgld} gives the quantile function, and
+  \code{rgld} generates random deviates.
+}
 
-    All values for the \code{*gld} functions are numeric vectors: 
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-    
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
-    
+\value{
+  numeric vector
 }
 
 \author{
-
-    Chong Gu for code implemented from \R's 
-    contributed package \code{gld}.
-    
+  Chong Gu for code implemented from \R's contributed package \code{gld}.
 }
 
 \examples{   

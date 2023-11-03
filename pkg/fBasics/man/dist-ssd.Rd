@@ -7,12 +7,15 @@
 \alias{rssd}
 
 
+\concept{Spline Smoothed Distribution}
+
+
 \title{Spline Smoothed Distribution}
 
 \description{
     
-    Density, distribution function, quantile function 
-    and random generation from smoothing spline estimates.
+  Density, distribution function, quantile function and random
+  generation from smoothing spline estimates.
     
 }
 
@@ -43,17 +46,15 @@ rssd(n, param)
   }
 }
 
-\value{
+\details{
+  \code{dssd} gives the density,
+  \code{pssd} gives the distribution function,
+  \code{qssd} gives the quantile function, and
+  \code{rssd} generates random deviates.
+}
 
-    All values for the \code{*ssd} functions are numeric vectors: 
-    \code{d*} returns the density,
-    \code{p*} returns the distribution function,
-    \code{q*} returns the quantile function, and
-    \code{r*} generates random deviates.
-    
-    All values have attributes named \code{"param"} listing
-    the values of the distributional parameters.
-    
+\value{
+  numeric vector
 }
 
 \author{

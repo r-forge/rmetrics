@@ -1,13 +1,13 @@
 Package: fBasics
 Title: Rmetrics - Markets and Basic Statistics
-Version: 4031.95.9000
+Version: 4032.96
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person("Martin","Maechler", role="ctb", email="maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
 	   , person("CRAN Team", role = "ctb")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre", "ctb"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "aut"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Provides a collection of functions to 
     explore and to investigate basic properties of financial returns 
     and related quantities.
