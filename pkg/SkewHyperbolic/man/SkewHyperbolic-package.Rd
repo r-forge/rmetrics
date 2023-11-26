@@ -36,7 +36,7 @@ of \code{skwewhypFit}.
   Intermediate Probability: A Computational Approach,
   Chichester: Wiley
   
-  Scott, D. J., \enc{Würtz}{Wuertz}, D. and Tran, T. T. (2008)
+  Scott, D. J., \enc{WÃ¼rtz}{Wuertz}, D. and Tran, T. T. (2008)
   Moments of the Generalized Hyperbolic Distribution. Preprint.
 }
 \keyword{ package }

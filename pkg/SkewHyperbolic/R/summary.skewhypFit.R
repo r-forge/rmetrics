@@ -1,7 +1,7 @@
 ###Summary Method for skewhypFit Objects #################################
 summary.skewhypFit <- function(object,...){
 
-    if (!class(object)=="skewhypFit")
+    if (!inherits(object,"skewhypFit"))
         stop("Object must belong to class skewhypFit")
 
     if (!is.null(object$hessian)){
@@ -19,7 +19,7 @@ summary.skewhypFit <- function(object,...){
 print.summary.skewhypFit <-
   function(x, digits = max(3, getOption("digits") - 3), ...)
 {
-    if (!class(x)=="summary.skewhypFit"){
+    if (!inherits(x,"summary.skewhypFit")){
         stop("Object must belong to class summary.skewhypFit")
     }
     cat("\nData:     ", x$obsName, "\n")

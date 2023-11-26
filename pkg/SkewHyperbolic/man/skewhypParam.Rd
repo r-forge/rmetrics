@@ -27,10 +27,7 @@
 }
 
 \usage{
-  skewhypSmallShape
-  skewhypLargeShape
-  skewhypSmallParam
-  skewhypLargeParam
+  data(skewhypParam)
 }
 
 \format{

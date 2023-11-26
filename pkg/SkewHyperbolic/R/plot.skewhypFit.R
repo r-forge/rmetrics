@@ -64,7 +64,7 @@ plot.skewhypFit <- function(x, which = 1:4,
 ###### Print method for skewhypFit #####################################
 print.skewhypFit <- function (x, digits = max(3, getOption("digits") - 3), ...)
 {
-    if (!class(x) == "skewhypFit")
+    if (!inherits(x, "skewhypFit"))
         stop("Object must belong to class skewhypFit")
 
     cat("\nData:     ", x$xName, "\n")

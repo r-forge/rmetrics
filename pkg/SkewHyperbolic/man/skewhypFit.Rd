@@ -66,7 +66,7 @@ skewhypFit(x, freq = NULL, breaks = NULL, startValues = "LA",
   and \code{paramStart} see \code{\link{skewhypFitStart}}.
 
   The three optimisation methods currently available are:
-  \itemize{
+  \describe{
     \item{\code{"BFGS"}}{Uses the quasi-Newton method \code{"BFGS"} as
     documented in \code{\link{optim}}.}
     \item{\code{"Nelder-Mead"}}{Uses an implementation of the Nelder and

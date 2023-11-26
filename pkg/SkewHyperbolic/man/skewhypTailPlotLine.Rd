@@ -39,7 +39,7 @@ skewhypTailPlotLine(x, mu = 0, delta = 1, beta = 1, nu = 1,
 \value{Returns \code{NULL} invisibly.
 }
 \references{
-  Aas, Kjersti and \enc{Hobæk}{Hobaek} Haff, Ingrid (2006)
+  Aas, Kjersti and \enc{HobÃ¦k}{Hobaek} Haff, Ingrid (2006)
   The generalised hyperbolic skew Student's \eqn{t}-distribution.
   \emph{Journal of Financial Econometrics}, \bold{4}, 275--309.
 
