@@ -1,4 +1,17 @@
-202-02-0  David Scott  <d.scott@auckland.ac.nz>
+2023-11-26    <d.scott@auckland.ac.nz >
+
+	* HyperbolicDistribution.Rd, RLambda.Rd, dghyp.Rd, dgig.Rd, dhyperb.Rd,
+	ghypCalcRange.Rd, ghypChangePars.Rd, ghypMom.Rd, gigCalcRange.Rd,
+	gigChangePars.Rd, hyperbCalcRange.Rd, hyperbChangePars.Rd,
+	hyperbCvMTest.Rd, hyperbFitStart.Rd, hyperbMeanVarMode.Rd,
+	hyperbWSqTable.Rd, logHist.Rd, and momRecursion.Rd all changed to
+	UTF-8 to appease CRAN
+
+	* Changed itemize to describe in some .Rd files
+
+	* Changed class checks to use inherits
+
+2022-02-0  David Scott  <d.scott@auckland.ac.nz>
 
 	* NAMESPACE altered to add imports from base R after notification
 	from CRAN.

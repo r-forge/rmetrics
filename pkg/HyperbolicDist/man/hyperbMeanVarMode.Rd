@@ -38,9 +38,9 @@ hyperbMode(Theta)
 \details{
   
   The formulae used for the mean, variance and mode are as given in
-  Barndorff-Nielsen and \enc{Blæsild}{Blaesild} (1983), p. 702.  The
+  Barndorff-Nielsen and \enc{BlÃ¦sild}{Blaesild} (1983), p. 702.  The
   formulae used for the skewness and kurtosis are those of
-  Barndorff-Nielsen and \enc{Blæsild}{Blaesild} (1981), Appendix 2. 
+  Barndorff-Nielsen and \enc{BlÃ¦sild}{Blaesild} (1981), Appendix 2. 
 
   Note that the variance, skewness and kurtosis can be obtained from the
   functions for the generalized hyperbolic distribution as special
@@ -51,14 +51,14 @@ hyperbMode(Theta)
   required.
   }
 \references{
-  Barndorff-Nielsen, O. and \enc{Blæsild}{Blaesild}, P (1981).
+  Barndorff-Nielsen, O. and \enc{BlÃ¦sild}{Blaesild}, P (1981).
   Hyperbolic distributions and ramifications: contributions to theory
   and application.
   In \emph{Statistical Distributions in Scientific Work},
   eds., Taillie, C., Patil, G. P., and Baldessari, B. A., Vol. 4,
   pp. 19--44. Dordrecht: Reidel.
 
-  Barndorff-Nielsen, O. and \enc{Blæsild}{Blaesild}, P (1983).
+  Barndorff-Nielsen, O. and \enc{BlÃ¦sild}{Blaesild}, P (1983).
   Hyperbolic distributions.
   In \emph{Encyclopedia of Statistical Sciences},
   eds., Johnson, N. L., Kotz, S. and Read, C. B., Vol. 3,

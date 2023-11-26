@@ -46,7 +46,7 @@ ghypMom(order, Theta, momType = "raw", about = 0)
   \code{momChangeAbout}.
 
   The mu moments are obtained from the recursion formula given in Scott,
-  \enc{Würtz}{Wuertz} and Tran (2008).
+  \enc{WÃ¼rtz}{Wuertz} and Tran (2008).
 }
 
 \value{
@@ -54,7 +54,7 @@ ghypMom(order, Theta, momType = "raw", about = 0)
 }
 
 \references{
-  Scott, D. J., \enc{Würtz}{Wuertz}, D. and Tran, T. T. (2008)
+  Scott, D. J., \enc{WÃ¼rtz}{Wuertz}, D. and Tran, T. T. (2008)
   Moments of the Generalized Hyperbolic Distribution. Preprint.
 }
 

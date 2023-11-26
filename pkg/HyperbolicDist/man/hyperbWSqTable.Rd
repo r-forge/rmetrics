@@ -7,7 +7,7 @@ Distribution}
 \description{
   This gives Table 5 of Puig & Stephens (2001) which is used for testing
   the goodness-of-fit of the hyperbolic distribution using the
-  \enc{Cr‰mer}{Cramer}-von~Mises test. It is for internal use by
+  \enc{Cr√§mer}{Cramer}-von~Mises test. It is for internal use by
   \code{hyperbCvMTest} and \code{hyperbCvMTestPValue} only and is not
   intended to be accessed by the user. It is loaded automatically when
   the package \code{HyperbolicDist} is invoked.

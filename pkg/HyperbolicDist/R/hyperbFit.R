@@ -87,7 +87,7 @@ hyperbFit <- function(x, freq = NULL, breaks = NULL, ThetaStart = NULL,
 print.hyperbFit <- function(x,
                             digits = max(3, getOption("digits") - 3), ...)
 {
-  if (!class(x) == "hyperbFit"){
+  if (!inherits(x,"hyperbFit")){
     stop("Object must belong to class hyperbFit")
   }
   cat("\nData:     ", x$obsName, "\n")
@@ -108,7 +108,7 @@ function(x, which = 1:4,
                             "Q-Q Plot of ","P-P Plot of "),
                             x$obsName, sep=""),
          ask = prod(par("mfcol")) < length(which) && dev.interactive(), ...){
-  if (!class(x)=="hyperbFit")
+  if (!inherits(x,"hyperbFit"))
     stop("Object must belong to class hyperbFit")
   if (ask) {
     op <- par(ask = TRUE)

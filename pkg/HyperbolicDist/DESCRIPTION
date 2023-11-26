@@ -1,12 +1,12 @@
 Package: HyperbolicDist
-Version: 0.6-4
-Date: 2022-02-20
+Version: 0.6-5
+Date: 2023-11-26
 Title: The Hyperbolic Distribution
 Author: David Scott <d.scott@auckland.ac.nz>
 Maintainer: David Scott <d.scott@auckland.ac.nz>
 Depends: R (>= 3.5.0)
 Suggests: actuar
-Encoding: latin1
+Encoding: UTF-8
 Description: Maintenance has been discontinued for this package. It has been
 	     superseded by 'GeneralizedHyperbolic'. 'GeneralizedHyperbolic' 
 	     includes all the functionality of 'HyperbolicDist' and more 
