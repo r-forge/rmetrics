@@ -189,7 +189,7 @@ hyperblm(formula, data, subset, weights, na.action,
   \code{hyperbFitStandStart} which includes:
 
 
-  \itemize{
+  \describe{
     \item{\code{"BN"}}{A method from Barndorff-Nielsen (1977) based on
     estimates of \eqn{\psi}{psi} and \eqn{\gamma}{gamma} the absolute
     slopes of the left and right asymptotes to the log density function}
@@ -295,7 +295,7 @@ hyperblm(formula, data, subset, weights, na.action,
   Paolella, Marc S. (2007). \emph{Intermediate Probability: A Computational
     Approach}. pp. 415 -Chichester: Wiley.
 
-  Scott, David J. and \enc{Würtz}{Wuertz}, Diethelm and Chalabi, Yohan, (2011).
+  Scott, David J. and \enc{WÃ¼rtz}{Wuertz}, Diethelm and Chalabi, Yohan, (2011).
   \emph{Fitting the Hyperbolic Distribution with R: A Case Study of
     Optimization Techniques}. In preparation.
 

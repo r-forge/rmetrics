@@ -22,7 +22,7 @@ fit of the hyperbolic distribution to a set of data, the log-histogram
 is useful.  See \code{\link[DistributionUtils]{logHist}} from package
 \CRANpkg{DistributionUtils}. Q-Q and P-P
 plots are also provided for assessing the fit of a hyperbolic
-distribution. A \enc{Crämer}{Cramer}-von~Mises test of the goodness of
+distribution. A \enc{CramÃ©r}{Cramer}-von~Mises test of the goodness of
 fit of data to a hyperbolic distribution is given by
 \code{hyperbCvMTest}. S3 \code{print}, \code{plot} and \code{summary}
 methods are provided for the output of \code{hyperbFit}.
@@ -62,7 +62,7 @@ fit of a skew-Laplace distribution.
   Thanks to Ross Ihaka and Paul Murrell for their willingness to answer
   my questions, and to all the core group for the development of R.
 
-  Special thanks also to Diethelm \enc{Würtz}{Wuertz} without whose
+  Special thanks also to Diethelm \enc{WÃ¼rtz}{Wuertz} without whose
   advice, this package would be far inferior.
 
 }
@@ -72,7 +72,7 @@ fit of a skew-Laplace distribution.
   \emph{Proc. Roy. Soc. Lond.},
   A\bold{353}, 401--419.
 
-  Barndorff-Nielsen, O. and \enc{Blæsild}{Blaesild}, P (1983).
+  Barndorff-Nielsen, O. and \enc{BlÃ¦sild}{Blaesild}, P (1983).
   Hyperbolic distributions.
   In \emph{Encyclopedia of Statistical Sciences},
   eds., Johnson, N. L., Kotz, S. and Read, C. B., Vol. 3,
@@ -83,7 +83,7 @@ fit of a skew-Laplace distribution.
   \emph{Appl. Statist.},
   \bold{41}, 127--146.
 
-  \enc{Jörgensen}{Jorgensen}, B. (1982). \emph{Statistical Properties of
+  \enc{JÃ¶rgensen}{Jorgensen}, B. (1982). \emph{Statistical Properties of
   the Generalized Inverse Gaussian Distribution}. Lecture Notes in
   Statistics, Vol. 9, Springer-Verlag, New York.
 

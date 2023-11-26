@@ -34,7 +34,7 @@
 
 \details{
   Possible values of the argument \code{startValues} are the following:
-  \itemize{
+  \describe{
     \item{\code{"LM"}}{Based on fitting linear models to the upper tails
       of the data \code{x} and the inverse of the data \code{1/x}.}
     \item{\code{"GammaIG"}}{Based on fitting gamma and inverse gamma

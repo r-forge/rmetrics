@@ -1,3 +1,22 @@
+2023-11-26    <d.scott@auckland.ac.nz>
+
+	* GeneralizedHyperbolicDistribution.Rd,
+	RLambda.Rd, dghyp.Rd, dgig.Rd, dhyperb.Rd, dnig.Rd,
+	ghypCalcRange.Rd, ghypChangePars.Rd, ghypMom.Rd, gigCalcRange.Rd,
+	gigChangePars.Rd, gigFit.Rd,
+	hyperbCalcRange.Rd, hyperbChangePars.Rd,
+	hyperbCvMTest.Rd, hyperbFitStart.Rd, hyperbMeanVarMode.Rd,
+	hyperbWSqTable.Rd, hyperblm.Rd, nervePulse.Rd,
+	nigCalcRange.Rd, plotShapeTriangle.Rd, traffic.Rd,
+	logHist.Rd, and momRecursion.Rd all changed to
+	UTF-8 to appease CRAN
+
+	* Changed itemize to describe in some .Rd files
+
+	* Changed class checks to use inherits
+
+	* Corrected unicode in names Jörgensen and Blæsild
+
 2019-09-01    <d.scott@auckland.ac.nz>
 
 	* nigFitStartMoM, hyperbFitStartMom changed to correct kurtosis to
@@ -33,7 +52,6 @@
 
 	* hyperblmFit, hyperblm added to allow fitting of linear models
 	with hyperbolic errors
-
 
 2011-12-21    <d.scott@auckland.ac.nz>
 

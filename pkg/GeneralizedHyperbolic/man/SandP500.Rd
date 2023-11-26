@@ -1,7 +1,7 @@
 \name{SandP500}
 \docType{data}
 \alias{SandP500}
-\title{S\&P 500}
+\title{S&P 500}
 \description{
   This data set gives the value of Standard and Poor's most notable stock
   market price index (the S&P 500) at year end, from 1800 to 2001.
@@ -11,7 +11,8 @@
   A vector of 202 observations.
 }
 \source{
-  At the time, \code{http://www.globalfindata.com} which no longer exists.
+  At the time of downloading, \code{http://www.globalfindata.com}
+  which no longer exists. Now at \code{https://globalfinancialdata.com}.
 }
 \references{
   Brown, Barry W., Spears, Floyd M. and Levy, Lawrence B. (2002)

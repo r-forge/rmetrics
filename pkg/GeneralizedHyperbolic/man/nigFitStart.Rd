@@ -28,7 +28,7 @@
 
 \details{
   Possible values of the argument \code{startValues} are the following:
-  \itemize{
+  \describe{
     \item{\code{"US"}}{User-supplied.}
     \item{\code{"FN"}}{A fitted normal distribution.}
     \item{\code{"Cauchy"}}{Based on a fitted Cauchy distribution, from
@@ -69,8 +69,8 @@
   \emph{Proc. Roy. Soc. Lond.},
   A\bold{353}, 401--419.
 
-  Barndorff-Nielsen, O., \enc{Blæsild}{Blaesild}, P., Jensen, J.,
-  and  \enc{Sörenson}{Sorenson}, M. (1985).
+  Barndorff-Nielsen, O., \enc{BlÃ¦sild}{Blaesild}, P., Jensen, J.,
+  and  \enc{SÃ¶renson}{Sorenson}, M. (1985).
   The fascination of sand.
   In \emph{A celebration of statistics, The ISI Centenary Volume},
   eds., Atkinson, A. C. and Fienberg, S. E.,

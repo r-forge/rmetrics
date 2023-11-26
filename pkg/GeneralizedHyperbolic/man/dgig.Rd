@@ -79,7 +79,7 @@ ddgig(x, chi = 1, psi = 1, lambda = 1,
    \eqn{\lambda}{lambda}.
 
   The generalized inverse Gaussian distribution is investigated in
-  detail in \enc{Jörgensen}{Jorgensen} (1982).
+  detail in \enc{JÃ¶rgensen}{Jorgensen} (1982).
 
   Use \code{gigChangePars} to convert from the
   \eqn{(\delta,\gamma)}{(delta, gamma)},
@@ -138,7 +138,7 @@ ddgig(x, chi = 1, psi = 1, lambda = 1,
   Gaussian generator. \emph{Commun. Statist. -Simula.}, \bold{18},
   703--710.
 
-  \enc{Jörgensen}{Jorgensen}, B. (1982). \emph{Statistical Properties of
+  \enc{JÃ¶rgensen}{Jorgensen}, B. (1982). \emph{Statistical Properties of
   the Generalized Inverse Gaussian Distribution}. Lecture Notes in
   Statistics, Vol. 9, Springer-Verlag, New York.
 

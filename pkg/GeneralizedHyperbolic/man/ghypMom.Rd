@@ -66,13 +66,13 @@ ghypMom(order, mu = 0, delta = 1, alpha = 1, beta = 0, lambda = 1,
   \code{momChangeAbout}.
 
   The mu moments are obtained from the recursion formula given in Scott,
-  \enc{Würtz}{Wuertz} and Tran (2011).
+  \enc{WÃ¼rtz}{Wuertz} and Tran (2011).
 }
 \value{
   The moment specified.
 }
 \references{
-  Scott, D. J., \enc{Würtz}{Wuertz}, D., Dong, C. and Tran, T. T. (2011)
+  Scott, D. J., \enc{WÃ¼rtz}{Wuertz}, D., Dong, C. and Tran, T. T. (2011)
   Moments of the generalized hyperbolic distribution.
   \emph{Comp. Statistics.}, \bold{26}, 459--476.
 

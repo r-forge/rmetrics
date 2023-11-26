@@ -83,7 +83,7 @@ ddhyperb(x, mu = 0, delta = 1, alpha = 1, beta = 0,
   third kind with order 1.
 
   A succinct description of the hyperbolic distribution is given in
-  Barndorff-Nielsen and \enc{Blæsild}{Blaesild} (1983). Three different
+  Barndorff-Nielsen and \enc{BlÃ¦sild}{Blaesild} (1983). Three different
   possible parameterizations are described in that paper. A fourth
   parameterization is given in Prause (1999). All use location and scale
   parameters \eqn{\mu}{mu} and \eqn{\delta}{delta}. There are two other
@@ -99,7 +99,7 @@ ddhyperb(x, mu = 0, delta = 1, alpha = 1, beta = 0,
   \code{dghyp}. See \code{\link{dghyp}}.
 
   The hyperbolic distribution is a special case of the generalized
-  hyperbolic distribution (Barndorff-Nielsen and \enc{Blæsild}{Blaesild}
+  hyperbolic distribution (Barndorff-Nielsen and \enc{BÃ¦sild}{Blaesild}
   (1983)). The generalized hyperbolic distribution can be represented as
   a particular mixture of the normal distribution where the mixing
   distribution is the generalized inverse Gaussian.  \code{rhyperb} uses
@@ -119,7 +119,7 @@ ddhyperb(x, mu = 0, delta = 1, alpha = 1, beta = 0,
 }
 
 \references{
-  Barndorff-Nielsen, O. and \enc{Blæsild}{Blaesild}, P (1983).
+  Barndorff-Nielsen, O. and \enc{BlÃ¦sild}{Blaesild}, P (1983).
   Hyperbolic distributions.
   In \emph{Encyclopedia of Statistical Sciences},
   eds., Johnson, N. L., Kotz, S. and Read, C. B., Vol. 3,

@@ -122,7 +122,7 @@ hyperbFitStand <- function(x, freq = NULL, paramStart = NULL,
       }
       tryOpt <- try(optim(paramStart, llfunc, NULL, method = "BFGS",
                           control = controlBFGS, ...), silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt, "try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -137,7 +137,7 @@ hyperbFitStand <- function(x, freq = NULL, paramStart = NULL,
       tryOpt <- try(optim(paramStart, llfunc, NULL, method = "Nelder-Mead",
                           control = controlNM, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt, "try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -152,7 +152,7 @@ hyperbFitStand <- function(x, freq = NULL, paramStart = NULL,
       ind <- c(2, 1, 5, 4)
       tryOpt <- try(nlm(llfunc, paramStart, iterlim = maxitNLM, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt, "try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -169,7 +169,7 @@ hyperbFitStand <- function(x, freq = NULL, paramStart = NULL,
                                     lower = c(-Inf,0),
                                     control = controlLBFGSB, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt, "try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -186,7 +186,7 @@ hyperbFitStand <- function(x, freq = NULL, paramStart = NULL,
                            lower = c(-Inf,eps),
                            control = controlNLMINB, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt, "try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -205,7 +205,7 @@ hyperbFitStand <- function(x, freq = NULL, paramStart = NULL,
                                 ui = diag(c(0,1)), ci = c(-1e+99,0),
                                 control = controlCO, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt, "try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt

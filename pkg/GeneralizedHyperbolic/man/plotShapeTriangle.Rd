@@ -9,7 +9,7 @@ Plots the shape triangle for a hyperbolic distribution or generalized
 hyperbolic distribution. For the hyperbolic distribution the parameter
 \eqn{\chi}{chi} is related to the skewness, and the parameter
 \eqn{\xi}{xi} is related to the kurtosis. See Barndorff-Nielsen, O. and
-\enc{Blæsild}{Blaesild}, P. (1981).
+\enc{BlÃ¦sild}{Blaesild}, P. (1981).
 }
 \usage{
 plotShapeTriangle(xgap = 0.025, ygap = 0.0625/2,
@@ -29,7 +29,7 @@ plotShapeTriangle(xgap = 0.025, ygap = 0.0625/2,
 }
 
 \references{
-  Barndorff-Nielsen, O. and \enc{Blæsild}{Blaesild}, P (1981).
+  Barndorff-Nielsen, O. and \enc{BlÃ¦sild}{Blaesild}, P (1981).
   Hyperbolic distributions and ramifications: contributions to theory
   and application.
   In \emph{Statistical Distributions in Scientific Work},

@@ -75,7 +75,7 @@
 }
 \details{
   Possible values of the argument \code{startValues} are the following:
-  \itemize{
+  \describe{
     \item{\code{"LM"}}{Based on fitting linear models to the upper tails
       of the data \code{x} and the inverse of the data \code{1/x}.}
     \item{\code{"GammaIG"}}{Based on fitting gamma and inverse gamma
@@ -93,7 +93,7 @@
   \code{\link{gigFitStart}}.
 
   The three optimisation methods currently available are:
-  \itemize{
+  \describe{
   \item{\code{"BFGS"}}{Uses the quasi-Newton method \code{"BFGS"} as
     documented in \code{\link{optim}}.}
   \item{\code{"Nelder-Mead"}}{Uses an implementation of the Nelder and
@@ -136,7 +136,7 @@
   }
 
 \references{
-  \enc{Jörgensen}{Jorgensen}, B. (1982). \emph{Statistical Properties of
+  \enc{JÃ¶rgensen}{Jorgensen}, B. (1982). \emph{Statistical Properties of
    the Generalized Inverse Gaussian Distribution}. Lecture Notes in
    Statistics, Vol. 9, Springer-Verlag, New York.
 }

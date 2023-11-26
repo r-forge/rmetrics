@@ -5,7 +5,7 @@
 summary.nigFit <- function(object, hessian = FALSE,
                            hessianMethod = "tsHessian", ...) {
 
-  if (! "nigFit" %in% class(object))
+  if (!inherits(object, "nigFit"))
     stop("Object must belong to class nigFit")
   obs <- object$obs
   param <- object$param
@@ -32,7 +32,7 @@ summary.nigFit <- function(object, hessian = FALSE,
 print.summary.nigFit <-
   function(x,digits = max(3, getOption("digits") - 3), ...) {
 
-  if (class(x) != "summary.nigFit")
+  if (!inherits(x, "summary.nigFit"))
     stop("Object must belong to class summary.nigFit")
 
   cat("\nData:     ", x$obsName, "\n")

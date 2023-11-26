@@ -85,7 +85,7 @@
 	\code{"Nelder-Mead"}.
 
   \code{startValues} can be one of the following:
-  \itemize{
+  \describe{
     \item{\code{"US"}}{User-supplied.}
     \item{\code{"FN"}}{A fitted normal distribution.}
     \item{\code{"Cauchy"}}{Based on a fitted Cauchy distribution.}
@@ -96,7 +96,7 @@
   \code{\link{nigFitStart}}.
 
   The three optimisation methods currently available are:
-  \itemize{
+  \describe{
   \item{\code{"BFGS"}}{Uses the quasi-Newton method \code{"BFGS"} as
     documented in \code{\link{optim}}.}
   \item{\code{"Nelder-Mead"}}{Uses an implementation of the Nelder and

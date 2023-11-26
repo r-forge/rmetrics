@@ -48,7 +48,7 @@ gigCalcRange(chi = 1, psi = 1, lambda = 1,
   A two-component vector giving the lower and upper ends of the range.
 }
 \references{
-  \enc{Jörgensen}{Jorgensen}, B. (1982).
+  \enc{JÃ¶rgensen}{Jorgensen}, B. (1982).
   \emph{Statistical Properties of the Generalized Inverse Gaussian
   Distribution}.
   Lecture Notes in Statistics, Vol. 9, Springer-Verlag, New York.

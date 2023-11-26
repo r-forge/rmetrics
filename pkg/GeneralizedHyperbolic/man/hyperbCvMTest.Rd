@@ -5,7 +5,7 @@
 
 \title{Cramer-von~Mises Test of a Hyperbolic Distribution}
 \description{
-  Carry out a \enc{Cr‰mer}{Cramer}-von~Mises test of a hyperbolic
+  Carry out a \enc{Cram√©r}{Cramer}-von~Mises test of a hyperbolic
   distribution where the parameters of the distribution are estimated,
   or calculate the p-value for such a test.
 }
@@ -30,13 +30,13 @@ hyperbCvMTestPValue(delta = 1, alpha = 1, beta = 0, Wsq, digits = 3)
   \item{conf.level}{Confidence level of the the confidence interval.}
   \item{\dots}{Further arguments to be passed to or from methods.}
   \item{Wsq}{Value of the test statistic in the
-    \enc{Cr‰mer}{Cramer}-von~Mises test of the hyperbolic distribution.}
+    \enc{Cram√©r}{Cramer}-von~Mises test of the hyperbolic distribution.}
   \item{digits}{Number of decimal places for p-value.}
   \item{prefix}{Character(s) to be printed before the description of the
     test.}
 }
 \details{
-  \code{hyperbCvMTest} carries out a \enc{Cr‰mer}{Cramer}-von~Mises
+  \code{hyperbCvMTest} carries out a \enc{Cram√©r}{Cramer}-von~Mises
   goodness-of-fit test of the hyperbolic distribution. The parameter
   \code{param} must be given in the \eqn{(\alpha, \beta)}{(alpha, beta)}
   parameterization.
@@ -52,7 +52,7 @@ hyperbCvMTestPValue(delta = 1, alpha = 1, beta = 0, Wsq, digits = 3)
 
   \code{print.hyperbCvMTest} prints the output
   from the
-  \enc{Cr‰mer}{Cramer}-von~Mises goodness-of-fit test for
+  \enc{Cram√©r}{Cramer}-von~Mises goodness-of-fit test for
   the hyperbolic distribution in very similar format to that provided by
   \code{print.htest}. The only reason for having a special print method
   is that p-values can be given as less than some value or greater than
@@ -63,7 +63,7 @@ hyperbCvMTestPValue(delta = 1, alpha = 1, beta = 0, Wsq, digits = 3)
     containing the following components:
   \item{statistic}{The value of the test statistic.}
   \item{method}{A character string with the value
-    \dQuote{\enc{Cr‰mer}{Cramer}-von~Mises test of hyperbolic
+    \dQuote{\enc{Cram√©r}{Cramer}-von~Mises test of hyperbolic
       distribution}.}
   \item{data.name}{A character string giving the name(s) of the data.}
   \item{parameter}{The value of the parameter param}

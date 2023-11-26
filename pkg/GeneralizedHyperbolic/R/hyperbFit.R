@@ -84,7 +84,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
       tryOpt <- try(optim(paramStart, llfunc, NULL, method = "BFGS",
                          control = controlBFGS, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt,"try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -99,7 +99,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
       tryOpt <- try(optim(paramStart, llfunc, NULL, method = "Nelder-Mead",
                           control = controlNM, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt,"try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -114,7 +114,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
       ind <- c(2, 1, 5, 4)
       tryOpt <- try(nlm(llfunc, paramStart, iterlim = maxitNLM, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt,"try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -132,7 +132,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
                           lower = c(-Inf,0,-Inf,0),
                           control = controlLBFGSB, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt,"try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -150,7 +150,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
                            lower = c(-Inf,eps,-Inf,eps),
                            control = controlNLMINB, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt,"try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -169,7 +169,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
                            ui = diag(c(0,1,0,1)), ci = c(-1e+99,0,-1e+99,0),
                            control = controlCO, ...),
                     silent = silent)
-      if (class(tryOpt) == "try-error"){
+      if (inherits(tryOpt,"try-error")){
         errMessage <- unclass(tryOpt)
       } else {
         optOut <- tryOpt
@@ -235,7 +235,7 @@ hyperbFit <- function(x, freq = NULL, paramStart = NULL,
 print.hyperbFit <-
   function(x, digits = max(3, getOption("digits") - 3), ...) {
 
-  if (! "hyperbFit" %in% class(x))
+  if (!inherits(x, "hyperbFit"))
     stop("Object must belong to class hyperbFit")
 
   cat("\nData:     ", x$obsName, "\n")
@@ -260,7 +260,7 @@ plot.hyperbFit <- function(x, which = 1:4,
                            ask = prod(par("mfcol")) < length(which) &
                                  dev.interactive(), ...) {
 
-  if (! "hyperbFit" %in% class(x))
+  if (!inherits(x, "hyperbFit"))
     stop("Object must belong to class hyperbFit")
 
   if (ask) {

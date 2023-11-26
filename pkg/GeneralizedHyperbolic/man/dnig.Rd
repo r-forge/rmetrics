@@ -85,7 +85,7 @@ ddnig(x, mu = 0, delta = 1, alpha = 1, beta = 0,
   third kind with order 1.
 
   A succinct description of the normal inverse Gaussian distribution is
-  given in {Paolella} (2007). Because both of the normal inverse Gaussian
+  given in Paolella(2007). Because both of the normal inverse Gaussian
   distribution and the hyperbolic distribution are special cases of the
   generalized hyperbolic distribution (with different values of
   \eqn{\lambda}{lambda}), the normal inverse Gaussian distribution has
@@ -151,7 +151,7 @@ ddnig(x, mu = 0, delta = 1, alpha = 1, beta = 0,
  }
 
 \references{
-  Barndorff-Nielsen, O. and \enc{Blæsild}{Blaesild}, P (1983).
+  Barndorff-Nielsen, O. and \enc{BlÃ¦sild}{Blaesild}, P (1983).
   Hyperbolic distributions.
   In \emph{Encyclopedia of Statistical Sciences},
   eds., Johnson, N. L., Kotz, S. and Read, C. B., Vol. 3,

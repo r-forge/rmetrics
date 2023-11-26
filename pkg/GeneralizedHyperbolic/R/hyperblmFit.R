@@ -113,7 +113,7 @@ hyperblmFit <- function(x, y, paramStart = NULL, offset = NULL,
                 tryOpt <- try(optim(coef, sOnellfunc, NULL, method = "BFGS",
                                     control = controlBFGS, ...),
                               silent = silent)
-                if (class(tryOpt) == "try-error"){
+                if (inherits(tryOpt, "try-error")){
                     errMessage <- unclass(tryOpt)
                 } else {
                     optOutCoef <- tryOpt
@@ -124,7 +124,7 @@ hyperblmFit <- function(x, y, paramStart = NULL, offset = NULL,
                                     method = "Nelder-Mead",
                                     control = controlNM, ...),
                               silent = silent)
-                if (class(tryOpt) == "try-error"){
+                if (inherits(tryOpt, "try-error")){
                     errMessage <- unclass(tryOpt)
                 } else {
                     optOutCoef <- tryOpt
@@ -136,7 +136,7 @@ hyperblmFit <- function(x, y, paramStart = NULL, offset = NULL,
                 tryOpt <- try(nlm(sOnellfunc, coef,
                                   iterlim = maxitNLM, ...),
                               silent = silent)
-                if (class(tryOpt) == "try-error"){
+                if (inherits(tryOpt, "try-error")){
                     errMessage <- unclass(tryOpt)
                 } else {
                     optOutCoef <- tryOpt
@@ -160,7 +160,7 @@ hyperblmFit <- function(x, y, paramStart = NULL, offset = NULL,
                                                control = controlCO, ...),
                           silent = silent)
 
-            if (class(tryOpt) == "try-error"){
+            if (inherits(tryOpt, "try-error")){
                 errMessage <- unclass(tryOpt)
             } else {
                 optOut <- tryOpt

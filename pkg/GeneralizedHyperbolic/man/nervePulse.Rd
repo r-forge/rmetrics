@@ -27,7 +27,7 @@
   \emph{J. of Physiology},
   \bold{117}, 109--128.
 
-  \enc{Jörgensen}{Jorgensen}, B. (1982)
+  \enc{JÃ¶rgensen}{Jorgensen}, B. (1982)
   Statistical Properties of the Generalized Inverse Gaussian Distribution.
   \emph{Lecture Notes in Statistics, Vol. 9, Springer-Verlag, New York}
 }

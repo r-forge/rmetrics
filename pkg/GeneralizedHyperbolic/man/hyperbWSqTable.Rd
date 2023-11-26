@@ -1,5 +1,5 @@
 \name{hyperbWSqTable}
-\title{Percentage Points for the Cramer-von Mises Test of the Hyperbolic Distribution}
+\title{Percentage Points for the \enc{Cram'er}{Cramer}-von Mises Test of the Hyperbolic Distribution}
 \docType{data}
 \alias{hyperbWSqTable}
 %% Used to be "available" via data() -- now saved in ../R/sysdata.rda
@@ -7,7 +7,7 @@
 \description{
   This gives Table 5 of Puig & Stephens (2001) which is used for testing
   the goodness-of-fit of the hyperbolic distribution using the
-  \enc{Cr‰mer}{Cramer}-von~Mises test.  It is for internal use by
+  \enc{Cram√©r}{Cramer}-von~Mises test.  It is for internal use by
   \code{\link{hyperbCvMTest}} and \code{\link{hyperbCvMTestPValue}} only and is not
   intended to be accessed by the user.  It is loaded automatically when
   the package \pkg{HyperbolicDist} is invoked.

@@ -1,7 +1,7 @@
 summary.hyperblm <- function(object, hessian = FALSE,
                              nboots = 1000, ...) {
 
-    if (! "hyperblm" %in% class(object))
+    if (!inherits(object, "hyperblm"))
         stop("Object must be of class hyperblm")
     x <- object$xMatrix
     y <- as.numeric(object$yVec)
@@ -24,7 +24,7 @@ summary.hyperblm <- function(object, hessian = FALSE,
                                       startStarts = object$startStarts,
                                       paramStart = object$paramStart, ...),
                           silent = TRUE)
-            if (class(tryOpt) == "try-error"){
+            if (inherits(tryOpt, "try-error")){
                 bCoef[i, ] <- rep(NA, n)
             } else {
                 bCoef[i, ] <- as.numeric(fittedresult$coef)
@@ -61,7 +61,7 @@ print.summary.hyperblm <-
     function(x, digits = max(3, getOption("digits") - 3), ...)
 {
 
-    if (class(x) != "summary.hyperblm")
+    if (!inherits(x, "summary.hyperblm"))
         stop("Object must belong to class summary.hyperblm")
     cat("\nCall:\n", deparse(x$call), "\n", sep = "")
 

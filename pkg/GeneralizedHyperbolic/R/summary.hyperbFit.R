@@ -5,7 +5,7 @@
 summary.hyperbFit <- function(object, hessian = FALSE,
                               hessianMethod = "exact", ...) {
 
-  if (! "hyperbFit" %in% class(object))
+  if (!inherits(object, "hyperbFit"))
     stop("Object must belong to class hyperbFit")
   obs <- object$obs
   param <- object$param
@@ -32,7 +32,7 @@ summary.hyperbFit <- function(object, hessian = FALSE,
 print.summary.hyperbFit <-
   function(x, digits = max(3, getOption("digits") - 3), ...) {
 
-  if (class(x) != "summary.hyperbFit")
+  if (!inherits(x, "summary.hyperbFit"))
     stop("Object must belong to class summary.hyperbFit")
 
   cat("\nData:     ", x$obsName, "\n")

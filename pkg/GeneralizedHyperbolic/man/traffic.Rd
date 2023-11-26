@@ -16,7 +16,7 @@
   \emph{Sankhya: The Indian Journal of Statistics},
   \bold{Series A, Vol. 25, No. 3}, 245--254.
 
-  \enc{Jörgensen}{Jorgensen}, B. (1982)
+  \enc{JÃ¶rgensen}{Jorgensen}, B. (1982)
   Statistical Properties of the Generalized Inverse Gaussian Distribution.
   \emph{Lecture Notes in Statistics, Vol. 9, Springer-Verlag, New York}
 }
