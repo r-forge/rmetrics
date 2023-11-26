@@ -66,7 +66,7 @@ nlKurt(mu = 0, sigma = 1, alpha = 1, beta = 1,
 
   William J. Reed. (2006) The Normal-Laplace Distribution and Its
   Relatives. In \emph{Advances in Distribution Theory, Order Statistics
-  and Inference}, pp. 61--74.  \enc{Birkh‰user}{Birkhauser},  Boston.
+  and Inference}, pp. 61--74.  \enc{Birkh√§user}{Birkhauser},  Boston.
 
 }
 

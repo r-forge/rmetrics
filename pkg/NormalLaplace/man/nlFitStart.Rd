@@ -33,7 +33,7 @@
 
 \details{
   Possible values of the argument \code{startValues} are the following:
-  \itemize{
+  \describe{
     \item{\code{"US"}}{User-supplied.}
     \item{\code{"MoM"}}{Method of moments.}
   }

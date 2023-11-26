@@ -1,4 +1,3 @@
-<<<<<<< .mine
 ################################################
 ### Imports
 ################################################
@@ -8,10 +7,9 @@ importFrom("graphics", "abline", "curve", "hist", "hist.default",
 importFrom("stats", "dnorm", "na.omit", "nlm", "nlminb", "optim",
            "pnorm", "ppoints", "rnorm", "splinefun", "uniroot", "var")
 
-||||||| .r5846
 exportPattern("nl")
 export(millsR)
-=======
+
 importFrom("grDevices", dev.interactive)
 
 importFrom("graphics", abline, curve, hist, hist.default, par, plot, title)
@@ -32,7 +30,7 @@ importFrom("GeneralizedHyperbolic", rskewlap)
 
 exportPattern("nl") ## "Pattern" FIXME: rather not the S3 methods below
 export(millsR)
->>>>>>> .r6126
+
 
 
 ################################################

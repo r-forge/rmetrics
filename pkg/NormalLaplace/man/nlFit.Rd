@@ -88,7 +88,7 @@
     \code{startValues}, see \code{\link{nlFitStart}}.
 
     Three optimisation methods are available for use:
-    \itemize{
+    \describe{
       \item{\code{"BFGS"}}{Uses the quasi-Newton method \code{"BFGS"} as
         documented in \code{\link{optim}}.}
       \item{\code{"L-BFGS-B"}}{Uses the constrained method \code{"L-BFGS-B"} as

@@ -118,7 +118,7 @@ nlFit <- function(x, freq = NULL, breaks = "FD", paramStart = NULL,
 
 print.nlFit <- function(x, digits = max(3, getOption("digits") - 3), ...) {
 
-  if (! "nlFit" %in% class(x))
+  if (!inherits(x, "nlFit"))
     stop("Object must belong to class nlFit")
 
   cat("\nData:     ", x$obsName, "\n")

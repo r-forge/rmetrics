@@ -1,3 +1,8 @@
+2023-11-26    <d.scott@auckland.ac.nz>
+
+	* .Rd files NormalLaplace.Rd, NormalLaplace-package.Rd, nlCheckPars.Rd,
+	and nlMeanVar.Rd changed to appease CRAN
+
 2018-11-26    <d.scott@auckland.ac.nz>
 
 	* Version 0.2-0 fixed description and namespace to appease CRAN

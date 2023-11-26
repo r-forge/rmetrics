@@ -1,6 +1,6 @@
 summary.nlFit <- function(object, ...) {
 
-  if (! "nlFit" %in% class(object))
+  if (!inherits(object, "nlFit"))
     stop("Object must belong to class nlFit")
 
   if (!is.null(object$hessian)) {
@@ -18,7 +18,7 @@ print.summary.nlFit <- function(x,
                                 digits = max(3, getOption("digits") - 3),
                                 ...) {
 
-  if (class(x) != "summary.nlFit")
+  if (!inherits(x, "summary.nlFit"))
     stop("Object must belong to class summary.nlFit")
 
   cat("\nData:     ", x$obsName, "\n")
