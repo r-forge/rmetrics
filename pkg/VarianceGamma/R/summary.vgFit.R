@@ -1,6 +1,6 @@
 summary.vgFit <- function (object, ...)
 {
-    if (!class(object) == "vgFit") {
+    if (!inherits(object,"vgFit")) {
         stop("Object must belong to class vgFit")
     }
     if (!is.null(object$hessian)) {
@@ -17,7 +17,7 @@ summary.vgFit <- function (object, ...)
 print.summary.vgFit <- function (x, digits = max(3, getOption("digits") - 3),
                                  ...)
 {
-  if (!class(x) == "summary.vgFit") {
+  if (!inherits(x,"summary.vgFit")) {
       stop("Object must belong to class summary.vgFit")
     }
     cat("\nData:     ", x$xName, "\n")

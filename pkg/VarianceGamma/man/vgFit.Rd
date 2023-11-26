@@ -72,7 +72,7 @@
 	\code{"Nelder-Mead"}.
 
   \code{startValues} can be one of the following:
-  \itemize{
+  \describe{
     \item{\code{"US"}}{User-supplied.}
     \item{\code{"SL"}}{Based on a fitted skew-Laplace distribution.}
     \item{\code{"MoM"}}{Method of moments.}
@@ -82,7 +82,7 @@
   \code{\link{vgFitStart}}.
 
   The three optimisation methods currently available are:
-  \itemize{
+  \describe{
   \item{\code{"BFGS"}}{Uses the quasi-Newton method \code{"BFGS"} as
     documented in \code{\link{optim}}.}
   \item{\code{"Nelder-Mead"}}{Uses an implementation of the Nelder and

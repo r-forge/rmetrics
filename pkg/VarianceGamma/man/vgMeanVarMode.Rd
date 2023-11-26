@@ -1,4 +1,3 @@
-% --- Source file: vgMeanVarMode.Rd ---
 \name{Variance Gamma Mean, Variance, Skewness, Kurtosis and Mode}
 \alias{vgMean}
 \alias{vgVar}
@@ -48,7 +47,7 @@ vgMode(vgC = 0, sigma = 1, theta = 0, nu = 1, param = c(vgC,sigma,theta,nu))
 \references{
   Seneta, E. (2004). Fitting the variance-gamma model to financial data.
   \emph{J. Appl. Prob.}, 41A:177--187.
-  Kotz, S, Kozubowski, T. J., and \enc{Podgórski}{Podgorski},
+  Kotz, S, Kozubowski, T. J., and \enc{PodgÃ³rski}{Podgorski},
   K. (2001). 
   The Laplace Distribution and Generalizations. \emph{Birkhauser},
   Boston, 349 p.          

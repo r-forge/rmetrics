@@ -83,7 +83,7 @@
 
   This formula is developed from the mu moments formula of the
   generalized hyperbolic distribution given in Scott,
-  \enc{Würtz}{Wuertz} and Tran (2008).  Note that the part in \code{[]}
+  \enc{WÃ¼rtz}{Wuertz} and Tran (2008).  Note that the part in \code{[]}
   of this equation is actually equivalent to the formula of raw moments
   of the gamma distribution. So the function calls \code{gammaRawMom} in
   \code{GeneralizedHyperbolic} package when implementing the computations.
@@ -98,7 +98,7 @@
   Paolella, Marc S. (2007)
   Intermediate Probability: A Computational Approach,
   Chichester: Wiley
-  Scott, D. J., \enc{Würtz}{Wuertz}, D. and Tran, T. T. (2008)
+  Scott, D. J., \enc{WÃ¼rtz}{Wuertz}, D. and Tran, T. T. (2008)
   Moments of the Generalized Hyperbolic Distribution. Preprint.
 }
 

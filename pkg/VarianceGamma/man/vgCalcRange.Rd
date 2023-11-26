@@ -1,4 +1,3 @@
-% --- Source file: vgCalcRange.Rd ---
 \name{vgCalcRange}
 \alias{vgCalcRange}
 \title{Range of a Variance Gamma Distribution}
@@ -59,7 +58,7 @@
 \references{
   Seneta, E. (2004). Fitting the variance-gamma model to financial data.
   \emph{J. Appl. Prob.}, 41A:177--187.
-  Kotz, S, Kozubowski, T. J., and \enc{Podgórski}{Podgorski},
+  Kotz, S, Kozubowski, T. J., and \enc{PodgÃ³rski}{Podgorski},
   K. (2001). 
   The Laplace Distribution and Generalizations. \emph{Birkhauser},
   Boston, 349 p.

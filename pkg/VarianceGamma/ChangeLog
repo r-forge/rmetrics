@@ -1,3 +1,13 @@
+2023-11-26    <d.scott@auckland.ac.nz>
+
+	* Changed encodings of some .Rd files to UTF-8 at the request of CRAN
+
+	* vg.Fit and summary.vgFit changed checking of class to use inherits
+
+	* vgParam.Rd changed to \docType{data}
+
+	* vgFit.Rd and vgFitStart.Rd changed itemize to describe 
+
 2021-05-21    <d.scott@auckland.ac.nz>
 
 	* Changed plot.vgFit to better display density and log density
@@ -41,7 +51,7 @@
 	vgParam.R, DESCRIPTION, NAMESPACE, dvg.R, summary.vgFit.R,
 	vgCalcRange.R, vgChangePars.R, vgChangePars.R, vgCheckPars.R,
 	vgFit.R, vgFitStart.R, vgMeanVarMode.R (was vgMomentsAndMode),
-	vgPlots.R
+ vgFit.Rd	vgPlots.R
 
 	still need to check man files
 

@@ -80,7 +80,7 @@ vgFit <- function (x, freq = NULL, breaks = NULL, paramStart = NULL,
 
 print.vgFit <- function (x, digits = max(3, getOption("digits") - 3), ...)
 {
-  if (!class(x) == "vgFit") {
+  if (!inherits(x,"vgFit")) {
     stop("Object must belong to class vgFit")
   }
   cat("\nData:     ", x$obsName, "\n")
@@ -101,8 +101,9 @@ plot.vgFit <- function (x, which = 1:4,
                         ask = prod(par("mfcol")) < length(which) &&
                         dev.interactive(), ...)
 {
-    if (!class(x) == "vgFit")
-        stop("Object must belong to class vgFit")
+    if (!inherits(x,"vgFit")){
+      stop("Object must belong to class vgFit")
+    }
     if (ask) {
         op <- par(ask = TRUE)
         on.exit(par(op))

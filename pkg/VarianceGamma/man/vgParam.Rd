@@ -1,9 +1,9 @@
-% --- Source file: vgParam.Rd ---
 \name{vgParam}
 \alias{vgSmallShape}
 \alias{vgLargeShape}
 \alias{vgSmallParam}
 \alias{vgLargeParam}
+\docType{data}
 
 \title{Parameter Sets for Variance Gamma Distribution}
 
@@ -28,10 +28,7 @@
 }
 
 \usage{
-  vgSmallShape
-  vgLargeShape
-  vgSmallParam
-  vgLargeParam
+  data(vgParam)
 }
 
 \format{
