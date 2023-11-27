@@ -233,6 +233,7 @@ export(
     JPKokuminNoKyujitu,
     JPMarineDay,
     JPMidoriNoHi,
+    JPMountainDay, # new 2023-11-27
     JPNatFoundationDay,
     JPNationHoliday,
     JPNationalCultureDay,

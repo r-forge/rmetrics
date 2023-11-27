@@ -1,5 +1,14 @@
 # timeDate 4022.109
 
+- major overhaul and update of the Japan's holidays. Previously fixed dates were
+  returned for each holiday. Now moving holidays are calculated (e.g., second
+  month of January) and some exceptions handled (like holidays moved due to the
+  Olympics in 2020 and 2021). Historical changes are (partially) taken into
+  account. The relatively recently introduced 'Mountain Day' is now included.
+
+  Thanks to Sylvie Lachaud for reporting the issues with Japan's holiday, as
+  well as providing current correct definitions and extensive list of links.
+
 - modified the 'timeDate' method for `summary` to return an object from class
   "timeDate_summary" (rather than print directly) and created a print method for
   the latter.

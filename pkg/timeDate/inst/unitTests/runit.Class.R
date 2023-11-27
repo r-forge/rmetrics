@@ -611,7 +611,9 @@ function()
     # summary() Function
     DT = timeCalendar(2006)
     SUMMARY = summary(DT)
-    checkIdentical(SUMMARY, DT)
+    ## GNB: timeDate (>= 4022.109) summary returns an object from S3 class
+    ##      'timeDate_summary'
+    ## checkIdentical(SUMMARY, DT)
 
     # format() Function
     FORMAT = format(DT)[7]

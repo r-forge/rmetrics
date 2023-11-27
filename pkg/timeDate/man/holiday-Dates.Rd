@@ -112,6 +112,7 @@
 \alias{JPUmiNoHi}
 \alias{JPRespectForTheAgedDay}
 \alias{JPKeirouNOhi}
+\alias{JPMountainDay} % 2023-11-27 new
 \alias{JPAutumnalEquinox}
 \alias{JPShuubunNoHi}
 \alias{JPHealthandSportsDay}
@@ -247,6 +248,7 @@ JPMarineDay(year = getRmetricsOptions("currentYear"))
 JPUmiNoHi(year = getRmetricsOptions("currentYear"))
 JPRespectForTheAgedDay(year = getRmetricsOptions("currentYear"))
 JPKeirouNOhi(year = getRmetricsOptions("currentYear"))
+JPMountainDay(year = getRmetricsOptions("currentYear"))
 JPAutumnalEquinox(year = getRmetricsOptions("currentYear"))
 JPShuubunNoHi(year = getRmetricsOptions("currentYear"))
 JPHealthandSportsDay(year = getRmetricsOptions("currentYear"))

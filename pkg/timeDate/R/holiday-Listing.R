@@ -22,10 +22,6 @@
 #  .holidayList              Prints all public and ecclestical holidays
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 listHolidays <-
     function(pattern = ".*")
 {
@@ -145,6 +141,7 @@ listHolidays <-
         "JPUmiNoHi",
         "JPRespectForTheAgedDay",
         "JPKeirouNOhi",
+        "JPMountainDay",      # 2023-11-27 new   
         "JPAutumnalEquinox",
         "JPShuubunNoHi",
         "JPHealthandSportsDay",
@@ -165,7 +162,3 @@ listHolidays <-
 }
 
 ################################################################################
-
-
-
-

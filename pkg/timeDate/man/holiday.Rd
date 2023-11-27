@@ -138,7 +138,7 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
     JPBunkaNoHi, JPThanksgivingDay, JPKinrouKanshaNohi, 
     JPKinrou-kansha-no-hi, JPEmperorsBirthday,
     JPTennou-tanjyou-bi, JPTennou-tanjyou-bi. \cr
-    
+    JPMountainDay
 }
 
 \examples{

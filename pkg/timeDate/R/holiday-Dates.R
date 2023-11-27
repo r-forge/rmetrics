@@ -14,6 +14,9 @@
 # Free Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 # MA  02111-1307  USA
 
+## 2023-11-27
+##    GNB: reworked the Japan's holidays as they all had set to fixed dates.
+##         and also to reflect changes in recent decades.
 
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
@@ -861,14 +864,10 @@ function(year = getRmetricsOptions("currentYear")) {
 
 
 # ------------------------------------------------------------------------------
+# Japan
+# ---------------------------------------------------------------------------- #
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPVernalEquinox <-
-function(year = getRmetricsOptions("currentYear"))
-{
+JPVernalEquinox <- function(year = getRmetricsOptions("currentYear")) {
     # Author:
     #   Parlamis Franklin wrote:
     #   It's me again, with Japanese calendar minutiae I'm sure you've all
@@ -906,289 +905,184 @@ function(year = getRmetricsOptions("currentYear"))
     trunc(timeDate(as.character(Vernal.Equinox(year)), FinCenter = "Tokyo"))
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPNewYearsDay =
-function(year = getRmetricsOptions("currentYear")) {
+JPNewYearsDay <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0101
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPGantan =
-function(year = getRmetricsOptions("currentYear")) {
+JPGantan <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0101
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPBankHolidayJan2 =
-function(year = getRmetricsOptions("currentYear")) {
+JPBankHolidayJan2 <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0102
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPBankHolidayJan3 =
-function(year = getRmetricsOptions("currentYear")) {
+JPBankHolidayJan3 <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0103
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPComingOfAgeDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0115
-    timeDate(as.character(ans)) }
+## GNB - fixed to give 2nd Monday of January
+##       Also, combined JPSeijinNoHi and JPComingOfAgeDay, since they seem to
+##       be the same thing.
+JPSeijinNoHi <-
+JPComingOfAgeDay <- function(year = getRmetricsOptions("currentYear")) {
+    ans = .nth.of.nday(year, 1, 1, 2) # 2023-11-27 was: year*10000 + 0115
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPSeijinNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0115
-    timeDate(as.character(ans)) }
+JPKenkokuKinenNoHi <-
+JPNatFoundationDay <- function(year = getRmetricsOptions("currentYear")) {
+    ans =year*10000 + 0211   # GNB: ok, fixed date
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPNatFoundationDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans =year*10000 + 0211
-    timeDate(as.character(ans)) }
+JPMidoriNoHi <-
+JPGreeneryDay <- function(year = getRmetricsOptions("currentYear")) {
+    ans <- year*10000 + 0504 # year >= 2007
+    if(any(year < 2007)) {
+        ans[year < 2007] <- year*10000 + 0429
+        ans[year < 1989] <- NA # but it was Emperor's Birthday back then
+    }
+    
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPKenkokuKinenNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0211
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPGreeneryDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0429
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPMidoriNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0429
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPConstitutionDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0503
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPKenpouKinenBi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0503
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPNationHoliday =
-function(year = getRmetricsOptions("currentYear")) {
+## https://en.wikipedia.org/wiki/Golden_Week_(Japan)
+##  Citizen's Holiday (国民の休日, Kokumin no Kyūjitsu) is a generic term for any official
+##  holiday. Until 2006, 4 May was an unnamed but official holiday because of a rule that
+##  converts any day between two holidays into a new holiday.
+JPKokuminNoKyujitu <-
+JPNationHoliday <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0504
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPKokuminNoKyujitu =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0504
-    timeDate(as.character(ans)) }
+        
+JPKenpouKinenBi <-
+JPConstitutionDay <- function(year = getRmetricsOptions("currentYear")) {
+    ans = year*10000 + 0503
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPChildrensDay =
-function(year = getRmetricsOptions("currentYear")) {
+JPKodomoNoHi <-
+JPChildrensDay <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0505
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPKodomoNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0505
-    timeDate(as.character(ans)) }
+## https://en.wikipedia.org/wiki/Marine_Day
+## 2023 date: July 17
+## 2022 date: July 18
+## 2024 date: July 15
+## 2025 date: July 21
+JPUmiNoHi <-
+JPMarineDay <- function(year = getRmetricsOptions("currentYear")) {
+    ## GNB was: ans = year*10000 + 0720
+    ans = .nth.of.nday(year, 7, 1, 3) # from 2003
+    ans[year < 2003] <- year*10000 + 0720
+    ans[year < 1996] <- NA
+    if(any(year %in% c(2020, 2021))) {
+        ans[year == 2020] <- year*10000 + 0723  # Olympics
+        ans[year == 2021] <- year*10000 + 0722
+    }
+    
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPMarineDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0720
-    timeDate(as.character(ans)) }
+JPKeirouNOhi <-
+JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear")) {
+    ## GNB was: ans = year*10000 + 0915
+    ## https://en.wikipedia.org/wiki/Respect_for_the_Aged_Day
+    ans = .nth.of.nday(year, 9, 1, 3)
+    if(any(year < 2003)) {
+        ans[year < 2003] = year*10000 + 0915
+        if(any(year < 1966))
+            ans[year < 1966] <- NA
+    }
+    
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPUmiNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0720
-    timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPRespectForTheAgedDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0915
-    timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPKeirouNOhi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0915
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPAutumnalEquinox =
-function(year = getRmetricsOptions("currentYear")) {
+## GNB: TODO: this cannot be constant, see above for the vernal equinox.
+JPShuubunNoHi <-
+JPAutumnalEquinox <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0924
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPShuubunNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans =year*10000 + 0924
-    timeDate(as.character(ans)) }
+JPTaiikuNoHi <- 
+JPHealthandSportsDay <- function(year = getRmetricsOptions("currentYear")) {
+    ## GNB was: ans = year*10000 + 1010
+    ## https://en.wikipedia.org/wiki/Sports_Day_(Japan)
+    ans = .nth.of.nday(year, 10, 1, 2)
+    ans[year == 2020] <-  year*10000 + 0724  # Olympics openning, but that was cancelled.
+    ans[year == 2021] <-  year*10000 + 0723  # Olympics openning, but that was cancelled.
+    if(any(year < 2000)) {
+        ans[1966 <= year & year <= 1999] <-  year*10000 + 1010
+    }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPHealthandSportsDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1010
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPTaiikuNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1010
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPNationalCultureDay =
-function(year = getRmetricsOptions("currentYear")) {
+JPBunkaNoHi <-
+JPNationalCultureDay <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1103
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPBunkaNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1103
-    timeDate(as.character(ans)) }
+JPKinrouKanshaNoHi <-
+JPThanksgivingDay <- function(year = getRmetricsOptions("currentYear")) {
+    ## https://en.wikipedia.org/wiki/Labor_Thanksgiving_Day
+    ans = year*10000 + 1123   ## TODO: if on Sunday move to Monday  !!!
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPThanksgivingDay =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1123
-    timeDate(as.character(ans)) }
+## GNB: none in 2019;
+##   2020+ - 23 Feb (Naruhito), but seems that if its on Sunday (on the weekend?), it is moved to Monday.
+##       for 2025 - 24 Feb,
+##                  according to https://www.officeholidays.com/holidays/japan/the-emperors-birthday
+##   1989-2018     23 Dec (Akihito)
+##   1926(7?)-1988 29 April (stil public holiday - Greenery Day since 1989, Showa day since 2007.
+##                 https://en.wikipedia.org/wiki/The_Emperor%27s_Birthday
+JPTennouTanjyouBi  <-
+JPEmperorsBirthday <- function(year = getRmetricsOptions("currentYear")) {
+    ## GNB was: ans = year*10000 + 1123
+    ans = year*10000 + 0223 # Naruhito
+    if(any(year < 2020)){
+        ans[year == 2019] <- NA
+        ans[1989 <= year & year <= 2018] <- year*10000 + 1223 # Akihito
+        ans[1927 <= year & year <= 1988] <- year*10000 + 0429 # Showa
+        ans[year <  1927] <- NA                               # TODO ?
+    }
+    
+    timeDate(as.character(ans))
+}
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPKinrouKanshaNoHi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1123
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPEmperorsBirthday =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1123
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPTennouTanjyouBi =
-function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 1123
-    timeDate(as.character(ans)) }
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-JPBankHolidayDec31 =
-function(year = getRmetricsOptions("currentYear")) {
+## TODO: check
+JPBankHolidayDec31 <- function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1231
-    timeDate(as.character(ans)) }
+    timeDate(as.character(ans))
+}
 
+## GNB new 2023-11-27 its absence reported by Sylvie Lachaud
+## Moutain day 11/08/2023 : is it missing in your list ?
+## https://en.wikipedia.org/wiki/Mountain_Day#Mountain_Day_in_Japan
+JPMountainDay <- function(year = getRmetricsOptions("currentYear")) {
+    ans <- year*10000 + 0811
+    ans[year == 2020] <-  year*10000 + 0810  # Olympics openning, but that was cancelled.
+    ans[year == 2021] <-  year*10000 + 0809  # Olympics openning, but that was cancelled.
+    if(any(year < 2016))
+        ans[year < 2016] <- NA
+    timeDate(as.character(ans))
+}
 
 ################################################################################
 ## GNB: compatibility
 
 GBMayDay <- GBEarlyMayBankHoliday
 GBBankHoliday <- GBSpringBankHoliday
-
