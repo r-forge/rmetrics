@@ -1,3 +1,8 @@
+# fImport 4021.86.9000
+
+- fixed 'Lost braces; missing escapes or markup?' NOTE from CRAN.
+
+
 # fImport 4021.86
 
 - new maintainer: Georgi N. Boshnakov.
