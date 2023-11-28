@@ -225,7 +225,8 @@ export(
     JPGantan,
     JPGreeneryDay,
     JPHealthandSportsDay,
-    JPKeirouNOhi,
+    JPKeirouNOhi,  # 2023-11-27 deprecated
+    JPKeirouNoHi,  # 2023-11-27 new, replaces the above
     JPKenkokuKinenNoHi,
     JPKenpouKinenBi,
     JPKinrouKanshaNoHi,

@@ -993,7 +993,13 @@ JPMarineDay <- function(year = getRmetricsOptions("currentYear")) {
     timeDate(as.character(ans))
 }
 
-JPKeirouNOhi <-
+## 2023-11-27 - deprecated;
+JPKeirouNOhi <- function(year = getRmetricsOptions("currentYear")) {
+    .Deprecated("JPKeirouNoHi")
+    JPKeirouNoHi(year)
+}
+
+JPKeirouNoHi <-
 JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear")) {
     ## GNB was: ans = year*10000 + 0915
     ## https://en.wikipedia.org/wiki/Respect_for_the_Aged_Day
@@ -1001,7 +1007,7 @@ JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear")) {
     if(any(year < 2003)) {
         ans[year < 2003] = year*10000 + 0915
         if(any(year < 1966))
-            ans[year < 1966] <- NA
+            ans[year < 1966] <- NA   # TODO: do others return NA? or simply empty timeDate?
     }
     
     timeDate(as.character(ans))
@@ -1010,9 +1016,13 @@ JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear")) {
 
 
 ## GNB: TODO: this cannot be constant, see above for the vernal equinox.
+##
+##      for now, changing it to 23 Sep and correct for known dates when it is on other dates,
+##      usually 22 Sep https://en.wikipedia.org/wiki/Autumnal_Equinox_Day
 JPShuubunNoHi <-
 JPAutumnalEquinox <- function(year = getRmetricsOptions("currentYear")) {
-    ans = year*10000 + 0924
+    ans = year*10000 + 0923  # was + 0924 but this is rare
+    on22nd <- c(2016, 2024,2028) # incomplete; after 2024 predicted
     timeDate(as.character(ans))
 }
 

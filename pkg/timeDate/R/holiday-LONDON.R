@@ -95,7 +95,7 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
             ##
             ##      The 1971 act declares 27th Dec to be bank holiday if 25th or
             ##      26th Dec is Sat or Sun but doesn't make provisions for 28th
-            ##      Dec. But 28th Dec seems to have been been declared BH by
+            ##      Dec. But 28th Dec seems to have been declared BH by
             ##      Royal proclamations in all years ever since. ("seems"
             ##      because I haven't seen the proclamations and am not sure if
             ##      the calendars online for 40-50 years ago do not compute them

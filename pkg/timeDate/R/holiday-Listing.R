@@ -140,7 +140,8 @@ listHolidays <-
         "JPMarineDay",
         "JPUmiNoHi",
         "JPRespectForTheAgedDay",
-        "JPKeirouNOhi",
+        ## "JPKeirouNOhi", # 2023-11-27 deprecated
+        "JPKeirouNoHi",    # 2023-11-27 new, replaces the above
         "JPMountainDay",      # 2023-11-27 new   
         "JPAutumnalEquinox",
         "JPShuubunNoHi",

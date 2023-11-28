@@ -4,10 +4,17 @@
   returned for each holiday. Now moving holidays are calculated (e.g., second
   month of January) and some exceptions handled (like holidays moved due to the
   Olympics in 2020 and 2021). Historical changes are (partially) taken into
-  account. The relatively recently introduced 'Mountain Day' is now included.
+  account. 
 
   Thanks to Sylvie Lachaud for reporting the issues with Japan's holiday, as
   well as providing current correct definitions and extensive list of links.
+
+- new function `JPMountainDay` gives the relatively recently introduced Japan
+  holiday 'Mountain Day'.
+
+- `JPKeirouNoHi` replaces `JPKeirouNOhi`. The latter is an aberration from all
+  other `xxxNoHi` Japanese holiday functions and a source of difficult to spot
+  errors. The old one is now deprecated and will be removed in the future.
 
 - modified the 'timeDate' method for `summary` to return an object from class
   "timeDate_summary" (rather than print directly) and created a print method for

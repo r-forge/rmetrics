@@ -111,7 +111,8 @@
 \alias{JPMarineDay}
 \alias{JPUmiNoHi}
 \alias{JPRespectForTheAgedDay}
-\alias{JPKeirouNOhi}
+\alias{JPKeirouNOhi}  % 2023-11-27 deprecated, obvious mis-capitalisation
+\alias{JPKeirouNoHi}  % 2023-11-27 new, replaces the above
 \alias{JPMountainDay} % 2023-11-27 new
 \alias{JPAutumnalEquinox}
 \alias{JPShuubunNoHi}
