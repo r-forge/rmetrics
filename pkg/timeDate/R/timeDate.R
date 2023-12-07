@@ -359,10 +359,23 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
             ## GNB: check for non-existent DST times at FinCenter
             ##
             ## TODO: handle the case when offSetIdx contains 1
+            ## DONE 2023-12-06 handle the case when offSetIdx contains 1
+            ##    was giving error, eg for
+            ##        holidayLONDON(1915:1917)
+            ##    but not for the individual years, these were ok:
+            ##        holidayLONDON(1915)
+            ##        holidayLONDON(1916)
+            ##        holidayLONDON(1917)
+            ## 
+            ## TODO: check the fix? I have somewhat forgotten the details
+            offSetIdx_minus1 <- offSetIdx - 1
+            if(any(offSetIdx_minus1 == 0))
+               offSetIdx_minus1[offSetIdx_minus1 == 0] <- 1
 
             #dst_skip <- dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx]
             #adjust <- dst.list$offSet[offSetIdx][indx]
-            adjust <- dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx]
+            adjust <- dst.list$offSet[offSetIdx][indx] -
+                          dst.list$offSet[offSetIdx_minus1][indx]
             #adjust <- 3600
 
             wrk <- num[indx] - adjust

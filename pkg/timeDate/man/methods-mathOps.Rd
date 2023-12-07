@@ -16,22 +16,8 @@
     
   Functions for mathematical and logical operations on \code{"timeDate"}
   objects.
-  \cr
-   
-  The functions are:
-  
-  \tabular{ll}{
-  \code{Ops,timeDate} \tab Group 'Ops' generic functions for \code{"timeDate"} objects, \cr
-  \code{+,timeDate} \tab Performs arithmetic + operation on \code{"timeDate"} objects, \cr
-  \code{-,timeDate} \tab Performs arithmetic - operation on \code{"timeDate"} objects. }
-       
+
 }
-
-
-% \S4method{+}{timeDate,timeDate}(e1, e2)
-% \S4method{+}{timeDate,numeric}(e1, e2)
-% \S4method{-}{timeDate,timeDate}(e1, e2)
-% \S4method{-}{timeDate,numeric}(e1, e2)    
 
 \usage{
 \S4method{Ops}{timeDate,timeDate}(e1, e2)
@@ -40,30 +26,46 @@
 \arguments{
  
   \item{e1, e2}{
-    usually objects of class \code{"timeDate"}, in the case of
-    addition and subtraction \code{e2} may be of class
-    \code{numeric}.
+    
+    objects of class \code{"timeDate"}. In the case of addition and
+    subtraction one of them may be of class \code{numeric}, specifying
+    the number of seconds to add or subtract.
+
   }    
-      
 }
 
+\details{
 
-\value{
-    
-  \code{Ops.timeDate}
-  \cr
-  these are functions for mathematical operations. Group \code{Ops} are 
-  generic functions which manage mathematical operations. 
+  Group \code{"Ops"} represents the binary mathematical operators.
+  Methods are defined for such operations when one or both arguments are
+  from class \code{"timeDate"}.
+
+  Operations that don't make sense, such as addition of two
+  \code{"timeDate"} objects, throw error.
   
-  \code{+.timeDate}\cr
-  \code{-.timeDate}
-  \cr
   The plus operator \code{"+"} performs arithmetic "+" operation on 
-  \code{"timeDate"} objects, and the minus operator \code{"-"} returns a 
+  \code{"timeDate"} objects,
+
+  and the minus operator \code{"-"} returns a 
   \code{difftime} object if both arguments \code{e1} and \code{e2} 
   are \code{"timeDate"} objects, or returns a \code{"timeDate"} object 
   \code{e2} seconds earlier than \code{e1}.
+  
+}
 
+\value{
+  
+  addition of numeric to \code{"timeDate"} returns \code{"timeDate"},
+
+  subtraction of numeric from \code{"timeDate"} returns \code{"timeDate"},
+
+  subtraction of two \code{"timeDate"} objects returns \code{"difftime"},
+
+  other operations between two \code{"timeDate"} objects are applied to
+  the underlying times (slot \code{"Date"}). The result of that
+  operation is converted to \code{"timeDate"} if it represents a time
+  and returned as is otherwise.
+  
 }
 
 

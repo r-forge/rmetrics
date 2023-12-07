@@ -1,10 +1,19 @@
-# timeDate 4022.109
+# timeDate 4032.109
+
+- fixed some omissions in `holidayLONDON` and refactored it..
+
+- fixed a bug in an internal function which was throwing errors from
+  `holidayLONDON` for some ranges including years before 1916.
+
+- GBEarlyMayBankHoliday, `GBSpringBankHoliday` and `GBSummerBankHoliday` now
+  give dates according to historical rules, not simply according to current
+  ones.
 
 - major overhaul and update of the Japan's holidays. Previously fixed dates were
   returned for each holiday. Now moving holidays are calculated (e.g., second
   month of January) and some exceptions handled (like holidays moved due to the
   Olympics in 2020 and 2021). Historical changes are (partially) taken into
-  account. 
+  account. Further corrections and historical amendments are welcome.
 
   Thanks to Sylvie Lachaud for reporting the issues with Japan's holiday, as
   well as providing current correct definitions and extensive list of links.

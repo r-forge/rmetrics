@@ -17,9 +17,7 @@ holidayLONDON(year = getRmetricsOptions("currentYear"))
   \item{year}{
     an integer value or vector of years, formatted as \code{YYYY}.
   }
-
 }
-
 
 \value{
   an object of class \code{"timeDate"}.
@@ -27,15 +25,26 @@ holidayLONDON(year = getRmetricsOptions("currentYear"))
 
 \details{
 
-  There are 8 bank holidays in Britain every year: New Year's
-  Day, Good Friday, Easter Monday, Spring (May), Last Monday of May, End
-  of Summer (Last Monday) August, Christmas Eve, Christmas Day.
+  There are currently 8 bank holidays in Britain every year: New Year's
+  Day, Good Friday, Easter Monday, Early Spring Holiday (first Monday of
+  May), Spring Holiday (Last Monday of May), Summer Holiday (Last
+  Monday of August), Christmas Day and Boxing Day.
+
+  Some of these holidays are referred also by alternative names or may
+  have had other names in the past. Also the rules according to which
+  the dates for some of them are calculated have changed over time.
+
+  Occasionaly there are one-off special holidays, usually related to
+  significant Royal events. Also as one-off, the dates of some holidays
+  are sometimes moved. For example, the Early spring holiday was moved
+  several times to 8th May to coincide with Victory day on big
+  anniversaries.
 
 }
 
 \author{
   Function contributed by Menon Murali,
-  amended by Georgi N. Boshnakov
+  amended and corrected by Georgi N. Boshnakov
 }
 
 \examples{

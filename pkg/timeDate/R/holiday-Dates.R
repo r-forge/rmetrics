@@ -1,4 +1,4 @@
-
+ 
 # This R package is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
 # License as published by the Free Software Foundation; either
@@ -23,118 +23,67 @@
 #  ...                       Holiday Dates
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Septuagesima =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, -63)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Quinquagesima =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, -49)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 AshWednesday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, -46)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 PalmSunday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, -7)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 GoodFriday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, -2)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 EasterSunday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 EasterMonday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 RogationSunday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 35)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Ascension =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 39)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Pentecost =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 49)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+## GNB: WhitMonday
 PentecostMonday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 50)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 TrinitySunday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 56)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CorpusChristi =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 60)
@@ -143,73 +92,41 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 ChristTheKing =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.after(year, 11, 20, 0)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Advent1st =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.after(year, 11, 27, 0)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Advent2nd =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.after(year, 12,  4, 0)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Advent3rd =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.after(year, 12, 11, 0)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Advent4th =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.after(year, 12, 18, 0)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 ChristmasEve =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1224
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 ChristmasDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1225
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 BoxingDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1226
@@ -218,100 +135,56 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 SolemnityOfMary =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0101
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Epiphany =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0106
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 PresentationOfLord =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0202
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 Annunciation =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0325
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 TransfigurationOfLord =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0806
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 AssumptionOfMary =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0815
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 BirthOfVirginMary =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0908
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CelebrationOfHolyCross =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0914
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 MassOfArchangels =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0929
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 AllSaints =
     function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1101
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 AllSouls =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1102
@@ -320,19 +193,11 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 NewYearsDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0101
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 LaborDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0501
@@ -341,19 +206,11 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CHBerchtoldsDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0102
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CHSechselaeuten =
 function(year = getRmetricsOptions("currentYear")) {
     ans = NULL
@@ -366,28 +223,16 @@ function(year = getRmetricsOptions("currentYear")) {
     }
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CHAscension =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 39)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CHConfederationDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0801
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CHKnabenschiessen =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 9, 1, 2)
@@ -396,107 +241,140 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 ## GNB: Early May bank holiday
-# GNB: renaming to the proper name; leaving for now 'GBMayDay' for compatibility
+## GNB: renaming to the proper name; leaving for now 'GBMayDay' for compatibility
+##
+## the code in holidaysLONDON for y > 1978 was:
+## if (y == 1995 || y == 2020) {
+##     ## Was moved to May 8 to celebrate VE Day's 75th/50th anniversary
+##     dts <- paste0(y, "-05-08")
+##     holidays <- c(holidays, dts)
+## } else {
+##     lon <- timeDate(.on.or.after(y, 5, 1, 1), zone = "London",
+##                     FinCenter = "Europe/London")
+##     holidays <- c(holidays, as.character(lon))
+## }
+GBMayDay <- 
 GBEarlyMayBankHoliday <- 
 function(year = getRmetricsOptions("currentYear")) {
+    ## TODO: y < 1978 -  NA or empty
+    ## if (y >= 1978)
+    ## # First Monday of May became a bank holiday
+    
     ans = as.character(.nth.of.nday(year, 5, 1, 1))
 
     ## special: moved to May 8 to celebrate VE Day's 50th/75th anniversary
     ind <- year %in% c(1995, 2020)
-
     if(any(ind))
        ans[ind] <- paste0(year[ind], "0508") # not "-05-08" for consistency with 'ans'
 
     timeDate(ans)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-# YC: Note GBBankHoliday returns Spring Bank Holiday
-# GNB: renaming to the proper name; leaving for now 'GBBankHoliday' for compatibility
+## YC: Note GBBankHoliday returns Spring Bank Holiday
+## GNB: renaming to a more common name; leaving for now 'GBBankHoliday' for compatibility
+##
+GBBankHoliday <- 
 GBSpringBankHoliday <- 
 function(year = getRmetricsOptions("currentYear")) {
+    ## introduced in 1871, first on Whit Monday
+        
     ans = as.character(.last.of.nday(year, 5, 31, 1))
+
+    ## Whit Monday, which is exactly 50 days after Easter
+    if(any(year <= 1964)) {
+        ## using arg 'format' as the default for timeDate objects is "%Y-%m-%d"
+        ans[year <= 1964] <- as.character(Easter(year[year <= 1964], 50), format = "%Y%m%d")
+    }
     
     ## moved to be the day before XXX/Diamond/Platinum Jubilee bank holiday
     ind <- year %in% c(2002, 2012, 2022)
     if(any(ind)) {
         ans[year == 2002] <- "20020603"
-        ans[year == 2012] <- "20120604"
+        ans[year == 2012] <- "20120604" # Last Monday in May holiday moved to June 4, and
+                                        # Queen's Diamond Jubilee on June 5
+
         ans[year == 2022] <- "20220602" # Thursday
     }
-    
     timeDate(ans)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+## GNB: added handling of historical dates before 1971,
+##      including 1965-1970 for which many sources have it wrong for 1968, 1969
+##
+## Last Monday in August replaces first Monday in August as Summer BH.
+##
+## 2023-12-04 GNB:
+##
+## Between 1965-1970 there was a trial period of moving the Summer BH to 'the
+##     end of the month', without formal definition (see wikipedia page). A
+##     royal proclamation was issued each year for the exact dates. It seems
+##     that they used the Monday after the weekend containing the last
+##     Saturday in August.  in 1968 and 1969 Summer Bank Holiday is in the
+##     beginning of Sep:
+##     see  https://api.parliament.uk/historic-hansard/written-answers/1965/jun/03/bank-holidays-1967-and-1968
+## https://family-law.co.uk/significance-bank-holidays/
+##         2 Sep 1968
+##         1 Sep 1969
+##  TODO: add the above! But need to check reverse dependencies when doing that!
+## 
+## The formal definition as "Last Monday in August" is from the 1971 Act
+## but the difference for 1965-1970 isa only for 1968, 1969 as noted above
 GBSummerBankHoliday =
 function(year = getRmetricsOptions("currentYear")) {
-    ans = .last.of.nday(year, 8, 31, 1)
-    timeDate(as.character(ans)) }
+    ## established in 1871 as the 1st Monday in August, so
+    ## ans[year <= 1870] <- NA or empty  :TODO:
+    
+    ans = .last.of.nday(year, 8, 31, 1) # year >= 1965
+    if(any(year <= 1970)) {
+        ## Summer BH on First Monday in August
+        ans[year <= 1964] <- .on.or.after(year[year <= 1964], 8, 1, 1)
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+        ## correct for 1968 & 1969, see comments above
+        ans[year == 1968] <- 19680902
+        ans[year == 1969] <- 19690901
+    }
+    timeDate(as.character(ans))
+}
+
+
+## added by GNB
+## TODO: it ignores, silently, the argument, not good?
 GBMilleniumDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = 19991231
     timeDate(as.character(ans)) }
 
+## TODO?
+##
+## GBOneOffBankHoliday =
+## function(year = getRmetricsOptions("currentYear")) {
+##     ans = 19991231
+##     timeDate(as.character(ans)) }
+
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 DEAscension =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 39)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 DECorpusChristi =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 60)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 DEGermanUnity =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1003
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 DEChristmasEve =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1224
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 DENewYearsEve =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1231
@@ -505,55 +383,31 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 FRFetDeLaVictoire1945 =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0508
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 FRAscension =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, 39)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 FRBastilleDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0714
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 FRAssumptionVirginMary =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0815
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 FRAllSaints =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1101
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 FRArmisticeDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1111
@@ -562,55 +416,37 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 ITEpiphany =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0106
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 ITLiberationDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0425
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 ITAssumptionOfVirginMary =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0815
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 ITAllSaints =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1101
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 ITStAmrose =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1207
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 ITImmaculateConception =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1208
@@ -619,188 +455,127 @@ function(year = getRmetricsOptions("currentYear")) {
 
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USNewYearsDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0101
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USInaugurationDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0120
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USMLKingsBirthday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 1, 1, 3)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USLincolnsBirthday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0212
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USWashingtonsBirthday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year * 10000 + 222
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USMemorialDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .last.of.nday(year, 5, 31, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USIndependenceDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0704
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USLaborDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 9, 1, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USColumbusDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 10, 1, 2)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USElectionDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.after(year, 11, 2, 2)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USVeteransDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1111
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USThanksgivingDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 11, 4, 4)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USChristmasDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1225
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USCPulaskisBirthday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 3, 1, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USGoodFriday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = Easter(year, -2)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USPresidentsDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 2, 1, 3)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 USDecorationMemorialDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0530
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
 ## Fixes issue #6755 by Ian E (ene100) 
 ## Juneteenth introduced as NAtional US holiday in 2021;
 ##    holiday on NYSE from 2022
 ## https://www.sec.gov/rules/sro/nyse/2021/34-93183.pdf (see p. 2 for definition)
-##
-## Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 USJuneteenthNationalIndependenceDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0619
     timeDate(as.character(ans)) }
 
+
 # ------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 CAVictoriaDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .on.or.before(year, 5, 24, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 CAFamilyDay =
 function(year = getRmetricsOptions("currentYear"))
 {   # Description:
@@ -817,46 +592,26 @@ function(year = getRmetricsOptions("currentYear"))
     ans
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CACanadaDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 0701
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CACivicProvincialHoliday =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 8, 1, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CALabourDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 9, 1, 1)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CAThanksgivingDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 10, 1, 2)
     timeDate(as.character(ans)) }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 CaRemembranceDay =
 function(year = getRmetricsOptions("currentYear")) {
     ans = year*10000 + 1111
@@ -945,7 +700,7 @@ JPGreeneryDay <- function(year = getRmetricsOptions("currentYear")) {
     ans <- year*10000 + 0504 # year >= 2007
     if(any(year < 2007)) {
         ans[year < 2007] <- year*10000 + 0429
-        ans[year < 1989] <- NA # but it was Emperor's Birthday back then
+        ## ans[year < 1989] <- NA # but it was Emperor's Birthday back then
     }
     
     timeDate(as.character(ans))
@@ -984,7 +739,7 @@ JPMarineDay <- function(year = getRmetricsOptions("currentYear")) {
     ## GNB was: ans = year*10000 + 0720
     ans = .nth.of.nday(year, 7, 1, 3) # from 2003
     ans[year < 2003] <- year*10000 + 0720
-    ans[year < 1996] <- NA
+    ## ans[year < 1996] <- NA
     if(any(year %in% c(2020, 2021))) {
         ans[year == 2020] <- year*10000 + 0723  # Olympics
         ans[year == 2021] <- year*10000 + 0722
@@ -1006,8 +761,8 @@ JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear")) {
     ans = .nth.of.nday(year, 9, 1, 3)
     if(any(year < 2003)) {
         ans[year < 2003] = year*10000 + 0915
-        if(any(year < 1966))
-            ans[year < 1966] <- NA   # TODO: do others return NA? or simply empty timeDate?
+        ## if(any(year < 1966))
+        ##     ans[year < 1966] <- NA   # TODO: do others return NA? or simply empty timeDate?
     }
     
     timeDate(as.character(ans))
@@ -1064,10 +819,10 @@ JPEmperorsBirthday <- function(year = getRmetricsOptions("currentYear")) {
     ## GNB was: ans = year*10000 + 1123
     ans = year*10000 + 0223 # Naruhito
     if(any(year < 2020)){
-        ans[year == 2019] <- NA
+        ## ans[year == 2019] <- NA
         ans[1989 <= year & year <= 2018] <- year*10000 + 1223 # Akihito
         ans[1927 <= year & year <= 1988] <- year*10000 + 0429 # Showa
-        ans[year <  1927] <- NA                               # TODO ?
+        ## ans[year <  1927] <- NA                               # TODO ?
     }
     
     timeDate(as.character(ans))
@@ -1084,15 +839,10 @@ JPBankHolidayDec31 <- function(year = getRmetricsOptions("currentYear")) {
 ## https://en.wikipedia.org/wiki/Mountain_Day#Mountain_Day_in_Japan
 JPMountainDay <- function(year = getRmetricsOptions("currentYear")) {
     ans <- year*10000 + 0811
-    ans[year == 2020] <-  year*10000 + 0810  # Olympics openning, but that was cancelled.
-    ans[year == 2021] <-  year*10000 + 0809  # Olympics openning, but that was cancelled.
-    if(any(year < 2016))
-        ans[year < 2016] <- NA
+    ans[year == 2020] <-  year*10000 + 0810  # Olympics openning (cancelled)
+    ans[year == 2021] <-  year*10000 + 0809  # Olympics openning
+    ## TODO: doesn't exist before 2016
+    ## if(any(year < 2016))
+    ##     ans[year < 2016] <- NA
     timeDate(as.character(ans))
 }
-
-################################################################################
-## GNB: compatibility
-
-GBMayDay <- GBEarlyMayBankHoliday
-GBBankHoliday <- GBSpringBankHoliday
