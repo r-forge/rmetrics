@@ -311,14 +311,14 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
     ## if (y >= 1978)
     ## # First Monday of May became a bank holiday
     
-    ans = as.character(.nth.of.nday(year, 5, 1, 1))
+    ans = .nth.of.nday(year, 5, 1, 1)
 
     ## special: moved to May 8 to celebrate VE Day's 50th/75th anniversary
     ind <- year %in% c(1995, 2020)
     if(any(ind))
-       ans[ind] <- paste0(year[ind], "0508") # not "-05-08" for consistency with 'ans'
+       ans[ind] <- 10000 * year[ind] +  0508 
 
-    if(value == "timeDate") timeDate(ans)  else as.character(ans, ...)
+    if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 ## YC: Note GBBankHoliday returns Spring Bank Holiday

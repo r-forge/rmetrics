@@ -28,17 +28,17 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
     ## function implemented by Menon Murali;
     ## updated, corrected and refactored by GNB
 
-    holidays <- character(0) # 2023-05-12 GNB was: NULL
+    holidays <- list() # 2023-05-12 GNB was: NULL
     for (y in year) {
         if (y >= 1834 & y <= 1870) {
             # 1 May, 1 November, Good Friday and Christmas are the
             # only England Bank Holidays
             dts <- c(paste0(y, "-05-01"), paste0(y, "-11-01"))
-            holidays <- c(holidays, dts, as.character(GoodFriday(y)),
-                          as.character(ChristmasDay(y)))
+            holidays <- list(holidays, dts, GoodFriday(y, ""),
+                          ChristmasDay(y, ""))
         }
         if (y >= 1871) {
-            holidays <- c(holidays,
+            holidays <- list(holidays,
                           ## as.character(GoodFriday(y)),
                           ## as.character(EasterMonday(y)),
                           ## as.character(GBSpringBankHoliday(y)),
@@ -71,7 +71,7 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
             ##
             ## GNB: the logic can be simplified by adding Christmas and Boxing days and the
             ##      Mon/Tue where necessary. Sat/Sun are omitted at the end anyway.
-            holidays <- c(holidays, as.character(
+            holidays <- list(holidays, as.character(
                 if (y < 1970) {
                     c(ChristmasDay(y), BoxingDay(y))
                 } else {
@@ -93,70 +93,70 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
             }))
 
             if (y >= 1974) {
-                # New Year's Day: if it falls on Sat/Sun, then is
-                 # moved to following Monday
+                ## New Year's Day: if it falls on Sat/Sun, then is
+                ## moved to following Monday
                 posix1 <- as.POSIXlt(NewYearsDay(y))
-                if (posix1$wday == 0 | posix1$wday == 6) {
-                    lon <- timeDate(.on.or.after(y, 1, 1, 1), zone = "London",
-                                    FinCenter = "Europe/London")
-                    holidays <- c(holidays, as.character(lon))
-                } else {
-                    holidays <- c(holidays, as.character(posix1))
-                }
+                holidays <- list(holidays, 
+                    if (posix1$wday == 0 | posix1$wday == 6) {
+                        format..sdate(.on.or.after(y, 1, 1, 1))
+                    } else {
+                        NewYearsDay(y, "")
+                    })
             }
             
             if (y >= 1978) {
                 ## Early May Bank Holiday
-                holidays <- c(holidays, as.character(GBEarlyMayBankHoliday(y)))
+                holidays <- list(holidays, GBEarlyMayBankHoliday(y, ""))
                 
                 ## special one-off bank holidays
                 if (y == 1981) {
                     ## Royal wedding was a public holiday
                     dts <- paste0(y, "-07-29")
-                    holidays <- c(holidays, dts)
+                    holidays <- list(holidays, dts)
                 } else if (y == 1999) {
                     ## UK millenum day
                     dts <- format(GBMilleniumDay(), format = "%Y-%m-%d")
-                    holidays <- c(holidays, dts)
+                    holidays <- list(holidays, dts)
                 } else if (y == 2002) {
                     # Last Monday in May holiday moved to June 3, and
                     # Queen's Jubilee on June 4
-                    dts <- c(# paste0(y, "-06-03"),
+                    dts <- list(# paste0(y, "-06-03"),
                              paste0(y, "-06-04"))
-                    holidays <- c(holidays, dts)                
+                    holidays <- list(holidays, dts)                
                 } else if (y == 2011) {
                     ## Royal wedding declared a public holiday
                     dts <- paste0(y, "-04-29")
-                    holidays <- c(holidays, dts)
+                    holidays <- list(holidays, dts)
                 } else if (y == 2012) {
                     # Last Monday in May holiday moved to June 4, and
                     # Queen's Diamond Jubilee on June 5
-                    dts <- c(# paste0(y, "-06-04"),
+                    dts <- list(# paste0(y, "-06-04"),
                              paste0(y, "-06-05"))
-                    holidays <- c(holidays, dts)
+                    holidays <- list(holidays, dts)
                 } else if (y == 2022) {
                     ## Last Monday in May (i.e., Spring Bank Holiday) holiday moved to June 2,
                     ## Unique Bank holidays:
                     ##     Queen's Diamond Jubilee.
                     ##     State Funeral of Queen Elizabeth II
-                    dts <- c(# paste0(y, "-06-02"), # Thursday, Spring bank holiday
+                    dts <- list(# paste0(y, "-06-02"), # Thursday, Spring bank holiday
                              paste0(y, "-06-03"), # Friday, Platinum Jubilee bank holiday
                              paste0(y, "-09-19")  # Bank Holiday for the State Funeral of
                                                   # Queen Elizabeth II
                              )
-                    holidays <- c(holidays, dts)
+                    holidays <- list(holidays, dts)
                 } else if (y == 2023) {
                     ## Bank holiday for the coronation of King Charles III
                     dts <- paste0(y, "-05-08")
-                    holidays <- c(holidays, dts)
+                    holidays <- list(holidays, dts)
                 }
             }
         }
     }
 
+#browser()    
+    holidays <- unlist(holidays)
     holidays <- sort(holidays)
-    ans <- timeDate(format(holidays), zone = "London",
-                    FinCenter = "Europe/London")
+    ans <- timeDate(holidays, zone = "London", FinCenter = "Europe/London")
     posix1 <- as.POSIXlt(ans, tz = "GMT")
     ans[!(posix1$wday == 0 | posix1$wday == 6)] # Remove any Saturdays/Sundays
 }
