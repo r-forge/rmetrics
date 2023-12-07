@@ -1,5 +1,8 @@
 # timeDate 4032.109
 
+- new arguments for the holiday functions controlling missing values and the
+  type of the return. Not all honour the new arguments for now.
+
 - fixed some omissions in `holidayLONDON` and refactored it..
 
 - fixed a bug in an internal function which was throwing errors from

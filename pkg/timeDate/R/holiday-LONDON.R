@@ -39,10 +39,15 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
         }
         if (y >= 1871) {
             holidays <- c(holidays,
-                          as.character(GoodFriday(y)),
-                          as.character(EasterMonday(y)),
-                          as.character(GBSpringBankHoliday(y)),
-                          as.character(GBSummerBankHoliday(y))
+                          ## as.character(GoodFriday(y)),
+                          ## as.character(EasterMonday(y)),
+                          ## as.character(GBSpringBankHoliday(y)),
+                          ## as.character(GBSummerBankHoliday(y))
+
+                          GoodFriday(y, ""),
+                          EasterMonday(y, ""),
+                          GBSpringBankHoliday(y, ""),
+                          GBSummerBankHoliday(y, "")
                           )
 
             # Not entirely sure when Mon/Tue began to be given as
@@ -71,22 +76,6 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
                     c(ChristmasDay(y), BoxingDay(y))
                 } else {
                     posix1 <- as.POSIXlt(ChristmasDay(y))
-                    ## If Christmas on Saturday or Sunday, then the following Monday
-                    ## and Tuesday are holidays
-                    ##   if (posix1$wday == 0) { # Christmas on Sunday
-                    ##       holidays <- c(holidays,
-                    ##                     as.character(ChristmasDay(y) + (1 : 2) * 86400))
-                    ##   } else if (posix1$wday == 6) { # Christmas on Saturday
-                    ##       holidays <- c(holidays,
-                    ##                     as.character(ChristmasDay(y) + (2 : 3) * 86400))
-                    ##   } else if (posix1$wday == 5) {# Christmas on Friday
-                    ##       # the next Monday is a holiday
-                    ##       holidays <- c(holidays,
-                    ##                     as.character(ChristmasDay(y) + c(0, 3) * 86400))
-                    ##   } else {
-                    ##       holidays <- c(holidays, as.character(ChristmasDay(y)),
-                    ##                     as.character(BoxingDay(y)))
-                    ##   }
                     switch(as.character(posix1$wday),
                            ## (posix1$wday == 0)  # Christmas on Sunday
                            "0" =  ChristmasDay(y) + (1 : 2) * 86400,
@@ -105,7 +94,7 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
 
             if (y >= 1974) {
                 # New Year's Day: if it falls on Sat/Sun, then is
-                # moved to following Monday
+                 # moved to following Monday
                 posix1 <- as.POSIXlt(NewYearsDay(y))
                 if (posix1$wday == 0 | posix1$wday == 6) {
                     lon <- timeDate(.on.or.after(y, 1, 1, 1), zone = "London",
@@ -166,7 +155,6 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
     }
 
     holidays <- sort(holidays)
-
     ans <- timeDate(format(holidays), zone = "London",
                     FinCenter = "Europe/London")
     posix1 <- as.POSIXlt(ans, tz = "GMT")
