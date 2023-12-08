@@ -1,5 +1,14 @@
 # timeDate 4032.109
 
+- new function `GBOneoffBankHoliday` gives the special UK one-off holidays for
+  the requested years.
+
+- `MilleniumDay` is now deprecated. Use `GBOneoffBankHoliday(1999)` or any range
+  of years that contains 1999.
+
+- rewrote `CAFamilyDay` and a number of other functions to honour the new
+  arguments.
+
 - new arguments for the holiday functions controlling missing values and the
   type of the return. Not all honour the new arguments for now.
 
@@ -8,7 +17,7 @@
 - fixed a bug in an internal function which was throwing errors from
   `holidayLONDON` for some ranges including years before 1916.
 
-- GBEarlyMayBankHoliday, `GBSpringBankHoliday` and `GBSummerBankHoliday` now
+- `GBEarlyMayBankHoliday`, `GBSpringBankHoliday` and `GBSummerBankHoliday` now
   give dates according to historical rules, not simply according to current
   ones.
 

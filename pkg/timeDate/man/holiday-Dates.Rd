@@ -48,7 +48,8 @@
 \alias{GBSpringBankHoliday}
 
 \alias{GBSummerBankHoliday}
-\alias{GBMilleniumDay}
+\alias{GBMilleniumDay} % deprecated
+\alias{GBOneoffBankHoliday}
 \alias{DEAscension}
 \alias{DECorpusChristi}
 \alias{DEGermanUnity}
@@ -140,363 +141,366 @@
 
 \usage{
 Septuagesima(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 Quinquagesima(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 AshWednesday(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 PalmSunday(year = getRmetricsOptions("currentYear"), 
-           value = "timeDate", na_include = "", \dots)
+           value = "timeDate", na_drop = TRUE, \dots)
 
 GoodFriday(year = getRmetricsOptions("currentYear"), 
-           value = "timeDate", na_include = "", \dots)
+           value = "timeDate", na_drop = TRUE, \dots)
 
 EasterSunday(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 EasterMonday(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 RogationSunday(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_include = "", \dots)
+               value = "timeDate", na_drop = TRUE, \dots)
 
 Ascension(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 Pentecost(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 PentecostMonday(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 TrinitySunday(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 CorpusChristi(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 ChristTheKing(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 Advent1st(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 Advent2nd(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 Advent3rd(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 Advent4th(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 ChristmasEve(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 ChristmasDay(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 BoxingDay(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 NewYearsDay(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 SolemnityOfMary(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 Epiphany(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-         na_include = "", \dots)
+         na_drop = TRUE, \dots)
 
 PresentationOfLord(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 Annunciation(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 TransfigurationOfLord(year = getRmetricsOptions("currentYear"), 
-                      value = "timeDate", na_include = "", \dots)
+                      value = "timeDate", na_drop = TRUE, \dots)
 
 AssumptionOfMary(year = getRmetricsOptions("currentYear"), 
-                 value = "timeDate", na_include = "", \dots)
+                 value = "timeDate", na_drop = TRUE, \dots)
 
 BirthOfVirginMary(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 CelebrationOfHolyCross(year = getRmetricsOptions("currentYear"), 
-                       value = "timeDate", na_include = "", \dots)
+                       value = "timeDate", na_drop = TRUE, \dots)
 
 MassOfArchangels(year = getRmetricsOptions("currentYear"), 
-                 value = "timeDate", na_include = "", \dots)
+                 value = "timeDate", na_drop = TRUE, \dots)
 
 AllSaints(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 AllSouls(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-         na_include = "", \dots)
+         na_drop = TRUE, \dots)
 
 LaborDay(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-         na_include = "", \dots)
+         na_drop = TRUE, \dots)
 
 CHBerchtoldsDay(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 CHSechselaeuten(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 CHAscension(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 CHConfederationDay(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 CHKnabenschiessen(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 GBMayDay(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-         na_include = "", \dots)
+         na_drop = TRUE, \dots)
 
 GBEarlyMayBankHoliday(year = getRmetricsOptions("currentYear"), 
-                      value = "timeDate", na_include = "", \dots)
+                      value = "timeDate", na_drop = TRUE, \dots)
 
 GBBankHoliday(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 GBSpringBankHoliday(year = getRmetricsOptions("currentYear"), 
-                    value = "timeDate", na_include = "", \dots)
+                    value = "timeDate", na_drop = TRUE, \dots)
 
 GBSummerBankHoliday(year = getRmetricsOptions("currentYear"), 
-                    value = "timeDate", na_include = "", \dots)
+                    value = "timeDate", na_drop = TRUE, \dots)
 
 GBMilleniumDay(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_include = "", \dots)
+               value = "timeDate", na_drop = TRUE, \dots)
+
+GBOneoffBankHoliday(year = getRmetricsOptions("currentYear"), 
+               value = "timeDate", na_drop = TRUE, \dots)
 
 DEAscension(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 DECorpusChristi(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 DEGermanUnity(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 DEChristmasEve(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_include = "", \dots)
+               value = "timeDate", na_drop = TRUE, \dots)
 
 DENewYearsEve(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 FRFetDeLaVictoire1945(year = getRmetricsOptions("currentYear"), 
-                      value = "timeDate", na_include = "", \dots)
+                      value = "timeDate", na_drop = TRUE, \dots)
 
 FRAscension(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 FRBastilleDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 FRAssumptionVirginMary(year = getRmetricsOptions("currentYear"), 
-                       value = "timeDate", na_include = "", \dots)
+                       value = "timeDate", na_drop = TRUE, \dots)
 
 FRAllSaints(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 FRArmisticeDay(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_include = "", \dots)
+               value = "timeDate", na_drop = TRUE, \dots)
 
 ITEpiphany(year = getRmetricsOptions("currentYear"), 
-           value = "timeDate", na_include = "", \dots)
+           value = "timeDate", na_drop = TRUE, \dots)
 
 ITLiberationDay(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 ITAssumptionOfVirginMary(year = getRmetricsOptions("currentYear"), 
-                         value = "timeDate", na_include = "", \dots)
+                         value = "timeDate", na_drop = TRUE, \dots)
 
 ITAllSaints(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 ITStAmrose(year = getRmetricsOptions("currentYear"), 
-           value = "timeDate", na_include = "", \dots)
+           value = "timeDate", na_drop = TRUE, \dots)
 
 ITImmaculateConception(year = getRmetricsOptions("currentYear"), 
-                       value = "timeDate", na_include = "", \dots)
+                       value = "timeDate", na_drop = TRUE, \dots)
 
 USDecorationMemorialDay(year = getRmetricsOptions("currentYear"), 
-                        value = "timeDate", na_include = "", \dots)
+                        value = "timeDate", na_drop = TRUE, \dots)
 
 USPresidentsDay(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 USNewYearsDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 USInaugurationDay(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 USMLKingsBirthday(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 USLincolnsBirthday(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 USWashingtonsBirthday(year = getRmetricsOptions("currentYear"), 
-                      value = "timeDate", na_include = "", \dots)
+                      value = "timeDate", na_drop = TRUE, \dots)
 
 USMemorialDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 USIndependenceDay(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 USLaborDay(year = getRmetricsOptions("currentYear"), 
-           value = "timeDate", na_include = "", \dots)
+           value = "timeDate", na_drop = TRUE, \dots)
 
 USColumbusDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 USElectionDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 USVeteransDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 USThanksgivingDay(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 USChristmasDay(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_include = "", \dots)
+               value = "timeDate", na_drop = TRUE, \dots)
 
 USCPulaskisBirthday(year = getRmetricsOptions("currentYear"), 
-                    value = "timeDate", na_include = "", \dots)
+                    value = "timeDate", na_drop = TRUE, \dots)
 
 USGoodFriday(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 USJuneteenthNationalIndependenceDay(
                                     year = getRmetricsOptions("currentYear"), 
-                                    value = "timeDate", 
-                                    na_include = "", \dots)
+                                    value = "timeDate", na_drop = TRUE, 
+                                    \dots)
 
 CAVictoriaDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 CACanadaDay(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 CACivicProvincialHoliday(year = getRmetricsOptions("currentYear"), 
-                         value = "timeDate", na_include = "", \dots)
+                         value = "timeDate", na_drop = TRUE, \dots)
 
 CALabourDay(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 CAThanksgivingDay(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 CaRemembranceDay(year = getRmetricsOptions("currentYear"), 
-                 value = "timeDate", na_include = "", \dots)
+                 value = "timeDate", na_drop = TRUE, \dots)
 
 JPVernalEquinox(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 JPNewYearsDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 JPGantan(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-         na_include = "", \dots)
+         na_drop = TRUE, \dots)
 
 JPBankHolidayJan2(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 JPBankHolidayJan3(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 JPComingOfAgeDay(year = getRmetricsOptions("currentYear"), 
-                 value = "timeDate", na_include = "", \dots)
+                 value = "timeDate", na_drop = TRUE, \dots)
 
 JPSeijinNoHi(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 JPNatFoundationDay(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 JPKenkokuKinenNoHi(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 JPGreeneryDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 JPMidoriNoHi(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 JPConstitutionDay(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 JPKenpouKinenBi(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 JPNationHoliday(year = getRmetricsOptions("currentYear"), 
-                value = "timeDate", na_include = "", \dots)
+                value = "timeDate", na_drop = TRUE, \dots)
 
 JPKokuminNoKyujitu(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 JPChildrensDay(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_include = "", \dots)
+               value = "timeDate", na_drop = TRUE, \dots)
 
 JPKodomoNoHi(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 JPMarineDay(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 JPUmiNoHi(year = getRmetricsOptions("currentYear"), value = "timeDate", 
-          na_include = "", \dots)
+          na_drop = TRUE, \dots)
 
 JPRespectForTheAgedDay(year = getRmetricsOptions("currentYear"), 
-                       value = "timeDate", na_include = "", \dots)
+                       value = "timeDate", na_drop = TRUE, \dots)
 
 JPKeirouNOhi(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 JPMountainDay(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 JPAutumnalEquinox(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 JPShuubunNoHi(year = getRmetricsOptions("currentYear"), 
-              value = "timeDate", na_include = "", \dots)
+              value = "timeDate", na_drop = TRUE, \dots)
 
 JPHealthandSportsDay(year = getRmetricsOptions("currentYear"), 
-                     value = "timeDate", na_include = "", \dots)
+                     value = "timeDate", na_drop = TRUE, \dots)
 
 JPTaiikuNoHi(year = getRmetricsOptions("currentYear"), 
-             value = "timeDate", na_include = "", \dots)
+             value = "timeDate", na_drop = TRUE, \dots)
 
 JPNationalCultureDay(year = getRmetricsOptions("currentYear"), 
-                     value = "timeDate", na_include = "", \dots)
+                     value = "timeDate", na_drop = TRUE, \dots)
 
 JPBunkaNoHi(year = getRmetricsOptions("currentYear"), 
-            value = "timeDate", na_include = "", \dots)
+            value = "timeDate", na_drop = TRUE, \dots)
 
 JPThanksgivingDay(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 JPKinrouKanshaNoHi(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 JPEmperorsBirthday(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 
 JPTennouTanjyouBi(year = getRmetricsOptions("currentYear"), 
-                  value = "timeDate", na_include = "", \dots)
+                  value = "timeDate", na_drop = TRUE, \dots)
 
 JPBankHolidayDec31(year = getRmetricsOptions("currentYear"), 
-                   value = "timeDate", na_include = "", \dots)
+                   value = "timeDate", na_drop = TRUE, \dots)
 }
 
 
@@ -517,7 +521,7 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
     vector.
     
   }
-  \item{na_include}{
+  \item{na_drop}{
 
     how to treat \code{NA}s, \code{TRUE}, \code{FALSE} or a character
     string, see section \sQuote{Details}.
@@ -529,7 +533,6 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
     \code{"format"}. Ignored if \code{value = "timeDate"}.
 
   }
-    
 }
 
 \details{
@@ -553,7 +556,7 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
   Traditionally, package \pkg{timeDate} was computing the dates of the
   holidays according to the current rules.  In versions of package
   \pkg{timeDate} greater than 4022.108 historical information was added
-  for England and Japan holidays. The update functions return the dates
+  for England and Japan holidays. The updated functions return the dates
   according to the rules for the particular years.
 
   For future years the returned dates are always computed accoding to
@@ -562,12 +565,14 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
   For years before the first available rules, the default is to use
   those rules, whether the holiday existed or not.
 
-  Argument \code{na.include} can be used to control this. If
-  \code{na.include} is \code{TRUE}, the value for years when the holiday
-  didn't exist will be \code{NA}. If \code{na.include} is \code{FALSE}
-  an entry will not be incuded in the result at all. If it is a
-  character string, the default, the closest available rules will be
-  used.
+  Argument \code{na_drop} can be used to control this. If \code{na_drop}
+  is \code{TRUE}, an entry will not be incuded in the result at all.  If
+  \code{na_drop} is \code{FALSE} the value for years when the holiday
+  didn't exist will be \code{NA}.  If it is a character string, the
+  default, the closest available rules will be used.
+
+  Not all functions respect argument \code{na_drop}. In that case they
+  act as if \code{na_drop} is a character string.
 
   
   The deprecated \code{GBMayDay} and \code{GBBankHoliday} are still
@@ -579,8 +584,9 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
 
 \note{
 
-  The holiday information for most countries incomplete.  Contributions
-  are welcome. Please include references for your sources.
+  The holiday information for most countries is incomplete.
+  Contributions are welcome. Please include references for your sources,
+  whenever possible.
   
 }
 

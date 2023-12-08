@@ -203,7 +203,8 @@ export(
     FRFetDeLaVictoire1945,
     GBSpringBankHoliday,
     GBEarlyMayBankHoliday,
-    GBMilleniumDay,
+    GBMilleniumDay, # deprecated
+    GBOneoffBankHoliday,
     GBSummerBankHoliday,
     GoodFriday,
     ITAllSaints,

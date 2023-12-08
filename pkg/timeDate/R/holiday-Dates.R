@@ -35,80 +35,80 @@ format..sdate <- function(x, format = "-", ...) {
 }
 
 Septuagesima =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, -63)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 Quinquagesima =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, -49)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 AshWednesday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, -46)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 PalmSunday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, -7)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 GoodFriday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, -2)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 EasterSunday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 EasterMonday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 1)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 RogationSunday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 35)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 Ascension =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 39)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 Pentecost =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 49)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 ## GNB: WhitMonday
 PentecostMonday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 50)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 TrinitySunday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 56)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 CorpusChristi =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 60)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
@@ -117,49 +117,49 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 # ------------------------------------------------------------------------------
 
 ChristTheKing =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.after(year, 11, 20, 0)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 Advent1st =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.after(year, 11, 27, 0)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 Advent2nd =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.after(year, 12,  4, 0)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 Advent3rd =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.after(year, 12, 11, 0)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 Advent4th =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.after(year, 12, 18, 0)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 ChristmasEve =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1224
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 ChristmasDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1225
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 BoxingDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1226
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -168,67 +168,67 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 # ------------------------------------------------------------------------------
 
 SolemnityOfMary =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 Epiphany =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0106
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 PresentationOfLord =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0202
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 Annunciation =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0325
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 TransfigurationOfLord =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0806
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 AssumptionOfMary =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0815
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 BirthOfVirginMary =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0908
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 CelebrationOfHolyCross =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0914
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 MassOfArchangels =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0929
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 AllSaints =
-    function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+    function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 AllSouls =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1102
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -237,13 +237,13 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 # ------------------------------------------------------------------------------
 
 NewYearsDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 LaborDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0501
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -252,13 +252,13 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 # ------------------------------------------------------------------------------
 
 CHBerchtoldsDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0102
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 CHSechselaeuten =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = NULL
     for (y in year) {
         theDate = .nth.of.nday(y, 4, 1, 3)
@@ -271,19 +271,19 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 }
 
 CHAscension =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 39)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 CHConfederationDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0801
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 CHKnabenschiessen =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 9, 1, 2)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
@@ -306,10 +306,12 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 ## }
 GBMayDay <- 
 GBEarlyMayBankHoliday <- 
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## TODO: y < 1978 -  NA or empty
     ## if (y >= 1978)
     ## # First Monday of May became a bank holiday
+    if(flag <- isTRUE(na_drop))
+        year <- year[year >= 1978]
     
     ans = .nth.of.nday(year, 5, 1, 1)
 
@@ -317,6 +319,9 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
     ind <- year %in% c(1995, 2020)
     if(any(ind))
        ans[ind] <- 10000 * year[ind] +  0508 
+
+    if(!flag && isFALSE(na_drop))
+        ans[year < 1978] <- NA
 
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
@@ -326,9 +331,12 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 ##
 GBBankHoliday <- 
 GBSpringBankHoliday <- 
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## introduced in 1871, first on Whit Monday
         
+    if((flag <- isTRUE(na_drop)) && any(year < 1871))
+        year <- year[year >= 1871]
+  
     ans = .last.of.nday(year, 5, 31, 1)
 
     ## Whit Monday, which is exactly 50 days after Easter
@@ -347,6 +355,10 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 
         ans[year == 2022] <- 20220602  # Thursday
     }
+    
+    if(!flag && isFALSE(na_drop))
+        ans[year < 1871] <- NA
+
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
@@ -372,9 +384,13 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 ## The formal definition as "Last Monday in August" is from the 1971 Act
 ## but the difference for 1965-1970 isa only for 1968, 1969 as noted above
 GBSummerBankHoliday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## established in 1871 as the 1st Monday in August, so
-    ## ans[year <= 1870] <- NA or empty  :TODO:
+    ## ans[year < 1871] <- NA or empty  :TODO:
+    ## didn't exist before 1871
+    if((flag <- isTRUE(na_drop)) && any(year < 1871))
+        year <- year[year >= 1871]
+  
     
     ans = .last.of.nday(year, 8, 31, 1) # year >= 1965
     if(any(year <= 1970)) {
@@ -385,6 +401,9 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
         ans[year == 1968] <- 19680902
         ans[year == 1969] <- 19690901
     }
+    if(!flag && isFALSE(na_drop))
+        ans[year < 1871] <- NA
+
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
@@ -392,48 +411,84 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 ## added by GNB
 ## TODO: it ignores, silently, the argument, not good?
 GBMilleniumDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    .Deprecated("Use GBOneoffBankHoliday(1999)")
     ans = 19991231
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
-## TODO?
-##
-## GBOneOffBankHoliday =
-## function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-##     ans = 19991231
-##     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
-## }
+
+.GByears_with_oneoff <-
+    c(1981, 1999, 2002, 2011, 2012, 2022, 2023)
+GBOneoffBankHoliday <- 
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    oneoff_flag <- year %in% .GByears_with_oneoff
+
+    ## here value = "" doesn't make sense, treat it the same as FALSE
+    if(isTRUE(na_drop))
+        year <- year[oneoff_flag]
+        
+    ans <- character(0)
+    for(y in year) {
+        ans <- list(ans,
+            if (y == 1981)                    # Royal wedding was a public holiday
+                paste0(y, "-07-29")
+            else if (y == 1999)             # UK millenum day
+                paste0(y, "-12-31")
+            else if (y == 2002)          # Last Monday in May holiday moved to June
+                paste0(y, "-06-04")          # 3, and Queen's Jubilee on June 4
+            else if (y == 2011)    # Royal wedding declared a public holiday
+                paste0(y, "-04-29")
+            else if (y == 2012)
+                paste0(y, "-06-05")   # Last Monday in May holiday moved to June 4, and
+                                      # Queen's Diamond Jubilee on June 5
+            else if (y == 2022)
+                         # Last Monday in May (i.e., Spring Bank Holiday) moved to June 2
+                         # Unique Bank holidays:  Queen's Diamond Jubilee.
+                         #                        State Funeral of Queen Elizabeth II
+                c(# paste0(y, "-06-02"), # Thursday, Spring bank holiday
+                  paste0(y, "-06-03"),   # Friday, Platinum Jubilee bank holiday
+                  paste0(y, "-09-19"))   # BH for the State Funeral of Queen Elizabeth II
+            else if (y == 2023)     # Bank holiday for the coronation of King Charles III
+                paste0(y, "-05-08")
+            else
+                NA_character_
+            )
+    }
+    ans <- unlist(ans)
+
+    if(value == "timeDate") timeDate(ans)  else ans
+}
 
 
 # ------------------------------------------------------------------------------
 
 DEAscension =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 39)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 DECorpusChristi =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 60)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 DEGermanUnity =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1003
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 DEChristmasEve =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1224
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 DENewYearsEve =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1231
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -442,37 +497,37 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 # ------------------------------------------------------------------------------
 
 FRFetDeLaVictoire1945 =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0508
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 FRAscension =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, 39)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 FRBastilleDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0714
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 FRAssumptionVirginMary =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0815
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 FRAllSaints =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 FRArmisticeDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1111
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -482,42 +537,42 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 
 
 ITEpiphany =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0106
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 ITLiberationDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0425
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 ITAssumptionOfVirginMary =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0815
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 ITAllSaints =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 ITStAmrose =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1207
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 ITImmaculateConception =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1208
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -527,130 +582,137 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 
 
 USNewYearsDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USInaugurationDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0120
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USMLKingsBirthday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 1, 1, 3)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USLincolnsBirthday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0212
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USWashingtonsBirthday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year * 10000 + 222
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USMemorialDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .last.of.nday(year, 5, 31, 1)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USIndependenceDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0704
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USLaborDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 9, 1, 1)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USColumbusDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 10, 1, 2)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USElectionDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.after(year, 11, 2, 2)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USVeteransDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1111
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USThanksgivingDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 11, 4, 4)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USChristmasDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1225
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 
 USCPulaskisBirthday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 3, 1, 1)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USGoodFriday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = Easter(year, -2)
     if(value == "timeDate") timeDate(as.character(ans))  else as.character(ans, ...)
 }
 
 
 USPresidentsDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 2, 1, 3)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 USDecorationMemorialDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0530
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 ## Fixes issue #6755 by Ian E (ene100) 
-## Juneteenth introduced as NAtional US holiday in 2021;
+## Juneteenth introduced as National US holiday in 2021;
 ##    holiday on NYSE from 2022
 ## https://www.sec.gov/rules/sro/nyse/2021/34-93183.pdf (see p. 2 for definition)
 USJuneteenthNationalIndependenceDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-    ans = year*10000 + 0619
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    ## didn't exist before 2021
+    if(flag <- isTRUE(na_drop))
+        year <- year[year >= 2021]
+
+    ans <- year*10000 + 0619
+    if(!flag && isFALSE(na_drop))
+        ans[year < 2021] <- NA
+    
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
@@ -659,14 +721,14 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 
 
 CAVictoriaDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .on.or.before(year, 5, 24, 1)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 
 CAFamilyDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...)
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...)
 {   # Description:
     #   Adds the new Family Day
     # Note:
@@ -675,38 +737,47 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
     #   Family Day will fall on the third Monday of
     #       every February, beginning in 2008.
     # Family Day:
-    charvec = paste(year, "02", "01", sep = "-")
-    ans = timeNthNdayInMonth(charvec, nday = 1, nth = 3)
-    # Return Value:
-    ans
+
+    ## rewritten by GNB
+    
+    ## doesn't exist before 2008
+    if(flag <- isTRUE(na_drop))
+        year <- year[year >= 2008]
+
+    ans <- .nth.of.nday(year, 2, 1, 3)
+
+    if(!flag && isFALSE(na_drop))
+        ans[year < 2008] <- NA
+    
+    if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 CACanadaDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0701
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 CACivicProvincialHoliday =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 8, 1, 1)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 CALabourDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 9, 1, 1)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 CAThanksgivingDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 10, 1, 2)
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 CaRemembranceDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1111
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -716,7 +787,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_includ
 # Japan
 # ---------------------------------------------------------------------------- #
 
-JPVernalEquinox <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPVernalEquinox <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     # Author:
     #   Parlamis Franklin wrote:
     #   It's me again, with Japanese calendar minutiae I'm sure you've all
@@ -754,22 +825,22 @@ JPVernalEquinox <- function(year = getRmetricsOptions("currentYear"), value = "t
     trunc(timeDate(as.character(Vernal.Equinox(year)), FinCenter = "Tokyo"))
 }
 
-JPNewYearsDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPNewYearsDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
-JPGantan <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPGantan <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0101
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
-JPBankHolidayJan2 <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPBankHolidayJan2 <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0102
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
-JPBankHolidayJan3 <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPBankHolidayJan3 <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0103
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -778,19 +849,19 @@ JPBankHolidayJan3 <- function(year = getRmetricsOptions("currentYear"), value = 
 ##       Also, combined JPSeijinNoHi and JPComingOfAgeDay, since they seem to
 ##       be the same thing.
 JPSeijinNoHi <-
-JPComingOfAgeDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPComingOfAgeDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = .nth.of.nday(year, 1, 1, 2) # 2023-11-27 was: year*10000 + 0115
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 JPKenkokuKinenNoHi <-
-JPNatFoundationDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-    ans =year*10000 + 0211   # GNB: ok, fixed date
+JPNatFoundationDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    ans <- year * 10000 + 0211
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 JPMidoriNoHi <-
-JPGreeneryDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPGreeneryDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans <- year*10000 + 0504 # year >= 2007
     if(any(year < 2007)) {
         ans[year < 2007] <- year*10000 + 0429
@@ -805,20 +876,20 @@ JPGreeneryDay <- function(year = getRmetricsOptions("currentYear"), value = "tim
 ##  holiday. Until 2006, 4 May was an unnamed but official holiday because of a rule that
 ##  converts any day between two holidays into a new holiday.
 JPKokuminNoKyujitu <-
-JPNationHoliday <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPNationHoliday <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0504
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
         
 JPKenpouKinenBi <-
-JPConstitutionDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPConstitutionDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0503
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 JPKodomoNoHi <-
-JPChildrensDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPChildrensDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0505
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -829,73 +900,84 @@ JPChildrensDay <- function(year = getRmetricsOptions("currentYear"), value = "ti
 ## 2024 date: July 15
 ## 2025 date: July 21
 JPUmiNoHi <-
-JPMarineDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPMarineDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## GNB was: ans = year*10000 + 0720
+    if(flag <- isTRUE(na_drop))
+        year <- year[year >= 1996]
+    
     ans = .nth.of.nday(year, 7, 1, 3) # from 2003
     ans[year < 2003] <- year*10000 + 0720
-    ## ans[year < 1996] <- NA
+    if(!flag && isFALSE(na_drop))
+        ans[year < 1996] <- NA
+    
     if(any(year %in% c(2020, 2021))) {
-        ans[year == 2020] <- year*10000 + 0723  # Olympics
-        ans[year == 2021] <- year*10000 + 0722
+        ans[year == 2020] <- 2020 * 10000 + 0723  # Olympics
+        ans[year == 2021] <- 2021 * 10000 + 0722
     }
     
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 ## 2023-11-27 - deprecated;
-JPKeirouNOhi <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPKeirouNOhi <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     .Deprecated("JPKeirouNoHi")
     JPKeirouNoHi(year)
 }
 
 JPKeirouNoHi <-
-JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## GNB was: ans = year*10000 + 0915
     ## https://en.wikipedia.org/wiki/Respect_for_the_Aged_Day
+    if(flag <- isTRUE(na_drop))
+        year <- year[year >= 1966]
+    
     ans = .nth.of.nday(year, 9, 1, 3)
     if(any(year < 2003)) {
         ans[year < 2003] = year*10000 + 0915
-        ## if(any(year < 1966))
-        ##     ans[year < 1966] <- NA   # TODO: do others return NA? or simply empty timeDate?
+        if(!flag && isFALSE(na_drop))
+            ans[year < 1966] <- NA
     }
     
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
-
-
 
 ## GNB: TODO: this cannot be constant, see above for the vernal equinox.
 ##
 ##      for now, changing it to 23 Sep and correct for known dates when it is on other dates,
 ##      usually 22 Sep https://en.wikipedia.org/wiki/Autumnal_Equinox_Day
 JPShuubunNoHi <-
-JPAutumnalEquinox <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-    ans = year*10000 + 0923  # was + 0924 but this is rare
-    on22nd <- c(2016, 2024,2028) # incomplete; after 2024 predicted
+JPAutumnalEquinox <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    ans <- year * 10000 + 0923  # was + 0924 but this is rare
+    on22nd <- c(2016, 2024, 2028) # incomplete; after 2024 predicted
+    ans[year %in% on22nd] <- year[year %in% on22nd] * 10000 + 0922
+    
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 JPTaiikuNoHi <- 
-JPHealthandSportsDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-    ## GNB was: ans = year*10000 + 1010
+JPHealthandSportsDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    ## updated and rewritten by GNB
+    ##   was: ans = year*10000 + 1010
     ## https://en.wikipedia.org/wiki/Sports_Day_(Japan)
     ans = .nth.of.nday(year, 10, 1, 2)
-    ans[year == 2020] <-  year*10000 + 0724  # Olympics openning, but that was cancelled.
-    ans[year == 2021] <-  year*10000 + 0723  # Olympics openning, but that was cancelled.
-    if(any(year < 2000)) {
-        ans[1966 <= year & year <= 1999] <-  year*10000 + 1010
-    }
+
+    ans[year == 2021] <-  2021 * 10000 + 0723 # Olympics openning
+    ans[year == 2020] <-  2020 * 10000 + 0724 # Olympics cancelled but holiday stayed
+    
+    if(length(tmp_flag <- 1966 <= year & year <= 1999))
+        ans[tmp_flag] <-  year[tmp_flag] * 10000 + 1010
+    
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
 JPBunkaNoHi <-
-JPNationalCultureDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPNationalCultureDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1103
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 JPKinrouKanshaNoHi <-
-JPThanksgivingDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPThanksgivingDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## https://en.wikipedia.org/wiki/Labor_Thanksgiving_Day
     ans = year*10000 + 1123   ## TODO: if on Sunday move to Monday  !!!
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
@@ -909,21 +991,35 @@ JPThanksgivingDay <- function(year = getRmetricsOptions("currentYear"), value = 
 ##   1926(7?)-1988 29 April (stil public holiday - Greenery Day since 1989, Showa day since 2007.
 ##                 https://en.wikipedia.org/wiki/The_Emperor%27s_Birthday
 JPTennouTanjyouBi  <-
-JPEmperorsBirthday <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-    ## GNB was: ans = year*10000 + 1123
+JPEmperorsBirthday <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    if(flag <- isTRUE(na_drop)) {
+        year <- year[year >=  1927]   # don't know what it was before 1927
+        year <- year[year !=  2019]   # due to abdication this holiday was cancelled in 2019
+    }
+    
     ans = year*10000 + 0223 # Naruhito
+    
     if(any(year < 2020)){
-        ## ans[year == 2019] <- NA
-        ans[1989 <= year & year <= 2018] <- year*10000 + 1223 # Akihito
-        ans[1927 <= year & year <= 1988] <- year*10000 + 0429 # Showa
-        ## ans[year <  1927] <- NA                               # TODO ?
+        if(!flag && isFALSE(na_drop)) {
+            ans[year == 2019] <- NA
+            ans[year <= 1927] <- NA
+        }
+        
+        flag_1989to2018 <- 1989 <= year & year <= 2018
+        flag_1927to1988 <- 1927 <= year & year <= 1988
+
+        if(length(flag_1989to2018))
+            ans[flag_1989to2018] <- year[flag_1989to2018] * 10000 + 1223 # Akihito
+        if(length(flag_1927to1988))
+            ans[flag_1927to1988] <- year[flag_1927to1988] * 10000 + 0429 # Showa
+        ## TODO: before 1927 ?
     }
     
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 ## TODO: check
-JPBankHolidayDec31 <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
+JPBankHolidayDec31 <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 1231
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
@@ -931,12 +1027,17 @@ JPBankHolidayDec31 <- function(year = getRmetricsOptions("currentYear"), value =
 ## GNB new 2023-11-27 its absence reported by Sylvie Lachaud
 ## Moutain day 11/08/2023 : is it missing in your list ?
 ## https://en.wikipedia.org/wiki/Mountain_Day#Mountain_Day_in_Japan
-JPMountainDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_include = "", ...) {
-    ans <- year*10000 + 0811
-    ans[year == 2020] <-  year*10000 + 0810  # Olympics openning (cancelled)
-    ans[year == 2021] <-  year*10000 + 0809  # Olympics openning
-    ## TODO: doesn't exist before 2016
-    ## if(any(year < 2016))
-    ##     ans[year < 2016] <- NA
+JPMountainDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    ## didn't exist before 2016
+    if(flag <- isTRUE(na_drop))
+        year <- year[year >= 2016]
+    
+    ans <- year * 10000 + 0811
+    if(!flag && isFALSE(na_drop))
+        ans[year < 2016] <- NA
+    
+    ans[year == 2020] <-  2020*10000 + 0810  # Olympics openning (cancelled)
+    ans[year == 2021] <-  2021*10000 + 0809  # Olympics openning
+
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }

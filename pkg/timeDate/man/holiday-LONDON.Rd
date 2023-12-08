@@ -43,8 +43,8 @@ holidayLONDON(year = getRmetricsOptions("currentYear"))
 }
 
 \author{
-  Function contributed by Menon Murali,
-  amended and corrected by Georgi N. Boshnakov
+  Original function contributed by Menon Murali;
+  amended, corrected and rewritten by Georgi N. Boshnakov
 }
 
 \examples{
