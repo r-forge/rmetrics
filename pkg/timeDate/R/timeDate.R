@@ -90,7 +90,11 @@ setMethod("timeDate", "character",
 
     # Autodetect Format :
     if (is.null(format))
-        format <- whichFormat(charvec[1])
+        ## 2023-12-09 GNB:
+        ##     whichFormat(charvec[1])
+        ## fails if charvec[1] is NA, even if otherwise the strings are uniform,
+        ## call whichFormat with the whole vector:
+        format <- whichFormat(charvec)
     if (format %in% c("unknown", "counts")) #-> "counts" catch potential problems from timeSeries
         return(timeDate(NA, zone = zone, FinCenter = FinCenter))
 

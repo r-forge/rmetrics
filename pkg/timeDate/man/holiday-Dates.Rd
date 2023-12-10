@@ -49,7 +49,7 @@
 
 \alias{GBSummerBankHoliday}
 \alias{GBMilleniumDay} % deprecated
-\alias{GBOneoffBankHoliday}
+
 \alias{DEAscension}
 \alias{DECorpusChristi}
 \alias{DEGermanUnity}
@@ -273,9 +273,6 @@ GBSummerBankHoliday(year = getRmetricsOptions("currentYear"),
                     value = "timeDate", na_drop = TRUE, \dots)
 
 GBMilleniumDay(year = getRmetricsOptions("currentYear"), 
-               value = "timeDate", na_drop = TRUE, \dots)
-
-GBOneoffBankHoliday(year = getRmetricsOptions("currentYear"), 
                value = "timeDate", na_drop = TRUE, \dots)
 
 DEAscension(year = getRmetricsOptions("currentYear"), 
@@ -515,7 +512,7 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
   }
 
   \item{value}{
-
+    
     the class of the returned value. If \code{"timeDate"}, the default,
     return a \code{"timeDate"} object, otherwise return a character
     vector.

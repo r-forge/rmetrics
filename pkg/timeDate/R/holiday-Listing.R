@@ -77,7 +77,7 @@ listHolidays <-
         "GBEarlyMayBankHoliday", # was: "GBMayDay",
         "GBSpringBankHoliday",   # was: "GBBankHoliday"
         "GBSummerBankHoliday",
-        "GBOneoffBankHoliday", # new 2023-12-08
+        "specialHolidayGB", # new 2023-12-08
         "DEAscension",
         "DECorpusChristi",
         "DEGermanUnity",

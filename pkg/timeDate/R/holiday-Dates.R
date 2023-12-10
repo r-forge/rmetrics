@@ -412,52 +412,116 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 ## TODO: it ignores, silently, the argument, not good?
 GBMilleniumDay =
 function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
-    .Deprecated("Use GBOneoffBankHoliday(1999)")
+    .Deprecated("Use specialHolidayGB(1999)")
     ans = 19991231
-    if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
+    if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
+.gb_oneoff_holidays <- c(
+    "GBRoyalWeddingDay1981"        , "1981-07-29", # Royal wedding
+    "GBMillenumDay"                , "1999-12-31", # UK millenum day
+  
+    "GBQueensGoldenJubileeDay"     , "2002-06-04", # Spring BH moved to June 3,
+                                                   # and Queen's Jubilee on June 4
 
+    "GBRoyalWeddingDay2011"        , "2011-04-29", # Royal wedding
+    
+    "GBQueensDiamondJubilee"       , "2012-06-05", # Early May BH moved to June 4
+                                                   # and Queen's Diamond Jubilee on June 5
+    
+                                                   # Spring BH moved to June 2
+    "GBQueensPlatinumJubileeDay"   , "2022-06-03", # Friday, Platinum Jubilee BH
+    "GBQueensFuneralDay"           , "2022-09-19", # BH, State Funeral Queen Elizabeth II
+    "GBKingCharlesIIICoronationDay", "2023-05-08"  # BH, coronation of King Charles III
+  )
+
+## .gb_oneoff_BH <- matrix(.gb_oneoff_holidays, ncol = 2, byrow = TRUE)
+## .gb_years <- as.integer(substr(.gb_oneoff_BH[ , 2], 1, 4))
+## .unique_gb_years <- unique(.gb_years)
+    
 .GByears_with_oneoff <-
     c(1981, 1999, 2002, 2011, 2012, 2022, 2023)
-GBOneoffBankHoliday <- 
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
-    oneoff_flag <- year %in% .GByears_with_oneoff
 
+specialHolidayGB <- 
+function(year  = getRmetricsOptions("currentYear"), value = "timeDate", named = FALSE, ...) {
+    ## TODO: option to return  names for the holidays;
+    ##       maybe it is better to just provide separate function for that
+    ##
+    ## TODO: No, it doesn't make sense to return NA's. In some years there may be
+    ##       more than one special holiday (2022 in GB), so alignment cannot be guaranteed.
+    ##       Hence:
+    ##          1. use sort and unique on year as in the holidayXXX functions
+    ##          2. remove the irrelevant arguments
+    ##          3. rename this function, e.g. to holidaySpecialGB
+    ##             
     ## here value = "" doesn't make sense, treat it the same as FALSE
-    if(isTRUE(na_drop))
-        year <- year[oneoff_flag]
+    
+    year <- year[year %in% .GByears_with_oneoff]
         
     ans <- character(0)
-    for(y in year) {
-        ans <- list(ans,
-            if (y == 1981)                    # Royal wedding was a public holiday
-                paste0(y, "-07-29")
-            else if (y == 1999)             # UK millenum day
-                paste0(y, "-12-31")
-            else if (y == 2002)          # Last Monday in May holiday moved to June
-                paste0(y, "-06-04")          # 3, and Queen's Jubilee on June 4
-            else if (y == 2011)    # Royal wedding declared a public holiday
-                paste0(y, "-04-29")
-            else if (y == 2012)
-                paste0(y, "-06-05")   # Last Monday in May holiday moved to June 4, and
-                                      # Queen's Diamond Jubilee on June 5
-            else if (y == 2022)
-                         # Last Monday in May (i.e., Spring Bank Holiday) moved to June 2
-                         # Unique Bank holidays:  Queen's Diamond Jubilee.
-                         #                        State Funeral of Queen Elizabeth II
-                c(# paste0(y, "-06-02"), # Thursday, Spring bank holiday
-                  paste0(y, "-06-03"),   # Friday, Platinum Jubilee bank holiday
-                  paste0(y, "-09-19"))   # BH for the State Funeral of Queen Elizabeth II
-            else if (y == 2023)     # Bank holiday for the coronation of King Charles III
-                paste0(y, "-05-08")
-            else
-                NA_character_
-            )
-    }
-    ans <- unlist(ans)
 
-    if(value == "timeDate") timeDate(ans)  else ans
+    ## TODO: need more elegant solution but this should do.
+    ##       Bear in mind that there may be more than one special BH in a year!
+    if(named) {
+        ## same as for 'else' with names
+        for(y in year) {
+            ans <- list(ans,
+                 if (y == 1981)               # Royal wedding was a public holiday
+                    c("GBRoyalWeddingDay1981" = "1981-07-29")
+                else if (y == 1999)          # UK millenum day
+                    c(GBMillenumDay = "1999-12-31")
+                else if (y == 2002)          # Last Monday in May holiday moved to June
+                    c(GBQueensGoldenJubileeDay = "2002-06-04") # 3, and Queen's Jubilee on June 4
+                else if (y == 2011)       # Royal wedding declared a public holiday
+                    c(GBRoyalWeddingDay2011 = "2011-04-29")
+                else if (y == 2012)
+                    c(GBQueensDiamondJubilee = "2012-06-05") # Last Monday in May holiday moved to June 4, and
+                                          # Queen's Diamond Jubilee on June 5
+                else if (y == 2022)
+                             # Last Monday in May (i.e., Spring Bank Holiday) moved to June 2
+                             # Unique Bank holidays:  Queen's Diamond Jubilee.
+                             #                        State Funeral of Queen Elizabeth II
+                    c(# paste0(y, "-06-02"), # Thursday, Spring bank holiday
+                      GBQueensPlatinumJubileeDay = "2022-06-03",     # Friday, Platinum Jubilee bank holiday
+                      GBQueensFuneralDay = "2022-09-19")     # BH for the State Funeral of Queen Elizabeth II
+                else if (y == 2023)     # Bank holiday for the coronation of King Charles III
+                    c(GBKingCharlesIIICoronationDay = "2023-05-08")
+                else
+                    stop("should not reach this branch of the program")
+                )
+        }
+    } else {
+        for(y in year) {
+            ans <- list(ans,
+                 if (y == 1981)               # Royal wedding was a public holiday
+                    "1981-07-29"
+                else if (y == 1999)          # UK millenum day
+                    "1999-12-31"
+                else if (y == 2002)          # Last Monday in May holiday moved to June
+                    "2002-06-04"             # 3, and Queen's Jubilee on June 4
+                else if (y == 2011)       # Royal wedding declared a public holiday
+                    "2011-04-29"
+                else if (y == 2012)
+                    "2012-06-05"          # Last Monday in May holiday moved to June 4, and
+                                          # Queen's Diamond Jubilee on June 5
+                else if (y == 2022)
+                             # Last Monday in May (i.e., Spring Bank Holiday) moved to June 2
+                             # Unique Bank holidays:  Queen's Diamond Jubilee.
+                             #                        State Funeral of Queen Elizabeth II
+                    c(# paste0(y, "-06-02"), # Thursday, Spring bank holiday
+                      "2022-06-03",     # Friday, Platinum Jubilee bank holiday
+                      "2022-09-19")     # BH for the State Funeral of Queen Elizabeth II
+                else if (y == 2023)     # Bank holiday for the coronation of King Charles III
+                    "2023-05-08"
+                else
+                    stop("should not reach this branch of the program")
+                )
+        }
+    }
+        
+    ans <- sort(unlist(ans))
+
+    if(value == "timeDate") timeDate(ans, format = "%Y-%m-%d")  else ans
 }
 
 

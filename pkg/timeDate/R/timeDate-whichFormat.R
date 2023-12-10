@@ -34,6 +34,12 @@ whichFormat <- function(charvec, silent = FALSE) {
     ## All this assume that charvec is very uniform so we only look at the entry [1]  !?????
     ## rather, e.g.,   NCHAR <- max(nchar(ch <- head(charvec)))  and the continue looking at all ch[] ?
     c1 <- charvec[1]
+    ## 2023-12-09 GNB:
+    ##    c1 = NA causes error 'missing value where TRUE/FALSE needed' further below
+    ##    Hence check for that. There is at least one non-NA at this point, so:
+    if(is.na(c1))
+        c1 <- charvec[!is.na(charvec)][1]
+    
     NCHAR <- nchar(c1)
     SUBSTR <- substring(c1, 5, 5) == "-"
 

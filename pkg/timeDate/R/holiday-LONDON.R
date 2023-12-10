@@ -120,7 +120,7 @@ holidayLONDON <- function (year = getRmetricsOptions("currentYear")) {
         ## Early May Bank Holiday year >= 1978
         holidays <- list(holidays,
                          GBEarlyMayBankHoliday(y1974toInf[y1974toInf >= 1978], ""),
-                         GBOneoffBankHoliday(y1974toInf, "")
+                         specialHolidayGB(y1974toInf, "")
                          )
     }
 

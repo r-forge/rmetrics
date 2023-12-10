@@ -204,7 +204,7 @@ export(
     GBSpringBankHoliday,
     GBEarlyMayBankHoliday,
     GBMilleniumDay, # deprecated
-    GBOneoffBankHoliday,
+    specialHolidayGB,
     GBSummerBankHoliday,
     GoodFriday,
     ITAllSaints,

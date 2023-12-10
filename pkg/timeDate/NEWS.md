@@ -1,25 +1,50 @@
 # timeDate 4032.109
 
-- new function `GBOneoffBankHoliday` gives the special UK one-off holidays for
+- all functions returning public and eclessiastical holidays get new arguments
+  `value`, `na_drop`, and `...`, controlling the type of the return value and
+  the handling of missing values. Argument `...` is for things like 'format'
+  when applicable. Not all honour the new arguments though, see
+  below.
+
+- all functions returning public and eclessiastical holidays now honour the new
+  argument `value`.
+
+- some holiday functions were amended or rewritten to honour the new argument
+  `na_drop`. These include the England holidays ('GBxxx'), some Japan holidays
+  (JPxxx), and a number of other functions (e.g., `CAFamilyDay). Contributions
+  and/or information needed to have them do so is wellcome (e.g. dates when a
+  holiday was introduced and/or moved).
+
+
+- `midnightStandard2()` (and hence `timeDate()`) was throwing a puzzling error
+  when the input character vector contained one or more `NA`s mixed with
+  non-NA's.
+
+- `whichFormat()` was throwing error when the _first_ element of the input
+  vector was `NA`. This could be considered a feature but that's inconsistent
+  since `NA`s at other positions were not causing trouble. Now fixed.
+
+- the 'character' method for `timeDate()` was passing only the first element of
+  the input vector to `whichFormat()`. This was preventing it from inferring the
+  format when argument 'format' was missing.
+
+
+- new function `specialHolidayGB` gives the special UK one-off holidays for
   the requested years.
 
-- `MilleniumDay` is now deprecated. Use `GBOneoffBankHoliday(1999)` or any range
-  of years that contains 1999.
+- `MilleniumDay` is now deprecated, use `specialHolidayGB(1999)`.
 
-- rewrote `CAFamilyDay` and a number of other functions to honour the new
-  arguments.
 
-- new arguments for the holiday functions controlling missing values and the
-  type of the return. Not all honour the new arguments for now.
-
-- fixed some omissions in `holidayLONDON` and refactored it..
+- fixed some omissions in `holidayLONDON` and refactored it completely.
 
 - fixed a bug in an internal function which was throwing errors from
   `holidayLONDON` for some ranges including years before 1916.
 
+
 - `GBEarlyMayBankHoliday`, `GBSpringBankHoliday` and `GBSummerBankHoliday` now
   give dates according to historical rules, not simply according to current
-  ones.
+  ones. See the remarks above about the new arguments of holiday functions.
+
 
 - major overhaul and update of the Japan's holidays. Previously fixed dates were
   returned for each holiday. Now moving holidays are calculated (e.g., second
@@ -27,8 +52,9 @@
   Olympics in 2020 and 2021). Historical changes are (partially) taken into
   account. Further corrections and historical amendments are welcome.
 
-  Thanks to Sylvie Lachaud for reporting the issues with Japan's holiday, as
-  well as providing current correct definitions and extensive list of links.
+  Thanks to Sylvie Lachaud for reporting the issues with Japan holiday
+  functions, as well as providing current correct definitions and extensive list
+  of links.
 
 - new function `JPMountainDay` gives the relatively recently introduced Japan
   holiday 'Mountain Day'.
@@ -36,6 +62,7 @@
 - `JPKeirouNoHi` replaces `JPKeirouNOhi`. The latter is an aberration from all
   other `xxxNoHi` Japanese holiday functions and a source of difficult to spot
   errors. The old one is now deprecated and will be removed in the future.
+
 
 - modified the 'timeDate' method for `summary` to return an object from class
   "timeDate_summary" (rather than print directly) and created a print method for
@@ -56,7 +83,7 @@
   package.
 
 - removed file 'namespace-tags.R' as it had not been updated recently, see
-  r83578 or earlier if you need it.
+  revision r83578 or earlier if you need it.
 
 
 # timeDate 4022.108
