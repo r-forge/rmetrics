@@ -149,3 +149,55 @@ holidayNYSE <-
 
 ################################################################################
 
+## GNB
+## TODO: need care with time zones?
+.reset_time <- function(x, hms) {
+    timeDate(paste(format(x, format = "%Y-%m-%d"), hms))
+}
+
+## Author: Georgi N. Boshnakov
+earlyCloseNYSE <- function(year) {
+
+    year1 <- year >= 2012
+
+    res <- timeDate()
+    
+    if(length(year1)) {
+        ## Thanksgiving
+        thanks <- USThanksgivingDay(year)
+        ## this should be computed more robustly
+        ## but the date is end of November, little risk for DST problems, etc.
+        thanks_p1 <- thanks + 86400   ## 24 * 60 * 60  # always Friday
+        
+        ## indep <- USIndependenceDay(year) # July 4
+        ## day before Independence day
+        indep_m1 <- timeDate(paste0(year, "-07-03", " ", "13:00:00"))  # July 3
+        
+        indep_m1 <- indep_m1[!(dayOfWeek(indep_m1) %in% c("Sat", "Sun"))] 
+        
+        ## Christmas Eve
+        xmas <- ChristmasDay(year)
+        eve <- ChristmasEve(year)
+        
+        eve <- eve[!(dayOfWeek(xmas) %in% c("Mon", "Sat", "Sun"))]
+        
+        ## take care of empty vectors
+        ## unfortunately, currently timeDate(character0)) gives a timeDate of length 1 (NA)
+        res <- c(thanks_p1, indep_m1, eve)
+        if(length(res) > 1 || length(res) == 1 && !is.na(res)) {
+            res <- res[!is.na(res)]
+            res <- .reset_time(res, "13:00:00")
+            res <- sort(res)
+        }
+    }
+    
+    db_years <- (as.numeric(format(early_close, "%Y")))
+    if(any(flags <- db_years %in% year))
+        if(length(res) == 1 && is.na(res))
+            ## res is empty
+            res <- early_close[flags] ## assumed sorted in the db
+        else
+            res <- unique(sort(c(early_close[flags], res)))
+    
+    res
+}

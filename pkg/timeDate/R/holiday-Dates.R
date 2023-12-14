@@ -15,7 +15,7 @@
 # MA  02111-1307  USA
 
 ## 2023-11-27
-##    GNB: reworked the Japan's holidays as they all had set to fixed dates.
+##    GNB: reworked the Japan's holidays as they all were set to fixed dates,
 ##         and also to reflect changes in recent decades.
 
 ################################################################################
@@ -265,9 +265,10 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
         if (as.character(theDate) == as.character(Easter(y, +1))) {
             theDate = .nth.of.nday(y, 4, 1, 4)
         }
-        ans = c(ans, theDate)
+        ans = c(ans, theDate) # this changes the class from .sdate to numeric,
+                              # hence as.character() below
     }
-    if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
+    if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
 CHAscension =

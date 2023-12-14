@@ -1,10 +1,14 @@
 # timeDate 4032.109
 
+- new function `earlyCloseNYSE` gives datetimes of early closings of NYSE,
+  including scheduled and unscheduled ones.  The information is incomlete. This
+  answers issue [#6757], see also the related issue [#1356] mentioned below in
+  the news for a previous version.
+
 - all functions returning public and eclessiastical holidays get new arguments
   `value`, `na_drop`, and `...`, controlling the type of the return value and
   the handling of missing values. Argument `...` is for things like 'format'
-  when applicable. Not all honour the new arguments though, see
-  below.
+  when applicable. Not all honour the new arguments though, see below.
 
 - all functions returning public and eclessiastical holidays now honour the new
   argument `value`.
@@ -35,7 +39,8 @@
 - `MilleniumDay` is now deprecated, use `specialHolidayGB(1999)`.
 
 
-- fixed some omissions in `holidayLONDON` and refactored it completely.
+- fixed omissions in `holidayLONDON` and refactored it completely.  It became
+  easier to maintain and orders of magnitude faster.
 
 - fixed a bug in an internal function which was throwing errors from
   `holidayLONDON` for some ranges including years before 1916.

@@ -103,5 +103,4 @@ test.holidaysLONDON <- function() {
     identical(lon_all, readRDS(fn))
 }
 
-
 ################################################################################

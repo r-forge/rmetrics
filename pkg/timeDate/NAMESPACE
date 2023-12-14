@@ -698,6 +698,7 @@ export(
     Yerevan,
     Zagreb,
     Zaporozhye,
-    Zurich
+    Zurich,
+    earlyCloseNYSE
 )
 ## end:   FinCenter

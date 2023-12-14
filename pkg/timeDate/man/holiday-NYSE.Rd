@@ -75,7 +75,9 @@ holidayNYSE(year = getRmetricsOptions("currentYear"),
     an object of class \code{"timeDate"}
 }
 
-
+\seealso{
+  \code{\link{earlyCloseNYSE}} for times of early closings
+}
 \examples{
 ## holidayNYSE -
 holidayNYSE() ## current year
