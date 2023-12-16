@@ -1,3 +1,8 @@
+## timeSeries 4032.107.9000
+
+- fixed 'Lost braces; missing escapes or markup?' NOTE from CRAN.
+
+
 ## timeSeries 4031.107
 
 - refactored the 'timeSeries' methods for `head` and `tail`.
