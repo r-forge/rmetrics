@@ -86,8 +86,11 @@ setMethod("isMonthly", "timeDate", function(x)
     
     # FUNCTION:
     
-    # Monthly ?
-    m <- c(timeDate::months(x)) #-> c() to remove attributes
+    ## Monthly ?
+    ## 2023-12-20 GNB: changing to use x$month, see NEWS for timeDate > 4032.109
+    ## m <- c(timeDate::months(x)) #-> c() to remove attributes
+    m <- x$month
+    
     # (m[1] -1) -> shift vector to match first entry in m
     monthly <- seq(from = m[1]-1, length.out=length(m)) %% 12 + 1
     
@@ -127,8 +130,11 @@ setMethod("isQuarterly", "timeDate", function(x)
     
     # FUNCTION:
     
-    # Quartertly ?
-    m <- c(timeDate::months(x)) #-> c() to remove attributes
+    ## Quartertly ?
+    ## 2023-12-20 GNB: changing to use x$..., see NEWS for timeDate > 4032.109
+    ##    m <- c(timeDate::months(x)) #-> c() to remove attributes
+    m <- x$month
+    
     # (m[1] -1) -> shift vector to match first entry in m
     quarterly <- seq(from = m[1]-1, by = 3, length=length(m)) %% 12 + 1
     

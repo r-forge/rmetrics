@@ -14,7 +14,7 @@
 import(methods)
 importFrom(stats, start, end, window, approx, na.omit, var)
 importFrom("graphics", axis.POSIXct)
-importFrom("utils", str)
+importFrom("utils", str, .DollarNames)
 
 S3method("[<-",timeDate)
 S3method(as.Date,timeDate)
@@ -58,6 +58,9 @@ S3method(trunc,timeDate)
 S3method(unique,timeDate)
 S3method(window,timeDate)
 
+S3method(.DollarNames, timeDate)
+
+
 exportClasses(timeDate)
 
 exportMethods(
@@ -86,7 +89,10 @@ exportMethods(
     points,
     sample,
     show,
-    timeDate
+    timeDate,
+
+    weekdays,
+    quarters
 )
 
 export(

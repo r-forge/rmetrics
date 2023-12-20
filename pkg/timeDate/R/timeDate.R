@@ -84,6 +84,16 @@ setMethod("timeDate", "character",
     if (FinCenter == "")
         FinCenter <- getRmetricsOptions("myFinCenter")
 
+    ## 2023-12-15 GNB: return empty 'timeDate' (it was returning NA timeDate before when
+    ##                 'format' was missing but empty timeDate if format was specified);
+    ##                 also, brings it in line with numeric and other 'charvec' of length 0,
+    ##                 which do return 0-length objets.
+    if(!length(charvec)) {
+        charvec <- as.POSIXct(charvec, origin = "1970-01-01", tz = "GMT")
+        ## callGeneric()
+        return(timeDate(charvec, zone = zone, FinCenter = FinCenter))
+    }
+    
     # ISO Date/Time Format:
     isoDate   <- "%Y-%m-%d"
     isoFormat <- "%Y-%m-%d %H:%M:%S"
@@ -276,7 +286,7 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
     ## before the modification the function was essentially using
     ##     t = y - offset
     ##     y = t + offset
-    ## but this lead to misterious shifts around DST changes, except for the
+    ## but this leads to misterious shifts around DST changes, except for the
     ## meridians of London and Central Europe.
     ##
     ## For example, Bulgaria/Sofia is GMT+2 non-DST and GMT+3 during DST.  The
@@ -397,13 +407,16 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
                 num[changed] <- NA
         }
         num - dst.list$offSet[offSetIdx]
-    } else { ## gmt2any
+    } else { # gmt2any
+        ## 2023-12-19 GNB: (see also the related comment in the timeDate method for atoms()).
+        ##
+        ##   As far as I understand this, it computes a GMT time which is the same as the
+        ##   time at FinCenter.
+        ##
         ## GNB: this was just
         ##          num + dst.list$offSet[offSetIdx]
         ##      but this is incorrect around DST changes, since the offset offSetIdx
-        ##      may need correction, particularly evifdent for time zones further from GMT,
-        ## 
-        ##
+        ##      may need correction, particularly evident for time zones further from GMT.
         res <- num + dst.list$offSet[offSetIdx]
 
         offset_after <- findInterval(res, dst.list$numeric)

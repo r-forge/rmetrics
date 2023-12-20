@@ -8,6 +8,18 @@
 
 \alias{months}
 \alias{months,timeDate-method}
+\alias{months,timeDate,missing-method}
+\alias{months,timeDate,ANY-method}
+
+\alias{weekdays}
+\alias{weekdays,timeDate-method}
+\alias{weekdays,timeDate,missing-method}
+\alias{weekdays,timeDate,ANY-method}
+
+\alias{quarters}
+\alias{quarters,timeDate-method}
+
+\alias{$,timeDate-method}
 
 
 
@@ -23,12 +35,16 @@
 
 \usage{
 \S4method{julian}{timeDate}(x, origin = timeDate("1970-01-01"), 
-    units = c("auto", "secs", "mins", "hours", "days", "weeks"), 
-    zone = NULL, FinCenter = NULL, \dots)
+       units = c("auto", "secs", "mins", "hours", "days", "weeks"), 
+       zone = NULL, FinCenter = NULL, \dots)
 
 \S4method{atoms}{timeDate}(x, \dots)
 
-\S4method{months}{timeDate}(x, abbreviate = NULL)
+\S4method{months}{timeDate}(x, abbreviate)
+
+\S4method{weekdays}{timeDate}(x, abbreviate = FALSE)
+
+\S4method{quarters}{timeDate}(x)
 }
 
 
@@ -73,9 +89,18 @@
   object, i.e., the year, month, day, and optionally, hour, minute and
   second.  The result is a data frame with the financial center in
   atrribute \code{"control"}.
+  
+  \code{months} extracts the months, see section \sQuote{Note}.
 
-  \code{months} extracts the months as integers from 1 to 12, unlike
-  \code{base::months} which returns the names of the months.
+  The dollar operator applied to a \code{"timeDate"} object,
+  e.g. \code{td$name}, extracts a component of the date/time values as a
+  numeric vector. Currently, \code{name} can be one of \code{year},
+  \code{month}, \code{day}, \code{hour}, \code{minute}, \code{second},
+  \code{weekday}, \code{weekday0}, and \code{quarter}. \code{weekday0}
+  starts with 0 (for Sunday), the meaning of the rest should be clear.
+
+  In interactive sessions, completion is available for the dollar
+  operator.
 
 }
 
@@ -95,19 +120,31 @@
   \item{S}{scond;}
 
   for \code{months}, a numeric vector with attribute \code{"control"}
-  containing the financial center.
+  containing the financial center. (\strong{Note:} this use is
+  deprecated, use \code{$month} instead.)
+
+  for the dollar method, the corresponding component as numeric vector.
     
 }
+\note{
 
+  \strong{Deprecation Warning:} a `timeDate` method for `months` has
+  existed for a long time but it was returning a numeric vector, which
+  is inconsistent with the other methods for months in base R (they
+  return names of months). Returning a numeric vector when 'abbreviate'
+  is missing is a temporary compromise, to avoid breaking old code but
+  this should be considered deprecated. Use `td$month` to get the
+  numbers.
+  
+}
 \seealso{
+  \code{\link{dayOfWeek}},
+  \code{\link{dayOfYear}};
+
   the base R functions
   \code{\link[base]{julian}},
   \code{\link[base]{difftime}},
   \code{\link[base]{months}};
-
-  \code{\link{dayOfWeek}},
-  \code{\link{dayOfYear}}
-  
 }
 
 \examples{
@@ -120,6 +157,22 @@
    
 ## months -
    months(tC)
+
+weekdays(tC)
+weekdays(tC, TRUE)
+
+## the dollar method
+tC$year
+tC$month
+tC$day
+tC$hour
+tC$minute
+
+tC$second
+tC$weekday
+tC$weekday0
+
+tC$quarter
 }
 
 \keyword{chron}

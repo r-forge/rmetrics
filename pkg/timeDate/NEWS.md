@@ -1,3 +1,35 @@
+# timeDate 4032.109.9000
+
+- new timeDate method for `$` for extraction of components of timeDate objects -
+  e.g., for a timeDate object `td`, `td$year`, `td$month`, and `td$sec` give
+  numeric vectors containing the corresponding components. In interactive
+  sessions completion is supported, usually by hitting the <TAB> key.
+
+- new timeDate methods for the base R functions `quarters` and `weekdays` (there
+  return character vectors of names).
+
+- new `timeDate` method for `months` returning a character vector. For now, a
+  character vector will be returned only if argument 'abbreviate' is set
+  explicitly (to `TRUE` or `FALSE`). If 'abbreviate' is missing, the numeric
+  values are returned, see the deprecation note below.
+
+  *Deprecation Warning:* a `timeDate` method for `months` has existed for a long
+  time but it was returning a numeric vector, which is inconsistent with the
+  other methods for months in base R (they return names of months). Returning a
+  numeric vector when 'abbreviate' is missing is a temporary compromise, to
+  avoid breaking old code but this should be considered deprecated. Use
+  `td$month` to get the numbers.
+
+- now `timeDate(character(0))` returns a 0-length "timeDate" object.  Previously
+  it was returning an `NA` "timeDate" object of length 1 if argument 'format'
+  was missing and a 0-length object otherwise.
+
+- changed the "timeDate" method for `show` to print something like 'timeDate of
+  length 0' along with the FinCenter, which seems better than the previous
+  output for this case.
+
+
+
 # timeDate 4032.109
 
 - new function `earlyCloseNYSE` gives datetimes of early closings of NYSE,

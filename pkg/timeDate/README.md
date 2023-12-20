@@ -40,7 +40,7 @@ To report bugs visit [Rmetrics](https://r-forge.r-project.org/projects/rmetrics/
 # Documentation
 
 You can view the documentation of `timeDate` at
-[timeDateDoc](https://geobosh.github.io/timeDateDoc/)
+[timeDateDoc](https://geobosh.github.io/timeDateDoc/) (html site created with 'pkgdown')
 or download the
 [reference manual](https://cran.r-project.org/package=timeDate/timeDate.pdf)
 of the latest release from CRAN.

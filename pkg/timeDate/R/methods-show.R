@@ -28,10 +28,15 @@ setMethod("show", "timeDate", function (object)
 {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
 
-    # when creating empty new("timeDate")
-    if (!length(slot(object, "Data")))
-        return(str(object))
-
+    ## when creating empty new("timeDate")
+    ## 2023-12-15 GNB: was
+    ##    return(str(object))
+    ## but that is confusing (also the return value is not NULL as below)
+    if (!length(slot(object, "Data"))) {
+        cat(finCenter(object), "\n", sep = "")
+        cat(class(object), "of length 0", "\n")
+        return(invisible(NULL))
+    }
     # Check records to get printed:
     maxRmetrics <- as.numeric(getRmetricsOptions("max.print"))
     maxR <- as.numeric(getOption("max.print"))
