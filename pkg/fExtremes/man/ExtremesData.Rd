@@ -33,7 +33,7 @@
 
     A collection and description of functions for 
     explorative data analysis. The tools include 
-    plot functions for emprical distributions, quantile 
+    plot functions for empirical distributions, quantile 
     plots, graphs exploring the properties of exceedances 
     over a threshold, plots for mean/sum ratio and for 
     the development of records.

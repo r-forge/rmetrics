@@ -95,7 +95,7 @@ exindexesPlot(x, block = 22, quantiles = seq(0.950, 0.995, length = 10),
         [thetaSim] - \cr
         a character string denoting the name of the model. Either 
         \code{"max"} or \code{"pair"}, the first representing the 
-        maximimum Frechet series, and the second the paired exponential
+        maximum Frechet series, and the second the paired exponential
         series.
         }
     \item{n}{

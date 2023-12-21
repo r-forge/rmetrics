@@ -21,8 +21,89 @@ importFrom("stats", acf, dnorm, integrate, lowess, lsfit, optim,
 ################################################
 ## functions
 ################################################
-exportPattern(".")
-S3method("plot", "fGEVFIT")
-S3method("summary", "fGEVFIT")
-S3method("plot", "fGPDFIT")
-S3method("summary", "fGPDFIT")
+
+export(
+    # DataPreprocessing
+    blockMaxima,
+    findThreshold,
+    pointProcess,
+    deCluster,
+    # ExtremeIndex
+    thetaSim,
+    blockTheta,
+    clusterTheta,
+    runTheta,
+    ferrosegersTheta,
+    exindexPlot,
+    exindexesPlot,
+    # ValueAtRisk
+    VaR,
+    CVaR,
+    # GevDistribution
+    dgev,
+    pgev,
+    qgev,
+    rgev,
+    gevMoments,
+    gevSlider,
+    # GpdDistribution
+    dgpd,
+    pgpd,
+    qgpd,
+    rgpd,
+    gpdMoments,
+    gpdSlider,
+    # ExtremesData
+    emdPlot,
+    qqparetoPlot,
+    mePlot,
+    mrlPlot,
+    mxfPlot,
+    msratioPlot,
+    recordsPlot,
+    ssrecordsPlot,
+    sllnPlot,
+    lilPlot,
+    xacfPlot,
+    normMeanExcessFit,
+    ghMeanExcessFit,
+    hypMeanExcessFit,
+    nigMeanExcessFit,
+    ghtMeanExcessFit,
+    # GevModelling
+    gevSim,
+    gumbelSim,
+    gevFit,
+    gumbelFit,
+    gevrlevelPlot,
+    # GpdModelling
+    gpdSim,
+    gpdFit,
+    # GevMdaEstimation
+    hillPlot,
+    shaparmPlot,
+    shaparmPickands,
+    shaparmHill,
+    shaparmDEHaan,
+    # GpdRisk
+    gpdQPlot,
+    gpdQuantPlot,
+    gpdRiskMeasures,
+    gpdSfallPlot,
+    gpdShapePlot,
+    gpdTailPlot,
+    tailPlot,
+    tailSlider,
+    tailRisk,
+    # Needed for unit tests
+    .gevpwmFit,
+    .gevmleFit,
+    .gumpwmFit,
+    .gummleFit,
+    .gevrlevelLLH
+)    
+
+S3method(plot, fGEVFIT)
+S3method(summary, fGEVFIT)
+S3method(plot, fGPDFIT)
+S3method(summary, fGPDFIT)

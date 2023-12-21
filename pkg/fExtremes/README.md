@@ -7,7 +7,7 @@
 Status](https://ci.appveyor.com/api/projects/status/github/paulnorthrop/fExtremes?branch=main&svg=true)](https://ci.appveyor.com/project/paulnorthrop/fExtremes)
 [![R-CMD-check](https://github.com/paulnorthrop/fExtremes/workflows/R-CMD-check/badge.svg)](https://github.com/paulnorthrop/fExtremes/actions)
 [![Coverage
-Status](https://codecov.io/github/paulnorthrop/fExtremes/coverage.svg?branch=main)](https://codecov.io/github/paulnorthrop/fExtremes?branch=main)
+Status](https://codecov.io/github/paulnorthrop/fExtremes/coverage.svg?branch=main)](https://app.codecov.io/github/paulnorthrop/fExtremes?branch=main)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/fExtremes)](https://cran.r-project.org/package=fExtremes)
 [![Downloads
 (monthly)](https://cranlogs.r-pkg.org/badges/fExtremes?color=brightgreen)](https://cran.r-project.org/package=fExtremes)
@@ -25,8 +25,8 @@ the [Rmetrics software project](https://www.rmetrics.org/).
 
 ### An example
 
-The following code simulates data from a GEV distribution, fits a GEV
-distribution to these data and creates model diagnostic plots.
+The following code simulates data from a GEV distribution and fits a GEV
+distribution to these data.
 
 ``` r
 library(fExtremes)
@@ -51,7 +51,7 @@ fit
 #> 0.18304217 0.04548892 0.99014748 
 #> 
 #> Description
-#>   Fri Aug  5 17:30:44 2022
+#>   Thu Dec 21 12:54:05 2023
 ```
 
 ### Installation
