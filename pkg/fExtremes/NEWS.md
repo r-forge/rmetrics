@@ -1,4 +1,4 @@
-# fExtremes 4032.84: revisions 6272-6275 on R-Forge
+# fExtremes 4032.84: revisions 6462-6463 on R-Forge
 
 * Call to `fBasics::.distCheck()` have been replaced by calls to (the identical) `fBasics::distCheck()` because the former will be deprecated. Thank you to Georgi Boshnakov for this.
 * `NAMESPACE` edited so that user-level functions and those needed for unit test are exported explicitly, rather than exporting everything.
