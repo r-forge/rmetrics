@@ -1,7 +1,6 @@
-\name{as.timeDate}
-\alias{as.timeDate}
+\name{coerceToOther}
+\alias{coerceToOther}
 
-\alias{Any to 'timeDate' Coercion}
 \alias{as.character.timeDate}
 \alias{as.double.timeDate}
 \alias{as.list.timeDate}
@@ -10,13 +9,6 @@
 \alias{as.POSIXlt.timeDate}
 \alias{as.Date.timeDate}
 
-\alias{as.timeDate.default}
-\alias{as.timeDate.POSIXt}
-\alias{as.timeDate.Date}
-\alias{as.timeDate.timeDate}
-\alias{coerce,ANY,timeDate-method}
-\alias{coerce,Date,timeDate-method}
-\alias{coerce,POSIXt,timeDate-method}
 \alias{coerce,timeDate,character-method}
 \alias{coerce,timeDate,numeric-method}
 \alias{coerce,timeDate,data.frame-method}
@@ -25,17 +17,15 @@
 \alias{coerce,timeDate,POSIXlt-method}
 \alias{coerce,timeDate,Date-method}
 
-\title{Coercion from/to 'timeDate'}
+
+\title{Coercion from 'timeDate' to other classes}
 
 \description{
-  
   Coerce and transform objects of class \code{"timeDate"}.
-  
 }
 
 
 \usage{
-## methods for base R functions
 \method{as.character}{timeDate}(x, \dots)
 
 \method{as.double}{timeDate}(x, 
@@ -48,73 +38,46 @@
 \method{as.POSIXlt}{timeDate}(x, tz = "", \dots)
 
 \method{as.Date}{timeDate}(x, method = c("trunc", "round", "next"), \dots)
-
-## methods for as.timeDate
-\method{as.timeDate}{default}(x, zone = "", FinCenter = "")  
-
-\method{as.timeDate}{POSIXt}(x, zone = "", FinCenter = "")
-
-\method{as.timeDate}{Date}(x, zone = "", FinCenter = "")
-
-\method{as.timeDate}{timeDate}(x, zone = x@FinCenter, FinCenter = "")  
 }
 
-
 \arguments{
-  \item{FinCenter}{
-    a character with the location of the  
-    financial center named as "continent/city". 
+  \item{x}{
+    an object of class \code{"timeDate"}.
   }
-
-  \item{method}{
-    a character string denoting the method how to determine the
-    dates.
-  }    
-  
+  \item{units}{
+    a character string denoting the date/time units in which the 
+    results are desired.
+  }
   \item{tz}{
     inputs the time zone to POSIX objects, i.e. the time zone, 
     \code{zone}, or financial center string, \code{FinCenter}, 
     as used by \code{"timeDate"} objects.
   }
-
-  \item{units}{
-    a character string denoting the date/time units in which the 
-    results are desired.
-  }
-
-  \item{x}{
-    an object of class \code{"timeDate"}.
-  }
-
-  \item{zone}{
-    the time zone or financial center where the data were recorded.
-  }
-
+  \item{method}{
+    a character string denoting the method how to determine the
+    dates.
+  }    
   \item{\dots}{
     arguments passed to other methods.
   }
-
 }
-
 
 \value{
-  
-  for \code{as.timeDate.POSIXt}, an object of class \code{"timeDate"},
-  
-  for \code{as.timeDate.Date}, an object of class \code{"timeDate"}
-  
+  an object from the designated target class
 }
 
+\seealso{
+  
+  \code{\link{timeDate}} and \code{\link{as.timeDate}}
+  for creation of and conversion to \code{"timeDate"} objects
 
+}
 \examples{
 ## timeDate - 
    tC = timeCalendar()
 
-## Convert 'timeDate' to a character strings:
+## Convert 'timeDate' to a character vector:
    as.character(tC)
-   
-## Coerce a 'Date' object into a 'timeDate' object:
-   as.timeDate(Sys.Date())
 }
 
 \keyword{chron}

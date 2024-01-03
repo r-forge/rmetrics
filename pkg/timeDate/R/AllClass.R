@@ -33,10 +33,6 @@
 #  setMethod inti           'initialize', 'timeDate
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setClass("timeDate",
          # A class implemented by Diethelm Wuertz and Yohan Chalabi
 
@@ -56,10 +52,7 @@ setClass("timeDate",
              TRUE
          })
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
+
 setMethod("initialize", "timeDate", function(.Object, ...) {
 
     .Object <- callNextMethod()

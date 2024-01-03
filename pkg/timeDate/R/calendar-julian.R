@@ -20,11 +20,9 @@
 #  julian,timeDate           Returns Julian day counts since 1970-01-01
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("julian", "timeDate",
+## GNB: no need to make julian() S4 generic, just create an S3 method
+##           setMethod("julian", "timeDate",
+julian.timeDate <- 
     function(x, origin = timeDate("1970-01-01"),
     units = c("auto", "secs", "mins", "hours", "days", "weeks"),
     zone = NULL, FinCenter = NULL, ...)
@@ -64,8 +62,7 @@ setMethod("julian", "timeDate",
 
     # Return Value:
     structure(res, origin = origin)
-})
+}
 
 
 ################################################################################
-

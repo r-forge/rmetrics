@@ -20,11 +20,9 @@
 #  frequency,timeDate      Returns the frequency of a timeDate vector
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("frequency", "timeDate", function(x, ...)
+## GNB: made it an S3 method
+##        setMethod("frequency", "timeDate", 
+frequency.timeDate <- function(x, ...)
 {
     # A function implemented by Diethelm Wuertz
     
@@ -48,8 +46,10 @@ setMethod("frequency", "timeDate", function(x, ...)
     
     # Return Value:
     frequency
-})
+}
 
+## ... but package timeSeries also defines S4 method and imports the S4 generic from
+## timeDate. So for now keep the S4 method, as well.
+setMethod("frequency", "timeDate", frequency.timeDate)
 
 ################################################################################
-

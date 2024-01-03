@@ -15,8 +15,10 @@
 \section{Objects from the Class}{
 
   Objects can be created by calls of the functions
-  \code{\link{timeDate}}, \code{\link{timeSequence}} and
-  \code{\link{timeCalendar}}, among others.
+  \code{\link{timeDate}}, \code{\link{timeSequence}},
+  \code{\link{timeCalendar}} and \code{\link{as.timeDate}}, among
+  others. There is also a \code{"timeDate"} method for
+  \code{\link[=seq.timeDate]{seq}}.
   
 }
 

@@ -12,7 +12,7 @@
 ## revisions.
 
 import(methods)
-importFrom(stats, start, end, window, approx, na.omit, var)
+importFrom(stats, start, end, window, approx, na.omit, var, frequency)
 importFrom("graphics", axis.POSIXct)
 importFrom("utils", str, .DollarNames)
 
@@ -58,6 +58,14 @@ S3method(trunc,timeDate)
 S3method(unique,timeDate)
 S3method(window,timeDate)
 
+S3method(julian,timeDate)
+S3method(months,timeDate)
+S3method(quarters,timeDate)
+S3method(weekdays,timeDate)
+
+S3method(frequency,timeDate)
+
+
 S3method(.DollarNames, timeDate)
 
 
@@ -73,7 +81,6 @@ exportMethods(
     align,
     atoms,
     finCenter,
-    frequency,
     getDataPart,
     initialize,
     is.na,
@@ -81,9 +88,7 @@ exportMethods(
     isMonthly,
     isQuarterly,
     isRegular,
-    julian,
     lines,
-    months,
     names,
     plot,
     points,
@@ -91,12 +96,11 @@ exportMethods(
     show,
     timeDate,
 
-    weekdays,
-    quarters
+    frequency
 )
 
 export(
-    .endpoints ## , this is documented
+    .endpoints # this is documented
 )
 
 export(
@@ -155,7 +159,11 @@ export(
     timeNdayOnOrBefore,
     timeNthNdayInMonth,
     timeSequence,
-    whichFormat
+    whichFormat,
+
+    months,
+    earlyCloseNYSE,
+    frequency
 )
 
 export(GBBankHoliday) # deprecated, superseded by GBSpringBankHoliday
@@ -704,7 +712,6 @@ export(
     Yerevan,
     Zagreb,
     Zaporozhye,
-    Zurich,
-    earlyCloseNYSE
+    Zurich
 )
 ## end:   FinCenter

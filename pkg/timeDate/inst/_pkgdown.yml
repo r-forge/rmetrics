@@ -20,6 +20,7 @@ reference:
       - timeSequence
       - timeCalendar
       - as.timeDate
+      - coerceToOther
       - timeDateMathOps
       - difftimeDate
       - Sys.timeDate

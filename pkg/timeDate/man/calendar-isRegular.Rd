@@ -4,13 +4,15 @@
 \alias{isDaily}
 \alias{isMonthly}
 \alias{isQuarterly}
+
 \alias{frequency}
+\alias{frequency.timeDate}
+\alias{frequency,timeDate-method}
 
 \alias{isDaily,timeDate-method}
 \alias{isMonthly,timeDate-method}
 \alias{isQuarterly,timeDate-method}
 \alias{isRegular,timeDate-method}
-\alias{frequency,timeDate-method}
 
 
 
@@ -32,7 +34,7 @@
 
 \S4method{isRegular}{timeDate}(x)
 
-\S4method{frequency}{timeDate}(x, \dots)
+\method{frequency}{timeDate}(x, \dots)
 }
 
 \arguments{

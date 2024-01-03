@@ -103,42 +103,23 @@ setMethod("atoms", "ANY", function(x, ...)
 ## GNB: for now changing this method to be for missing 'abbreviate' and adding a
 ##      method for non-missing. So, the character names can be obtained by
 ##      setting it to TRUE or FALSE explicitly.
-## 
-setMethod("months", c("timeDate", "missing"),
-    function(x, abbreviate = NULL)
-{
-    # A function implemented by Diethelm Wuertz
-    # and improved by Yohan Chalabi
-
-    # Description:
-    #   Extracts months atom from a timeDate object
-
-    # Arguments:
-    #   x - a 'timeDate' object from which to extract the
-    #       month "atom".
-
-    # Value:
-    #   Returns the month from a 'timeDate' object as an integer
-    #   value or vector with elements ranging between 1 and 12,
-    #   numbering the months from January to December.
-
-    # FUNCTION:
-
-    # Check Class Type:
-    if (!inherits(x, "timeDate")) stop("Wrong class type")
-
-    # Month:
-    ans <- as.POSIXlt(x, tz = "GMT")$mon + 1
-    attr(ans, "control") <- c(FinCenter = finCenter(x))
-
-    # Return Value:
-    ans
-})
-
-## GNB: see comments above
-setMethod("months", c("timeDate", "ANY"), function(x, abbreviate) {
-    format(x, if(abbreviate) "%b" else "%B")
-})
+##
+## GNB: further to the above, make the method S3, no need to make months() S4.
+##      Also, the S4 method was not visible when timeDate was loaded but not
+##      attached.
+months.timeDate <- function(x, abbreviate = FALSE) {
+    if(missing(abbreviate)) {
+        ## Original definition: implemented by Diethelm Wuertz
+        ##                      and improved by Yohan Chalabi
+        if (!inherits(x, "timeDate"))
+            stop("Wrong class type")
+        ans <- as.POSIXlt(x, tz = "GMT")$mon + 1
+        attr(ans, "control") <- c(FinCenter = finCenter(x))
+        ans
+    } else
+        ## GNB
+        format(x, if(abbreviate) "%b" else "%B")
+}
 
 
 ################################################################################
@@ -148,22 +129,14 @@ setMethod("months", c("timeDate", "ANY"), function(x, abbreviate) {
 ##    author: GNB:
 ##    methods for weekdays() and quarters()
 
-## need this method as the generic weekdays() doesn't have a default for 'abbreviate' and
-## hence can't the S4 methods.
-setMethod("weekdays", c("timeDate", "missing"), function(x, abbreviate) {
-    format(x, "%A")
-})
-
-setMethod("weekdays", c("timeDate", "ANY"), function(x, abbreviate = FALSE) {
+weekdays.timeDate <- function(x, abbreviate = FALSE) {
     format(x, if(abbreviate) "%a" else "%A")
-})
+}
 
-setMethod("quarters", "timeDate", function(x) {
+quarters.timeDate <- function(x, abbreviate) {
     X <- as.POSIXlt(x, tz = "GMT") 
     paste0("Q", X$mon %/% 3 + 1) # X$mon is in {0,1,...,11}
-})
-
-
+}
 
 ## 2023-12-19
 ##    author: GNB:
@@ -171,31 +144,60 @@ setMethod("quarters", "timeDate", function(x) {
 
 atom_names <-
     c("year", "month", "day", "hour", "minute", "second",
-      "weekday", "weekday0", "quarter")
+      "wday", "weekday", "wday0", "weekday0", "quarter")
     
-
-setMethod("$", "timeDate", function(x, name) {
-    nam <- as.character(name)
-    ## see GNB's notes for the method for months()
-    X <- as.POSIXlt(x, tz = "GMT")
-    
-    res <- switch(nam,
-                  year     = X$year + 1900,
-                  month    = X$mon + 1 ,
-                  day      = X$mday    ,
-                  hour     = X$hour    ,
-                  minute   = X$min     ,
-                  second   = X$sec     ,
-                  weekday  = {tmp <- X$wday; tmp[tmp == 0] <- 7; tmp},
-                  weekday0 = X$wday, #  Sun - 0
-                  quarter  = paste0("Q", X$mon %/% 3 + 1), # X$mon is in {0,1,...,11}
-                  ## default
-                  stop("unknown (or not implemented) time component requested")
-                  )
-    ## TODO: add names using format(x)?
-    res
-})
-
+if(getRversion() >= '4.3.0') {
+    ## (GNB) see ?balancePOSIXlt in R > = 4.3.0; before that subscripting was
+    ##     not guaranteed to have the expected length; If I understand correctly
+    ##     the description there, from R 4.3.0 that is guaranteed.
+    setMethod("$", "timeDate", function(x, name) {
+        nam <- as.character(name)
+        ## see GNB's notes for the method for months()
+        X <- as.POSIXlt(x, tz = "GMT")
+        
+        res <- switch(nam,
+                      year     = X$year + 1900,
+                      month    = X$mon + 1 ,
+                      day      = X$mday    ,
+                      hour     = X$hour    ,
+                      minute   = X$min     ,
+                      second   = X$sec     ,
+                      wday = ,
+                      weekday  = {tmp <- X$wday; tmp[tmp == 0] <- 7; tmp},
+                      wday0 = ,
+                      weekday0 = X$wday, #  Sun - 0
+                      quarter  = paste0("Q", X$mon %/% 3 + 1), # X$mon is in {0,1,...,11}
+                      ## default
+                      stop("unknown (or not implemented) time component requested")
+                      )
+        ## TODO: add names using format(x)?
+        res
+    })
+} else {
+    ## x$min etc may be shorter; convert to data.frame to ensure all have same length;
+    ##
+    ## TODO: need to test this case on R < 4.3.0
+    setMethod("$", "timeDate", function(x, name) {
+        nam <- as.character(name)
+        ## see GNB's notes for the method for months()
+        X <- data.frame(unclass(as.POSIXlt(x, tz = "GMT")))
+        res <- switch(nam,
+                      year     = X$year + 1900,
+                      month    = X$mon + 1 ,
+                      day      = X$mday    ,
+                      hour     = X$hour    ,
+                      minute   = X$min     ,
+                      second   = X$sec     ,
+                      weekday  = {tmp <- X$wday; tmp[tmp == 0] <- 7; tmp},
+                      weekday0 = X$wday, #  Sun - 0
+                      quarter  = paste0("Q", X$mon %/% 3 + 1), # X$mon is in {0,1,...,11}
+                      ## default
+                      stop("unknown (or not implemented) time component requested")
+                      )
+        ## TODO: add names using format(x)?
+        res
+    })
+}    
 
 ## TODO: check when .DollarNames() was introduced.
 ## DONE: in R-2.10.0 (i.e. forever, since timeDate depends on R >= 3.6.0) 
@@ -207,6 +209,7 @@ if(getRversion() >= '4.3.0') { ## new function .AtNames(); also: findMatches() i
         utils::findMatches(pattern, atom_names)
     }
 } else { ## simplified matches, .DollarNames available but findMatches not (or not exported)
+    ## TODO: needs testing on R < 4.3.0
     .DollarNames.timeDate <- function(x, pattern = "") {    
         grep(pattern, atom_names, value = TRUE)
     }

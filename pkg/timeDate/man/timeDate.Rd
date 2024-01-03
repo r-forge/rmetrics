@@ -10,6 +10,17 @@
 \alias{timeDate,timeDate-method}
 \alias{initialize,timeDate-method}
 
+\alias{as.timeDate}
+\alias{as.timeDate.default}
+\alias{as.timeDate.POSIXt}
+\alias{as.timeDate.Date}
+\alias{as.timeDate.timeDate}
+
+\alias{coerce,ANY,timeDate-method}
+\alias{coerce,Date,timeDate-method}
+\alias{coerce,POSIXt,timeDate-method}
+
+
 \alias{strptimeDate}
 
 \alias{getDataPart,timeDate-method}
@@ -17,15 +28,14 @@
 
 
 
-\title{Create 'timeDate' objects from scratch}
+\title{Create 'timeDate' objects}
 
 \description{
 
-    Create a \code{"timeDate"} object from scratch from a character
-    vector or other suitable objects.
+  Create a \code{"timeDate"} object from scratch from a character vector
+  or other suitable objects.
 
 }
-
 
 \usage{
 timeDate(charvec, format = NULL, zone = "", FinCenter = "", \dots)
@@ -33,9 +43,17 @@ timeDate(charvec, format = NULL, zone = "", FinCenter = "", \dots)
 \S4method{timeDate}{character}(charvec, format = NULL, zone = "", FinCenter = "", 
          dst_gap = "+")
 
+## methods for as.timeDate
+\method{as.timeDate}{default}(x, zone = "", FinCenter = "")  
+
+\method{as.timeDate}{POSIXt}(x, zone = "", FinCenter = "")
+
+\method{as.timeDate}{Date}(x, zone = "", FinCenter = "")
+
+\method{as.timeDate}{timeDate}(x, zone = x@FinCenter, FinCenter = "")  
+
 strptimeDate(x, format = whichFormat(x), tz = "")
 }
-
 
 \arguments{
 
@@ -45,21 +63,12 @@ strptimeDate(x, format = whichFormat(x), tz = "")
   \item{format}{
     the format specification of the input character vector.
   }
-  \item{tz}{
-    a character with the location of the financial center 
-    named as \code{"continent/city"}, or short \code{"city"}.
-  }
   \item{zone}{
     the time zone or financial center where the data were recorded.
   }
-  \item{x}{
-    a character string or vector of dates and times.
-  }
   \item{FinCenter}{
-
     a character with the location of the financial center named as
     "continent/city".
-
   }
   \item{dst_gap}{
     
@@ -72,6 +81,18 @@ strptimeDate(x, format = whichFormat(x), tz = "")
     defined. This could be useful when you are certain that there are no
     times in DST gaps or don't care how they are dealt with.
 
+  }
+  \item{x}{
+    
+    for \code{strptimeDate}, a character string or vector of dates and
+    times.  For the \code{as.timeDate} methods, an object from a class
+    that can be converted to \code{"timeDate"}. The default method
+    converts \code{x} to \code{character}.
+
+  }
+  \item{tz}{
+    a character with the location of the financial center 
+    named as \code{"continent/city"}, or short \code{"city"}.
   }
   \item{...}{further arguments for methods.}
 }
@@ -90,6 +111,10 @@ strptimeDate(x, format = whichFormat(x), tz = "")
   time zones of an existing \code{"timeDate"} object, call
   \code{timeDate()} on it, see the method for \code{charvec = "timeDate"}
   in section \sQuote{Methods}.
+
+  The methods for \code{as.timeDate} call \code{timeDate}, maybe after
+  some minor preparation. The default method for \code{as.timeDate}
+  converts \code{x} to \code{character} before calling \code{timeDate}.
   
 
   \code{strptimeDate} is a wrapper of \code{timeDate}, suitable when
@@ -145,9 +170,13 @@ strptimeDate(x, format = whichFormat(x), tz = "")
     }
   }
 }
+\seealso{
 
-
-
+  \code{\link[=as.character.timeDate]{as.character}},
+  \code{\link[=as.POSIXct.timeDate]{as.POSIXct}},
+  etc., for conversion from \code{"timeDate"} to other classes
+  
+}
 \examples{
 ## timeDate -
 
@@ -193,6 +222,7 @@ strptimeDate(x, format = whichFormat(x), tz = "")
    % ##   tms[3] <- dts[2] <- NA
    % ##   timeDate(paste(dts,tms), FinCenter = "Europe/Zurich") # but in GMT
 
+## Coerce a 'Date' object into a 'timeDate' object:
+   as.timeDate(Sys.Date())
 }
-
 \keyword{chron}

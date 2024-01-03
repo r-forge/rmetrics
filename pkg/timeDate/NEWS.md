@@ -1,11 +1,11 @@
 # timeDate 4032.109.9000
 
-- new timeDate method for `$` for extraction of components of timeDate objects -
-  e.g., for a timeDate object `td`, `td$year`, `td$month`, and `td$sec` give
+- new `timeDate` method for `$` for extraction of components of timeDate objects
+  - e.g., for a timeDate object `td`, `td$year`, `td$month`, and `td$sec` give
   numeric vectors containing the corresponding components. In interactive
   sessions completion is supported, usually by hitting the <TAB> key.
 
-- new timeDate methods for the base R functions `quarters` and `weekdays` (there
+- new timeDate methods for the base R functions `quarters` and `weekdays` (they
   return character vectors of names).
 
 - new `timeDate` method for `months` returning a character vector. For now, a

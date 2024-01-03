@@ -1,26 +1,26 @@
 \name{julian}
+\alias{julian}
 
-\alias{julian,timeDate-method}
+\alias{julian.timeDate}
 
 \alias{atoms}
 \alias{atoms,ANY-method}
 \alias{atoms,timeDate-method}
 
 \alias{months}
-\alias{months,timeDate-method}
-\alias{months,timeDate,missing-method}
-\alias{months,timeDate,ANY-method}
+\alias{months.timeDate}
 
 \alias{weekdays}
-\alias{weekdays,timeDate-method}
-\alias{weekdays,timeDate,missing-method}
-\alias{weekdays,timeDate,ANY-method}
+\alias{weekdays.timeDate}
 
 \alias{quarters}
-\alias{quarters,timeDate-method}
+\alias{quarters.timeDate}
 
 \alias{$,timeDate-method}
 
+
+\concept{Julian day}
+\concept{Julian date}
 
 
 \title{Julian counts and calendar atoms}
@@ -34,17 +34,19 @@
 
 
 \usage{
-\S4method{julian}{timeDate}(x, origin = timeDate("1970-01-01"), 
+\method{julian}{timeDate}(x, origin = timeDate("1970-01-01"), 
        units = c("auto", "secs", "mins", "hours", "days", "weeks"), 
        zone = NULL, FinCenter = NULL, \dots)
 
 \S4method{atoms}{timeDate}(x, \dots)
 
-\S4method{months}{timeDate}(x, abbreviate)
+\method{months}{timeDate}(x, abbreviate = FALSE)
 
-\S4method{weekdays}{timeDate}(x, abbreviate = FALSE)
+\method{weekdays}{timeDate}(x, abbreviate = FALSE)
 
-\S4method{quarters}{timeDate}(x)
+\method{quarters}{timeDate}(x, abbreviate)
+
+\S4method{$}{timeDate}(x, name)
 }
 
 
@@ -70,7 +72,15 @@
   }   
   \item{abbreviate}{
     currently not used.
-  }   
+  }
+  \item{name}{
+    
+    one of \code{year}, \code{month}, \code{day}, \code{hour},
+    \code{minute}, \code{second}, \code{wday} (or \code{weekday}),
+    \code{wday0} (or \code{weekday0}), and
+    \code{quarter}. Completion is available in interactive sessions.
+
+  }
   \item{\dots}{
     arguments passed to other methods.
   }
@@ -96,8 +106,9 @@
   e.g. \code{td$name}, extracts a component of the date/time values as a
   numeric vector. Currently, \code{name} can be one of \code{year},
   \code{month}, \code{day}, \code{hour}, \code{minute}, \code{second},
-  \code{weekday}, \code{weekday0}, and \code{quarter}. \code{weekday0}
-  starts with 0 (for Sunday), the meaning of the rest should be clear.
+  \code{wday} (or \code{weekday}), \code{wday0} (or \code{weekday0}),
+  and \code{quarter}.  \code{wday0} (\code{weekday0}) starts with 0 (for
+  Sunday), the meaning of the rest should be clear.
 
   In interactive sessions, completion is available for the dollar
   operator.
@@ -117,7 +128,7 @@
   \item{d}{day,}
   \item{H}{hour,}
   \item{M}{minute,}
-  \item{S}{scond;}
+  \item{S}{second;}
 
   for \code{months}, a numeric vector with attribute \code{"control"}
   containing the financial center. (\strong{Note:} this use is
@@ -167,7 +178,6 @@ tC$month
 tC$day
 tC$hour
 tC$minute
-
 tC$second
 tC$weekday
 tC$weekday0
