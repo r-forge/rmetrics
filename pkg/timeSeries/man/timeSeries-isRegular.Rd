@@ -1,17 +1,22 @@
 \name{isRegular}
+\alias{isRegular}
 
 \alias{isRegular,timeSeries-method}
 \alias{isRegular.timeSeries}
 
+\alias{isDaily}
 \alias{isDaily,timeSeries-method}
 \alias{isDaily.timeSeries}
 
+\alias{isMonthly}
 \alias{isMonthly,timeSeries-method}
 \alias{isMonthly.timeSeries}
 
+\alias{isQuarterly}
 \alias{isQuarterly,timeSeries-method}
 \alias{isQuarterly.timeSeries}
 
+\alias{frequency}
 \alias{frequency,timeSeries-method}
 \alias{frequency.timeSeries}
 
@@ -78,14 +83,17 @@
 
 \value{
 
-    The \code{is*} functions return \code{TRUE} or \code{FALSE} depending 
-    on whether the series fulfills the condition or not.\cr
+  The \code{is*} functions return \code{TRUE} or \code{FALSE} depending 
+  on whether the series fulfills the condition or not.\cr
     
-    \code{frequency} returns in general 1, for quarterly series 4,
-    and for monthly series 12.
+  \code{frequency} returns in general 1, for quarterly series 4,
+  and for monthly series 12.
   
 }
-
+\seealso{
+  \code{\link[timeDate]{isRegular}}
+  \code{\link[stats]{frequency}}
+}
 \examples{
 data(MSFT)
 isRegular(MSFT)

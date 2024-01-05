@@ -82,6 +82,7 @@ S3method("na.omit",  "timeSeries")
 S3method("plot",     "timeSeries")
 S3method("points",   "timeSeries")
 S3method("pretty",   "timeSeries")
+S3method("print",     timeSeries) 
 S3method("print",     timeSeries_summary) 
 S3method("rbind",    "timeSeries")
 S3method("rev",      "timeSeries")
@@ -97,11 +98,13 @@ S3method("time",     "timeSeries")
 S3method("time<-", "timeSeries")
 S3method("time<-", default)
 if(getRversion() >= "3.6.0") { # GNB
-    ## ensure that when zoo is loaded zoo::`time<-` gets the method.
-    ## This works nicely, if 'zoo' is attached after 'timeSeries' (or if
-    ## 'timeSeries' is loaded but not attached).  However, if 'timeSeries' is
-    ## attached after 'zoo', zoo::`time<-` will be masked, so 'time(x) <- value'
-    ## will see only the methods for the timeSeries version of 'time<-'
+    ## we ensure that when zoo is loaded zoo::`time<-` gets the 'timeSeries'
+    ## method.  This works nicely, if 'zoo' is attached after 'timeSeries' (or
+    ## if 'timeSeries' is loaded but not attached).  It may seem that if
+    ## 'timeSeries' is attached after 'zoo', zoo::`time<-` will be masked, so
+    ## 'time(x) <- value' will see only the methods for the timeSeries version
+    ## of 'time<-'. But this is not a problem since the default method for
+    ## timeSeries::`time<-` calls zoo::`time<-`
     S3method(zoo::`time<-`,     "timeSeries")
     S3method(zoo::coredata,     "timeSeries")
     S3method(zoo::'coredata<-', "timeSeries")
@@ -117,80 +120,49 @@ exportClasses("index_timeSeries",
               "time_timeSeries"
               )
 
-exportMethods("$",
-              "$<-",
-              "+", "-",
-              "Ops",
-              "[",
-              "aggregate",
-              "align",
-              "apply",
-              "as.data.frame",
-              "as.list",
-              "as.matrix",
-              "as.ts",
-              "attach",
-              "cbind2",
-              "coerce",
-              "colMeans",
-              "colSums",
-              "colnames",
-              "colnames<-",
-              "comment",
-              "comment<-",
-              "cummax",
-              "cummin",
-              "cumprod",
-              "cumsum",
-              # "cut",  timeSeries method was removed on 2023-05-26
-              "diff",
-              "dim",
-              "dim<-",
-              "dimnames",
-              "dimnames<-",
-              "end",
-              "filter",
-              "finCenter",
-              "finCenter<-",
-              "frequency",
-              "getDataPart",
-              "head",
-              "initialize",
-              "is.na",
-              "is.unsorted",
-              "isDaily",
-              "isMonthly",
-              "isQuarterly",
-              "isRegular",
-              "lag",
-              "lines",
-              "merge",
-              "na.contiguous",
-              "na.omit",
-              "names",
-              "names<-",
-              "plot",
-              "points",
-              "print",
-              "quantile",
-              "median",
-              "rank",
-              "rbind2",
-              "rev",
-              "rownames",
-              "rownames<-",
-              "sample",
-              # "scale",
-              "setDataPart",
-              "show",
-              "sort",
-              "start",
-              "str",
-              "t",
-              "tail",
-              "time",
-              "window"
-              )
+exportMethods(
+    "$", "$<-", "+", "-", "Ops",
+    "[",
+    "aggregate",
+    "align",
+    "apply",
+    "as.data.frame", "as.list", "as.matrix", "as.ts",
+    "attach",
+    "cbind2",
+    "coerce",
+    "colMeans", "colSums",
+    "colnames", "colnames<-",
+    "comment", "comment<-",
+    "cummax", "cummin", "cumprod", "cumsum",
+    # "cut",  timeSeries method was removed on 2023-05-26
+    "diff",
+    "dim", "dim<-",
+    "dimnames", "dimnames<-",
+    "filter",
+    "finCenter", "finCenter<-",
+    "frequency",
+    "getDataPart",
+    "initialize",
+    "is.na",
+    "is.unsorted",
+    "isDaily", "isMonthly", "isQuarterly", "isRegular",
+    "lag",
+    "lines",
+    "merge",
+    "na.contiguous", "na.omit",
+    "names", "names<-",
+    "plot", "points",
+    "quantile",
+    "median",
+    "rank",
+    "rbind2",
+    "rev",
+    "rownames", "rownames<-",
+    "sample",
+    "setDataPart",
+    "show",
+    "t"
+)
 
 
 ################################################
@@ -250,7 +222,23 @@ export(
     "splits", "spreads",
     "statsColnames",
     "substituteNA",
+    "time",
     "time<-",
     "timeSeries",
-    "turns", "turnsStats"
+    "turns", "turnsStats",
+
+    "head", # 2024-01-05 GNB: were in exportMethods but no longer S4 generic
+    "tail",
+    "str",
+    "start",
+    "end",
+    ## "sort",  # from 'base', no need to export
+    ## "print",
+    "window"
 )
+
+
+
+
+
+

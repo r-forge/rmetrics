@@ -36,11 +36,11 @@
 
 
 \alias{head}
-\alias{head,timeSeries-method}
+%\alias{head,timeSeries-method}
 \alias{head.timeSeries}
 
 \alias{tail}
-\alias{tail,timeSeries-method}
+%\alias{tail,timeSeries-method}
 \alias{tail.timeSeries}
 
 \alias{outlier}
@@ -63,8 +63,8 @@
 % \method{[}{timeSeries}(x, i, j, drop)
 % \method{[}{timeSeries}(x, i, j) <- value
 \usage{
-\S4method{head}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
-\S4method{tail}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
+\method{head}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
+\method{tail}{timeSeries}(x, n = 6, recordIDs = FALSE, \dots)
 
 outlier(x, sd = 5, complement = TRUE, ...)
 }
@@ -136,7 +136,6 @@ outlier(x, sd = 5, complement = TRUE, ...)
         
 \value{
   All functions return an object of class \code{"timeSeries"}.
- 
 }
 
 \seealso{
@@ -158,6 +157,4 @@ outlier(x, sd = 5, complement = TRUE, ...)
    head(tS, 6)
 }
 
-
 \keyword{chron}
-

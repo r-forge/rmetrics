@@ -44,8 +44,8 @@ sort.timeSeries <- function (x, decreasing = FALSE, ...)
     x
 }
 
-setMethod("sort", "timeSeries", function (x, decreasing = FALSE, ...)
-    sort.timeSeries(x, decreasing = decreasing, ...))
+## setMethod("sort", "timeSeries", function (x, decreasing = FALSE, ...)
+##     sort.timeSeries(x, decreasing = decreasing, ...))
 
 ## # until UseMethod dispatches S4 methods in 'base' functions
 ## sort.timeSeries <- function(x, decreasing = FALSE, ...)

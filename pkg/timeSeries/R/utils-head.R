@@ -49,8 +49,6 @@ head.timeSeries <-
         head.matrix(x, n = n, ...)
 }
 
-setMethod("head", "timeSeries", head.timeSeries)
-
           
 # ------------------------------------------------------------------------------
 
@@ -89,7 +87,8 @@ tail.timeSeries <-
         }
     }
 
-setMethod("tail", "timeSeries", tail.timeSeries)
-
+## (2024-01-05) GNB: stop making head() and tail() S4
+## setMethod("head", "timeSeries", head.timeSeries)
+## setMethod("tail", "timeSeries", tail.timeSeries)
 
 ################################################################################

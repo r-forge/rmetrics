@@ -1,7 +1,7 @@
 \name{sort}  
 \alias{sort}
 
-\alias{sort,timeSeries-method}
+%\alias{sort,timeSeries-method}
 \alias{sort.timeSeries}                 
                                     
 \alias{is.unsorted}
@@ -15,7 +15,7 @@
 }
 
 \usage{
-\S4method{sort}{timeSeries}(x, decreasing = FALSE, \dots)
+\method{sort}{timeSeries}(x, decreasing = FALSE, \dots)
 
 \S4method{is.unsorted}{timeSeries}(x, na.rm = FALSE, strictly = FALSE)
 }

@@ -1,4 +1,11 @@
-## timeSeries 4032.107.9000
+## timeSeries 4032.108.9000
+
+- a number of generic functions from base R now get only S3 methods for
+  'timeSeries' objects. Previously they were turned into S4 generics with S4
+  methods.
+
+
+## timeSeries 4032.108
 
 - fixed 'Lost braces; missing escapes or markup?' NOTE from CRAN.
 

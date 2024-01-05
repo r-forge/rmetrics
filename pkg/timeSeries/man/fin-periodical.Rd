@@ -9,16 +9,13 @@
 
 \title{End-of-Period series, stats, and benchmarks}
 
-
 \description{
 
-    Computes periodical statistics back to a given period.
+  Computes periodical statistics back to a given period.
     
 }
 
-
 \usage{
-
 endOfPeriodSeries(x, 
     nYearsBack = c("1y", "2y", "3y", "5y", "10y", "YTD"))
 
@@ -27,9 +24,7 @@ endOfPeriodStats(x,
     
 endOfPeriodBenchmarks(x, benchmark = ncol(x),
     nYearsBack = c("1y", "2y", "3y", "5y", "10y", "YTD"))
-    
 }
-
 
 \arguments{
 

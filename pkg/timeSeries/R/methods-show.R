@@ -70,7 +70,7 @@ setMethod("show", "timeSeries",
 # ------------------------------------------------------------------------------
 
 
-.print.timeSeries <-
+print.timeSeries <-
     function(x, FinCenter = NULL, format = NULL,
     style = c("tS", "h", "ts"), by = c("month", "quarter"), ...)
 {
@@ -148,8 +148,8 @@ setMethod("show", "timeSeries",
 # ------------------------------------------------------------------------------
 
 
-setMethod("print", "timeSeries",
-    .print.timeSeries)
+## setMethod("print", "timeSeries",
+##     .print.timeSeries)
 
 
 ################################################################################
