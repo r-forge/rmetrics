@@ -75,9 +75,12 @@ S3method("diff",     "timeSeries")
 S3method("end",      "timeSeries")
 S3method("getUnits",  default)
 S3method("head",     "timeSeries")
+S3method("is.na",      "timeSeries")
 S3method("lag",      "timeSeries")
 S3method("lines",    "timeSeries")
+S3method("median",    "timeSeries")
 S3method("merge",    "timeSeries")
+S3method("na.contiguous",  "timeSeries")
 S3method("na.omit",  "timeSeries")
 S3method("plot",     "timeSeries")
 S3method("points",   "timeSeries")
@@ -121,8 +124,7 @@ exportClasses("index_timeSeries",
               )
 
 exportMethods(
-    "$", "$<-", "+", "-", "Ops",
-    "[",
+    "$", "$<-", "+", "-", "Ops", "[",
     "aggregate",
     "align",
     "apply",
@@ -135,30 +137,23 @@ exportMethods(
     "comment", "comment<-",
     "cummax", "cummin", "cumprod", "cumsum",
     # "cut",  timeSeries method was removed on 2023-05-26
-    "diff",
     "dim", "dim<-",
     "dimnames", "dimnames<-",
-    "filter",
+    "filter",                    # note: stats::filter is not generic
     "finCenter", "finCenter<-",
     "frequency",
     "getDataPart",
     "initialize",
-    "is.na",
     "is.unsorted",
     "isDaily", "isMonthly", "isQuarterly", "isRegular",
-    "lag",
     "lines",
-    "merge",
-    "na.contiguous", "na.omit",
+    "merge",      # note: the S4 methods are for x and y, so S4 is essential
     "names", "names<-",
     "plot", "points",
-    "quantile",
-    "median",
-    "rank",
+    "rank",                      # note: base::rank is not generic
     "rbind2",
-    "rev",
     "rownames", "rownames<-",
-    "sample",
+    "sample",                    # note: base::sample is not generic
     "setDataPart",
     "show",
     "t"
@@ -232,13 +227,15 @@ export(
     "str",
     "start",
     "end",
+    "median",
+    "quantile",
+    "na.contiguous",
     ## "sort",  # from 'base', no need to export
+    ## "rev",
     ## "print",
+    ## "diff",
+    ## "is.na",
+    "na.omit",
+    "lag",
     "window"
 )
-
-
-
-
-
-

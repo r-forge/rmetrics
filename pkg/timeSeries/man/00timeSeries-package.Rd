@@ -102,7 +102,7 @@
     \code{sign} \tab Returns the signs of a \code{"timeSeries"} object \cr
     \code{\link{diff}} \tab Differences a \code{"timeSeries"} object \cr 
     \code{\link{scale}} \tab Centers and/or scales a \code{"timeSeries"} object \cr
-    \code{\link[=quantile,timeSeries-method]{quantile}} \tab Returns quantiles of an univariate \code{"timeSeries"}}
+    \code{\link[=quantile.timeSeries]{quantile}} \tab Returns quantiles of an univariate \code{"timeSeries"}}
 
 }
 

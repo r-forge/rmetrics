@@ -63,9 +63,12 @@ is.signalSeries <-
 # Note if is.na returns a timeSeries object then we have problem
 # with the function quantile...
 
-
-setMethod("is.na", "timeSeries", function(x)
-  setDataPart(x, is.na(getDataPart(x))))
+## 2024-01-06 GNB: converted the method to S3
+##
+##   setMethod("is.na", "timeSeries", function(x)
+##     setDataPart(x, is.na(getDataPart(x))))
+is.na.timeSeries <- function(x)
+    setDataPart(x, is.na(getDataPart(x)))
 
 
 # ------------------------------------------------------------------------------

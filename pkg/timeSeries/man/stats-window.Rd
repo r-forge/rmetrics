@@ -43,11 +43,11 @@
 }
 
 \examples{
-## Load LPP Benchmark Returns
+## load LPP benchmark returns
 x <- LPP2005REC[, 7:9]
 range(time(x))
   
-## Extract Data for January 2006
+## extract data for January 2006
 window(x, "2006-01-01", "2006-01-31")
 }
 

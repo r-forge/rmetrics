@@ -142,19 +142,19 @@ outlier(x, sd = 5, complement = TRUE, ...)
   \code{\link{window}}
 }
 \examples{
-## Create an Artificial 'timeSeries' Object - 
-   setRmetricsOptions(myFinCenter = "GMT")
-   charvec <- timeCalendar()
-   set.seed(4711)
-   data <- matrix(exp(cumsum(rnorm(12, sd = 0.1))))
-   tS <- timeSeries(data, charvec, units = "tS")
-   tS
+## Create an Artificial 'timeSeries' Object
+setRmetricsOptions(myFinCenter = "GMT")
+charvec <- timeCalendar()
+set.seed(4711)
+data <- matrix(exp(cumsum(rnorm(12, sd = 0.1))))
+tS <- timeSeries(data, charvec, units = "tS")
+tS
    
-## Subset Series by Counts "[" - 
-   tS[1:3, ]
+## Subset Series by Counts "["
+tS[1:3, ]
        
-## Subset the Head of the Series - 
-   head(tS, 6)
+## Subset the Head of the Series
+head(tS, 6)
 }
 
 \keyword{chron}

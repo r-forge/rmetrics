@@ -86,7 +86,7 @@ countMonthlyRecords(x)
 }
 
 \examples{
-## Load Microsoft Daily Data Set
+## load Microsoft daily dataset
 x <- MSFT 
 
 ## count monthly records
@@ -107,7 +107,7 @@ windows
 ## nicely print results as a data.frame, each row is a time window
 data.frame(cbind(FROM = format(windows$from), TO = format(windows$to)))
    
-## Compute the average number of monthly trading days per quarter -  
+## compute the average number of monthly trading days per quarter
 rollMonthlySeries(counts[-1, ], period = "3m", by = "3m", FUN = mean)
 }
 

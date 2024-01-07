@@ -4,6 +4,8 @@
   'timeSeries' objects. Previously they were turned into S4 generics with S4
   methods.
 
+- deprecated function `returnSeries` is now defunct, use `returns` instead.
+
 
 ## timeSeries 4032.108
 

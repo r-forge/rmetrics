@@ -1,7 +1,7 @@
 \name{print-methods}
 
 \alias{show,timeSeries-method}
-\alias{print,timeSeries-method}
+\alias{print.timeSeries}
 
 
 \title{Print 'timeSeries' objects}
