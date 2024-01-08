@@ -5,9 +5,7 @@
 \title{Financial centers DST rules}
 
 \description{
-
   Returns DST rules for a financial center.
-
 }
 
 \usage{
@@ -15,7 +13,6 @@ rulesFinCenter(FinCenter = "")
 }
 
 \arguments{
-
   \item{FinCenter}{
 
     a character string with the location of the financial center named
@@ -24,11 +21,9 @@ rulesFinCenter(FinCenter = "")
   }
 }
 
-
 \value{
   a list of time zones and DST rules available in the database
 }
-
 
 \details{
 
@@ -47,8 +42,8 @@ rulesFinCenter(FinCenter = "")
 }
 
 \examples{
-## rulesFinCenter - 
-   rulesFinCenter("Zurich")
+## rulesFinCenter
+rulesFinCenter("Zurich")
 }
 
 \keyword{chron}

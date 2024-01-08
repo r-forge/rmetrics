@@ -10,9 +10,7 @@
 }
 
 \description{
-
   Create a regularly spaced object of class \code{"timeDate"}.
-
 }
 
 \usage{
@@ -70,9 +68,9 @@ timeSequence(from, to = Sys.timeDate(), by, length.out = NULL,
 }
 
 \examples{
-## timeSequence -
+## timeSequence
 
-## autodetection of format :
+## autodetection of format
 (t1 <- timeSequence(from = "2004-03-12", to = "2004-04-11"))
 
 stopifnot( ## different formats even:

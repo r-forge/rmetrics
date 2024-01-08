@@ -159,15 +159,15 @@
 }
 
 \examples{
-## julian -
-   tC = timeCalendar(2022)
-   julian(tC)[1:3]
+## julian
+tC = timeCalendar(2022)
+julian(tC)[1:3]
    
-## atoms -
-   atoms(tC)
+## atoms
+atoms(tC)
    
-## months -
-   months(tC)
+## months
+months(tC)
 
 weekdays(tC)
 weekdays(tC, TRUE)

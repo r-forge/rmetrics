@@ -8,11 +8,8 @@
 \title{Rolling periods}
 
 \description{
-
   Returns start and end dates for rolling periods.
-
 }
-
 
 \usage{
 periods(x, period = "12m", by = "1m", offset = "0d")
@@ -20,13 +17,10 @@ periodicallyRolling(x, period = "52w", by = "4w", offset = "0d")
 monthlyRolling(x, period = "12m", by = "1m")
 }
 
-
 \arguments{
-
   \item{x}{
       an object of class timeDate.
   }
-
   \item{period}{
       a span string, consisting of a length integer
       and a unit value, e.g. "52w" for 52 weeks.}
@@ -53,18 +47,18 @@ monthlyRolling(x, period = "12m", by = "1m")
 }
 
 \examples{
-## Create Time Sequence -
-   x <- timeSequence(from = "2001-01-01", to = "2009-01-01", by = "day")
+## create time sequence
+x <- timeSequence(from = "2001-01-01", to = "2009-01-01", by = "day")
 
-## Generate Periods -
-   periods(x, "12m", "1m")
-   periods(x, "52w", "4w")
+## generate periods
+periods(x, "12m", "1m")
+periods(x, "52w", "4w")
 
-## Roll Periodically -
-   periodicallyRolling(x)
+## roll periodically
+periodicallyRolling(x)
 
-## Roll Monthly -
-   monthlyRolling(x)
+## roll monthly
+monthlyRolling(x)
 }
 
 \keyword{chron}

@@ -16,10 +16,12 @@
   \code{\link{as.POSIXct}(\link{strptime}(charvec, format, tz = "GMT"))}.
 
 }
+
 \usage{
 midnightStandard (charvec, format)
 midnightStandard2(charvec, format)
 }
+
 \arguments{
   \item{charvec}{
     a character string or vector of dates and times.
@@ -30,15 +32,15 @@ midnightStandard2(charvec, format)
 }
 
 \value{
-     \code{midnightStandard} returns a \code{character} and
-     \code{midnightStandard2} a \code{\link{POSIXct}} object.
+  \code{midnightStandard} returns a \code{character} and
+  \code{midnightStandard2} a \code{\link{POSIXct}} object.
 }
-
 
 \examples{
-   ch <- "2007-12-31 24:00"
-   midnightStandard(ch)
-   (ms2 <- midnightStandard2(ch))
-   class(ms2)
+ch <- "2007-12-31 24:00"
+midnightStandard(ch)
+(ms2 <- midnightStandard2(ch))
+class(ms2)
 }
+
 \keyword{chron}

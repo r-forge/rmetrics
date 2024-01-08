@@ -568,7 +568,7 @@
   \code{holidayZURICH} -- TSX Holiday Calendar. \cr
   
   
-  We would like to thanks all Rmetrics users who gave us many additional
+  We would like to thank all Rmetrics users who gave us many additional
   information concerning local holidays. 
 
 }

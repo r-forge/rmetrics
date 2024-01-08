@@ -14,13 +14,9 @@
   Align a 'timeDate' object to regular date/time stamps
 }
 
-
 \description{
-
   Aligns a \code{"timeDate"} object to regular date/time stamps.
-
 }
-
 
 \usage{
 \S4method{align}{timeDate}(x, by = "1d", offset = "0s")
@@ -29,7 +25,6 @@ alignDaily(x, include.weekends=FALSE)
 alignMonthly(x, include.weekends=FALSE)
 alignQuarterly(x, include.weekends=FALSE)
 }
-
 
 \arguments{
   \item{x}{
@@ -53,7 +48,6 @@ alignQuarterly(x, include.weekends=FALSE)
   }
 }
 
-
 \details{
 
   The functions \code{alignDaily}, \code{alignMonthly},
@@ -69,23 +63,21 @@ alignQuarterly(x, include.weekends=FALSE)
   an object of class \code{"timeDate"}
 }
 
-
 \examples{
-## align -
+## align
 
-# Align Bi-Weekly with a 3 Days Offset:
+# align bi-weekly with a 3 days offset
 (tC <- timeCalendar())
 align(tC, by = "2w", offset = "3d")
 
-## alignDaily -
+## alignDaily
 
-# Simple to use Functions:
+# simple to use functions
 alignDaily(tC)
-alignDaily(tC, include.weekends=TRUE)
+alignDaily(tC, include.weekends = TRUE)
 
-# Align to end-of-month Dates:
+# align to end-of-month dates
 alignMonthly(tC)
-
 }
 
 \keyword{chron}

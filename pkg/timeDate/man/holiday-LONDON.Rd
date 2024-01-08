@@ -48,9 +48,9 @@ holidayLONDON(year = getRmetricsOptions("currentYear"))
 }
 
 \examples{
-## holidayLONDON -
-   holidayLONDON()
-   holidayLONDON(2008:2010)
+## holidayLONDON
+holidayLONDON()
+holidayLONDON(2008:2010)
 }
 
 \keyword{chron}

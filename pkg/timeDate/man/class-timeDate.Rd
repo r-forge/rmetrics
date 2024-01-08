@@ -3,14 +3,12 @@
 
 \docType{class}
 
+
 \title{Class "timeDate"}
 
 \description{ 
-
   Class \code{"timeDate"} represents date and time objects.
-  
 }
-
 
 \section{Objects from the Class}{
 
@@ -21,7 +19,6 @@
   \code{\link[=seq.timeDate]{seq}}.
   
 }
-
 
 \section{Slots}{
   \describe{
@@ -150,7 +147,6 @@
   object.
   
 }
-
 
 \note{
 
@@ -287,18 +283,16 @@
   }
 }  
 
-
-
 \examples{
-## Examples for Objects of class 'timeDate':
+## Examples for Objects of class 'timeDate'
 
-## timeDate -
+## timeDate
 
-   # Sys.timeDate()           # direct
-   # timeDate(Sys.time())     # transformed from "POSIX(c)t"
-   
-   # # Local Time in Zurich
-   # timeDate(Sys.time(), FinCenter = "Zurich")  
+## Sys.timeDate()           # direct
+## timeDate(Sys.time())     # transformed from "POSIX(c)t"
+
+## # Local Time in Zurich
+## timeDate(Sys.time(), FinCenter = "Zurich")  
 
 # Character Vector Strings:
 dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
@@ -343,8 +337,7 @@ timeDate("1/31/2004") # auto-detect American format
 %    tms[3] <- dts[2] <- NA
 %    timeDate(paste(dts,tms), FinCenter = "Europe/Zurich") # but in GMT
 
-## timeCalendar -
-   
+## timeCalendar
 ## getRmetricsOptions("currentYear")
 ## timeCalendar()  # 12 months of current year
 
@@ -357,19 +350,18 @@ timeCalendar(y = c(1989, 2001, 2004, 1990),
 ## timeCalendar(h = c(9, 14), min = c(15, 23))
 timeCalendar(2022, h = c(9, 14), min = c(15, 23))
 
-## timeSequence -
-   
+## timeSequence
 timeSequence(from = "2004-03-12", to = "2004-04-11",
   format = "\%Y-\%m-\%d", FinCenter = "GMT")
 timeSequence(from = "2004-03-12", to = "2004-04-11",
   format = "\%Y-\%m-\%d", FinCenter = "Europe/Zurich")
 
-## print | summary | format -
-
-   tC = timeCalendar(2022)
-   print(tC)
-   summary(tC)
-   format(tC)
+## print, summary, format
+tC = timeCalendar(2022)
+tC
+print(tC)
+summary(tC)
+format(tC)
 }
 
 \keyword{chron}

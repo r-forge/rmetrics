@@ -16,7 +16,6 @@
 
 }
 
-
 \usage{
 kurtosis(x, \dots)
 
@@ -30,7 +29,6 @@ kurtosis(x, \dots)
 
 \method{kurtosis}{POSIXlt}(x, \dots)
 }
-
 
 \arguments{
   
@@ -88,24 +86,19 @@ kurtosis(x, \dots)
     
 }
 
-
 \seealso{
     \code{\link{skewness}}
 }
 
 \examples{   
-## mean -
-## var -
-   # Mean, Variance:
-   r = rnorm(100)
-   mean(r)
-   var(r)
+r = rnorm(100)
+mean(r)
+var(r)
    
-## kurtosis - 
-   kurtosis(r)
+## kurtosis
+kurtosis(r)
 
-   kurtosis(data.frame(r = r, r2 = r^2))
-
+kurtosis(data.frame(r = r, r2 = r^2))
 }
 
 \keyword{univar}

@@ -17,7 +17,6 @@
 \S4method{finCenter}{timeDate}(x) <- value
 }
 
-
 \arguments{
   \item{x}{
     a \code{timeSeries} object.

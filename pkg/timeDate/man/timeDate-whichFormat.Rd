@@ -5,18 +5,14 @@
 \title{Format recognation}
 
 \description{
-    
   Tries to recognize the date/time format.
-       
 }
-
 
 \usage{
 whichFormat(charvec, silent = FALSE)  
 }
 
 \arguments{
-  
   \item{charvec}{
     a character string or vector of dates and times.
   }
@@ -26,17 +22,15 @@ whichFormat(charvec, silent = FALSE)
     recognized?
 
   }
-       
 }
-
 
 \value{
   a format string
 }
 
 \examples{
-## midnightStandard -  
-   whichFormat("2007-12-31 24:00")
+## midnightStandard
+whichFormat("2007-12-31 24:00")
 }
 
 \keyword{chron}

@@ -10,30 +10,26 @@
     Formats \code{"timeDate"} objects as ISO conform character strings.
 }
 
-
 \usage{
 \method{format}{timeDate}(x, format = "", tz = "", usetz = FALSE, \dots)
 }
 
-
 \arguments{
-
-    \item{format}{
-        a character string describing the format.
-        }
-    \item{tz}{
-        a timezone specification to be used for the conversion. 
-        }    
-    \item{usetz}{
-        a logical.
-        }   
-    \item{x}{
-        an object of class \code{"timeDate"}.
-        }
-    \item{\dots}{
-        arguments passed to other methods.
-        }
-
+  \item{format}{
+    a character string describing the format.
+  }
+  \item{tz}{
+    a timezone specification to be used for the conversion. 
+  }    
+  \item{usetz}{
+    a logical.
+  }   
+  \item{x}{
+    an object of class \code{"timeDate"}.
+  }
+  \item{\dots}{
+    arguments passed to other methods.
+  }
 }
 
 \value{
@@ -45,13 +41,13 @@
 }
 
 \examples{
-## timeCalendar -
-   # Time Calendar 16:00
-   tC = timeCalendar() + 16*3600
-   tC
+## timeCalendar
+# Time Calendar 16:00
+tC = timeCalendar() + 16*3600
+tC
    
-## Format as ISO Character String: 
-   format(tC)
+## format as ISO character string 
+format(tC)
 }
 
 \keyword{chron}

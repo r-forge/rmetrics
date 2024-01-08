@@ -10,11 +10,8 @@
 \title{Skewness}
 
 \description{
-
   Functions to compute skewness.
-
 }
-
 
 \usage{
 skewness(x, \dots)
@@ -27,7 +24,6 @@ skewness(x, \dots)
 
 \method{skewness}{POSIXlt}(x, \dots)
 }
-
 
 \arguments{
   
@@ -66,21 +62,17 @@ skewness(x, \dots)
     
 }
 
-
 \seealso{
   \code{\link{kurtosis}}
 }
 
 \examples{   
-## mean -
-## var -
-   # Mean, Variance:
-   r = rnorm(100)
-   mean(r)
-   var(r)
+r = rnorm(100)
+mean(r)
+var(r)
    
-## skewness -
-   skewness(r)  
+## skewness
+skewness(r)  
 }
 
 \keyword{univar}

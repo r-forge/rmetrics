@@ -26,7 +26,6 @@
   
 }
 
-
 \usage{
 \S4method{isDaily}{timeDate}(x)
 \S4method{isMonthly}{timeDate}(x)
@@ -38,16 +37,13 @@
 }
 
 \arguments{
-
   \item{x}{  
     an object of class \code{"timeDate"}.
   }
   \item{\dots}{
     arguments to be passed.
   }
-  
 }
-
 
 \details{
 
@@ -69,7 +65,6 @@
     
 }
 
-
 \value{
 
   The \code{is*} functions return \code{TRUE} or \code{FALSE} depending 
@@ -81,7 +76,14 @@
 }
 
 \examples{
-## None
+tC <- timeCalendar(2023)
+tC
+isRegular(tC)
+frequency(tC)
+
+isMonthly(tC)
+isQuarterly(tC)
+isDaily(tC)
 }
 
 \keyword{chron}

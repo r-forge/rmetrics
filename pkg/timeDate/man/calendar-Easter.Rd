@@ -5,18 +5,14 @@
 \title{Date of Easter}
 
 \description{
-    
   Returns the date of Easter.
-                
 }
-
 
 \usage{
 Easter(year = getRmetricsOptions("currentYear"), shift = 0)
 }
 
 \arguments{
-
   \item{year}{
     an integer value or integer vector for the year(s).
   }
@@ -24,9 +20,7 @@ Easter(year = getRmetricsOptions("currentYear"), shift = 0)
     an integer value, the number of days shifted from the Easter
     date. Negative integers are allowed.
   }
-
 }
-
 
 \details{
 
@@ -50,10 +44,8 @@ Easter(year = getRmetricsOptions("currentYear"), shift = 0)
 
 }
 
-
 \value{
   the date of Easter as an object of class \code{"timeDate"}
-
 }
 
 \note{
@@ -61,13 +53,12 @@ Easter(year = getRmetricsOptions("currentYear"), shift = 0)
 }
 
 \examples{
-## Easter -
-
-   # Current Year:
-   Easter()
+## Easter
+# current year
+Easter()
    
-   # From 2001 to 2010:
-   Easter(2001:2010)
+## From 2001 to 2010:
+Easter(2001:2010)
 }
 
 \keyword{chron}

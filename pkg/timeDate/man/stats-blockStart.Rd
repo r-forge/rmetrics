@@ -39,22 +39,21 @@ blockEnd(x, block = 20)
   
 }
 
-
 \value{
   an object of class \code{"timeDate"}
 }
 
 \examples{  
 ## timeSequence
-   # 360 Days Series:
-   tS <- timeSequence(to = "2022-09-23 09:39:23", length.out = 360)
+# 360 Days Series:
+tS <- timeSequence(to = "2022-09-23 09:39:23", length.out = 360)
     
-## blockStart | blockEnd -
-   Start <- blockStart(tS, 30)
-   End <- blockEnd(tS, 30)
-   Start
-   End
-   End - Start
+## blockStart | blockEnd
+Start <- blockStart(tS, 30)
+End <- blockEnd(tS, 30)
+Start
+End
+End - Start
 }
 
 \keyword{chron}

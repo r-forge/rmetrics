@@ -5,9 +5,7 @@
 \title{myFinCenter variable}
 
 \description{
-
   A character string with the name of my financial center.
-    
 }
 
 \note{
@@ -18,20 +16,19 @@
    
 }
 
-
 \seealso{
     \code{\link{listFinCenter}}
 }
 
 \examples{
-## myFinCenter - the global setting currently used:
-   getRmetricsOptions("myFinCenter")
+## myFinCenter - the global setting currently used
+getRmetricsOptions("myFinCenter")
    
-## Change to another Financial center:
-   # setRmetricsOptions(myFinCenter = "Zurich")
+## change to another financial center
+# setRmetricsOptions(myFinCenter = "Zurich")
    
-## Do not care about DST ...
-   # setRmetricsOptions(myFinCenter = "GMT") 
+## Do not care about DST
+# setRmetricsOptions(myFinCenter = "GMT") 
 }
 
 \keyword{chron}

@@ -14,7 +14,6 @@
   Show methods for \code{"timeDate"} objects. 
 }
 
-
 \section{Methods}{
   \describe{
 
@@ -27,10 +26,9 @@
   }
 }
 
-
 \examples{
-## print | show -
-   print(timeCalendar())
+## print | show
+print(timeCalendar())
 }
 
 \keyword{chron}

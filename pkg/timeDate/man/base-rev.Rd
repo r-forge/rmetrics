@@ -15,7 +15,6 @@
 }
 
 \arguments{
-      
   \item{x}{
     an object of class \code{"timeDate"}.
   }  
@@ -26,8 +25,8 @@
 }
 
 \examples{
-dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
-ZUR = timeDate(dts, zone = "GMT", FinCenter = "Europe/Zurich")
+dts <- c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
+ZUR <- timeDate(dts, zone = "GMT", FinCenter = "Europe/Zurich")
 ZUR
 rev(ZUR)
 }

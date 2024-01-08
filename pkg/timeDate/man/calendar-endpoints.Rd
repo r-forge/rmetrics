@@ -30,7 +30,6 @@
   }
 }
 
-
 \details{
 
   \code{.endpoints} returns an integer vector corresponding to the last
@@ -40,7 +39,6 @@
 
 }
 
-
 \value{
 
   an integer vector of endpoints beginning with 0 and ending with the
@@ -48,17 +46,15 @@
   
 }
 
-
 \author{
-    Jeff Ryan, modified by Diethelm Wuertz for \code{"timeDate"} objects.
+  Jeff Ryan, modified by Diethelm Wuertz for \code{"timeDate"} objects.
 }
 
-
 \examples{
-## endpoints -
+## endpoints
 
-   # Weekly Endpoints:
-   .endpoints(timeCalendar(), on="w")
+# Weekly Endpoints
+.endpoints(timeCalendar(), on="w")
 }
 
 \keyword{programming}

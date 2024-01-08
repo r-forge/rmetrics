@@ -14,10 +14,9 @@
   the date/time units, a character value, yy default \code{"days"}
 }
 
-
 \examples{
-## myUnits -
-   getRmetricsOptions("myUnits")
+## myUnits
+getRmetricsOptions("myUnits")
 }
 
 \keyword{chron}

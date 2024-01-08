@@ -4,6 +4,7 @@
 \title{
   Dates of special one-off holidays in the UK
 }
+
 \description{
     Gives dates of special one-off holidays in the UK.
 }
@@ -21,7 +22,6 @@ specialHolidayGB(year = getRmetricsOptions("currentYear"),
     e.g. \code{2023}.
 
   }
-
   \item{value}{
     
     the class of the returned value. If \code{"timeDate"}, the default,
@@ -68,7 +68,7 @@ specialHolidayGB(year = getRmetricsOptions("currentYear"),
 
 \value{
   a \code{"timeDate"} or a character vector, as requested by argument
-  \code{value}. 
+  \code{value}
 }
 
 %\references{

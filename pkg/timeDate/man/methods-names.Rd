@@ -1,8 +1,6 @@
 \name{names-methods}
 \alias{names-methods}
 
-\docType{methods}
-
 \alias{names,timeDate-method}
 \alias{names<-,timeDate-method}
 
@@ -25,7 +23,8 @@
     an object of class \code{"timeDate"}.
   }
   \item{value}{
-    a character vector of up to the same length as 'x', or 'NULL'.
+    a character vector of up to the same length as \code{x}, or
+    \code{NULL}. 
   }
 }
 

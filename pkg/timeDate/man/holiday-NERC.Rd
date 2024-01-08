@@ -6,8 +6,8 @@
 
 \description{
     
-    Returns a holiday calendar for NERC, the North American Reliability
-    Council.
+  Returns a holiday calendar for NERC, the North American Reliability
+  Council.
                 
 }
 
@@ -16,16 +16,13 @@ holidayNERC(year = getRmetricsOptions("currentYear"), FinCenter = "Eastern")
 }
 
 \arguments{
-
   \item{year}{
     an integer value or vector of years, formatted as \code{YYYY}.
   }
   \item{FinCenter}{
     a character value, the name of the financial center to use.
   }
-        
 }
-
 
 \value{
   an object of class \code{"timeDate"}
@@ -40,9 +37,9 @@ holidayNERC(year = getRmetricsOptions("currentYear"), FinCenter = "Eastern")
 }
 
 \examples{
-## holidayNERC -
-   holidayNERC()
-   holidayNERC(2008:2010)
+## holidayNERC
+holidayNERC()
+holidayNERC(2008:2010)
 }
 
 \keyword{chron}

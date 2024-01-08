@@ -21,7 +21,6 @@ setRmetricsOptions(\dots)
 getRmetricsOption(x, unset = "")
 }
 
-
 \arguments{
   \item{unset}{
     a character string holding the return value is x is not set.

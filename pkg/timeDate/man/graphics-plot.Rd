@@ -14,7 +14,6 @@
   Plot methods for \code{"timeDate"} objects.
 }
 
-
 \usage{
 \S4method{plot}{timeDate}(x, y, \dots)
 \S4method{lines}{timeDate}(x, y, \dots)
@@ -26,7 +25,6 @@ axis.timeDate(side, x, at, format = NULL, labels = TRUE, \dots)
         high.u.bias=1.5, u5.bias=0.5+1.5*high.u.bias,
         eps.correct=0, \dots)
 }
-
 
 \arguments{
   \item{x, y, at}{
@@ -74,28 +72,24 @@ axis.timeDate(side, x, at, format = NULL, labels = TRUE, \dots)
   }
 }
 
-
 \value{
-  
   returns a summary report of the details of a \code{"timeDate"}
   object. This includes the starting and end date, the number of dates
-  the format and the financial center in use.  }
-
+  the format and the financial center in use.
+}
 
 \examples{
-## timeCalendar -
-   x <- timeCalendar()
-   y <- rnorm(12)
+## timeCalendar
+x <- timeCalendar()
+y <- rnorm(12)
 
+## Plotting
+plot(x, y, type = "l")
+points(x, y, pch = 19, col = "red")
 
-## Plotting :
-
-   plot(x, y, type = "l")
-   points(x, y, pch = 19, col = "red")
-
-   plot(x, y, type = "l", xaxt = "n")
-   axis.timeDate(1, at = x[c(1, 3, 5, 7, 9, 11)], format = "\%b")
-   axis.timeDate(1, at = x[12], format = "\%Y")
+plot(x, y, type = "l", xaxt = "n")
+axis.timeDate(1, at = x[c(1, 3, 5, 7, 9, 11)], format = "\%b")
+axis.timeDate(1, at = x[12], format = "\%Y")
 }
 
 \keyword{hplot}

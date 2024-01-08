@@ -1,6 +1,7 @@
 \name{summary-methods}
 
 \alias{summary.timeDate}
+
 \alias{timeDate_summary}
 \alias{print.timeDate_summary}
 
@@ -38,7 +39,7 @@
 }
 
 \examples{
-tC = timeCalendar()
+tC <- timeCalendar()
 summary(tC)
 }
 

@@ -11,19 +11,15 @@
       
 }
 
-
 \usage{
 dayOfWeek(x)
 }
 
-
 \arguments{
-  
   \item{x}{
     an object of class \code{"timeDate"}.
   }  
 }
-
 
 \value{
 
@@ -33,18 +29,16 @@ dayOfWeek(x)
 
 }
 
-
 \seealso{
   \code{\link{dayOfYear}}
 }
 
-
 \examples{  
-## timeCalendar -  
-   tC = timeCalendar(2022)
+## timeCalendar
+tC <- timeCalendar(2022)
        
-## The days of the Year:
-   dayOfWeek(tC)
+## the days of the year
+dayOfWeek(tC)
 }
 
 \keyword{chron}

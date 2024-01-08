@@ -50,6 +50,9 @@ frequency.timeDate <- function(x, ...)
 
 ## ... but package timeSeries also defines S4 method and imports the S4 generic from
 ## timeDate. So for now keep the S4 method, as well.
+##
+## No, actually timeSeries imports 'frequency' from timeDate;
+## TODO: something goes wwrong when timeSeries exports methods for 'frequency'
 setMethod("frequency", "timeDate", frequency.timeDate)
 
 ################################################################################

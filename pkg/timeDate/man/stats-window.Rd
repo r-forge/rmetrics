@@ -55,15 +55,15 @@
 }
 
 \examples{  
-## timeCalendar - 
-   # Monthly Dates in Current Year:
-   tS = timeCalendar()
-   tS 
+## timeCalendar
+# monthly dates in current year
+tS = timeCalendar()
+tS 
    
-## window -
-   # 2nd Quarter Window:
-   tS[4:6]
-   window(tS, tS[4], tS[6])
+## window
+# 2nd quarter window:
+tS[4:6]
+window(tS, tS[4], tS[6])
 }
 
 \keyword{chron}

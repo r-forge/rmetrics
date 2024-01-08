@@ -70,20 +70,20 @@
 
 
 \examples{
-## Create Character Vectors:
-   dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
-   dts
-   tms = c(  "23:12:55",   "10:34:02",   "08:30:00",   "11:18:23")
-   tms
+## create character vectors
+dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
+dts
+tms = c(  "23:12:55",   "10:34:02",   "08:30:00",   "11:18:23")
+tms
    
-## "+/-" - 
-   # Add One Day to a Given timeDate Object:
-   GMT = timeDate(dts, zone = "GMT", FinCenter = "GMT")
-   GMT
-   ZUR = timeDate(dts, zone = "GMT", FinCenter = "Europe/Zurich")
-   ZUR
-   GMT + 24*3600
-   ZUR[2] - ZUR[1] 
+## "+/-"
+# add one day to a given timeDate object
+GMT = timeDate(dts, zone = "GMT", FinCenter = "GMT")
+GMT
+ZUR = timeDate(dts, zone = "GMT", FinCenter = "Europe/Zurich")
+ZUR
+GMT + 24*3600
+ZUR[2] - ZUR[1] 
 }
 
 \keyword{chron}

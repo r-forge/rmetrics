@@ -1,9 +1,9 @@
 \name{round}
 \alias{round}
 
-\alias{trunc}
-
 \alias{round.timeDate}
+
+\alias{trunc}
 \alias{trunc.timeDate}
 
 
@@ -15,16 +15,13 @@
        
 }
 
-
 \usage{
 \method{round}{timeDate}(x, digits = c("days", "hours", "mins")) 
 
 \method{trunc}{timeDate}(x, units = c("days", "hours", "mins"), \dots)     
 }
 
-
 \arguments{
-  
   \item{digits, units}{
     a character string denoting the date/time units in which the 
     results are desired.
@@ -36,7 +33,6 @@
     arguments passed to other methods.
   }
 }
-
 
 \details{
     
@@ -54,9 +50,9 @@
 }
 
 \examples{
-## round - 
+## round
 
-## truncate -
+## truncate
 }
 
 \keyword{chron}

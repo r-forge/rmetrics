@@ -593,12 +593,12 @@ JPBankHolidayDec31(year = getRmetricsOptions("currentYear"),
 
 \examples{
 ## CHSechselaeuten -
-   # Sechselaeuten a half Day Bank Holiday in Switzerland
-   CHSechselaeuten(2000:2010)
-   CHSechselaeuten(getRmetricsOptions("currentYear"))
+# Sechselaeuten a half Day Bank Holiday in Switzerland
+CHSechselaeuten(2000:2010)
+CHSechselaeuten(getRmetricsOptions("currentYear"))
 
 ## German Unification Day:
-   DEGermanUnity(getRmetricsOptions("currentYear"))
+DEGermanUnity(getRmetricsOptions("currentYear"))
 }
 
 \keyword{chron}

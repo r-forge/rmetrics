@@ -14,14 +14,12 @@
 
 \title{Terminal times and range}
 
-
 \description{
     
   Extracts the time when the first or last observation was taken, or
   computes the range of the dates in a \code{"timeDate"} object.
     
 }
-
 
 \usage{
 \method{start}{timeDate}(x, \dots)
@@ -35,9 +33,7 @@
 \method{range}{timeDate}(\dots, na.rm = FALSE)
 }
 
-
 \arguments{
-  
   \item{x}{
     an object of class \code{"timeDate"}.
   }
@@ -49,7 +45,6 @@
     not used.
   }
 }
-
 
 \details{
 
@@ -66,32 +61,30 @@
     
 }
 
-
 \value{
   an object of class \code{"timeDate"}
 }
 
-
 \examples{  
-## timeCalendar - 
-   # Random Calendar Dates:
+## timeCalendar
+# Random Calendar Dates:
 \dontshow{set.seed(1234)}
-   tR = sample(timeCalendar())
-   sort(tR)
-   tR
+tR = sample(timeCalendar())
+sort(tR)
+tR
     
-## start | end  -
-   start(tR)
-   end(tR)
+## start | end
+start(tR)
+end(tR)
    
-## The First and Last Time Stamp:
-   tR[1]
-   tR[length(tR)]
-   rev(tR)[1]
+## the first and last time stamp
+tR[1]
+tR[length(tR)]
+rev(tR)[1]
    
-## The Range:
-   c(start(tR), end(tR))
-   range(tR)
+## the range
+c(start(tR), end(tR))
+range(tR)
 }
 
 \keyword{chron}

@@ -12,9 +12,7 @@
 holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
 }
 
-
 \arguments{
-
   \item{Holiday}{
     
     the function name (a character string or unquoted) of an
@@ -26,14 +24,11 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
   \item{year}{
     an integer value or vector of years, formatted as \code{YYYY}.
   }
-        
 }
-
 
 \value{
   an object of class \code{"timeDate"}
 }
-
 
 \details{
 
@@ -142,21 +137,21 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
 }
 
 \examples{
-## holiday -
-   # Dates for GoodFriday from 2000 until 2005:
-   holiday(2000:2005, "GoodFriday")                  
-   holiday(2000:2005, GoodFriday) # same (GoodFriday is a function)
+## holiday
+# Dates for GoodFriday from 2000 until 2005:
+holiday(2000:2005, "GoodFriday")                  
+holiday(2000:2005, GoodFriday) # same (GoodFriday is a function)
 
-   # Good Friday and Easter
-   holiday(2000:2005, c("GoodFriday", "Easter"))                  
-   holiday(2000:2005, c(GoodFriday, Easter))                  
+# Good Friday and Easter
+holiday(2000:2005, c("GoodFriday", "Easter"))                  
+holiday(2000:2005, c(GoodFriday, Easter))                  
    
-## Easter -   
-   Easter(2000:2005)
+## Easter   
+Easter(2000:2005)
 
-## GoodFriday -                           
-   GoodFriday(2000:2005)
-   Easter(2000:2005, -2) 
+## GoodFriday
+GoodFriday(2000:2005)
+Easter(2000:2005, -2) 
 }
 
 \keyword{chron}

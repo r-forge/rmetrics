@@ -22,9 +22,7 @@
 % \S4method{[}{timeDate}(x, \dots, drop = TRUE)
 % }
 
-
 % \arguments{
-  
 %     \item{x}{
 %         an object of class \code{"timeDate"}.
 %         }
@@ -36,22 +34,20 @@
 %         }         
 % }
 
-
 \value{
-  an object of class \code{"timeDate"}.
+  an object of class \code{"timeDate"}
 }
 
-
 \examples{  
-## timeCalendar -
-   tS = timeCalendar()
+## timeCalendar
+tS = timeCalendar()
  
-## [ - 
-   # Subsetting Second Quarter:
-   tS[4:6] 
+## [
+# Subsetting Second Quarter:
+tS[4:6] 
    
 ## [<-
-   # Replacing:  
+# Replacing:  
 }
 
 \keyword{chron}

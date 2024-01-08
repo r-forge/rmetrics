@@ -15,7 +15,6 @@ Sys.timeDate(FinCenter = "")
 }
 
 \arguments{
-
   \item{FinCenter}{
 
     a character string with the location of the financial center named
@@ -28,20 +27,19 @@ Sys.timeDate(FinCenter = "")
   a \code{"timeDate"} object
 }
 
-
 \examples{
 \dontrun{
 ## direct
-   Sys.timeDate()
+Sys.timeDate()
 
-   # Local Time in Zurich
-   Sys.timeDate(FinCenter = "Zurich")  
+## Local Time in Zurich
+Sys.timeDate(FinCenter = "Zurich")  
 
 ## transformed from "POSIX(c)t" with timeDate()
-   timeDate(Sys.time()) 
+timeDate(Sys.time()) 
  
-   # Local Time in Zurich
-   timeDate(Sys.time(), FinCenter = "Zurich")  
+## Local Time in Zurich
+timeDate(Sys.time(), FinCenter = "Zurich")  
 }   
 }
 

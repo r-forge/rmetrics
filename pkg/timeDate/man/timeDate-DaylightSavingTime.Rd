@@ -426,7 +426,6 @@
   
 }
 
-
 \details{
 
   As a selection of these functions:
@@ -446,7 +445,6 @@
   
 }
 
-
 \note{
 
   There are currently two synonyms available "Pacific" for Los Angeles
@@ -463,15 +461,13 @@
 
 }
 
-
 \examples{
-## DST Rules for Zurich:
-   head(Zurich())
-   tail(Zurich())
+## DST rules for Zurich
+head(Zurich())
+tail(Zurich())
 
 ## list all available centers
 listFinCenter()
 }
 
 \keyword{data}
-

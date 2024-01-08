@@ -16,7 +16,7 @@
 
 
 \examples{
-# Create a timeCalendar sequence
+# create a timeCalendar sequence
 (td <- timeCalendar())
 is.na(td)
 

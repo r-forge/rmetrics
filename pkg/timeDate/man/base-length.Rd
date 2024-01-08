@@ -7,9 +7,7 @@
 \title{Length of a 'timeDate' object}
 
 \description{
-    
   Returns the length of a \code{"timeDate"} object.
-       
 }
 
 \usage{
@@ -24,17 +22,15 @@
 }
 
 \value{
-   
   an integer of length 1
-
 }
 
 \examples{  
-## timCalendar -
-   tC = timeCalendar()
+## timeCalendar
+tC = timeCalendar()
    
 ## length - 
-   length(tC)
+length(tC)
 }
 
 \keyword{chron}

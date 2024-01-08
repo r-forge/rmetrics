@@ -72,31 +72,21 @@ S3method(.DollarNames, timeDate)
 exportClasses(timeDate)
 
 exportMethods(
-    "+",
-    "-",
+    "+", "-", Ops,
     "[",
-    "finCenter<-",
-    Ops,
     abline,
     align,
     atoms,
-    finCenter,
+    finCenter, "finCenter<-",
     getDataPart,
     initialize,
     is.na,
-    isDaily,
-    isMonthly,
-    isQuarterly,
-    isRegular,
-    lines,
+    isDaily, isMonthly, isQuarterly, isRegular,
+    lines, plot, points,
     names,
-    plot,
-    points,
     sample,
     show,
-    timeDate,
-
-    frequency
+    timeDate
 )
 
 export(
@@ -105,44 +95,25 @@ export(
 
 export(
     Sys.timeDate,
-    align,
-    alignDaily,
-    alignMonthly,
-    alignQuarterly,
+    align, alignDaily, alignMonthly, alignQuarterly,
     as.Date.timeDate, # To avoid that zoo package masks as.Date.timeDate?
     as.timeDate,
     atoms,
     axis.timeDate,
-    blockEnd,
-    blockStart,
-    dayOfWeek,
-    dayOfYear,
+    blockEnd, blockStart,
+    dayOfWeek, dayOfYear,
     difftimeDate,
-    finCenter,
-    "finCenter<-",
+    finCenter, "finCenter<-",
     getRmetricsOption,
-    getRmetricsOptions,
+    getRmetricsOptions, # compatibility
     holiday,
-    holidayLONDON,
-    holidayNERC,
-    holidayNYSE,
-    holidayTSX,
-    holidayZURICH,
-    isBizday,
-    isDaily,
-    isHoliday,
-    isMonthly,
-    isQuarterly,
-    isRegular,
-    isWeekday,
-    isWeekend,
+    holidayLONDON, holidayNERC, holidayNYSE, holidayTSX, holidayZURICH,
+    isBizday, isDaily, isHoliday, isMonthly, isQuarterly, isRegular,
+    isWeekday, isWeekend,
     kurtosis,
-    listFinCenter,
-    listHolidays,
-    midnightStandard,
-    midnightStandard2,
-    monthlyRolling,
-    periodicallyRolling,
+    listFinCenter, listHolidays,
+    midnightStandard, midnightStandard2,
+    monthlyRolling, periodicallyRolling,
     periods,
     rulesFinCenter,
     setRmetricsOptions,
@@ -150,14 +121,9 @@ export(
     strptimeDate,
     timeCalendar,
     timeDate,
-    timeFirstDayInMonth,
-    timeFirstDayInQuarter,
-    timeLastDayInMonth,
-    timeLastDayInQuarter,
-    timeLastNdayInMonth,
-    timeNdayOnOrAfter,
-    timeNdayOnOrBefore,
-    timeNthNdayInMonth,
+    timeFirstDayInMonth, timeFirstDayInQuarter, timeLastDayInMonth,
+    timeLastDayInQuarter, timeLastNdayInMonth,
+    timeNdayOnOrAfter, timeNdayOnOrBefore, timeNthNdayInMonth,
     timeSequence,
     whichFormat,
 
@@ -295,6 +261,7 @@ export(
 )
 ## end:   holidays
 
+## alternative or old names of financial centers
 export(
     AST,
     BuenosAires,

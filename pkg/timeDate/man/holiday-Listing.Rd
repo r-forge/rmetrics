@@ -5,24 +5,18 @@
 \title{List of holidays}
 
 \description{
-    
   Returns a list of holidays.     
-                
 }
-
 
 \usage{
 listHolidays(pattern = ".*") 
 }
 
-
 \arguments{
-  
   \item{pattern}{
     a pattern character string as required by the \code{\link{grep}}
     function.
   }
-
 }
 
 \details{
@@ -36,15 +30,14 @@ listHolidays(pattern = ".*")
   a character vector
 }
 
-
 \examples{
-## listHolidays -
+## listHolidays
 
-   # All Holidays:
-   listHolidays()
-   
-   # Local Swiss Holidays:
-   listHolidays("CH") 
+# All Holidays:
+listHolidays()
+
+# Local Swiss Holidays:
+listHolidays("CH") 
 }
 
 \keyword{chron}

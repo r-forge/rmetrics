@@ -40,16 +40,17 @@ isHoliday(x, holidays = holidayNYSE(), wday = 1:5)
   a logical vector of the same length as \code{x}
 }
 
-\examples{## Dates in April, currentYear:
-   currentYear = getRmetricsOptions("currentYear")
-   tS = timeSequence(
-      from = paste(currentYear, "-03-01", sep = ""),
-      to = paste(currentYear, "-04-30", sep = ""))
-   tS
+\examples{
+## dates in April, current year
+currentYear <- getRmetricsOptions("currentYear")
+tS <- timeSequence(from = paste(currentYear, "-03-01", sep = ""),
+                     to = paste(currentYear, "-04-30", sep = ""))
+tS
 
-## Subset Business Days at NYSE:
-   holidayNYSE()
-   isBizday(tS, holidayNYSE())
-   tS[isBizday(tS, holidayNYSE())]
+## subset business days at NYSE
+holidayNYSE()
+isBizday(tS, holidayNYSE())
+tS[isBizday(tS, holidayNYSE())]
 }
+
 \keyword{chron}

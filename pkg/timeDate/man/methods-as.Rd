@@ -73,11 +73,11 @@
 
 }
 \examples{
-## timeDate - 
-   tC = timeCalendar()
+## timeDate
+tC = timeCalendar()
 
-## Convert 'timeDate' to a character vector:
-   as.character(tC)
+## convert 'timeDate' to a character vector
+as.character(tC)
 }
 
 \keyword{chron}

@@ -6,8 +6,8 @@
 
 \description{
     
-    Returns a holiday (closing days) calendar for the New York Stock
-    Exchange.
+  Returns a holiday (closing days) calendar for the New York Stock
+  Exchange.
                 
 }
 
@@ -29,11 +29,9 @@ holidayNYSE(year = getRmetricsOptions("currentYear"),
 }
 
 \arguments{
-
   \item{year}{
     an integer value or vector of years, formatted as \code{YYYY}.
   }
-        
   \item{type}{
 
     what to include, a character string. The default is to return all
@@ -42,7 +40,6 @@ holidayNYSE(year = getRmetricsOptions("currentYear"),
     \code{"special"} gives the special closings only. 
     
   }
-
 }
 
 \note{
@@ -79,7 +76,7 @@ holidayNYSE(year = getRmetricsOptions("currentYear"),
   \code{\link{earlyCloseNYSE}} for times of early closings
 }
 \examples{
-## holidayNYSE -
+## holidayNYSE
 holidayNYSE() ## current year
 holidayNYSE(2008:2010)
 
