@@ -4,7 +4,7 @@
 \alias{na.contiguous.timeSeries}
 
 \alias{is.na}
-\alias{is.na.timeSeries}
+\alias{is.na,timeSeries-method}
 
 
 \title{Find longest contiguous stretch of non-NAs or check for NAs}
@@ -19,7 +19,7 @@
 
 \usage{
 \method{na.contiguous}{timeSeries}(object, ...)
-\method{is.na}{timeSeries}(x)
+\S4method{is.na}{timeSeries}(x)
 }
 
 \arguments{

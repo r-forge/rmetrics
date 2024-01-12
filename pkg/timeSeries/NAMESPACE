@@ -7,13 +7,19 @@ import("methods") # , show
 
 importFrom("grDevices", col2rgb, rgb , xy.coords)
 
+if(packageVersion("timeDate") <= '4032.109')
+    importFrom("timeDate", frequency)
+if(packageVersion("timeDate") > '4032.109')
+    importFrom("stats", frequency)
+
+
 importFrom("stats",
            approx, approxfun, spline, splinefun,
            var, cor, dist, hclust, qt, rnorm, runif, runmed,
            ts, is.mts, deltat,
            ## for these, we provide methods:
            start, end, time, window, lag, filter,
-           aggregate, as.ts, # frequency - from timeDate
+           aggregate, as.ts,
            median, quantile, na.contiguous, na.omit
            )
 
@@ -32,11 +38,10 @@ importFrom("utils",
            )
 
 importFrom("timeDate",
-           abline, # the S4 generic from here, not "graphics"
+           abline, # the S4 generic from here, not "graphics" (graphics::abline is not generic)
            ##--- For these we provide and export methods :
            plot,           # base
            lines, points,  # graphics
-           frequency,      # stats
            isDaily, isMonthly, isQuarterly, isRegular,
            align,
            ##---- end of generics for which we define/export methods
@@ -75,7 +80,6 @@ S3method("diff",     "timeSeries")
 S3method("end",      "timeSeries")
 S3method("getUnits",  default)
 S3method("head",     "timeSeries")
-S3method("is.na",      "timeSeries")
 S3method("lag",      "timeSeries")
 S3method("lines",    "timeSeries")
 S3method("median",    "timeSeries")
@@ -97,6 +101,9 @@ S3method("str",      "timeSeries")
 S3method("tail",     "timeSeries")
 S3method("window",   "timeSeries")
 S3method("time",     "timeSeries")
+
+S3method("frequency", "timeSeries")
+S3method("is.unsorted", "timeSeries")
 
 S3method("time<-", "timeSeries")
 S3method("time<-", default)
@@ -125,37 +132,46 @@ exportClasses("index_timeSeries",
 
 exportMethods(
     "$", "$<-", "+", "-", "Ops", "[",
-    "aggregate",
+    
+    ## from timeDate
     "align",
-    "apply",
-    "as.data.frame", "as.list", "as.matrix", "as.ts",
-    "attach",
-    "cbind2",
+    "finCenter", "finCenter<-",
+    "isDaily", "isMonthly", "isQuarterly", "isRegular",
+
+    ## from methods
+    "cbind2", "rbind2",
     "coerce",
-    "colMeans", "colSums",
-    "colnames", "colnames<-",
-    "comment", "comment<-",
+    "getDataPart", "setDataPart",  # not generic in methods
+    "initialize",
+    "show",
+
+    ## primitive R functions (internally S3 and S4 generic)
     "cummax", "cummin", "cumprod", "cumsum",
-    # "cut",  timeSeries method was removed on 2023-05-26
     "dim", "dim<-",
     "dimnames", "dimnames<-",
-    "filter",                    # note: stats::filter is not generic
-    "finCenter", "finCenter<-",
-    "frequency",
-    "getDataPart",
-    "initialize",
-    "is.unsorted",
-    "isDaily", "isMonthly", "isQuarterly", "isRegular",
-    "lines",
-    "merge",      # note: the S4 methods are for x and y, so S4 is essential
     "names", "names<-",
-    "plot", "points",
-    "rank",                      # note: base::rank is not generic
-    "rbind2",
-    "rownames", "rownames<-",
-    "sample",                    # note: base::sample is not generic
-    "setDataPart",
-    "show",
+
+    ## stats
+    ## "aggregate",
+    ## "as.ts",
+    "filter",  # not generic in stats; let it stay S4 here
+
+    ## graphics
+    ## "lines", "points",
+
+    ## from base
+    "apply",                                               # not generic in base
+    "as.data.frame", "as.list", "as.matrix",
+    "attach",                                              # not generic in base
+    "colMeans", "colSums",                                 # not generic in base
+    "colnames", "colnames<-", "rownames", "rownames<-",    # not generic in base
+    "comment", "comment<-",                                # not generic in base
+    # "cut",                     # timeSeries method was removed on 2023-05-26
+    "is.unsorted",         # internal generic in base (but seemingly only S3, not S4)
+    "merge",                     # the S4 methods are for x and y, so S4 is essential
+    "plot",
+    "rank",                                                # not generic in base
+    "sample",                                              # not generic in base
     "t"
 )
 
@@ -181,7 +197,7 @@ export(
     "drawdowns", "drawdownsStats",
     "dummyDailySeries", "dummyMonthlySeries",
     "durations",
-    "endOfPeriodBenchmarks", "endOfPeriodSeries", "endOfPeriodStats",
+     "endOfPeriodBenchmarks", "endOfPeriodSeries", "endOfPeriodStats",
     "fapply",
     "getAttributes",
     "getFinCenter",
@@ -234,7 +250,13 @@ export(
     ## "rev",
     ## "print",
     ## "diff",
-    ## "is.na",
+    ## "is.na", # primitive
+
+    ## "frequency",
+    "aggregate", "as.ts",  # stats, reexport 
+    ## graphics
+    "lines", "points", # graphics, reexport
+    
     "na.omit",
     "lag",
     "window"

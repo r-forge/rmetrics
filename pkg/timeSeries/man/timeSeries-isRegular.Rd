@@ -96,15 +96,18 @@
 }
 \examples{
 data(MSFT)
-isRegular(MSFT)
+isRegular(MSFT) # FALSE
+frequency(MSFT) # 1
 
 ## a monthly ts
 ap <- as.timeSeries(AirPassengers)
-isRegular(ap)
+isRegular(ap) # TRUE
+frequency(ap) # 12
 
 ## a quarterly ts
 pres <- as.timeSeries(presidents)
-isRegular(pres)
+isRegular(pres) # TRUE
+frequency(pres) # 4
 }
 
 \keyword{chron}
