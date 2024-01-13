@@ -1,4 +1,4 @@
-## timeSeries 4032.108.9000
+## timeSeries 4032.109
 
 - deprecated function `returnSeries` is now defunct, use `returns` instead.
 
@@ -7,7 +7,7 @@
   methods.
 
 - streamlined timeSeries methods for a number of functions. Left only S3 methods
-  were suitable.
+  or only S4 methods were suitable.
 
 - consolidated the NAMESPACE.
 
