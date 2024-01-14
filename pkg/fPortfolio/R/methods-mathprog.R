@@ -25,7 +25,7 @@ print.solver <-
     cat("\n")
     
     cat(" Objective:       ", x$objective, "\n")
-    cat(" Solution:        ", head(x$solution),  "...\n")
+    cat(" Solution:        ", utils::head(x$solution),  "...\n")
     cat(" Status Code:     ", x$status,    "\n")
     cat(" Message:         ", x$message,   "\n")
     cat(" Solver:          ", x$solver,    "\n")

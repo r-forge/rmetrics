@@ -131,8 +131,8 @@ setMethod("show", "fPFOLIODATA",
         cat("  No time series data available.\n")
     } else {
         cat("\n")
-        print(head(object@data$series, n = 3))
-        print(tail(object@data$series, n = 3))
+        print(utils::head(object@data$series, n = 3))
+        print(utils::tail(object@data$series, n = 3))
     }
     
     # Statistics:
