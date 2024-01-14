@@ -171,7 +171,7 @@ function(ps, hist)
     BIG <- 1e14
     zeros <- which(hist$y == 0)
     wholes <- which(hist$y > 0)
-    after <- head(zeros[zeros > wholes[1]], 1)
+    after <- utils::head(zeros[zeros > wholes[1]], 1)
     l.plus <- hist$x[after]
     
     Q <- ps[1]
@@ -187,10 +187,10 @@ function(ps, hist)
     scale <- max(rhos) / max(hist$y) + 0.25
     
     # Shift the densities to get a better fit
-    whole.idx <- head(rhos[rhos > 0], 1)
+    whole.idx <- utils::head(rhos[rhos > 0], 1)
     hist$y <- c(
         rep(0, whole.idx-1), 
-        tail(hist$y, length(hist$y) - whole.idx+1))
+        utils::tail(hist$y, length(hist$y) - whole.idx+1))
     
     # Normalize based on amount of density below MP upper limit
     # This is basically dividing the distance by the area under 
