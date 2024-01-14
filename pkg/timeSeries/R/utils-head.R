@@ -19,6 +19,10 @@
 #  tail,timeSeries           Returns the tail of a 'timeSeries' object
 ################################################################################
 
+setGeneric("head")
+setGeneric("tail")
+
+
 
 head.timeSeries <- 
     function(x, n = 6, recordIDs = FALSE, ...)
