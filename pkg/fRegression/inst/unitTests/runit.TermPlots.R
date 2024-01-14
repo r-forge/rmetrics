@@ -33,12 +33,12 @@ test.termPlot <-
 
     # Simulate Data - a data frame:
     DATA <- regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
 
     # Convert to a timeSeries object:
     DATATS <- as.timeSeries(DATA)
-    head(DATATS)
+    utils::head(DATATS)
     class(DATATS)
     
     require(mgcv)
@@ -88,11 +88,11 @@ test.termPersp <-
 {
     # Simulate Data - a data frame:
     DATA <- regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
     # Convert to a timeSeries object:
     DATATS <- as.timeSeries(DATA)
-    head(DATATS)
+    utils::head(DATATS)
     class(DATATS)
     
     require(mgcv)
@@ -133,11 +133,11 @@ test.termContour <-
 
     # Simulate Data - a data frame:
     DATA = regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
     # Convert to a timeSeries object:
     DATATS = as.timeSeries(DATA)
-    head(DATATS)
+    utils::head(DATATS)
     class(DATATS)
     
     require(mgcv)
@@ -177,12 +177,12 @@ test.termComparison <-
 {
     # Simulate Data - a data frame:
     DATA = regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
     
     # Convert to a timeSeries object:
     DATATS = as.timeSeries(DATA)
-    head(DATATS)
+    utils::head(DATATS)
     class(DATATS)
     
     require(mgcv)

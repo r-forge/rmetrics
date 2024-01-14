@@ -32,15 +32,15 @@ test.lmCoef <-
     fit
     
     # Extract Fitted values:
-    head(slot(fit, "fitted"))
+    utils::head(slot(fit, "fitted"))
     val = fitted(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Extract Residuals:
-    head(slot(fit, "residuals"))
+    utils::head(slot(fit, "residuals"))
     val = residuals(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Return Value:
@@ -65,15 +65,15 @@ test.rlmCoef <-
     fit
     
     # Extract Fitted values:
-    head(slot(fit, "fitted"))
+    utils::head(slot(fit, "fitted"))
     val = fitted(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Extract Residuals:
-    head(slot(fit, "residuals"))
+    utils::head(slot(fit, "residuals"))
     val = residuals(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Return Value:
@@ -98,15 +98,15 @@ test.amCoef <-
     fit
     
     # Extract Fitted values:
-    head(slot(fit, "fitted"))
+    utils::head(slot(fit, "fitted"))
     val = fitted(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Extract Residuals:
-    head(slot(fit, "residuals"))
+    utils::head(slot(fit, "residuals"))
     val = residuals(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Return Value:
@@ -131,15 +131,15 @@ test.pprCoef <-
     fit
     
     # Extract Fitted values:
-    head(slot(fit, "fitted"))
+    utils::head(slot(fit, "fitted"))
     val = fitted(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Extract Residuals:
-    head(slot(fit, "residuals"))
+    utils::head(slot(fit, "residuals"))
     val = residuals(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Return Value:
@@ -164,15 +164,15 @@ test.nnetCoef <-
     fit
     
     # Extract Fitted values:
-    head(slot(fit, "fitted"))
+    utils::head(slot(fit, "fitted"))
     val = fitted(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Extract Residuals:
-    head(slot(fit, "residuals"))
+    utils::head(slot(fit, "residuals"))
     val = residuals(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Return Value:
@@ -197,15 +197,15 @@ test.polymarsCoef <-
     fit
     
     # Extract Fitted values:
-    head(slot(fit, "fitted"))
+    utils::head(slot(fit, "fitted"))
     val = fitted(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Extract Residuals:
-    head(slot(fit, "residuals"))
+    utils::head(slot(fit, "residuals"))
     val = residuals(fit)
-    head(val)
+    utils::head(val)
     class(val)
     
     # Return Value:

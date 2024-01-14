@@ -35,17 +35,17 @@ test.regSim <-
 
     # Simulate Artificial LM:
     X = regSim(model = "LM3", n = 365)
-    head(X)
+    utils::head(X)
     plot(X[, "Y"], type = "l", main = "LM3", xlab = "1970", ylab = "Y")
 
     # Simulate Artificial LOGIT:
     X = regSim(model = "LOGIT3", n = 365)
-    head(X)
+    utils::head(X)
     plot(X[, "Y"], type = "l", main = "LOGIT3", xlab = "1970", ylab = "Y")
 
     # Simulate Artificial GAM:
     X = regSim(model = "GAM3", n = 365)
-    head(X)
+    utils::head(X)
     plot(X[, "Y"], type = "l", main = "GAM3", xlab = "1970", ylab = "Y")
 
     # Return Value:
@@ -61,7 +61,7 @@ test.regFit.dataframe <-
 {
     # Working with timeSeries Objects ...
     DATA = regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
 
     # Regression Fit:
@@ -115,7 +115,7 @@ test.regFit.valueSlots <-
 
     # Working with timeSeries Objects ...
     DATA = regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
     
     require(mgcv)
@@ -214,7 +214,7 @@ test.predict.fREG <-
 {
     # Working with timeSeries Objects ...
     DATA <- regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
 
    require(mgcv)
@@ -272,12 +272,12 @@ test.regFit.nonDefaults <-
 
     # Simulate Data - a data frame:
     DATA = regSim(model = "GAM3", n = 100)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
 
     # Simulate Data - a timeSeries object:
     DATA = as.timeSeries(DATA)
-    head(DATA)
+    utils::head(DATA)
     class(DATA)
 
     # LM:

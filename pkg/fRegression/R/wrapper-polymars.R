@@ -121,8 +121,8 @@
 
     # require(polspline)
 
-    print(head(responses))
-    print(head(predictors))
+    print(utils::head(responses))
+    print(utils::head(predictors))
 
     # Fit:
     .Call <- match.call()

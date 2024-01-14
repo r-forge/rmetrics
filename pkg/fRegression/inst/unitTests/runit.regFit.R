@@ -76,7 +76,7 @@ test.rlmFit <-
     
     predict(rlmfit)
     
-    head(rlmfit@fit$model)
+    utils::head(rlmfit@fit$model)
       
     # Return Value:
     return()
