@@ -94,7 +94,9 @@
             XY = gridVector(X, Y)
             newdata[, j] = Y
             colnames(newdata) = colNames
-            print(head(newdata))
+            ## (2023-01-14) GNB: use stats::head instead of just 'head' (here
+            ##    and below) to avoid relying on 'timeSeries' exporting 'head'
+            print(stats::head(newdata))
             
             Z = predict(object, as.data.frame(newdata))
             Z = matrix(Z, ncol = 10)
@@ -138,7 +140,7 @@
             XY = gridVector(X, Y)
             newdata[, j] = Y
             colnames(newdata) = colNames
-            print(head(newdata))
+            print(stats::head(newdata))
             
             Z = predict(object, as.data.frame(newdata))
             Z = matrix(Z, ncol = 10)
