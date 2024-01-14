@@ -1,7 +1,7 @@
 Package: fRegression
 Title: Rmetrics - Regression Based Decision and Prediction
 Date: 2022-08-11
-Version: 4021.83
+Version: 4021.83.9000
 Authors@R: c(person("Diethelm", "Wuertz", role = "aut")
 	   , person("Tobias", "Setz", role = "aut")
 	   , person("Yohan", "Chalabi", role = "aut")
