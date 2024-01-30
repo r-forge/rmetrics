@@ -145,6 +145,10 @@ setMethod(f = "predict", signature(object = "fGARCH"), definition =
         for (i in 1:M) {
             h[N+i] = omega  + sum(beta*h[N+i-(1:q)])
             for (j in 1:p) {
+                ## 2024-01-30 GNB: TODO:
+                ##    it seems that kappa doesn't depend on i;
+                ##    so, kappa[1], ..., kappa[p] can be computed outside the i-loop
+                ##    and the formulas below use kappa[j]
                 kappa = garchKappa(cond.dist = cond.dist, gamma = gamma[j],
                     delta = delta, skew = skew, shape = shape)
                 if (i-j > 0) {

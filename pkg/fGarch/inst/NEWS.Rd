@@ -15,6 +15,17 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
+\section{CHANGES in fGarch VERSION 4022.90.9000 (2023-10-15, svn r6436--r????)}{
+  \itemize{
+
+    \item added computation of Value-at-Risk (VaR) and expected
+    shortfall (ES) for fitted GARCH and APARCH models. (TODO: do it also
+    for the predict method).
+
+  }
+}
+
+
 \section{CHANGES in fGarch VERSION 4022.90 (2023-10-15, svn r6333--r6435)}{
   \itemize{
 

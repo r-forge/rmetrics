@@ -9,7 +9,7 @@ Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Pierre", "Chausse", role = "ctb")
 	   , person("Michal", "Miklovac", role = "ctb")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre", "aut"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("aut", "cre"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Analyze and model heteroskedastic behavior in financial time series.
 Imports: fBasics, timeDate, timeSeries, fastICA, Matrix (>= 1.5-0), cvar (>= 0.5),
          graphics, methods, stats, utils
