@@ -6,7 +6,13 @@
 \alias{ES}
 \alias{ES.fGARCH}
 
-\title{Compute Value-at-Risk (VaR) and expected shortfall}
+\concept{VaR}
+\concept{value-at-risk}
+\concept{ES}
+\concept{expected shortfall}
+
+
+\title{Compute Value-at-Risk (VaR) and expected shortfall (ES)}
 
 \description{
 

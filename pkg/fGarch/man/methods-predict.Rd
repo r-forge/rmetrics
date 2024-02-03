@@ -6,6 +6,11 @@
 \alias{predict}
 \alias{predict,fGARCH-method}
 
+\concept{VaR}
+\concept{value-at-risk}
+\concept{ES}
+\concept{expected shortfall}
+
 
 \title{GARCH prediction function}
 
