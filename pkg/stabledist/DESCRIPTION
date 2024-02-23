@@ -1,16 +1,18 @@
 Package: stabledist
 Version: 0.7-2
-Date: 2023-xx-yy
+Date: 2024-02-23
 Title: Stable Distribution Functions
-Author: Diethelm Wuertz [aut] (original code), Martin Maechler [aut, cre], Yohan Chalabi [ctb] (namespace; admin)
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
- ,person("Martin","Maechler", role=c("aut","cre"), email="maechler@stat.math.ethz.ch")
+ ,person("Martin","Maechler", role=c("aut","cre"), email="maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
  ,person("Yohan", "Chalabi", role="ctb", comment= "namespace; admin")
  )
 Maintainer: Martin Maechler <maechler@stat.math.ethz.ch>
 Depends: R (>= 3.1.0)
 Imports: stats
 Suggests: Matrix, fBasics, FMStable, RUnit, Rmpfr, sfsmisc
+ , libstable4u
+SuggestsNote: 'libstable4u', based on 'libstableR', is said to be uniformly better both accuracy and speed wise,
+  at least in parts.
 Description: Density, Probability and Quantile functions, and random number
   generation for (skew) stable distributions, using the parametrizations of
   Nolan.
