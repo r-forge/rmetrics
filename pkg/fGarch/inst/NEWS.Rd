@@ -15,13 +15,30 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
+\section{CHANGES in fGarch VERSION 4033.92 (2024-03-26, svn r6481--r6481)}{
+  \itemize{
+
+    \item added VaR and ES plots to the \code{plot} method for fitted
+    GARCH models.
+
+    \item documented with examples that argument \code{which} of the
+    plot method for fitted GARCH objects can be of length greater than
+    one.
+
+    \item added a link to the website created with pkgdown to file
+    'DESCRIPTION'.
+
+  }
+}
+
+
 \section{CHANGES in fGarch VERSION 4032.91 (2024-02-02, svn r6436--r6479)}{
   \itemize{
 
     \item added computation of Value-at-Risk (VaR) and expected
     shortfall (ES) for fitted GARCH and APARCH models (in-sample and in
-    the predict method). Just use something like `Var(fitted_object)`,
-    `ES(fitted_object)` or `predict(fitted_object, ..., p_loss = 0.05)`.
+    the predict method). Just use something like \code{Var(fitted_object)},
+    \code{ES(fitted_object)} or \code{predict(fitted_object, ..., p_loss = 0.05)}.
 
   }
 }
@@ -30,12 +47,13 @@
 \section{CHANGES in fGarch VERSION 4022.90 (2023-10-15, svn r6333--r6435)}{
   \itemize{
 
-    \item added \code{"fGARCH"} method for `stats::tsdiag`. The method
-    produces diagnostic plot for fitted GARCH/APARCH models and computes
-    some diagnostic tests. The plots can be chosen interactively and/or
-    via arguments. The test results are in the returned value. The
-    method is in development in that more plots may be made available
-    and additional tests included in the returned value.
+    \item added \code{"fGARCH"} method for \code{stats::tsdiag}. The
+    method produces diagnostic plot for fitted GARCH/APARCH models and
+    computes some diagnostic tests. The plots can be chosen
+    interactively and/or via arguments. The test results are in the
+    returned value. The method is in development in that more plots may
+    be made available and additional tests included in the returned
+    value.
 
     \item refactored the \code{"fGARCH"} method for 'summary' to return
     an object from S3 class 'summary_fGARCH' equipped with a 'print'
