@@ -15,6 +15,25 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
+\section{CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r????--r????)}{
+  \itemize{
+
+    \item replaced a call to `warnings` (plural) with `warning`
+    (singular) in \code{garchSpec}. The old one was clearly a typo and
+    was not issuing the intended warning about the violation of the
+    stationarity condition for GARCH models.
+    
+    \item improved the layout of the reference section of the pkgdown
+    site.
+
+    \item edited the help page of class \code{"fGARCH"}. In particular,
+    added cross-references to the help pages of the individual methods.
+    
+
+  }
+}
+
+
 \section{CHANGES in fGarch VERSION 4033.92 (2024-03-26, svn r6481--r6481)}{
   \itemize{
 
