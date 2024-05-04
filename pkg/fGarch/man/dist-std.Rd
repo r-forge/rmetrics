@@ -9,7 +9,7 @@
 \concept{t-distribution}
 \concept{Student-t distribution}
 \concept{standardized Student t distribution}
-\concept{standardized Student t-distribution}
+\concept{standardized Student-t distribution}
 
 
 \title{Standardized Student-t distribution}

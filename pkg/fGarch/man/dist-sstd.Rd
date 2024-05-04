@@ -6,6 +6,13 @@
 \alias{qsstd}
 \alias{rsstd}
 
+\concept{standardized skew Student-t distribution}
+\concept{skew Student-t distribution}
+\concept{skewed Student-t distribution}
+
+\concept{skew distribution}
+\concept{skewed distribution}
+
 
 \title{Skew Student-t distribution}
 

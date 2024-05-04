@@ -8,10 +8,16 @@
 \alias{summary,fGARCH-method}
 
 
-\title{GARCH summary methods}
+\title{fGARCH method for the summary function}
 
 \description{
-  Summary methods for GARCH modelling. 
+
+  Prints a summary of an object from class \code{"fGARCH"}.  The summary
+  contains information about the parameters of the fitted model, its
+  specifications, and diagnostic statistics for inference and
+  goodness-of-fit. If you don't need the diagnostics, just print the
+  object (instead of calling \code{summary}).
+
 }
 
 \section{Methods}{
@@ -23,9 +29,13 @@
   }
 }
 
+\value{
+  an object from class \code{"summary_fGARCH"}
+}
+
 \section{How to read a diagnostic summary report?}{
 
-    The first five sections return the title, the call, the
+    The first five sections give the title, the call, the
     mean and variance formula, the conditional distribution and the type of
     standard errors:
 
@@ -97,12 +107,20 @@
   Diethelm Wuertz for the Rmetrics \R-port
 }
 
+\seealso{
+  \code{\link{tsdiag}} and \code{\link{plot}} for further diagnostics
+  and plots,
+
+  \code{\link{garchFit}} for fitting GARCH/APARCH models,
+
+  class \code{"\linkS4class{fGARCH}"} for details and further methods
+}
+
 \examples{
 \dontshow{
 set.seed(1234)
 }
 x <- garchSim(n = 200)
-
-fit = garchFit(formula = x ~ garch(1, 1), data = x, trace = FALSE)
+fit <- garchFit(formula = x ~ garch(1, 1), data = x, trace = FALSE)
 summary(fit)
 }
