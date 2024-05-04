@@ -15,7 +15,7 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r????--r????)}{
+\section{CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r6482--r????)}{
   \itemize{
 
     \item replaced a call to `warnings` (plural) with `warning`

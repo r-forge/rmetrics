@@ -98,10 +98,11 @@
 }
 
 \examples{
-## garchSim -
-   x = garchSim(n = 200)
+\dontshow{
+set.seed(1234)
+}
+x <- garchSim(n = 200)
 
-## garchFit - 
-   fit = garchFit(formula = x ~ garch(1, 1), data = x, trace = FALSE)
-   summary(fit)
+fit = garchFit(formula = x ~ garch(1, 1), data = x, trace = FALSE)
+summary(fit)
 }

@@ -16,5 +16,7 @@ Imports: fBasics, timeDate, timeSeries, fastICA, Matrix (>= 1.5-0), cvar (>= 0.5
 Suggests: RUnit, tcltk, goftest
 LazyData: yes
 License: GPL (>= 2)
-URL: https://geobosh.github.io/fGarchDoc/ (doc), https://www.rmetrics.org (devel)
+URL: https://geobosh.github.io/fGarchDoc/ (doc),
+ https://r-forge.r-project.org/scm/viewvc.php/pkg/fGarch/?root=rmetrics (devel),
+ https://www.rmetrics.org 
 BugReports: https://r-forge.r-project.org/projects/rmetrics
