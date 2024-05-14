@@ -425,14 +425,16 @@ c
         end do
       end do
 c
-      do 21 i=1,nobs
-      do 21 k=1,nobs
-      do 24 j=1,nvar
-      xomy(j) = xomy(j) + xmat(i,j)*omega(k,i)*yvect(k)
-      do 24 l=j,nvar
-      xomx(j,l) = xomx(j,l) + xmat(i,j)*omega(k,i)*xmat(k,l)
-   24 continue
-   21 continue
+      do i=1,nobs
+         do k=1,nobs
+            do j=1,nvar
+               xomy(j) = xomy(j) + xmat(i,j)*omega(k,i)*yvect(k)
+               do l=j,nvar
+                  xomx(j,l) = xomx(j,l) + xmat(i,j)*omega(k,i)*xmat(k,l)
+               end do
+            end do
+         end do
+      end do
 c
       do j=1,nvar
         do l=j,nvar
@@ -446,11 +448,12 @@ c
 c
 c  now form estimates of beta.
 c
-      do 5 i=1,nvar
-      beta(i) = 0.d0
-      do 5 j=1,nvar
-      beta(i) = beta(i) + xomx(i,j)*xomy(j)
-    5 continue
+      do i=1,nvar
+         beta(i) = 0.d0
+         do j=1,nvar
+            beta(i) = beta(i) + xomx(i,j)*xomy(j)
+         end do
+      end do
 c
 c find ssr, fitted values, and residuals
 c
@@ -490,12 +493,13 @@ c
       real(8) amat(m,m)
       ooa = 1.d0 ! Wall
       kxx = 0
-      do 8 i=1,n
+      do i=1,n
          kl = i - 1
-         do 7 j=i,n
+         do j=i,n
             if (i .gt. 1) then
-               do 3 k=1,kl
- 3                amat(i,j) = amat(i,j) - amat(k,i)*amat(k,j)
+               do k=1,kl
+                  amat(i,j) = amat(i,j) - amat(k,i)*amat(k,j)
+               end do
             else if (amat(i,i) .le. 0.d0) then
                kxx = i
                return
@@ -506,31 +510,33 @@ c
                if (j.eq.i+1) ooa = 1.d0/amat(i,i)
                amat(i,j) = amat(i,j)*ooa
             end if
- 7       continue
-    8 continue
+         end do
+      end do
       do i=1,n
-         do 12 j=i,n
+         do j=i,n
             ooa = 1.d0/amat(j,j)
             if (i.ge.j) then
                t = 1.d0
             else
                kl = j - 1
                t = 0.d0
-               do 11 k=i,kl
- 11               t = t - amat(i,k)*amat(k,j)
+               do k=i,kl
+                  t = t - amat(i,k)*amat(k,j)
+               end do
             end if
- 12         amat(i,j) = t*ooa
-      enddo
+            amat(i,j) = t*ooa
+         end do
+      end do
       do i=1,n
          do j=i,n
             t = 0.d0
             do k=j,n
                t = t + amat(i,k)*amat(j,k)
-            enddo
+            end do
             amat(i,j) = t
             amat(j,i) = t
-         enddo
-      enddo
+         end do
+      end do
       return
       end
 

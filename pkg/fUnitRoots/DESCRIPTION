@@ -1,7 +1,6 @@
 Package: fUnitRoots
 Title: Rmetrics - Modelling Trends and Unit Roots
-Date: 2022-08-06
-Version: 4021.81
+Version: 4040.81
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")

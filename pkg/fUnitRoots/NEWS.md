@@ -1,3 +1,9 @@
+# fUnitRoots 4021.81
+
+- fixed warnings about ancient Fortran features. Now all `DO` loops are terminated
+  with `END DO` and do not share termination statements.
+
+
 # fUnitRoots 4021.80
 
 - new maintainer: Georgi N. Boshnakov.
@@ -8,10 +14,10 @@
   to load them explicitly, if needed.
 
 - updated DESCRIPTION, in particular removed redundant `LazyData` line (this
-  removes a NOTE to that effect from CRAN).
+  removed a NOTE to that effect from CRAN).
 
 - set up the Fortran code to use ‘R_registerRoutines’, etc. (this
-  removes a NOTE to that effect from CRAN)
+  removed a NOTE to that effect from CRAN)
 
 - replaced `class(x) == "timeSeries"` with `is(x, "timeSeries")` to cancel a
   NOTE from R's checks.
@@ -24,7 +30,7 @@
   because `plot(urca)` was calling the default plot method. (TODO: this probably
   could be avoided by defining also some S3 methods, as recommended in
   `methods`.)
-  
+
 
 # fUnitRoots 3042.79 and older versions
 
