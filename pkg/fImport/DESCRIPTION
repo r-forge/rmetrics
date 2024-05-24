@@ -1,6 +1,6 @@
 Package: fImport
 Title: Rmetrics - Importing Economic and Financial Data
-Version: 4021.86.9000
+Version: 4032.87
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
