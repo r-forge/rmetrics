@@ -75,7 +75,7 @@ rnl <- function (n, mu = 0, sigma = 1, alpha = 1, beta= 1,
   ## generate random variates
   skewLapParam <- c(0, 1/beta, 1/alpha)
   w <- rskewlap(n, param = skewLapParam)
-  z <- rnorm(n, 0, sigma^2)
+  z <- rnorm(n, mu, sigma^2)
   rnl <- z + w
 
   ## return the results

@@ -1,3 +1,7 @@
+2024-06-25    <d.scott@auckland.ac.nz>
+
+	* rnl change to fix mean which should be mu, but was always 0
+	
 2023-11-26    <d.scott@auckland.ac.nz>
 
 	* .Rd files NormalLaplace.Rd, NormalLaplace-package.Rd, nlCheckPars.Rd,
