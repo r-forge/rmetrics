@@ -19,9 +19,16 @@
   Functions to compute density, distribution function, quantile function
   and to generate random variates for the skew normal distribution.
 
-  The distribution is standardized as discussed in the reference by
-  Wuertz et al below.
+  Skewness is introduced based on the scheme by Fernandez and Steel
+  (2000). Further, the distribution is standardized as discussed by
+  Wuertz et al (????). Non-zero mean and/or standard deviation different
+  from one can be specified with parameters \code{mean} and \code{sd}.
+
   
+  Please note that there are different ways to define a 'skew normal
+  distribution'. In particular, the distribution discussed here is
+  different from what is usually referred to as 'skew normal
+  distribution' (see, for example, Azzalini 1985).
 }
 
 \usage{
@@ -37,14 +44,19 @@ rsnorm(n, mean = 0, sd = 1, xi = 1.5)
   \item{n}{the number of observations.} 
   \item{mean}{location parameter.}
   \item{sd}{scale parameter.}
-  \item{xi}{skewness parameter.}
+  \item{xi}{
+    skewness parameter, a positive number. \code{xi = 1} gives a
+    symmetric distribution (here normal).
+  }
   \item{log}{a logical; if TRUE, densities are given as log densities.}
 }
 
 
 \details{
 
-  \code{dsnorm} computed the density,
+  The skew normal distribution
+
+  \code{dsnorm} computes the density,
   \code{psnorm} the distribution function,
   \code{qsnorm} the quantile function,
   and
@@ -67,6 +79,8 @@ rsnorm(n, mean = 0, sd = 1, xi = 1.5)
     Preprint, 41 pages,
     \url{https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf}
 
+  A. Azzalini (1985). A class of distributions which includes the normal ones. 
+    Scand. J. Statist. 12, 171-178  
 }
 
 \author{
