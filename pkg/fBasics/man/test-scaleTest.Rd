@@ -36,7 +36,6 @@ scaleTest(x, y, method = c("ansari", "mood"),
 
 \details{
     
-    
   The \code{method="ansari"} performs the Ansari-Bradley two-sample 
   test for a difference in scale parameters. The test returns for 
   any sizes of the series \code{x} and \code{y} the exact p value 
@@ -88,14 +87,12 @@ Moore, D.S. (1986);
 
 \examples{
 \dontshow{set.seed(1234)}
-## rnorm - 
-   # Generate Series:
-   x = rnorm(50)
-   y = rnorm(50)
+## Generate Series:
+x = rnorm(50)
+y = rnorm(50)
    
-## scaleTest -
-   scaleTest(x, y, "ansari")
-   scaleTest(x, y, "mood")
+scaleTest(x, y, "ansari")
+scaleTest(x, y, "mood")
 }
 
 \keyword{htest}

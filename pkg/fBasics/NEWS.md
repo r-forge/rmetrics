@@ -1,3 +1,9 @@
+# fBasics 4041.96.9000
+
+- fixed the missing package qualifier in a link to another ackage.
+
+
+
 # fBasics 4032.96
 
 - modified `interactivePlot` to allow also functions in argument

@@ -71,10 +71,9 @@ basicStats(x, ci = 0.95)
 
 \examples{
 \dontshow{set.seed(1234)}
-## basicStats -
-   # Simulated Monthly Return Data:
-   tS = timeSeries(matrix(rnorm(12)), timeDate::timeCalendar())
-   basicStats(tS)
+## Simulated Monthly Return Data
+tS <- timeSeries(matrix(rnorm(12)), timeDate::timeCalendar())
+basicStats(tS)
 }
 
 \keyword{stats}
