@@ -57,7 +57,6 @@ sgedSlider(type = c("dist", "rand"))
 }
 
 \arguments{
-
   \item{type}{
 
     a character string denoting which interactive plot should be

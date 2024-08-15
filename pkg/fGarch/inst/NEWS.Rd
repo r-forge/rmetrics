@@ -18,6 +18,9 @@
 \section{CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r6482--r????)}{
   \itemize{
 
+    \item added a note that the skew normal distribution here is
+    different from what is usually called skew normal distribution.
+
     \item replaced a call to `warnings` (plural) with `warning`
     (singular) in \code{garchSpec}. The old one was clearly a typo and
     was not issuing the intended warning about the violation of the

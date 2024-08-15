@@ -284,76 +284,78 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 
 \examples{
 ## UNIVARIATE TIME SERIES INPUT:
-   # In the univariate case the lhs formula has not to be specified ...
+# In the univariate case the lhs formula has not to be specified ...
 
-   # A numeric Vector from default GARCH(1,1) - fix the seed:
-   N = 200
-   x.vec = as.vector(garchSim(garchSpec(rseed = 1985), n = N)[,1])
-   garchFit(~ garch(1,1), data = x.vec, trace = FALSE)
+# A numeric Vector from default GARCH(1,1) - fix the seed:
+N <- 200
+x.vec <- as.vector(garchSim(garchSpec(rseed = 1985), n = N)[,1])
+garchFit(~ garch(1,1), data = x.vec, trace = FALSE)
 
-   # An univariate timeSeries object with dummy dates:
-   stopifnot(require("timeSeries"))
-   x.timeSeries = dummyDailySeries(matrix(x.vec), units = "GARCH11")
-   garchFit(~ garch(1,1), data = x.timeSeries, trace = FALSE)
+# An univariate timeSeries object with dummy dates:
+stopifnot(require("timeSeries"))
+x.timeSeries <- dummyDailySeries(matrix(x.vec), units = "GARCH11")
+garchFit(~ garch(1,1), data = x.timeSeries, trace = FALSE)
 
 \dontrun{
    # An univariate zoo object:
    require("zoo")
-   x.zoo = zoo(as.vector(x.vec), order.by = as.Date(rownames(x.timeSeries)))
+   x.zoo <- zoo(as.vector(x.vec), order.by = as.Date(rownames(x.timeSeries)))
    garchFit(~ garch(1,1), data = x.zoo, trace = FALSE)
 }
 
-   # An univariate "ts" object:
-   x.ts = as.ts(x.vec)
-   garchFit(~ garch(1,1), data = x.ts, trace = FALSE)
+# An univariate "ts" object:
+x.ts <- as.ts(x.vec)
+garchFit(~ garch(1,1), data = x.ts, trace = FALSE)
+
 
 ## MULTIVARIATE TIME SERIES INPUT:
-   # For multivariate data inputs the lhs formula must be specified ...
+##
+# For multivariate data inputs the lhs formula must be specified ...
 
-   # A numeric matrix binded with dummy random normal variates:
-   X.mat = cbind(GARCH11 = x.vec, R = rnorm(N))
-   garchFit(GARCH11 ~ garch(1,1), data = X.mat)
+# A numeric matrix binded with dummy random normal variates:
+X.mat <- cbind(GARCH11 = x.vec, R = rnorm(N))
+garchFit(GARCH11 ~ garch(1,1), data = X.mat)
 
-   # A multivariate timeSeries object with dummy dates:
-   X.timeSeries = dummyDailySeries(X.mat, units = c("GARCH11", "R"))
-   garchFit(GARCH11 ~ garch(1,1), data = X.timeSeries)
+# A multivariate timeSeries object with dummy dates:
+X.timeSeries <- dummyDailySeries(X.mat, units = c("GARCH11", "R"))
+garchFit(GARCH11 ~ garch(1,1), data = X.timeSeries)
 
 \dontrun{
    # A multivariate zoo object:
-   X.zoo = zoo(X.mat, order.by = as.Date(rownames(x.timeSeries)))
+   X.zoo <- zoo(X.mat, order.by = as.Date(rownames(x.timeSeries)))
    garchFit(GARCH11 ~ garch(1,1), data = X.zoo)
 }
 
-   # A multivariate "mts" object:
-   X.mts = as.ts(X.mat)
-   garchFit(GARCH11 ~ garch(1,1), data = X.mts)
+# A multivariate "mts" object:
+X.mts <- as.ts(X.mat)
+garchFit(GARCH11 ~ garch(1,1), data = X.mts)
+
 
 ## MODELING THE PERCENTUAL SPI/SBI SPREAD FROM LPP BENCHMARK:
 
-   stopifnot(require("timeSeries"))
-   X.timeSeries = as.timeSeries(data(LPP2005REC))
-   X.mat = as.matrix(X.timeSeries)
-   \dontrun{X.zoo = zoo(X.mat, order.by = as.Date(rownames(X.mat)))}
-   X.mts = ts(X.mat)
-   garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.timeSeries)
-   # The remaining are not yet supported ...
-   # garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mat)
-   # garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.zoo)
-   # garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mts)
+stopifnot(require("timeSeries"))
+X.timeSeries <- as.timeSeries(data(LPP2005REC))
+X.mat <- as.matrix(X.timeSeries)
+\dontrun{X.zoo <- zoo(X.mat, order.by = as.Date(rownames(X.mat)))}
+X.mts <- ts(X.mat)
+garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.timeSeries)
+# The remaining are not yet supported ...
+# garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mat)
+# garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.zoo)
+# garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mts)
 
 ## MODELING HIGH/LOW RETURN SPREADS FROM MSFT PRICE SERIES:
 
-   X.timeSeries = MSFT
-   garchFit(Open ~ garch(1,1), data = returns(X.timeSeries))
-   garchFit(100*(High-Low) ~ garch(1,1), data = returns(X.timeSeries))
+X.timeSeries <- MSFT
+garchFit(Open ~ garch(1,1), data = returns(X.timeSeries))
+garchFit(100*(High-Low) ~ garch(1,1), data = returns(X.timeSeries))
 
 ## GO-GARCH Modelling  (not yet!!) % FIXME
 
-  ## data(DowJones30, package="fEcofin") # no longer exists
-  ## X = returns(as.timeSeries(DowJones30)); head(X)
-  ## N = 5; ans = .gogarchFit(data = X[, 1:N], trace = FALSE); ans
-  ## ans@h.t
-
+## data(DowJones30, package="fEcofin") # no longer exists
+## X <- returns(as.timeSeries(DowJones30)); head(X)
+## N <- 5; ans <- .gogarchFit(data = X[, 1:N], trace = FALSE); ans
+## ans@h.t
 }
 
 \keyword{models}
