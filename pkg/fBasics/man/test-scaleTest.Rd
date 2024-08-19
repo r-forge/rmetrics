@@ -62,7 +62,6 @@ scaleTest(x, y, method = c("ansari", "mood"),
 }
 
 \references{
-
 Conover, W. J. (1971);
     \emph{Practical nonparametric statistics},
     New York: John Wiley & Sons.
@@ -75,7 +74,6 @@ Moore, D.S. (1986);
     \emph{Tests of the chi-squared type}, 
     In: D'Agostino, R.B. and Stephens, M.A., eds., 
     Goodness-of-Fit Techniques, Marcel Dekker, New York. 
-
 }
 
 \author{

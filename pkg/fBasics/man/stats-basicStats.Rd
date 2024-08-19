@@ -13,7 +13,6 @@ basicStats(x, ci = 0.95)
 }
 
 \arguments{
-  
   \item{x}{
 
     an object of class \code{"timeSeries"} or any other object which can
