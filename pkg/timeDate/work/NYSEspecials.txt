@@ -1,0 +1,435 @@
+date|dayWeek|expl
+1885-08-08|(Sat)|Funeral of former President Ulysses S. Grant.
+1887-07-02|(Sat)|Saturday before Independence Day.
+1887-12-24|(Sat)|Christmas Eve.
+Mar. 12, 1888|(Mon)|Blizzard of 1888.
+Mar. 13, 1888|(Tue)|Blizzard of 1888.
+1888-09-01|(Sat)|Saturday before Labor Day.
+1888-11-30|(Fri)|Friday after Thanksgiving Day.
+Apr. 29, 1889|(Mon)|Centennial celebration of Washington's inauguration.
+Apr. 30, 1889|(Tue)|Centennial celebration of Washington's inauguration.
+May 1, 1889|(Wed)|Centennial celebration of Washington's inauguration.
+1890-07-05|(Sat)|Saturday after Independence Day.
+1891-12-26|(Sat)|Saturday after Christmas.
+1892-07-02|(Sat)|Saturday before Independence Day.
+1892-10-12|(Wed)|Columbian Celebration.
+Oct. 21, 1892|(Fri)|Columbian Celebration.
+Oct. 22, 1892|(Sat)|Columbian Celebration.
+1893-04-27|(Thu)|Columbian Celebration.
+1896-12-26|(Sat)|Saturday after Christmas.
+1897-04-27|(Tue)|Grant's birthday.
+1898-05-04|(Wed)|Charter Day.
+1898-07-02|(Sat)|Saturday before Independence Day.
+1898-08-20|(Sat)|Welcome of naval commanders.
+1898-09-03|(Sat)|Saturday before Labor Day.
+1898-12-24|(Sat)|Saturday before Christmas.
+1899-02-11|(Sat)|Saturday before Lincoln's Birthday.
+1899-05-29|(Mon)|Monday before Decoration Day.
+1899-07-03|(Mon)|Monday before Independence Day.
+Sep. 29, 1899|(Fri)|Admiral Dewey Celebration.
+Sep. 30, 1899|(Sat)|Admiral Dewey Celebration.
+1899-11-25|(Sat)|Funeral of Vice-President Garret A. Hobart.
+1900-04-14|(Sat)|Saturday after Good Friday.
+1900-09-01|(Sat)|Saturday before Labor Day.
+1900-12-24|(Mon)|Christmas Eve.
+1901-02-02|(Sat)|Funeral of Queen Victoria of England.
+1901-02-23|(Sat)|Saturday after Washington's Birthday.
+1901-04-06|(Sat)|Saturday after Good Friday.
+1901-04-27|(Sat)|Moved to temporary quarters in Produce Exchange.
+1901-05-11|(Sat)|Enlarged temporary quarters in Produce Exchange.
+July 5, 1901|(Fri)|Days after Independence Day.
+July 6, 1901|(Sat)|Days after Independence Day.
+1901-08-31|(Sat)|Saturday before Labor Day.
+1901-09-14|(Sat)|Death of President William McKinley.
+1901-09-19|(Thu)|Funeral of President William McKinley.
+1902-03-29|(Sat)|Saturday after Good Friday.
+1902-05-31|(Sat)|Saturday after Decoration Day.
+1902-07-05|(Sat)|Saturday after Independence Day.
+1902-08-09|(Sat)|Coronation of King Edward VII of England.
+1902-08-30|(Sat)|Saturday before Labor Day.
+1903-02-21|(Sat)|Saturday before Washington's Birthday.
+1903-04-11|(Sat)|Saturday after Good Friday.
+1903-04-22|(Wed)|Opening of new NYSE building.
+1903-09-05|(Sat)|Saturday before Labor Day.
+1903-12-26|(Sat)|Saturday after Christmas.
+1904-05-28|(Sat)|Saturday before Decoration Day.
+1904-07-02|(Sat)|Saturday before Independence Day.
+1904-09-03|(Sat)|Saturday before Labor Day.
+1904-12-24|(Sat)|Saturday before Christmas.
+1905-04-22|(Sat)|Saturday after Good Friday.
+1907-02-23|(Sat)|Saturday after Washington's birthday.
+1907-03-30|(Sat)|Saturday after Good Friday.
+1907-08-31|(Sat)|Saturday before Labor Day.
+1908-04-18|(Sat)|Saturday after Good Friday.
+1908-06-26|(Fri)|Closed at 1:00 pm. Funeral of former President Grover Cleveland.
+1908-09-05|(Sat)|Saturday before Labor Day.
+1908-12-26|(Sat)|Saturday after Christmas.
+1909-02-13|(Sat)|Saturday after Lincoln's Birthday.
+1909-04-10|(Sat)|Saturday after Good Friday.
+1909-05-29|(Sat)|Saturday before Decoration Day.
+1909-07-03|(Sat)|Saturday before Independence Day.
+1909-09-04|(Sat)|Saturday before Labor Day.
+1909-09-25|(Sat)|Reception Day of the Hudson-Fulton Celebration.
+1910-03-26|(Sat)|Saturday after Good Friday.
+1910-05-07|(Sat)|Closed 11:00 am. Death of King Edward VII of England.
+1910-05-20|(Fri)|Closed from 10:00 am to 12:00 noon. Funeral of King Edward VII.
+1910-05-28|(Sat)|Saturday before Decoration Day.
+1910-07-02|(Sat)|Saturday before Independence Day.
+1910-09-03|(Sat)|Saturday before Labor Day.
+1910-12-24|(Sat)|Saturday before Christmas.
+1911-04-15|(Sat)|Saturday after Good Friday.
+1911-09-02|(Sat)|Saturday before Labor Day.
+1911-12-23|(Sat)|Saturday before Christmas.
+1912-08-31|(Sat)|Saturday before Labor Day.
+1912-11-02|(Sat)|Funeral of Vice-President James S. Sherman.
+1913-03-22|(Sat)|Saturday after Good Friday.
+1913-04-14|(Mon)|Closed from 10:00 am to 12:00 noon. Funeral of J.P. Morgan.
+1913-05-31|(Sat)|Saturday after Decoration Day.
+1913-07-05|(Sat)|Saturday after Independence Day.
+1913-08-30|(Sat)|Saturday before Labor Day.
+1913-09-22|(Mon)|Closed from 10:00 am to 12:00 noon. Funeral of Mayor William J. Gaynor.
+July 31-Nov. 27, 1914|(Fri-Fri)|Closed pending outbreak of World War I. Reopened for trading in bonds with price restrictions on November 28, 1914; for trading in a limited number of stocks under price restrictions on December 12, 1914; and for trading in all stocks, under price restrictions, on December 15, 1914. All restrictions were removed April 1, 1915.
+1916-12-30|(Sat)|Saturday before New Year's Day.
+1917-06-05|(Tue)|Draft Registration Day.
+1917-08-04|(Sat)|Heat.
+1917-08-29|(Wed)|Closed at 12:00 noon. Parade of National Guard.
+1917-09-01|(Sat)|Saturday before Labor Day.
+1917-10-13|(Sat)|Saturday after Columbus Day.
+1917-10-24|(Wed)|Closed at 12:00 noon. Liberty Day.
+1918-01-28|(Mon)|Heatless day.
+1918-02-04|(Mon)|Heatless day.
+1918-02-11|(Mon)|Heatless day.
+1918-04-26|(Fri)|Closed at 12:00 noon. Liberty Day.
+1918-07-11|(Thu)|Closed from 11:00 am to 12:00 noon. Funeral of former Mayor John Purroy Mitchell.
+1918-09-12|(Thu)|Draft registration day.
+1918-11-07|(Thu)|Closed at 2:30 pm. False armistice report.
+1918-11-11|(Mon)|Armistice signed.
+1919-01-07|(Tue)|Closed at 12:30 pm. Funeral of former President Theodore Roosevelt.
+1919-03-25|(Tue)|Homecoming of 27th Division.
+1919-05-06|(Tue)|Parade of 77th Division.
+1919-05-31|(Sat)|Saturday after Decoration Day.
+1919-07-05|(Sat)|Saturday after Independence Day.
+1919-07-19|(Sat)|Heat and to allow offices to catch up on work.
+1919-08-02|(Sat)|To allow offices to catch up on work.
+1919-08-16|(Sat)|To allow offices to catch up on work.
+1919-08-30|(Sat)|Saturday before Labor Day.
+1919-09-10|(Wed)|Return of General John J. Pershing.
+1919-12-30|(Tue)|Opened at 10:30 am – traffic block.
+1920-02-06|(Fri)|Opened at 10:30 am – traffic block.
+1920-04-03|(Sat)|Saturday after Good Friday.
+1920-05-01|(Sat)|Many firms changed office locations.
+1920-07-03|(Sat)|Saturday before Independence Day.
+1920-09-04|(Sat)|Saturday before Labor Day.
+1920-09-16|(Thu)|Closed at 12:00 noon. Wall Street explosion.
+1921-05-28|(Sat)|Saturday before Decoration Day.
+1921-07-02|(Sat)|Saturday before Independence Day.
+1921-08-02|(Tue)|Opened at 1:00 pm. Fire in annunciator board.
+1921-09-03|(Sat)|Saturday before Labor Day.
+1922-12-23|(Sat)|Saturday before Christmas Day.
+1923-08-03|(Fri)|Death of President Warren G. Harding.
+1923-08-08|(Wed)|Closed from 11:00 am to 12:30 pm during funeral services for President Warren G. Harding in Washington, DC.
+1923-08-10|(Fri)|Funeral of President Warren G. Harding at Marion, Ohio.
+1924-02-06|(Wed)|Closed at 12:30 pm. Funeral of former President Woodrow Wilson.
+1924-05-31|(Sat)|Saturday after Decoration Day.
+1925-01-24|(Sat)|Opened at 10:45 am. Eclipse of sun.
+1925-09-18|(Fri)|Closed at 2:30 pm. Funeral of Seymour L. Cromwell, former NYSE president.
+1925-12-26|(Sat)|Saturday after Christmas Day.
+1926-05-29|(Sat)|Saturday before Decoration Day.
+1926-07-03|(Sat)|Saturday before Independence Day.
+1926-09-04|(Sat)|Saturday before Labor Day.
+1927-06-13|(Mon)|Parade for Colonel Charles A. Lindbergh.
+1928-04-07|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1928-04-21|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1928-05-05|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1928-05-12|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1928-05-19|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+May 21, 1928|(Mon)|Closed at 2:00 pm to allow member firm offices to catch up on work. Heavy volume.
+May 22, 1928|(Tue)|Closed at 2:00 pm to allow member firm offices to catch up on work. Heavy volume.
+May 23, 1928|(Wed)|Closed at 2:00 pm to allow member firm offices to catch up on work. Heavy volume.
+May 24, 1928|(Thu)|Closed at 2:00 pm to allow member firm offices to catch up on work. Heavy volume.
+May 25, 1928|(Fri)|Closed at 2:00 pm to allow member firm offices to catch up on work. Heavy volume.
+1928-05-26|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1928-11-24|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1929-02-09|(Sat)|Heavy volume. To allow member firm offices to catch up on work.
+1929-02-23|(Sat)|Saturday after Washington's Birthday.
+1929-03-30|(Sat)|Saturday after Good Friday.
+1929-08-31|(Sat)|Saturday before Labor Day.
+1929-10-31|(Thu)|Opened at 12:00 noon to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 1, 1929|(Fri)|To allow member firm offices to catch up on work and to relieve personnel.
+Nov. 2, 1929|(Sat)|To allow member firm offices to catch up on work and to relieve personnel.
+Nov. 6, 1929|(Wed)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 7, 1929|(Thu)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 8, 1929|(Fri)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+1929-11-09|(Sat)|To allow member firm offices to catch up on work and to relieve personnel.
+Nov. 11, 1929|(Mon)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 12, 1929|(Tue)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 13, 1929|(Wed)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 14, 1929|(Thu)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 15, 1929|(Fri)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+1929-11-16|(Sat)|To allow member firm offices to catch up on work and to relieve personnel.
+Nov. 18, 1929|(Mon)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 19, 1929|(Tue)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 20, 1929|(Wed)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 21, 1929|(Thu)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+Nov. 22, 1929|(Fri)|Closed at 1:00 pm to allow member firm offices to catch up on work and to relieve personnel.
+1929-11-23|(Sat)|To allow member firm offices to catch up on work and to relieve personnel.
+Nov. 29, 1929|(Fri)|To allow member firm offices to catch up on work and to relieve personnel.
+Nov. 30, 1929|(Sat)|To allow member firm offices to catch up on work and to relieve personnel.
+1930-03-11|(Tue)|Closed at 12:30 pm. Funeral of former President William Howard Taft.
+1930-04-19|(Sat)|Saturday after Good Friday.
+1930-05-31|(Sat)|Saturday after Decoration Day.
+1930-07-05|(Sat)|Saturday after Independence Day.
+1930-08-30|(Sat)|Saturday before Labor Day.
+1931-09-05|(Sat)|Saturday before Labor Day.
+1931-12-26|(Sat)|Saturday after Christmas.
+1932-07-02|(Sat)|Saturday before Independence Day.
+1933-01-07|(Sat)|Funeral of former President Calvin Coolidge.
+1933-03-04|(Sat)|State banking holiday.
+Mar. 6, 1933|(Mon)|National banking holiday.
+Mar. 7, 1933|(Tue)|National banking holiday.
+Mar. 8, 1933|(Wed)|National banking holiday.
+Mar. 9, 1933|(Thu)|National banking holiday.
+Mar. 10, 1933|(Fri)|National banking holiday.
+Mar. 13, 1933|(Mon)|National banking holiday.
+Mar. 14, 1933|(Tue)|National banking holiday.
+July 24, 1933|(Mon)|Opened at 12:00 noon. Volume activity.
+July 25, 1933|(Tue)|Opened at 12:00 noon. Volume activity.
+July 26, 1933|(Wed)|Opened at 11:00 am, closed at 2:00 pm. Volume activity.
+July 27, 1933|(Thu)|Opened at 11:00 am, closed at 2:00 pm. Volume activity.
+July 28, 1933|(Fri)|Opened at 11:00 am, closed at 2:00 pm. Volume activity.
+1933-07-29|(Sat)|Volume activity.
+1933-08-04|(Fri)|Closed shortly after 12:30 pm – gas fumes on trading floor.
+1933-08-05|(Sat)|Volume activity.
+1933-08-12|(Sat)|Volume activity.
+1933-08-19|(Sat)|Volume activity.
+1933-08-26|(Sat)|Volume activity.
+1933-09-02|(Sat)|Volume activity.
+1933-09-13|(Wed)|Closed at 12:00 noon – NRA demonstration.
+1934-02-20|(Tue)|Opened at 11:00 am – severe snowstorm.
+1936-01-28|(Tue)|Closed from 10:00 to 11:00 am. Funeral of King George V of England.
+1936-12-26|(Sat)|Saturday after Christmas.
+1937-05-29|(Sat)|Saturday before Decoration Day.
+1937-07-03|(Sat)|Saturday before Independence Day.
+1942-05-18|(Mon)|Closed from 12:00 noon to 1:00 pm. NYSE 150th anniversary.
+1942-10-22|(Thu)|Closed from 2:32 to 2:58 pm – Civil Defense Drill.
+1943-10-26|(Tue)|Closed from 2:38 to 2:59 pm – Civil Defense Drill. Reopened from 3:20 to 3:40 pm under special rule of the Board.
+1944-08-19|(Sat)|Closed Saturday.
+1944-08-26|(Sat)|Closed Saturday.
+1944-09-02|(Sat)|Closed Saturday.
+1945-04-14|(Sat)|National Day of Mourning for President Franklin D. Roosevelt.
+1945-06-19|(Tue)|Closed from 11:00 am to 1:00 pm – Parade for General Eisenhower.
+July 7-Sep. 1, 1945|(Sat-Sat)|Closed Saturdays.
+Aug. 15, 1945|(Wed)|V-J Day. End of World War II.
+Aug. 16, 1945|(Thu)|V-J Day. End of World War II.
+1945-10-13|(Sat)|Saturday after Columbus Day.
+1945-10-27|(Sat)|Navy Day.
+1945-12-24|(Mon)|Christmas Eve.
+1946-02-23|(Sat)|Saturday after Washington's Birthday.
+1946-05-25|(Sat)|Railroad strike.
+June 1-Sep. 28, 1946|(Sat-Sat)|Closed Saturdays.
+May 31-Sep. 27, 1947|(Sat-Sat)|Closed Saturdays.
+May 29-Sep. 25, 1948|(Sat-Sat)|Closed Saturdays.
+1948-01-03|(Sat)|Severe weather conditions.
+May 28-Sep. 24, 1949|(Sat-Sat)|Closed Saturdays.
+1949-12-24|(Sat)|Christmas Eve.
+June 3-Sep. 30, 1950|(Sat-Sat)|Closed Saturdays.
+1950-12-12|(Sat)|Saturday before Christmas Eve.
+1951-04-20|(Fri)|Closed from 11:00 am to 1:00 pm. Parade for General MacArthur.
+June 2-Sep. 29, 1951|(Sat-Sat)|Closed Saturdays.
+1951-11-28|(Wed)|Closed from 10:33 to 11:05 am – Civil Defense Drill.
+1951-12-24|(Mon)|Closed at 1:00 pm – Christmas Eve.
+May 31-Sep. 27, 1952|(Sat-Sat)|Closed Saturdays.
+1954-06-14|(Mon)|Closed from 10:02 to 10:32 am – Civil Defense Drill.
+1954-12-24|(Fri)|Christmas Eve.
+1955-06-15|(Wed)|Closed from 2:05 to 2:35 pm – Civil Defense Drill.
+1956-12-24|(Mon)|Christmas Eve.
+1957-07-12|(Fri)|Closed from 1:45 to 2:15 pm – Civil Defense Drill.
+1958-05-06|(Tue)|Closed from 10:30 to 10:50 am – Civil Defense Drill.
+1958-12-26|(Fri)|Day after Christmas.
+1959-04-17|(Fri)|Closed from 1:30 to 1:50 pm – Civil Defense Drill.
+1960-05-03|(Tue)|Closed from 2:16 to 2:40 pm – Civil Defense Drill.
+1960-12-12|(Mon)|Opened at 11:00 am – severe snowstorm.
+1961-05-29|(Mon)|Day before Decoration Day.
+1963-11-22|(Fri)|Closed at 2:07 pm. Assassination of President John F. Kennedy.
+1963-11-25|(Mon)|Funeral of President John F. Kennedy.
+1964-10-23|(Fri)|Closed at 2:00 pm – Funeral of former President Herbert C. Hoover.
+1965-01-25|(Mon)|The NYSE observed two minutes of silence, from 11:00 am to 11:02 am, in memory of Sir Winston Churchill.
+1965-11-10|(Wed)|Opened at 11:05 am due to blackout. Power failure in New York State began at 5:28 pm the previous evening.
+1965-12-24|(Fri)|Christmas Eve. Closed all day.
+Jan. 6, 1966|(Thu)|2:00 pm closing due to transit strike (seven days).
+Jan. 7, 1966|(Fri)|2:00 pm closing due to transit strike (seven days).
+Jan. 10, 1966|(Mon)|2:00 pm closing due to transit strike (seven days).
+Jan. 11, 1966|(Tue)|2:00 pm closing due to transit strike (seven days).
+Jan. 12, 1966|(Wed)|2:00 pm closing due to transit strike (seven days).
+Jan. 13, 1966|(Thu)|2:00 pm closing due to transit strike (seven days).
+Jan. 14, 1966|(Fri)|2:00 pm closing due to transit strike (seven days).
+1967-02-03|(Fri)|The NYSE observed one minute of silence, from 1:00 to 1:01 pm, in memory of the three astronauts who died in the Apollo I disaster.
+1967-02-07|(Tue)|Opened at 10:15 am, closed at 2:00 pm – snowstorm.
+1967-05-17|(Wed)|Trading suspended 12:58 to 1:13 pm while Vice President Humphrey spoke from Rostrum in honor of NYSE's 175th anniversary.
+Aug. 8, 1967|(Tue)|2:00 pm closing (nine days) due to back office work load.
+Aug. 9, 1967|(Wed)|2:00 pm closing (nine days) due to back office work load.
+Aug. 10, 1967|(Thu)|2:00 pm closing (nine days) due to back office work load.
+Aug. 11, 1967|(Fri)|2:00 pm closing (nine days) due to back office work load.
+Aug. 12, 1967|(Sat)|2:00 pm closing (nine days) due to back office work load.
+Aug. 13, 1967|(Sun)|2:00 pm closing (nine days) due to back office work load.
+Aug. 14, 1967|(Mon)|2:00 pm closing (nine days) due to back office work load.
+Aug. 15, 1967|(Tue)|2:00 pm closing (nine days) due to back office work load.
+Aug. 16, 1967|(Wed)|2:00 pm closing (nine days) due to back office work load.
+Aug. 17, 1967|(Thu)|2:00 pm closing (nine days) due to back office work load.
+Aug. 18, 1967|(Fri)|2:00 pm closing (nine days) due to back office work load.
+Jan. 22-Mar. 1, 1968|(Mon-Fri)|2:00 pm closing due to back office work load. 3:30 close resumed March 4.
+1968-02-12|(Mon)|Lincoln's Birthday. Trading Floor closed but offices remained open.
+1968-04-05|(Fri)|The NYSE observed one minute of silence, from 11:00 to 11:01 am, in memory of Dr. Martin Luther King, Jr.
+1968-04-09|(Tue)|National Day of Mourning for Martin Luther King, Jr.
+1968-06-06|(Thu)|The NYSE observed two minutes of silence, from 11:00 to 11:02 am, in memory of Senator Robert F. Kennedy.
+June 12-Dec. 31, 1968|(Wed-Tue)|Four day week (closed on Wednesdays or regular holiday) – Paperwork Crisis.
+1968-07-05|(Fri)|Day after Independence Day.
+Jan. 2-July 3, 1969|(Thu-Thu)|Five day week resumed, but with curtailed hours: 2:00 pm closing – Paperwork Crisis.
+1969-02-10|(Mon)|Closed all day – heavy snow.
+1969-02-11|(Tue)|Opened at 11:00 am – heavy snow.
+1969-03-28|(Fri)|The NYSE observed two minutes of silence, from 1:30 to 1:32 pm, in memory of former President Dwight D. Eisenhower.
+1969-03-31|(Mon)|Closed. Funeral of former President Dwight D. Eisenhower.
+1969-06-02|(Mon)|Opened at 10:45 am. Delays due to storm.
+July 7-Sep. 26, 1969|(Mon-Fri)|2:30 pm closing – Paperwork Crisis.
+1969-07-21|(Mon)|Closed – National Day of Participation for the lunar exploration.
+1969-09-03|(Wed)|Closed 12:35 -1:05 pm due to power failure.
+1969-09-29|(Mon-Fri)|3:00 pm closing – Paperwork Crisis. Normal hours (10:00 am-3:30 pm) resumed May 4, 1970.
+1972-12-28|(Thu)|Closed. Funeral of former President Harry S. Truman.
+1973-01-25|(Thu)|Closed for funeral of former President Lyndon B. Johnson.
+1973-12-17|(Mon)|Opened at 11:00 am due to ice storm.
+1974-01-16|(Wed)|Opened at 10:15 am – Merrill Lynch had computer trouble.
+1974-04-10|(Wed)|Trading halted from 11:09 to 11:35 am due to computer malfunction.
+1974-10-15|(Wed)|Ticker down at 11:37 am. Trading halted at approximately 11:46 am and resumed at 12:22 pm.
+1974-11-22|(Fri)|Opening delayed until 10:15 am due to fire drill.
+1974-12-24|(Tue)|Closed at 2:00 pm – Christmas Eve.
+1975-01-07|(Tue)|Computer stopped at 10:07 am, resumed at 10:50 am. Trading halted 43 minutes.
+1975-01-15|(Wed)|Computer stopped at 1:24 pm, resumed at 1:45 pm. Trading halted 21 minutes.
+1975-02-07|(Fri)|Computer failure – trading halted 10:24 am, resumed 11:00 am.
+1975-02-12|(Wed)|Floor closed at 2:30 pm due to snowstorm.
+1975-04-09|(Wed)|Computer failure 10:09 am, trading resumed 10:35 am. Trading halted 26 minutes.
+1975-12-24|(Wed)|Floor closed at 2:00 pm – Christmas Eve.
+1976-02-02|(Mon)|Opened at 11:15 am. Delayed due to storm.
+1976-06-08|(Tue)|Opening delayed due to fire drill.
+1976-08-09|(Mon)|Floor closed at 3:00 pm. Hurricane watch.
+1976-11-04|(Thu)|The NYSE observed one minute of silence in memory of Gustave L. Levy, former NYSE chairman.
+1977-02-24|(Thu)|The NYSE observed one minute of silence, from 11:00 to 11:01 am, in memory of John A. Coleman, former NYSE chairman.
+1977-03-01|(Tue)|Floor closed at 10:24 am due to fire on moving ramp between trading floor and Blue Room. Reopened at 11:45 am.
+1977-07-14|(Thu)|Closed due to blackout in New York City.
+1977-12-12|(Mon)|Trading halted from 1:35 to 2:00 pm – computer failure.
+1978-01-20|(Fri)|Opened at 12:00 noon due to snowstorm.
+1978-02-06|(Mon)|Floor closed at 2:00 pm due to snowstorm.
+1978-02-07|(Tue)|Opened at 11:00 am due to snowstorm.
+1979-12-13|(Thu)|The NYSE observed one minute of silence in memory of Robert L. Stott, former NYSE chairman.
+1980-10-13|(Mon)|Market closed between 11:11 am and 12:05 pm because of computer malfunction.
+1980-12-30|(Tue)|The NYSE observed one minute of silence in memory of James Crane Kellogg III, former NYSE chairman.
+1981-03-30|(Mon)|Market closed at 3:17 pm due to assassination attempt on President Reagan.
+1981-09-09|(Wed)|Market closed at 3:28 pm due to Con Edison power failure in lower Manhattan.
+1981-09-16|(Wed)|Trading halted from 12:26 to 12:45 pm due to fire alarm malfunction.
+1982-12-28|(Tue)|Market closed between 10:25 and 11:00 am due to small fire.
+1983-10-13|(Thu)|Trading halted from 2:51 pm to 3:30 pm due to technical malfunction of low speed ticker.
+1985-09-27|(Fri)|Market closed due to Hurricane Gloria.
+1986-01-29|(Wed)|The NYSE observed one minute of silence, from 11:00 to 11:01 am, in memory of the seven crew members who perished in the Challenger space shuttle disaster.
+Oct. 23, 1987|(Fri)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 24, 1987|(Sat)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 25, 1987|(Sun)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 26, 1987|(Mon)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 27, 1987|(Tue)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 28, 1987|(Wed)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 29, 1987|(Thu)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Oct. 30, 1987|(Fri)|Shortened hours following market break of October 19 and record breaking volume – 2:00 pm close.
+Nov. 2, 1987|(Mon)|2:30 pm close.
+Nov. 3, 1987|(Tue)|2:30 pm close.
+Nov. 4, 1987|(Wed)|2:30 pm close.
+Nov. 5, 1987|(Thu)|3:00 pm close.
+Nov. 6, 1987|(Fri)|3:00 pm close.
+Nov. 9, 1987|(Mon)|3:30 pm close. Normal hours resumed November 12. Trading floor and clerical staff went on strike November 10-13 and were replaced by emergency reserve personnel. NYSE remained open throughout the strike.
+Nov. 10, 1987|(Tue)|3:30 pm close. Normal hours resumed November 12. Trading floor and clerical staff went on strike November 10-13 and were replaced by emergency reserve personnel. NYSE remained open throughout the strike.
+Nov. 11, 1987|(Wed)|3:30 pm close. Normal hours resumed November 12. Trading floor and clerical staff went on strike November 10-13 and were replaced by emergency reserve personnel. NYSE remained open throughout the strike.
+1989-11-10|(Fri)|Electrical fire delayed opening for an hour.
+1990-11-23|(Fri)|Internal power failure halted trading from 9:41 to 11:15 am.
+1990-12-24|(Mon)|Christmas Eve. Closed at 2:00 pm.
+1990-12-27|(Thu)|Opening delayed to 11:00 am due to explosion of a Con Edison transformer outside 55 Water Street.
+1991-01-17|(Thu)|Opening delayed until 9:31 am for a minute of silent prayer for the American troops in the Persian Gulf.
+1991-02-25|(Mon)|Opening delayed until 9:31 am for a minute of silence in honor of the American troops in the Persian Gulf.
+1991-10-22|(Tue)|Power dip halts trading for 24 minutes, from 10:21 to 10:45 am.
+1991-12-24|(Tue)|Christmas Eve. Closed at 2:00 pm.
+1992-03-19|(Thu)|The NYSE observed one minute of silence in memory of Bernard J. Lasker, former NYSE chairman.
+1992-05-15|(Fri)|The NYSE observed one minute of silence in memory of G. Keith Funston, former NYSE president.
+1992-06-15|(Mon)|The NYSE observed one minute of silence in memory of Robert W. Haack, former NYSE president.
+1992-11-27|(Fri)|Closed at 2:00 pm. Day after Thanksgiving.
+1992-12-24|(Thu)|Christmas Eve. Closed at 2:00 pm.
+1993-11-26|(Fri)|Day after Thanksgiving. Closed at 1:00 pm.
+1994-02-11|(Fri)|Floor closed at 2:30 pm due to snowstorm.
+1994-04-25|(Mon)|The NYSE observed two minutes of silence, from 12:00 noon to 12:02 pm, in memory of former President Richard M. Nixon.
+1994-04-27|(Wed)|Closed for funeral of former President Richard M. Nixon.
+1994-11-25|(Fri)|Closed at 1:00 pm. Day after Thanksgiving.
+1995-04-26|(Wed)|The NYSE observed one minute of silence, from 10:02 to 10:03 am, in memory of the victims of the Oklahoma City bombing. (Bombing took place at 9:02 am central time, April 19.)
+1995-07-03|(Mon)|Closed at 1:00 pm. Day before Independence Day.
+1995-11-24|(Fri)|Closed at 1:00 pm. Day after Thanksgiving.
+1995-12-18|(Mon)|Opening delayed until 10:30 am. Computer systems trouble.
+1996-01-08|(Mon)|Opening delayed until 11:00 am due to snowstorm. Trading floor closed at 2:00 pm.
+1996-04-04|(Thu)|The NYSE observed one minute of silence in memory of Commerce Secretary Ron Brown and the government, corporate, military, and media representatives killed in a plane crash in the Balkans on April 3.
+1996-07-05|(Fri)|Closed at 1:00 pm. Day after Independence Day.
+1996-11-29|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+1996-12-24|(Tue)|Closed at 1:00 pm. Christmas Eve.
+1997-07-03|(Thu)|Closed at 1:00 pm. Day before Independence Day.
+1997-10-27|(Mon)|“Circuit breakers” triggered for first time when the Dow Jones Industrial Average dropped 350 points, triggering a mandated trading halt that closed the market at 2:35 pm for a half hour. Trading resumed at 3:05 pm and the Dow declined an additional 200 points, causing another halt at 3:30 pm that ended trading for the day.
+1997-11-28|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+1997-12-24|(Wed)|Closed at 1:00 pm. Christmas Eve.
+1997-12-26|(Fri)|Closed at 1:00 pm. Friday after Christmas.
+1998-07-29|(Wed)|The NYSE observed one minute of silence in memory of William McChesney Martin, Jr., former NYSE president.
+1998-10-26|(Mon)|Computer switch malfunction halts trading for 59 minutes, from 1:16 to 2:15 pm.
+1998-11-27|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+1998-12-24|(Thu)|Closed at 1:00 pm. Christmas Eve.
+1999-03-25|(Thu)|The NYSE observed one minute of silence, from 10:00 to 10:02 am in tribute to the NATO troops in Kosovo.
+1999-04-26|(Mon)|The NYSE observed one minute of silence, from 12:00 noon to 12:02 pm, in memory of the fourteen students and one teacher killed at Columbine High School, Littleton, Colorado.
+1999-11-26|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+1999-12-31|(Fri)|Closed at 1:00 pm. New Year’s Eve.
+2000-02-16|(Wed)|The NYSE observed one minute of silence, from 12:00 noon to 12:01 pm, in memory of Walter N. Frank, former NYSE chairman.
+2000-05-04|(Thu)|The NYSE observed one minute of silence, from 12:00 noon to 12:01 pm, in memory of John Cardinal O’Connor, Archbishop of New York.
+2000-07-03|(Mon)|Closed at 1:00 pm. Day before Independence Day.
+2000-11-24|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2001-06-08|(Fri)|Trading was halted from 10:10 to 11:35 am (one hour, twenty-five minutes), due to computer systems connectivity problem.
+2001-07-03|(Tue)|Closed at 1:00 pm. Day before Independence Day.
+Sep. 11, 2001|(Tue)|Closed following the terrorist attack on the World Trade Center.
+Sep. 12, 2001|(Wed)|Closed following the terrorist attack on the World Trade Center.
+Sep. 13, 2001|(Thu)|Closed following the terrorist attack on the World Trade Center.
+Sep. 14, 2001|(Fri)|Closed following the terrorist attack on the World Trade Center.
+2001-09-17|(Mon.)|Trading reopened Monday, September 17, 2001, at 9:33 am following two minutes of silence in honor of the victims of the attack on the World Trade Center and then the singing of God Bless America.
+2001-10-08|(Mon)|The NYSE observed one minute of silence, from 9:30 to 9:31 am, in support of the troops engaged in Operation Enduring Freedom.
+2001-11-23|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2001-12-24|(Mon)|Closed at 1:00 pm. Christmas Eve.
+2002-05-30|(Thu)|The NYSE observed two minutes of silence, from 10:29 to 10:31 am, to commemorate the end of recovery work at Ground Zero.
+2002-07-05|(Fri)|Closed at 1:00 pm. Day after Independence Day.
+2002-09-11|(Wed)|Opening delayed until 12:00 noon out of respect for the memorial events commemorating the one-year anniversary of the attack on the World Trade Center.
+2002-11-29|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2002-12-24|(Tue)|Closed at 1:00 pm. Christmas Eve.
+2003-02-03|(Mon)|The NYSE observed two minutes of silence, from 11:00 to 11:02 am, in memory of the seven crewmembers who perished in the loss of the space shuttle Columbia on Feb. 1, 2003.
+2003-03-20|(Thu)|The NYSE observed two minutes of silence, from 9:30 to 9:32 am, in support of U.S. and allied troops participating in Operation Iraqi Freedom.
+2003-07-03|(Thu)|Closed at 1:00 pm. Day before Independence Day.
+2003-09-11|(Thu)|The NYSE observed one-minute moments of silence at 8:46, 9:03, 9:59 and 10:29 am in commemoration of 9/11. All trading ceased during the latter two observances which occurred during the trading session.
+2003-11-28|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2003-12-24|(Wed)|Closed at 1:00 pm. Christmas Eve.
+2003-12-26|(Fri)|Closed at 1:00 pm. Friday after Christmas Day.
+2004-06-07|(Mon)|The NYSE observed two minutes of silence, from 9:30 to 9:32 am, in memory of former President Ronald Reagan (died June 5, 2004).
+2004-06-11|(Fri)|Closed in observance of the National Day of Mourning for former President Ronald W. Reagan (died June 5, 2004).
+2004-11-26|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2005-04-08|(Fri)|The NYSE observed one minute of silence in memory of Pope John Paul II (died April 2, 2005) from 9:29 am to 9:30 am (no trading halt). (2 Not a closing – took place prior to the opening of trading.)
+2005-06-01|(Wed)|Trading was halted at 3:56 pm (four minutes before the regular close), due to a systems communications problem. Trading did not resume and all Crossing Sessions were cancelled. Market reopened the following day at 9:30 am.
+2005-11-25|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2006-07-03|(Mon)|Closed at 1:00 pm. Day before Independence Day.
+2006-09-11|(Mon)|The NYSE observed one minute of silence in commemoration of the five-year anniversary of 9/11, from 9:29 am to 9:30 am (no trading halt). ([3] Not a closing – took place prior to the opening of trading. In 2007, 2008, 2009 & 2010, a moment of silence was also observed on the Trading floor prior to the opening bell to commemorate the anniversary of 9/11.)
+2006-11-24|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2006-12-27|(Wed)|The NYSE observed two minutes of silence, from 9:30 to 9:32 am, in memory of former President Gerald Ford (died December 26, 2006).
+2007-01-02|(Tue)|Closed in observance of the National Day of Mourning for former President Gerald R. Ford (died December 26, 2006).
+2007-07-03|(Tue)|Closed at 1:00 pm. Day before Independence Day.
+2007-11-23|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2007-12-24|(Mon)|Closed at 1:00 pm. Christmas Eve.
+2008-07-03|(Thu)|Closed at 1:00 pm. Day before Independence Day.
+2008-11-28|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2008-12-24|(Wed)|Closed at 1:00 pm. Christmas Eve.
+2009-07-02|(Thu)|Closed at 4:15 pm in order to execute customer orders impacted by system irregularities.
+2009-11-27|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2009-12-24|(Thu)|Closed at 1:00 pm. Christmas Eve.
+2010-11-26|(Fri)|Closed at 1:00 pm. Day after Thanksgiving Day.
+2011-01-10|(Mon)|The NYSE observed one minute of silent prayer, from 11:00 to 11:01 am, for the victims of the Arizona shooting on January 8.

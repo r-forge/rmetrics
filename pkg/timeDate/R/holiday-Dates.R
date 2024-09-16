@@ -1,4 +1,4 @@
- 
+
 # This R package is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
 # License as published by the Free Software Foundation; either
@@ -305,21 +305,21 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 ##                     FinCenter = "Europe/London")
 ##     holidays <- c(holidays, as.character(lon))
 ## }
-GBMayDay <- 
-GBEarlyMayBankHoliday <- 
+GBMayDay <-
+GBEarlyMayBankHoliday <-
 function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## TODO: y < 1978 -  NA or empty
     ## if (y >= 1978)
     ## # First Monday of May became a bank holiday
     if(flag <- isTRUE(na_drop))
         year <- year[year >= 1978]
-    
+
     ans = .nth.of.nday(year, 5, 1, 1)
 
     ## special: moved to May 8 to celebrate VE Day's 50th/75th anniversary
     ind <- year %in% c(1995, 2020)
     if(any(ind))
-       ans[ind] <- 10000 * year[ind] +  0508 
+       ans[ind] <- 10000 * year[ind] +  0508
 
     if(!flag && isFALSE(na_drop))
         ans[year < 1978] <- NA
@@ -330,14 +330,14 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 ## YC: Note GBBankHoliday returns Spring Bank Holiday
 ## GNB: renaming to a more common name; leaving for now 'GBBankHoliday' for compatibility
 ##
-GBBankHoliday <- 
-GBSpringBankHoliday <- 
+GBBankHoliday <-
+GBSpringBankHoliday <-
 function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## introduced in 1871, first on Whit Monday
-        
+
     if((flag <- isTRUE(na_drop)) && any(year < 1871))
         year <- year[year >= 1871]
-  
+
     ans = .last.of.nday(year, 5, 31, 1)
 
     ## Whit Monday, which is exactly 50 days after Easter
@@ -346,7 +346,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
         ans[year <= 1964] <- as.numeric(format(Easter(year[year <= 1964], 50),
                                                format = "%Y%m%d"))
     }
-    
+
     ## moved to be the day before XXX/Diamond/Platinum Jubilee bank holiday
     ind <- year %in% c(2002, 2012, 2022)
     if(any(ind)) {
@@ -356,7 +356,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 
         ans[year == 2022] <- 20220602  # Thursday
     }
-    
+
     if(!flag && isFALSE(na_drop))
         ans[year < 1871] <- NA
 
@@ -381,7 +381,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 ##         2 Sep 1968
 ##         1 Sep 1969
 ##  TODO: add the above! But need to check reverse dependencies when doing that!
-## 
+##
 ## The formal definition as "Last Monday in August" is from the 1971 Act
 ## but the difference for 1965-1970 isa only for 1968, 1969 as noted above
 GBSummerBankHoliday =
@@ -391,8 +391,8 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
     ## didn't exist before 1871
     if((flag <- isTRUE(na_drop)) && any(year < 1871))
         year <- year[year >= 1871]
-  
-    
+
+
     ans = .last.of.nday(year, 8, 31, 1) # year >= 1965
     if(any(year <= 1970)) {
         ## Summer BH on First Monday in August
@@ -421,15 +421,15 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 .gb_oneoff_holidays <- c(
     "GBRoyalWeddingDay1981"        , "1981-07-29", # Royal wedding
     "GBMillenumDay"                , "1999-12-31", # UK millenum day
-  
+
     "GBQueensGoldenJubileeDay"     , "2002-06-04", # Spring BH moved to June 3,
                                                    # and Queen's Jubilee on June 4
 
     "GBRoyalWeddingDay2011"        , "2011-04-29", # Royal wedding
-    
+
     "GBQueensDiamondJubilee"       , "2012-06-05", # Early May BH moved to June 4
                                                    # and Queen's Diamond Jubilee on June 5
-    
+
                                                    # Spring BH moved to June 2
     "GBQueensPlatinumJubileeDay"   , "2022-06-03", # Friday, Platinum Jubilee BH
     "GBQueensFuneralDay"           , "2022-09-19", # BH, State Funeral Queen Elizabeth II
@@ -439,11 +439,11 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 ## .gb_oneoff_BH <- matrix(.gb_oneoff_holidays, ncol = 2, byrow = TRUE)
 ## .gb_years <- as.integer(substr(.gb_oneoff_BH[ , 2], 1, 4))
 ## .unique_gb_years <- unique(.gb_years)
-    
+
 .GByears_with_oneoff <-
     c(1981, 1999, 2002, 2011, 2012, 2022, 2023)
 
-specialHolidayGB <- 
+specialHolidayGB <-
 function(year  = getRmetricsOptions("currentYear"), value = "timeDate", named = FALSE, ...) {
     ## TODO: option to return  names for the holidays;
     ##       maybe it is better to just provide separate function for that
@@ -454,11 +454,11 @@ function(year  = getRmetricsOptions("currentYear"), value = "timeDate", named = 
     ##          1. use sort and unique on year as in the holidayXXX functions
     ##          2. remove the irrelevant arguments
     ##          3. rename this function, e.g. to holidaySpecialGB
-    ##             
+    ##
     ## here value = "" doesn't make sense, treat it the same as FALSE
-    
+
     year <- year[year %in% .GByears_with_oneoff]
-        
+
     ans <- character(0)
 
     ## TODO: need more elegant solution but this should do.
@@ -519,7 +519,7 @@ function(year  = getRmetricsOptions("currentYear"), value = "timeDate", named = 
                 )
         }
     }
-        
+
     ans <- sort(unlist(ans))
 
     if(value == "timeDate") timeDate(ans, format = "%Y-%m-%d")  else ans
@@ -764,7 +764,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
-## Fixes issue #6755 by Ian E (ene100) 
+## Fixes issue #6755 by Ian E (ene100)
 ## Juneteenth introduced as National US holiday in 2021;
 ##    holiday on NYSE from 2022
 ## https://www.sec.gov/rules/sro/nyse/2021/34-93183.pdf (see p. 2 for definition)
@@ -777,7 +777,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
     ans <- year*10000 + 0619
     if(!flag && isFALSE(na_drop))
         ans[year < 2021] <- NA
-    
+
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
@@ -804,7 +804,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
     # Family Day:
 
     ## rewritten by GNB
-    
+
     ## doesn't exist before 2008
     if(flag <- isTRUE(na_drop))
         year <- year[year >= 2008]
@@ -813,7 +813,7 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
 
     if(!flag && isFALSE(na_drop))
         ans[year < 2008] <- NA
-    
+
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
@@ -932,7 +932,7 @@ JPGreeneryDay <- function(year = getRmetricsOptions("currentYear"), value = "tim
         ans[year < 2007] <- year*10000 + 0429
         ## ans[year < 1989] <- NA # but it was Emperor's Birthday back then
     }
-    
+
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
@@ -946,7 +946,7 @@ JPNationHoliday <- function(year = getRmetricsOptions("currentYear"), value = "t
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
-        
+
 JPKenpouKinenBi <-
 JPConstitutionDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ans = year*10000 + 0503
@@ -969,17 +969,17 @@ JPMarineDay <- function(year = getRmetricsOptions("currentYear"), value = "timeD
     ## GNB was: ans = year*10000 + 0720
     if(flag <- isTRUE(na_drop))
         year <- year[year >= 1996]
-    
+
     ans = .nth.of.nday(year, 7, 1, 3) # from 2003
     ans[year < 2003] <- year*10000 + 0720
     if(!flag && isFALSE(na_drop))
         ans[year < 1996] <- NA
-    
+
     if(any(year %in% c(2020, 2021))) {
         ans[year == 2020] <- 2020 * 10000 + 0723  # Olympics
         ans[year == 2021] <- 2021 * 10000 + 0722
     }
-    
+
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
@@ -995,14 +995,14 @@ JPRespectForTheAgedDay <- function(year = getRmetricsOptions("currentYear"), val
     ## https://en.wikipedia.org/wiki/Respect_for_the_Aged_Day
     if(flag <- isTRUE(na_drop))
         year <- year[year >= 1966]
-    
+
     ans = .nth.of.nday(year, 9, 1, 3)
     if(any(year < 2003)) {
         ans[year < 2003] = year*10000 + 0915
         if(!flag && isFALSE(na_drop))
             ans[year < 1966] <- NA
     }
-    
+
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
@@ -1015,11 +1015,11 @@ JPAutumnalEquinox <- function(year = getRmetricsOptions("currentYear"), value = 
     ans <- year * 10000 + 0923  # was + 0924 but this is rare
     on22nd <- c(2016, 2024, 2028) # incomplete; after 2024 predicted
     ans[year %in% on22nd] <- year[year %in% on22nd] * 10000 + 0922
-    
+
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
-JPTaiikuNoHi <- 
+JPTaiikuNoHi <-
 JPHealthandSportsDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
     ## updated and rewritten by GNB
     ##   was: ans = year*10000 + 1010
@@ -1028,10 +1028,10 @@ JPHealthandSportsDay <- function(year = getRmetricsOptions("currentYear"), value
 
     ans[year == 2021] <-  2021 * 10000 + 0723 # Olympics openning
     ans[year == 2020] <-  2020 * 10000 + 0724 # Olympics cancelled but holiday stayed
-    
+
     if(length(tmp_flag <- 1966 <= year & year <= 1999))
         ans[tmp_flag] <-  year[tmp_flag] * 10000 + 1010
-    
+
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
@@ -1061,15 +1061,15 @@ JPEmperorsBirthday <- function(year = getRmetricsOptions("currentYear"), value =
         year <- year[year >=  1927]   # don't know what it was before 1927
         year <- year[year !=  2019]   # due to abdication this holiday was cancelled in 2019
     }
-    
+
     ans = year*10000 + 0223 # Naruhito
-    
+
     if(any(year < 2020)){
         if(!flag && isFALSE(na_drop)) {
             ans[year == 2019] <- NA
             ans[year <= 1927] <- NA
         }
-        
+
         flag_1989to2018 <- 1989 <= year & year <= 2018
         flag_1927to1988 <- 1927 <= year & year <= 1988
 
@@ -1079,7 +1079,7 @@ JPEmperorsBirthday <- function(year = getRmetricsOptions("currentYear"), value =
             ans[flag_1927to1988] <- year[flag_1927to1988] * 10000 + 0429 # Showa
         ## TODO: before 1927 ?
     }
-    
+
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }
 
@@ -1096,13 +1096,20 @@ JPMountainDay <- function(year = getRmetricsOptions("currentYear"), value = "tim
     ## didn't exist before 2016
     if(flag <- isTRUE(na_drop))
         year <- year[year >= 2016]
-    
+
     ans <- year * 10000 + 0811
     if(!flag && isFALSE(na_drop))
         ans[year < 2016] <- NA
-    
+
     ans[year == 2020] <-  2020*10000 + 0810  # Olympics openning (cancelled)
     ans[year == 2021] <-  2021*10000 + 0809  # Olympics openning
 
+    if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
+}
+
+
+## Other holidays
+InternationalWomensDay <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
+    ans = year*10000 + 0308
     if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
 }

@@ -14,8 +14,7 @@ listHolidays(pattern = ".*")
 
 \arguments{
   \item{pattern}{
-    a pattern character string as required by the \code{\link{grep}}
-    function.
+    a character string containing a regular expression.
   }
 }
 
@@ -24,6 +23,10 @@ listHolidays(pattern = ".*")
   Returns a character vector containing the names of supported holidays
   matching \code{pattern}. The default is to return all holidays.
 
+  The list is sorted alphabetically. It is changed from time to
+  time. So, the use of character indexing (possibly representing
+  patterns) on the returned list is strongly recommended.
+
 }
 
 \value{
@@ -31,13 +34,14 @@ listHolidays(pattern = ".*")
 }
 
 \examples{
-## listHolidays
+## Local Swiss Holidays:
+listHolidays("CH")
 
-# All Holidays:
+listHolidays("Easter")
+listHolidays("NewYear")
+
+## All Holidays
 listHolidays()
-
-# Local Swiss Holidays:
-listHolidays("CH") 
 }
 
 \keyword{chron}

@@ -18,21 +18,15 @@
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
 #  listHolidays              Lists Holidays
-# DEPRECATED:               DESCRIPTION:
-#  .holidayList              Prints all public and ecclestical holidays
 ################################################################################
 
-listHolidays <-
-    function(pattern = ".*")
-{
-    # A function implemented by Diethelm Wuertz
+listHolidays <- function(pattern = ".*") {
+    ## A function implemented by Diethelm Wuertz
+    ## Consolidated and amended by Georgi N. Boshnakov
 
-    # Description:
-    #   Prints all public and ecclestical holidays
+    ## Description:
+    ##   Prints all public and ecclestical holidays
 
-    # FUNCTION:
-
-    # List:
     holidayList = c(
         "Septuagesima",
         "Quinquagesima",
@@ -142,7 +136,7 @@ listHolidays <-
         "JPRespectForTheAgedDay",
         ## "JPKeirouNOhi", # 2023-11-27 deprecated
         "JPKeirouNoHi",    # 2023-11-27 new, replaces the above
-        "JPMountainDay",      # 2023-11-27 new   
+        "JPMountainDay",      # 2023-11-27 new
         "JPAutumnalEquinox",
         "JPShuubunNoHi",
         "JPHealthandSportsDay",
@@ -153,12 +147,14 @@ listHolidays <-
         "JPKinrouKanshaNoHi",
         "JPEmperorsBirthday",
         "JPTennouTanjyouBi",
-        "JPBankHolidayDec31")
+        "JPBankHolidayDec31",
 
-    # Financial Centers:
+        "InternationalWomensDay"   # 2024-09-16 new
+    )
+
+    ## Financial Centers
     if (pattern == "*") pattern = "\\\\*"
 
-    # Return Value:
     sort(as.character(holidayList[grep(pattern = pattern, x = holidayList)]))
 }
 

@@ -1,0 +1,204 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd('~/repos/rmetrics/pkg/timeDate/work/DST_rules')
+> ls()
+[1] "create_dst_file"       "dput_fc"               "fc_index_to_df"       
+[4] "get_fc_index"          "nyse_early_closings"   "nyse_special_closings"
+[7] "udf_sort"             
+> library(timeDate)
+> source("gnb_compact_dst_rules.R")
+> create_dst_file()
+tzdb_cache  <- new.env()
+
+
+> ls()
+[1] "create_dst_file"       "dput_fc"               "fc_index_to_df"       
+[4] "get_fc_index"          "nyse_early_closings"   "nyse_special_closings"
+[7] "udf_sort"             
+> source("gnb_compact_dst_rules.R")
+> create_dst_file()
+
+> ls()
+[1] "create_dst_file"       "dput_fc"               "fc_index_to_df"       
+[4] "get_fc_index"          "nyse_early_closings"   "nyse_special_closings"
+[7] "udf_sort"             
+> dir()
+[1] "all_tz_rows.rda"                                                                  
+[2] "DaylightSavingTime.R"                                                             
+[3] "gnb_compact_dst_rules.R"                                                          
+[4] "gnb_compact_dst_rules.R~"                                                         
+[5] "probi.R"                                                                          
+[6] "probi.R~"                                                                         
+[7] "sysdata.rda"                                                                      
+[8] "timeDate-DaylightSavingTime_before_refactoring_but_after_the_update_in_rev_6340.R"
+[9] "timeDate-DaylightSavingTime.R"                                                    
+> 
+> source("DaylightSavingTime.R")
+> ls()
+  [1] "Abidjan"               "Accra"                 "Adak"                 
+  [4] "Addis_Ababa"           "Adelaide"              "Aden"                 
+  [7] "Algiers"               "Almaty"                "Amman"                
+ [10] "Amsterdam"             "Anadyr"                "Anchorage"            
+ [13] "Andorra"               "Anguilla"              "Antananarivo"         
+ [16] "Antigua"               "Apia"                  "Aqtau"                
+ [19] "Aqtobe"                "Araguaina"             "Aruba"                
+ [22] "Ashgabat"              "Asmara"                "Asuncion"             
+ [25] "Athens"                "Atikokan"              "Auckland"             
+ [28] "Azores"                "Baghdad"               "Bahia"                
+ [31] "Bahrain"               "Baku"                  "Bamako"               
+ [34] "Bangkok"               "Bangui"                "Banjul"               
+ [37] "Barbados"              "Beirut"                "Belem"                
+ [40] "Belgrade"              "Belize"                "Berlin"               
+ [43] "Bermuda"               "Bishkek"               "Bissau"               
+ [46] "Blanc-Sablon"          "Blantyre"              "Boa_Vista"            
+ [49] "Bogota"                "Boise"                 "Bratislava"           
+ [52] "Brazzaville"           "Brisbane"              "Broken_Hill"          
+ [55] "Brunei"                "Brussels"              "Bucharest"            
+ [58] "Budapest"              "Buenos_Aires"          "Bujumbura"            
+ [61] "Cairo"                 "Calcutta"              "Cambridge_Bay"        
+ [64] "Campo_Grande"          "Canary"                "Cancun"               
+ [67] "Cape_Verde"            "Caracas"               "Casablanca"           
+ [70] "Casey"                 "Catamarca"             "Cayenne"              
+ [73] "Cayman"                "Center"                "Ceuta"                
+ [76] "Chagos"                "Chatham"               "Chicago"              
+ [79] "Chihuahua"             "Chisinau"              "Choibalsan"           
+ [82] "Chongqing"             "Christmas"             "Cocos"                
+ [85] "Colombo"               "Comoro"                "Conakry"              
+ [88] "Copenhagen"            "Cordoba"               "Costa_Rica"           
+ [91] "create_dst_file"       "Cuiaba"                "Curacao"              
+ [94] "Currie"                "Dakar"                 "Damascus"             
+ [97] "Danmarkshavn"          "Dar_es_Salaam"         "Darwin"               
+[100] "Davis"                 "Dawson"                "Dawson_Creek"         
+[103] "Denver"                "Detroit"               "Dhaka"                
+[106] "Dili"                  "Djibouti"              "Dominica"             
+[109] "Douala"                "dput_fc"               "Dubai"                
+[112] "Dublin"                "DumontDUrville"        "Dushanbe"             
+[115] "Edmonton"              "Efate"                 "Eirunepe"             
+[118] "El_Aaiun"              "El_Salvador"           "Enderbury"            
+[121] "Eucla"                 "Fakaofo"               "Faroe"                
+[124] "fc_index_to_df"        "Fiji"                  "Fortaleza"            
+[127] "Freetown"              "Funafuti"              "Gaborone"             
+[130] "Galapagos"             "Gambier"               "Gaza"                 
+[133] "get_fc_index"          "Gibraltar"             "Glace_Bay"            
+[136] "Godthab"               "Goose_Bay"             "Grand_Turk"           
+[139] "Grenada"               "Guadalcanal"           "Guadeloupe"           
+[142] "Guam"                  "Guatemala"             "Guayaquil"            
+[145] "Guernsey"              "Guyana"                "Halifax"              
+[148] "Harare"                "Harbin"                "Havana"               
+[151] "Helsinki"              "Hermosillo"            "Hobart"               
+[154] "Hong_Kong"             "Honolulu"              "Hovd"                 
+[157] "Indianapolis"          "Inuvik"                "Iqaluit"              
+[160] "Irkutsk"               "Isle_of_Man"           "Istanbul"             
+[163] "Jakarta"               "Jamaica"               "Jayapura"             
+[166] "Jersey"                "Jerusalem"             "Johannesburg"         
+[169] "Johnston"              "Jujuy"                 "Juneau"               
+[172] "Kabul"                 "Kaliningrad"           "Kamchatka"            
+[175] "Kampala"               "Karachi"               "Kashgar"              
+[178] "Katmandu"              "Kerguelen"             "Khartoum"             
+[181] "Kiev"                  "Kigali"                "Kinshasa"             
+[184] "Kiritimati"            "Knox"                  "Kosrae"               
+[187] "Krasnoyarsk"           "Kuala_Lumpur"          "Kuching"              
+[190] "Kuwait"                "Kwajalein"             "La_Paz"               
+[193] "La_Rioja"              "Lagos"                 "Libreville"           
+[196] "Lima"                  "Lindeman"              "Lisbon"               
+[199] "Ljubljana"             "Lome"                  "London"               
+[202] "Longyearbyen"          "Lord_Howe"             "Los_Angeles"          
+[205] "Louisville"            "Luanda"                "Lubumbashi"           
+[208] "Lusaka"                "Luxembourg"            "Macau"                
+[211] "Maceio"                "Madeira"               "Madrid"               
+[214] "Magadan"               "Mahe"                  "Majuro"               
+[217] "Makassar"              "Malabo"                "Maldives"             
+[220] "Malta"                 "Managua"               "Manaus"               
+[223] "Manila"                "Maputo"                "Marengo"              
+[226] "Mariehamn"             "Marigot"               "Marquesas"            
+[229] "Martinique"            "Maseru"                "Mauritius"            
+[232] "Mawson"                "Mayotte"               "Mazatlan"             
+[235] "Mbabane"               "McMurdo"               "Melbourne"            
+[238] "Mendoza"               "Menominee"             "Merida"               
+[241] "Mexico_City"           "Midway"                "Minsk"                
+[244] "Miquelon"              "Mogadishu"             "Monaco"               
+[247] "Moncton"               "Monrovia"              "Monterrey"            
+[250] "Montevideo"            "Monticello"            "Montreal"             
+[253] "Montserrat"            "Moscow"                "Muscat"               
+[256] "Nairobi"               "Nassau"                "Nauru"                
+[259] "Ndjamena"              "New_Salem"             "New_York"             
+[262] "Niamey"                "Nicosia"               "Nipigon"              
+[265] "Niue"                  "Nome"                  "Norfolk"              
+[268] "Noronha"               "Nouakchott"            "Noumea"               
+[271] "Novosibirsk"           "nyse_early_closings"   "nyse_special_closings"
+[274] "Omsk"                  "Oral"                  "Oslo"                 
+[277] "Ouagadougou"           "Pago_Pago"             "Palau"                
+[280] "Palmer"                "Panama"                "Pangnirtung"          
+[283] "Paramaribo"            "Paris"                 "Perth"                
+[286] "Petersburg"            "Phnom_Penh"            "Phoenix"              
+[289] "Pitcairn"              "Podgorica"             "Ponape"               
+[292] "Pontianak"             "Port_Moresby"          "Port_of_Spain"        
+[295] "Port-au-Prince"        "Porto_Velho"           "Porto-Novo"           
+[298] "Prague"                "Puerto_Rico"           "Pyongyang"            
+[301] "Qatar"                 "Qyzylorda"             "Rainy_River"          
+[304] "Rangoon"               "Rankin_Inlet"          "Rarotonga"            
+[307] "Recife"                "Regina"                "Resolute"             
+[310] "Reunion"               "Reykjavik"             "Riga"                 
+[313] "Rio_Branco"            "Rio_Gallegos"          "Riyadh"               
+[316] "Rome"                  "Rothera"               "Saigon"               
+[319] "Saipan"                "Sakhalin"              "Samara"               
+[322] "Samarkand"             "San_Juan"              "San_Marino"           
+[325] "Santiago"              "Santo_Domingo"         "Sao_Paulo"            
+[328] "Sao_Tome"              "Sarajevo"              "Scoresbysund"         
+[331] "Seoul"                 "Shanghai"              "Shiprock"             
+[334] "Simferopol"            "Singapore"             "Skopje"               
+[337] "Sofia"                 "South_Georgia"         "South_Pole"           
+[340] "St_Barthelemy"         "St_Helena"             "St_Johns"             
+[343] "St_Kitts"              "St_Lucia"              "St_Thomas"            
+[346] "St_Vincent"            "Stanley"               "Stockholm"            
+[349] "Swift_Current"         "Sydney"                "Syowa"                
+[352] "Tahiti"                "Taipei"                "Tallinn"              
+[355] "Tarawa"                "Tashkent"              "Tbilisi"              
+[358] "Tegucigalpa"           "Tehran"                "Tell_City"            
+[361] "Thimphu"               "Thule"                 "Thunder_Bay"          
+[364] "Tijuana"               "Tirane"                "Tokyo"                
+[367] "Tongatapu"             "Toronto"               "Tortola"              
+[370] "Tripoli"               "Truk"                  "Tucuman"              
+[373] "Tunis"                 "tzdb_cache"            "udf_sort"             
+[376] "Ulaanbaatar"           "Urumqi"                "Ushuaia"              
+[379] "Uzhgorod"              "Vaduz"                 "Vancouver"            
+[382] "Vatican"               "Vevay"                 "Vienna"               
+[385] "Vientiane"             "Vilnius"               "Vincennes"            
+[388] "Vladivostok"           "Volgograd"             "Vostok"               
+[391] "Wake"                  "Wallis"                "Warsaw"               
+[394] "Whitehorse"            "Winamac"               "Windhoek"             
+[397] "Winnipeg"              "Yakutat"               "Yakutsk"              
+[400] "Yekaterinburg"         "Yellowknife"           "Yerevan"              
+[403] "Zagreb"                "Zaporozhye"            "Zurich"               
+> 
+> cities <- ls()[grepl("^[A-Z]", ls())]
+> load("sysdata.rda")
+> all(
+sapply(cities, function(fc){identical(match.fun(fc)(), get(fc, asNamespace("timeDate"))())})
+)
+
+all(
++ sapply(cities, function(fc){identical(match.fun(fc)(), get(fc, asNamespace("timeDate"))())})
++ )
+> 
+[1] TRUE
+> ls(tzdb_cache)
+*** output flushed ***
+> 

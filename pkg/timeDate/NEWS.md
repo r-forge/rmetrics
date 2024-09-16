@@ -1,4 +1,4 @@
-# timeDate 4032.109.9000
+# timeDate 4041.110
 
 - new `timeDate` method for `$` for extraction of components of timeDate objects
   - e.g., for a timeDate object `td`, `td$year`, `td$month`, and `td$sec` give
@@ -28,6 +28,9 @@
   length 0' along with the FinCenter, which seems better than the previous
   output for this case.
 
+- new function `InternationalWomensDay` (suggested by Alexander Bartel
+  with code), fixes R-forge issue #6855). Now included in the list
+  returned by `listHolidays`.
 
 
 # timeDate 4032.109

@@ -1,6 +1,8 @@
 \name{summary-methods}
 
 \alias{summary.timeDate}
+\alias{timeDate_summary}
+\alias{print.timeDate_summary}
 
 \alias{timeDate_summary}
 \alias{print.timeDate_summary}

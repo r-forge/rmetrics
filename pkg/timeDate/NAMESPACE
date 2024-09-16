@@ -41,7 +41,7 @@ S3method(length,timeDate)
 S3method(max,timeDate)
 S3method(min,timeDate)
 S3method(pretty,timeDate)
-S3method(print, timeDate_summary) 
+S3method(print, timeDate_summary)
 S3method(range,timeDate)
 S3method(rep,timeDate)
 S3method(rev,timeDate)
@@ -127,7 +127,6 @@ export(
     timeSequence,
     whichFormat,
 
-    months,
     earlyCloseNYSE,
     frequency
 )
@@ -187,6 +186,9 @@ export(
     specialHolidayGB,
     GBSummerBankHoliday,
     GoodFriday,
+
+    InternationalWomensDay,
+
     ITAllSaints,
     ITAssumptionOfVirginMary,
     ITEpiphany,

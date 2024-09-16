@@ -127,6 +127,7 @@
 \alias{JPTennouTanjyouBi}
 \alias{JPBankHolidayDec31}
 
+\alias{InternationalWomensDay}
 
 
 \title{Public and ecclesiastical holidays}
@@ -498,7 +499,9 @@ JPTennouTanjyouBi(year = getRmetricsOptions("currentYear"),
 
 JPBankHolidayDec31(year = getRmetricsOptions("currentYear"), 
                    value = "timeDate", na_drop = TRUE, \dots)
-}
+
+InternationalWomensDay(year = getRmetricsOptions("currentYear"),
+                       value = "timeDate", na_drop = TRUE, ...)}
 
 
 \arguments{
