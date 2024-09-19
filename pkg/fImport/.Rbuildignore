@@ -1,3 +1,6 @@
 docs/
+work/
+.Rhistory
+.RData
 \.emacs\.desktop
 \.emacs\.desktop\.lock

@@ -1,17 +1,17 @@
 Package: fImport
 Title: Rmetrics - Importing Economic and Financial Data
-Version: 4032.87
+Version: 4041.88
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre", "ctb"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "aut"), email = "georgi.boshnakov@manchester.ac.uk") )
 Description: Provides a collection of utility functions 
     to download and manage data sets from the Internet or from other 
     sources.
 Depends: R (>= 2.15.1), timeDate, timeSeries
 Imports: methods, utils
-Suggests: RUnit
+Suggests: RUnit, rvest, xml2
 LazyData: yes
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/scm/viewvc.php/pkg/fImport/?root=rmetrics (devel), https://www.rmetrics.org

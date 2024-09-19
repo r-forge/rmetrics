@@ -124,7 +124,6 @@ fredImport(query, file = "tempfile", source = NULL, frequency = "daily",
   
 }
 
-
 %\seealso{
 %       
 %    Two further download functions \code{\link{oandaImport}} and 
@@ -133,22 +132,17 @@ fredImport(query, file = "tempfile", source = NULL, frequency = "daily",
 %     
 %}
 
-
 \author{
 
     Diethelm Wuertz for the Rmetrics \R-port.
 }
 
-
 \references{
-
 Diethelm Wuertz, Yohan Chalabi, and Andrew Ellis, (2010);
     \emph{Financial Market Data for R/Rmetrics}, 
     Rmetrics eBook, Rmetrics Association and Finance Online, Zurich,
     www.rmetrics.org.
-    
 }
-
 
 \examples{
 \donttest{
@@ -159,8 +153,5 @@ b = fredSeries("DEXSZUS")
 head(b) # timeSeries object
 }
 }
-
-
 \keyword{data}
 \keyword{ts}
-

@@ -22,26 +22,25 @@
 ################################################################################
 
 
-fredImport <-
-  function(query, file = "tempfile", source = NULL,
-           frequency = "daily",
-           from = NULL, to = Sys.timeDate(), nDaysBack = NULL,
-           save = FALSE, sep = ";", try = TRUE)
-  {
-    # A function implemented by Diethelm Wuertz
-    
+fredImport <- function(query, file = "tempfile", source = NULL,
+                       frequency = "daily",
+                       from = NULL, to = Sys.timeDate(), nDaysBack = NULL,
+                       save = FALSE, sep = ";", try = TRUE) {
+    ## A function implemented by Diethelm Wuertz
+    ##     Modified by GNB to work with html (using html2 and rvest).
+
     # Description:
     #   Downloads Monthly Market Data, Indices and Benchmarks from
     #   St. Louis FED, "research.stlouisfed.org".
-    
+
     # Value:
     #   An One Column data frame with row names denoting the dates
     #   given in the POSIX format "%Y%m%d". The column lists the
     #   downloaded data records.
-    
+
     # Examples:
     #   fredImport("DPRIME")
-    
+
     # Notes:
     #   This function is written for one-column daily data sets.
     #   Some example data sets include:
@@ -49,20 +48,21 @@ fredImport <-
     #     DEXSZUS   Switzerland / U.S. Foreign Exchange Rate
     #     DGS1      1-Year Treasury Constant Maturity Rate
     #     DPRIME    Bank Prime Loan Rate
-    
+
     # FUNCTION:
-    
+
     # Settings:
     stopifnot(length(query) == 1)
-    
+
     # Source"
     if (is.null(source))
-      source = "http://research.stlouisfed.org/fred2/series/"
-    
+      ## 2024-09-19 was:  source = "http://research.stlouisfed.org/fred2/series/"
+      source <- "https://fred.stlouisfed.org"
+
     # Check:
     if (frequency != "daily")
       stop("Only daily data records are supported!")
-    
+
     # Download:
     if (try) {
       # Try for Internet Connection:
@@ -75,28 +75,51 @@ fredImport <-
       }
     } else {
       # Download File:
-      queryFile = paste(query, "/downloaddata/", query, ".txt", sep = "")
-      url = paste(source, queryFile, sep = "")
+      ## queryFile = paste(query, "/downloaddata/", query, ".txt", sep = "")
+      ## url = paste(source, queryFile, sep = "")
+      queryFile = paste0("/data/", query)
+      url = paste0(source, queryFile)
+
       tmp = tempfile()
       download.file(url = url, destfile = tmp)
-      
-      # Scan the file:
-      x1 = scan(tmp, what = "", sep = "\n")
-      
-      # Extract dates ^19XX and ^20XX:
-      x2 = x1[regexpr(pattern="^[12][90]", x1, perl=TRUE) > 0]
-      x1 = x2[regexpr(pattern=" .$", x2, perl=TRUE) < 0]
-      
-      # Compose Time Series:
-      data <- matrix(
-        as.numeric(substring(x1, 11, 999)), byrow = TRUE, ncol = 1)
-      charvec <- substring(x1, 1, 10)
-      X <- timeSeries(data, charvec, units = query)
-      
+#browser()
+        ## # Scan the file:
+        ## x1 = scan(tmp, what = "", sep = "\n")
+        ##
+        ## # Extract dates ^19XX and ^20XX:
+        ## x2 = x1[regexpr(pattern="^[12][90]", x1, perl=TRUE) > 0]
+        ## x1 = x2[regexpr(pattern=" .$", x2, perl=TRUE) < 0]
+        ##
+        ## # Compose Time Series:
+        ## data <- matrix(
+        ##   as.numeric(substring(x1, 11, 999)), byrow = TRUE, ncol = 1)
+        ## charvec <- substring(x1, 1, 10)
+
+        if(!requireNamespace("xml2") || requireNamespace("rvest"))
+
+            xml2 <- xml2::read_html(tmp, encoding = "UTF-8")
+            if(requireNamespace("rvest"))
+
+            tbls <- rvest::html_table(xml2)
+
+
+        datatbl <- tbls[[2]]
+
+        ## VALUE is character since '.' stands for NA
+        ## maybe should be defensive here - what happens if there are no missing values?
+        ##    will VALUE be still character?
+        datatbl$VALUE[datatbl$VALUE == "."] <- NA
+        datatbl$VALUE <- as.numeric(datatbl$VALUE)
+
+        data <- matrix(datatbl$VALUE, ncol = 1)
+        charvec <- datatbl$DATE
+
+        X <- timeSeries(data, charvec, units = query)
+
       # Time Window:
       if (is.null(to)) to <- Sys.timeDate()
       to <-  trunc(as.timeDate(to),"days")
-      
+
       if (is.null(from)) {
         if (is.null(nDaysBack)) {
           from <- start(X)
@@ -105,17 +128,17 @@ fredImport <-
         }
       }
       from <- trunc(as.timeDate(from),"days")
-      
+
       X <- window(X, from, to)
     }
-    
+
     # Save to file:
     if (save) {
       write.table(as.data.frame(X), file = file, sep = sep)
     } else {
       unlink(file)
     }
-    
+
     # Result:
     ans <- new("fWEBDATA",
                call = match.call(),
@@ -125,7 +148,7 @@ fredImport <-
                data = X,
                title = "Data Import from research.stlouisfed.org",
                description = description() )
-    
+
     # Return Value:
     ans
   }
@@ -136,22 +159,22 @@ fredSeries <-
   function(symbols, from = NULL, to = Sys.timeDate(), nDaysBack = 366, ...)
   {
     # A function implemented by Diethelm Wuertz
-    
+
     # Description:
     #   Downloads easily time series data from St. Louis FRED
-    
+
     # Arguments:
     #   symbols - a character vector of symbol names
     #   from - from date
     #   to - to date
     #   nDaysBack - number of n-days back
     #   ... - arguments passed to the *Import()
-    
+
     # Examples:
     #   fredSeries("DPRIME")[1:10, ]
-    
+
     # FUNCTION:
-    
+
     # Download:
     X <- fredImport(query = symbols[1],
                     from = from, to = to, nDaysBack=nDaysBack, ...)@data
@@ -162,7 +185,7 @@ fredSeries <-
                                  from = from, to = to, nDaysBack=nDaysBack, ...)@data)
       }
     }
-    
+
     # Return Value:
     X
   }
