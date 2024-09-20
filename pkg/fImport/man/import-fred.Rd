@@ -1,7 +1,5 @@
 \name{import-fred}
-
 \alias{import-fred}
-
 
 \alias{fredImport}
 \alias{fredSeries}
@@ -9,13 +7,11 @@
 
 \title{Import Market Data from the Federal Reserve Database}
 
-
 \description{
     
-    Imports financial time series data from research.stlouisfed.org.
+    Imports financial time series data from fred.stlouisfed.org.
    
 }
-
 
 \usage{
 fredSeries(symbols, from = NULL, to = Sys.timeDate(), 
@@ -26,9 +22,7 @@ fredImport(query, file = "tempfile", source = NULL, frequency = "daily",
     save = FALSE, sep = ";", try = TRUE)    
 }
 
-
 \arguments{
-
     \item{file}{
         a character string with filename, usually having extension 
         ".csv", where to save the downloaded data.
@@ -76,51 +70,46 @@ fredImport(query, file = "tempfile", source = NULL, frequency = "daily",
     \item{\dots}{
         optional arguments to be passed.
         }
-        
 }
-
 
 \value{
-
-    The function \code{fredImport} returns an S4 object of class 
-    \code{fWEBDATA} with the following slots:
+  The function \code{fredImport} returns an S4 object of class
+  \code{fWEBDATA} with the following slots:
     
-    \item{@call}{
-        the function call.  
-        }
-    \item{@data}{
-        the data as downloaded formatted as a data.frame.
-        }
-    \item{@param}{
-        a character vector whose elements contain the values of selected 
-        parameters of the argument list.
-        }
-    \item{@title}{
-        a character string with the name of the download. This can be 
-        overwritten specifying a user defined input argument.
-        }
-    \item{@description}{
-        a character string with an optional user defined description. 
-        By default just the current date when the test was applied will
-        be returned.}
+  \item{@call}{
+    the function call.  
+  }
+  \item{@data}{
+    the data as downloaded formatted as a data.frame.
+  }
+  \item{@param}{
+    a character vector whose elements contain the values of selected 
+    parameters of the argument list.
+  }
+  \item{@title}{
+    a character string with the name of the download. This can be 
+    overwritten specifying a user defined input argument.
+  }
+  \item{@description}{
+    a character string with an optional user defined description. 
+    By default just the current date when the test was applied will
+    be returned.
+  }
         
-    The function \code{fredSeries} returns an S4 object of 
-    class \code{timeSeries} or alternatively an object specified by
-    the function argument \code{returnClass}.
-    \cr
-    
+  The function \code{fredSeries} returns an S4 object of class
+  \code{timeSeries} or alternatively an object specified by the function
+  argument \code{returnClass}.
 }
-
 
 \note{
   
-    \bold{Internet Download Functions:}
+  \bold{Internet Download Functions:}
     
-    IMPORTANT NOTE: If the service provider changes the data file format 
-    it may become necessary to modify and update the functions. 
+  IMPORTANT NOTE: If the service provider changes the data file format 
+  it may become necessary to modify and update the functions. 
     
-    Feel free to inspect the code of the functions and to create your
-    own download function from other Internet web sites and Portals.
+  Feel free to inspect the code of the functions and to create your
+  own download function from other Internet web sites and Portals.
   
 }
 
@@ -133,8 +122,7 @@ fredImport(query, file = "tempfile", source = NULL, frequency = "daily",
 %}
 
 \author{
-
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Diethelm Wuertz for the Rmetrics \R-port.
 }
 
 \references{
@@ -146,10 +134,10 @@ Diethelm Wuertz, Yohan Chalabi, and Andrew Ellis, (2010);
 
 \examples{
 \donttest{
-a = fredImport("DEXSZUS")
+a <- fredImport("DEXSZUS")
 head(a@data)  # a@data is a data frame
 
-b = fredSeries("DEXSZUS")
+b <- fredSeries("DEXSZUS")
 head(b) # timeSeries object
 }
 }
