@@ -6,6 +6,6 @@ note <- sprintf("R package version %s", meta$Version)
 
 bibentry(bibtype = "Manual",
          title = "rngWELL: WELL generators",
-         author = c(person("Dutang", "Christophe"), person("Savicky","Petr")),
+         author = c(person("Christophe", "Dutang"), person("Petr", "Savicky")),
          year = year,
          note = note)

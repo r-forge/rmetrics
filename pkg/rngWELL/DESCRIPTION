@@ -2,9 +2,12 @@ Package: rngWELL
 Type: Package
 Title: Toolbox for WELL Random Number Generators
 Version: 0.10-10
-Author: C code by F. Panneton [aut], P. L'Ecuyer [aut], M. Matsumoto [aut]
-  and R port by Christophe Dutang [cre, aut], Petr Savicky [aut] <savicky@cs.cas.cz>
-Maintainer: Christophe Dutang <dutangc@gmail.com>
+Authors@R: c(
+    person("Christophe", "Dutang", role = c("aut", "cre"), email = "dutangc@gmail.com", comment = c(ORCID = "0000-0001-6732-1501")),
+    person("Petr", "Savicky", role= "aut", email="savicky@cs.cas.cz"),
+    person("F.", "Panneton", role = "ctb", comment="C Code"),
+    person("P.", "L'Ecuyer", role = "ctb", comment="C Code"),
+    person("M.", "Matsumoto", role = "ctb", comment="C Code"))
 Description: It is a dedicated package to WELL pseudo random generators, 
   which were introduced in Panneton et al. (2006), ``Improved Long-Period 
   Generators Based on Linear Recurrences Modulo 2'', see <doi:10.1145/1132973.1132974>. 
