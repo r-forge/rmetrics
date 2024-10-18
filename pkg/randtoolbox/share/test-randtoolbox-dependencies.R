@@ -4,16 +4,20 @@
 #s_crandb("randtool", select="P")
 #
 
+library(devtools)
+library(RWsearch)
+crandb_down()
+
+
+
 #################################################################
 # package that reverse depends on randtoolbox
-
-library(devtools)
 
 
 odir <- "~/Documents/recherche-enseignement/code/R/rmetrics/test-check-depend-pkg/"
 
-revdependlist <- c("iterLap", "npsf", "TruncatedNormal")
-revdependversion <- c("1.1-3", "0.8.0", "2.2.2")
+revdependlist <- p_deps("randtoolbox", which="D", reverse=TRUE)$randtoolbox
+revdependversion <- p_vers(revdependlist)[,"version"]
 
 install.packages(revdependlist, dependencies = TRUE)
 
@@ -43,16 +47,8 @@ capture.output(rescheck, file=paste0(odir, "/", "revdependlist.txt"))
 
 odir <- "~/Documents/recherche-enseignement/code/R/rmetrics/test-check-import-pkg/"
 
-revimportlist <- c("acebayes", "apollo", "BLPestimatoR", "calibrateBinary", "cepp", 
-                   "copBasic", "DiceOptim",  "GPareto", "GPM", "joineRML", 
-                   "KrigInv", "LSDsensitivity", "LVGP", "MBHdesign",  
-                   "merlin", "minimaxdesign", "MRFA", "optim.functions", "pGPx", 
-                   "qualpalr", "sensobol")
-revimportversion <- c("1.10", "0.2.7", "0.3.2", "0.1", "1.7", 
-                      "2.1.7", "2.1.1", "1.1.6", "3.0.1", "0.4.5", 
-                      "1.4.1", "1.2.1", "2.1.5", "2.2.2", 
-                      "0.1.0", "0.1.5", "0.4", "0.1", "0.1.1", 
-                      "0.4.3", "1.1.1")
+revimportlist <- p_deps("randtoolbox", which="I", reverse=TRUE)$randtoolbox
+revimportversion <- p_vers(revimportlist)[,"crandb"]
 
 install.packages(revimportlist, dependencies = TRUE)
 
@@ -67,9 +63,9 @@ for(i in 1:length(revimportlist))
   
   cat(paste0(pkg, "_", v, ".tar.gz"), "\n")
   
-  download.file(urlpkg, destfile=destfilepkg)
-  
-  rescheck[[i]] <- check_built(path = destfilepkg, quiet=TRUE)
+  essai <- try(download.file(urlpkg, destfile=destfilepkg))
+  if(!inherits(essai, "try-error"))
+    rescheck[[i]] <- check_built(path = destfilepkg, quiet=TRUE)
   
 }
 capture.output(rescheck, file=paste0(odir, "/", "revimportlist.txt"))
@@ -79,8 +75,9 @@ capture.output(rescheck, file=paste0(odir, "/", "revimportlist.txt"))
 #################################################################
 # package that reverse suggest randtoolbox
 
-revsuggestlist <- c("copula", "DiceDesign", "sensitivity")
-revsuggestversion <- c("1.0-1", "1.9", "1.27.0")
+revsuggestlist <- p_deps("randtoolbox", which="S", reverse=TRUE)$randtoolbox
+revsuggestversion <- p_vers(revsuggestlist)[,"crandb"]
+
 odir <- "~/Documents/recherche-enseignement/code/R/rmetrics/test-check-suggest-pkg/"
 
 install.packages(revsuggestlist, dependencies = TRUE)
@@ -96,9 +93,9 @@ for(i in 1:length(revsuggestlist))
   
   cat(paste0(pkg, "_", v, ".tar.gz"), "\n")
   
-  download.file(urlpkg, destfile=destfilepkg)
-  
-  rescheck[[i]] <- check_built(path = destfilepkg, quiet=TRUE)
+  essai <- try(download.file(urlpkg, destfile=destfilepkg))
+  if(!inherits(essai, "try-error"))
+    rescheck[[i]] <- check_built(path = destfilepkg, quiet=TRUE)
   
 }
 capture.output(rescheck, file=paste0(odir, "/", "revsuggestlist.txt"))
