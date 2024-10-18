@@ -1,6 +1,6 @@
 # rngWELL: Toolbox for WELL Random Number Generators
 
-[![CRAN_Release_Badge](https://www.r-pkg.org/badges/version-ago/gumbel)](https://cran.r-project.org/package=gumbel) [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/gumbel)](https://cran.r-project.org/package=gumbel) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CRAN_Release_Badge](https://www.r-pkg.org/badges/version-ago/rngWELL)](https://cran.r-project.org/package=rngWELL) [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/rngWELL)](https://cran.r-project.org/package=rngWELL) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 `rngWELL` is a dedicated package to WELL pseudo random generators, which were introduced in Panneton et al. (2006), “Improved Long-Period Generators Based on Linear Recurrences Modulo 2”, see <doi:10.1145/1132973.1132974>. 
 
