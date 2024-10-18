@@ -1,7 +1,7 @@
 Package: rngWELL
 Type: Package
 Title: Toolbox for WELL Random Number Generators
-Version: 0.10-10
+Version: 0.10-11
 Authors@R: c(
     person("Christophe", "Dutang", role = c("aut", "cre"), email = "dutangc@gmail.com", comment = c(ORCID = "0000-0001-6732-1501")),
     person("Petr", "Savicky", role= "aut", email="savicky@cs.cas.cz"),
