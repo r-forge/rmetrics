@@ -1,9 +1,17 @@
+# timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
+
+- fixed minor typos in 'NEWS.md'
+
+
+
+
 # timeDate 4041.110
 
-- new `timeDate` method for `$` for extraction of components of timeDate objects
-  - e.g., for a timeDate object `td`, `td$year`, `td$month`, and `td$sec` give
-  numeric vectors containing the corresponding components. In interactive
-  sessions completion is supported, usually by hitting the <TAB> key.
+- new `timeDate` method for `$` for extraction of components of timeDate
+  objects.  For example, given a timeDate object `td`, numeric vectors
+  containing the components 'year', 'month' and 'sec' can be obtained by
+  `td$year`, `td$month`, and `td$sec`, respectively. In interactive sessions
+  completion is supported, usually by hitting the 'TAB' key.
 
 - new timeDate methods for the base R functions `quarters` and `weekdays` (they
   return character vectors of names).
@@ -13,12 +21,12 @@
   explicitly (to `TRUE` or `FALSE`). If 'abbreviate' is missing, the numeric
   values are returned, see the deprecation note below.
 
-  *Deprecation Warning:* a `timeDate` method for `months` has existed for a long
-  time but it was returning a numeric vector, which is inconsistent with the
-  other methods for months in base R (they return names of months). Returning a
-  numeric vector when 'abbreviate' is missing is a temporary compromise, to
-  avoid breaking old code but this should be considered deprecated. Use
-  `td$month` to get the numbers.
+  **Deprecation Warning:** a `timeDate` method for `months` has existed for a
+  long time but it was returning a numeric vector, which is inconsistent with
+  the other methods for months in base R (they return names of
+  months). Returning a numeric vector when 'abbreviate' is missing is a
+  temporary compromise, to avoid breaking old code, but this should be
+  considered deprecated. Use `td$month` to get the numbers.
 
 - now `timeDate(character(0))` returns a 0-length "timeDate" object.  Previously
   it was returning an `NA` "timeDate" object of length 1 if argument 'format'
@@ -28,9 +36,9 @@
   length 0' along with the FinCenter, which seems better than the previous
   output for this case.
 
-- new function `InternationalWomensDay` (suggested by Alexander Bartel
-  with code), fixes R-forge issue #6855). Now included in the list
-  returned by `listHolidays`.
+- new function `InternationalWomensDay` (suggested by Alexander Bartel with
+  code), fixes R-forge issue #6855). It's also included in the list returned by
+  `listHolidays`.
 
 
 # timeDate 4032.109

@@ -4,10 +4,15 @@
 \docType{package}
 
 
-\title{Utilities and tools package}
+\title{Calendar and date utilities and tools}
 
 \description{
   Package of calendar, date, time tools and utilities for Rmetrics.
+  An html site created with 'pkgdown' You can view
+
+  The documentation of package \sQuote{timeDate}, rendered with
+  \sQuote{pkgdown}, is available at
+  \href{https://geobosh.github.io/timeDateDoc/}{timeDateDoc}.
 }
 
 \section{Overview of Topics}{

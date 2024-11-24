@@ -1,13 +1,15 @@
 Package: timeDate
 Title: Rmetrics - Chronological and Calendar Objects
-Version: 4041.110
+Version: 4041.110.9000
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
-	   , person("Martin","Maechler", role = "ctb", email = "maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
+	   , person("Martin","Maechler", role = "ctb", email = "maechler@stat.math.ethz.ch",
+	     comment = c(ORCID = "0000-0002-8685-9910"))
 	   , person(given = c("Joe", "W."), family = "Byers", role = "ctb")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("cre", "aut"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("cre", "aut"), email = "georgi.boshnakov@manchester.ac.uk",
+		    comment = c(ORCID = "0000-0003-2839-346X")) )
 Description: The 'timeDate' class fulfils the conventions of the ISO 8601 
 	standard as well as of the ANSI C and POSIX standards. Beyond
 	these standards it provides the "Financial Center" concept
