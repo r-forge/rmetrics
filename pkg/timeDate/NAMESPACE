@@ -128,7 +128,8 @@ export(
     whichFormat,
 
     earlyCloseNYSE,
-    frequency
+    frequency,
+    pasteMat
 )
 
 export(GBBankHoliday) # deprecated, superseded by GBSpringBankHoliday

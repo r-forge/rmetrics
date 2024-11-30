@@ -53,12 +53,15 @@ skewness(x, \dots)
   correspond to the usual "unbiased" definition of sample variance,
   although in the case of skewness exact unbiasedness is not possible.
 
+  The data frame method computes the skewness of each column. 
+
 }
 
 \value{
     
   a numeric value or vector with attribute \code{"method"} indicating
-  the method. 
+  the method. For the data frame method the values are named using the
+  columns names.
     
 }
 
@@ -71,7 +74,6 @@ r = rnorm(100)
 mean(r)
 var(r)
    
-## skewness
 skewness(r)  
 }
 

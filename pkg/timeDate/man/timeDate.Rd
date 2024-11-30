@@ -58,7 +58,7 @@ strptimeDate(x, format = whichFormat(x), tz = "")
 \arguments{
 
   \item{charvec}{
-    a character string or vector of dates and times.
+    a character vector or vector of dates and times.
   }
   \item{format}{
     the format specification of the input character vector.
@@ -181,8 +181,8 @@ strptimeDate(x, format = whichFormat(x), tz = "")
 ## timeDate
 
 # character vector strings:
-dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
-tms = c(  "23:12:55",   "10:34:02",   "08:30:00",   "11:18:23")
+dts <- c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
+tms <- c(  "23:12:55",   "10:34:02",   "08:30:00",   "11:18:23")
 
 dts; tms
 
@@ -210,17 +210,29 @@ timeDate("2004-12-31", FinCenter = "GMT")
 timeDate("12/11/2004", FinCenter = "GMT")
 timeDate("1/31/2004") # auto-detect American format
 
-## From POSIX?t, and using NAs
-## lsec <- as.POSIXlt(.leap.seconds) ; lsec[c(2,4:6)] <- NA
-## timeDate(lsec)
+## ... from POSIX?t, and containing NAs:
+lsec <- as.POSIXlt(.leap.seconds)
+lsec
+lsec[c(2,4:6)] <- NA
+timeDate(lsec)
 
-## dtms <- paste(dts,tms)
-## dtms[2:3] <- NA
-## timeDate(dtms, FinCenter = "Europe/Zurich") # but in GMT
+dtms <- paste(dts,tms)
+dtms[2:3] <- NA
+timeDate(dtms, FinCenter = "Europe/Zurich")
 
-## would need  change in R :
-##   tms[3] <- dts[2] <- NA
-##   timeDate(paste(dts,tms), FinCenter = "Europe/Zurich") # but in GMT
+## NAs in dates and/or times
+dts2 <- c("1989-09-28", NA, "2004-08-30", "1990-02-09")
+tms2 <- c(  "23:12:55",   "10:34:02",   NA,   "11:18:23")
+## this throws error (since NAs are converted to the string "NA"):
+## timeDate(paste(dts,tms), FinCenter = "Europe/Zurich")
+## ## Error in midnightStandard2(charvec, format) :
+## ##   'charvec' has non-NA entries of different number of characters
+##
+## these work:
+td1 <- timeDate(pasteMat(cbind(dts, tms)), FinCenter = "Europe/Zurich")
+td2 <- timeDate(pasteMat(dts, tms), FinCenter = "Europe/Zurich")
+identical(td1, td2) ## TRUE
+
 
 ## Coerce a 'Date' object into a 'timeDate' object:
 as.timeDate(Sys.Date())

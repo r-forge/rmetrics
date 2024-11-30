@@ -1,9 +1,8 @@
-pandoc: 2.9.2.1
-pkgdown: 2.0.7
-pkgdown_sha: ~
+pandoc: '3.3'
+pkgdown: 2.1.1.9000
+pkgdown_sha: ffe60d5f60934e95285d416dae12c05e24ed1dac
 articles: {}
-last_built: 2023-12-26T23:29Z
+last_built: 2024-11-29T10:27Z
 urls:
   reference: https://geobosh.github.io/timeDateDoc/reference
   article: https://geobosh.github.io/timeDateDoc/articles
-

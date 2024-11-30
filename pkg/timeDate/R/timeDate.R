@@ -93,7 +93,7 @@ setMethod("timeDate", "character",
         ## callGeneric()
         return(timeDate(charvec, zone = zone, FinCenter = FinCenter))
     }
-    
+
     # ISO Date/Time Format:
     isoDate   <- "%Y-%m-%d"
     isoFormat <- "%Y-%m-%d %H:%M:%S"
@@ -110,7 +110,7 @@ setMethod("timeDate", "character",
 
     # Midnight Standard & conversion to isoFormat:
     ct <- midnightStandard2(charvec, format)
-    
+
     ## Do conversion
     ## YC: .formatFinCenterNum faster than .formatFinCenter
     ## TS: using zone is correct (charvec is converted to GMT)
@@ -245,13 +245,9 @@ setMethod("timeDate", "missing",
 }
 )
 
-
 setMethod("timeDate", "ANY",
     function(charvec, format = NULL, zone = "", FinCenter = "", dst_gap = "+")
 {
-    # Description:
-    #   ANY
-
     callGeneric(as.character(charvec), format, zone, FinCenter, dst_gap = dst_gap)
 }
 )
@@ -299,12 +295,12 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
     ##                            "1983-03-27 01:00:00",
     ##                            "1983-03-27 02:00:00",
     ##                            "1983-03-27 03:00:00")
-    ## 
+    ##
     ##     Sofia_to_DST_test <- Sofia_to_DST_char
     ##     Sofia_to_DST_test[2] <- "1983-03-27 01:00:00" # gap to gap + 1 hour
-    ##     
+    ##
     ##     Sofia_to_DST <- timeDate(Sofia_to_DST_char, zone = "Sofia", FinCenter = "Sofia")
-    ##     
+    ##
     ##     > Sofia_to_DST
     ##     Sofia
     ##     [1] [1983-03-26 23:00:00] [1983-03-26 23:00:00] [1983-03-27 00:00:00]
@@ -324,7 +320,7 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
     ## Note that here 2am GMT is the time of switch to DST. We see that the
     ## GMT's are correct (with the caviat for 0am Sofia) but the conversion for
     ## 22pm and 23pm GMT adds the non-DST GMToffset (+2), instead of GMT+3.
-    ##    
+    ##
     ## The source of the errors is revealed by writing the formulas so that they
     ## show what is a function of what.
     ##
@@ -341,7 +337,7 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
     ## not offset(t). GMToffset(y) typically is fixed at a given place (although
     ## changes do happen) but even so, DST(y) may not be the same as DST(t) at
     ## and just after the switch of DST (on or off).
-    
+
     if (FinCenter == "GMT" || FinCenter == "UTC")
         return(num)
 
@@ -380,7 +376,7 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
             ##        holidayLONDON(1915)
             ##        holidayLONDON(1916)
             ##        holidayLONDON(1917)
-            ## 
+            ##
             ## TODO: check the fix? I have somewhat forgotten the details
             offSetIdx_minus1 <- offSetIdx - 1
             if(any(offSetIdx_minus1 == 0))
@@ -424,14 +420,27 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
 
         offset_diff <- dst.list$offSet[offset_after] - dst.list$offSet[offSetIdx]
 
-        res[offset_diff > 0] <- res[offset_diff > 0] + 3600 
+        ## 2024-11-29 - subset assignment fails if there are NAs in res
+        ##              (see example with NAs in class-timeDate.Rd)
+        ##
+        flag_offset_diff_pos <- offset_diff > 0 & !is.na(res)
+        if(any(flag_offset_diff_pos))
+            res[flag_offset_diff_pos] <- res[flag_offset_diff_pos] + 3600
 
         flag_dst_special <- num + 3600 <= dst.list$numeric[offset_after]
-        
+
+        ## 2024-11-29 - see above remark for > 0
+        flag_offset_diff_neg <- offset_diff < 0 & !is.na(res)
+
         ## ambiguous t change from DST to non-DST; consider DST
-        res[offset_diff < 0 & flag_dst_special] + 3600
-        res[offset_diff < 0 & !flag_dst_special] <- res[offset_diff < 0] - 3600
-        
+        ## 2024-11-29 - the first line below doesn't change anythin;
+        ##    TODO: check if it is redundant or a bug that needs fixing.
+        ##          (could it be also that the assignment in the case !flag_dst_special
+        ##           should actually be to flag_dst_special ?)
+        res[flag_offset_diff_neg & flag_dst_special] + 3600
+        res[flag_offset_diff_neg & !flag_dst_special] <-
+            res[flag_offset_diff_neg & !flag_dst_special] - 3600
+
         res
     }
 }
@@ -444,21 +453,21 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
 ## {
 ##     # A function implemented by Diethelm Wuertz
 ##     #   thanks to contributions from Martin Maechler
-## 
+##
 ##     # Description:
 ##     #   Internal function used by function timeDate()
-## 
+##
 ##     if (FinCenter == "GMT" || FinCenter == "UTC")
 ##         return(charvec)
-## 
+##
 ##     ## else start working:
 ##     type <- match.arg(type)
 ##     signum <- switch(type,
 ##                      "gmt2any" = +1,
 ##                      "any2gmt" = -1)
 ##     ##  otherwise give error
-## 
-## 
+##
+##
 ##     # Get the DST list from the database:
 ##     try <- try(dst.list <- rulesFinCenter(FinCenter), silent = TRUE)
 ##     if (inherits(try, "try-error"))
@@ -503,7 +512,7 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
 ##     idx = order(o[which(o>m)])
 ##     offSets = yout[idx]
 ##     dt = strptime(charvec, "%Y-%m-%d %H:%M:%S", tz = "GMT")
-## 
+##
 ##     ## Return Value:
 ##     format(dt + signum * offSets, format="%Y-%m-%d %H:%M:%S")
 ## }

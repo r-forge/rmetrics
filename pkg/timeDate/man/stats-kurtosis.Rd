@@ -60,8 +60,8 @@ kurtosis(x, \dots)
   method and a value of 3 will be subtracted.  The \code{"moment"}
   method is based on the definitions of kurtosis for distributions and
   this method should be used when resampling (bootstrap or
-  jackknife). The \code{"fisher"} method correspond to the usual
-  "unbiased" definition of sample variance, although in the case of
+  jackknife). The \code{"fisher"} method corresponds to the usual
+  \dQuote{unbiased} definition of sample variance, although in the case of
   kurtosis exact unbiasedness is not possible.
   
   If \code{x} is numeric the kurtosis is computed according to the
@@ -81,13 +81,14 @@ kurtosis(x, \dots)
 
 \value{
     
-    a numeric value or vector with attribute \code{"method"} indicating
-    the method. 
+  a numeric value or vector with attribute \code{"method"} indicating
+  the method. For the data frame method the values are named using the
+  columns names.
     
 }
 
 \seealso{
-    \code{\link{skewness}}
+  \code{\link{skewness}}
 }
 
 \examples{   

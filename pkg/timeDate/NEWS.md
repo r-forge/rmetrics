@@ -1,5 +1,11 @@
 # timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
 
+- new function `pasteMat`, like `paste` but doesn't convvert `NA`s to the string
+  `"NA"` and keeps `NA`s in the output. Also, argument `sep` can be a
+  vector. Canbe useful when creating date-times from individual pieces which may
+  contain `NA`s, see examples for `timeDate()`.
+  
+
 - fixed minor typos in 'NEWS.md'
 
 
