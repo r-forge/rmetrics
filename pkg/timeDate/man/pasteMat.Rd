@@ -1,6 +1,8 @@
 \name{pasteMat}
 \alias{pasteMat}
 
+\concept{concatenate}
+
 \title{Concatenate matrix columns, keeping NAs}
 
 \description{
@@ -88,12 +90,4 @@ td2 <- timeDate(pasteMat(dts, tms), FinCenter = "Europe/Zurich")
 identical(td1, td2)                                                    
 td1                                                                       
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+\keyword{character}

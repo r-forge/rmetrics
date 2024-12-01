@@ -15,19 +15,8 @@
 # MA  02111-1307  USA
 
 
-################################################################################
-# FUNCTION:                 DESCRIPTION:
-#  myUnits                   Sets date units
-################################################################################
-
-
 .RmetricsOptions <- new.env(hash = TRUE)
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setRmetricsOptions <- function(...)
 {
     # A function implemented by Yohan Chalabi
@@ -46,12 +35,7 @@ setRmetricsOptions <- function(...)
     invisible(old)
 }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-getRmetricsOption <-
+getRmetricsOptions <-
     function(x = NULL, unset = "")
 {
     # A function implemented by Yohan Chalabi
@@ -62,13 +46,13 @@ getRmetricsOption <-
         ifnotfound = as.list(unset)))
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 # YC : 2009-10-06
 # kept for compatibility purpose but should be eventually deprecated
-getRmetricsOptions <- getRmetricsOption
-
-################################################################################
-
+##
+## GNB : 2024-12-01
+##    :TODO:
+##    timeSeries v4041.111 has a call to getRmetricsOption(),
+##    which I have changed in the devel version to getRmetricsOptions().
+##    When that is published, I can remove getRmetricsOption().
+##    (after some time: users who update timeDate but not timeSeries would be in trouble)
+getRmetricsOption <- getRmetricsOptions

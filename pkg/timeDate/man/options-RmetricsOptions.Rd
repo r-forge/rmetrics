@@ -1,8 +1,8 @@
 \name{RmetricsOptions}
 
 \alias{setRmetricsOptions}
-
 \alias{getRmetricsOptions}
+
 \alias{getRmetricsOption}
 
 
@@ -18,7 +18,7 @@
 
 \usage{
 setRmetricsOptions(\dots)
-getRmetricsOption(x, unset = "")
+getRmetricsOptions(x, unset = "")
 }
 
 \arguments{

@@ -32,10 +32,6 @@
 #  .sleap.year
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeNdayOnOrAfter <-
     function(charvec, nday = 1, format = "%Y-%m-%d", zone = "", FinCenter = "")
 {
@@ -84,11 +80,6 @@ timeNdayOnOrAfter <-
     timeDate(format(ct), format = format, zone = zone, FinCenter = FinCenter)
 }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeNdayOnOrBefore <-
     function(charvec, nday = 1, format = "%Y-%m-%d", zone = "", FinCenter = "")
 {
@@ -141,10 +132,6 @@ timeNdayOnOrBefore <-
 ##  We should check where these function are needed and if we should
 ##  replace them with 'timeDate' objects ...
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .on.or.after <-
 function(year, month, day, nday)
 {
@@ -152,10 +139,6 @@ function(year, month, day, nday)
     .sdate(.sjulian(.sdate)+(nday-.day.of.week(month, day, year)) %% 7)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .on.or.before <-
 function(year, month, day, nday)
 {
@@ -163,10 +146,6 @@ function(year, month, day, nday)
     .sdate(.sjulian(.sdate)-(-(nday-.day.of.week(month,day,year))) %% 7)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .nth.of.nday <-
 function(year, month, nday, nth)
 {
@@ -174,10 +153,6 @@ function(year, month, nday, nth)
     .sdate(.sjulian(.sdate)+(nth-1)*7+(nday-.day.of.week(month,1,year)) %% 7)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .last.of.nday <-
 function(year, month, lastday, nday)
 {
@@ -185,10 +160,6 @@ function(year, month, lastday, nday)
     .sdate(.sjulian(.sdate)-(-(nday-.day.of.week(month,lastday,year))) %% 7)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .sdate <-
 function (julians, origin = 19600101)
 {
@@ -201,10 +172,6 @@ function (julians, origin = 19600101)
     ans
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .month.day.year <-
 function(jul, origin = c(1, 1, 1960))
 {
@@ -227,10 +194,6 @@ function(jul, origin = c(1, 1, 1960))
     list(month = m, day = d, year = y)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .sjulian <-
 function (.sdates, origin = 19600101)
 {
@@ -245,10 +208,6 @@ function (.sdates, origin = 19600101)
     .JULIAN(month, day, year, origin = c(month0, day0, year0))
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .JULIAN <-
 function(m, d, y, origin = c(month = 1, day = 1, year = 1960))
 {
@@ -271,10 +230,6 @@ function(m, d, y, origin = c(month = 1, day = 1, year = 1960))
     out
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .sday.of.week <-
 function(.sdates)
 {
@@ -289,20 +244,12 @@ function(.sdates)
     (day + y + y %/% 4 - y %/% 100 + y %/% 400 + (31*m) %/% 12) %% 7
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .day.of.week <-
 function (month, day, year)
 {
     .sday.of.week(year * 10000 + month * 100 + day)
 }
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 .sleap.year <-
 function(.sdates)
 {

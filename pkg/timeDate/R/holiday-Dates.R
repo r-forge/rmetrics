@@ -408,16 +408,6 @@ function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop =
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
 }
 
-
-## added by GNB
-## TODO: it ignores, silently, the argument, not good?
-GBMilleniumDay =
-function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
-    .Deprecated("Use specialHolidayGB(1999)")
-    ans = 19991231
-    if(value == "timeDate") timeDate(as.character(ans))  else format..sdate(ans, ...)
-}
-
 .gb_oneoff_holidays <- c(
     "GBRoyalWeddingDay1981"        , "1981-07-29", # Royal wedding
     "GBMillenumDay"                , "1999-12-31", # UK millenum day
@@ -981,12 +971,6 @@ JPMarineDay <- function(year = getRmetricsOptions("currentYear"), value = "timeD
     }
 
     if(value == "timeDate") timeDate(ans)  else format..sdate(ans, ...)
-}
-
-## 2023-11-27 - deprecated;
-JPKeirouNOhi <- function(year = getRmetricsOptions("currentYear"), value = "timeDate", na_drop = TRUE, ...) {
-    .Deprecated("JPKeirouNoHi")
-    JPKeirouNoHi(year)
 }
 
 JPKeirouNoHi <-

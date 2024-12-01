@@ -18,14 +18,8 @@
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
 #  listFinCenter             Lists all supported financial centers
-# DEPRECATED:
-#  .FinCenterList            The list with FinCenter names
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 listFinCenter <-
     function(pattern = ".*")
 {
@@ -56,7 +50,7 @@ listFinCenter <-
     ##      see the end of timeDate-DaylightSavingTime.R
     ##
     ##      FinCenterList => .FinCenterList  (note the leading dot)
-    
+
     ##  "Pacific/Easter" is excluded as it is in conflict with the feast Easter.
     ## TODO: include it as "Easter_Island"?
 

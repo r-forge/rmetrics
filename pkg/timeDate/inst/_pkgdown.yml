@@ -42,6 +42,7 @@ reference:
       - rulesFinCenter
   - title: "Unclasssified"
     contents:
+      - pasteMat
       - .endpoints
   - title: "Base-R related"
     contents:

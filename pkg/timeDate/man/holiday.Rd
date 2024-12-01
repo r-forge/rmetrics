@@ -80,9 +80,9 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
     GBEarlyMayBankHoliday, GBSpringBankHoliday
     GBSummerBankHoliday, GBNewYearsEve.
 
-    (The deprecated GBMayDay and GBBankHoliday are still available but
-    strongly discouraged. Instead, use GBEarlyMayBankHoliday and
-    GBSpringBankHoliday, respectively)\cr
+    (GBMayDay and GBBankHoliday have been removed. Use
+    GBEarlyMayBankHoliday and GBSpringBankHoliday, respectively)
+    \cr
 
     
     \emph{DEFrankfurt - Public Holidays:} 

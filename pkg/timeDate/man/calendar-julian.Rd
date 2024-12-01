@@ -144,7 +144,7 @@
   is inconsistent with the other methods for months in base R (they
   return names of months). Returning a numeric vector when 'abbreviate'
   is missing is a temporary compromise, to avoid breaking old code but
-  this should be considered deprecated. Use `td$month` to get the
+  this should be considered deprecated. Use \code{td$month} to get the
   numbers.
   
 }

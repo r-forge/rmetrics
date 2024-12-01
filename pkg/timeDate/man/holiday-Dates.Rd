@@ -41,14 +41,11 @@
 \alias{CHConfederationDay}
 \alias{CHKnabenschiessen}
 
-\alias{GBMayDay}  % deprecated
 \alias{GBEarlyMayBankHoliday}
 
-\alias{GBBankHoliday} % deprecated
 \alias{GBSpringBankHoliday}
 
 \alias{GBSummerBankHoliday}
-\alias{GBMilleniumDay} % deprecated
 
 \alias{DEAscension}
 \alias{DECorpusChristi}
@@ -112,9 +109,8 @@
 \alias{JPMarineDay}
 \alias{JPUmiNoHi}
 \alias{JPRespectForTheAgedDay}
-\alias{JPKeirouNOhi}  % 2023-11-27 deprecated, obvious mis-capitalisation
-\alias{JPKeirouNoHi}  % 2023-11-27 new, replaces the above
-\alias{JPMountainDay} % 2023-11-27 new
+\alias{JPKeirouNoHi}
+\alias{JPMountainDay}
 \alias{JPAutumnalEquinox}
 \alias{JPShuubunNoHi}
 \alias{JPHealthandSportsDay}
@@ -575,8 +571,7 @@ InternationalWomensDay(year = getRmetricsOptions("currentYear"),
   act as if \code{na_drop} is a character string.
 
   
-  The deprecated \code{GBMayDay} and \code{GBBankHoliday} are still
-  available but strongly discouraged. Instead, use
+  \code{GBMayDay} and \code{GBBankHoliday} habe been removed. Use
   \code{GBEarlyMayBankHoliday} and \code{GBSpringBankHoliday},
   respectively.
 

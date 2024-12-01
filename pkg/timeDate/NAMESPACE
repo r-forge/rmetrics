@@ -132,9 +132,6 @@ export(
     pasteMat
 )
 
-export(GBBankHoliday) # deprecated, superseded by GBSpringBankHoliday
-export(GBMayDay) # deprecated, superseded by EarlyMayBankHoliday
-
 ## begin: holidays
 export(
     Advent1st,
@@ -183,7 +180,6 @@ export(
     FRFetDeLaVictoire1945,
     GBSpringBankHoliday,
     GBEarlyMayBankHoliday,
-    GBMilleniumDay, # deprecated
     specialHolidayGB,
     GBSummerBankHoliday,
     GoodFriday,
@@ -209,8 +205,7 @@ export(
     JPGantan,
     JPGreeneryDay,
     JPHealthandSportsDay,
-    JPKeirouNOhi,  # 2023-11-27 deprecated
-    JPKeirouNoHi,  # 2023-11-27 new, replaces the above
+    JPKeirouNoHi,
     JPKenkokuKinenNoHi,
     JPKenpouKinenBi,
     JPKinrouKanshaNoHi,

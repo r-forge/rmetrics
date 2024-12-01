@@ -250,10 +250,10 @@ test.holidayLONDON <- function() {
 
         ## https://www.gov.uk/bank-holidays#england-and-wales
         ## (downloaded on 2022-10-01, this is updated regularly
-        
+
         ph2017 <- c("2017-01-02", "2017-04-14", "2017-04-17", "2017-05-01",
                     "2017-05-29", "2017-08-28", "2017-12-25", "2017-12-26" )
-        
+
         ph2018 <- c("2018-01-01", "2018-03-30", "2018-04-02", "2018-05-07",
                     "2018-05-28", "2018-08-27", "2018-12-25", "2018-12-26" )
 
@@ -269,7 +269,7 @@ test.holidayLONDON <- function() {
         ## Queen's Platinum Jubilee; Quinn's death
         ph2022 <- c("2022-01-03", "2022-04-15", "2022-04-18", "2022-05-02",
                     "2022-06-02", "2022-06-03", "2022-08-29", "2022-09-19",
-                    "2022-12-26", "2022-12-27" ) 
+                    "2022-12-26", "2022-12-27" )
 
         ## Queen's Jubilee
         ph2002 <- c("2002-01-01", "2002-03-29", "2002-04-01", "2002-05-06",
@@ -289,13 +289,13 @@ test.holidayLONDON <- function() {
         checkTrue(all.equal(ph2002, format(holidayLONDON(2002))))
         checkTrue(all.equal(ph2012, format(holidayLONDON(2012))))
 
-        
-        checkTrue(format(GBMayDay(1995)) == "1995-05-08") # VE day that year
-        checkTrue(format(GBMayDay(2020)) == "2020-05-08") # VE day that year
 
-        checkTrue(format(GBBankHoliday(2002)) == "2002-06-03")
-        checkTrue(format(GBBankHoliday(2012)) == "2012-06-04")
-        checkTrue(format(GBBankHoliday(2022)) == "2022-06-02")
+        checkTrue(format(GBEarlyMayBankHoliday(1995)) == "1995-05-08") # VE day that year
+        checkTrue(format(GBEarlyMayBankHoliday(2020)) == "2020-05-08") # VE day that year
+
+        checkTrue(format(GBSpringBankHoliday(2002)) == "2002-06-03")
+        checkTrue(format(GBSpringBankHoliday(2012)) == "2012-06-04")
+        checkTrue(format(GBSpringBankHoliday(2022)) == "2022-06-02")
 
         ## millenium day was not included before v4021.107
         checkTrue(length(holidayLONDON(1999)) == 9)

@@ -134,9 +134,8 @@ listHolidays <- function(pattern = ".*") {
         "JPMarineDay",
         "JPUmiNoHi",
         "JPRespectForTheAgedDay",
-        ## "JPKeirouNOhi", # 2023-11-27 deprecated
-        "JPKeirouNoHi",    # 2023-11-27 new, replaces the above
-        "JPMountainDay",      # 2023-11-27 new
+        "JPKeirouNoHi",
+        "JPMountainDay",
         "JPAutumnalEquinox",
         "JPShuubunNoHi",
         "JPHealthandSportsDay",

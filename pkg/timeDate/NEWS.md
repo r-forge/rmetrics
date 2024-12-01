@@ -8,7 +8,13 @@
 
 - fixed minor typos in 'NEWS.md'
 
+- removed the deprecated `GBBankHoliday`, use `GBSpringBankHoliday` instead.
 
+- removed the deprecated `GBMayDay`,use `GBEarlyMayBankHoliday` instead.
+
+- removed the deprecated `GBMilleniumDay`, use `specialHolidayGB(1999)` instead.
+
+- removed the deprecated `JPKeirouNOhi`, use ``JPKeirouNoHi` instead.
 
 
 # timeDate 4041.110
