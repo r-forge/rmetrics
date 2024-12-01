@@ -167,7 +167,8 @@ julian(tC)[1:3]
 atoms(tC)
    
 ## months
-months(tC)
+tC$month   # recommended 1 to 12
+months(tC) # deprecated - will be changed to return month names, as base::months()
 
 weekdays(tC)
 weekdays(tC, TRUE)

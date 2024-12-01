@@ -21,10 +21,6 @@
 #  cut.timeDate              Extracts a piece from a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 window.timeDate <-
     function(x, start, end, ...)
 {
@@ -61,10 +57,6 @@ window.timeDate <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 cut.timeDate <-
     function(x, from , to, ...)
 {
@@ -84,7 +76,7 @@ cut.timeDate <-
     # FUNCTION:
 
     .Deprecated("window", "timeDate")
-    
+
     # Extract Subset:
     X = timeDate(x, zone = x@FinCenter, FinCenter = "GMT")
     FROM = timeDate(from, zone = x@FinCenter, FinCenter = "GMT")
@@ -98,4 +90,3 @@ cut.timeDate <-
 
 
 ################################################################################
-

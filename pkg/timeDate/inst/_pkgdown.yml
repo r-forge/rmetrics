@@ -151,7 +151,6 @@ reference:
       - GBEarlyMayBankHoliday
       - GBSpringBankHoliday
       - GBSummerBankHoliday
-      - GBMilleniumDay
       - DEAscension
       - DECorpusChristi
       - DEGermanUnity
@@ -214,7 +213,7 @@ reference:
       - JPMarineDay
       - JPUmiNoHi
       - JPRespectForTheAgedDay
-      - JPKeirouNOhi
+      - JPKeirouNoHi
       - JPAutumnalEquinox
       - JPShuubunNoHi
       - JPHealthandSportsDay
