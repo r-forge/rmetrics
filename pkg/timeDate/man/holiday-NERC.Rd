@@ -36,8 +36,25 @@ holidayNERC(year = getRmetricsOptions("currentYear"), FinCenter = "Eastern")
     http://www.nerc.com/~oc/offpeaks.html
 }
 
+\seealso{
+  \code{\link{holidayLONDON}},
+  \code{\link{holidayNYSE}},
+  \code{\link{holidayTSX}},
+  \code{\link{holidayZURICH}} for holidays at other major financial centers.
+
+  \code{\link{BoxingDay}}, etc., for descriptions of the individual
+  holiday functions,
+
+  \code{\link{listHolidays}} for a list (character vector) of all
+  holidays,
+
+  \code{\link{holiday}} alternative to calling directly individual
+  holiday functions (takes one or more holiday functions as argument),
+  
+  \code{\link{Easter}}
+}
+
 \examples{
-## holidayNERC
 holidayNERC()
 holidayNERC(2008:2010)
 }

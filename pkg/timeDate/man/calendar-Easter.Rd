@@ -52,6 +52,25 @@ Easter(year = getRmetricsOptions("currentYear"), shift = 0)
   Doesn't have options to compute Eastern Orthodox Easter dates.
 }
 
+\seealso{
+  \code{\link{BoxingDay}}, etc., for descriptions of the individual
+  holiday functions,
+
+  \code{\link{listHolidays}} for a list (character vector) of all
+  holidays,
+
+  \code{\link{holiday}} alternative to calling directly individual
+  holiday functions (takes one or more holiday functions as argument),
+  
+  % \code{\link{Easter}},
+
+  \code{\link{holidayLONDON}},
+  \code{\link{holidayNERC}},
+  \code{\link{holidayNYSE}},
+  \code{\link{holidayTSX}},
+  \code{\link{holidayZURICH}} for holidays at major financial centers.
+}
+
 \examples{
 ## Easter
 # current year

@@ -28,12 +28,30 @@ holidayZURICH(year = getRmetricsOptions("currentYear"))
 
 }
 
+\seealso{
+  \code{\link{holidayLONDON}},
+  \code{\link{holidayNERC}},
+  \code{\link{holidayNYSE}},
+  \code{\link{holidayTSX}},
+  for holidays at other major financial centers,
+
+  \code{\link{BoxingDay}}, etc., for descriptions of the individual
+  holiday functions,
+
+  \code{\link{listHolidays}} for a list (character vector) of all
+  holidays,
+
+  \code{\link{holiday}} alternative to calling directly individual
+  holiday functions (takes one or more holiday functions as argument),
+  
+  \code{\link{Easter}}
+}
+
 \value{
   an object of class \code{"timeDate"}
 }
 
 \examples{
-## holidayZURICH
 holidayZURICH()
 holidayZURICH(2008:2010)
 }

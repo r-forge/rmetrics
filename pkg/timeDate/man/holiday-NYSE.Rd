@@ -73,11 +73,27 @@ holidayNYSE(year = getRmetricsOptions("currentYear"),
 }
 
 \seealso{
-  \code{\link{earlyCloseNYSE}} for times of early closings
+  \code{\link{earlyCloseNYSE}} for times of early closings of NYSE,
+
+  \code{\link{holidayLONDON}},
+  \code{\link{holidayNERC}},
+  \code{\link{holidayTSX}},
+  \code{\link{holidayZURICH}} for holidays at other major financial centers,
+
+  \code{\link{BoxingDay}}, etc., for descriptions of the individual
+  holiday functions,
+
+  \code{\link{listHolidays}} for a list (character vector) of all
+  holidays,
+
+  \code{\link{holiday}} alternative to calling directly individual
+  holiday functions (takes one or more holiday functions as argument),
+  
+  \code{\link{Easter}}
 }
+
 \examples{
-## holidayNYSE
-holidayNYSE() ## current year
+holidayNYSE()  # current year
 holidayNYSE(2008:2010)
 
 ## January 2, 2007 was a memorial day for president G.R. Ford,

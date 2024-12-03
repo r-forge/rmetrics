@@ -136,6 +136,22 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
     JPMountainDay
 }
 
+\seealso{
+  \code{\link{BoxingDay}}, etc., for descriptions of the individual
+  holiday functions,
+
+  \code{\link{listHolidays}} for a list (character vector) of all
+  holidays,
+
+  \code{\link{Easter}},
+
+  \code{\link{holidayLONDON}},
+  \code{\link{holidayNERC}},
+  \code{\link{holidayNYSE}},
+  \code{\link{holidayTSX}},
+  \code{\link{holidayZURICH}} for holidays at major financial centers.
+}
+
 \examples{
 ## holiday
 # Dates for GoodFriday from 2000 until 2005:

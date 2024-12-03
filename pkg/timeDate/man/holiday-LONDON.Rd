@@ -47,8 +47,25 @@ holidayLONDON(year = getRmetricsOptions("currentYear"))
   amended, corrected and rewritten by Georgi N. Boshnakov
 }
 
+\seealso{
+  \code{\link{holidayNERC}},
+  \code{\link{holidayNYSE}},
+  \code{\link{holidayTSX}},
+  \code{\link{holidayZURICH}} for holidays at other major financial centers.
+
+  \code{\link{BoxingDay}}, etc., for descriptions of the individual
+  holiday functions,
+
+  \code{\link{listHolidays}} for a list (character vector) of all
+  holidays,
+
+  \code{\link{holiday}} alternative to calling directly individual
+  holiday functions (takes one or more holiday functions as argument),
+  
+  \code{\link{Easter}}
+}
+
 \examples{
-## holidayLONDON
 holidayLONDON()
 holidayLONDON(2008:2010)
 }
