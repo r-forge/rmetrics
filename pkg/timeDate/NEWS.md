@@ -1,12 +1,18 @@
 # timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
 
+- The functions `timeLastDayInMonth`, `timeFirstDayInMonth`,
+  `timeLastDayInQuarter`, `timeFirstDayInQuarter` `timeNthNdayInMonth`,
+  `timeLastNdayInMonth`, `timeNdayOnOrAfter` and `timeNdayOnOrBefore` are now
+  documented to accept `timeDate`, `POSIXlt`and other time-date objects (and
+  take into account their time zone). Previously, the first argument of these
+  functions was documented to be a character vector but they were silently
+  accepting time-date without checking the associated time zone. This could lead
+  to wrong results in some cases.
+
 - new function `pasteMat`, like `paste` but doesn't convvert `NA`s to the string
   `"NA"` and keeps `NA`s in the output. Also, argument `sep` can be a
   vector. Canbe useful when creating date-times from individual pieces which may
   contain `NA`s, see examples for `timeDate()`.
-  
-
-- fixed minor typos in 'NEWS.md'
 
 - removed the deprecated `GBBankHoliday`, use `GBSpringBankHoliday` instead.
 

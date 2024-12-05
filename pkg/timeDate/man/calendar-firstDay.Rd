@@ -32,7 +32,8 @@ timeLastDayInQuarter(charvec, format = "\%Y-\%m-\%d", zone = "",
 
 \arguments{
   \item{charvec}{
-    a character vector of dates and times.
+    a character vector or object from a class representing time,
+    such as \code{"timeDate"}, \code{"POSIXlt"}, etc.
   }
   \item{format}{
     the format specification of the input character vector.
@@ -48,11 +49,22 @@ timeLastDayInQuarter(charvec, format = "\%Y-\%m-\%d", zone = "",
 
 \details{
 
-  The functions \code{timeLastDayInMonth} and \code{timeLastDayInMonth}
-  return the last or first day, respectively, in a given month and year.
+  The functions \code{timeFirstDayInMonth} and \code{timeLastDayInMonth}
+  return the first or last day, respectively, in a given month and year.
     
   The same functionality for quarterly time horizons is returned by the
-  functions \code{timeLastDayInQuarter} and \code{timeLastDayInQuarter}.
+  functions \code{timeFirstDayInQuarter} and
+  \code{timeLastDayInQuarter}.
+
+  If argument \code{FinCenter} is missing or the empty string and the
+  object is from a time-date class, it is taken from slot
+  \code{"FinCenter"} (if charvec is \code{"timeDate"}) or from attribute
+  \code{"tzone"} (if from another time-date class and not NULL). If all
+  of this fails, \code{FinCenter} is obtained with
+  \code{\link{getRmetricsOptions}}.
+
+  If \code{zone} is missing or the empty string, it is set to (the
+  deduced value for) \code{FinCenter}.
 
 }
 
@@ -60,45 +72,40 @@ timeLastDayInQuarter(charvec, format = "\%Y-\%m-\%d", zone = "",
   an object of class \code{"timeDate"}
 }
 
+\seealso{
+  \code{\link{trunc.timeDate}},
+
+  \code{\link{timeFirstDayInMonth}},
+  \code{\link{timeLastDayInMonth}},
+  \code{\link{timeFirstDayInQuarter}},
+  \code{\link{timeLastDayInQuarter}},
+  
+  \code{\link{timeNthNdayInMonth}},
+  \code{\link{timeLastNdayInMonth}},
+
+  \code{\link{timeNdayOnOrAfter}},
+  \code{\link{timeNdayOnOrBefore}}
+}
+
 \examples{
 ## date as character string
-charvec = "2006-04-16"
-myFinCenter = getRmetricsOptions("myFinCenter")
+charvec <- "2006-04-16"
+myFinCenter <- getRmetricsOptions("myFinCenter")
 
-## timeLastDayInMonth
-# What date has the last day in a month for a given date?
+## What date has the last day in a month for a given date?
 timeLastDayInMonth(charvec, format = "\%Y-\%m-\%d", 
   zone = myFinCenter, FinCenter = myFinCenter)
 timeLastDayInMonth(charvec)
 timeLastDayInMonth(charvec, FinCenter = "Zurich")
    
-## timeFirstDayInMonth
-# What date has the first day in a month for a given date?
+## What date has the first day in a month for a given date?
 timeFirstDayInMonth(charvec)
     
-## timeLastDayInQuarter
-# What date has the last day in a quarter for a given date?
+## What date has the last day in a quarter for a given date?
 timeLastDayInQuarter(charvec)
     
-## timeFirstDayInQuarter
-# What date has the first day in a quarter for a given date?
+## What date has the first day in a quarter for a given date?
 timeFirstDayInQuarter(charvec)
-    
-## timeNdayOnOrAfter
-# What date has the first Monday on or after March 15, 1986?
-timeNdayOnOrAfter("1986-03-15", 1)
-    
-## timeNdayOnOrBefore
-# What date has Friday on or before April 22, 1977?
-timeNdayOnOrBefore("1986-03-15", 5)
-    
-## timeNthNdayInMonth
-# What date is the second Monday in April 2004?
-timeNthNdayInMonth("2004-04-01", 1, 2)
-    
-## timeLastNdayInMonth
-# What date has the last Tuesday in May, 1996?
-timeLastNdayInMonth("1996-05-01", 2)
 }
 
 \keyword{chron}

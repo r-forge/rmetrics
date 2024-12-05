@@ -20,15 +20,18 @@
 ##  timeLastNdayInMonth       Computes the last n-day in year/month
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeNthNdayInMonth <-
 function(charvec, nday = 1, nth = 1, format = "%Y-%m-%d",
     zone = "", FinCenter = "")
 {
     ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     ## Description:
     ##   Computes "nth" ocurrance of a "nday" (nth = 1,...,5)
@@ -51,10 +54,15 @@ function(charvec, nday = 1, nth = 1, format = "%Y-%m-%d",
     ##   What date is the second Monday in April 2004?
     ##   timeNthNdayInMonth("2004-04-01", 1, 2)
 
-    if (zone == "")
-    zone <- getRmetricsOptions("myFinCenter")
     if (FinCenter == "")
-    FinCenter <- getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     ## timeDate:
     lt <- strptime(charvec, format, tz = "GMT")
@@ -74,15 +82,18 @@ function(charvec, nday = 1, nth = 1, format = "%Y-%m-%d",
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeLastNdayInMonth <-
 function(charvec, nday = 1, format = "%Y-%m-%d", zone = "",
     FinCenter = "")
 {
     ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     ## Description:
     ##   Computes the last "nday" in "year/month"
@@ -103,10 +114,15 @@ function(charvec, nday = 1, format = "%Y-%m-%d", zone = "",
     ##   What date has the last Tuesday in May, 1996?
     ##   timeLastNdayInMonth("1996-05-01", 2)
 
-    if (zone == "")
-    zone <- getRmetricsOptions("myFinCenter")
     if (FinCenter == "")
-    FinCenter <- getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     ## Last Day:
     last.day <- c(31,28,31, 30,31,30, 31,31,30, 31,30,31)

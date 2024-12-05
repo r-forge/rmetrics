@@ -35,7 +35,14 @@
 timeNdayOnOrAfter <-
     function(charvec, nday = 1, format = "%Y-%m-%d", zone = "", FinCenter = "")
 {
-    # A function implemented by Diethelm Wuertz
+    ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     # Description:
     #   Computes date in month that is a n-day ON OR AFTER
@@ -64,10 +71,15 @@ timeNdayOnOrAfter <-
     #
 
     # FUNCTION:
-    if (zone == "")
-        zone <- getRmetricsOptions("myFinCenter")
     if (FinCenter == "")
-        FinCenter <- getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     # timeDate:
     lt <- strptime(charvec, format, tz = "GMT")
@@ -83,7 +95,14 @@ timeNdayOnOrAfter <-
 timeNdayOnOrBefore <-
     function(charvec, nday = 1, format = "%Y-%m-%d", zone = "", FinCenter = "")
 {
-    # A function implemented by Diethelm Wuertz
+    ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     # Description:
     #   Computes date in month that is a n-day ON OR BEFORE
@@ -105,10 +124,15 @@ timeNdayOnOrBefore <-
     #   What date has Friday on or before April 22, 1977?
 
     # FUNCTION:
-    if (zone == "")
-        zone <- getRmetricsOptions("myFinCenter")
     if (FinCenter == "")
-        FinCenter <- getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     # timeDate:
     lt <- strptime(charvec, format, tz = "GMT")
@@ -261,4 +285,3 @@ function(.sdates)
 
 
 ################################################################################
-

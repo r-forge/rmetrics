@@ -67,16 +67,16 @@ reference:
   - title: "Calendar related"
     contents:
       - julian
+      - isBizday
+      - isHoliday
+      - isWeekday
+      - isWeekend
       - dayOfWeek
       - dayOfYear
       - timeFirstDayInMonth
       - timeLastDayInMonth
       - timeFirstDayInQuarter
       - timeLastDayInQuarter 
-      - isBizday
-      - isHoliday
-      - isWeekday
-      - isWeekend
       - timeNthNdayInMonth
       - timeLastNdayInMonth
       - timeNdayOnOrAfter

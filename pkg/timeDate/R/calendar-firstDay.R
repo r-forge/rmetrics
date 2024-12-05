@@ -23,15 +23,18 @@
 #  timeFirstDayInQuarter     Computes the first day in a given quarter and year
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeLastDayInMonth <-
     function(charvec, format = "%Y-%m-%d", zone = "",
              FinCenter = "")
 {
     # A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     # Description:
     #   Computes the last day in a given month and year
@@ -48,10 +51,16 @@ timeLastDayInMonth <-
 
     # FUNCTION:
     if (length(charvec) == 0) stop("charvec must have length > 0")
-    if (zone == "")
-        zone = getRmetricsOptions("myFinCenter")
+
     if (FinCenter == "")
-        FinCenter = getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     # Last day of month:
     last.day = c(31,28,31, 30,31,30, 31,31,30, 31,30,31)
@@ -67,15 +76,18 @@ timeLastDayInMonth <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeFirstDayInMonth <-
     function(charvec, format = "%Y-%m-%d", zone = "",
              FinCenter = "")
 {
-    # A function implemented by Diethelm Wuertz
+    ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     # Description:
     #   Computes the first day in a given month and year
@@ -85,10 +97,16 @@ timeFirstDayInMonth <-
 
     # FUNCTION:
     if (length(charvec) == 0) stop("charvec must have length > 0")
-    if (zone == "")
-        zone = getRmetricsOptions("myFinCenter")
+
     if (FinCenter == "")
-        FinCenter = getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     # First Day In Month:
     lt = strptime(charvec, format, tz = "GMT")
@@ -100,25 +118,33 @@ timeFirstDayInMonth <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeLastDayInQuarter <-
     function(charvec, format = "%Y-%m-%d", zone = "",
              FinCenter = "")
 {
-    # A function implemented by Diethelm Wuertz
+    ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     # Description:
     #   Computes the last day in a given quarter and year
 
     # FUNCTION:
     if (length(charvec) == 0) stop("charvec must have length > 0")
-    if (zone == "")
-        zone = getRmetricsOptions("myFinCenter")
     if (FinCenter == "")
-        FinCenter = getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     # First Day in Month:
     charvec = timeFirstDayInMonth(charvec = charvec, format = format,
@@ -137,15 +163,18 @@ timeLastDayInQuarter <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeFirstDayInQuarter <-
     function(charvec, format = "%Y-%m-%d", zone = "",
              FinCenter = "")
 {
-    # A function implemented by Diethelm Wuertz
+    ## A function implemented by Diethelm Wuertz
+    ## Modified by GNB to use charvec@FinCenter if charvec is timeDate
+    ##     and FinCenter is missing or default. Also, use attribute "tzone"
+    ##     if the object is from another date-time class
+    ##
+    ##     The code worked with timeDate and other time-date objects before but
+    ##     could give surprising results when arguments FinCenter and/or zone
+    ##     were missing.
 
     # Description:
     #   Computes the first day in a given quarter and year
@@ -155,10 +184,16 @@ timeFirstDayInQuarter <-
 
     # FUNCTION:
     if (length(charvec) == 0) stop("charvec must have length > 0")
-    if (zone == "")
-        zone = getRmetricsOptions("myFinCenter")
+
     if (FinCenter == "")
-        FinCenter = getRmetricsOptions("myFinCenter")
+        FinCenter <- if(is(charvec, "timeDate"))
+                         charvec@FinCenter
+                     else if(!is.null(attr(charvec, "tzone")))
+                         attr(charvec, "tzone")
+                     else
+                         getRmetricsOptions("myFinCenter")
+    if (zone == "")
+        zone <- FinCenter
 
     # First Day in Month:
     charvec = timeFirstDayInMonth(charvec = charvec, format = format,
@@ -176,4 +211,3 @@ timeFirstDayInQuarter <-
 
 
 ################################################################################
-

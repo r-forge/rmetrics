@@ -26,7 +26,8 @@ timeNdayOnOrBefore(charvec, nday = 1, format = "\%Y-\%m-\%d",
 \arguments{
   
   \item{charvec}{
-    a character vector of dates and times.
+    a character vector or object from a class representing time,
+    such as \code{"timeDate"}, \code{"POSIXlt"}, etc.
   }
   \item{nday}{
     an integer vector with entries ranging from 
@@ -58,6 +59,18 @@ timeNdayOnOrBefore(charvec, nday = 1, format = "\%Y-\%m-\%d",
 
 \value{
   an object of class \code{"timeDate"}
+}
+
+\seealso{
+  \code{\link{trunc.timeDate}},
+
+  \code{\link{timeFirstDayInMonth}},
+  \code{\link{timeLastDayInMonth}},
+  \code{\link{timeFirstDayInQuarter}},
+  \code{\link{timeLastDayInQuarter}},
+  
+  \code{\link{timeNthNdayInMonth}},
+  \code{\link{timeLastNdayInMonth}},
 }
 
 \examples{

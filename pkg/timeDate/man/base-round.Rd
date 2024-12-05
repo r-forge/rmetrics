@@ -49,6 +49,19 @@
   an object of class \code{"timeDate"}
 }
 
+\seealso{
+  \code{\link{timeFirstDayInMonth}},
+  \code{\link{timeLastDayInMonth}},
+  \code{\link{timeFirstDayInQuarter}},
+  \code{\link{timeLastDayInQuarter}},
+  
+  \code{\link{timeNthNdayInMonth}},
+  \code{\link{timeLastNdayInMonth}},
+
+  \code{\link{timeNdayOnOrAfter}},
+  \code{\link{timeNdayOnOrBefore}}
+}
+
 \examples{
 ## round
 
