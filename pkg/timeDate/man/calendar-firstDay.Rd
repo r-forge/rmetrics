@@ -52,7 +52,7 @@ timeLastDayInQuarter(charvec, format = "\%Y-\%m-\%d", zone = "",
   The functions \code{timeFirstDayInMonth} and \code{timeLastDayInMonth}
   return the first or last day, respectively, in a given month and year.
     
-  The same functionality for quarterly time horizons is returned by the
+  The same functionality for quarterly time horizons is provided by the
   functions \code{timeFirstDayInQuarter} and
   \code{timeLastDayInQuarter}.
 

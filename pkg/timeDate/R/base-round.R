@@ -16,30 +16,21 @@
 
 
 ################################################################################
-# MEHODS:                   DESCRIPTION:
+# METHODS:                   DESCRIPTION:
 #  round.timeDate            Rounds objects of class 'timeDate'
 #  trunc.timeDate            Truncates objects of class 'timeDate'
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-round.timeDate <- function(x, digits = c("days", "hours", "mins"))
-{
-    # A function implemented by Diethelm Wuertz
-    # and modified by Yohan Chalabi
+round.timeDate <-
+function(x, digits = c("days", "hours", "mins", "secs", "months", "years")) {
+    ## A function implemented by Diethelm Wuertz;
+    ## modified by Yohan Chalabi and Georgi N. Boshnakov
 
-    # Note:
-    #   round.timeDate(x, units = c("days", "hours", "mins"))    # FAILS !!!
-
-    # FUNCTION:
-
-    # Get Units:
+    ## Get Units:
     units <- match.arg(digits)
     FinCenter <- finCenter(x)
 
-    # Use:
+    ## Use:
     lt <- round.POSIXt(as.POSIXlt(x, tz = "GMT"), units = units)
     ans <- timeDate(lt, zone = FinCenter, FinCenter = FinCenter)
 
@@ -48,34 +39,27 @@ round.timeDate <- function(x, digits = c("days", "hours", "mins"))
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-trunc.timeDate <- function(x, units = c("days", "hours", "mins"), ...)
-{
-    # A function implemented by Diethelm Wuertz
-    # and modified by Yohan Chalabi
+trunc.timeDate <-
+function(x, units = c("days", "hours", "mins", "secs", "months", "years"), ...) {
+    ## A function implemented by Diethelm Wuertz
+    ## modified by Yohan Chalabi and Georgi N. Boshnakov
 
-    # FUNCTION:
-
-    # Get Units:
+    ## Get Units:
     units = match.arg(units)
     FinCenter <- finCenter(x)
 
-    # Sorting under GMT is not what we want!
-    # GMT = timeDate(x, zone = x@FinCenter, FinCenter = "GMT")
-    # lt = trunc.POSIXt(GMT@Data, units = units)
-    # ans = timeDate(lt, zone = "GMT", FinCenter = x@FinCenter)
+    ## Sorting under GMT is not what we want!
+    ## GMT = timeDate(x, zone = x@FinCenter, FinCenter = "GMT")
+    ## lt = trunc.POSIXt(GMT@Data, units = units)
+    ## ans = timeDate(lt, zone = "GMT", FinCenter = x@FinCenter)
 
-    # Use:
+    ## Use:
     lt <- trunc.POSIXt(as.POSIXlt(x, tz = "GMT"), units = units)
     ans <- timeDate(lt, zone = FinCenter, FinCenter = FinCenter)
 
-    # Return Value:
+    ## Return Value:
     ans
 }
 
 
 ################################################################################
-

@@ -1,5 +1,9 @@
 # timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
 
+- the `"timeDate"` methods for `trunc` and `round` now support also units
+  "secs", "months" and "years". Previously only "days", "hours", "mins" were
+  supported.
+
 - The functions `timeLastDayInMonth`, `timeFirstDayInMonth`,
   `timeLastDayInQuarter`, `timeFirstDayInQuarter` `timeNthNdayInMonth`,
   `timeLastNdayInMonth`, `timeNdayOnOrAfter` and `timeNdayOnOrBefore` are now
