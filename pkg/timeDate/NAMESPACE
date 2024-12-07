@@ -68,6 +68,8 @@ S3method(frequency,timeDate)
 
 S3method(.DollarNames, timeDate)
 
+S3method(timeCeiling, POSIXt)
+S3method(timeCeiling, timeDate)
 
 exportClasses(timeDate)
 
@@ -129,7 +131,8 @@ export(
 
     earlyCloseNYSE,
     frequency,
-    pasteMat
+    pasteMat,
+    timeCeiling
 )
 
 ## begin: holidays

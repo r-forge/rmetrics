@@ -18,6 +18,9 @@
   vector. Canbe useful when creating date-times from individual pieces which may
   contain `NA`s, see examples for `timeDate()`.
 
+- fixed a bug in the internal function `.formatFinCenterNum()`, which sometimes
+  was causing `timeDate()` to throw error when there were `NA` date-times.
+
 - removed the deprecated `GBBankHoliday`, use `GBSpringBankHoliday` instead.
 
 - removed the deprecated `GBMayDay`,use `GBEarlyMayBankHoliday` instead.

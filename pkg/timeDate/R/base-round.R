@@ -62,4 +62,61 @@ function(x, units = c("days", "hours", "mins", "secs", "months", "years"), ...) 
 }
 
 
+## timeCeiling - new function with methods
+##     Author: Georgi N. Boshnakov
+timeCeiling <- function(x, ...)
+    UseMethod("timeCeiling")
+
+## based on base::round.POSIXt
+timeCeiling.POSIXt <-
+function (x, units = c("days", "hours", "mins", "secs", "months", "years"), ...) {
+    .set_x_to_l_or_u <- function(lx, ll, lu) {
+        tx <- unclass(as.POSIXct(lx))
+        tl <- unclass(as.POSIXct(ll))
+        up <- 0 != (tx - tl)
+
+        up <- !is.na(up) & up
+        y <- ll
+        y[up] <- lu[up]
+        y
+    }
+
+    units <- match.arg(units)
+
+    x <- as.POSIXlt(x)
+    ll <- trunc.POSIXt(x, units = units)
+
+    if (units == "months") {
+        lu <- ll
+        lu$mon <- lu$mon + 1L
+        .set_x_to_l_or_u(x, ll, lu)
+    }
+    else if (units == "years") {
+        lu <- ll
+        lu$year <- lu$year + 1L
+        .set_x_to_l_or_u(x, ll, lu)
+    }
+    else {
+        ## TODO: does this work around DST changes? Maybe need special treatment for days
+        ##                                          (and maybe for others, too)?
+        lu <- trunc.POSIXt(as.POSIXct(x) +                             #  86400 = 60 * 60 * 24
+                           switch(units, secs = 1, mins = 60, hours = 3600, days = 86400),
+                           units = units)
+        .set_x_to_l_or_u(x, ll, lu)
+    }
+}
+
+timeCeiling.timeDate <-
+function(x, units = c("days", "hours", "mins", "secs", "months", "years"), ...) {
+    ## A function implemented by Georgi N. Boshnakov
+
+    units = match.arg(units)
+    FinCenter <- finCenter(x)
+
+    lt <- timeCeiling.POSIXt(as.POSIXlt(x, tz = "GMT"), units = units)
+    ans <- timeDate(lt, zone = FinCenter, FinCenter = FinCenter)
+
+    ans
+}
+
 ################################################################################

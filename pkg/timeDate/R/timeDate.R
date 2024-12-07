@@ -379,8 +379,19 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
             ##
             ## TODO: check the fix? I have somewhat forgotten the details
             offSetIdx_minus1 <- offSetIdx - 1
-            if(any(offSetIdx_minus1 == 0))
-               offSetIdx_minus1[offSetIdx_minus1 == 0] <- 1
+
+            ## 2024-12-07: timeCeiling(Sofia_to_DSTa, "days") gives
+            ##    Error in if (any(offSetIdx_minus1 == 0)) offSetIdx_minus1[offSetIdx_minus1
+            ##    == : missing value where TRUE/FALSE needed
+            ##
+            ## > offSetIdx_minus1
+            ## [1] 16 NA 16 16 16
+            ##
+            ## so add na.rm = TRUE here:
+            ##    if(any(offSetIdx_minus1 == 0, na.rm = TRUE))
+            ##        offSetIdx_minus1[offSetIdx_minus1 == 0] <- 1
+            ## or, even better, drop the redundant 'if':
+            offSetIdx_minus1[offSetIdx_minus1 == 0] <- 1
 
             #dst_skip <- dst.list$offSet[offSetIdx][indx] - dst.list$offSet[offSetIdx - 1][indx]
             #adjust <- dst.list$offSet[offSetIdx][indx]
@@ -391,7 +402,11 @@ function(num, FinCenter, type = c("gmt2any", "any2gmt"), dst_gap = c("+", "-", "
             wrk <- num[indx] - adjust
             shifted_offset[indx] <- findInterval(wrk, dst.list$numeric)
             shifted_offset[shifted_offset < 1] <- 1
-            changed <- shifted_offset != offSetIdx
+            ## 2024-12-07:
+            ##       changed <- shifted_offset != offSetIdx
+            ## gives error below (in the assignment to num[changed]) if changed contains NAs
+            ## Use 'which()'
+            changed <- which(shifted_offset != offSetIdx)
 
             if(dst_gap == "+") {
                 #offSetIdx[changed] <- shifted_offset[changed]

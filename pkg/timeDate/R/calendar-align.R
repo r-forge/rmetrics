@@ -21,15 +21,11 @@
 #  align,ANY
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("align", "timeDate",
     function(x, by = "1d", offset = "0s")
 {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
-    
+
     # Description:
     #   Aligns a 'timeDate' object to regular time stamps
 
@@ -52,10 +48,6 @@ setMethod("align", "timeDate",
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("align", "ANY",
     function(x, y, xout, method = "linear", n = 50, rule = 1, f = 0,
     ties = mean, ...)
@@ -75,24 +67,20 @@ setMethod("align", "ANY",
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 alignDaily <-
-function(x, include.weekends=FALSE)
+function(x, include.weekends = FALSE)
 {
      # A function implemented by Diethelm Wuertz
-     
+
      # Description:
      #    Aligns a 'timeDate' object to end-of-day dates
-     
+
      # Arguments:
      #    x - a 'timeDate' object
      #    include.weekends - a logical, should weekends be included?
-     
+
      # FUNCTION:
-     
+
      # Align:
      if (include.weekends) {
          tD <- align(x)
@@ -100,7 +88,7 @@ function(x, include.weekends=FALSE)
          tD <- align(x)
          tD <- tD[isWeekday(tD)]
      }
-     
+
      # Return Value:
      tD
 }
@@ -108,24 +96,20 @@ function(x, include.weekends=FALSE)
 
 # ----------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-alignMonthly <- 
-function(x, include.weekends=FALSE)
+alignMonthly <-
+function(x, include.weekends = FALSE)
 {
     # A function implemented by Diethelm Wuertz
-    
+
     # Description:
     #    Aligns a 'timeDate' object to end of month dates
-     
+
     # Arguments:
     #    x - a 'timeDate' object
     #    include.weekends - a logical, should weekends be included?
-     
+
     # FUNCTION:
-    
+
     # Align:
     if (include.weekends) {
         tD <- timeLastDayInMonth(x)
@@ -133,30 +117,26 @@ function(x, include.weekends=FALSE)
         tD <- timeLastDayInMonth(x)
         tD[isWeekend(tD)] <- tD[isWeekend(tD)] - 24*3600
     }
-    
+
     # Return Value:
     tD
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-alignQuarterly <- 
-function(x, include.weekends=FALSE)
+alignQuarterly <-
+function(x, include.weekends = FALSE)
 {
     # A function implemented by Diethelm Wuertz
-    
+
     # Description:
     #    Aligns a 'timeDate' object to end-of-quarter dates
-    
+
     # Arguments:
     #    x - a 'timeDate' object
     #    include.weekends - a logical, should weekends be included?
-     
+
     # FUNCTION:
-    
+
     # Align:
     if (include.weekends) {
         tD <- timeLastDayInQuarter(x)
@@ -164,11 +144,10 @@ function(x, include.weekends=FALSE)
         tD <- timeLastDayInQuarter(x)
         tD[isWeekend(tD)] <- tD[isWeekend(tD)] - 24*3600
     }
-    
+
     # Return Value:
     tD
 }
 
 
 ###############################################################################
-

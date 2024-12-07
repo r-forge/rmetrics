@@ -27,14 +27,6 @@ reference:
       - sample
       - isRegular
       - blockStart
-  - title: "Time/date utilities"
-    contents:
-      - midnightStandard
-      - whichFormat
-  - title: "Statistical functions"
-    contents:
-      - skewness
-      - kurtosis
   - title: "Financial centers"
     contents:
       - finCenter
@@ -93,6 +85,14 @@ reference:
       - currentYear
       - myUnits
       - myFinCenter
+  - title: "Time/date utilities"
+    contents:
+      - midnightStandard
+      - whichFormat
+  - title: "Statistical functions"
+    contents:
+      - skewness
+      - kurtosis
   - title: "Holiday lists"
     contents:
       - holiday       
