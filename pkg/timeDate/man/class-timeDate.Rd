@@ -197,9 +197,11 @@
     \item{plot}{\code{signature(x = "timeDate")}:  }
     \item{points}{\code{signature(x = "timeDate")}:  }
     \item{lines}{\code{signature(x = "timeDate")}:  }
-    \item{abline}{\code{signature(a = "ANY", b = "ANY", h = "ANY", v ="timeDate")}: 
+    \item{abline}{\code{signature(a = "ANY", b = "ANY", h = "ANY", v = "timeDate")}:
       see \code{\link{plot-methods}}.
     }
+
+    \item{$}{\code{signature(x = "timeDate")}: ... }
 
     \item{[}{\code{signature(x = "timeDate", i = "ANY", j = "missing")}:  }
     \item{[}{\code{signature(x = "timeDate", i = "character", j = "missing")}:  }
@@ -215,10 +217,6 @@
     }
     
     \item{atoms}{\code{signature(x = "timeDate")}: }
-    \item{months}{\code{signature(x = "timeDate")}: }
-    \item{julian}{\code{signature(x = "timeDate")}:
-      see \code{\link{julian}}.
-    }
 
     \item{align}{\code{signature(x = "timeDate")}:
       see \code{\link{align}}.

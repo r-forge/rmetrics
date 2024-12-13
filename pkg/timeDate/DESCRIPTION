@@ -21,7 +21,7 @@ Description: The 'timeDate' class fulfils the conventions of the ISO 8601
 	centers changed day light saving times at different calendar
 	dates.
 Depends: R (>= 3.6.0), methods
-Imports: graphics, utils, stats
+Imports: graphics, utils, stats, generics
 Suggests: RUnit
 License: GPL (>= 2)
 Encoding: UTF-8

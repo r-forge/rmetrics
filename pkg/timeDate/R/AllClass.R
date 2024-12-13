@@ -33,8 +33,13 @@
 #  setMethod inti           'initialize', 'timeDate
 ################################################################################
 
+## ISO Date/Time Format:
+.isoDate   <- "%Y-%m-%d"
+.isoFormat <- "%Y-%m-%d %H:%M:%S"
+
 setClass("timeDate",
-         # A class implemented by Diethelm Wuertz and Yohan Chalabi
+         ## A class implemented by Diethelm Wuertz and Yohan Chalabi
+         ## Modified by Georgi N. Boshnakov (added prototype)
 
          # Description:
          #   Class representatation for 'timeDate' Objects.
@@ -43,6 +48,9 @@ setClass("timeDate",
          slots = c(Data = "POSIXct",
                    format = "character",
                    FinCenter = "character"),
+         prototype = list(Data = .POSIXct(numeric(0), tz = "GMT"),
+                          format = "", # .isoFormat ?
+                          FinCenter = "GMT"),
          validity = function(object) {
              if(!identical(attr(object@Data, "tzone"), "GMT"))
                  return("@Data must be in \"GMT\" timezone.")
@@ -54,33 +62,65 @@ setClass("timeDate",
 
 
 setMethod("initialize", "timeDate", function(.Object, ...) {
-
+    ## 2024-12-12 GNB: streamline somewhat; also drop the 'if(all(is.na(num)))'
+    ##     clause since now 'format' is set to "" by callNextMethod(), see the
+    ##     new 'prototype' in setClass() above
     .Object <- callNextMethod()
 
-    # if not arguments are passed in ..., do not try to define format
-    # of @Data
-    if (length(list(...))) {
+    ## if no arguments are passed in ..., do not try to define format of @Data
+    if (...length()) {  # 2024-12-12 was: length(list(...))
 
-        # ISO Date/Time Format:
-        isoDate   <- "%Y-%m-%d"
-        isoFormat <- "%Y-%m-%d %H:%M:%S"
-
-        # extract numerical value
+        ## extract numerical value, drop time zone
         num <- c(unclass(.Object@Data))
 
-        if (all(is.na(num))) {
-            # no need to look for a format if @Data has only NA's
-            .Object@format <- character(1)
-        } else {
-            # convert - DST
+        ## don't look for a format if @Data has only NA's
+        ## 2024-12-12: was    if (!all(is.na(num)))
+        if (.Object@format == "" && any(fin <- is.finite(num))) {
+            ## convert - DST
             num <- .formatFinCenterNum(num, .Object@FinCenter, "gmt2any")
 
-            # check if num is a multiple of days
-            test <- !(abs(num %% 86400) > 0)
-            .Object@format <- ifelse(all(na.omit(test)), isoDate, isoFormat)
+            ## check if num is a multiple of days
+            ## GNB: the curious !(abs(.) > 0), instead of just . == 0, seems to be to cater for NA's
+            ##      (-Inf %% 86400 gives NaN and abs(NaN) seems to give NA.
+            ##      But NA and NaN are not guaranteed in arithmetic operations, see ?is.na
+            ##   test <- !(abs(num %% 86400) > 0)
+            ##   .Object@format <- ifelse(all(na.omit(test)), .isoDate, .isoFormat)
+            ##
+            ## This modification changes the format below
+
+            ## test <- (num %% 86400) == 0
+            ## .Object@format <- if(all(test[is.finite(test)])) .isoDate else .isoFormat
+            ## NOTE: num here is different from the one used to compute 'fin',
+            ## TODO: can .formatFinCenterNum change some fin to infinite?
+            test <- all((num[fin] %% 86400) == 0)
+            .Object@format <- if(test) .isoDate else .isoFormat
         }
     }
     .Object
 })
 
 ################################################################################
+
+## the classes below are by Georgi N. Boshnakov
+
+## TODO: for now just create generator functions by assigning the result of SetClass
+
+setClass("timeInterval", slots = c(left = "timeDate", right = "timeDate"))
+
+setMethod("initialize", "timeInterval", function(.Object, ...) {
+    .Object <- callNextMethod()
+
+    wrk <- .make_disjoint(.Object@left, .Object@right)
+
+    .Object@left <- wrk[[1]]
+    .Object@right <- wrk[[2]]
+
+    .Object
+})
+
+
+
+
+timeIntervalVector <- setClass("timeIntervalVector", slots = c(left = "timeDate", right = "timeDate", strict = "logical"))
+
+timeIntervalList <- setClass("timeIntervalList", slots = c(left = "list", right = "list", strict = "logical"))

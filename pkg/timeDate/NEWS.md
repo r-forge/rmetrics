@@ -1,5 +1,14 @@
 # timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
 
+- the prototype class "timeDate" now sets admissible values for the slots. The
+  previous defaults (e.g., `character(0)` for slots 'format' and 'FinCenter')
+  were causing minor problems in rare cases.
+
+- streamlined the initialisation method of "timeDate". This changes lot 'format'
+  in some inconsequential cases involving `Inf` (e.g.,
+  `timeDate(.POSIXct(-Inf))@format` was `"%Y-%m-%d"` but now is "%Y-%m-%d
+  %H:%M:%S", which even seems more appropriate).
+
 - the `"timeDate"` methods for `trunc` and `round` now support also units
   "secs", "months" and "years". Previously only "days", "hours", "mins" were
   supported.
