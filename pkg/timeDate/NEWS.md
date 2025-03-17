@@ -1,13 +1,15 @@
 # timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
 
-- the prototype class "timeDate" now sets admissible values for the slots. The
-  previous defaults (e.g., `character(0)` for slots 'format' and 'FinCenter')
-  were causing minor problems in rare cases.
+- new class `"timeInterval"` represents (union of) time intervals.
 
-- streamlined the initialisation method of "timeDate". This changes lot 'format'
-  in some inconsequential cases involving `Inf` (e.g.,
-  `timeDate(.POSIXct(-Inf))@format` was `"%Y-%m-%d"` but now is "%Y-%m-%d
-  %H:%M:%S", which even seems more appropriate).
+- the prototype of class "timeDate" now sets admissible values for the
+  slots. The previous defaults (e.g., `character(0)` for slots 'format' and
+  'FinCenter') were causing minor problems in rare cases.
+
+- streamlined the initialisation method of "timeDate". This changes slot
+  'format' in some inconsequential cases involving `Inf` (e.g.,
+  `timeDate(.POSIXct(-Inf))@format` was `"%Y-%m-%d"` but now is 
+  "%Y-%m-%d %H:%M:%S", which even seems more appropriate).
 
 - the `"timeDate"` methods for `trunc` and `round` now support also units
   "secs", "months" and "years". Previously only "days", "hours", "mins" were
@@ -22,17 +24,17 @@
   accepting time-date without checking the associated time zone. This could lead
   to wrong results in some cases.
 
-- new function `pasteMat`, like `paste` but doesn't convvert `NA`s to the string
+- new function `pasteMat`, like `paste` but doesn't convert `NA`s to the string
   `"NA"` and keeps `NA`s in the output. Also, argument `sep` can be a
-  vector. Canbe useful when creating date-times from individual pieces which may
-  contain `NA`s, see examples for `timeDate()`.
+  vector. Can be useful when creating date-times from individual pieces which
+  may contain `NA`s, see examples for `timeDate()`.
 
 - fixed a bug in the internal function `.formatFinCenterNum()`, which sometimes
   was causing `timeDate()` to throw error when there were `NA` date-times.
 
 - removed the deprecated `GBBankHoliday`, use `GBSpringBankHoliday` instead.
 
-- removed the deprecated `GBMayDay`,use `GBEarlyMayBankHoliday` instead.
+- removed the deprecated `GBMayDay`, use `GBEarlyMayBankHoliday` instead.
 
 - removed the deprecated `GBMilleniumDay`, use `specialHolidayGB(1999)` instead.
 

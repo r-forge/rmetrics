@@ -75,8 +75,9 @@ S3method(timeCeiling, POSIXt)
 S3method(timeCeiling, timeDate)
 
 S3method(union, timeInterval)
+S3method(intersect, timeInterval)
 
-exportClasses(timeDate)
+exportClasses(timeDate, timeInterval)
 
 exportMethods(
     "+", "-", Ops,
@@ -93,7 +94,8 @@ exportMethods(
     names,
     sample,
     show,
-    timeDate
+    timeDate,
+    timeInterval
 )
 
 export(
@@ -137,7 +139,8 @@ export(
     earlyCloseNYSE,
     frequency,
     pasteMat,
-    timeCeiling
+    timeCeiling,
+    timeInterval
 )
 
 ## begin: holidays

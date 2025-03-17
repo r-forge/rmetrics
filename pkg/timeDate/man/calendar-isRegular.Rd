@@ -22,7 +22,8 @@
 
   Checks if a date/time vector is regular. i.e. if it is a daily, a
   monthly, or a quarterly date/time vector. If the date/time vector is
-  regular the frequency can determined calling the function frequency.
+  regular the frequency can be determined calling the function
+  frequency.
   
 }
 
@@ -47,13 +48,13 @@
 
 \details{
 
-  A date/time vector is defined as daily if the vector has not more 
+  A date/time vector is defined as daily if the vector has no more 
   than one date/time stamp per day.
   
-  A date/time vector is defined as monthly if the vector has not more 
+  A date/time vector is defined as monthly if the vector has no more 
   than one date/time stamp per month.
   
-  A date/time vector is defined as quarterly if the vector has not more 
+  A date/time vector is defined as quarterly if the vector has no more 
   than one date/time stamp per quarter.
   
   A monthly date/time vector is also a daily vector, a quarterly date/time

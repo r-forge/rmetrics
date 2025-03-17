@@ -23,25 +23,35 @@ difftimeDate(time1, time2,
   }
 }
 
-\value{
+\details{
 
-  \code{difftimeDate}, takes a difference of two \code{"timeDate"}
+  \code{difftimeDate} is analogous to \code{base::difftime} for
+  \code{"timeDate"} arguments.
+
+  \code{difftimeDate} takes a difference of two \code{"timeDate"}
   objects and returns an object of class \code{"difftime"} with an
   attribute indicating the units.
+  
+}
+
+\value{
+
+  an object of class \code{"difftime"} with an attribute indicating the
+  units
 
 }
 
+\seealso{
+  \code{\link{difftime}},
+  
+  \code{\link{diff.timeDate}} for differencing a \code{"timeDate"} object.
+}
+
 \examples{
-## create character vectors
-dts = c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
-dts
-   
-## timeDate
-GMT = timeDate(dts, zone = "GMT", FinCenter = "GMT") 
+dts <- c("1989-09-28", "2001-01-15", "2004-08-30", "1990-02-09")
+GMT <- timeDate(dts, zone = "GMT", FinCenter = "GMT") 
 GMT
 
-## diff
-# suitably lagged and iterated differences
 difftimeDate(GMT[1:2], GMT[-(1:2)])  
 }
 
