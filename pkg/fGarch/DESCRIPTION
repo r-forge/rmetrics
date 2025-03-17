@@ -4,12 +4,14 @@ Version: 4040.92.9000
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
-	   , person("Martin","Maechler", role="aut", email="maechler@stat.math.ethz.ch", comment = c(ORCID = "0000-0002-8685-9910"))
+	   , person("Martin","Maechler", role="aut", email="maechler@stat.math.ethz.ch",
+	            comment = c(ORCID = "0000-0002-8685-9910"))
 	   , person("Chris", "Boudt", role = "ctb")
 	   , person("Pierre", "Chausse", role = "ctb")
 	   , person("Michal", "Miklovac", role = "ctb")
 	   , person(given = c("Georgi", "N."), family = "Boshnakov", 
-                    role = c("aut", "cre"), email = "georgi.boshnakov@manchester.ac.uk") )
+                    role = c("aut", "cre"), email = "georgi.boshnakov@manchester.ac.uk",
+		    comment = c(ORCID = "0000-0003-2839-346X")) )
 Description: Analyze and model heteroskedastic behavior in financial time series.
 Imports: fBasics, timeDate, timeSeries, fastICA, Matrix (>= 1.5-0), cvar (>= 0.5),
          graphics, methods, stats, utils
