@@ -1,3 +1,8 @@
+## timeSeries 4041.111.9000
+
+- changed a call of `getRmetricsOption` to `getRmetricsOptions`.
+
+
 ## timeSeries 4041.111
 
 - now 'timeSeries' depends on 'timeDate' version 4041.110 or later.  If you have
