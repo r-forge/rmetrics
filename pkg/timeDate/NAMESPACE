@@ -35,7 +35,10 @@ S3method(c,timeDate)
 S3method(cut,timeDate)
 S3method(diff,timeDate)
 S3method(end,timeDate)
+
 S3method(format,timeDate)
+S3method(format,timeInterval)
+
 S3method(kurtosis,POSIXct)
 S3method(kurtosis,POSIXlt)
 S3method(kurtosis,data.frame)

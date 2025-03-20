@@ -68,8 +68,8 @@ timeInterval(left, right, ...)
     \item{\code{signature(left = "missing", right = "Date")}}{
 
       a time interval, aligned at \code{unit}, just to the left of the
-      gien date-times. For \code{unit = "days"}, the result is the day
-      before.
+      given date-times. For example, for \code{unit = "days"}, the
+      result is the day before.
       
     }
 

@@ -18,12 +18,9 @@
 ################################################################################
 # FUNCTION:                 DESCRIPTION:
 #  format.timeDate           Formats 'timeDate' as ISO conform string
+#  format.timeInterval       Formats 'timeInterval'
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 format.timeDate <- function(x, format = "", tz = "", usetz = FALSE, ...)
 {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
@@ -52,6 +49,15 @@ format.timeDate <- function(x, format = "", tz = "", usetz = FALSE, ...)
 
     # Return Value:
     ans
+}
+
+format.timeInterval <- function(x, ...)
+{
+    ## A function implemented by Georgi N. Boshnakov
+    le <- format.timeDate(x@left, ...)
+    ri <- format.timeDate(x@right, ...)
+
+    paste0("[", le, " -- ", ri, ")")
 }
 
 ################################################################################

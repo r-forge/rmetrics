@@ -20,10 +20,6 @@
 #  show.timeDate             Prints 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("show", "timeDate", function (object)
 {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
@@ -62,5 +58,47 @@ setMethod("show", "timeDate", function (object)
     invisible(NULL) # 'show' returns an invisible 'NULL'. (cf. ?show)
 })
 
+setMethod("show", "timeInterval", function (object)
+{
+    ## A function implemented by Georgi N. Boshnakov
+    ##            (modelled after show.timeDate)
+
+    if ((len <- length(object@left)) == 0) {
+        cat(finCenter(object@left), "\n", sep = "")
+        cat(class(object), "of length 0", "\n")
+        return(invisible(NULL))
+    }
+    # Check records to get printed:
+    maxRmetrics <- as.numeric(getRmetricsOptions("max.print"))
+    maxR <- as.numeric(getOption("max.print"))
+    max <- min(na.omit(c(maxRmetrics, maxR, Inf)))
+    #-> Inf to cast case when maxRmetrics and maxR are NULL
+
+    if (ptest <- ((omitted <- length(object@left) - max) > 0)){
+        object@left <- object@left[1:max]
+        object@right <- object@right[1:max]
+    }
+
+    output <- format(object)
+    layout <- output
+    if(!is.null(names(output)))
+        layout <- paste0(names(output), "\t", layout)
+
+    ## Print Results:
+    if(len > 1)
+        cat("union of", len, "time intervals\n")
+    else
+        cat("simple time interval\n")
+
+    cat(finCenter(object@left), "\n", sep = "")
+    cat(layout, sep = "\n")
+
+    # print message
+    if (ptest)
+        cat(gettextf("...\n [ reached getRmetricsOption('max.print') | getOption('max.print') -- omitted %i rows ]]\n", omitted))
+
+    # Return Value:
+    invisible(NULL) # 'show' returns an invisible 'NULL'. (cf. ?show)
+})
 
 ################################################################################
