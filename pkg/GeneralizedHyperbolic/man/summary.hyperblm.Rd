@@ -41,14 +41,15 @@
   hessian matrix is not stable for such complex optimization. The first
   approach is by approximated hessian matrix. The setting in the
   argument list is \code{hessian = TRUE}. The Hessian matrix is
-  approximated by function \code{\link{tsHessian}}. However it may not
-  be reliable for some error distribution parameters, for instance, the
-  function obtains negative variance from the Hessian matrix. The second
-  approach is by parametric bootstrapping. The setting in the argument
-  list is \code{hessian = FALSE} which is also the default setting. The
-  default number of bootstrap stimulations is 1000, but users can
-  increase this when accuracy has priority over efficiency. Although the
-  bootstrapping is fairly slow, it provides reliable standard errors.
+  approximated by function \code{\link[DistributionUtils]{tsHessian}}.
+  However it may not be reliable for some error distribution parameters,
+  for instance, the function obtains negative variance from the Hessian
+  matrix. The second approach is by parametric bootstrapping. The
+  setting in the argument list is \code{hessian = FALSE} which is also
+  the default setting. The default number of bootstrap stimulations is
+  1000, but users can increase this when accuracy has priority over
+  efficiency. Although the bootstrapping is fairly slow, it provides
+  reliable standard errors.
 }
 
 \value{
@@ -136,7 +137,7 @@
   histgram of residuals with error distribution density curve on top, a
   histgram of log residuals with error distribution error density curve
   on top and a QQ plot.
-  \code{\link{tsHessian}}
+  \code{\link[DistributionUtils]{tsHessian}}
 }
 
 \examples{

@@ -16,12 +16,11 @@ importFrom("stats", ".getXlevels", "coef", "constrOptim", "density",
            "var")
 importFrom("utils", "data")
 
-
 importFrom("MASS", fitdistr)
 
-import(DistributionUtils)
-# FIXME:
-# importFrom("DistributionUtils", .....)
+importFrom("DistributionUtils", tsHessian, logHist, besselRatio,
+           is.wholenumber, momChangeAbout, kurtosis, skewness,
+           incompleteBesselK)
 
 ################################################
 ## S3 classes
