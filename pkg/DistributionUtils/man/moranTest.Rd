@@ -33,8 +33,8 @@ moranTest(x, densFn, param = NULL, ...)
   \deqn{T(\hat \theta)=(M(\hat
     \theta)+1/2k-C_1)/C_2}{T(thetahat)=(M(thetahat)+1/2k-C1)/C2}
   Where \eqn{M(\hat \theta)}, the Moran statistic, is
-  \deqn{M(\theta)=-(log(y_1-y_0)+log(y_2-y_1)+...+log(y_m-y_{m-1}))}
-  {M(theta)=-(log(y_1-y_0)+log(y_2-y_1)+...+log(y_m-y_m-1))}
+  \deqn{M(\theta)=-(\log(y_1-y_0)+\log(y_2-y_1)+\dots+\log(y_m-y_{m-1}))}{%
+    M(theta)=-(log(y_1-y_0)+log(y_2-y_1)+...+log(y_m-y_m-1))}
 
   This test has null hypothesis:
   \eqn{H_0}{H_0} : a random sample of \eqn{n} values of \eqn{x} comes

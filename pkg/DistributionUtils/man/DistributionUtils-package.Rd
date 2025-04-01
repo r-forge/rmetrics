@@ -26,7 +26,7 @@ Maintainer: David Scott <d.scott@auckland.ac.nz>
 
 }
 \references{
-  Scott, David J. and \enc{Würtz}{Wuertz}, Diethelm and Dong, Christine
+  Scott, David J. and \enc{WÃ¼rtz}{Wuertz}, Diethelm and Dong, Christine
   (2009) Software for Distributions in R. UseR: The R User
   Conference 2009
   \url{https://www.r-project.org/conferences/useR-2009/slides/Scott+Wuertz+Dong.pdf}

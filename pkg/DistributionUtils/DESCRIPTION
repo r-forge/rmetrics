@@ -1,12 +1,15 @@
 Package: DistributionUtils
-Version: 0.6-1
-Date: 2023-08-22
+Version: 0.6-2
+Date: 2025-03-29
 Title: Distribution Utilities
-Author: David Scott <d.scott@auckland.ac.nz>
+Authors@R: person(given = "David",
+                  family = "Scott",
+                  role = c("aut", "cre"),
+                  email = "d.scott@auckland.ac.nz")
 Maintainer: David Scott <d.scott@auckland.ac.nz>
 Depends: R (>= 3.0.1)
 Suggests: GeneralizedHyperbolic, VarianceGamma, SkewHyperbolic, RUnit
-Encoding: latin1
+Encoding: UTF-8
 Description: Utilities are provided which are of use in the
     packages I have developed for dealing with
     distributions. Currently these packages are GeneralizedHyperbolic,

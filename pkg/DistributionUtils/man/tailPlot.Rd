@@ -82,13 +82,13 @@ gammaTailPlotLine(x, shape = 1, rate = 1, scale = 1/rate,
 \value{Returns \code{NULL} invisibly.
 }
 \references{
-  Aas, Kjersti and \enc{Hobæk}{Hobaek} Haff, Ingrid (2006)
+  Aas, Kjersti and \enc{HobÃ¦k}{Hobaek} Haff, Ingrid (2006)
   The generalised hyperbolic skew Student's \eqn{t}-distribution.
   \emph{Journal of Financial Econometrics}, \bold{4}, 275--309.
 
   Resnick, S. (2007) \emph{Heavy-Tail Phenomena}, New York: Springer.
 
-  Scott, David J. and \enc{Würtz}{Wuertz}, Diethelm and Dong, Christine
+  Scott, David J. and \enc{WÃ¼rtz}{Wuertz}, Diethelm and Dong, Christine
   (2009) Software for Distributions in R. UseR: The R User
   Conference 2009
   \url{https://www.r-project.org/conferences/useR-2009/slides/Scott+Wuertz+Dong.pdf}
