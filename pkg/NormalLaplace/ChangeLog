@@ -1,3 +1,12 @@
+2025-03-28    <d.scott@auckland.ac.nz>
+
+	* DESCRIPTION changed to add Authors@R field instead of Author
+
+	* nlFit.Rd changed \link{logHist} to
+	\link[DistributionUtils]{logHist}
+
+	* Version 0.3-2 submitted to CRAN
+
 2024-06-25    <d.scott@auckland.ac.nz>
 
 	* rnl change to fix mean which should be mu, but was always 0

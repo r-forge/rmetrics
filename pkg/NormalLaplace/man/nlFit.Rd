@@ -139,7 +139,8 @@
 
 \seealso{
   \code{\link{optim}}, \code{\link{nlm}}, \code{\link{par}},
-  \code{\link{hist}}, \code{\link{logHist}}, \code{\link{qqnl}},
+  \code{\link{hist}}, \code{\link[DistributionUtils]{logHist}},
+  \code{\link{qqnl}},
   \code{\link{ppnl}}, \code{\link{dnl}} and
   \code{\link{nlFitStart}}.
 }
