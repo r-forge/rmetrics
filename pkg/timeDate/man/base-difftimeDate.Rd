@@ -15,7 +15,7 @@ difftimeDate(time1, time2,
 
 \arguments{
   \item{time1, time2}{
-    two objects objects of class \code{"timeDate"}.
+    two objects of class \code{"timeDate"}.
   }
   \item{units}{
     a character string denoting the date/time units in which the 

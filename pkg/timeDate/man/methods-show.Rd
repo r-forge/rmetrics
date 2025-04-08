@@ -3,9 +3,8 @@
 
 \docType{methods}
 
-\alias{show,ANY-method}
 \alias{show,timeDate-method}
-\alias{show.timeDate}
+\alias{show,timeInterval-method}
 
 
 \title{Show methods}
@@ -16,13 +15,12 @@
 
 \section{Methods}{
   \describe{
-
-    \item{object = "ANY"}{
-      Generic function.
+    \item{\code{signature(object = "timeDate")}}{
+	Print function for objects of class \code{"timeDate"}.
     }
-    \item{object = "timeDate"}{
-      Print function for objects of class \code{"timeDate"}.
-    } 
+    \item{\code{signature(object = "timeInterval")}}{
+	%%  ~~describe this method here~~
+    }
   }
 }
 

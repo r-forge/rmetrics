@@ -32,6 +32,10 @@ reference:
       - finCenter
       - listFinCenter
       - rulesFinCenter
+  - title: "Time intervals"
+    contents:
+      - "timeInterval-class"
+      - "timeInterval-methods"
   - title: "Unclasssified"
     contents:
       - pasteMat

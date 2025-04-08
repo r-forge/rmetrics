@@ -44,7 +44,8 @@ appreciated. The current code treats it as \eqn{[-\infty, b)}.
   \describe{
     \item{initialize}{\code{signature(.Object = "timeInterval")}: ... }
     \item{timeInterval}{\code{signature(left = "timeInterval", right = "missing")}: ... }
-	 }
+	 
+    \item{show}{\code{signature(object = "timeInterval")}: ... }}
 }
 
 \author{

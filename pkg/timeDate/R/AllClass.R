@@ -109,7 +109,7 @@ setClass("timeInterval", slots = c(left = "timeDate", right = "timeDate"))
 
 setMethod("initialize", "timeInterval", function(.Object, ...) {
     .Object <- callNextMethod()
-
+#browser()
     wrk <- .make_disjoint(.Object@left, .Object@right)
 
     .Object@left <- wrk[[1]]

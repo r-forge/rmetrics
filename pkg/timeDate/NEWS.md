@@ -49,8 +49,8 @@
   `td$year`, `td$month`, and `td$sec`, respectively. In interactive sessions
   completion is supported, usually by hitting the 'TAB' key.
 
-- new timeDate methods for the base R functions `quarters` and `weekdays` (they
-  return character vectors of names).
+- new` timeDate` methods for the base R functions `quarters` and `weekdays`
+  (they return character vectors of names).
 
 - new `timeDate` method for `months` returning a character vector. For now, a
   character vector will be returned only if argument 'abbreviate' is set

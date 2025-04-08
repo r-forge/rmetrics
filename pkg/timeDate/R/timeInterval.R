@@ -50,8 +50,11 @@
     list(left, right)
 }
 
+intersect.timeInterval <-
+.intersect.timeInterval <- function(e1, e2) {
+    ti1 <- e1
+    ti2 <- e2
 
-intersect.timeInterval <- function(ti1, ti2) {
     stopifnot(is(ti2, "timeInterval"))
 
     Nl <- length(ti1@left@Data)
@@ -80,9 +83,10 @@ intersect.timeInterval <- function(ti1, ti2) {
 
     ## .POSIXct(numeric(0), tz = "GMT") # TODO: timeInterval for empty?
 
+#print("Ah")
     if(Nl == 0 || Nr == 0) # empty intersection
         return(ti1)
-    else if (Nr == 1) { # Nl is also 1 here
+    else if (Nl == 1) { # Nr is also 1 here
         ## remember that the intervals are semi-open: [a,b)
         lo <- max(ti1_le[1], ti2_le[1])
         up <- min(ti1_ri[1], ti2_ri[1])
@@ -96,12 +100,12 @@ intersect.timeInterval <- function(ti1, ti2) {
         }
         return(ti1)
     }
-
+#print("Oh")
     ## from here: Nl >= 2, Nr >= 1, Nl >= Nr
 
-    ## lr1 and lr2 are strinctly increasing (if make_disjoint is correct) !!!
-    lr1 <- as.vector(rbind(ti1_le, ti1_re)) # a1, b1, a2, b2, ...
-    lr2 <- as.vector(rbind(ti2_le, ti2_re))
+    ## lr1 and lr2 are strictly increasing (if make_disjoint is correct) !!!
+    lr1 <- as.vector(rbind(ti1_le, ti1_ri)) # a1, b1, a2, b2, ...
+    lr2 <- as.vector(rbind(ti2_le, ti2_ri))
 
     i <- findInterval(lr2, lr1)
     i_even <- !(i %% 2)
@@ -110,53 +114,67 @@ intersect.timeInterval <- function(ti1, ti2) {
 
     pieces <- numeric(0)
     j <- 1
-    while(j < 2 * Nl) {
+    while(j < 2 * Nr) {
         ij <- i[j]
         ij1 <- i[j + 1]
         dj <- ij1 - ij
-        if(i_even[ij]) {# between the end of an interval and the start of the next one
+        if(i_even[j]) {# between the end of an interval and the start of the next one
             if(dj == 0) {
                 ## nothing to do
-            } else if(i_even[ij1]) {
+            } else if(ij1 %% 2 == 0) {
                 ## whole intervals between ij + 1 and i[j + 1]
                 res_flag[(ij + 1) : ij1] <- TRUE
             } else {
-                ## i[j+1] is inside an interval, so the last interval is not whole
-                res_flag[(ij + 1) : (ij1 - 1)] <- TRUE ## the whole intervals
-                pieces <- c(pieces, c(ij1, lr1[j + 1])) # the last piece; its rhs is replaced
-                                                        # by the rhs of the current
+                ## i[j+1] is inside an lr2 interval, so the last interval is not whole
+                if(ij + 1 < ij1 - 1)
+                    res_flag[(ij + 1) : (ij1 - 1)] <- TRUE ## the whole intervals
+                pieces <- c(pieces, c(lr1[ij1 - 1], lr2[j + 1])) # the last piece; its rhs
+                                                                 # is replaced by the rhs of
+                                                                 #  the current rhs
             }
         } else { # ij odd; inside of an interval
             if(dj == 0) {
-                pieces <- c(pieces, c(lr1[j], lr1[j + 1]))
-            } else if(i_even[ij1]) {
-                ## whole intervals between ij + 1 and i[j + 1]
-                res_flag[(ij + 1) : ij1] <- TRUE
+                ## wholly inside an lr1 interval
+                pieces <- c(pieces, c(lr2[j], lr2[j + 1]))
             } else {
-                ## i[j+1] is inside an interval, so the last interval is not whole
-                res_flag[(ij + 1) : (ij1 - 1)] <- TRUE ## the whole intervals
-                pieces <- c(pieces, c(lr2[ij1], lr1[j + 1])) # the last piece; its rhs is
-                                                             # replaced by the rhs of the
-                                                             # current
+                pieces <- c(pieces, c(lr2[j], lr1[ij + 1])) # notice the rhs of the interval
+                if(ij1 %% 2 == 0) {
+                    ## whole intervals  between ij + 1 (or ij) and i[j + 1];
+                    ## the first starts with lr2[j] and is not whole, unless lr2[j] == lr1[ij]
+                    if(ij + 2 < ij1)
+                        res_flag[(ij + 2) : ij1] <- TRUE
+                } else {
+                    ## i[j+1] is inside an interval, so the last interval is not whole
+                    if(ij + 1 < ij1 - 1)
+                        res_flag[(ij + 1) : (ij1 - 1)] <- TRUE ## the whole intervals
+                    if(lr1[ij1] < lr2[j + 1]) # in case they are equal
+                        pieces <- c(pieces, c(lr1[ij1], lr2[j + 1])) # the last piece; its rhs is
+                                                                 # replaced by the rhs of the
+                                                                 # current
+                }
             }
         }
+#browser()
 
         j <- j + 2
     }
+#browser()
 
-    ## maybe not bother with tz?
-    ti1@Data <- .POSIXct(le[dj], tz = attr(ti1@Data, "tz"))
-    ti2@Data <- .POSIXct(ri[dj], tz = attr(ti2@Data, "tz"))
+    wrk <- matrix(c(lr1[res_flag], pieces), ncol = 2, byrow = TRUE)
 
-    ## print(ti1)
-    ## print(ti2)
+    ti1@left@Data <- .POSIXct(wrk[ , 1], tz = attr(ti1@left@Data, "tz"))
+    ti1@right@Data <- .POSIXct(wrk[ , 2], tz = attr(ti1@right@Data, "tz"))
 
-    list(ti1, ti2)
+    timeInterval(ti1)
 }
 
 
+setMethod("&", c("timeInterval", "timeInterval"), .intersect.timeInterval)
+setMethod("|", c("timeInterval", "timeInterval"),
+          function(e1, e2) .union.timeInterval(e1, e2) )
 
 
+################################################################################
 
 timeInterval <- function(left, right, ...) {
     l <- timeDate(left, ...)
@@ -224,10 +242,35 @@ setMethod("timeInterval", c("missing", "POSIXt"), function(left, right, units = 
     new("timeInterval", left = l, right = r)
 })
 
+################################################################################
 
 ## set operations
 
-union.timeInterval <- function(x, y, ...) {
+`!.timeInterval` <- function(x) {
+    wrk <- as.vector(rbind(x@left@Data, x@right@Data))
+
+    wrk <- if(wrk[1] != -Inf)
+               c(-Inf, wrk)
+           else
+               wrk[-1]
+
+    k <- length(wrk)
+    wrk <- if(wrk[k] == Inf)
+               wrk[-k]
+           else
+               c(wrk, Inf)
+
+    wrk <- matrix(wrk, ncol = 2, byrow = TRUE)
+
+    x@left@Data <- .POSIXct(wrk[ , 1], tz = attr(x@left@Data, "tz"))
+    x@right@Data <- .POSIXct(wrk[ , 2], tz = attr(x@right@Data, "tz"))
+
+    ## was: timeInterval(x) -  but x already sorted, so just return it
+    x
+}
+
+union.timeInterval <-
+.union.timeInterval <- function(x, y, ...) {
     stopifnot(is(y, "timeInterval"))
 
     ## TODO: more than 2 arguments
@@ -238,14 +281,14 @@ union.timeInterval <- function(x, y, ...) {
 
 }
 
-intersect.timeInterval <- function(x, y, ...) {
-    stopifnot(is(y, "timeInterval"))
-
-    ## TODO: more than 2 arguments
-    x@left@Data <- c(x@left@Data, y@left@Data)
-    x@right@Data <- c(x@right@Data, y@right@Data)
-
-    timeInterval(x)
-
-}
+## intersect.timeInterval <- function(x, y, ...) {
+##     stopifnot(is(y, "timeInterval"))
+##
+##     ## TODO: more than 2 arguments
+##     x@left@Data <- c(x@left@Data, y@left@Data)
+##     x@right@Data <- c(x@right@Data, y@right@Data)
+##
+##     timeInterval(x)
+##
+## }
 

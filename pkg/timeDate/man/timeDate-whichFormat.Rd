@@ -2,7 +2,7 @@
 \alias{whichFormat}
 
 
-\title{Format recognation}
+\title{Format recognition}
 
 \description{
   Tries to recognize the date/time format.
@@ -17,10 +17,8 @@ whichFormat(charvec, silent = FALSE)
     a character string or vector of dates and times.
   }
   \item{silent}{
-
     a logical flag. Should a warning be printed if the format cannot be
     recognized?
-
   }
 }
 
@@ -28,8 +26,12 @@ whichFormat(charvec, silent = FALSE)
   a format string
 }
 
+\seealso{
+  \code{\link{midnightStandard}}
+}
+
 \examples{
-## midnightStandard
+whichFormat("2007-12-31 00:00:00")
 whichFormat("2007-12-31 24:00")
 }
 

@@ -11,10 +11,6 @@
   Corrects \code{"timeDate"} objects if they do not fulfill the ISO8601
   midnight standard.
 
-  \code{midnightStandard2()} relies on \code{\link{strptime}} wherever
-  possible, and there simply returns
-  \code{\link{as.POSIXct}(\link{strptime}(charvec, format, tz = "GMT"))}.
-
 }
 
 \usage{
@@ -31,11 +27,29 @@ midnightStandard2(charvec, format)
   }
 }
 
-\value{
-  \code{midnightStandard} returns a \code{character} and
-  \code{midnightStandard2} a \code{\link{POSIXct}} object.
+\details{
+
+  \code{midnightStandard2()} calls \code{\link{strptime}}. Since the
+  latter returns \code{NA}s for elements that don't conform to the
+  midnight standard, the inputs corresponding to \code{NA}s are further
+  processed to fix this.
+
+  \code{midnightStandard()} converts to character vector the result
+  obtained from \code{midnightStandard2()}.
+
 }
 
+\value{
+  for \code{midnightStandard}, a \code{character} vector,
+  
+  for \code{midnightStandard2}, a \code{\link{POSIXct}} object with time
+  zone \code{"GMT"}.
+
+}
+
+\seealso{
+  \code{\link{whichFormat}}
+}
 \examples{
 ch <- "2007-12-31 24:00"
 midnightStandard(ch)

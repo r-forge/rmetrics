@@ -16,8 +16,8 @@ importFrom(stats, start, end, window, approx, na.omit, var, frequency)
 importFrom("graphics", axis.POSIXct)
 importFrom("utils", str, .DollarNames)
 
-## 2024-12-13 for timeInterval
-importFrom("generics", intersect, union, setdiff, setequal, is.element)
+## ## 2024-12-13 for timeInterval
+## importFrom("generics", intersect, union, setdiff, setequal, is.element)
 
 S3method("[<-",timeDate)
 S3method(as.Date,timeDate)
@@ -38,6 +38,8 @@ S3method(end,timeDate)
 
 S3method(format,timeDate)
 S3method(format,timeInterval)
+
+S3method(`!`, timeInterval)
 
 S3method(kurtosis,POSIXct)
 S3method(kurtosis,POSIXlt)
@@ -76,9 +78,6 @@ S3method(.DollarNames, timeDate)
 
 S3method(timeCeiling, POSIXt)
 S3method(timeCeiling, timeDate)
-
-S3method(union, timeInterval)
-S3method(intersect, timeInterval)
 
 exportClasses(timeDate, timeInterval)
 
