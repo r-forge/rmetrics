@@ -57,7 +57,10 @@ format.timeInterval <- function(x, ...)
     le <- format.timeDate(x@left, ...)
     ri <- format.timeDate(x@right, ...)
 
-    paste0("[", le, " -- ", ri, ")")
+    if(length(le) > 0)
+        paste0("[", le, " -- ", ri, ")")
+    else
+        character(0)
 }
 
 ################################################################################

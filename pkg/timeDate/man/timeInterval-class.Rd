@@ -45,7 +45,12 @@ appreciated. The current code treats it as \eqn{[-\infty, b)}.
     \item{initialize}{\code{signature(.Object = "timeInterval")}: ... }
     \item{timeInterval}{\code{signature(left = "timeInterval", right = "missing")}: ... }
 	 
-    \item{show}{\code{signature(object = "timeInterval")}: ... }}
+    \item{show}{\code{signature(object = "timeInterval")}: ... }
+    \item{\%in_int\%}{\code{signature(x = "timeDate", ti = "timeInterval")}: ... }
+    \item{\%in_int\%}{\code{signature(x = "timeInterval", ti = "timeInterval")}: ... }
+    \item{&}{\code{signature(e1 = "timeInterval", e2 = "timeInterval")}: ... }
+    \item{^}{\code{signature(e1 = "timeInterval", e2 = "timeInterval")}: ... }
+    \item{|}{\code{signature(e1 = "timeInterval", e2 = "timeInterval")}: ... }}
 }
 
 \author{

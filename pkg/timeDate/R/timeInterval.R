@@ -117,6 +117,17 @@ intersect.timeInterval <-
     while(j < 2 * Nr) {
         ij <- i[j]
         ij1 <- i[j + 1]
+        ## if(ij == 0) {
+        ##     if(ij1 == 0) {
+        ##         j <- j + 2
+        ##         next
+        ##     } else if(ij1 == 1) {
+        ##         pieces <- c(pieces, c(lr1[1], lr2[j + 1]))
+        ##         j <- j + 2
+        ##         next
+        ##     }
+        ##     ???
+        ## }
         dj <- ij1 - ij
         if(i_even[j]) {# between the end of an interval and the start of the next one
             if(dj == 0) {
@@ -128,7 +139,8 @@ intersect.timeInterval <-
                 ## i[j+1] is inside an lr2 interval, so the last interval is not whole
                 if(ij + 1 < ij1 - 1)
                     res_flag[(ij + 1) : (ij1 - 1)] <- TRUE ## the whole intervals
-                pieces <- c(pieces, c(lr1[ij1 - 1], lr2[j + 1])) # the last piece; its rhs
+                if(lr1[ij1] < lr2[j + 1]) # i.e. not equal
+                    pieces <- c(pieces, c(lr1[ij1], lr2[j + 1])) # the last piece; its rhs
                                                                  # is replaced by the rhs of
                                                                  #  the current rhs
             }
@@ -168,10 +180,15 @@ intersect.timeInterval <-
     timeInterval(ti1)
 }
 
+.setdiff_timeInterval <- function(e1, e2) {
+    ## TODO: eventually implement it directly, similarly to intersection
+    e2 & !e1
+}
 
 setMethod("&", c("timeInterval", "timeInterval"), .intersect.timeInterval)
 setMethod("|", c("timeInterval", "timeInterval"),
           function(e1, e2) .union.timeInterval(e1, e2) )
+setMethod("^", c("timeInterval", "timeInterval"), .setdiff_timeInterval)
 
 
 ################################################################################
@@ -281,14 +298,49 @@ union.timeInterval <-
 
 }
 
-## intersect.timeInterval <- function(x, y, ...) {
-##     stopifnot(is(y, "timeInterval"))
-##
-##     ## TODO: more than 2 arguments
-##     x@left@Data <- c(x@left@Data, y@left@Data)
-##     x@right@Data <- c(x@right@Data, y@right@Data)
-##
-##     timeInterval(x)
-##
-## }
+
+## %in_int%
+
+## x - timeInterval
+.int_in_int <- function(x, ti) {
+    wrk1 <- as.vector(rbind(x@left@Data, x@right@Data))
+    wrk2 <- as.vector(rbind(ti@left@Data, ti@right@Data))
+
+    n1 <- length(wrk1)
+    n2 <- length(wrk2)
+
+    if(wrk1[1] < wrk2[1] || wrk1[n1] > wrk2[n2])
+        return(FALSE)
+
+    i <- findInterval(wrk1, wrk2)
+
+    imat <- matrix(i, ncol = 2, byrow = TRUE)
+
+    all(imat[ , 1] %% 2 != 0) && all(imat[ , 2] - imat[ , 1] == 1)
+}
+
+## x - timeDate
+.td_in_int <- function(x, ti) {
+    wrk1 <- as.vector(x@Data)
+    wrk2 <- as.vector(rbind(ti@left@Data, ti@right@Data))
+
+    n2 <- length(wrk2)
+
+    i <- findInterval(wrk1, wrk2)
+
+    i %% 2 != 0
+}
+
+`%in_int%` <- function(x, ti) {
+    stop("No suitable method found for %in_int% for signature c(",
+         class(x), ",", class(ti), ").\n")
+}
+
+setGeneric("%in_int%")
+
+setMethod("%in_int%", c("timeInterval", "timeInterval"), .int_in_int)
+setMethod("%in_int%", c("timeDate", "timeInterval"), .td_in_int)
+
+
+
 

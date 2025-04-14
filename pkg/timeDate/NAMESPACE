@@ -97,7 +97,8 @@ exportMethods(
     sample,
     show,
     timeDate,
-    timeInterval
+    timeInterval,
+    "%in_int%"
 )
 
 export(
@@ -142,7 +143,8 @@ export(
     frequency,
     pasteMat,
     timeCeiling,
-    timeInterval
+    timeInterval,
+    "%in_int%"
 )
 
 ## begin: holidays

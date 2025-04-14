@@ -65,7 +65,7 @@ setMethod("show", "timeInterval", function (object)
 
     if ((len <- length(object@left)) == 0) {
         cat(finCenter(object@left), "\n", sep = "")
-        cat(class(object), "of length 0", "\n")
+        cat("An empty", class(object), "\n")
         return(invisible(NULL))
     }
     # Check records to get printed:
