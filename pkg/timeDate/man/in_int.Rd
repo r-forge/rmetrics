@@ -19,6 +19,8 @@
 \alias{\%in_int\%,timeDate,timeInterval-method}
 \alias{\%in_int\%,timeInterval,timeInterval-method}
 
+\alias{tiInf}
+
 \concept{union}
 \concept{intersection}
 \concept{complement}
@@ -33,7 +35,8 @@
 
   Union, intersection, complement and set difference of
   \code{"timeInterval"} objects. Also testing if an object is in a
-  \code{"timeInterval"}.
+  \code{"timeInterval"} and \code{tiInf} representing the infinite time
+  interval.
 
 }
 
@@ -46,6 +49,8 @@
 x \%in_int\% ti
 \S4method{\%in_int\%}{timeInterval,timeInterval}(x,ti)
 \S4method{\%in_int\%}{timeDate,timeInterval}(x,ti)
+
+tiInf
 }
 
 \arguments{
@@ -70,6 +75,9 @@ x \%in_int\% ti
   i.e., the set difference \code{ti2}/\code{ti1} (all points in
   \code{ti2} that are not in \code{ti1}). \code{!ti1} is the same as
   \code{ti1 ^ timeInterval(left = -Inf, right = Inf)}.
+
+  \code{tiInf} represents the time interval from \code{-Inf} to
+  \code{Inf}. 
 
   A motivation for using the logical operators for set operations is
   that in mathematics the notation for them is similar and the
@@ -114,7 +122,45 @@ x \%in_int\% ti
   \code{timeInterval} for creating \code{"timeInterval"} objects.
 }
 \examples{
+## create a time interval by rounding to the enclosing hour
+ti <- timeInterval(timeDate("2024-12-20 10:20:30"), unit = "hours")
+ti
 
+## a similar interval on the following day
+tib <- timeInterval(timeDate("2024-12-21 10:20:30"), unit = "hours")
+tib
+
+ti2 <- ti | tib
+ti2
+
+ti & ti2
+ti | ti2
+
+!ti
+!ti2
+
+identical(!ti, ti ^ timeInterval(left = -Inf, right = Inf))
+identical(!ti2, ti2 ^ timeInterval(left = -Inf, right = Inf))
+
+## tiInf represents the time interval (-Inf, Inf)
+identical(tiInf, timeInterval(left = -Inf, right = Inf))
+
+ti ^ ti2 # ti2 \ ti
+ti2 ^ ti # ti  \ ti2
+
+timeDate("2024-12-20 10:20:30") %in_int% ti2  # TRUE
+timeDate("2024-12-20 11:20:30") %in_int% ti2  # FALSE
+
+timeDate(c("2024-12-20 10:20:30", "2024-12-20 11:20:30")) %in_int% ti2  
+
+## ti's are closed on the left and open on the right, hence:
+ti2@left %in_int% ti2    # [1] TRUE TRUE
+ti2@right %in_int% ti2   # [1] FALSE FALSE
+
+## a timeInterval is a scalar, so the following give a single TRUE/FALSE
+## indicating whether or not the first interval is contained in the second
+ti %in_int% ti2
+ti2 %in_int% ti
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):

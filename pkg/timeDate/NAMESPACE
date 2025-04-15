@@ -144,6 +144,7 @@ export(
     pasteMat,
     timeCeiling,
     timeInterval,
+    tiInf,
     "%in_int%"
 )
 

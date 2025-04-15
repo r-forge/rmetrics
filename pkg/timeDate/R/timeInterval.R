@@ -343,4 +343,6 @@ setMethod("%in_int%", c("timeDate", "timeInterval"), .td_in_int)
 
 
 
+## should be after the methods for timeInterval
+tiInf <- timeInterval(left = -Inf, right = Inf)
 
