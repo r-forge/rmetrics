@@ -53,9 +53,8 @@ appreciated. The current code treats it as \eqn{[-\infty, b)}.
     \item{|}{\code{signature(e1 = "timeInterval", e2 = "timeInterval")}: ... }}
 }
 
-\author{
-  Georgi N. Boshnakov
-}
+\author{Georgi N. Boshnakov}
+
 %
 %\note{
 %%%  ~~further notes~~
@@ -64,13 +63,15 @@ appreciated. The current code treats it as \eqn{[-\infty, b)}.
 %%% ~Make other sections like Warning with \section{Warning }{....} ~
 %
 \seealso{
-  \code{\link{timeInterval}} for creation of 'timeInterval' objects and
-  further examples
+  \code{\link{timeInterval}} for creation of \code{"timeInterval"} objects and
+  further examples,
+
+  \code{\link{in_int}} for set operations on \code{"timeInterval"} objects
 }
 
-\examples{
-showClass("timeInterval")
-}
+%\examples{
+%showClass("timeInterval")
+%}
 
 \keyword{classes}
 \keyword{chron}

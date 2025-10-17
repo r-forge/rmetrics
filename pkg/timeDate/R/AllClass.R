@@ -103,13 +103,11 @@ setMethod("initialize", "timeDate", function(.Object, ...) {
 
 ## the classes below are by Georgi N. Boshnakov
 
-## TODO: for now just create generator functions by assigning the result of SetClass
-
 setClass("timeInterval", slots = c(left = "timeDate", right = "timeDate"))
 
 setMethod("initialize", "timeInterval", function(.Object, ...) {
     .Object <- callNextMethod()
-#browser()
+
     wrk <- .make_disjoint(.Object@left, .Object@right)
 
     .Object@left <- wrk[[1]]
@@ -120,7 +118,8 @@ setMethod("initialize", "timeInterval", function(.Object, ...) {
 
 
 
-
-timeIntervalVector <- setClass("timeIntervalVector", slots = c(left = "timeDate", right = "timeDate", strict = "logical"))
-
-timeIntervalList <- setClass("timeIntervalList", slots = c(left = "list", right = "list", strict = "logical"))
+## TODO: may uncomment in the future but may also change the internal representation
+##
+## timeIntervalVector <- setClass("timeIntervalVector", slots = c(left = "timeDate", right = "timeDate", strict = "logical"))
+##
+## timeIntervalList <- setClass("timeIntervalList", slots = c(left = "list", right = "list", strict = "logical"))

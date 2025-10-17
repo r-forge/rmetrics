@@ -50,7 +50,6 @@
     list(left, right)
 }
 
-intersect.timeInterval <-
 .intersect.timeInterval <- function(e1, e2) {
     ti1 <- e1
     ti2 <- e2
@@ -286,7 +285,6 @@ setMethod("timeInterval", c("missing", "POSIXt"), function(left, right, units = 
     x
 }
 
-union.timeInterval <-
 .union.timeInterval <- function(x, y, ...) {
     stopifnot(is(y, "timeInterval"))
 

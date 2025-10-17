@@ -1,4 +1,5 @@
 \name{in_int}
+\alias{in_int}
 \alias{\%in_int\%}
 
 \alias{!}
@@ -90,7 +91,7 @@ tiInf
   to allow taking a complement w.r.t. any \code{"timeInterval"} (i.e., a
   set difference).
 
-  \code{x \%in_int\% ti} checks if the \code{x} is in the
+  \code{x \%in_int\% ti} checks if \code{x} is in the
   \code{"timeInterval"} \code{ti}.
 
   If \code{x} is a \code{"timeInterval"} object, the result of
@@ -119,7 +120,10 @@ tiInf
 \seealso{
   class \code{"\linkS4class{timeInterval}"},
 
-  \code{timeInterval} for creating \code{"timeInterval"} objects.
+  \code{\link{timeInterval}} for creation of \code{"timeInterval"} objects and
+  further examples,
+
+  \code{\link{in_int}} for set operations on \code{"timeInterval"} objects
 }
 \examples{
 ## create a time interval by rounding to the enclosing hour
@@ -148,19 +152,19 @@ identical(tiInf, timeInterval(left = -Inf, right = Inf))
 ti ^ ti2 # ti2 \ ti
 ti2 ^ ti # ti  \ ti2
 
-timeDate("2024-12-20 10:20:30") %in_int% ti2  # TRUE
-timeDate("2024-12-20 11:20:30") %in_int% ti2  # FALSE
+timeDate("2024-12-20 10:20:30") \%in_int\% ti2  # TRUE
+timeDate("2024-12-20 11:20:30") \%in_int\% ti2  # FALSE
 
-timeDate(c("2024-12-20 10:20:30", "2024-12-20 11:20:30")) %in_int% ti2  
+timeDate(c("2024-12-20 10:20:30", "2024-12-20 11:20:30")) \%in_int\% ti2  
 
 ## ti's are closed on the left and open on the right, hence:
-ti2@left %in_int% ti2    # [1] TRUE TRUE
-ti2@right %in_int% ti2   # [1] FALSE FALSE
+ti2@left \%in_int\% ti2    # [1] TRUE TRUE
+ti2@right \%in_int\% ti2   # [1] FALSE FALSE
 
 ## a timeInterval is a scalar, so the following give a single TRUE/FALSE
 ## indicating whether or not the first interval is contained in the second
-ti %in_int% ti2
-ti2 %in_int% ti
+ti \%in_int\% ti2
+ti2 \%in_int\% ti
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):

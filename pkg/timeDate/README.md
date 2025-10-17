@@ -14,6 +14,10 @@ time. It can thus also handle time stamps from historical data records from the
 same time zone, even if the financial centers changed day light saving times at
 different calendar dates.
 
+Class 'timeInterval', introduced in v4050.111, represents time-date intervals. Suitable
+metods are defined for manipulating them, including union, intersection, complement, set
+difference and other utilities.
+
 Package `timeDate` is part of the Rmetrics suite of R packages and is developed
 on R-forge at
 [timeDate](https://r-forge.r-project.org/scm/viewvc.php/pkg/timeDate/?root=rmetrics).

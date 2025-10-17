@@ -36,6 +36,7 @@ reference:
     contents:
       - "timeInterval-class"
       - "timeInterval-methods"
+      - "%in_int%"
   - title: "Unclasssified"
     contents:
       - pasteMat

@@ -1,6 +1,10 @@
-# timeDate 4041.110.9000 (TO BE EDITED BEFORE NEXT RELEASE)
+# timeDate 4051.111
 
-- new class `"timeInterval"` represents (union of) time intervals.
+- new class `"timeInterval"` represents time intervals. Methods are defined for
+  computing unions, intersections, complement and set difference of
+  `"timeInterval"` objects, as well as checking whether dates and time intervals
+  are contained in such objects. See `?timeInterval`, `class ? timeInterval`,
+  `?in_int`. Not systematically tested yet.
 
 - the prototype of class "timeDate" now sets admissible values for the
   slots. The previous defaults (e.g., `character(0)` for slots 'format' and
@@ -9,7 +13,7 @@
 - streamlined the initialisation method of "timeDate". This changes slot
   'format' in some inconsequential cases involving `Inf` (e.g.,
   `timeDate(.POSIXct(-Inf))@format` was `"%Y-%m-%d"` but now is 
-  "%Y-%m-%d %H:%M:%S", which even seems more appropriate).
+  `"%Y-%m-%d %H:%M:%S"`, which even seems more appropriate).
 
 - the `"timeDate"` methods for `trunc` and `round` now support also units
   "secs", "months" and "years". Previously only "days", "hours", "mins" were

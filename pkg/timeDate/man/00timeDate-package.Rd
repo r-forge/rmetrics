@@ -8,7 +8,6 @@
 
 \description{
   Package of calendar, date, time tools and utilities for Rmetrics.
-  An html site created with 'pkgdown' You can view
 
   The documentation of package \sQuote{timeDate}, rendered with
   \sQuote{pkgdown}, is available at
