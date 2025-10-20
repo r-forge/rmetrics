@@ -24,126 +24,84 @@
 #  skewness.POSIXlt          Method for objects of class POSIXlt
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-skewness <-
-    function (x, ...)
-{
-    # A function implemented by Diethelm Wuertz
+skewness <- function (x, ...) {
+    ## A function implemented by Diethelm Wuertz
 
-    # FUNCTION:
-
-    # Return Value:
     UseMethod("skewness")
 }
 
+skewness.default <- function (x, na.rm = FALSE, method = c("moment", "fisher"), ...) {
+    ## A function implemented by Diethelm Wuertz
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-skewness.default <-
-    function (x, na.rm = FALSE, method = c("moment", "fisher"), ...)
-{
-    # A function implemented by Diethelm Wuertz
+    ## Description:
+    ##   Returns the value of the skewness of a distribution function.
 
-    # Description:
-    #   Returns the value of the skewness of a distribution function.
+    ## Details:
+    ##   Missing values can be handled.
 
-    # Details:
-    #   Missing values can be handled.
+    ## FUNCTION:
 
-    # FUNCTION:
-
-    # Method:
+    ## Method:
     method = match.arg(method)
 
-    # Warnings:
+    ## Warnings:
     if (!is.numeric(x) && !is.complex(x) && !is.logical(x)) {
         warning("argument is not numeric or logical: returning NA")
         return(as.numeric(NA))}
 
     stopifnot(NCOL(x) == 1)
 
-    # Remove NAs:
-    if (na.rm) x = x[!is.na(x)]
+    ## Remove NAs:
+    if (na.rm) x <- x[!is.na(x)]
 
-    # Skewness:
-    n = length(x)
-    if (is.integer(x)) x = as.numeric(x)
+    ## Skewness:
+    n <- length(x)
+    if (is.integer(x)) x <- as.numeric(x)
 
-    # Selected Method:
+    ## Selected Method:
     if (method == "moment") {
-        skewness = sum((x-mean(x))^3/sqrt(as.numeric(var(x)))^3)/length(x)
+        skewness <- sum((x-mean(x))^3/sqrt(as.numeric(var(x)))^3)/length(x)
     }
     if (method == "fisher") {
         if (n < 3)
-            skewness = NA
+            skewness <- NA
         else
-            skewness = ((sqrt(n*(n-1))/(n-2))*(sum(x^3)/n))/((sum(x^2)/n)^(3/2))
+            skewness <- ((sqrt(n*(n-1))/(n-2))*(sum(x^3)/n))/((sum(x^2)/n)^(3/2))
     }
 
-    # Add Control Attribute:
+    ## Add Control Attribute:
     attr(skewness, "method") <- method
 
-    # Return Value:
+    ## Return Value:
     skewness
 }
 
-
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-skewness.data.frame <-
-    function (x, na.rm = FALSE, method = c("moment", "fisher"), ...)
-{
-    # A function implemented by Diethelm Wuertz
+skewness.data.frame <- function (x, na.rm = FALSE, method = c("moment", "fisher"), ...) {
+    ## A function implemented by Diethelm Wuertz
+    ##
     ## Amended by Georgi N. Boshnakov to set attribute 'method' as documented.
     ## (changed the signature from (x, ...) to make this straightforward)
 
-    # FUNCTION:
+    ## FUNCTION:
     method <- match.arg(method)
 
-    # Return Value:
+    ## Return Value:
     structure(sapply(x, skewness, na.rm = na.rm, method = method, ...),
               method = method)
 }
 
+skewness.POSIXct <- function (x, ...) {
+    ## A function implemented by Diethelm Wuertz
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-skewness.POSIXct <-
-    function (x, ...)
-{
-    # A function implemented by Diethelm Wuertz
-
-    # FUNCTION:
-
-    # Return Value:
     structure(skewness(unclass(x), ...), oldClass(x))
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-skewness.POSIXlt <-
-    function (x, ...)
-{
-    # A function implemented by Diethelm Wuertz
+skewness.POSIXlt <- function (x, ...) {
+    ## A function implemented by Diethelm Wuertz
 
-    # FUNCTION:
-
-    # Return Value:
     as.POSIXlt(skewness(as.POSIXct(x), ...))
 }
 
 
 ################################################################################
-

@@ -20,13 +20,7 @@
 #  is.timeSeries             Tests for a 'timeSeries' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("is.na", "timeDate",
-    function(x)
-{
+setMethod("is.na", "timeDate", function(x) {
     # A function implemented by Yohan Chalabi
 
     is.na(x@Data)
@@ -34,4 +28,3 @@ setMethod("is.na", "timeDate",
 
 
 ################################################################################
-

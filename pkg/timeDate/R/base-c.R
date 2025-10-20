@@ -19,13 +19,7 @@
 #  c.timeDate                Concatenates 'timeDate' objects
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-c.timeDate <-
-    function(..., recursive = FALSE)
-{
+c.timeDate <- function(..., recursive = FALSE) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -58,4 +52,3 @@ c.timeDate <-
 
 
 ################################################################################
-

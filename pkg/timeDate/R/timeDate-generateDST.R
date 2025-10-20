@@ -22,15 +22,11 @@
 ################################################################################
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 # The following DST Rules were extracted from tzdata (version tzdata2008e)
 # and integrated into R functions.
 ##
 ## GNB: the rules were updated anumber of times later (but seemingly keeping the
-##       financial centers unchanged 
+##       financial centers unchanged
 ##
 ## GNB: Dec 2022
 ##     - updated .genDaylightSavingTime(), see comments in the source below.
@@ -87,7 +83,7 @@
 # suitable arguments:
 #
 #   .genDaylightSavingTime(finCenter = fc_work, aliases = aliases, end_year = 2100)
-# 
+#
 # where 'fc_work' is the list financial centers and 'aliases' is a character vectors
 # of lines of the form old_tz <- new_tz, for compatibility with previous versions
 # of timeDate (old_tz is an old tz/FinCenter name, new_tz is the current one.
@@ -119,7 +115,7 @@
 
     ## GNB: track unsuccessful zones
     failed <- character(0)
-    
+
     all_fccity <-  strsplit(finCenter, "/")
     for (k in seq(length(finCenter))) {
 
@@ -129,7 +125,7 @@
         zdump <- try(system(paste("zdump -v -c", end_year, finCenter[k], sep=" "), intern=TRUE))
         zdump <- strsplit(zdump, " +" )
 
-        ## GNB: 2022-10-01 
+        ## GNB: 2022-10-01
         ## This seems to assume that all elements of zdump have the same length:
         ##     zdump <- matrix(unlist(zdump), nrow = length(zdump), byrow = TRUE)
         ## Also, the code below uses explicitly refers to columns up to 16.
@@ -159,7 +155,7 @@
             failed <- c(failed, finCenter[k])
             next
         }
-            
+
         zdump <- matrix(unlist(zdump), nrow = length(zdump), byrow = TRUE)
 
         # extract data
@@ -219,7 +215,7 @@
                                 isdst[index],
                                 tzs[index]),
                           stringsAsFactors = FALSE)
-        
+
         ## GNB: convert 'Easter' to 'Easter_Island' to avoid clash with Easter() holiday
         ##      Note: the caller should also adjust "Easter" in the list of fin centers.
         ##            This cannot be done before calling this function since it needs to
@@ -227,7 +223,7 @@
         base_fccity <- fccity[length(fccity)]
         if(base_fccity == "Easter")
             base_fccity <- "Easter_Island"
-        
+
         colnames(dst) <- c(base_fccity,
                            "offSet",
                            "isdst",

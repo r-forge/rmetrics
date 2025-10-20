@@ -32,7 +32,7 @@ S3method(as.timeDate,POSIXt)
 S3method(as.timeDate,default)
 S3method(as.timeDate,timeDate)
 S3method(c,timeDate)
-S3method(cut,timeDate)
+# S3method(cut,timeDate) - removed
 S3method(diff,timeDate)
 S3method(end,timeDate)
 

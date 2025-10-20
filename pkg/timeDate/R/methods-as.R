@@ -30,26 +30,14 @@
 #  as.Date.timeDate          Returns a 'timeDate' object as 'Date' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.timeDate <-
-    function(x, zone = NULL, FinCenter = NULL)
-{
+as.timeDate <- function(x, zone = NULL, FinCenter = NULL) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     UseMethod("as.timeDate")
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.timeDate.default <-
-    function(x, zone = "", FinCenter = "")
-{
+as.timeDate.default <- function(x, zone = "", FinCenter = "") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -77,13 +65,7 @@ as.timeDate.default <-
 setAs("ANY", "timeDate", function(from) as.timeDate.default(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.timeDate.timeDate <-
-    function(x, zone = x@FinCenter, FinCenter = "")
-{
+as.timeDate.timeDate <- function(x, zone = x@FinCenter, FinCenter = "") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -111,12 +93,7 @@ as.timeDate.timeDate <-
 # setAs("timeDate", "timeDate", function(from) as.timeDate.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.timeDate.Date <- function(x, zone = "", FinCenter = "")
-{
+as.timeDate.Date <- function(x, zone = "", FinCenter = "") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -142,12 +119,7 @@ as.timeDate.Date <- function(x, zone = "", FinCenter = "")
 setAs("Date", "timeDate", function(from) as.timeDate.Date(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.timeDate.POSIXt <- function(x, zone = "", FinCenter = "")
-{
+as.timeDate.POSIXt <- function(x, zone = "", FinCenter = "") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     timeDate(x, zone = zone, FinCenter = FinCenter)
@@ -157,13 +129,7 @@ as.timeDate.POSIXt <- function(x, zone = "", FinCenter = "")
 setAs("POSIXt", "timeDate", function(from) as.timeDate.POSIXt(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.character.timeDate <-
-function(x, ...)
-{
+as.character.timeDate <- function(x, ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     format(x, ...)
@@ -173,13 +139,8 @@ function(x, ...)
 setAs("timeDate", "character", function(from) as.character.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 as.double.timeDate <-
-    function(x,
-    units = c("auto", "secs", "mins", "hours", "days", "weeks"), ...)
+    function(x, units = c("auto", "secs", "mins", "hours", "days", "weeks"), ...)
 {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
@@ -226,13 +187,7 @@ as.double.timeDate <-
 setAs("timeDate", "numeric", function(from) as.double.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.data.frame.timeDate <-
-    function(x, ...)
-{
+as.data.frame.timeDate <- function(x, ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -263,13 +218,7 @@ as.data.frame.timeDate <-
 setAs("timeDate", "data.frame", function(from) as.data.frame.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.list.timeDate <-
-    function(x, ...)
-{
+as.list.timeDate <- function(x, ...) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
 
     # Description:
@@ -300,13 +249,7 @@ as.list.timeDate <-
 setAs("timeDate", "list", function(from) as.list.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.POSIXct.timeDate <-
-    function(x, tz = "", ...)
-{
+as.POSIXct.timeDate <- function(x, tz = "", ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -346,13 +289,7 @@ as.POSIXct.timeDate <-
 setAs("timeDate", "POSIXct", function(from) as.POSIXct.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.POSIXlt.timeDate  <-
-    function(x, tz = "", ...)
-{
+as.POSIXlt.timeDate <- function(x, tz = "", ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -384,13 +321,7 @@ as.POSIXlt.timeDate  <-
 setAs("timeDate", "POSIXlt", function(from) as.POSIXlt.timeDate(from))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-as.Date.timeDate <-
-    function(x, method = c("trunc", "round", "next"), ...)
-{
+as.Date.timeDate <- function(x, method = c("trunc", "round", "next"), ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -437,4 +368,3 @@ setAs("timeDate", "Date", function(from) as.Date.timeDate(from))
 
 
 ################################################################################
-

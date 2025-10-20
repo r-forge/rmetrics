@@ -21,72 +21,77 @@
 #  cut.timeDate              Extracts a piece from a 'timeDate' object
 ################################################################################
 
-window.timeDate <-
-    function(x, start, end, ...)
-{
-    # A function implemented by Diethelm Wuertz and Yohan Chalabi
+window.timeDate <- function(x, start, end, ...) {
+    ## A function implemented by Diethelm Wuertz and Yohan Chalabi
+    ##
+    ## Modified by GNB to return 0-length timeDate object when the window is empty.
 
-    # Descriptions:
-    #   Subsets a timeDate object between from and to dates.
+    ## Descriptions:
+    ##   Subsets a timeDate object between from and to dates.
 
-    # Arguments
-    #   x - an object of class "timeDate"
-    #   start, end - start and end dates as "timeDate" objects.
+    ## Arguments
+    ##   x - an object of class "timeDate"
+    ##   start, end - start and end dates as "timeDate" objects.
 
-    # Note:
-    #   This is synonome for the function window() which should
-    #   be preferred.
+    ## Note:
+    ##   This is synonome for the function window() which should
+    ##   be preferred.
 
-    # FUNCTION:
+    ## FUNCTION:
 
-    # Extract Subset:
-    ct <- as.POSIXct(x)
-    FROM = as.POSIXct(timeDate(start, zone = x@FinCenter, FinCenter = "GMT"))
-    TO = as.POSIXct(timeDate(end, zone = x@FinCenter, FinCenter = "GMT"))
-    test = (ct >= FROM & ct <= TO)
+    ## Extract Subset:
+    ct   <- as.POSIXct(x)
+    FROM <- as.POSIXct(timeDate(start, zone = x@FinCenter, FinCenter = "GMT"))
+    TO   <- as.POSIXct(timeDate(end, zone = x@FinCenter, FinCenter = "GMT"))
+    test <- (ct >= FROM & ct <= TO)
 
-    if (all(!test)) {
-        ans <- x
-        ans@Data <- as.POSIXct(NA)
-    } else {
-        ans <- x[test]
-    }
+    ## 2025-10-20 return 0-length timeDate when the window is empty
+    ##
+    ## if (all(!test)) {
+    ##     ans <- x
+    ##     ans@Data <- as.POSIXct(NA)
+    ## } else {
+    ans <- x[test]
+    ## }
 
-    # Return Value:
+    ## Return Value:
     ans
 }
 
 
-cut.timeDate <-
-    function(x, from , to, ...)
-{
-    # A function implemented by Diethelm Wuertz
-
-    # Descriptions:
-    #   Subsets a timeDate object between from and to dates.
-
-    # Arguments
-    #   x - an object of class "timeDate"
-    #   from, to - start and end dates as "timeDate" objects.
-
-    # Note:
-    #   This is synonome for the function window() which should
-    #   be preferred.
-
-    # FUNCTION:
-
-    .Deprecated("window", "timeDate")
-
-    # Extract Subset:
-    X = timeDate(x, zone = x@FinCenter, FinCenter = "GMT")
-    FROM = timeDate(from, zone = x@FinCenter, FinCenter = "GMT")
-    TO = timeDate(to, zone = x@FinCenter, FinCenter = "GMT")
-    test = (X >= FROM & X <= TO)
-    ans = timeDate(X[test], zone = "GMT", FinCenter = x@FinCenter)
-
-    # Return Value:
-    ans
-}
+## GNB: 2025-10-20
+##     removing the deprecated timeDate method for cut
+##
+## cut.timeDate <-
+##     function(x, from , to, ...)
+## {
+##     # A function implemented by Diethelm Wuertz
+##
+##     # Descriptions:
+##     #   Subsets a timeDate object between from and to dates.
+##
+##     # Arguments
+##     #   x - an object of class "timeDate"
+##     #   from, to - start and end dates as "timeDate" objects.
+##
+##     # Note:
+##     #   This is synonome for the function window() which should
+##     #   be preferred.
+##
+##     # FUNCTION:
+##
+##     .Deprecated("window", "timeDate")
+##
+##     # Extract Subset:
+##     X = timeDate(x, zone = x@FinCenter, FinCenter = "GMT")
+##     FROM = timeDate(from, zone = x@FinCenter, FinCenter = "GMT")
+##     TO = timeDate(to, zone = x@FinCenter, FinCenter = "GMT")
+##     test = (X >= FROM & X <= TO)
+##     ans = timeDate(X[test], zone = "GMT", FinCenter = x@FinCenter)
+##
+##     # Return Value:
+##     ans
+## }
 
 
 ################################################################################

@@ -35,13 +35,7 @@
 #  isHoliday            Tests if 'timeDate' falls on a non-business day or not
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-isWeekday <- 
-function(x, wday = 1:5)
-{
+isWeekday <- function(x, wday = 1:5) {
     # A function implemented by Diethelm Wuertz
     # and improved by Yohan Chalabi
 
@@ -70,13 +64,7 @@ function(x, wday = 1:5)
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-isWeekend <- 
-function(x, wday = 1:5)
-{
+isWeekend <- function(x, wday = 1:5) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -104,13 +92,7 @@ function(x, wday = 1:5)
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-isBizday <-
-function(x, holidays = holidayNYSE(), wday = 1:5)
-{
+isBizday <- function(x, holidays = holidayNYSE(), wday = 1:5) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -145,13 +127,7 @@ function(x, holidays = holidayNYSE(), wday = 1:5)
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-isHoliday <-
-function(x, holidays = holidayNYSE(), wday = 1:5)
-{
+isHoliday <- function(x, holidays = holidayNYSE(), wday = 1:5) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -172,4 +148,3 @@ function(x, holidays = holidayNYSE(), wday = 1:5)
 
 
 ################################################################################
-

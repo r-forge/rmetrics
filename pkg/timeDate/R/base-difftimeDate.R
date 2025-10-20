@@ -20,13 +20,9 @@
 #  difftimeDate              Returns a difference of two 'timeDate' objects
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 difftimeDate <-
     function(time1, time2,
-    units = c("auto", "secs", "mins", "hours", "days", "weeks"))
+             units = c("auto", "secs", "mins", "hours", "days", "weeks"))
 {
     # A function implemented by Diethelm Wuertz
 
@@ -56,7 +52,4 @@ difftimeDate <-
     difftime(time1GMT@Data, time2GMT@Data, tz = "GMT", units = units[1])
 }
 
-
-
 ################################################################################
-

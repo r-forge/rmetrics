@@ -20,8 +20,4 @@
 #  getDataPart,timeDate    Extract POSIXct data part of timeDate objects
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("getDataPart", "timeDate", function(object) object@Data)

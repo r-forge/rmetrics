@@ -20,13 +20,7 @@
 #  rulesFinCenter            Returns DST rules for a financial center
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-rulesFinCenter <-
-    function(FinCenter = "")
-{
+rulesFinCenter <- function(FinCenter = "") {
     # A function implemented by Diethelm Wuertz
 
     # Description:

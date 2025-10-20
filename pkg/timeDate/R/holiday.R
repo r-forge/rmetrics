@@ -20,13 +20,7 @@
 #  holiday                   Returns a holiday date of G7 and CH
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-holiday <-
-    function(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
-{
+holiday <- function(year = getRmetricsOptions("currentYear"), Holiday = "Easter") {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -130,4 +124,3 @@ holiday <-
 
 
 ################################################################################
-

@@ -21,13 +21,7 @@
 #  dayOfYear                 Returns the day of the year to a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-dayOfWeek <-
-function(x)
-{
+dayOfWeek <- function(x) {
     # A function implemented by Diethelm Wuertz
     # and modified by Yohan Chalabi
 
@@ -57,13 +51,7 @@ function(x)
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-dayOfYear <-
-function(x)
-{
+dayOfYear <- function(x) {
     # A function implemented by Diethelm Wuertz
     # and modified by Yohan Chalabi
 
@@ -89,4 +77,3 @@ function(x)
 
 
 ################################################################################
-

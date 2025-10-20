@@ -20,13 +20,7 @@
 #  sample.timeDate           Resamples a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("sample", "timeDate",
-    function(x, size, replace = FALSE, prob = NULL)
-{
+setMethod("sample", "timeDate", function(x, size, replace = FALSE, prob = NULL) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # FUNCTION:
@@ -41,4 +35,3 @@ setMethod("sample", "timeDate",
 
 
 ################################################################################
-

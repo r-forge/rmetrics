@@ -22,10 +22,6 @@
 #  timeCalendar              Creates a 'timeDate' object from calendar atoms
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 timeCalendar <-
     function(y = getRmetricsOptions("currentYear"),
     m = 1:12, d = 1, h = 0, min = 0, s = 0,
@@ -68,7 +64,7 @@ timeCalendar <-
     # FUNCTION:
 
     # Settings and Check:
-    trace = FALSE
+    trace <- FALSE
     if (zone == "")
         zone <- getRmetricsOptions("myFinCenter")
     if (FinCenter == "")
@@ -77,20 +73,20 @@ timeCalendar <-
     if (is.null(h) & is.null(min) & is.null(s)) zone = FinCenter
 
     # Check Input:
-    len = c(length(m), length(d), length(y), length(h), length(min), length(s))
-    data.len = max(len)
+    len <- c(length(m), length(d), length(y), length(h), length(min), length(s))
+    data.len <- max(len)
     if (data.len < 1)
         stop("No arguments defined!")
     if (any((data.len %% len[len > 0]) != 0))
         stop("Arguments have incompatible lengths")
 
     # Make All Arguments the Same Length:
-    if (len[1] == 0) m = 1
-    if (len[2] == 0) d = 1
-    if (len[3] == 0) y = 1960
-    if (len[4] == 0) h = 0
-    if (len[5] == 0) min = 0
-    if (len[6] == 0) s = 0
+    if (len[1] == 0) m <- 1
+    if (len[2] == 0) d <- 1
+    if (len[3] == 0) y <- 1960
+    if (len[4] == 0) h <- 0
+    if (len[5] == 0) min <- 0
+    if (len[6] == 0) s <- 0
 
     # Presettings:
     # m = rep(m, length = data.len)
@@ -100,37 +96,36 @@ timeCalendar <-
     # min = rep(min, length = data.len)
     # s = rep(s, length = data.len)
     # DW 2006-03-13
-    if (length(m) < data.len) m = rep(m, length = data.len)
-    if (length(d) < data.len) d = rep(d, length = data.len)
-    if (length(y) < data.len) y = rep(y, length = data.len)
-    if (length(h) < data.len) h = rep(h, length = data.len)
-    if (length(min) < data.len) min = rep(min, length = data.len)
-    if (length(s) < data.len) s = rep(s, length = data.len)
+    if (length(m) < data.len) m <- rep(m, length = data.len)
+    if (length(d) < data.len) d <- rep(d, length = data.len)
+    if (length(y) < data.len) y <- rep(y, length = data.len)
+    if (length(h) < data.len) h <- rep(h, length = data.len)
+    if (length(min) < data.len) min <- rep(min, length = data.len)
+    if (length(s) < data.len) s <- rep(s, length = data.len)
 
     # Date-Time Strings:
     # Note Format is always of type  "%Y%m%d%H%M%S"  !
-    CCYYMMDD = as.integer(y*10000 + m*100 + d)
-    chardate = as.character(CCYYMMDD)
-    xhhmmss = as.integer(1000000 + h*10000 + min*100 + s)
+    CCYYMMDD <- as.integer(y*10000 + m*100 + d)
+    chardate <- as.character(CCYYMMDD)
+    xhhmmss <- as.integer(1000000 + h*10000 + min*100 + s)
 
     # Date and Date/Time Checks:
     if (mean(xhhmmss) == 1000000) {
-        chartime = substr(as.character(xhhmmss), 2, 7)
-        charvec = as.vector(chardate)
-        format = "%Y%m%d"
+        chartime <- substr(as.character(xhhmmss), 2, 7)
+        charvec <- as.vector(chardate)
+        format <- "%Y%m%d"
     } else {
-        chartime = substr(as.character(xhhmmss), 2, 7)
-        charvec = paste0(as.vector(chardate), as.vector(chartime))
-        format = "%Y%m%d%H%M%S"
+        chartime <- substr(as.character(xhhmmss), 2, 7)
+        charvec <- paste0(as.vector(chardate), as.vector(chartime))
+        format <- "%Y%m%d%H%M%S"
     }
 
     # Return Value:
     ans <- timeDate(charvec = charvec, format = format,
-        zone = zone, FinCenter = FinCenter)
+                    zone = zone, FinCenter = FinCenter)
 
     ans
 }
 
 
 ################################################################################
-

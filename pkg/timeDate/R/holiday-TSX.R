@@ -20,13 +20,7 @@
 #  holidayTSX                Returns holidays for TSX calendar
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-holidayTSX <-
-    function (year = getRmetricsOptions("currentYear"))
-{
+holidayTSX <- function (year = getRmetricsOptions("currentYear")) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -73,7 +67,24 @@ holidayTSX <-
     # FUNCTION:
 
     # Holidays - Years before 2007 are not checked out ...
-    holidays = c(
+
+    ## holidays = c(
+    ##     NewYearsDay(year),
+    ##     GoodFriday(year),
+    ##     CAVictoriaDay(year),
+    ##     CACanadaDay(year),
+    ##     CACivicProvincialHoliday(year),
+    ##     CAThanksgivingDay(year),
+    ##     CALabourDay(year),
+    ##     ChristmasDay(year),
+    ##     BoxingDay(year))
+    ## for (y in year)
+    ##     if (y >= 2008) holidays = c(holidays, CAFamilyDay(year))
+
+    ## GNB: 2025-10-19
+    ##    TODO: work initially with the strings "yyyy-mm-dd" as in holidayNYSE,
+    ##          then convert to dateTime for the weekend calculations
+    holidays <- c(
         NewYearsDay(year),
         GoodFriday(year),
         CAVictoriaDay(year),
@@ -83,13 +94,23 @@ holidayTSX <-
         CALabourDay(year),
         ChristmasDay(year),
         BoxingDay(year))
-    for (y in year)
-        if (y >= 2008) holidays = c(holidays, CAFamilyDay(year))
-    holidays = sort(holidays)
-    
+
+    ## GNB: 2025-10-19
+    ##    CAFamilyDay(year) below is clearly intended to be CAFamilyDay(y).
+    ##    But since my rewrite of CAFamilyDay() we don't need the loop anyway.
+    ##
+    ##    for (y in year)
+    ##        if (y >= 2008) holidays = c(holidays, CAFamilyDay(year))
+    ##
+    ##   TODO: CAFamilyDay(year) could be moved inside the c() above.
+    ##if(any(year >= 2008))
+    holidays <- c(holidays, CAFamilyDay(year))
+
+    holidays <- sort(holidays)
+
     # Holidays falling on Saturdays and Sundays:
-    holidays =  holidays + (1-isWeekday(holidays))*24*3600
-    holidays =  holidays + (1-isWeekday(holidays))*24*3600
+    holidays <-  holidays + (1-isWeekday(holidays))*24*3600
+    holidays <-  holidays + (1-isWeekday(holidays))*24*3600
 
     ## GNB: fix issue 1288; holidayTSX(year=2011)
     ##   was:  (BoxingDay, ChristmasDay) = (Sat, Sun) => (Mon, Mon)
@@ -100,7 +121,7 @@ holidayTSX <-
         wrk <- ChristmasDay(year)[ind] + 2*24*3600
         holidays <- unique(sort(c(holidays, wrk)))
     }
-    
+
     # Add Financial Center:
     holidays <- timeDate(format(holidays),
                          zone = "Toronto", FinCenter = "Toronto")
@@ -111,4 +132,3 @@ holidayTSX <-
 
 
 ################################################################################
-

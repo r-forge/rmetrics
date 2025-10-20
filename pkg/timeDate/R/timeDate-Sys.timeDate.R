@@ -20,13 +20,7 @@
 #  Sys.timeDate              Returns system time as an 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-Sys.timeDate <-
-    function(FinCenter = "")
-{
+Sys.timeDate <- function(FinCenter = "") {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -55,4 +49,3 @@ Sys.timeDate <-
 
 
 ################################################################################
-

@@ -24,13 +24,7 @@
 #  range.timeDate            Extracts range of a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-start.timeDate <-
-    function(x, ...)
-{
+start.timeDate <- function(x, ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -50,13 +44,7 @@ start.timeDate <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-end.timeDate <-
-    function(x, ...)
-{
+end.timeDate <- function(x, ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -75,42 +63,23 @@ end.timeDate <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-min.timeDate <- 
-    function(..., na.rm = FALSE) 
-{
+min.timeDate <- function(..., na.rm = FALSE) {
     # DW: is this ok ??
-    
+
     start.timeDate(...)
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-max.timeDate <- 
-    function(..., na.rm = FALSE) 
-{
+max.timeDate <- function(..., na.rm = FALSE) {
     # DW: is this ok ??
-    
+
     end.timeDate(...)
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-range.timeDate <- 
-    function(..., na.rm = FALSE) 
-{
-    c(start(..., na.rm = na.rm), end(..., na.rm = na.rm)) 
+range.timeDate <- function(..., na.rm = FALSE) {
+    c(start(..., na.rm = na.rm), end(..., na.rm = na.rm))
 }
 
 
 ################################################################################
-

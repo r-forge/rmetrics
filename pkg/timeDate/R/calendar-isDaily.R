@@ -23,103 +23,91 @@
 #  isRegular,timeDate-method      Tests 'timeDate' has regular time stamps
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("isDaily", "timeDate", function(x)
 {
     # A function implemented by Diethelm Wuertz
-    
+
     # Descriptions:
     #   Test if a timeDate object has daily time stamps
-    
+
     # Example:
     #   isDaily(timeSequence(by = "day", length.out = 20))
     #   isDaily(timeCalendar())
     #   isDaily(timeSequence(by = "hour", length.out = 100))
-    
+
     # Details:
-    #   Definition: A timeDate Object is a Daily timeDate object
+    #   Definition: A timeDate object is a Daily timeDate object
     #   if we have not more than one date/time stamp per day.
-    
+
     # Arguments:
     #   x - an object of class timeDate
-    
+
     # FUNCTION:
-    
+
     # Daily ?
     num <- as.numeric(as.POSIXct(x))
-    daily <- seq(from = num[1], by = 60*60*24, length.out=length(num))
-    
+    daily <- seq(from = num[1], by = 60*60*24, length.out = length(num))
+
     # Return
-    (identical(daily, num))
+    identical(daily, num)
 })
 
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("isMonthly", "timeDate", function(x)
 {
     # A function implemented by Diethelm Wuertz
-    
+
     # Descriptions:
     #   Tests if a timeDate object has monthly time stamps
-    
+
     # Arguments:
     #   x - an object of class timeDate
-    
+
     # Details:
     #   Definition: A timeDate Object is a Monthly timeDate object
     #   if we have not more than one date/time stamp per month.
     #   Note a monthly series is also a daily series.
-    
+
     # Example:
     #   isMonthly(timeSequence(by = "day", length.out = 20))
     #   isMonthly(timeCalendar())
     #   isDaily(timeCalendar())
     #   isMonthly(timeSequence(by = "hour", length.out = 100))
-    
+
     # FUNCTION:
-    
+
     ## Monthly ?
     ## 2023-12-20 GNB: changing to use x$month, see NEWS for timeDate > 4032.109
     ## m <- c(timeDate::months(x)) #-> c() to remove attributes
     m <- x$month
-    
+
     # (m[1] -1) -> shift vector to match first entry in m
-    monthly <- seq(from = m[1]-1, length.out=length(m)) %% 12 + 1
-    
+    monthly <- seq(from = m[1]-1, length.out = length(m)) %% 12 + 1
+
     # Return
-    (identical(monthly, m))
+    identical(monthly, m)
 })
 
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("isQuarterly", "timeDate", function(x)
 {
     # A function implemented by Diethelm Wuertz
-    
+
     # Descriptions:
     #   Tests if a timeDate object has quarterly time stamps
-    
+
     # Arguments:
     #   x - an object of class timeDate
-    
+
     # Details:
     #   Definition: A timeDate Object is a Quarterly timeDate object
     #   if we have not more than one date/time stamp per quarter
     #   Note a quarterly series is also a daily and a monthly series.
-    
+
     # Example:
     #   isQuarterly(timeSequence(by = "day", length.out = 20))
     #   isQuarterly(timeCalendar())
@@ -127,52 +115,48 @@ setMethod("isQuarterly", "timeDate", function(x)
     #   isQuarterly(timeCalendar()[(1:4)*3])
     #   isMonthly(timeCalendar()[(1:4)*3])
     #   isDaily(timeCalendar()[(1:4)*3])
-    
+
     # FUNCTION:
-    
+
     ## Quartertly ?
     ## 2023-12-20 GNB: changing to use x$..., see NEWS for timeDate > 4032.109
     ##    m <- c(timeDate::months(x)) #-> c() to remove attributes
     m <- x$month
-    
+
     # (m[1] -1) -> shift vector to match first entry in m
     quarterly <- seq(from = m[1]-1, by = 3, length=length(m)) %% 12 + 1
-    
+
     # Return
-    (identical(quarterly, m))
+    identical(quarterly, m)
 })
 
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("isRegular", "timeDate",  function(x)
 {
     # A function implemented by Diethelm Wuertz
-    
+
     # Descriptions:
     #   Tests if a timeDate object has regular time stamps
-    
+
     # Example:
     #   isRegular(timeSequence(by = "day", length.out = 20))
     #   isRegular(timeCalendar())
     #   isRegular(timeSequence(by = "hour", length.out = 100))
-    
+
     # Details:
     #   Definition: A timeDate Object is a Regular timeDate object
     #   if the timeDate object is either monthly or quarterly,
     #   otherwise not.
-    
+
     # Arguments:
     #   x - an object of class timeDate
-    
+
     # FUNCTION:
-    
+
     # Regular ?
-    (isMonthly(x) | isQuarterly(x))
+    isMonthly(x) | isQuarterly(x)
     })
 
 

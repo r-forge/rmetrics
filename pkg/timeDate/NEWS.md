@@ -1,19 +1,37 @@
 # timeDate 4051.111
 
+- EDIT BEFORE SUBMITTING NEXT VERSION
+
+- streamlined `holidayNYSE()`.
+
+- fixed a minor bug in `holidayTSX()` and streamlined it a bit. *TODO: (1) set some
+  tests, see the examples in the source code of the function; (2) streamline it
+  analogously to holidayNYSE()*.
+
+- removed the deprecated (in v4032.109) `timeDate` method for `cut`, use
+  `window` instead.
+
+- modified the `timeDate` method for `window` to return a 0-length `timeDate`
+  object when the window is empty. Previously it was returning a length-1 object
+  with a data value `NA`.
+
+
+# timeDate 4051.111
+
 - new class `"timeInterval"` represents time intervals. Methods are defined for
-  computing unions, intersections, complement and set difference of
+  computing union, intersection, complement and set difference of
   `"timeInterval"` objects, as well as checking whether dates and time intervals
   are contained in such objects. See `?timeInterval`, `class ? timeInterval`,
   `?in_int`. Not systematically tested yet.
 
-- the prototype of class "timeDate" now sets admissible values for the
-  slots. The previous defaults (e.g., `character(0)` for slots 'format' and
-  'FinCenter') were causing minor problems in rare cases.
+- the prototype of class `"timeDate"` now sets admissible values for the
+  slots. The previous defaults (e.g., `character(0)` for slots `format` and
+  `FinCenter`) were causing minor problems in rare cases.
 
-- streamlined the initialisation method of "timeDate". This changes slot
-  'format' in some inconsequential cases involving `Inf` (e.g.,
-  `timeDate(.POSIXct(-Inf))@format` was `"%Y-%m-%d"` but now is 
-  `"%Y-%m-%d %H:%M:%S"`, which even seems more appropriate).
+- streamlined the initialisation method of `"timeDate"`. This changes slot
+  `format` in some inconsequential cases involving `Inf` (e.g.,
+  `timeDate(.POSIXct(-Inf))@format` was `"%Y-%m-%d"` but now is `"%Y-%m-%d
+  %H:%M:%S"`, which even seems more appropriate).
 
 - the `"timeDate"` methods for `trunc` and `round` now support also units
   "secs", "months" and "years". Previously only "days", "hours", "mins" were
@@ -84,7 +102,7 @@
 # timeDate 4032.109
 
 - new function `earlyCloseNYSE` gives datetimes of early closings of NYSE,
-  including scheduled and unscheduled ones.  The information is incomlete. This
+  including scheduled and unscheduled ones.  The information is incomplete. This
   answers issue [#6757], see also the related issue [#1356] mentioned below in
   the news for a previous version.
 

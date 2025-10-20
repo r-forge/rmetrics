@@ -21,14 +21,8 @@
 #  seq.timeDate              A synonyme function for timeSequence
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-timeSequence <-
-    function(from, to = Sys.timeDate(), by, length.out = NULL, format = NULL,
-             zone = "", FinCenter = "")
-{
+timeSequence <- function(from, to = Sys.timeDate(), by, length.out = NULL,
+                         format = NULL, zone = "", FinCenter = "") {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -106,13 +100,7 @@ timeSequence <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-seq.timeDate <-
-    function (from, to, by, length.out = NULL, along.with = NULL,  ...)
-{
+seq.timeDate <- function (from, to, by, length.out = NULL, along.with = NULL,  ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # FUNCTION:
@@ -207,7 +195,7 @@ seq.timeDate <-
     } else {  # months or years or DSTdays
         ## build the object as POSIXlt, then convert to  POSIXct
         r1 <- as.POSIXlt(from)
-        
+
         if(valid == 7L) { # years
             if(missing(to)) { # years
                 yr <- seq.int(r1$year, by = by, length.out = length.out)

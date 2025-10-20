@@ -20,10 +20,6 @@
 #  names.timeDate             Prints 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("names", "timeDate", function(x) names(x@Data))
 
 setReplaceMethod("names", "timeDate", function(x, value) {

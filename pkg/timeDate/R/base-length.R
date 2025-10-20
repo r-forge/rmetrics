@@ -32,12 +32,7 @@
 #  length.timeDate           Gets the length of a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-length.timeDate <- function(x)
-{
+length.timeDate <- function(x) {
     # A function implemented by Diethelm Wuertz
     # and improved by Yohan Chalabi
 
@@ -61,4 +56,3 @@ length.timeDate <- function(x)
 
 
 ################################################################################
-

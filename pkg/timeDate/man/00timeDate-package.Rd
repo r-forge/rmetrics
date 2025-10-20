@@ -250,7 +250,7 @@
   
   \code{"["} -- Extracts or replaces subsets from \code{"timeDate"} objects,
   \cr 
-  \code{window, cut} -- extract a piece from a \code{"timeDate"} object, \cr
+  \code{window} -- extract a piece from a \code{"timeDate"} object, \cr
   
   In this context it is also important to know the \code{start}
   and the \code{end} time stamp together with the total number of
@@ -275,7 +275,6 @@
     tC[1:3]
     tC[-(4:length(tC))]
     window(tC, start = tC[1], end = tC[3])
-    cut(tC, from = tC[1], to = tC[3])
     tC[tC < tC[4]]
     
     # The Quarterly Series:

@@ -20,13 +20,7 @@
 #  diff.timeDate             Returns suitably lagged and iterated differences
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-diff.timeDate <-
-    function (x, lag = 1, differences = 1, ...)
-{
+diff.timeDate <- function (x, lag = 1, differences = 1, ...) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -59,4 +53,3 @@ diff.timeDate <-
 
 
 ################################################################################
-

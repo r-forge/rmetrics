@@ -20,17 +20,11 @@
 #  summary.timeDate          Summarizes details of a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-summary.timeDate <-
-    function(object, ...)
-{
+summary.timeDate <- function(object, ...) {
     ## A function implemented by Diethelm Wuertz
     ##   GNB : Modified to return a summary object and added a print method
     ##         for that.
-    
+
     # Description:
     #   Summarizes details of a 'timeDate' object
 
@@ -50,7 +44,7 @@ summary.timeDate <-
     ## cat("\nFormat:       ", x@format)
     ## cat("\nFinCenter:    ", x@FinCenter)
     ## cat("\n")
-    ## 
+    ##
     ## # Return Value:
     ## invisible(object)
 
@@ -60,12 +54,12 @@ summary.timeDate <-
         nobs      = length(object),
         format    = object@format,
         finCenter = object@FinCenter )
-    class(res) <- "timeDate_summary"    
-    
+    class(res) <- "timeDate_summary"
+
     res
 }
 
-print.timeDate_summary <- function(x, quote = FALSE, ...){
+print.timeDate_summary <- function(x, quote = FALSE, ...) {
     cat("Start Record:", x$start    , "\n")
     cat("End Record:  ", x$end      , "\n")
     cat("Observations:", x$nobs     , "\n")

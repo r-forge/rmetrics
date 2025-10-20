@@ -32,18 +32,12 @@
 #  sort.timeDate             Sorts a 'timeDate' object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-sort.timeDate <-
-    function(x, ...)
-{
+sort.timeDate <- function(x, ...) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
     #   Sorts a 'timeDate' object
-    
+
     # FUNCTION:
 
     # Return Value:
@@ -52,4 +46,3 @@ sort.timeDate <-
 
 
 ################################################################################
-

@@ -33,18 +33,10 @@
 
 # Functions implemented by Yohan Chalabi and Diethelm Wuertz
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("[", signature(x="timeDate", i="missing", j="missing", drop="ANY"),
     function(x, i, j, ..., drop = TRUE) x)
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("[", signature(x="timeDate", i="numeric", j="missing", drop="ANY"),
     function(x, i, j, ..., drop = TRUE)
     {
@@ -53,10 +45,6 @@ setMethod("[", signature(x="timeDate", i="numeric", j="missing", drop="ANY"),
     })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("[", signature(x="timeDate", i="logical", j="missing", drop="ANY"),
     function(x, i, j, ..., drop = TRUE)
     {
@@ -66,10 +54,6 @@ setMethod("[", signature(x="timeDate", i="logical", j="missing", drop="ANY"),
 )
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("[", signature(x="timeDate", i="character", j="missing", drop="ANY"),
     function(x, i, j, ..., drop = TRUE)
     {
@@ -89,22 +73,12 @@ setMethod("[", signature(x="timeDate", i="character", j="missing", drop="ANY"),
 )
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 setMethod("[", signature(x="timeDate", i="ANY", j="missing", drop="ANY"),
           function(x, i, j, ..., drop = TRUE)
           stop("Not Yet implemented"))
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-"[<-.timeDate" <-
-    function(x, ..., value)
-{
+"[<-.timeDate" <- function(x, ..., value) {
     # A function implemented by Yohan Chalabi
 
     # Description:
@@ -138,13 +112,7 @@ setMethod("[", signature(x="timeDate", i="ANY", j="missing", drop="ANY"),
 
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.subsetCode <-
-function(subset)
-{
+.subsetCode <- function(subset) {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -191,13 +159,7 @@ function(subset)
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.subsetByPython <-
-function(x = timeCalendar(), subset = "::")
-{
+.subsetByPython <- function(x = timeCalendar(), subset = "::") {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -268,13 +230,7 @@ function(x = timeCalendar(), subset = "::")
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-.subsetBySpan  <-
-function(x = timeCalendar(), subset = "last 3 Months")
-{
+.subsetBySpan <- function(x = timeCalendar(), subset = "last 3 Months") {
     # A function implemented by Diethelm Wuertz
 
     # Description:
@@ -316,4 +272,3 @@ function(x = timeCalendar(), subset = "last 3 Months")
 
 
 ################################################################################
-

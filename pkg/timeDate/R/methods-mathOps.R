@@ -22,13 +22,7 @@
 #  -.timeDate                Performs - operation on 'timeDate' objects
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("Ops", c("timeDate", "timeDate"),
-    function(e1, e2)
-{
+setMethod("Ops", c("timeDate", "timeDate"), function(e1, e2) {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -53,32 +47,20 @@ setMethod("Ops", c("timeDate", "timeDate"),
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("+", c("timeDate", "numeric"),
-    function(e1, e2)
-{
+setMethod("+", c("timeDate", "numeric"), function(e1, e2) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
-    
+
     ans <- callGeneric(e1@Data, e2)
     ans <- timeDate(ans, zone = "GMT", FinCenter = e1@FinCenter)
-    
+
     # Return Value:
     ans
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("+", c("numeric", "timeDate"),
-    function(e1, e2)
-{
+setMethod("+", c("numeric", "timeDate"), function(e1, e2) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
-    
+
     ans <- callGeneric(e1, e2@Data)
     ans <- timeDate(ans, zone = "GMT", FinCenter = e2@FinCenter)
 
@@ -87,60 +69,36 @@ setMethod("+", c("numeric", "timeDate"),
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("+", c("timeDate", "timeDate"),
-    function(e1, e2) 
-{
+setMethod("+", c("timeDate", "timeDate"), function(e1, e2) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
-    
+
     stop("binary '+' is not defined for \"timeDate\" objects")
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("-", c("timeDate", "numeric"),
-    function(e1, e2)
-{
+setMethod("-", c("timeDate", "numeric"), function(e1, e2) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
-    
+
     ans <- callGeneric(e1@Data, e2)
     ans <- timeDate(ans, zone = "GMT", FinCenter = e1@FinCenter)
-    
+
     # Return Value:
     ans
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("-", c("numeric", "timeDate"),
-    function(e1, e2)
-{
+setMethod("-", c("numeric", "timeDate"), function(e1, e2) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
-    
+
     stop("Can only subtract from timeDate objects")
 })
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-setMethod("-", c("timeDate", "timeDate"),
-    function(e1, e2) 
-{
+setMethod("-", c("timeDate", "timeDate"), function(e1, e2) {
     # A function implemented by Yohan Chalabi and Diethelm Wuertz
-    
+
     callGeneric(e1@Data, e2@Data)
 })
 
-          
+
 ################################################################################

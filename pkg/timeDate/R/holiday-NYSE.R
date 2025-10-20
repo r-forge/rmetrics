@@ -20,10 +20,6 @@
 #  holidayNYSE               Returns holidays for full-day NYSE calendar
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 holidayNYSE <-
     function(year = getRmetricsOptions("currentYear"), type = c("", "standard", "special"))
 {
@@ -58,59 +54,64 @@ holidayNYSE <-
     ##  Settings:
     type <- match.arg(type)
     ans <- NULL
-    
+
     if(type == "" || type == "standard"){
         ## standard holidays
         ##
         ## Note by GNB at time of introducing argument 'type':
         ##     only change in this chunk is wrapping the old code in 'if'
-        
+
         holidays <- character(0)
-        
+
         ## Iterate years:
         for (y in year ) {
             if (y >= 1885)
-                holidays <- c(holidays, as.character(USNewYearsDay(y)))
-            if (y >= 1885)
-                holidays <- c(holidays, as.character(USIndependenceDay(y)))
-            if (y >= 1885)
-                holidays <- c(holidays, as.character(USThanksgivingDay(y)))
-            if (y >= 1885)
-                holidays <- c(holidays, as.character(USChristmasDay(y)))
+                holidays <- c(holidays,
+                              USNewYearsDay(y, value = ""),
+                              USIndependenceDay(y, value = ""),
+                              USThanksgivingDay(y, value = ""),
+                              USChristmasDay(y, value = "") )
+
             if (y >= 1887)
-                holidays <- c(holidays, as.character(USLaborDay(y)))
+                holidays <- c(holidays, USLaborDay(y, value = ""))
+
             if (y != 1898 & y != 1906 & y != 1907)
-                holidays <- c(holidays, as.character(USGoodFriday(y)))
-            if (y >= 1909 & y <= 1953)
-                holidays <- c(holidays, as.character(USColumbusDay(y)))
-            if (y >= 1998)
-                holidays <- c(holidays, as.character(USMLKingsBirthday(y)))
+                holidays <- c(holidays, USGoodFriday(y, value = ""))
+
             if (y >= 1896 & y <= 1953)
-                holidays <- c(holidays, as.character(USLincolnsBirthday(y)))
-            if (y <= 1970)
-                holidays <- c(holidays, as.character(USWashingtonsBirthday(y)))
-            if (y > 1970)
-                holidays <- c(holidays, as.character(USPresidentsDay(y)))
+                holidays <- c(holidays, USLincolnsBirthday(y, value = ""))
+
+            if (y >= 1909 & y <= 1953)
+                holidays <- c(holidays, USColumbusDay(y, value = ""))
+
             if (y == 1918 | y == 1921 | (y >= 1934 & y <= 1953))
-                holidays <- c(holidays, as.character(USVeteransDay(y)))
+                holidays <- c(holidays, USVeteransDay(y, value = ""))
+
             if (y <= 1968 | y == 1972 | y == 1976 | y == 1980)
-                holidays <- c(holidays, as.character(USElectionDay(y)))
-            if (y <= 1970)
-                holidays <- c(holidays, as.character(USDecorationMemorialDay(y)))
-            if (y >= 1971)
-                holidays <- c(holidays, as.character(USMemorialDay(y)))
+                holidays <- c(holidays, USElectionDay(y, value = ""))
+
+            holidays <- if (y <= 1970)
+                            c(holidays, USWashingtonsBirthday(y, value = ""),
+                              USDecorationMemorialDay(y, value = "") )
+                        else # (y >= 1971)
+                            c(holidays, USPresidentsDay(y, value = ""),
+                              USMemorialDay(y, value = "") )
+
+            if (y >= 1998)
+                holidays <- c(holidays, USMLKingsBirthday(y, value = ""))
+
             if (y >= 2022) # GB, issue #6755
-                holidays <- c(holidays, as.character(USJuneteenthNationalIndependenceDay(y)))
+                holidays <- c(holidays, USJuneteenthNationalIndependenceDay(y, value = ""))
         }
-        
+
         # Sort and Convert to 'timeDate':
         holidays <- sort(holidays)
         ans <- timeDate(format(holidays), zone = "NewYork", FinCenter = "NewYork")
-        
+
         # Move Sunday Holidays to Monday:
         posix1 <- as.POSIXlt(ans, tz = "GMT")
         ans <- ans + as.integer(posix1$wday==0) * 24 * 3600
-        
+
         # After July 3, 1959, move Saturday holidays to Friday
         # ... except if at the end of monthly/yearly accounting period
         # this is the last business day of a month.
@@ -124,17 +125,17 @@ holidayNYSE <-
         lon <- .last.of.nday(year = y, month = m, lastday = lastday, nday = 5)
         ExceptOnLastFriday <- timeDate(format(lon), zone = "NewYork",
                                        FinCenter = "NewYork")
-        
+
         ans <- ans - as.integer(ans >= timeDate("1959-07-03",
                                 zone ="GMT", FinCenter = "GMT") &
                                 as.POSIXlt(ans, tz = "GMT")$wday == 6  &
                                 (ans - 24*3600) != ExceptOnLastFriday ) * 24 * 3600
     }
-    
+
     if(type == "" || type == "special"){
         ## special closings
         sp <- nyse_special_closings[as.integer(format(nyse_special_closings, format = "%Y")) %in% year]
-        
+
         ans <- unique(sort(if(is.null(ans)) sp else c(ans, sp)))
     }
 
@@ -161,26 +162,26 @@ earlyCloseNYSE <- function(year) {
     year1 <- year >= 2012
 
     res <- timeDate()
-    
+
     if(length(year1)) {
         ## Thanksgiving
         thanks <- USThanksgivingDay(year)
         ## this should be computed more robustly
         ## but the date is end of November, little risk for DST problems, etc.
         thanks_p1 <- thanks + 86400   ## 24 * 60 * 60  # always Friday
-        
+
         ## indep <- USIndependenceDay(year) # July 4
         ## day before Independence day
         indep_m1 <- timeDate(paste0(year, "-07-03", " ", "13:00:00"))  # July 3
-        
-        indep_m1 <- indep_m1[!(dayOfWeek(indep_m1) %in% c("Sat", "Sun"))] 
-        
+
+        indep_m1 <- indep_m1[!(dayOfWeek(indep_m1) %in% c("Sat", "Sun"))]
+
         ## Christmas Eve
         xmas <- ChristmasDay(year)
         eve <- ChristmasEve(year)
-        
+
         eve <- eve[!(dayOfWeek(xmas) %in% c("Mon", "Sat", "Sun"))]
-        
+
         ## take care of empty vectors
         ## unfortunately, currently timeDate(character0)) gives a timeDate of length 1 (NA)
         res <- c(thanks_p1, indep_m1, eve)
@@ -190,7 +191,7 @@ earlyCloseNYSE <- function(year) {
             res <- sort(res)
         }
     }
-    
+
     db_years <- (as.numeric(format(early_close, "%Y")))
     if(any(flags <- db_years %in% year))
         if(length(res) == 1 && is.na(res))
@@ -198,6 +199,6 @@ earlyCloseNYSE <- function(year) {
             res <- early_close[flags] ## assumed sorted in the db
         else
             res <- unique(sort(c(early_close[flags], res)))
-    
+
     res
 }

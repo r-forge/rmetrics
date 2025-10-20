@@ -20,10 +20,6 @@
 #  endpoints              Returns endpoint indexes from a timeDate object
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
 ## YC: do not make this function visible unless one rename it to avoid
 ## conflicts with xts endpoints() function.
 .endpoints <-

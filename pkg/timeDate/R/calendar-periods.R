@@ -22,13 +22,7 @@
 #  monthlyRolling          Returns start and end dates for monthly periods
 ################################################################################
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-periods <-
-    function (x, period = "12m", by = "1m", offset = "0d")
-{
+periods <- function (x, period = "12m", by = "1m", offset = "0d") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -82,13 +76,7 @@ periods <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-periodicallyRolling <-
-    function(x, period = "52w", by = "4w", offset = "0d")
-{
+periodicallyRolling <- function(x, period = "52w", by = "4w", offset = "0d") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -158,13 +146,7 @@ periodicallyRolling <-
 }
 
 
-# ---------------------------------------------------------------------------- #
-# Roxygen Tags
-#' @export
-# ---------------------------------------------------------------------------- #
-monthlyRolling <-
-    function(x, period = "12m", by = "1m")
-{
+monthlyRolling <- function(x, period = "12m", by = "1m") {
     # A function implemented by Diethelm Wuertz and Yohan Chalabi
 
     # Description:
@@ -228,4 +210,3 @@ monthlyRolling <-
 
 
 ################################################################################
-
