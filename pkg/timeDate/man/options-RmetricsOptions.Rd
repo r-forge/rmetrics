@@ -3,8 +3,6 @@
 \alias{setRmetricsOptions}
 \alias{getRmetricsOptions}
 
-\alias{getRmetricsOption}
-
 
 \title{Rmetrics option settings}
 
@@ -17,19 +15,28 @@
 }
 
 \usage{
-setRmetricsOptions(\dots)
 getRmetricsOptions(x, unset = "")
+setRmetricsOptions(\dots)
 }
 
 \arguments{
-  \item{unset}{
-    a character string holding the return value is x is not set.
-  }
   \item{x}{
-    a character string holding an option name.
+    a character vector of option names. If missing, give all Rmetrics
+    options currently set.
+  }
+  \item{unset}{
+    a character vector or a list specifying what values to return for
+    options in \code{x} that are not set (see \code{\link{mget}}).
   }
   \item{\dots}{
-    any options can be defined, using \code{name = value} or by
-    passing a list of such tagged values.
+    any options can be defined using \code{name = value} or by passing a
+    list of such tagged values.
   }
+}
+
+\value{
+  for \code{getRmetricsOptions}, the value(s) of the requested options,
+  
+  for \code{setRmetricsOptions}, the revious value(s) of the options set
+  in the call, invisibly,
 }

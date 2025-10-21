@@ -21,38 +21,53 @@
 ################################################################################
 
 ## GNB: made it an S3 method
-##        setMethod("frequency", "timeDate", 
+##        setMethod("frequency", "timeDate",
 frequency.timeDate <- function(x, ...)
 {
     # A function implemented by Diethelm Wuertz
-    
+    # Streamlined by GNB
+
     # Description:
     #   Returns the frequency of a timeDate vector
-    
+
     # Arguments:
     #   x - an object of class timeDate
-    
+
     # Example:
     #   frequency(timeCalendar())
     #   frequency(timeCalendar()[(1:3)*4])
     #   frequency(timeLastDayInQuarter(timeCalendar())[(1:3)*4])
-    
-    # FUNCTION:
-    
-    # Frequency:
-    frequency <- 1
-    if(isMonthly(x)) frequency <- 12
-    if(isQuarterly(x)) frequency <- 4
-    
-    # Return Value:
-    frequency
+
+    ## 2025-10-21 GNB: was:
+    ##     frequency <- 1
+    ##     if(isMonthly(x)) frequency <- 12
+    ##     if(isQuarterly(x)) frequency <- 4
+    ##
+    ##     # Return Value:
+    ##     frequency
+
+    ## the order is essential, since by definition a quarterly (at most one
+    ## value in each quarter) ts is also monthly (at most one value in each
+    ## month) and daily (at most one value in each day); and a monthly one is
+    ## daily, as well. A return value of 1, just indicates that the ts is
+    ## neither monthly nor quarterly.
+    if(isQuarterly(x))
+        4
+    else if(isMonthly(x))
+        12
+    else
+        1
 }
 
 ## ... but package timeSeries also defines S4 method and imports the S4 generic from
 ## timeDate. So for now keep the S4 method, as well.
 ##
 ## No, actually timeSeries imports 'frequency' from timeDate;
-## TODO: something goes wwrong when timeSeries exports methods for 'frequency'
-setMethod("frequency", "timeDate", frequency.timeDate)
+## TODO: something goes wrong when timeSeries exports methods for 'frequency'
+##
+## 2025-10-21 GNB: the above problems were resolved in timeSeries v4041.111
+## (released in Sep 2024). Should be possible to remove the S4 method.
+##
+## setMethod("frequency", "timeDate", frequency.timeDate)
 
 ################################################################################

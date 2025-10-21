@@ -17,8 +17,7 @@
 
 .RmetricsOptions <- new.env(hash = TRUE)
 
-setRmetricsOptions <- function(...)
-{
+setRmetricsOptions <- function(...) {
     # A function implemented by Yohan Chalabi
 
     x <- list(...)
@@ -26,33 +25,20 @@ setRmetricsOptions <- function(...)
     if (length(x) == 1 && is.list(x[[1]]))
         x <- x[[1]]
     nm <- names(x)
-     if (is.null(nm) || "" %in% nm)
+    if (is.null(nm) || "" %in% nm)
         stop("all arguments must be named")
-    old <- lapply(nm, function(m) unname(getRmetricsOption(m)))
+    old <- lapply(nm, function(m) unname(getRmetricsOptions(m)))
     names(old) <- nm
     sapply(nm, function(nm) assign(nm, x[[nm]],
-        envir = .RmetricsOptions))
+                                   envir = .RmetricsOptions))
     invisible(old)
 }
 
-getRmetricsOptions <-
-    function(x = NULL, unset = "")
-{
+getRmetricsOptions <- function(x = NULL, unset = "") {
     # A function implemented by Yohan Chalabi
 
     if (is.null(x))
         x <- ls(all.names = TRUE, envir = .RmetricsOptions)
     unlist(mget(x, envir = .RmetricsOptions, mode = "any",
-        ifnotfound = as.list(unset)))
+                ifnotfound = as.list(unset)))
 }
-
-# YC : 2009-10-06
-# kept for compatibility purpose but should be eventually deprecated
-##
-## GNB : 2024-12-01
-##    :TODO:
-##    timeSeries v4041.111 has a call to getRmetricsOption(),
-##    which I have changed in the devel version to getRmetricsOptions().
-##    When that is published, I can remove getRmetricsOption().
-##    (after some time: users who update timeDate but not timeSeries would be in trouble)
-getRmetricsOption <- getRmetricsOptions

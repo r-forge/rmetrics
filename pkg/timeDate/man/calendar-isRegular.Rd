@@ -7,7 +7,6 @@
 
 \alias{frequency}
 \alias{frequency.timeDate}
-\alias{frequency,timeDate-method}
 
 \alias{isDaily,timeDate-method}
 \alias{isMonthly,timeDate-method}
@@ -68,10 +67,10 @@
 
 \value{
 
-  The \code{is*} functions return \code{TRUE} or \code{FALSE} depending 
+  for the \code{is*} functions, \code{TRUE} or \code{FALSE} depending 
   on whether the date/time vector fulfills the condition or not.
     
-  The function frequency returns in general 1, for quarterly date/time
+  \code{frequency} returns in general 1, for quarterly date/time
   vectors 4, and for monthly vectors 12.
   
 }

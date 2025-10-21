@@ -15,6 +15,11 @@
   object when the window is empty. Previously it was returning a length-1 object
   with a data value `NA`.
 
+- removed the S4 timeDate method for `frequency` (the S3 method suffices). Also,
+  `frequency` is no longer turned into an S4 generic and not exported.
+
+- removed `getRmetricsOption`, use `getRmetricsOptions` (i.e., plural) instead.
+
 
 # timeDate 4051.111
 

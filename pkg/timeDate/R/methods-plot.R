@@ -21,7 +21,7 @@
 #  points,timeDate         Adds points to a 'timeDate' plot
 #  lines,timeDate          Adds lines to a 'timeDate' plot
 #  axis.timeDate           S3 Adds an axis to a 'timeDate' plot
-#  pretty.timeDate         S3 Returns a sequence of equally spaced round values 
+#  pretty.timeDate         S3 Returns a sequence of equally spaced round values
 #  abline,timeDate         Adds an abline to a 'timeDate' plot
 ################################################################################
 
@@ -32,7 +32,7 @@ setMethod("plot", "timeDate",
 
     # Description:
     #   Plots a 'timeDate' object
-    
+
     # Note:
     #   Doesn't yet support the features of timeDate objects ...
 
@@ -65,7 +65,7 @@ setMethod("lines", "timeDate",
 
     # Description:
     #   Adds lines to a 'timeDate' plot
-    
+
     # FUNCTION:
 
     # Note:
@@ -81,7 +81,7 @@ axis.timeDate <- function(side, x, at, format = NULL, labels = TRUE, ...) {
 
     # Description:
     #   Adds an axis to a 'timeDate' plot
-    
+
     # Arguments:
     #   side - an integer specifying which side of the plot the axis
     #       is to be drawn on. The axis is placed as follows:
@@ -107,59 +107,59 @@ axis.timeDate <- function(side, x, at, format = NULL, labels = TRUE, ...) {
 
     ## Add Axis:
     ## GNB: arg. x was: x=as.POSIXct(x)
-    ##   'x=as.POSIXct(x)' might fail if 'x' is missing. It wasn't faling
+    ##   'x=as.POSIXct(x)' might fail if 'x' is missing. It wasn't failing
     ##   only because axis.POSIXct() was ignoring argument 'x' when 'at' was
     ##   non-missing.  But this is no longer the case after R-devel 2023-01-07
     ##   r83578, which throws error. Fix suggested by Uwe Liege.
     axis.POSIXct(side = side, x = if(!missing(x)) as.POSIXct(x),
                  at = as.POSIXct(at), format = format, labels = labels, ...)
-    
+
     invisible()
 }
 
 
-pretty.timeDate <- function(x, n = 5, min.n = n%/%3, shrink.sml = 0.75, 
-        high.u.bias = 1.5, u5.bias = 0.5 + 1.5 * high.u.bias, 
+pretty.timeDate <- function(x, n = 5, min.n = n%/%3, shrink.sml = 0.75,
+        high.u.bias = 1.5, u5.bias = 0.5 + 1.5 * high.u.bias,
         eps.correct = 0, ...) {
     # A function implemented by Diethelm Wuertz
-    
+
     # Description:
     #    Returns a sequence of equally spaced round values.
-    
+
     # Details:
-    #    Computes a sequence of about n+1 equally spaced ?round? 
-    #    values which cover the range of the values in x. 
-    #    The values are chosen so that they are 1, 2 or 5 times 
+    #    Computes a sequence of about n+1 equally spaced ?round?
+    #    values which cover the range of the values in x.
+    #    The values are chosen so that they are 1, 2 or 5 times
     #    a power of 10.
-    
+
     # Arguments:
     #    x - a 'timeDate' object from which the time is
     #        extracted
-    #    n - integer giving the desired number of intervals.  
-    #    min.n  - nonnegative integer giving the minimal 
-    #        number of intervals. 
-    #    shrink.sml - positive numeric by a which a default 
-    #        scale is shrunk in the case when range(x) is 
+    #    n - integer giving the desired number of intervals.
+    #    min.n  - nonnegative integer giving the minimal
+    #        number of intervals.
+    #    shrink.sml - positive numeric by a which a default
+    #        scale is shrunk in the case when range(x) is
     #        very small.
-    #    high.u.bias - non-negative numeric, typically > 1. 
+    #    high.u.bias - non-negative numeric, typically > 1.
     #        Larger high.u.bias values favor larger units.
-    #    u5.bias - non-negative numeric multiplier favoring 
+    #    u5.bias - non-negative numeric multiplier favoring
     #        factor 5 over 2.
-    #    eps.correct - integer code, one of {0,1,2}. If 
+    #    eps.correct - integer code, one of {0,1,2}. If
     #       non-0, a correction is made at the boundaries.
     #    ... - further arguments for methods.
-       
+
     # FUNCTION:
-    
+
     x <- as.POSIXct(x)
     ans <- pretty(x, n=n, min.n=min.n, shrink.sml=shrink.sml,
-        high.u.bias=high.u.bias, u5.bias=u5.bias, 
+        high.u.bias=high.u.bias, u5.bias=u5.bias,
         eps.correct=eps.correct, ...)
-    
+
     # Return Value:
     as.timeDate(ans)
 }
-    
+
 
 setMethod("abline", signature(v = "timeDate"),
     function(a = NULL, b = NULL, h = NULL, v = NULL, reg = NULL,

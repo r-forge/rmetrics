@@ -116,8 +116,7 @@ export(
     dayOfWeek, dayOfYear,
     difftimeDate,
     finCenter, "finCenter<-",
-    getRmetricsOption,
-    getRmetricsOptions, # compatibility
+    getRmetricsOptions,
     holiday,
     holidayLONDON, holidayNERC, holidayNYSE, holidayTSX, holidayZURICH,
     isBizday, isDaily, isHoliday, isMonthly, isQuarterly, isRegular,
@@ -140,7 +139,7 @@ export(
     whichFormat,
 
     earlyCloseNYSE,
-    frequency,
+    ## frequency, 2025-10-21 GNB: removed the S4 method, no need to export it now
     pasteMat,
     timeCeiling,
     timeInterval,

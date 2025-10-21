@@ -52,7 +52,7 @@ setMethod("show", "timeDate", function (object)
 
     # print message
     if (ptest)
-        cat(gettextf("...\n [ reached getRmetricsOption('max.print') | getOption('max.print') -- omitted %i rows ]]\n", omitted))
+        cat(gettextf("...\n [ reached getRmetricsOptions('max.print') | getOption('max.print') -- omitted %i rows ]]\n", omitted))
 
     # Return Value:
     invisible(NULL) # 'show' returns an invisible 'NULL'. (cf. ?show)
@@ -95,7 +95,7 @@ setMethod("show", "timeInterval", function (object)
 
     # print message
     if (ptest)
-        cat(gettextf("...\n [ reached getRmetricsOption('max.print') | getOption('max.print') -- omitted %i rows ]]\n", omitted))
+        cat(gettextf("...\n [ reached getRmetricsOptions('max.print') | getOption('max.print') -- omitted %i rows ]]\n", omitted))
 
     # Return Value:
     invisible(NULL) # 'show' returns an invisible 'NULL'. (cf. ?show)
