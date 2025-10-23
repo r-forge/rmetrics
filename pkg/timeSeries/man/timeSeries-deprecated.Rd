@@ -46,8 +46,6 @@ interpNA(x, method = c("linear", "before", "after"), \dots)
 
 \description{
   
-  \tabular{ll}{
-
     \code{seriesData} (removed) extracts data slot from a 'timeSeries'.
     use \code{\link{as.matrix}} instead. \cr
     % \item{object}{

@@ -1,6 +1,9 @@
 ## timeSeries 4041.111.9000
 
-- changed a call of `getRmetricsOption` to `getRmetricsOptions`.
+- removed the unnecessary tabular environment in 'timeSeries-deprecated.Rd'.
+
+- corrected minor typo's (e.g., changed a `getRmetricsOption` to
+  `getRmetricsOptions` in an error message).
 
 
 ## timeSeries 4041.111
@@ -14,9 +17,12 @@
 
 ## timeSeries 4041.110
 
-- this is a technical update, there are no user visible changes (there was an
-  explicit call to `timeDate::months` in the code, but the upcoming v4041.110 of
-  timeDate doesn't export `months` anymore).
+- this is a technical update, there are no user visible changes. 
+
+- There was an explicit call to `timeDate::months` in the code, but the upcoming
+  v4041.110 of timeDate doesn't export `months` anymore (in package code call
+  `stats::months` or import `months` from `stats` and use `months` without the
+  package prefix).
 
 
 ## timeSeries 4032.109
