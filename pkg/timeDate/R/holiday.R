@@ -20,8 +20,9 @@
 #  holiday                   Returns a holiday date of G7 and CH
 ################################################################################
 
-holiday <- function(year = getRmetricsOptions("currentYear"), Holiday = "Easter") {
+holiday <- function(year = getRmetricsOptions("currentYear"), Holiday = "Easter", ..., names = FALSE) {
     # A function implemented by Diethelm Wuertz
+    # Significantly modified and amended by GNB
 
     # Description:
     #   Returns the date of a holiday, year may be a vector.
@@ -102,21 +103,79 @@ holiday <- function(year = getRmetricsOptions("currentYear"), Holiday = "Easter"
 
     # FUNCTION:
 
-    # Determine Function:
-    nHolidays = length(Holiday)
-    if(nHolidays == 1) {
-        FUN = match.fun(Holiday)
-        ans = as.character(FUN(year))
+    if(names) {
+        nams <- names(Holiday)
+        if(is.null(nams)) {
+            nams <- if(is.character(Holiday))
+                        Holiday
+                    else {
+                        ## wrk <- as.character(as.list(substitute(Holiday))[-1])
+                        if(is.name(substitute(Holiday)))
+                            if(is.function(Holiday))
+                                ## A snag here is that if the user has assigned the holiday
+                                ## to a variable and uses that variable in the call, the name
+                                ## will be that of the variable:
+                                ##
+                                ##  > tmp1a <- Easter
+                                ##  > holiday(2024:2025, Holiday = tmp1a, names = TRUE)
+                                ##  GMT
+                                ##        tmp1a        tmp1a
+                                ## [2024-03-31] [2025-04-20]
+                                ##
+                                ## the 'else' clause below handles the analogous case when tmp1a
+                                ## contains more than one holidays.
+                                all.names(substitute(Holiday), functions = FALSE)
+                            else { # here Holiday is a variable assigned to by the user
+                                wrk <- all.names(Holiday, functions = FALSE)
+                                if(identical(wrk, character(0))) {
+
+                                    cat("unable to determine names; using H1, H2, ...;\n")
+                                    cat("see ?holiday for alternative ways to specify argument Holiday\n")
+                                    cat("that will allow the holiday() to deduce the names.\n")
+                                    NULL
+                                } else
+                                    wrk
+                            }
+                        else {
+                            wrk <- all.names(Holiday, functions = FALSE)
+                            if(identical(wrk, character(0)))
+                                all.names(substitute(Holiday), functions = FALSE)
+                            else
+                                wrk
+                        }
+
+                    }
+        }
+    }
+
+    if(is.language(Holiday))
+        Holiday <- eval(Holiday)
+
+
+    if(is.function(Holiday)) {
+        FUN <- match.fun(Holiday)
+        ans <- as.character(FUN(year))
+        ## TODO: test the case when wrk is empty
+        if(names)
+            names(ans) <- rep(nams, length(ans)) # length(nams) should be 1
     } else {
-        ans = character(0)
+        nHolidays <- length(Holiday)
+        if(names && is.null(nams))
+            nams <- paste0("h", seq_len(nHolidays))
+
+        ans <- character(0)
         for (i in seq_len(nHolidays)) {
-            FUN = match.fun(Holiday[[i]])
-            ans = c(ans, as.character(FUN(year)))
+            FUN <- match.fun(Holiday[[i]])
+            wrk <- as.character(FUN(year))
+            ## TODO: test the case when wrk is empty
+            if(names)
+                names(wrk) <- rep(nams[[i]], length(wrk))
+            ans <- c(ans, wrk)
         }
     }
 
     # Classify as simple integer ISO date format CCYYMMDD
-    ans = timeDate(ans)
+    ans <- timeDate(ans)
 
     # Return Value:
     ans

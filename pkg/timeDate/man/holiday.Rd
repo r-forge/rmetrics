@@ -9,21 +9,21 @@
 }
 
 \usage{
-holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
+holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter", 
+        \dots, names = FALSE)
 }
 
 \arguments{
   \item{Holiday}{
-    
-    the function name (a character string or unquoted) of an
-    ecclesiastical or public holiday in the G7 countries or Switzerland,
-    see the list below. Can also be a character vector to specify
-    several holidays.
+    one or more names of holidays 
+    as a character vector or a list of the unquoted function names.
 
   }
   \item{year}{
     an integer value or vector of years, formatted as \code{YYYY}.
   }
+  \item{...}{further arguments, currently ignored.}
+  \item{names}{if \code{TRUE} include holiday names.}
 }
 
 \value{
@@ -32,16 +32,31 @@ holiday(year = getRmetricsOptions("currentYear"), Holiday = "Easter")
 
 \details{
 
-    Easter is the central ecclesiastical holiday. Many other holidays
-    are related to this feast. The function \code{Easter} computes
-    the dates of Easter and related ecclesiastical holidays for the 
-    requested year vector. \code{holiday} calculates the dates of 
-    ecclesiastical or publich holidays in the G7 countries, e.g. 
-    \code{holiday(2003, "GoodFriday")}. Rmetrics contains holiday 
-    functions automatically loaded at startup time. The user can 
-    add easily additional holiday functions. The information for 
-    the holidays is collected from several web pages about holiday 
-    calendars.
+  The package contains functions for most ecclesiastical and public
+  holidays in the G7 countries and Switzerland.
+  
+  Easter is the central ecclesiastical holiday. Many other holidays are
+  related to this feast. The function \code{Easter} computes the dates
+  of Easter and related ecclesiastical holidays for the requested year
+  vector.
+
+  \code{holiday} calculates the dates of ecclesiastical or publich
+  holidays in the G7 countries, e.g.  \code{holiday(2003, "GoodFriday")}.
+
+  Rmetrics contains holiday functions automatically loaded at startup
+  time. The user can add easily additional holiday functions. 
+
+  If \code{names} is TRUE the returned dates will be named. If
+  \code{Holiday} is named, its names are used. Otherwise, if
+  \code{Holiday} is a character vector, it is used for the names. If the
+  holidays are specified as unquoted symbols, those are turned into
+  strings for the names. As a lost resort, if the names cannot be
+  inferred, generated names are used, see the examples. Note that the
+  names will be duplicated, unless \code{length(year) == 1}.
+
+}
+
+\section{Overview}{
     The following ecclesiastical and public \code{[HOLIDAY]} functions 
     in the G7 countries and Switzerland are available: \cr
     
@@ -168,6 +183,59 @@ Easter(2000:2005)
 ## GoodFriday
 GoodFriday(2000:2005)
 Easter(2000:2005, -2) 
+
+#### Named holidays
+
+## single year
+holiday(2025, Holiday = "Easter", names = TRUE)
+holiday(2025, Holiday = Easter, names = TRUE)
+
+## more years
+holiday(2024:2025, Holiday = "Easter", names = TRUE)
+holiday(2024:2025, Holiday = Easter, names = TRUE)
+
+## more than one holiday
+holiday(2024:2025, Holiday = c("Easter", "ChristmasDay"), names = TRUE)
+holiday(2024:2025, Holiday = c(Easter, ChristmasDay), names = TRUE)
+
+## holidays in a variable containing character values
+ho1 <- "Easter"
+holiday(2025, Holiday = ho1, names = TRUE)
+
+
+## here, Easter is evaluated and holiday() doesn't see the name
+ho1a <- Easter
+ho3 <- c(Easter, GBEarlyMayBankHoliday)
+
+holiday(2025, Holiday = ho1a, names = TRUE)
+
+## if you wish/need to use a separate variable, use 'quote':
+ho1b <- quote(Easter)
+ho3b <- quote(c(Easter, GBEarlyMayBankHoliday))
+
+holiday(2025, Holiday = ho1b, names = TRUE)
+holiday(2025, Holiday = ho3b, names = TRUE)
+holiday(2024:2025, Holiday = ho3b, names = TRUE)
+
+## with string values there is no need to quote:
+ho2 <- c("Easter", "GBEarlyMayBankHoliday")
+holiday(2025, Holiday = ho2, names = TRUE)
+
+
+
+
+holiday(Holiday = c(Easter, GBEarlyMayBankHoliday), names = TRUE)
+
+
+holiday(2024:2025, Holiday = tmp2, names = TRUE)
+holiday(2024:2025, Holiday = tmp1a, names = TRUE)
+holiday(2024:2025, Holiday = tmp1, names = TRUE)
+
+
+## redundant c() but no harm done
+holiday(2024:2025, Holiday = c("Easter"), names = TRUE)
+holiday(2024:2025, Holiday = c(Easter), names = TRUE)
+
 }
 
 \keyword{chron}
