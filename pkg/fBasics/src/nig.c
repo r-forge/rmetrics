@@ -21,7 +21,7 @@
 // #include <Rdefines.h>
 // #include <Rinternals.h>
 // #include <R_ext/Constants.h>
-#include <R_ext/PrtUtil.h>
+// #include <R_ext/PrtUtil.h>
 #include <R_ext/Error.h>
 
 #define  SIGN(a,b) ((b) >= 0.0 ? fabs(a) : -fabs(a))
