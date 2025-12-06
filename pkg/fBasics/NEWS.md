@@ -1,5 +1,10 @@
 # fBasics 4041.97.9000
 
+- removed include directive for R_ext/PrtUtil.h from src/nig.c (R-devel throws
+  warning about it now).
+
+- removed other redundant include directives in src/nig.c
+
 - removed a superfluous tabular environment from 'plot-qqPlot.Rd' (it was
   raising a NOTE in recent CRAN checks).
   
