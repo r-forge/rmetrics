@@ -1,4 +1,4 @@
-# fBasics 4041.97.9000
+# fBasics 4052.98
 
 - removed include directive for R_ext/PrtUtil.h from src/nig.c (R-devel throws
   warning about it now).
