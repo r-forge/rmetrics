@@ -1,13 +1,13 @@
-## CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r6482–r????)
+## CHANGES in fGarch VERSION 4052.93 (2024-12-12, svn r6482–r????)
 
 -   emphasised that the skew normal distribution in fGarch is different
     from what is usually called skew normal distribution. Similarly for
     the other skew distributions.
 
--   replaced a call to 'warnings' (plural) with 'warning' (singular) in
-    `garchSpec`. The old one was clearly a typo and was not issuing the
-    intended warning about the violation of the stationarity condition
-    for GARCH models.
+- replaced a call to 'warnings' (plural) with 'warning' (singular, a
+    different function) in `garchSpec`. The old one was clearly a typo
+    and was not issuing the intended warning about the violation of
+    the stationarity condition for GARCH models.
 
 -   improved the layout of the reference section of the pkgdown site.
 

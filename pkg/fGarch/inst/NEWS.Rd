@@ -15,7 +15,7 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r6482--r????)}{
+\section{CHANGES in fGarch VERSION 4052.93 (2024-12-12, svn r6482--r????)}{
   \itemize{
 
     \item emphasised that the skew normal distribution in fGarch is

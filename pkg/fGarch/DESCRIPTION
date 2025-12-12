@@ -1,6 +1,6 @@
 Package: fGarch
 Title: Rmetrics - Autoregressive Conditional Heteroskedastic Modelling
-Version: 4040.92.9000
+Version: 4052.93
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Yohan", "Chalabi", role = "aut")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
@@ -19,6 +19,6 @@ Suggests: RUnit, tcltk, goftest
 LazyData: yes
 License: GPL (>= 2)
 URL: https://geobosh.github.io/fGarchDoc/ (doc),
- https://r-forge.r-project.org/scm/viewvc.php/pkg/fGarch/?root=rmetrics (devel),
- https://www.rmetrics.org 
-BugReports: https://r-forge.r-project.org/projects/rmetrics
+     https://CRAN.R-project.org/package=fGarch,
+     https://www.rmetrics.org 
+BugReports: https://r-forge.r-project.org/tracker/?func=browse&group_id=156&atid=633
