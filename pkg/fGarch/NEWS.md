@@ -1,4 +1,4 @@
-## CHANGES in fGarch VERSION 4052.93 (2024-12-12, svn r6482–r????)
+## CHANGES in fGarch VERSION 4052.93 (2024-12-12, svn r6482–r6544)
 
 -   emphasised that the skew normal distribution in fGarch is different
     from what is usually called skew normal distribution. Similarly for
