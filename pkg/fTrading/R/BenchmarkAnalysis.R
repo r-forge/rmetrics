@@ -40,7 +40,7 @@ function(x)
     if (TS) {
         positions = x@positions
         x = series(x)
-        x = na.omit(x) # 2025-12-12 (GNB) was: removeNA(x)
+        x = na.omit(x)  # 2025-12-12 (GNB) was: removeNA(x)
     }
 
     # Check for Univariate Series:
@@ -95,7 +95,7 @@ function(x, r = 0, scale = sqrt(250))
     # FUNCTION:
 
     # Check for timeSeries Object:
-    if (is.timeSeries(x)) x = na.omit(series(x)) # 2025-12-12 (GNB) was: removeNA(x)
+    if (is.timeSeries(x)) x = na.omit(series(x))  # 2025-12-12 (GNB) was: removeNA(x)
 
     # Check for Univariate Series:
     if (NCOL(x) > 1) stop("x is not a vector or univariate time series")
