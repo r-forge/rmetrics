@@ -1,4 +1,11 @@
-## timeSeries 4041.111.9000
+## timeSeries 4052.112
+
+- removed deprecated functions `interpNA` and `substituteNA`.  Use `na.omit`
+  instead, see `?na.omit.timeSeries` for details. (The deprecated `removeNA` is
+  kept for now, since it is used in a package.)
+
+- removed a number of unexported deprecated functions starting with a '.', which
+  had exported variants without the starting '.'.
 
 - removed the unnecessary tabular environment in 'timeSeries-deprecated.Rd'.
 
@@ -149,7 +156,8 @@
   be removed in the near future. They are synonyms for the function `returns`
   and their use was discouraged for many years. Just use `returns`.
 
-- function `cut` is now formally deprecated. Use `window` instead.
+- 'timeSeries' method for function `cut()` is now formally deprecated. Use
+  `window` instead.
 
 - deprecated function `seriesData` is now defunct. Use `as.matrix()` instead.
 
