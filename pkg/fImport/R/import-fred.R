@@ -34,7 +34,7 @@ fredImport <- function(query, file = "tempfile", source = NULL,
     #   St. Louis FED, "research.stlouisfed.org".
 
     # Value:
-    #   An One Column data frame with row names denoting the dates
+    #   An one column data frame with row names denoting the dates
     #   given in the POSIX format "%Y%m%d". The column lists the
     #   downloaded data records.
 
@@ -65,77 +65,78 @@ fredImport <- function(query, file = "tempfile", source = NULL,
 
     # Download:
     if (try) {
-        ## Try for Internet Connection:
+        ## Try for Internet Connection (recursive call!):
         z = try(fredImport(query, file, source, frequency, from, to,
                            nDaysBack, save, sep, try = FALSE))
-        if (inherits(z, "try-error") || inherits(z, "Error")) {
+        if (inherits(z, "try-error") || inherits(z, "Error"))
             return("No Internet Access or another error")
-        } else {
+        else
             return(z)
-        }
-    } else {
-        ## Download File:
-        ## was:
-        ##     queryFile = paste(query, "/downloaddata/", query, ".txt", sep = "")
-        ##     url = paste(source, queryFile, sep = "")
-        queryFile <- paste0("/data/", query)
-        url <- paste0(source, queryFile)
-
-        tmp <- tempfile()
-        download.file(url = url, destfile = tmp)
-
-        ## # Scan the file:
-        ## was:
-        ##     x1 = scan(tmp, what = "", sep = "\n")
-        ##
-        ##     # Extract dates ^19XX and ^20XX:
-        ##     x2 = x1[regexpr(pattern="^[12][90]", x1, perl=TRUE) > 0]
-        ##     x1 = x2[regexpr(pattern=" .$", x2, perl=TRUE) < 0]
-        ##
-        ##     # Compose Time Series:
-        ##     data <- matrix(
-        ##       as.numeric(substring(x1, 11, 999)), byrow = TRUE, ncol = 1)
-        ##     charvec <- substring(x1, 1, 10)
-        if(!requireNamespace("xml2") || !requireNamespace("rvest"))
-            stop("this function requires packages 'xml2' and 'rvest',please install them")
-        xml2 <- xml2::read_html(tmp, encoding = "UTF-8")
-
-        tbls <- rvest::html_table(xml2)
-        datatbl <- tbls[[2]]
-
-        ## VALUE is character since '.' stands for NA;
-        ## TODO (GNB):
-        ##      maybe should be defensive here - what happens if there are no missing values?
-        ##      will VALUE be still character?
-        datatbl$VALUE[datatbl$VALUE == "."] <- NA
-        datatbl$VALUE <- as.numeric(datatbl$VALUE)
-
-        data <- matrix(datatbl$VALUE, ncol = 1)
-        charvec <- datatbl$DATE
-
-        X <- timeSeries(data, charvec, units = query)
-
-      # Time Window:
-      if (is.null(to)) to <- Sys.timeDate()
-      to <-  trunc(as.timeDate(to),"days")
-
-      if (is.null(from)) {
-        if (is.null(nDaysBack)) {
-          from <- start(X)
-        } else {
-          from <- to - nDaysBack*24*3600
-        }
-      }
-      from <- trunc(as.timeDate(from), "days")
-
-      X <- window(X, from, to)
     }
+    
+                     # Download File:
+                     # was:
+                     #     queryFile = paste(query, "/downloaddata/", query, ".txt", sep = "")
+                     #     url = paste(source, queryFile, sep = "")
+    queryFile <- paste0("/data/", query)
+    url <- paste0(source, queryFile)
 
-    # Save to file:
+    tmp <- tempfile()
+    download.file(url = url, destfile = tmp)
+
+                     # # Scan the file:
+                     # was:
+                     #     x1 = scan(tmp, what = "", sep = "\n")
+                     #
+                     #     # Extract dates ^19XX and ^20XX:
+                     #     x2 = x1[regexpr(pattern="^[12][90]", x1, perl=TRUE) > 0]
+                     #     x1 = x2[regexpr(pattern=" .$", x2, perl=TRUE) < 0]
+                     #
+                     #     # Compose Time Series:
+                     #     data <- matrix(
+                     #       as.numeric(substring(x1, 11, 999)), byrow = TRUE, ncol = 1)
+                     #     charvec <- substring(x1, 1, 10)
+    if(!requireNamespace("xml2") || !requireNamespace("rvest"))
+        stop("this function requires packages 'xml2' and 'rvest',please install them")
+    xml2 <- xml2::read_html(tmp, encoding = "UTF-8")
+
+    tbls <- rvest::html_table(xml2)
+    datatbl <- tbls[[2]]
+
+                     # VALUE is character since '.' stands for NA;
+                     # TODO (GNB):
+                     #      maybe should be defensive here - what happens
+                     #          if there are no missing values?
+                     #          will VALUE be still character?
+    datatbl$VALUE[datatbl$VALUE == "."] <- NA
+    datatbl$VALUE <- as.numeric(datatbl$VALUE)
+
+    data <- matrix(datatbl$VALUE, ncol = 1)
+    charvec <- datatbl$DATE
+
+    X <- timeSeries(data, charvec, units = query)
+
+    ## Time Window:
+    if (is.null(to))
+        to <- Sys.timeDate()
+    to <- trunc(as.timeDate(to), "days")
+
+    if (is.null(from)) {
+        from <- if (is.null(nDaysBack))
+                    start(X)
+                else
+                    from <- to - nDaysBack * 24 * 3600
+    }
+    from <- trunc(as.timeDate(from), "days")
+
+    X <- window(X, from, to)
+
+
+    ## Save to file:
     if (save) {
-      write.table(as.data.frame(X), file = file, sep = sep)
+        write.table(as.data.frame(X), file = file, sep = sep)
     } else {
-      unlink(file)
+        unlink(file)
     }
 
     # Result:
@@ -192,5 +193,3 @@ fredSeries <-
 
 
 ################################################################################
-
-

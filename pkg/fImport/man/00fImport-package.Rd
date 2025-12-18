@@ -19,22 +19,6 @@
     
 }
 
-
-% \details{
-% 
-%     \tabular{ll}{
-%         Package:    \tab fImport\cr
-%         Type:       \tab Package\cr
-%         Version:    \tab R 3.1.2\cr
-%         Date:       \tab 2015\cr
-%         License:    \tab GPL Version 2 or later\cr
-%         Copyright:  \tab (c) 1999-2015 Rmetrics Assiciation\cr
-%         URL:        \tab \url{https://www.rmetrics.org}
-%     }
-%     
-% }
-
-
 \section{1 Introduction}{
     
     The major content of this package is to provide download functions 
@@ -71,11 +55,12 @@
     
     \preformatted{
     fredSeries      downloads data from research.stlouisfed.org
+    fredImport      downloads data from research.stlouisfed.org
     %oandaSeries     downloads data from www.oanda.com
     %yahooSeries     downloads data from chart.yahoo.com
     }
     
-    The economic and financial time series data are extractes as objects 
+    The economic and financial time series data are extracted as objects 
     of class \code{"timeSeries"}.   
 
 }
@@ -119,7 +104,4 @@
     
 }
 
-
-\keyword{package} 
-
-
+\keyword{package}

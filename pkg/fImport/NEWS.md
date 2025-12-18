@@ -1,8 +1,12 @@
+# fImport 4052.89
+
+- fixed wonrly documented return values from `fredSeries` and `fredImport`.
+
+
 # fImport 4041.88
 
 - fixed `fredImport` to work with html input (using xml2 and rvest). It had
   stopped working after a change of the input format from text to html.
-
 
 
 # fImport 4032.87

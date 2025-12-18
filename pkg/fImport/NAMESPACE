@@ -7,11 +7,11 @@
 ################################################
 ## import namespace
 ################################################
+importFrom("utils", download.file, write.table)
+import("methods")
+
 import("timeDate")
 import("timeSeries")
-
-importFrom("methods", new)
-importFrom("utils", download.file, write.table)
 
 
 ################################################

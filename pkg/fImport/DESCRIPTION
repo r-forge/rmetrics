@@ -1,6 +1,6 @@
 Package: fImport
 Title: Rmetrics - Importing Economic and Financial Data
-Version: 4041.88.9000
+Version: 4052.89
 Authors@R: c(person("Diethelm", "Wuertz", role="aut", comment = "original code")
 	   , person("Tobias", "Setz", role = c("aut"), email = "tobias.setz@live.com")
 	   , person("Yohan", "Chalabi", role = "aut")
@@ -15,6 +15,7 @@ Imports: methods, utils
 Suggests: RUnit, rvest, xml2
 LazyData: yes
 License: GPL (>= 2)
-URL: https://CRAN.R-project.org/package=fImport,
+URL: https://geobosh.github.io/fImportDoc/ (doc),
+     https://CRAN.R-project.org/package=fImport,
      https://www.rmetrics.org
 BugReports: https://r-forge.r-project.org/tracker/?atid=633&group_id=156&func=browse
