@@ -43,97 +43,89 @@
   
 }
 
-
 \usage{
 urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),
-    lag.max = 4, doplot = TRUE)
+          lag.max = 4, doplot = TRUE)
 urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"),
-    use.lag = NULL, doplot = TRUE)
+           use.lag = NULL, doplot = TRUE)
 urppTest(x, type = c("Z-alpha", "Z-tau"), model = c("constant", "trend"),
-    lags = c("short", "long"), use.lag = NULL, doplot = TRUE)
+         lags = c("short", "long"), use.lag = NULL, doplot = TRUE)
 urspTest(x, type = c("tau", "rho"), pol.deg = c(1, 2, 3, 4),
-    signif = c(0.01, 0.05, 0.1), doplot = TRUE)
+         signif = c(0.01, 0.05, 0.1), doplot = TRUE)
 urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
 }
 
 \arguments{
-    %\item{description}{
-    %    a character string which allows for a brief description.
-    %    }
-    \item{doplot}{
-        [ur*Test] - \cr
-        a logical flag, by default \code{TRUE}. Should a diagnostical
-        plot be displayed?
-        }
-    \item{lag.max}{
-        [urersTest] - \cr
-        the maximum numbers of lags used for testing of a decent lag
-        truncation for the \code{"P-test"}, BIC used, or the maximum
-        number of lagged differences to be included in the test
-        regression for \code{"DF-GLS"}.
-        }
-    \item{lag}{
-        [urzaTest] - \cr
-        the highest number of lagged endogenous differenced variables
-        to be included in the test regression.
-        }
-    \item{lags}{
-        [urkpssTest][urppTest] - \cr
-        the maximum number of lags used for error term correction.
-        }
-    \item{model}{
-        [urersTest] - \cr
-        a character string dennoting the deterministic model used for
-        detrending, either \code{"constant"}, the default, or
-        \code{"trend"}. \cr
-        [urppTest] - \cr
-        a character string which determines the deterministic part in
-        the test regression, either \code{"constant"}, the default, or
-        \code{"trend"}. \cr
-        [urzaTest] - \cr
-        a character string specifying if the potential break occured
-        in either the \code{"intercept"}, the linear \code{"trend"} or
-        in \code{"both"}.
-        }
-    \item{pol.deg}{
-        [urspTest] - \cr
-        the polynomial degree in the test regression.
-        }
-    \item{signif}{
-        [urspTest] - \cr
-        the significance level for the critical value of the test
-        statistic.
-        }
-    %\item{title}{
-    %    a character string which allows for a project title.
-    %    }
-    \item{type}{
-        [urkpssTest] - \cr
-        a character string which denotes the type of deterministic part,
-        either \code{"mu"}, the default, or \code{"tau"}.
-        \cr
-        [urppTest] - \cr
-        a character string which specifies the test type, either
-        \code{"Z-alpha"}, the default, or \code{"Z-tau"}.
-        \cr
-        [urspTest] - \cr
-        a character string which specifies the test type, either
-        \code{"tau"}, the default, or \code{"rho"}.
-        }
-    \item{use.lag}{
-        [urkpssTest] - \cr
-        a character string specifying the number of lags. Allowed
-        arguments are \code{lags=c("short", "long", "nil")}, for more
-        information see the details section.\cr
-        [urppTest] - \cr
-        Use of a different lag number, specified by the user.
-        }
-    \item{x}{
-        a numeric vector or time series object.
-        }
+  \item{x}{
+    a numeric vector or time series object.
+  }
+  \item{lags}{
+    [urkpssTest][urppTest] - \cr
+    the maximum number of lags used for error term correction.
+  }
+  \item{type}{
+    [urkpssTest] - \cr
+    a character string which denotes the type of deterministic part,
+    either \code{"mu"}, the default, or \code{"tau"}.
+    \cr
+    [urppTest] - \cr
+    a character string which specifies the test type, either
+    \code{"Z-alpha"}, the default, or \code{"Z-tau"}.
+    \cr
+    [urspTest] - \cr
+    a character string which specifies the test type, either
+    \code{"tau"}, the default, or \code{"rho"}.
+  }
+  \item{doplot}{
+    [ur*Test] - \cr
+    a logical flag, by default \code{TRUE}. Should a diagnostical
+    plot be displayed?
+  }
+  \item{model}{
+    [urersTest] - \cr
+    a character string dennoting the deterministic model used for
+    detrending, either \code{"constant"}, the default, or
+    \code{"trend"}. \cr
+    [urppTest] - \cr
+    a character string which determines the deterministic part in
+    the test regression, either \code{"constant"}, the default, or
+    \code{"trend"}. \cr
+    [urzaTest] - \cr
+    a character string specifying if the potential break occured
+    in either the \code{"intercept"}, the linear \code{"trend"} or
+    in \code{"both"}.
+  }
+  \item{lag.max}{
+    [urersTest] - \cr
+    the maximum numbers of lags used for testing of a decent lag
+    truncation for the \code{"P-test"}, BIC used, or the maximum
+    number of lagged differences to be included in the test
+    regression for \code{"DF-GLS"}.
+  }
+  \item{use.lag}{
+    [urkpssTest] - \cr
+    a character string specifying the number of lags. Allowed
+    arguments are \code{lags=c("short", "long", "nil")}, for more
+    information see the details section.\cr
+    [urppTest] - \cr
+    Use of a different lag number, specified by the user.
+  }
+  \item{pol.deg}{
+    [urspTest] - \cr
+    the polynomial degree in the test regression.
+  }
+  \item{signif}{
+    [urspTest] - \cr
+    the significance level for the critical value of the test
+    statistic.
+  }
+  \item{lag}{
+    [urzaTest] - \cr
+    the highest number of lagged endogenous differenced variables
+    to be included in the test regression.
+  }
 }
-
 
 \details{
     \bold{Unit Root Tests from Berhard Pfaff's "\pkg{urca}" Package:}
@@ -193,68 +185,57 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
 
 }
 
-
 \value{
+  All tests return an object of class \code{"fHTEST"} with the
+  following slots:
+  \item{@call}{
+    the function call.
+  }
+  \item{@data}{
+    a data frame with the input data.
+  }
+  \item{@data.name}{
+    a character string giving the name of the data frame.
+  }
+  \item{@test}{
+    a list object which holds the output of the underlying test
+    function.
+  }
+  \item{@title}{
+    a character string with the name of the test.
+  }
+  \item{@description}{
+    a character string with a brief description of the test.
+  }
 
-    All tests return an object of class \code{"fHTEST"} with the
-    following slots:
-
-
-    \item{@call}{
-        the function call.
-        }
-    \item{@data}{
-        a data frame with the input data.
-        }
-    \item{@data.name}{
-        a character string giving the name of the data frame.
-        }
-    \item{@test}{
-        a list object which holds the output of the underlying
-        test function.
-        }
-    \item{@title}{
-        a character string with the name of the test.
-        }
-    \item{@description}{
-        a character string with a brief description of the
-        test.
-        }
-
-    The entries of the \code{@test} slot include the following components:
-
-    \item{$statistic}{
-        the value of the test statistic.
-        }
-    \item{$parameter}{
-        the lag order.
-        }
-    \item{$p.value}{
-        the p-value of the test.
-        }
-    \item{$method}{
-        a character string indicating what type of test was
-        performed.
-        }
-    \item{$data.name}{
-        a character string giving the name of the data.
-        }
-    \item{$alternative}{
-        a character string describing the alternative
-        hypothesis.
-        }
-    \item{$name}{
-        the name of the underlying function, which may be wrapped.
-        }
-    \item{$output}{
-        additional test results to be printed.
-        }
-
+  The entries of the \code{@test} slot include the following components:
+  \item{$statistic}{
+    the value of the test statistic.
+  }
+  \item{$parameter}{
+    the lag order.
+  }
+  \item{$p.value}{
+    the p-value of the test.
+  }
+  \item{$method}{
+    a character string indicating what type of test was performed.
+  }
+  \item{$data.name}{
+    a character string giving the name of the data.
+  }
+  \item{$alternative}{
+    a character string describing the alternative hypothesis.
+  }
+  \item{$name}{
+    the name of the underlying function, which may be wrapped.
+  }
+  \item{$output}{
+    additional test results to be printed.
+  }
 }
 
-
 \references{
-
 Banerjee A., Dolado J.J., Galbraith J.W., Hendry D.F. (1993);
     \emph{Cointegration, Error Correction, and the Econometric
         Analysis of Non-Stationary Data},
@@ -286,29 +267,24 @@ Said S.E., Dickey D.A. (1984);
 Schwert G.W. (1989);
     \emph{Tests for Unit Roots: A Monte Carlo Investigation},
     Journal of Business and Economic Statistics 2, 147--159.
-
 }
-
 
 \author{
-    Bernhard Pfaff for the tests implemented in R's "\pkg{urca}" package,\cr
-    Diethelm Wuertz for the Rmetrics \R-port.
+  Bernhard Pfaff for the tests implemented in R's "\pkg{urca}" package,\cr
+  Diethelm Wuertz for the Rmetrics \R-port.
 }
 
-
 \examples{
-## Time Series
-   # A time series which contains no unit-root:
-   x <- rnorm(1000)
-   # A time series which contains a unit-root:
-   y <- cumsum(c(0, x))
+## a time series which contains no unit-root:
+x <- rnorm(1000)
+## a time series which contains a unit-root:
+y <- cumsum(c(0, x))
 
 ## ERS Test:
- if(require("urca")) {
+if(require("urca")) {
    urersTest(x)
    urersTest(y)
-  }
+}
 }
 
 \keyword{htest}
-

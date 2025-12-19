@@ -1,4 +1,11 @@
-# fUnitRoots 4021.81
+# fUnitRoots 4052.82
+
+- added to Suggests the missing 'interp'.
+
+- fixed links and clarified documentation.
+
+
+# fUnitRoots 4040.81
 
 - fixed warnings about ancient Fortran features. Now all `DO` loops are terminated
   with `END DO` and do not share termination statements.
