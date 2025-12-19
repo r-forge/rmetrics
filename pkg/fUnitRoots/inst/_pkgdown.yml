@@ -1,0 +1,11 @@
+url: https://geobosh.github.io/fUnitRootsDoc/
+
+deploy:
+  install_metadata: true
+
+template:
+  bootstrap: 5
+  math-rendering: mathjax
+  
+search:
+  exclude: ['news/index.html']
