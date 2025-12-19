@@ -25,5 +25,7 @@ Imports: graphics, utils, stats
 Suggests: RUnit
 License: GPL (>= 2)
 Encoding: UTF-8
-URL: https://geobosh.github.io/timeDateDoc/ (doc), https://r-forge.r-project.org/scm/viewvc.php/pkg/timeDate/?root=rmetrics (devel), https://www.rmetrics.org 
-BugReports: https://r-forge.r-project.org/projects/rmetrics
+URL: https://geobosh.github.io/timeDateDoc/ (doc),
+     https://CRAN.R-project.org/package=timeDate,
+     https://www.rmetrics.org 
+BugReports: https://r-forge.r-project.org/tracker/?atid=633&group_id=156&func=browse
