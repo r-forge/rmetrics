@@ -20,8 +20,10 @@
 #  holidayTSX                Returns holidays for TSX calendar
 ################################################################################
 
+## GNB 2026-01-26 TODO: set some tests (could use the examples below)
 holidayTSX <- function (year = getRmetricsOptions("currentYear")) {
-    # A function implemented by Diethelm Wuertz
+    ## A function implemented by Diethelm Wuertz;
+    ##     amended, modified and bug-fixed by Georgi N. Boshnakov
 
     # Description:
     #   TSX Holiday Calendar
@@ -81,19 +83,20 @@ holidayTSX <- function (year = getRmetricsOptions("currentYear")) {
     ## for (y in year)
     ##     if (y >= 2008) holidays = c(holidays, CAFamilyDay(year))
 
-    ## GNB: 2025-10-19
-    ##    TODO: work initially with the strings "yyyy-mm-dd" as in holidayNYSE,
-    ##          then convert to dateTime for the weekend calculations
+    ## GNB: 2026-01-26
+    ##     work initially with the strings "yyyy-mm-dd" as in holidayNYSE,
+    ##     then convert to dateTime for the weekend calculations
     holidays <- c(
-        NewYearsDay(year),
-        GoodFriday(year),
-        CAVictoriaDay(year),
-        CACanadaDay(year),
-        CACivicProvincialHoliday(year),
-        CAThanksgivingDay(year),
-        CALabourDay(year),
-        ChristmasDay(year),
-        BoxingDay(year))
+        NewYearsDay(year, value = ""),
+        CAFamilyDay(year, value = ""), # 2026-01/26 - was a separate assignment below
+        GoodFriday(year, value = ""),
+        CAVictoriaDay(year, value = ""),
+        CACanadaDay(year, value = ""),
+        CACivicProvincialHoliday(year, value = ""),
+        CAThanksgivingDay(year, value = ""),
+        CALabourDay(year, value = ""),
+        ChristmasDay(year, value = ""),
+        BoxingDay(year, value = ""))
 
     ## GNB: 2025-10-19
     ##    CAFamilyDay(year) below is clearly intended to be CAFamilyDay(y).
@@ -104,9 +107,10 @@ holidayTSX <- function (year = getRmetricsOptions("currentYear")) {
     ##
     ##   TODO: CAFamilyDay(year) could be moved inside the c() above.
     ##if(any(year >= 2008))
-    holidays <- c(holidays, CAFamilyDay(year))
+    ##holidays <- c(holidays, CAFamilyDay(year)) # 2026-01/26 - moved to main assignment above
 
     holidays <- sort(holidays)
+    holidays <- timeDate(holidays)
 
     # Holidays falling on Saturdays and Sundays:
     holidays <-  holidays + (1-isWeekday(holidays))*24*3600

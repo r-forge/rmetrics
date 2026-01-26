@@ -1,12 +1,8 @@
-# timeDate 4051.111
-
-- EDIT BEFORE SUBMITTING NEXT VERSION
+# timeDate 4052.112
 
 - streamlined `holidayNYSE()`.
 
-- fixed a minor bug in `holidayTSX()` and streamlined it a bit. *TODO: (1) set some
-  tests, see the examples in the source code of the function; (2) streamline it
-  analogously to holidayNYSE()*.
+- fixed a minor bug in `holidayTSX()` and streamlined it a bit.
 
 - removed the deprecated (in v4032.109) `timeDate` method for `cut`, use
   `window` instead.

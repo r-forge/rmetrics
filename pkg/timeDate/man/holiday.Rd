@@ -221,21 +221,15 @@ holiday(2024:2025, Holiday = ho3b, names = TRUE)
 ho2 <- c("Easter", "GBEarlyMayBankHoliday")
 holiday(2025, Holiday = ho2, names = TRUE)
 
-
-
-
 holiday(Holiday = c(Easter, GBEarlyMayBankHoliday), names = TRUE)
 
-
-holiday(2024:2025, Holiday = tmp2, names = TRUE)
-holiday(2024:2025, Holiday = tmp1a, names = TRUE)
-holiday(2024:2025, Holiday = tmp1, names = TRUE)
-
+holiday(2024:2025, Holiday = ho2, names = TRUE)
+holiday(2024:2025, Holiday = ho1a, names = TRUE)
+holiday(2024:2025, Holiday = ho1, names = TRUE)
 
 ## redundant c() but no harm done
 holiday(2024:2025, Holiday = c("Easter"), names = TRUE)
 holiday(2024:2025, Holiday = c(Easter), names = TRUE)
-
 }
 
 \keyword{chron}
