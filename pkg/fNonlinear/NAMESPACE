@@ -21,7 +21,7 @@ import("fBasics")
 
 importFrom("methods", new)
 importFrom("stats", as.formula, embed, lm, pchisq, pf, pnorm,
-	prcomp, residuals, runif, sd, ts)
+	prcomp, residuals, runif, sd, ts, frequency)
 
 
 ################################################
@@ -29,5 +29,3 @@ importFrom("stats", as.formula, embed, lm, pchisq, pf, pnorm,
 ################################################
 
 exportPattern(".")
-
-
