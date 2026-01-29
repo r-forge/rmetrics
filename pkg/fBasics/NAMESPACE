@@ -135,8 +135,6 @@ export(
     dgld,
     dhyp,
     distCheck,
-    .distCheck, # can't drop it since fGarch (< 4031.90) imported it explicitly;
-                # difficult to ask everybody to require fGarch (>= 4031.90)
     divPalette,
     dmaxdd,
     dnig,

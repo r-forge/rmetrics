@@ -1,5 +1,11 @@
 # fBasics 4052.98
 
+- stopped exporting `.distCheck()` and removed it from the code. it was made
+  defunct in v4032.96. Use `distCheck()` (no leading dot here) instead.
+
+
+# fBasics 4052.98
+
 - removed include directive for R_ext/PrtUtil.h from src/nig.c (R-devel throws
   warning about it now).
 

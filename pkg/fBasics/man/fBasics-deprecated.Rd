@@ -17,7 +17,6 @@
 % (see file NAMESPACE)
 \alias{.acfPlot}
 \alias{.contourPlot}
-\alias{.distCheck}
 \alias{.firePlot}
 \alias{.mrlPlot}
 \alias{.pacfPlot}
