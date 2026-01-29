@@ -4,19 +4,17 @@ useDynLib("fGarch", .registration=TRUE)
 
 importFrom("timeDate", timeDate, timeSequence)
 
-importFrom("timeSeries", as.timeSeries, timeSeries
-       ##, dummyDailySeries  # in Examples and tests
-         , description
-         , isUnivariate, isMultivariate)
+importFrom("timeSeries", as.timeSeries, timeSeries,  ## dummyDailySeries  # in Examples and tests
+           description,
+           isUnivariate, isMultivariate)
 
-importFrom("fBasics",
-           Heaviside, jarqueberaTest
-       ##, teffectPlot  # used in test
-         , dsnig, qsnig
-         , volatility # we will re-export, as we define an S3 method
-         , distCheck, .sliderMenu)
+importFrom("fBasics",         #  teffectPlot  # used in test, fully qualified
+           Heaviside, jarqueberaTest,
+           dsnig, qsnig,
+           volatility, # we will re-export, as we define an S3 method
+           distCheck, .sliderMenu)
 
-## importFrom("fastICA", fastICA)# only used in  R/mgarch-FitFromFormula.R  .gogarchFit()
+## importFrom("fastICA", fastICA)# only used fully qualified in  R/mgarch-FitFromFormula.R  .gogarchFit()
 
 importFrom("cvar", VaR, ES)
 
@@ -84,59 +82,3 @@ export(
     "garchSim",
     "garchSpec"
 )
-
-## ".aparchLLH.filter", ".aparchLLH.internal", ".aparchLLH.testing",
-
-##                                            ".gedFit",   ".gedCondDist",
-##                                                         ".QMLECondDist",
-##                                                         ".normCondDist",
-## ".dsged",  ".psged",  ".qsged", ".rsged",  ".sgedFit",  ".sgedCondDist",  
-## ".dsnorm", ".psnorm", ".qsnorm",".rsnorm", ".snormFit", ".snormCondDist", 
-## ".dsstd",  ".psstd",  ".qsstd", ".rsstd",  ".sstdFit",  ".sstdCondDist",  
-##                                            ".stdFit",   ".stdCondDist",   
-##                                                         ".snigCondDist",
-
-## ".garchArgsParser",
-## ".garchFit",
-## ".garchInitParameters",
-## ".garchInitSeries",
-## ".garchKappaFun",
-## ".garchLLH",
-## ".garchModelSeries",
-## ".garchNames",
-## ".garchOptimizeLLH",
-## ".garchOptimizerControl",
-## ".garchRCDAGradient",
-## ".garchRCDAHessian",
-## ".garchRlbfgsb",
-## ".garchRnlminb",
-## ".garchRnm",
-## ".garchRoptimhess",
-## ".garchSetCondDist",
-## ".garchTSHessian",
- 
-## ".getfGarchEnv", ".setfGarchEnv",
-
-## ".hessian2sided",
-
-## ".interactiveGarchPlot", ## GNB: these two may be worth exporting
-## ".multGarchPlot",
-
-## ".plot.garch.1",
-## ".plot.garch.10",
-## ".plot.garch.11",
-## ".plot.garch.12",
-## ".plot.garch.13",
-## ".plot.garch.2",
-## ".plot.garch.3",
-## ".plot.garch.4",
-## ".plot.garch.5",
-## ".plot.garch.6",
-## ".plot.garch.7",
-## ".plot.garch.8",
-## ".plot.garch.9",
- 
-## ".qqDist", ".qqLine",
-
-## ".truePersistence",
-
