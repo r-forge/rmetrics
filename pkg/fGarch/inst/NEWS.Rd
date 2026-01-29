@@ -15,7 +15,7 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
-\section{CHANGES in fGarch VERSION 4052.93 (2024-12-12, svn r6482--r6544)}{
+\section{CHANGES in fGarch VERSION 4052.93 (2025-12-12, svn r6482--r6544)}{
   \itemize{
 
     \item emphasised that the skew normal distribution in fGarch is
@@ -32,7 +32,6 @@
 
     \item edited the help page of class \code{"fGARCH"}. In particular,
     added cross-references to the help pages of the individual methods.
-    
 
   }
 }
@@ -67,7 +66,7 @@
 }
 
 
-\section{CHANGES in fGarch VERSION 4022.90 (2023-10-15, svn r6333--r6435)}{
+\section{CHANGES in fGarch VERSION 4031.90 (2023-10-15, svn r6333--r6435)}{
   \itemize{
 
     \item added \code{"fGARCH"} method for \code{stats::tsdiag}. The
