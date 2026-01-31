@@ -93,7 +93,6 @@
 
 \examples{
 ## Swiss Pension fund Index -
-stopifnot(require("timeSeries")) # need package 'timeSeries'
 x <- as.timeSeries(data(LPP2005REC, package = "timeSeries"))
 
 fit <- garchFit(LPP40 ~ garch(1, 1), data = 100*x, trace = FALSE)

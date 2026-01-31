@@ -52,7 +52,6 @@
 }
 
 \examples{
-stopifnot(require("timeSeries"))
 ## Swiss Pension fund Index
 data(LPP2005REC, package = "timeSeries")
 x <- as.timeSeries(LPP2005REC)

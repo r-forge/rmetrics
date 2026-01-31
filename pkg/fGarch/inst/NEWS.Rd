@@ -15,6 +15,15 @@
 \title{News for \R Package \pkg{fGarch}}
 \encoding{UTF-8}
 
+\section{CHANGES in fGarch VERSION 4052.93.9000 (2026-??-??, svn r????--r????)}{
+  \itemize{
+
+    \item reexport `timeSeries::as.timeSeries` and `timeSeries::returns`.
+
+  }
+}
+
+
 \section{CHANGES in fGarch VERSION 4052.93 (2025-12-12, svn r6482--r6544)}{
   \itemize{
 

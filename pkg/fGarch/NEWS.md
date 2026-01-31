@@ -1,13 +1,13 @@
-## CHANGES in fGarch VERSION 4052.93 (2024-12-12, svn r6482–r6544)
+## CHANGES in fGarch VERSION 4052.93 (2025-12-12, svn r6482–r6544)
 
 -   emphasised that the skew normal distribution in fGarch is different
     from what is usually called skew normal distribution. Similarly for
     the other skew distributions.
 
-- replaced a call to 'warnings' (plural) with 'warning' (singular, a
-    different function) in `garchSpec`. The old one was clearly a typo
-    and was not issuing the intended warning about the violation of
-    the stationarity condition for GARCH models.
+-   replaced a call to 'warnings' (plural) with 'warning' (singular) in
+    `garchSpec`. The old one was clearly a typo and was not issuing the
+    intended warning about the violation of the stationarity condition
+    for GARCH models.
 
 -   improved the layout of the reference section of the pkgdown site.
 
@@ -31,7 +31,7 @@
     method). Just use something like `Var(fitted_object)`,
     `ES(fitted_object)` or `predict(fitted_object, ..., p_loss = 0.05)`.
 
-## CHANGES in fGarch VERSION 4022.90 (2023-10-15, svn r6333–r6435)
+## CHANGES in fGarch VERSION 4031.90 (2023-10-15, svn r6333–r6435)
 
 -   added `"fGARCH"` method for `stats::tsdiag`. The method produces
     diagnostic plot for fitted GARCH/APARCH models and computes some

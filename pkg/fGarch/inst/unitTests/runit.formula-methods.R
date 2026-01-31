@@ -153,8 +153,8 @@ test.formula.methods.spread <-
     # MODELING THE PERCENTUAL SPI/SBI SPREAD FROM LPP BENCHMARK:
 
     # Series:
-    stopifnot(require("timeSeries")) # for the data() and as.timeS..
-    X.tS = as.timeSeries(data(LPP2005REC))
+    data(LPP2005REC, package = "timeSeries")
+    X.tS = as.timeSeries(LPP2005REC)
     print(head(X.tS))
     X.mat = as.matrix(X.tS)
     print(head(X.mat))
@@ -175,13 +175,13 @@ test.formula.methods.spread <-
 
     # MODELING HIGH/LOW SPREADS FROM MSFT PRICE SERIES:
 
-    # Series:
-    X.tS = MSFT
+    ## Series:
+    data(MSFT, package = "timeSeries")
 
     # Fit:
-    fit = garchFit(Open ~ garch(1,1), data = returns(X.tS), trace = FALSE)
+    fit = garchFit(Open ~ garch(1,1), data = returns(MSFT), trace = FALSE)
     print(formula(fit))
-    fit = garchFit(100*(High-Low) ~ garch(1,1), data = returns(X.tS),
+    fit = garchFit(100*(High-Low) ~ garch(1,1), data = returns(MSFT),
         trace = FALSE)
     print(formula(fit))
 
@@ -191,4 +191,3 @@ test.formula.methods.spread <-
 
 
 ################################################################################
-

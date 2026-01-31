@@ -6,6 +6,7 @@ importFrom("timeDate", timeDate, timeSequence)
 
 importFrom("timeSeries", as.timeSeries, timeSeries,  ## dummyDailySeries  # in Examples and tests
            description,
+           returns, # to reexport it
            isUnivariate, isMultivariate)
 
 importFrom("fBasics",         #  teffectPlot  # used in test, fully qualified
@@ -61,9 +62,9 @@ exportMethods("coef",
               "summary",
               "update" )
 
-export(timeSeries) # we import it from timeSeries
-export(volatility) # we import it from fBasics
-export(VaR, ES)    # we import them from cvar
+export(timeSeries, as.timeSeries, returns) # we import them from timeSeries
+export(volatility)                # we import it from fBasics
+export(VaR, ES)                   # we import them from cvar
 
 export(
     ## export these '.xxx' for now
