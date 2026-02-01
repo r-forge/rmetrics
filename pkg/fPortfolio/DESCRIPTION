@@ -1,11 +1,13 @@
 Package: fPortfolio
 Title: Rmetrics - Portfolio Selection and Optimization
-Date: 2023-04-22
 Version: 4023.84.9000
 Authors@R: c( person("Diethelm", "Wuertz", role = "aut"), person("Tobias", "Setz", role = "aut"),
               person("Yohan", "Chalabi", role = "aut"), person("William", "Chen", role = "ctb"),
 	      person("Stefan", "Theussl", role = c("aut", "cre"), email = "Stefan.Theussl@R-project.org") )
-Description: A collection of functions to optimize portfolios and to analyze them from different points of view.
+Description: A collection of functions to optimize portfolios and to analyze
+  them from different points of view. If the suggested package 'bcp' is not
+  availble from CRAN, it can be installed from the archive,
+  e.g. <https://cran.r-project.org/src/contrib/Archive/bcp/bcp_4.0.3.tar.gz>.
 Depends: R (>= 2.15.1), timeDate, timeSeries, fBasics, fAssets
 Imports: fCopulae, robustbase, MASS, Rglpk, slam, Rsolnp, quadprog,
         kernlab, rneos, methods, grDevices, graphics, stats, utils

@@ -36,7 +36,8 @@ importFrom("grDevices", heat.colors, rainbow, topo.colors)
 importFrom("graphics", axis, barplot, box, contour, grid, hist, image, layout, lcm,
 	legend, mtext, par, pie, plot.new, plot.window, polygon, rect, text, title)
 importFrom("stats", approx, cov, density, dnorm, nlminb, optim, optimize, pnorm,
-	qnorm, rcauchy, rnorm, runif, sd, ts.plot, var, weights)
+           qnorm, rcauchy, rnorm, runif, sd, ts.plot, var, weights,
+           end, lag, na.omit, quantile, start, time, window)
 importFrom("utils", capture.output, data, packageDescription)
 
 ################################################################################
