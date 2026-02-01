@@ -69,7 +69,6 @@ S3method("as.timeSeries",  zoo)
 S3method("as.ts",         "timeSeries")
 S3method("cbind",         "timeSeries")
 S3method("cumulated",      default)
-# S3method("cut", "timeSeries") # timeSeries method was removed on 2023-05-26
 S3method("diff",     "timeSeries")
 S3method("end",      "timeSeries")
 S3method("getUnits",  default)
@@ -146,12 +145,7 @@ exportMethods(
     "names", "names<-",
 
     ## stats
-    ## "aggregate",
-    ## "as.ts",
     "filter",  # not generic in stats; let it stay S4 here
-
-    ## graphics
-    ## "lines", "points",
 
     ## from base
     "apply",                                               # not generic in base
@@ -202,7 +196,6 @@ export(
     "getUnits", "getUnits.default",
     "hclustColnames",
     "index2wealth",
-    ## "interpNA",  # removed on 2025-12-12
     "is.signalSeries", "is.timeSeries",
     "isMultivariate", "isUnivariate",
     "midquotes",
@@ -211,7 +204,7 @@ export(
     "outlier",
     "pcaColnames",
     "readSeries",
-    "removeNA",  #  used in fTrading. Remove when that is updated
+    "removeNA",  #  used in fTrading. todo: Remove when that is updated
     "returns", "returns0",
     "rollDailySeries",
     "rollMax", "rollMean", "rollMedian", "rollMin",
@@ -226,32 +219,38 @@ export(
     "sortColnames",
     "splits", "spreads",
     "statsColnames",
-    ## "substituteNA",  # removed on 2025-12-12
     "time",
     "time<-",
     "timeSeries",
     "turns", "turnsStats",
 
-    "head", # 2024-01-05 GNB: were in exportMethods but no longer S4 generic
-    "tail",
-    "str",
-    "start",
-    "end",
-    "median",
-    "quantile",
-    "na.contiguous",
-    ## "sort",  # from 'base', no need to export
-    ## "rev",
-    ## "print",
-    ## "diff",
-    ## "is.na", # primitive
+    ## 2026-02-01: actually, these remained S4 as I failed to remove their setGeneric() declarations
+    ##    dropping now; this breaks joinXL and fPortfolio;
+    ##    I sent an email to the maintainer of joinXL today;
+    ##    I made The necessary change(s) to fPortfolio on R-forge more than 2 years ago.
+    ##    So, shouldn't have qualms in submitting timeSeries.
+    ##
+    ## Since head and tail were still S4, there maybe some peculiar problems with packages that 
+    ##    import everything from timeSeries (import(timeSeries), due to the fact that S4 stuff is cached
+    ##    when a package is build. TODO: might need to tell maintainer of QRM (and maybe others?) to
+    ##    require timeSeries > 4052.112, once such a version is released.
+    ##
+    ## "head", # 2024-01-05 GNB: were in exportMethods but no longer S4 generic
+    ## "tail",
 
-    ## "frequency",
-    "aggregate", "as.ts",  # stats, reexport
-    ## graphics
-    "lines", "points", # graphics, reexport
+    ## 2026-02-01: stop reexporting
+    ## "str",
+    ## "start",
+    ## "end",
+    ## "median",
+    ## "quantile",
+    ## "na.contiguous",
 
-    "na.omit",
-    "lag",
-    "window"
+    "lines", "points"    # graphics, reexport
+
+    ## ## stats
+    ## "aggregate", "as.ts",  # stats, reexport
+    ## "na.omit",
+    ## "lag",
+    ## "window"
 )

@@ -19,8 +19,10 @@
 #  tail,timeSeries           Returns the tail of a 'timeSeries' object
 ################################################################################
 
-setGeneric("head")
-setGeneric("tail")
+## (2026-02-01) GNB: stop making head() and tail() S4
+##                   see also the notes at the end of this file.
+## setGeneric("head")
+## setGeneric("tail")
 
 
 
@@ -92,6 +94,8 @@ tail.timeSeries <-
     }
 
 ## (2024-01-05) GNB: stop making head() and tail() S4
+## (2026-02-01) GNB: not really, apparently I missed the setGeneric() calls towards the
+##                   beginning of this file!
 ## setMethod("head", "timeSeries", head.timeSeries)
 ## setMethod("tail", "timeSeries", tail.timeSeries)
 

@@ -1,3 +1,19 @@
+## timeSeries 4052.112.9000
+
+- "timeSeries"` no longer exports functions from package 'stats', unless it
+  makes them S4 generics. This does not affect interactive use (since 'stats' is
+  normally attached when R starts up). In special cases one may need to invoke
+  `library(stats)` explicitly or prefix the relevant calls with
+  `stats::`. Package authors should import such functions from 'stats'.
+
+- `head` and `tail` are no longer made S4 generics and no longer exported.  Use
+  something like `library(utils)` if R complains that such functions don't
+  exist. Package authors should import them from package 'utils'. See also the
+  above remark for functions from 'stats'.
+
+
+
+
 ## timeSeries 4052.112
 
 - removed deprecated functions `interpNA` and `substituteNA`.  Use `na.omit`
@@ -40,8 +56,8 @@
   'timeSeries' objects. Previously they were turned into S4 generics with S4
   methods.
 
-- streamlined timeSeries methods for a number of functions. Left only S3 methods
-  or only S4 methods were suitable.
+- streamlined `"timeSeries"` methods for a number of functions. Left only S3
+  methods or only S4 methods were suitable.
 
 - consolidated the NAMESPACE.
 
@@ -174,16 +190,16 @@
 
 - stopped exporting (almost) all functions whose names start with a
   '.'. Historically, the package was exporting all functions, including those
-  start with a '.'. This should be of no concern for users since these functions
-  were not documented but the developers of some Rmetrics packages where using
-  such functions.
+  starting with a '.'. This should be of no concern for users since these
+  functions were not documented but the developers of some Rmetrics packages
+  where using such functions.
 
 - the additional arguments of the S3 `timeSeries` method for `diff()` are now in
   its signature, which previously was `diff(x, ...)`.  An intermediate function,
   `.diff.timeSeries`, was eliminated in the process.
 
-- the bodies of the methods of `series<-()` and `coredata<-` for signature
-  `"matrix"` of value were identical. Now the body is a separate, unexported
+- the bodies of the methods of `series<-` and `coredata<-` for signature
+  `"matrix"` or value were identical. Now the body is a separate, unexported
   function, which is used as the definition of both of these methods.
 
 - eliminated `.merge.timeSeries` and other redundancy in the implementation of
@@ -196,10 +212,10 @@
 
 - same as above for `.sort.timeSeries`.
 
-- eliminated `.start.timeSeries`and redundancy in the implementation of the
+- eliminated `.start.timeSeries`and the redundancy in the implementation of the
   `timeSeries` method.
 
-- eliminated `.end.timeSeries`and redundancy in the implementation of the
+- eliminated `.end.timeSeries` and the redundancy in the implementation of the
   `timeSeries` method.
 
 - the function `.applySeries` is now defunct. It was obsoleted long time ago and
