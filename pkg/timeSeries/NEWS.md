@@ -1,5 +1,9 @@
 ## timeSeries 4052.112.9000
 
+- EDIT BEFORE RELEASE - wait for zoo and FatTailsR maintainers to respond and/or
+  stop using `timeSeries::time`, see also the comment in
+  NAMESPACE. Alternatively, uncomment time in NAMESPACE to export it.
+
 - "timeSeries"` no longer exports functions from package 'stats', unless it
   makes them S4 generics. This does not affect interactive use (since 'stats' is
   normally attached when R starts up). In special cases one may need to invoke
@@ -10,8 +14,6 @@
   something like `library(utils)` if R complains that such functions don't
   exist. Package authors should import them from package 'utils'. See also the
   above remark for functions from 'stats'.
-
-
 
 
 ## timeSeries 4052.112

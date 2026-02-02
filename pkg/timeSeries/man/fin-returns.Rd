@@ -70,16 +70,9 @@ returns0(x, \dots)
 }
 
 \note{
-
-  The functions \code{returnSeries} and \code{getReturns} will be
-  removed in the near future. They are synonyms for the function
-  \code{returns} and their use was discouraged for many years. Just use
-  \code{returns}.
-
-  The function \code{returnSeries} is no longer
-  exported. \code{getReturns} is exported only because we are waiting
-  for a package on CRAN to be updated.
-
+  The function \code{getReturns} will be removed in the near future. It
+  is exported only because we are waiting for a package on CRAN to be
+  updated. Just use the equivalent \code{returns}.
 }
 
 \seealso{

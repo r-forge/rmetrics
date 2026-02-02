@@ -171,13 +171,24 @@ exportMethods(
 export(
     ".colorwheelPalette", # used in the vignette
 
+    "getReturns", # several uses in the tests in 'fTrading'
+                  # I corrected the devel version of 'fTrading'.
+                  # TODO: remove when fTrading is updated on CRAN.
+
+    "removeNA",  #  used in fTrading. todo: Remove when that is updated
+
+
+
     "alignDailySeries",
     "applySeries",
     "as.timeSeries",
+
     "colCummaxs", "colCummins", "colCumprods", "colCumreturns", "colCumsums",
     "colKurtosis", "colMaxs", "colMins", "colProds",
     "colQuantiles", "colSds", "colSkewness", "colStats", "colVars",
+    
     "coredata.timeSeries", "coredata<-.timeSeries",
+
     "countMonthlyRecords",
     "cumulated",
     "daily2monthly", "daily2weekly",
@@ -189,9 +200,6 @@ export(
     "fapply",
     "getAttributes",
     "getFinCenter",
-    "getReturns", # several uses in the tests in 'fTrading'
-                  # I corrected the devel version of 'fTrading'.
-                  # TODO: remove when fTrading is updated on CRAN.
     "getTime",
     "getUnits", "getUnits.default",
     "hclustColnames",
@@ -204,7 +212,6 @@ export(
     "outlier",
     "pcaColnames",
     "readSeries",
-    "removeNA",  #  used in fTrading. todo: Remove when that is updated
     "returns", "returns0",
     "rollDailySeries",
     "rollMax", "rollMean", "rollMedian", "rollMin",
@@ -219,7 +226,6 @@ export(
     "sortColnames",
     "splits", "spreads",
     "statsColnames",
-    "time",
     "time<-",
     "timeSeries",
     "turns", "turnsStats",
@@ -238,19 +244,13 @@ export(
     ## "head", # 2024-01-05 GNB: were in exportMethods but no longer S4 generic
     ## "tail",
 
-    ## 2026-02-01: stop reexporting
-    ## "str",
-    ## "start",
-    ## "end",
-    ## "median",
-    ## "quantile",
-    ## "na.contiguous",
+    ## TODO: stop reexporting but fix (or help to fix) packages that will be broken if dropped now.
+    ##     1) in zoo:
+    ##            as.zoo.timeSeries <- function(x, ...) {
+    ##               zoo(as.matrix(x), timeSeries::time(x), ...)  
+    ##           }
+    ## "time",
+
 
     "lines", "points"    # graphics, reexport
-
-    ## ## stats
-    ## "aggregate", "as.ts",  # stats, reexport
-    ## "na.omit",
-    ## "lag",
-    ## "window"
 )
