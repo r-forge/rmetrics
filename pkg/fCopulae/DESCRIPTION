@@ -1,11 +1,24 @@
 Package: fCopulae
 Title: Rmetrics - Bivariate Dependence Structures with Copulae
-Date: 2022-12-11
-Version: 4022.85
+Date: 2026-02-21
+Version: 4052.86
 Author: Diethelm Wuertz [aut],
 	Tobias Setz [aut],
 	Yohan Chalabi [ctb],
 	Paul Smith [cre]
+Authors@R: c(person(given = "Diethelm",
+                      family = "Wuertz",
+                      role = "aut"),
+               person(given = "Tobias",
+                      family = "Setz",
+                      role = "aut"),
+               person(given = "Yohan",
+                      family = "Chalabi",
+                      role = "ctb"),
+               person(given = "Paul",
+                      family = "Smith",
+                      role = "cre",
+                      email = "paul@waternumbers.co.uk"))	
 Maintainer: Paul Smith <paul@waternumbers.co.uk>
 Description: Provides a  collection of functions to 
 	manage, to investigate and to analyze bivariate financial returns by  

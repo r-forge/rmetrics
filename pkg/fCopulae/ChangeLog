@@ -2,6 +2,9 @@
 ChangeLog
 Package fCopulae
 
+2025-12-07 smith
+	* DESCRIPTION: Add Authors@R to fix CRAN note. Updated version number.
+	
 2023-01-03 smith
 
 	* R/ArchimedieanGenerator.R further work on uniroot to refine
