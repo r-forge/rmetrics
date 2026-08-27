@@ -43,6 +43,8 @@ timeDate(charvec, format = NULL, zone = "", FinCenter = "", \dots)
 \S4method{timeDate}{character}(charvec, format = NULL, zone = "", FinCenter = "", 
          dst_gap = "+")
 
+as.timeDate(x, zone = NULL, FinCenter = NULL)
+
 ## methods for as.timeDate
 \method{as.timeDate}{default}(x, zone = "", FinCenter = "")  
 

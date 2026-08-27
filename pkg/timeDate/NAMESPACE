@@ -12,12 +12,14 @@
 ## revisions.
 
 import(methods)
-importFrom(stats, start, end, window, approx, na.omit, var, frequency)
+importFrom(stats, start, end, window, approx, na.omit, var, frequency, update)
 importFrom("graphics", axis.POSIXct)
 importFrom("utils", str, .DollarNames)
 
 ## ## 2024-12-13 for timeInterval
 ## importFrom("generics", intersect, union, setdiff, setequal, is.element)
+
+S3method("$", holiday)
 
 S3method("[<-",timeDate)
 S3method(as.Date,timeDate)
@@ -64,6 +66,7 @@ S3method(start,timeDate)
 S3method(summary,timeDate)
 S3method(trunc,timeDate)
 S3method(unique,timeDate)
+S3method(update,timeDate) # new 17/08/2026
 S3method(window,timeDate)
 
 S3method(julian,timeDate)
@@ -242,6 +245,7 @@ export(
     JPUmiNoHi,
     LaborDay,
     MassOfArchangels,
+    NewYearsEve, # 2026-08-26 new 
     NewYearsDay,
     PalmSunday,
     Pentecost,

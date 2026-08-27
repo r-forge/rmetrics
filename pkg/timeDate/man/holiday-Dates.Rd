@@ -376,6 +376,9 @@ CAVictoriaDay(year = getRmetricsOptions("currentYear"),
 CACanadaDay(year = getRmetricsOptions("currentYear"), 
             value = "timeDate", na_drop = TRUE, \dots)
 
+CAFamilyDay(year = getRmetricsOptions("currentYear"), 
+            value = "timeDate", na_drop = TRUE, \dots)
+
 CACivicProvincialHoliday(year = getRmetricsOptions("currentYear"), 
                          value = "timeDate", na_drop = TRUE, \dots)
 
@@ -447,6 +450,9 @@ JPUmiNoHi(year = getRmetricsOptions("currentYear"), value = "timeDate",
 
 JPRespectForTheAgedDay(year = getRmetricsOptions("currentYear"), 
                        value = "timeDate", na_drop = TRUE, \dots)
+
+JPKeirouNoHi(year = getRmetricsOptions("currentYear"), 
+             value = "timeDate", na_drop = TRUE, \dots)
 
 JPMountainDay(year = getRmetricsOptions("currentYear"), 
               value = "timeDate", na_drop = TRUE, \dots)

@@ -1,3 +1,22 @@
+# timeDate 4052.112.9000
+
+- now `as.timeDate` has usage statement in the documentation.
+
+- now the time zones functions have usage statement in the documentation.
+
+- (new) `timeDate` method for `update` allows to reset the original
+  time zone of a `timeDate` object. For example,
+  `ny <- NewYearsDay(2026); update(ny, zone = "Jamaica")`,
+  see `?update.timeDate`.
+
+- consolidated different symbols representing the same holiday to share a single
+  function definitions (e.g., `Ascension`, `CHAscension`, `DEAscension`).
+
+- new function `NewYearsEve`. Previously there were only country specific (like
+  `DENewYearsEve`) for countries were this is a full day Bank holiday. Related
+  to the above consolidation of function definitions.
+  
+
 # timeDate 4052.112
 
 - streamlined `holidayNYSE()`.
