@@ -468,3 +468,56 @@ class(holiday) <- "holiday"
 oHoliday <- environment(holiday)$Orthodox
 jHoliday <- environment(holiday)$Orthodox$Julian
 ## todo: the symbols Orthodox and Julian from the above environments?
+
+## Better to define '[<-' method for class 'holiday'
+##
+## `holiday<-` <- function(x, value) {
+## 
+## }
+
+
+## Ireland (dates provided by Sylvie Lachaud)
+##
+NewYearsDay
+StBrigidsDay = 02-01 if it is Friday, otherwise 02-mon1
+StPatricksDay = 03-17
+EasterMonday
+MayDay = 05-mon1
+JuneBankHoliday = 06-mon1
+AugustBankHoliday = 08-mon1
+OctoberBankHoliday = 10-mon-1 # last Monday of October 
+ChristmasDay
+StStephensDay = 12-26
+
+
+## Malta  (dates provided by Sylvie Lachaud)
+
+NewYearsDay
+
+Feast of St. Paul's Shipwreck = 02-10 # Feb 10th
+
+Feast of St. Joseph = 03-19 # mar 19th
+
+FreedomDay = 03-31
+
+GoodFriday
+
+WorkersDay = 05-01
+
+SetteGiugno = 06-07
+
+Feast of St. Peter and St. Paul = 06-29 # June 29th     
+
+Feast of the Assumption = august 15th           # AssumptionOfMary 
+
+Feast of Our Lady of Victories = sept 8th       # BirthOfVirginMary 
+
+IndependenceDay = 09-21
+
+ITImmaculateConception # Feast of the Immaculate Conception = dec 8th
+
+RepublicDay = 12-13
+
+ChristmasDay
+
+ 
