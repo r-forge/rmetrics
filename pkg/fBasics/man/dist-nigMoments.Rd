@@ -21,6 +21,9 @@ nigMean(alpha = 1, beta = 0, delta = 1, mu = 0)
 nigVar(alpha = 1, beta = 0, delta = 1, mu = 0)
 nigSkew(alpha = 1, beta = 0, delta = 1, mu = 0)
 nigKurt(alpha = 1, beta = 0, delta = 1, mu = 0)
+
+nigMoments(order, type = c("raw", "central", "mu"), alpha = 1, 
+    beta = 0, delta = 1, mu = 0)
 }
 
 \arguments{
@@ -37,10 +40,20 @@ nigKurt(alpha = 1, beta = 0, delta = 1, mu = 0)
     \item{mu}{
       location parameter, by default 0.
     }
+    \item{order}{
+      moment order.
+    }
+    \item{type}{
+      a character string, one of \code{"raw"}, \code{"central"},
+      \code{"mu"}. 
+    }
+    
 }
 
 \value{
+  for \code{nigMoments}: TODO: describe!
 
+  for the remaining functions,
   a named numerical value.  The name is one
   of \code{mean}, \code{var}, \code{skew}, or \code{kurt}, obtained by
   dropping the \code{nig} prefix from the name of the corresponding

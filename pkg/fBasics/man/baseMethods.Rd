@@ -18,8 +18,10 @@
 }
 
 \usage{
+stdev(x, na.rm = FALSE) 
 \method{stdev}{default}(x, na.rm = FALSE)
 
+termPlot(model, \dots)
 \method{termPlot}{default}(model, \dots)
 }
 

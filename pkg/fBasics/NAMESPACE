@@ -59,9 +59,9 @@ S3method(".summary", "gmm")
 #export(.blue2yellowPalette)
 #export(.cyan2magentaPalette)
 
-## explicitly name exports, start with
+## explicitly name exports, started with
 ##     cat(ls("package:fBasics", all.names = TRUE), sep =",\n")
-## then clean up;
+## then cleaned up;
 
 exportMethods("show")
 exportClasses("fDISTFIT", "fHTEST")
