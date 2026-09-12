@@ -13,7 +13,6 @@ Imports: fCopulae, robustbase, MASS, Rglpk, slam, Rsolnp, quadprog,
         kernlab, rneos, methods, grDevices, graphics, stats, utils
 Suggests: parma, Rsymphony, dplR, bcp, fGarch,
         mvoutlier
-Additional_repositories: https://r-forge.r-project.org/
 LazyData: yes
 License: GPL (>= 2)
 URL: https://r-forge.r-project.org/projects/rmetrics/

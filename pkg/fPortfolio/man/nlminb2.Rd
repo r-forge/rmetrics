@@ -112,7 +112,6 @@ Paul A. Jensen & Jonathan F. Bard,
 Operations Research Models and Methods, 2001
 Appendix A, Algorithms for Constrained Optimization,
 \url{https://www.me.utexas.edu/~jensen/ORMM/supplements/index.html}.
-
 PORT Library,
 \url{https://netlib.org/port/}.
 
