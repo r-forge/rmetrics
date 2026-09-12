@@ -85,7 +85,7 @@ function(x, value)
     }
     if(length(dn) < 2)
         stop("Object has less than two dimensions")
-    if(is.null(value)) dn[2] = list(NULL) else dn[[2]] = value
+    dn[2] = if(is.null(value)) list(NULL) else value
     dimnames(x) = dn
 
     # Return Value:
@@ -112,10 +112,11 @@ function(x, value)
         if(is.null(value)) return(x)
         if((nd = length(dim(x))) < 1)
             stop("attempt to set rownames on object with no dimensions")
-        dn = vector("list", nd) }
+        dn = vector("list", nd)
+    }
     if(length(dn) < 1)
         stop("attempt to set rownames on object with no dimensions")
-    if(is.null(value)) dn[1] = list(NULL) else dn[[1]] = value
+    dn[1] <- if(is.null(value)) list(NULL) else value
     dimnames(x) = dn
 
     # Return Value:
@@ -124,4 +125,3 @@ function(x, value)
 
 
 ################################################################################
-

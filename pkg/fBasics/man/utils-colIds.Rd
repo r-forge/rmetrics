@@ -19,6 +19,9 @@
 \usage{
 colIds(x, \dots)
 rowIds(x, \dots)
+
+colIds(x) <- value
+rowIds(x) <- value
 }
 
 \arguments{
@@ -28,14 +31,23 @@ rowIds(x, \dots)
   \item{\dots}{
     passed on to \code{colnames} or \code{rownames}.
   }
+  \item{value}{
+    a character vector or \code{NULL}.
+  }
 }
 
 \details{
+
+  \code{colIds} and \code{rowIds} call \code{as.matrix(x)} and return,
+  respectively the column names and row names of the converted object.
     
+  The replacement versions set the column names and row names,
+  respectively.
+
   Usually in R the functions \code{colnames} and \code{rownames} are 
   used to retrieve and set the names of matrices. The functions 
   \code{rowIds} and \code{colIds}, are S-Plus like synonyms.
-    
+
 }
 
 \examples{

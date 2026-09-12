@@ -3,9 +3,6 @@
 - changed occurencies of `.Names` and `.Dim` with `names and `dim`
   (fixes CRAN NOTEs about this).
 
-
-# fBasics 4052.98
-
 - stopped exporting `.distCheck()` and removed it from the code. it was made
   defunct in v4032.96. Use `distCheck()` (no leading dot here) instead.
 
