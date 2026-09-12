@@ -423,7 +423,7 @@
       ck <- k
     } else {
       tick.opts <- paste(rep(tick.opts, c(4, 2, 1, 1, 3, 3, 1)), tick.k.opts)
-      is <- structure(rep(0,length(tick.opts)), .Names = tick.opts)
+      is <- structure(rep(0,length(tick.opts)), names = tick.opts)
       
       for(i in 1:length(tick.opts)) {
         y <- strsplit(tick.opts[i], ' ')[[1]]

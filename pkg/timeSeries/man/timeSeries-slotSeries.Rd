@@ -72,21 +72,34 @@ series(x) <- value
 
 \examples{
 ## A Dummy 'timeSeries' Object
-   ts <- timeSeries()
-   ts
+ts <- timeSeries()
+ts
 
-## Get the Matrix Part - 
-   mat <- series(ts)
-   class(mat)
-   mat
+## Get the Matrix Part (the core data of the object)
+mat <- series(ts)
+class(mat)
+mat
 
-## Assign a New Univariate Series - 
-   series(ts) <- rnorm(12)
-   ts
-   
-## Assign a New Bivariate Series - 
-   series(ts) <- matrix(rnorm(12), ncol = 2)
-   ts
+## alternatively, use coredata from package zoo, see Details section
+if(requireNamespace("zoo")) {
+  zoo::coredata(ts)
 }
 
+## Assign a New Univariate Series
+series(ts) <- rnorm(12)
+ts
+
+## alternatively, use coredata from package zoo, see Details section
+if(requireNamespace("zoo")) {
+  zoo::coredata(ts) <- rnorm(12)
+}
+
+## Assign a New Bivariate Series - 
+series(ts) <- matrix(rnorm(12), ncol = 2)
+ts
+## alternatively, use coredata from package zoo, see Details section
+if(requireNamespace("zoo")) {
+  zoo::coredata(ts) <- matrix(rnorm(12), ncol = 2)
+}
+}
 \keyword{programming}

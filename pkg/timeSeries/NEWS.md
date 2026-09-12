@@ -4,6 +4,8 @@
   stop using `timeSeries::time`, see also the comment in
   NAMESPACE. Alternatively, uncomment time in NAMESPACE to export it.
 
+- replaced occurences of `.Names` with `names`.
+
 - "timeSeries"` no longer exports functions from package 'stats', unless it
   makes them S4 generics. This does not affect interactive use (since 'stats' is
   normally attached when R starts up). In special cases one may need to invoke
